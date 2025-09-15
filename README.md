@@ -1,2 +1,2 @@
-# cti
+# CTI
 Cyber Threat Intelligence
