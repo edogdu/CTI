@@ -39,7 +39,7 @@ def ensure_ollama_model(model_name="mistral", base_url="http://localhost:11434")
         print("Error checking or downloading model:", e)
 
 class CyberTripleExtractor:
-    def __init__(self, document_id, file_path, model_name, ollama_base_url="http://localhost:11434"):
+    def __init__(self, file_path, document_id, model_name, ollama_base_url="http://localhost:11434"):
         self.file_path = file_path
         self.ollama_base_url = ollama_base_url
         self.converter = DocumentConverter()

@@ -45,7 +45,6 @@ def _clean_state(workdir: Path):
     except Exception as e:
         log(f"[Clean] Warning: could not rotate manifest: {e}")
 
-
 def stage_extraction(input_path: Path, document_id: str, model: str, ollama_base_url: str, out_dir: Path) -> Path:
     from scripts.triple_extraction import extraction as extraction  # local module
 
@@ -54,7 +53,7 @@ def stage_extraction(input_path: Path, document_id: str, model: str, ollama_base
     chunk_json = out_dir / f"chunk_data_{stem}_{model.replace(':','_')}.json"
 
     log(f"[Extraction] model={model}, file={input_path}")
-    extractor = extraction.CyberTripleExtractor(str(input_path), model_name=model, ollama_base_url=ollama_base_url)
+    extractor = extraction.CyberTripleExtractor(str(input_path), document_id, model_name=model, ollama_base_url=ollama_base_url)
     raw_chunk_results = extractor.run()
     extractor.build_dict(raw_chunk_results)
 
@@ -94,12 +93,12 @@ def stage_embed_cti_entities(chunk_json_path: Path, driver, model: str, ollama_b
     log("[Embedding] CTIEntity nodes embedded")
 
 # Similarity 
-def stage_similarity(driver, document_id: str, sim_output_dir: Path ) -> None:
+def stage_similarity(driver, document_id: str, sim_output_dir: Path, embed_cfg) -> None:
     # set per-run output dir for similarity_scoring
     os.environ["SIM_OUTPUT_DIR"] = str(sim_output_dir)
     from scripts.graph.similarity_scoring import run_similarity
     log(f"[Similarity] running vector top-k scoring via Neo4j index... -> {sim_output_dir}")
-    run_similarity(driver, document_id, sim_output_dir)
+    run_similarity(driver, document_id, sim_output_dir, embed_cfg)
     log("[Similarity] results saved under similarity_scoring outputs/")
 
 def process_single_pdf(pdf: Path, group: str, ann_L: Path, ann_S: Path, cfg: dict, driver) -> dict:
@@ -127,7 +126,7 @@ def process_single_pdf(pdf: Path, group: str, ann_L: Path, ann_S: Path, cfg: dic
 
     # Similarity: per-PDF results go to out_dir/vec_results
     sim_dir = out_dir / cfg.embedding.similarity.dir
-    stage_similarity(driver, document_id, sim_dir)
+    stage_similarity(driver, document_id, sim_dir, cfg.embedding)
 
     return {
         "pdf": str(pdf),
