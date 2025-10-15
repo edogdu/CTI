@@ -3,29 +3,34 @@ import json
 import re
 import os
 import shutil
+import sys
 from pathlib import Path
 from typing import Dict, List, Set, Tuple, Any, Optional
 from dataclasses import dataclass, asdict
 
-BASE_DIR = Path("/Users/bill/CTI-Analysis/").resolve()
+# Add the project root (one level above "scripts") to the module search path
+sys.path.append(str(Path(__file__).resolve().parents[2]))
+
+from config.config import load_config
+cfg = load_config()
+
+BASE_DIR = Path("./").resolve()
 
 # -----------------------------
 # CONFIG
 # -----------------------------
-WORKDIR       = BASE_DIR / "output" / "CTI-HAL"
+WORKDIR       = Path(cfg.paths.output_dir) / "CTI-HAL"
 MANIFEST_PATH = WORKDIR / Path("manifest.json")
 ANALYSIS_OUT  = WORKDIR / Path("analysis")
-# Second candidate analysis folder under datasets (for cleaning)
-DATASET_ANALYSIS = BASE_DIR / "datasets" / "CTI-HAL" / "analysis"
 # List of analysis paths to clean
-ANALYSIS_PATHS_TO_CLEAN = [ANALYSIS_OUT, DATASET_ANALYSIS]
-MAPPINGS_CSV  = BASE_DIR / Path("CTI_HAL_mappings.csv")
+ANALYSIS_PATHS_TO_CLEAN = []
+MAPPINGS_CSV  = Path(cfg.paths.config_dir) / Path("CTI_HAL_mappings.csv")
 # If true, delete CTI-HAL/analysis before running (can override via env SIM_CLEAN_ANALYSIS=1)
-CLEAN_ANALYSIS = os.getenv("SIM_CLEAN_ANALYSIS", "1") == "1"
+# CLEAN_ANALYSIS = os.getenv("SIM_CLEAN_ANALYSIS", "1") == "1"
 
 # Hit@k configuration (comma-separated env var or default)
-_HIT_KS_ENV = os.getenv("SIM_HIT_KS", "1,3,5")
-HIT_KS: Tuple[int, ...] = tuple(sorted({int(x) for x in _HIT_KS_ENV.split(',') if x.strip().isdigit()})) or (1, 3, 5)
+_HIT_KS_ENV = os.getenv("SIM_HIT_KS", "1,5")
+HIT_KS: Tuple[int, ...] = tuple(sorted({int(x) for x in _HIT_KS_ENV.split(',') if x.strip().isdigit()})) or (1, 5)
 
 
 LIKELY_ENTITY_KEYS = {
@@ -452,53 +457,6 @@ def find_annotation_files(pdf_run: PdfRun) -> Tuple[Optional[Path], Optional[Pat
     # Return a single annotator file for non-APT29; the caller will handle None filtering
     return found_path, None
 
-
-def extract_entities_from_annotation(json_path: Path) -> Set[str]:
-    """Attempt to extract cybersecurity entity names from a variety of common schemas."""
-    try:
-        obj = _read_json(json_path)
-    except Exception:
-        return set()
-
-    names: Set[str] = set()
-
-    def maybe_add(val: Any):
-        if isinstance(val, str) and val.strip():
-            names.add(val.strip())
-
-    def walk(x: Any):
-        if isinstance(x, dict):
-            for k, v in x.items():
-                if k in LIKELY_ENTITY_KEYS:
-                    if isinstance(v, list):
-                        for item in v:
-                            if isinstance(item, str):
-                                maybe_add(item)
-                            elif isinstance(item, dict):
-                                # common shapes: {name: "X"}, {label: "Y"}
-                                for kk in ("name", "label", "entity", "text"):
-                                    if isinstance(item.get(kk), str):
-                                        maybe_add(item[kk])
-                    elif isinstance(v, dict):
-                        for kk in ("name", "label", "entity", "text"):
-                            if isinstance(v.get(kk), str):
-                                maybe_add(v[kk])
-                    elif isinstance(v, str):
-                        maybe_add(v)
-                # always walk deeper to discover nested shapes
-                walk(v)
-        elif isinstance(x, list):
-            for it in x:
-                walk(it)
-        # primitives ignored
-
-    walk(obj)
-
-    # final normalization
-    normalized = {re.sub(r"\s+", " ", n).strip() for n in names}
-    return {n for n in normalized if n}
-
-
 def extract_attack_entities(json_path: Path) -> Dict[str, Set[str]]:
     """Extract ATT&CK entities: technique IDs (T####[.###]), tactic IDs (TA000x),
     and software/tool IDs (S####), plus their names if present.
@@ -690,16 +648,16 @@ def score_single(pdf_run: PdfRun, ann_paths: List[Path]) -> PdfScores:
 
 def analyze() -> None:
     # Optionally wipe previous analysis outputs for a clean run (both output/ and datasets/ locations)
-    if CLEAN_ANALYSIS:
-        for ap in ANALYSIS_PATHS_TO_CLEAN:
-            try:
-                if ap.exists() and ap.is_dir():
-                    log(f"[Analysis] CLEAN_ANALYSIS=1; removing: {ap}")
-                    shutil.rmtree(ap, ignore_errors=True)
-            except Exception as e:
-                log(f"[warn] Failed to remove {ap}: {e}")
-    ANALYSIS_OUT.mkdir(parents=True, exist_ok=True)
-    log(f"[Analysis] Writing fresh analysis to: {ANALYSIS_OUT}")
+    # if CLEAN_ANALYSIS:
+    #     for ap in ANALYSIS_PATHS_TO_CLEAN:
+    #         try:
+    #             if ap.exists() and ap.is_dir():
+    #                 log(f"[Analysis] CLEAN_ANALYSIS=1; removing: {ap}")
+    #                 shutil.rmtree(ap, ignore_errors=True)
+    #         except Exception as e:
+    #             log(f"[warn] Failed to remove {ap}: {e}")
+    # ANALYSIS_OUT.mkdir(parents=True, exist_ok=True)
+    # log(f"[Analysis] Writing fresh analysis to: {ANALYSIS_OUT}")
 
     if not MANIFEST_PATH.exists():
         raise FileNotFoundError(f"manifest not found: {MANIFEST_PATH}")
