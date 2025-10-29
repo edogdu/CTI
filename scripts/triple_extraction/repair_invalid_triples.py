@@ -142,23 +142,73 @@ def det_fix(t):
     return t
 
 def validate(t):
-#Check all the structure and noirmalize everything.
-    if not isinstance(t, dict): return False, ["not_object"]
+    if not isinstance(t, dict):
+        return False, ["not_object"]
+
     sub, obj, p = t.get("subject"), t.get("object"), t.get("predicate")
-    errs=[]
-    if not isinstance(sub, dict): errs.append("subject_not_object") #triple must have subject
-    if not isinstance(obj, dict): errs.append("object_not_object") # triple must have object
+    errs = []
+
+    #Structure checks
+    if not isinstance(sub, dict):
+        errs.append("subject_not_object")
+    if not isinstance(obj, dict):
+        errs.append("object_not_object")
+
     st = canon_type(sub.get("type") if isinstance(sub, dict) else "")
     ot = canon_type(obj.get("type") if isinstance(obj, dict) else "")
     pp = canon_pred(p) if isinstance(p, str) else p
-    if not isinstance(pp, str) or pp not in PREDS: errs.append("predicate_invalid")
-    if st not in TYPES: errs.append("subject.type_not_allowed")
-    if ot not in TYPES: errs.append("object.type_not_allowed")
+
+    #Predicate/type/domain/range checks (structural)
+    if not isinstance(pp, str) or pp not in PREDS:
+        errs.append("predicate_invalid")
+    if st not in TYPES:
+        errs.append("subject.type_not_allowed")
+    if ot not in TYPES:
+        errs.append("object.type_not_allowed")
     if isinstance(pp, str) and pp in SCHEMA:
         dom, rng = SCHEMA[pp]
-        if st not in dom: errs.append("subject.type_domain")
-        if ot not in rng: errs.append("object.type_range")
+        if st not in dom:
+            errs.append("subject.type_domain")
+        if ot not in rng:
+            errs.append("object.type_range")
+
+#Surface-level,  semantic name checks 
+    #missing or empty names
+    if isinstance(sub, dict):
+        name = sub.get("name", "").strip() if isinstance(sub.get("name"), str) else ""
+        if not name:
+            errs.append("subject_empty")
+        elif name in {"UNKNOWN", "?", "N/A", "??"}:
+            errs.append("subject.name_invalid")
+
+    if isinstance(obj, dict):
+        name = obj.get("name", "").strip() if isinstance(obj.get("name"), str) else ""
+        if not name:
+            errs.append("object_empty")
+        elif name in {"UNKNOWN", "?", "N/A", "??"}:
+            errs.append("object.name_invalid")
+
+    #detect unusual surface forms, non-alphanumeric or garbage strings
+    def looks_bad(s):
+        if not s or not isinstance(s, str): return False
+        #more symbols than alphanumerics = probably noise
+        sym_count = sum(1 for c in s if not c.isalnum())
+        return sym_count > len(s) * 0.5
+
+    if isinstance(sub, dict) and looks_bad(sub.get("name", "")):
+        errs.append("surface_form_error")
+    if isinstance(obj, dict) and looks_bad(obj.get("name", "")):
+        errs.append("surface_form_error")
+
+    #detect minor typos in predicate (e.g., 'use' instead of 'uses')
+    if isinstance(pp, str) and pp not in PREDS:
+        for pr in PREDS:
+            if abs(len(pr) - len(pp)) <= 2 and pr.startswith(pp[:3]):
+                errs.append("minor_text_error")
+                break
+
     return (len(errs) == 0), errs
+
 
 #Reasons where a paraphrase/rename might help
 FIXABLE_BY_LOOSE = {
