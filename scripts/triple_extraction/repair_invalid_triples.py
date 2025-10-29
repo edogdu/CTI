@@ -1,6 +1,9 @@
 import os, re, json, time, requests, sys
 from pathlib import Path
 
+
+#Create one unified Session for requests.get() and requests.post()
+SESSION = requests.Session()
 #look for invalid_triples.json inside extracted_triples/
 script_dir = Path(__file__).parent
 input_dir = script_dir / "extracted_triples"
@@ -11,11 +14,16 @@ if not INPUT_PATH.exists():
     print("Tip: make sure you ran extraction_consensus_plus_invalid.py first; it saves invalid triples under 'extracted_triples/'.")
     sys.exit(1)
 
+os.environ["OLLAMA_BASE_URL"] = "http://localhost:11434"
+#os.environ["OLLAMA_MODEL"] = "foundation-sec-8b-instruct"
+
+os.environ["OLLAMA_MODEL"] = "gemma2:9b"
 BASE = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
 MODEL = os.getenv("OLLAMA_MODEL", "gemma2:9b")
 OUT_BASE = os.path.splitext(str(INPUT_PATH))[0]
 LIM = 500  # max string length sanity
-
+print(f"BASE = {BASE}")
+print(f"MODEL = {MODEL}")
 #STIX 2.1 Names and
 TYPES = {
     "threat-actor","intrusion-set","campaign","malware","tool","infrastructure","attack-pattern",
@@ -152,13 +160,39 @@ def validate(t):
         if ot not in rng: errs.append("object.type_range")
     return (len(errs) == 0), errs
 
+#Reasons where a paraphrase/rename might help
+FIXABLE_BY_LOOSE = {
+    "subject_empty", "object_empty",
+    "surface_form_error", "minor_text_error",
+    "unrecognized_entity_name", "subject.name_invalid", "object.name_invalid",
+}
+
+#Reasons that are structural/schema and NOT fixable by paraphrasing
+FATAL_FOR_LOOSE = {
+    "predicate_invalid",
+    "subject.type_not_allowed",
+    "object.type_not_allowed",
+    "subject.type_domain",
+    "object.type_domain",
+    "subject.type_range",
+    "object.type_range",
+}
+
+#Gate the loose LLM call. Only run if at least one reason is fixable and none are fatal/schema-level problems.
+def should_try_loose(reasons: list[str]) -> bool:
+    if not reasons:
+        return False
+    if any(r in FATAL_FOR_LOOSE for r in reasons):
+        return False
+    return any(r in FIXABLE_BY_LOOSE for r in reasons)
+
 def ensure_model():
     try:
-        r=requests.get(f"{BASE}/api/tags",timeout=6)
+        r=SESSION.get(f"{BASE}/api/tags",timeout=6) #Uses persistent SESSION now
         r.raise_for_status()
         names={m.get("name") for m in r.json().get("models",[])}
         if MODEL not in names:
-            requests.post(f"{BASE}/api/pull",json={"name":MODEL},timeout=None)
+            SESSION.post(f"{BASE}/api/pull",json={"name":MODEL},timeout=None) #Uses persistent SESSION now
     except Exception as e:
         print("[warn] model check:", e)
 
@@ -187,7 +221,7 @@ def ask_llm(p):
     """Call Ollama (non-streaming) and parse robustly."""
     try:
         payload={"model":MODEL,"prompt":p,"format":"json","stream":False}
-        r=requests.post(f"{BASE}/api/generate",json=payload,timeout=180)
+        r=SESSION.post(f"{BASE}/api/generate",json=payload,timeout=180) #Uses persistent SESSION now
         r.raise_for_status()
         data=r.json()
         text=data.get("response","") if isinstance(data,dict) else ""
@@ -226,32 +260,47 @@ def main():
     for i,e in enumerate(invalids,1):
         t=e.get("triple") if isinstance(e,dict) and "triple" in e else e
         ctx=e.get("context") if isinstance(e,dict) else "" #Get the "context" portion of the triple. 
-
+#Updated repair passes
         # 1) deterministic fix
-        t1=det_fix(t)
+        t1 = det_fix(t)
         ok, reasons = validate(t1)
         if ok:
-            repaired.append({"triple":t1,"repair":"deterministic"})
+            repaired.append({"triple": t1, "repair": "deterministic"})
         else:
-            # 2) LLM repair with two prompt variants (strict then loose)
-            accepted=False
-            for variant in ("strict","loose"):
-                ptxt = prompt(t1, ctx) if variant=="strict" else (
-                    prompt(t1, ctx) + "\nIf needed, you may paraphrase entity names slightly, "
-                    "but types and predicates MUST remain from the allowed lists."
-                )
-                props=ask_llm(ptxt)
-                if not props:
-                    continue
+            #Strict LLM attempt
+            accepted = False
+            ptxt = prompt(t1, ctx)
+            props = ask_llm(ptxt)
+            if props:
                 for c in props:
-                    c.setdefault("confidence",0.5)
-                    c = det_fix(c)  # normalize LLM output before validate
-                    ok2, _reasons2 = validate(c)
+                    c.setdefault("confidence", 0.5)
+                    c = det_fix(c)
+                    ok2, _ = validate(c)
                     if ok2:
-                        repaired.append({"triple":c,"repair":f"gemma2_9b_{variant}"})
-                        accepted=True
+                        repaired.append({"triple": c, "repair": f"{MODEL}_strict"})
+                        accepted = True
                         break
-                if accepted: break
+
+            #Only try loose LLM pass if strict failed and reasons are fixable
+            if not accepted and should_try_loose(reasons):
+                ptxt_loose = (
+                    prompt(t1, ctx)
+                    + "\nIf needed, paraphrase entity names slightly; "
+                    "types and predicates MUST remain from the allowed lists."
+                )
+                props = ask_llm(ptxt_loose)
+                if props:
+                    for c in props:
+                        c.setdefault("confidence", 0.5)
+                        c = det_fix(c)
+                        ok3, _ = validate(c)
+                        if ok3:
+                            repaired.append({"triple": c, "repair": f"{MODEL}_loose"})
+                            accepted = True
+                            break
+            #Diag to see why the loose was skipped            
+#           if not accepted and not should_try_loose(reasons):
+#               print(f"[skip-loose] Unfixable reasons: {reasons}")                
             if not accepted:
                 bad.append({"entry": e, "deterministic_reasons": reasons})
 
@@ -268,7 +317,7 @@ def main():
     with open(f"{OUT_BASE}_still_invalid.json","w",encoding="utf-8") as f:
         json.dump({"count":len(bad),"items":bad},f,indent=2,ensure_ascii=False)
 
-    #Top failure reasons and other metrics ----
+    #Top failure reasons and other metrics
     reason_counts={}
     for item in bad:
         for r in item.get("deterministic_reasons",[]):
