@@ -1,0 +1,957 @@
+{
+  "metrics": {
+    "file_name": "rpt-fin6-1.pdf",
+    "model_used": "gemma2:9b",
+    "doc_sha256_id": "21c61d72690c53ed",
+    "num_pages": 12,
+    "num_sentences_total": 117,
+    "num_sentences_used": 64,
+    "num_raw_triples": 64,
+    "num_valid_triples": 39,
+    "num_suspicious_triples": 25,
+    "avg_triples_per_sentence": 1.0,
+    "rejection_stats": {
+      "bad_structure": 0,
+      "invalid_class_or_predicate": 25
+    },
+    "runtime_seconds": 100.8797402381897
+  },
+  "data": [
+    {
+      "context": " FOLLOW THE MONEY: 0 7 DISSECTING THE OPERATIONS OF THE CYBER CRIME GROUP FIN6 SS FC PAN Primary Account",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN6",
+            "type": "ThreatActor"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "SS FC PAN Primary Account",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "FOLLOW THE MONEY: 0 7 DISSECTING THE OPERATIONS OF THE CYBER CRIME GROUP FIN6 SS FC PAN Primary Account"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "FS NAME Name (26 alphanumeric characters max.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FS",
+            "type": "Application"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "NAME ",
+            "type": "Filename"
+          },
+          "evidence": {
+            "quote": "FS NAME Name"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " FOLLOW THE MONEY: DISSECTING THE OPERATIONS OF THE CYBER CRIME GROUP FIN6 Reports on payment card intrusions and theft are often fragmentary.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Reports",
+            "type": "Report"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "payment card intrusions and theft",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Reports on payment card intrusions and theft are often fragmentary."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In 2015, FireEye Threat Intelligence supported several Mandiant Consulting investigations in the hospitality and retail sectors where FIN6 actors had aggressively targeted and compromised pointof-sale (POS) systems, making off with millions of payment card numbers.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN6",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "pointof-sale (POS) systems",
+            "type": "System"
+          },
+          "evidence": {
+            "quote": "where FIN6 actors had aggressively targeted and compromised pointof-sale (POS) systems"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "FIREEYE INTELLIGENCE TRACKS targeted Financial threats (known as 'FIN' groups) capable of using a wide range of tools and tactics during their computer network intrusions.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN groups",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "a wide range of tools and tactics",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "using a wide range of tools and tactics"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The threat actors generally target a particular demographic or type of organization, and their goal is financial gain from the data they steal.",
+      "triple": [
+        {
+          "subject": {
+            "name": "threat actors",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "a particular demographic or type of organization",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "The threat actors generally target a particular demographic or type of organization"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "FIGURE 1: FIN6 OPERATIONAL METHODOLOGY I NDISCRIMINATE TARGETED CASH OUT CARD SHOP Email phishing credential theft Lateral movement on the network Exfiltration payment card data to the cyber criminal underground GRABNEW MALWARE POS MALWARE",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIGURE 1",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "FIN6 OPERATIONAL METHODOLOGY",
+            "type": "Campaign"
+          },
+          "evidence": {
+            "quote": "FIGURE 1: FIN6 OPERATIONAL METHODOLOGY"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " GRABNEW, ALSO KNOWN AS NEVERQUEST AND VAWTRAK, emerged around 2013 and since then has been consistently and indiscriminately spread through massive spam campaigns.",
+      "triple": [
+        {
+          "subject": {
+            "name": "GRABNEW",
+            "type": "MalwareFamily"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "NEVERQUEST",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "ALSO KNOWN AS NEVERQUEST"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In one case, GRABNEW malware was found on a victim computer that FIN6 later used in its operations.",
+      "triple": [
+        {
+          "subject": {
+            "name": "GRABNEW malware",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "FIN6",
+            "type": "ThreatActor"
+          },
+          "evidence": {
+            "quote": "GRABNEW malware was found on a victim computer that FIN6 later used in its operations."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "We suspect that the computer was originally compromised with GRABNEW by a separate threat actor, who used GRABNEW to capture valid user credentials.",
+      "triple": [
+        {
+          "subject": {
+            "name": "GRABNEW",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "capture valid user credentials",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "used GRABNEW to capture valid user credentials"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "FIN6's use of GRABNEW, or credentials collected by GRABNEW, is not altogether surprising and possibly points to a cyber crime support ecosystem that opens doors to threat actors capable of lateral movement and more damaging activities.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN6",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "GRABNEW",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "FIN6's use of GRABNEW"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "While in some cases evidence may point to a spear-phishing attack or exploit execution, in other cases little to no forensic evidence of the original compromise remains.",
+      "triple": [
+        {
+          "subject": {
+            "name": "evidence",
+            "type": "Indicator"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "spear-phishing attack",
+            "type": "Phishing"
+          },
+          "evidence": {
+            "quote": "point to a spear-phishing attack"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "015",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "After gaining access with valid credentials, we observed FIN6 leveraging components of the Metasploit Framework to establish their foothoold.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN6",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "Metasploit Framework",
+            "type": "Software"
+          },
+          "evidence": {
+            "quote": "leveraging components of the Metasploit Framework"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "For example, in one case, FIN6 used a Metasploit PowerShell module to download and execute shellcode and to set up a local listener that would execute shellcode received over a specific port.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN6",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "Metasploit PowerShell module",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "used a Metasploit PowerShell module"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Similarly, FIN6 used at least two downloaders called HARDTACK and SHIPBREAD (apparent variations on Metasploit payloads) to establish backdoor access to the compromised environment.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN6",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "HARDTACK",
+            "type": "Downloader"
+          },
+          "evidence": {
+            "quote": "used at least two downloaders called HARDTACK and SHIPBREAD"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Once their accesses were established with preferred backdoors, FIN6 used additional public utilities such as Windows Credentials Editor for privilege escalation and credential harvesting.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN6",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "Windows Credentials Editor",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "used additional public utilities such as Windows Credentials Editor"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Additional privilege escalation tools exploited Microsoft Windows vulnerabilities in an attempt to compromise privileged account credentials on various hosts.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Microsoft Windows",
+            "type": "OperatingSystem"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "vulnerabilities",
+            "type": "Vulnerability_Desc"
+          },
+          "evidence": {
+            "quote": "exploited Microsoft Windows vulnerabilities"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The tools targeted CVE-2013-3660, CVE-2011-2005  and CVE-2010-4398, all of which could allow local users to access kernel-level privileges.",
+      "triple": [
+        {
+          "subject": {
+            "name": "tools",
+            "type": "Malware"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "CVE-2013-3660",
+            "type": "Vulnerability_CVEID"
+          },
+          "evidence": {
+            "quote": "The tools targeted CVE-2013-3660"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "2  Continuing their use of Metasploit-related tools, FIN6 also used Metasploit's PsExec NTDSGRAB module to obtain a copy of the Active Directory database (ntds.dit).",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN6",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "Metasploit's PsExec NTDSGRAB module",
+            "type": "MalwareAnalysis"
+          },
+          "evidence": {
+            "quote": "Continuing their use of Metasploit-related tools, FIN6 also used Metasploit's PsExec NTDSGRAB module"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In particular, during the reconnaissance phase they gathered information on systems running SQL instances, dumping schemas for multiple databases and SQL user accounts.",
+      "triple": [
+        {
+          "subject": {
+            "name": "they",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "systems running SQL instances",
+            "type": "System"
+          },
+          "evidence": {
+            "quote": "systems running SQL instances"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Specific tools used by FIN6 included Microsoft's built-in SQL querying tool (osql.exe), Query Express (a free, portable graphical SQL client capable of connecting to Microsoft SQL and Oracle databases) and AdFind, a free command-line tool for querying Active Directory.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN6",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "osql.exe",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "Specific tools used by FIN6 included Microsoft's built-in SQL querying tool (osql.exe)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Over the course of one day, for example, the group targeted more than 900 SQL servers to dump reconnaissance information to support further operations.",
+      "triple": [
+        {
+          "subject": {
+            "name": "the group",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "900 SQL servers",
+            "type": "System"
+          },
+          "evidence": {
+            "quote": "the group targeted more than 900 SQL servers"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "They likely cracked these hashes outside of the target's network before using multiple sets of domain admin credentials in combination with remote command execution tools such as PsExec and Remote Command Executor (RemCom) throughout the rest of the lateral movement phase.",
+      "triple": [
+        {
+          "subject": {
+            "name": "they",
+            "type": "ThreatActor"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "hashes",
+            "type": "Hash"
+          },
+          "evidence": {
+            "quote": "They likely cracked these hashes"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "To maintain presence and support interactive access in the environment, FIN6 leveraged the publicly available Plink command-line utility (part of the PuTTY SSH and Telnet suite) to create SSH tunnels to CnC servers under their control.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN6",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "Plink command-line utility",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "To maintain presence and support interactive access in the environment, FIN6 leveraged the publicly available Plink command-line utility"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "As shown in Figure 2, they used these SSH tunnels to route Remote Desktop Protocol (RDP) traffic and allow for interactive RDP sessions with systems in the target network.",
+      "triple": [
+        {
+          "subject": {
+            "name": "SSH tunnels",
+            "type": "Protocol"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "Remote Desktop Protocol (RDP)",
+            "type": "Protocol"
+          },
+          "evidence": {
+            "quote": "they used these SSH tunnels to route Remote Desktop Protocol (RDP) traffic"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "TRINITY runs continuously and targets system processes not listed in its accompanying process blacklist, seeking data that matches payment card track data.",
+      "triple": [
+        {
+          "subject": {
+            "name": "TRINITY",
+            "type": "Malware"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "system processes",
+            "type": "System"
+          },
+          "evidence": {
+            "quote": "TRINITY runs continuously and targets system processes"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "TRINITY logs captured data to disk, typically to a file in %WINDIR%\\temp or %WINDIR%\\help.",
+      "triple": [
+        {
+          "subject": {
+            "name": "TRINITY",
+            "type": "Malware"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "%WINDIR%\temp or %WINDIR%\temp",
+            "type": "Location"
+          },
+          "evidence": {
+            "quote": "TRINITY logs captured data to disk, typically to a file in %WINDIR%\temp or %WINDIR%\temp"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "016",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The malware encodes the data with a simple substitution cipher and single-byte XOR using the OxAA key.",
+      "triple": [
+        {
+          "subject": {
+            "name": "malware",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "OxAA key",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "and single-byte XOR using the OxAA key"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "017",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "They then compressed the log files into a ZIP archive and moved the archive through the environment to an intermediary system and then to a staging system.",
+      "triple": [
+        {
+          "subject": {
+            "name": "log files",
+            "type": "Filepath"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "ZIP archive",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "compressed the log files into a ZIP archive"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "019",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "From the staging system, they then copied the stolen data to external CnC servers under their control using the FTP command line utility.",
+      "triple": [
+        {
+          "subject": {
+            "name": "staging system",
+            "type": "System"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "FTP command line utility",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "using the FTP command line utility"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "020",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " FIGURE 2: NETWORK DIAGRAM SHOWING FIN6 PLINK SSH TUNNEL USED TO ROUTE RDP TRAFFIC TO VICTIM COMPUTERS ATTACKER CnC",
+      "triple": [
+        {
+          "subject": {
+            "name": "CnC",
+            "type": "CommandAndControl"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "SSH TUNNEL",
+            "type": "Infrastructure"
+          },
+          "evidence": {
+            "quote": "FIGURE 2: NETWORK DIAGRAM SHOWING FIN6 PLINK SSH TUNNEL USED TO ROUTE RDP TRAFFIC TO VICTIM COMPUTERS ATTACKER CnC"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "SERVER VICTIM 1 HOST ATTACKER CnC SERVER ATTACKER CnC SERVER VICTIM 2 VICTIM 3 VICTIM 4 PLINK TUNNEL RDP TUNNEL RDP",
+      "triple": [
+        {
+          "subject": {
+            "name": "SERVER VICTIM 1",
+            "type": "System"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "ATTACKER CnC SERVER",
+            "type": "CommandAndControl"
+          },
+          "evidence": {
+            "quote": "SERVER VICTIM 1 HOST ATTACKER CnC SERVER"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "UNDERGROUND CARD SHOPS FOLLOWING THE MONEY U sing iSIGHT Partners' collected intelligence, we discovered that the stolen payment card data from these intrusions were sold in an underground card shop.",
+      "triple": [
+        {
+          "subject": {
+            "name": "stolen payment card data",
+            "type": "Malware"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "underground card shop",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "sold in an underground card shop"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "We have identified stolen data from several of FIN6's victims being sold by this vendor as far back as 2014.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN6",
+            "type": "ThreatActor"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "stolen data",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "stolen data from several of FIN6's victims"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In this case, the combined intelligence from FireEye, Mandiant and iSIGHT intelligence teams was able to not only identify malicious activity aimed at stealing payment card data, but also provide a detailed window into that activity from compromise through monetization of the stolen data.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FireEye",
+            "type": "Organization"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "malicious activity aimed at stealing payment card data",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "the combined intelligence from FireEye, Mandiant and iSIGHT intelligence teams was able to not only identify malicious activity aimed at stealing payment card data"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " To download this or other FireEye Threat Intelligence reports, visit:",
+      "triple": [
+        {
+          "subject": {
+            "name": "To download",
+            "type": "Unknown"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "FireEye Threat Intelligence reports",
+            "type": "Report"
+          },
+          "evidence": {
+            "quote": "download this or other FireEye Threat Intelligence reports"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 12,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "www.fireeye.com/reports.html FireEye, Inc. 1440 McCarthy Blvd.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FireEye, Inc.",
+            "type": "Organization"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "www.fireeye.com/reports.html",
+            "type": "URL"
+          },
+          "evidence": {
+            "quote": "www.fireeye.com/reports.html FireEye, Inc."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 12,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Milpitas, CA 95035 408.321.6300 / 877.FIREEYE (347.3393) / info@FireEye.com www.FireEye.com © 2016 FireEye, Inc.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FireEye, Inc.",
+            "type": "Organization"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "FireEye",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "© 2016 FireEye, Inc."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 12,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "FireEye is a registered trademark of FireEye, Inc.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FireEye",
+            "type": "Organization"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "FireEye, Inc.",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "FireEye is a registered trademark of FireEye, Inc."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 12,
+        "id": "004",
+        "source": "TEXT"
+      }
+    }
+  ]
+}

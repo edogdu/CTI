@@ -1,0 +1,237 @@
+{
+  "metrics": {
+    "file_name": "FIN6-Cyware.pdf",
+    "model_used": "gemma2:9b",
+    "doc_sha256_id": "9c5c174e4756e023",
+    "num_pages": 1,
+    "num_sentences_total": 22,
+    "num_sentences_used": 18,
+    "num_raw_triples": 18,
+    "num_valid_triples": 9,
+    "num_suspicious_triples": 9,
+    "avg_triples_per_sentence": 1.0,
+    "rejection_stats": {
+      "bad_structure": 0,
+      "invalid_class_or_predicate": 9
+    },
+    "runtime_seconds": 20.039908170700073
+  },
+  "data": [
+    {
+      "context": "Just like its PoS exploits, FIN6 relied on Windows' Remote Desktop Protocol (RDP) to move laterally across aected networks.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN6",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "Windows' Remote Desktop Protocol (RDP)",
+            "type": "Protocol"
+          },
+          "evidence": {
+            "quote": "FIN6 relied on Windows' Remote Desktop Protocol (RDP) to move laterally across aected networks."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "FIN6, which is one of the sophisticated cybercriminal groups, has now moved to deploy ransomware in its attacks.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN6",
+            "type": "ThreatActor"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "ransomware",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "has now moved to deploy ransomware in its attacks."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This movement enabled FIN6 to then inject LockerGoga and Ryuk ransomware.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN6",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "LockerGoga and Ryuk ransomware",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "inject LockerGoga and Ryuk ransomware"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The second technique involved the use of a Windows Service created by Metasploit, that was used to communicate with a C2 server for dropping additional payloads into compromised systems.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Windows Service",
+            "type": "OperatingSystem"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "Metasploit",
+            "type": "Software"
+          },
+          "evidence": {
+            "quote": "The second technique involved the use of a Windows Service created by Metasploit"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "As the frequency of these intrusions deploying ransomware has increased, the cadence of activity traditionally attributed to FIN6-intrusions targeting point-of-sale (POS) environments, deploying TRINITY malware and sharing other key characteristics-has declined.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN6-intrusions",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "point-of-sale (POS) environments",
+            "type": "Location"
+          },
+          "evidence": {
+            "quote": "targeting point-of-sale (POS) environments"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "014",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Lateral Movement Techniques LockerGoga Publisher Cyware  PREVIOUS Zero-day aw leaves TP- Link routers open to remote att ...",
+      "triple": [
+        {
+          "subject": {
+            "name": "LockerGoga",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Publisher",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "Lateral Movement Techniques LockerGoga Publisher"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "017",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Malware and Vulnerabilities 7 Trinity FireEye Ryuk ransomware  NEXT Anubis",
+      "triple": [
+        {
+          "subject": {
+            "name": "Trinity",
+            "type": "Campaign"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "Ryuk ransomware",
+            "type": "Ransomware"
+          },
+          "evidence": {
+            "quote": "Malware and Vulnerabilities 7 Trinity FireEye Ryuk ransomware"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "018",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "trojan spotted stealing PayPal credentia ...",
+      "triple": [
+        {
+          "subject": {
+            "name": "trojan",
+            "type": "Trojan"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "PayPal credentia",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "trojan spotted stealing PayPal credentia"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "020",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Malware and Vulnerabilities RESOURCES LUNCH & LEARN Threat Intel Management Series CYWARE Collaborate Respond",
+      "triple": [
+        {
+          "subject": {
+            "name": "CYWARE",
+            "type": "Organization"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Collaborate Respond",
+            "type": "Campaign"
+          },
+          "evidence": {
+            "quote": "CYWARE Collaborate Respond"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "021",
+        "source": "TEXT"
+      }
+    }
+  ]
+}

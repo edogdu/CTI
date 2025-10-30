@@ -1,0 +1,1629 @@
+{
+  "metrics": {
+    "file_name": "New Carbanak - Anunak Attack Methodology.pdf",
+    "model_used": "gemma2:9b",
+    "doc_sha256_id": "7e1c39f76412d1dc",
+    "num_pages": 32,
+    "num_sentences_total": 253,
+    "num_sentences_used": 130,
+    "num_raw_triples": 128,
+    "num_valid_triples": 67,
+    "num_suspicious_triples": 61,
+    "avg_triples_per_sentence": 0.9846153846153847,
+    "rejection_stats": {
+      "bad_structure": 0,
+      "invalid_class_or_predicate": 61
+    },
+    "runtime_seconds": 164.0774941444397
+  },
+  "data": [
+    {
+      "context": "At the time of investigation this malware was not correctly detected by any existing antivirus engines, and domains /",
+      "triple": [
+        {
+          "subject": {
+            "name": "malware",
+            "type": "Malware"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "antivirus engines",
+            "type": "VirusScanner"
+          },
+          "evidence": {
+            "quote": "At the time of investigation this malware was not correctly detected by any existing antivirus engines,"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "IP's were not found in any commercial threat intelligence feeds.",
+      "triple": [
+        {
+          "subject": {
+            "name": "IP's",
+            "type": "IPAddress"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "commercial threat intelligence feeds",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "IP's were not found in any commercial threat intelligence feeds"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "It is also interesting to note that just during the time that it took to write this blog, Carbanak returned to their victims with significantly upgraded malware.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Carbanak",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "victims",
+            "type": "Person"
+          },
+          "evidence": {
+            "quote": "their victims"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "We have included analysis for two separate versions of AdobeUpdateManagementTool.vbs in this report.",
+      "triple": [
+        {
+          "subject": {
+            "name": "AdobeUpdateManagementTool.vbs",
+            "type": "Filename"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "AdobeUpdateManagementTool.vbs",
+            "type": "Filename"
+          },
+          "evidence": {
+            "quote": "AdobeUpdateManagementTool.vbs in this report"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The email attachment was a malicious Word Document that contained an encoded .VBS script capable of stealing system information, desktop screenshots, and to download additional malware.",
+      "triple": [
+        {
+          "subject": {
+            "name": "email attachment",
+            "type": "Unknown"
+          },
+          "predicate": "has",
+          "object": {
+            "name": ".VBS script",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "The email attachment was a malicious Word Document that contained an encoded .VBS script"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "012",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The malicious VB Script will use macros to search for instances of Microsoft Word running on the system, if",
+      "triple": [
+        {
+          "subject": {
+            "name": "VB Script",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "macros",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "The malicious VB Script will use macros"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "014",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The victim system will then reach out to http://95.215.47.105 to retrieve additional malware called AdobeUpdateManagementTool.vbs.",
+      "triple": [
+        {
+          "subject": {
+            "name": "victim system",
+            "type": "OperatingSystem"
+          },
+          "predicate": "communicatesWith",
+          "object": {
+            "name": "http://95.215.47.105",
+            "type": "URL"
+          },
+          "evidence": {
+            "quote": "reach out to http://95.215.47.105"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "AdobeUpdateManagementTool.vbs - Indicators of compromise: File name: adobeupdatemanagementtool.vbs SHA-1 8d7c90a699b4055e9c7db4571588c765c1cf2358 (Version 1) SHA-1 a91416185d2565ce991fc2c0dd9591c71fd1f627 (Version 2) Creates folder: %temp%\\WindowsUpdate Creates folder: %temp%\\WindowsUpdate_\\Dropebox<username> Adds file to WindowsUpdate folder: vbs Adds persistence mechanism to the CURRENT_USER registry hive in the CurrentVersion\\Run and CurrentVersion\\RunOnce keys to autostart AdobeUpdateManagementTool.",
+      "triple": [
+        {
+          "subject": {
+            "name": "AdobeUpdateManagementTool.vbs",
+            "type": "Filename"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "adobeupdatemanagementtool.vbs",
+            "type": "Filename"
+          },
+          "evidence": {
+            "quote": "AdobeUpdateManagementTool.vbs - Indicators of compromise: File name: adobeupdatemanagementtool.vbs"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "A scheduled task is created named SysChecks which calls the vbs",
+      "triple": [
+        {
+          "subject": {
+            "name": "SysChecks",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "scheduled task",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "A scheduled task is created named SysChecks which calls the vbs"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The malware contacts the following and may attempt to download doc : http://revitaltravel.com/cssSiteteTemplates http://justetravel.com/cssSiteteTemplates http://park-travels.com All domains resolve to the same IP address (192.99.14.211) http://95.215.46.249 179.43.133.34",
+      "triple": [
+        {
+          "subject": {
+            "name": "malware",
+            "type": "Malware"
+          },
+          "predicate": "communicatesWith",
+          "object": {
+            "name": "http://revitaltravel.com/cssSiteteTemplates",
+            "type": "URL"
+          },
+          "evidence": {
+            "quote": "The malware contacts the following and may attempt to download doc : http://revitaltravel.com/cssSiteteTemplates"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The malware may report to the following command and Control Servers, depending on the version used in the attack: http://148.251.18.75 http://95.215.46.221 http://95.215.46.229 http://95.215.46.234 http://81.17.28.124 This malware was capable of stealing significant system and network information.",
+      "triple": [
+        {
+          "subject": {
+            "name": "malware",
+            "type": "Malware"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "command and Control Servers",
+            "type": "CommandAndControl"
+          },
+          "evidence": {
+            "quote": "The malware may report to the following command and Control Servers"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "It was also used to download several other reconnaissance tools to map out the network.",
+      "triple": [
+        {
+          "subject": {
+            "name": "it",
+            "type": "Unknown"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "reconnaissance tools",
+            "type": "AttackPattern"
+          },
+          "evidence": {
+            "quote": "to download several other reconnaissance tools"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This malware was primarily responsible for the reconnaissance stage of the attack.",
+      "triple": [
+        {
+          "subject": {
+            "name": "this malware",
+            "type": "Malware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "reconnaissance stage",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "This malware was primarily responsible for the reconnaissance stage of the attack."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Using this simple methodology allows the beaconing to hide very well within standard corporate network traffic.",
+      "triple": [
+        {
+          "subject": {
+            "name": "beaconing",
+            "type": "AttackPattern"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "standard corporate network traffic",
+            "type": "Network"
+          },
+          "evidence": {
+            "quote": "beaconing to hide very well within standard corporate network traffic"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Charset: utf-8 Host: 179.43.133.34 HTTP/1.1 200 OK Date: Tue, 08 Nov 2016 20:12:05 GMT Server: Apache/2.2.22 (Debian) X-Powered-By: PHP/5.4.45-0+deb7u2 Vary: Accept-Encoding Content-Length: 0 Keep-Alive: timeout=5, max=100",
+      "triple": [
+        {
+          "subject": {
+            "name": "Host",
+            "type": "IPAddress"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "179.43.133.34",
+            "type": "IPAddress"
+          },
+          "evidence": {
+            "quote": "Host: 179.43.133.34"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "log.txt Full analysis of this malware can be found later in this report.",
+      "triple": [
+        {
+          "subject": {
+            "name": "log.txt",
+            "type": "Filename"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "Full analysis of this malware can be found later in this report.",
+            "type": "Report"
+          },
+          "evidence": {
+            "quote": "Full analysis of this malware can be found later in this report."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Second Stage - Carbanak / Anunak Malware:",
+      "triple": [
+        {
+          "subject": {
+            "name": "Second Stage",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Carbanak / Anunak Malware",
+            "type": "MalwareFamily"
+          },
+          "evidence": {
+            "quote": "Second Stage - Carbanak / Anunak Malware"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Filename: bf.exe SHA1: 3d00602c98776e2ea5d64a78fc622c4ff08708e3 This malware executes a new iteration of svchost.exe and injects its malicious code into this running process.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Filename",
+            "type": "Filename"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "3d00602c98776e2ea5d64a78fc622c4ff08708e3",
+            "type": "SHA-1"
+          },
+          "evidence": {
+            "quote": "Filename: bf.exe SHA1: 3d00602c98776e2ea5d64a78fc622c4ff08708e3"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "(*Warning- our analysis has shown that some antivirus firms incorrectly identify this file as ransomware .)",
+      "triple": [
+        {
+          "subject": {
+            "name": "antivirus firms",
+            "type": "Organization"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "this file",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "incorrectly identify this file as ransomware"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This file's name is base64 encoded and based on the infected system's MAC code, so identifying it by name will be challenging.",
+      "triple": [
+        {
+          "subject": {
+            "name": "file",
+            "type": "Filename"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "base64 encoded name",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "This file's name is base64 encoded"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "It then searches Kaspersky antivirus processes and terminates them if running on the victim system.",
+      "triple": [
+        {
+          "subject": {
+            "name": "It",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "Kaspersky antivirus processes",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "searches Kaspersky antivirus processes"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This malware is very multi-functional as it can enable remote desktop, steal local passwords, search user's email, target IFOBS banking",
+      "triple": [
+        {
+          "subject": {
+            "name": "Malware",
+            "type": "Malware"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "IFOBS banking",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "target IFOBS banking"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " systems (which Carbanak used so effectively in recent banking attacks), or install completely different remote desktop programs, such as VNC or AMMYY.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Carbanak",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "systems",
+            "type": "System"
+          },
+          "evidence": {
+            "quote": "systems (which Carbanak used so effectively in recent banking attacks)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Full details on this malware's functionality is included later in this report.",
+      "triple": [
+        {
+          "subject": {
+            "name": "this malware",
+            "type": "Malware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "details",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Full details on this malware's functionality is included later in this report."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Finally, this malware, like so many others, is designed to target credit card data by scraping memory on Point-of-Sale systems.",
+      "triple": [
+        {
+          "subject": {
+            "name": "this malware",
+            "type": "Malware"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "credit card data",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "target credit card data"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The attacker uses social engineering to gain their foothold in the victim network, downloads reconnaissance tools to scan the network and move laterally into the card holder data environment, and then infects systems able to process card transactions.",
+      "triple": [
+        {
+          "subject": {
+            "name": "attacker",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "social engineering",
+            "type": "Phishing"
+          },
+          "evidence": {
+            "quote": "The attacker uses social engineering"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "It communicates via an encrypted tunnel on port 443 with the following IP addresses: 5.45.179.173 92.215.45.94",
+      "triple": [
+        {
+          "subject": {
+            "name": "it",
+            "type": "CommandAndControl"
+          },
+          "predicate": "communicatesWith",
+          "object": {
+            "name": "5.45.179.173 92.215.45.94",
+            "type": "IPAddress"
+          },
+          "evidence": {
+            "quote": "It communicates via an encrypted tunnel on port 443 with the following IP addresses: 5.45.179.173 92.215.45.94"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Hotline +1 (866) 659-9097 Option 5 International: +1 (312) 873-7500, Option 4 Detailed Analysis of Carbanak Malware: Malicious Word Document Attachment / Adobeupdatetool.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Hotline",
+            "type": "Unknown"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "+1 (866) 659-9097 Option 5 International: +1 (312) 873-7500",
+            "type": "EmailAddress"
+          },
+          "evidence": {
+            "quote": "Hotline +1 (866) 659-9097 Option 5 International: +1 (312) 873-7500,"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Summary The file is OLE compound file format that contains an embedded .VBE (encoded VBS) script.",
+      "triple": [
+        {
+          "subject": {
+            "name": "file",
+            "type": "Filename"
+          },
+          "predicate": "has",
+          "object": {
+            "name": ".VBE (encoded VBS) script",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "contains an embedded .VBE (encoded VBS) script"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The dropped script is capable of stealing system information, desktop screenshots and to download / execute additional malware.",
+      "triple": [
+        {
+          "subject": {
+            "name": "script",
+            "type": "Dropper"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "system information",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "stealing system information"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "When the malicious document file is opened, the embedded VBScript (VBE) file is dropped in the Windows %temp% folder.",
+      "triple": [
+        {
+          "subject": {
+            "name": "malicious document file",
+            "type": "Filepath"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "Windows %temp% folder",
+            "type": "Location"
+          },
+          "evidence": {
+            "quote": "When the malicious document file is opened, the embedded VBScript (VBE) file is dropped in the Windows %temp% folder."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The Loader VBScript The dropped VBE file is a loader script that drops, installs and executes a second layer VBScript payload in the victim's system.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Loader",
+            "type": "Malware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "VBE file",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "The Loader VBScript The dropped VBE file is a loader script that drops, installs and executes a second layer VBScript payload in the victim's system."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The second VBScript payload is embedded in the loader script as a Base64 string: The loader script decodes the base64 string.",
+      "triple": [
+        {
+          "subject": {
+            "name": "loader script",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "Base64 string",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "The loader script decodes the base64 string"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 12,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "If On Error Resume next sh.RegWrite\"HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\Curr Err_Number=eRr.number The loader script adds a scheduled task with a task named \" SysChecks \".",
+      "triple": [
+        {
+          "subject": {
+            "name": "sh",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "RegWrite",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "sh.RegWrite"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 12,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The payload script is dropped in the \" %temp%\\WindowsUpdate_\" as \"AdobeUpdateManagementTool.vbs script uses obfuscation, a combination of base64 and integer-ed characters (chr) to hide malicious code.",
+      "triple": [
+        {
+          "subject": {
+            "name": "payload script",
+            "type": "Dropper"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "AdobeUpdateManagementTool.vbs script",
+            "type": "Filename"
+          },
+          "evidence": {
+            "quote": " as \"AdobeUpdateManagementTool.vbs script"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 13,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The payload script checks if the following folder exists otherwise it creates it: %AllUsersProfile% + \"\\Dropebox\" + <username> (for example in Windows 7 system: C:\\ProgramData\\DropeboxJoePC). ",
+      "triple": [
+        {
+          "subject": {
+            "name": "%AllUsersProfile%",
+            "type": "OperatingSystem"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "\n + \"Dropebox\" + <username> (for example in Windows 7 system: C:\\ProgramData\\DropeboxJoePC)",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "checks if the following folder exists otherwise it creates it: %AllUsersProfile% + \"\n + \"Dropebox\" + <username> (for example in Windows 7 system: C:\\ProgramData\\DropeboxJoePC)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 14,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The payload has the following functionality: Steal system information System Name System Manufacturer System Model Time Zone Total Physical Memory Processor System Type Processor BIOS Version Networking information Computer name Domain User name Desktop screenshot",
+      "triple": [
+        {
+          "subject": {
+            "name": "payload",
+            "type": "Malware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "system information",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "The payload has the following functionality: Steal system information"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 14,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " A powershell script (filename: screenshot__.ps1) is created to screenshot victim's desktop.",
+      "triple": [
+        {
+          "subject": {
+            "name": "powershell script",
+            "type": "Application"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "screenshot__.ps1",
+            "type": "Filename"
+          },
+          "evidence": {
+            "quote": "powershell script (filename: screenshot__.ps1)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 15,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Rectangle]$bounds, $path){ $bmp = New-Object Drawing.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Rectangle",
+            "type": "Unknown"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "bounds",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "$bounds,"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 15,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "xz2q=MjgtQUIgMTEgRDYgMEYgMTggNTYgNEUgRDQgODYgQTEgNU HTTP/1.1 Connection: Keep-Alive Keep-Alive: 300 Content-Type: multipart/form-data; boundary=\"eb3d0b5d91fbde4d7a58ef5b9c954051\" Accept: */*",
+      "triple": [
+        {
+          "subject": {
+            "name": "xz2q=MjgtQUIgMTEgRDYgMEYgMTggNTYgNEUgRDQgODYgQTEgNU",
+            "type": "Unknown"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "HTTP/1.1 Connection: Keep-Alive Keep-Alive: 300 Content-Type: multipart/form-data; boundary=\"eb3d0b5d91fbde4d7a58ef5b9c954051\" Accept: */*",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "xz2q=MjgtQUIgMTEgRDYgMEYgMTggNTYgNEUgRDQgODYgQTEgNU HTTP/1.1 Connection: Keep-Alive Keep-Alive: 300 Content-Type: multipart/form-data; boundary=\"eb3d0b5d91fbde4d7a58ef5b9c954051\" Accept: */*"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 16,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Charset: utf-8 Content-Length: 7274 Host: 95.215.46.249",
+      "triple": [
+        {
+          "subject": {
+            "name": "Host",
+            "type": "DomainName"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "95.215.46.249",
+            "type": "IPAddress"
+          },
+          "evidence": {
+            "quote": "Host: 95.215.46.249"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 16,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Detailed Analysis of Carbanak Malware: Malicious Word Document Attachment / Adobeupdatetool.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Carbanak Malware",
+            "type": "Malware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "Word Document Attachment",
+            "type": "Filename"
+          },
+          "evidence": {
+            "quote": "Malicious Word Document Attachment"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 16,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The script then generates a unique identifier, using the following format: %md_id% - %l_ver% - %ptrtr% - %compCount%where: %md_id% - XORed Computer name and MAC Address.",
+      "triple": [
+        {
+          "subject": {
+            "name": "script",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "%md_id% - %l_ver% - %ptrtr% - %compCount%",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "The script then generates a unique identifier, using the following format:"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 17,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "%l_ver% - hard coded in the malware script e.g. Dim HH5hjs54j69a: HH5hjs54j69a = \"1\" %ptrtr% - hard coded in the malware script e.g Dim HI0cvexizqw: HI0cvexizqw = \"2\" %compCount% - value from the registry key: HKEY_CURRENT_USER\\System\\CurrentControlSet\\Control\\Network\\C default value is the string \"NO\" The malicious script checks if the following folder exists otherwise it creates it: %AllUsersProfile% + \"\\Dropebox\" + <username> for example in Windows 7 system C:\\ProgramData\\DropeboxJoePC",
+      "triple": [
+        {
+          "subject": {
+            "name": "%AllUsersProfile%",
+            "type": "Staging"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "\tDropebox\\<username>",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "%AllUsersProfile% + \"\\Dropebox\" + <username>"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 17,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " $\" screenshot__.png - the screenshot image %\" exe__.exe - an executable file sent by the attacker &\" vb__.vbs - a VBscript sent by the attacker '\" ps1__.ps1 - a Powershell script sent by the attacker (\" insatller.vbs - updater script sent by the attacker Every time this script is executed, it requests commands from the Attacker's control server using HTTP GET request.",
+      "triple": [
+        {
+          "subject": {
+            "name": "installer.vbs",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "HTTP GET request",
+            "type": "Protocol"
+          },
+          "evidence": {
+            "quote": "Every time this script is executed, it requests commands from the Attacker's control server using HTTP GET request."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 18,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "GET / {random_param_name} .jsp?pId=== {unique ID %md_id%} <<$>> {MD5 hash of the current Date & Time} à this is encrypted in RC4 with hardcoded key and Base64.",
+      "triple": [
+        {
+          "subject": {
+            "name": "GET",
+            "type": "Protocol"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "/ {random_param_name} .jsp?pId=== {unique ID %md_id%} <<$>> {MD5 hash of the current Date & Time}",
+            "type": "URL"
+          },
+          "evidence": {
+            "quote": "GET / {random_param_name} .jsp?pId=== {unique ID %md_id%} <<$>> {MD5 hash of the current Date & Time}"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 18,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "HTC Pyramid Build/GRI40) AppleWebKit/533.1 (KHTML, like Gecko)",
+      "triple": [
+        {
+          "subject": {
+            "name": "HTC Pyramid",
+            "type": "Hardware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "Build/GRI40",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Build/GRI40) "
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 18,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "OS Name Version Service Pack OS Manufacturer Windows Directory Locale Available Physical Memory Total Virtual Memory Available Virtual Memory System Name System Manufacturer System Model Time Zone Total Physical Memory Processor System Type Processor BIOS Version Computer name Domain User name This system information is also stored in this registry key: HKEY_CURRENT_USER\\System\\CurrentControlSet\\Control\\Network\\C",
+      "triple": [
+        {
+          "subject": {
+            "name": "OS Name",
+            "type": "OperatingSystem"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "Version Service Pack OS Manufacturer Windows Directory Locale Available Physical Memory Total Virtual Memory Available Virtual Memory System Name System Manufacturer System Model Time Zone Total Physical Memory Processor System Type Processor BIOS Version Computer name Domain User name This system information is also stored in this registry key: HKEY_CURRENT_USER\\System\\CurrentControlSet\\Control\\Network\\C",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "OS Name Version Service Pack OS Manufacturer Windows Directory Locale Available Physical Memory Total Virtual Memory Available Virtual Memory System Name System Manufacturer System Model Time Zone Total Physical Memory Processor System Type Processor BIOS Version Computer name Domain User name This system information is also stored in this registry key: HKEY_CURRENT_USER\\System\\CurrentControlSet\\Control\\Network\\C"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 23,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "POST / {random_name} .jsp?pId=== {unique ID %md_id%} <<$>> {MD5 hash of Date & Time Now} à",
+      "triple": [
+        {
+          "subject": {
+            "name": "POST",
+            "type": "Protocol"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "/ {random_name} .jsp?pId=== {unique ID %md_id%} <<$>> {MD5 hash of Date & Time Now}",
+            "type": "URL"
+          },
+          "evidence": {
+            "quote": "POST / {random_name} .jsp?pId=== {unique ID %md_id%} <<$>> {MD5 hash of Date & Time Now}"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 24,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "HTC Pyramid Build/GRI40) AppleWebKit/533.1 (KHTML, like Gecko)",
+      "triple": [
+        {
+          "subject": {
+            "name": "HTC Pyramid",
+            "type": "Hardware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "Build/GRI40)",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "HTC Pyramid Build/GRI40)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 24,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Charset:utf-8 Connection: Keep-Alive Keep-Alive:300 Content-Type: \"multipart/form-data; boundary=\" {Random MD5 hash} \" The HTTP POST uses the body format below: pPar1c==={unique ID encrypted with RC4 and --{random MD5 hash} Content-Disposition: form-data; name=\" {random name}\" {unique ID and current Date/Time Hash encrypted with RC4 and Base64} --{random MD5 hash} Content-Disposition: form-data; name=\" {random name}\" Base64} --{random MD5 hash} Content-Disposition: form-data; name=\" {random name}\" pPar2c==={command's MD5 Hash encypted with RC4 and Base64} --{random MD5 hash} Content-Disposition: form-data; name=\" {random name}\" pPar3c==={Results/Data/StolenInformation encypted with RC4 and Base64}",
+      "triple": [
+        {
+          "subject": {
+            "name": "The HTTP POST",
+            "type": "AttackPattern"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "the body format below",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "The HTTP POST uses the body format below:"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 24,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "After process injection, the main malware executable terminates.",
+      "triple": [
+        {
+          "subject": {
+            "name": "process injection",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "main malware executable",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "After process injection, the main malware executable terminates."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 26,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Path: \"C:\\Documents and Settings\\All Users\\Application Data\\Mozilla\\svchost.exe\" Display name: Emote Procedure Call (RPC) Anti-reversing The malware checks for the \"isDebugged\" flag in the PEB (Process Environment Block).",
+      "triple": [
+        {
+          "subject": {
+            "name": "Emote",
+            "type": "Malware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "Procedure Call (RPC) Anti-reversing",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "Procedure Call (RPC) Anti-reversing"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 26,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The malware has a decoder table loaded in memory that is used for its lookup algorithm.",
+      "triple": [
+        {
+          "subject": {
+            "name": "malware",
+            "type": "Malware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "decoder table loaded in memory",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "The malware has a decoder table loaded in memory"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 27,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "decodertable = \"\\x00\\x12\\x1C\\x13\\x0A\\x0D\\x14\\x07\\x15\\x0C\\x16\\x09\\x05\\x03\\x17\\x1 \\x0E\\x08\\x06\\x11\\x04\\x1E\\x19\\x0B\\x1B\\x01\\x02\\x0F\\x18\\x20\\x21\\x42\\ \\x2C\\x2D\\x53\\x22\\x30\\x31\\x7F\\x4E\\x34\\x35\\x4B\\x5A\\x38\\x39\\x7A\\x7 \\x45\\x46\\x27\\x48\\x49\\x47\\x2B\\x4C\\x4D\\x73\\x4F\\x50\\x51\\x52\\x2E\\x5 \\x7E\\x72\\x60\\x61\\x2F\\x23\\x64\\x65\\x66\\x2A\\x68\\x69\\x67\\x36\\x6C\\x6 \\x77\\x78\\x79\\x37\\x3B\\x7C\\x7D\\x3E\\x32\\x00\\x00\\x00\\x00\\x00\\x00\\x0 A sample code snippet of the Decoder: An API Hashing technique is also utilized by the malware in order to hide relevant API functions it uses in its code.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Decoder",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "API Hashing technique",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "An API Hashing technique is also utilized by the malware in order to hide relevant API functions it uses in its code."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 27,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Rather than storing imported API names in the body, the malware author has pre-calculated the CRC hash of the API function.",
+      "triple": [
+        {
+          "subject": {
+            "name": "malware author",
+            "type": "ThreatActor"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "CRC hash",
+            "type": "SHA"
+          },
+          "evidence": {
+            "quote": "the malware author has pre-calculated the CRC hash"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 27,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "On runtime, all the malware does is to look-up the equivalent API name from its generated hash table.",
+      "triple": [
+        {
+          "subject": {
+            "name": "malware",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "hash table",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "its generated hash table"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 27,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Escalation of Privilege The malware checks the system OS: Windows 8.1 Windows 8 Windows 7 SP1 Windows Vista SP2 Windows RT 8.1 Windows RT Windows XP SP1 Windows XP SP2 Windows XP SP3 Windows Server 2012 Windows Server 2012 R2 Windows Server 2008 SP2 Windows Server 2008 R2 SP1 Windows Server 2003 SP2 If found, it attempts to exploit a vulnerability in \"win32k.sys\" identified as CVE-2013-3660 to escalate the privilege of the malware process.",
+      "triple": [
+        {
+          "subject": {
+            "name": "malware",
+            "type": "Malware"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "system OS: Windows 8.1 Windows 8 Windows 7 SP1 Windows Vista SP2 Windows RT 8.1 Windows RT Windows XP SP1 Windows XP SP2 Windows XP SP3 Windows Server 2012 Windows Server 2012 R2 Windows Server 2008 SP2 Windows Server 2008 R2 SP1 Windows Server 2003 SP2",
+            "type": "OperatingSystem"
+          },
+          "evidence": {
+            "quote": "The malware checks the system OS: Windows 8.1 Windows 8 Windows 7 SP1 Windows Vista SP2 Windows RT 8.1 Windows RT Windows XP SP1 Windows XP SP2 Windows XP SP3 Windows Server 2012 Windows Server 2012 R2 Windows Server 2008 SP2 Windows Server 2008 R2 SP1 Windows Server 2003 SP2"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 28,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The malware enables the Remote Desktop by starting the Termservice service.",
+      "triple": [
+        {
+          "subject": {
+            "name": "malware",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "Remote Desktop",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "The malware enables the Remote Desktop"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 29,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This is the code snippet where it saves the data to an XML file: Outlook Items The malware also targets victim's email data by scrounging the victim's Outlook PST files for contact's email addresses, possibly to be used for further spear-phishing attacks from known individuals.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Outlook Items",
+            "type": "Application"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "victim's email data",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "The malware also targets victim's email data"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 30,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The malware utilizes the open source project called Mimikatz and reused codes from this project to steal clear text local passwords from Lsass memory dump.",
+      "triple": [
+        {
+          "subject": {
+            "name": "malware",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "Mimikatz",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "utilizes the open source project called Mimikatz"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 30,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "ifobs.pl - the malware reused code from the Carperp ifobs module to target a banking application called iFOBS.",
+      "triple": [
+        {
+          "subject": {
+            "name": "ifobs.pl",
+            "type": "Malware"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "iFOBS",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "the malware reused code from the Carperp ifobs module to target a banking application called iFOBS."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 30,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "When using this module, the malware hooks the following libraries: { \"VistaDB_D7.bpl\", \"HProc2\", 0xA9782FE7, \"OpenDatabaseConnection\" }, { \"RtlData1.bpl\", \"HProc3\", 0×1678D314, \"TaskAfterSynchRun\" }, { \"vcl70.bpl\", \"HProc4\", 0×8D55F8B4, \"TCustomFormShow\" }, { \"vcl70.bpl\", \"HProc5\", 0×3DF02899, \"TCustomFormCloseQuery\" }, { \"RtlStore.bpl\", \"HProc6\", 0xCF6CD66, \"GlobalAppStorage\" }, { \"RtlData1.bpl\", \"HProc7\", 0xAFD2F1E2, \"FillDataToDBCache\" }, $\" ammyy.pl - this enables the malware to run AMMYY remote desktop control software %\" vnc.pl - this enables the malware to run a remote desktop VNC application Backdoor Commands The attacker can also send backdoor commands.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Malware",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "{ \"VistaDB_D7.bpl\", \"HProc2\", 0xA9782FE7, \"OpenDatabaseConnection\" }",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "the malware hooks the following libraries: { \"VistaDB_D7.bpl\", \"HProc2\", 0xA9782FE7, \"OpenDatabaseConnection\" },"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 31,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In the malware code, a command hash table is used to compare commands (in readable strings) sent by the attacker, the hash of this command string is calculated by the malware.",
+      "triple": [
+        {
+          "subject": {
+            "name": "malware",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "command hash table",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "In the malware code, a command hash table is used to compare commands"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 31,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The image below is the command and it's corresponding hash (in green font)",
+      "triple": [
+        {
+          "subject": {
+            "name": "image",
+            "type": "Unknown"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "command",
+            "type": "CommandAndControl"
+          },
+          "evidence": {
+            "quote": "The image below is the command and it's corresponding hash (in green font)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 31,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Social engineering / phishing used to gain initial network foothold $\" Cleverly disguised malware establishes remote control of victim system and downloads additional tools",
+      "triple": [
+        {
+          "subject": {
+            "name": "Social engineering",
+            "type": "Phishing"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "network foothold",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Social engineering / phishing used to gain initial network foothold $"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 33,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The network reconnaissance and lateral movement is rapid and highly effective.",
+      "triple": [
+        {
+          "subject": {
+            "name": "network reconnaissance",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "lateral movement",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "network reconnaissance and lateral movement"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 33,
+        "id": "006",
+        "source": "TEXT"
+      }
+    }
+  ]
+}

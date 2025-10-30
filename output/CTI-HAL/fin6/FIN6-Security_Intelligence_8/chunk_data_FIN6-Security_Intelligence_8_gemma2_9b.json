@@ -1,0 +1,693 @@
+{
+  "metrics": {
+    "file_name": "FIN6-Security_Intelligence_8.pdf",
+    "model_used": "gemma2:9b",
+    "doc_sha256_id": "b51860935c96a871",
+    "num_pages": 8,
+    "num_sentences_total": 69,
+    "num_sentences_used": 52,
+    "num_raw_triples": 52,
+    "num_valid_triples": 28,
+    "num_suspicious_triples": 24,
+    "avg_triples_per_sentence": 1.0,
+    "rejection_stats": {
+      "bad_structure": 0,
+      "invalid_class_or_predicate": 24
+    },
+    "runtime_seconds": 47.109994888305664
+  },
+  "data": [
+    {
+      "context": " The past two years have borne witness to the increasing collaboration between organized cybercrime groups to avoid duplication of efforts and maximize profits.",
+      "triple": [
+        {
+          "subject": {
+            "name": "organized cybercrime groups",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "duplication of efforts",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "avoid duplication of efforts"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Threat Intelligence The Anchor malware framework itself is not new and its origins date back to at least 2018.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Threat Intelligence",
+            "type": "Unknown"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "The Anchor malware framework",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "Threat Intelligence The Anchor malware framework itself is not new"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "ITG08 and TrickBot - A Loaded Duo ITG08/FIN6 is an organized cybercrime gang that has been active since 2015, primarily targeting point-of-sale (POS) machines in brick-andmortar retailers and companies in the hospitality sector across the U.S. and Europe.",
+      "triple": [
+        {
+          "subject": {
+            "name": "ITG08/FIN6",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "point-of-sale (POS) machines in brick-and-mortar retailers and companies in the hospitality sector across the U.S. and Europe",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "primarily targeting point-of-sale (POS) machines in brick-and-mortar retailers and companies in the hospitality sector across the U.S. and Europe"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In the past six months, the Anchor backdoor malware, which includes a variant that communicates over DNS (Anchor_DNS), has been used in targeted attacks on enterprise networks - including POS systems following initial infection by the TrickBot Trojan.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Anchor",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Anchor_DNS",
+            "type": "Protocol"
+          },
+          "evidence": {
+            "quote": "which includes a variant that communicates over DNS (Anchor_DNS)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The way organizations are being attacked ties with typical ITG08 activity reported throughout the past few years.",
+      "triple": [
+        {
+          "subject": {
+            "name": "organizations",
+            "type": "Organization"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "ITG08 activity",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "The way organizations are being attacked ties with typical ITG08 activity"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Tying ITG08 (FIN6) With Use of TrickBot's Anchor Framework",
+      "triple": [
+        {
+          "subject": {
+            "name": "TrickBot",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "Anchor Framework",
+            "type": "Software"
+          },
+          "evidence": {
+            "quote": "Use of TrickBot's Anchor Framework"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "A past analysis by X-Force IRIS gave extensive information about ITG08's use of a backdoor known as 'More_eggs'.",
+      "triple": [
+        {
+          "subject": {
+            "name": "ITG08",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "More_eggs",
+            "type": "Backdoor"
+          },
+          "evidence": {
+            "quote": "use of a backdoor known as 'More_eggs'"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Bringing this cybercrime seller back into the picture, SentinelOne researchers reported observing a threat actor using PowerTrick and Anchor to download two samples developed and sold by the same seller: a TerraLoader that installs the More_eggs backdoor and a TerraLoader that deploys a signed Metasploit shellcode loader.",
+      "triple": [
+        {
+          "subject": {
+            "name": "threat actor",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "PowerTrick",
+            "type": "Software"
+          },
+          "evidence": {
+            "quote": "using PowerTrick"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "We encountered the first sample in 2019 during an investigation of attacks we attributed to ITG08.",
+      "triple": [
+        {
+          "subject": {
+            "name": "sample",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "attacks",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "an investigation of attacks we attributed to ITG08"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "We found the second sample, a Terraloader dropping a More_eggs backdoor, in a public repository that also showed ties to the ITG08 group.",
+      "triple": [
+        {
+          "subject": {
+            "name": "second sample",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Terraloader",
+            "type": "Dropper"
+          },
+          "evidence": {
+            "quote": "a Terraloader dropping a More_eggs backdoor"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "TerraLoader / More_eggs sample C2 Domain Downloaded by PowerTrick (SentinelOne) drive.staticcontent[.]kz",
+      "triple": [
+        {
+          "subject": {
+            "name": "TerraLoader",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "More_eggs",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "TerraLoader / More_eggs sample"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "ITG08 use in early 2019 (X- Force IRIS) metric.onlinefonts[.]kz",
+      "triple": [
+        {
+          "subject": {
+            "name": "ITG08",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "metric.onlinefonts[.]kz",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "metric.onlinefonts[.]kz"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Found in VirusTotal host.moresecurity[.]kz",
+      "triple": [
+        {
+          "subject": {
+            "name": "VirusTotal",
+            "type": "System"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "host.moresecurity[.]kz",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "Found in VirusTotal host.moresecurity[.]kz"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Domain registration date Domain registration email More_eggs RKey TerraLoader compile date Table 1: Comparison of three More_eggs samples and their commandand-control (C&C) domains All three C&C domains were created at the same time using the same email registration address.",
+      "triple": [
+        {
+          "subject": {
+            "name": "More_eggs",
+            "type": "MalwareFamily"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "RKey",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "More_eggs RKey"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Two of the samples - the one downloaded by Anchor and the one attributed to ITG08 - use the same RKey, which is used in part to encrypt communications with the C&C host.",
+      "triple": [
+        {
+          "subject": {
+            "name": "samples",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "RKey",
+            "type": "Hash"
+          },
+          "evidence": {
+            "quote": "Two of the samples - the one downloaded by Anchor and the one attributed to ITG08 - use the same RKey"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The RKey in the final sample, 'wearenotcobaltthanks,' is a reference to the Cobalt Gang group, which previously had used the More_eggs backdoor.",
+      "triple": [
+        {
+          "subject": {
+            "name": "RKey",
+            "type": "Unknown"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "'wearenotcobaltthanks'",
+            "type": "Filename"
+          },
+          "evidence": {
+            "quote": "The RKey in the final sample, 'wearenotcobaltthanks,' is a reference to the Cobalt Gang group,"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "That first step was followed by installing an Apache Bench executable hollowed out with a Metasploit loader shellcode that 2/28/2019 2/28/2019 Click and scroll to view full table AllfordJoshua49@yandex.com ZkY3egXBulkogSbGEHqdA 3/18/2019 AllfordJoshua49@yandex.com ZkY3egXBulkogSbGEHqdA n/a 2/28/2019 AllfordJoshua49@yandex.com wearenotcobaltthanks 3/4/2019",
+      "triple": [
+        {
+          "subject": {
+            "name": "Apache Bench executable",
+            "type": "Application"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "Metasploit loader shellcode",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "hollowed out with a Metasploit loader shellcode"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The sample used a code-signing certificate issued to 'D. Bacte Ltd.', which we found in other samples that we attributed to ITG08 in some of our previous investigations.",
+      "triple": [
+        {
+          "subject": {
+            "name": "sample",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "'D. Bacte Ltd.'",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "used a code-signing certificate issued to 'D. Bacte Ltd.'"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Generally speaking, the tactics used to deploy More_eggs in victim environments, as well as other threat actor tactics, techniques and procedures (TTPs) used during these Anchor campaigns, are unusually consistent with those used by ITG08. More_eggs & TerraLoader Deployment",
+      "triple": [
+        {
+          "subject": {
+            "name": "More_eggs",
+            "type": "Malware"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "victim environments",
+            "type": "Location"
+          },
+          "evidence": {
+            "quote": "victims environments"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "According to SentinelOne, the threat actor used PowerShell to download and execute a TerraLoader that installed More_eggs.",
+      "triple": [
+        {
+          "subject": {
+            "name": "threat actor",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "PowerShell",
+            "type": "Software"
+          },
+          "evidence": {
+            "quote": "the threat actor used PowerShell"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "X-Force IRIS has observed ITG08 employ the same tactic whereby it used PowerShell and Windows Management Instrumentation (WMI) to download and execute TerraLoader, then install More_eggs on remote hosts.",
+      "triple": [
+        {
+          "subject": {
+            "name": "ITG08",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "PowerShell",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "used PowerShell"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Those who do typically install More_eggs only during the initial infection, after which they download additional malware or tools to proceed with",
+      "triple": [
+        {
+          "subject": {
+            "name": "Those",
+            "type": "Person"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "More_eggs",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "install More_eggs only during the initial infection"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "012",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "TTPs Consistent With ITG08 In a blog about the subject, researchers from Cybereason noted that many of the threat actor TTPs they observed while using the Anchor framework were consistent with FIN6 activity, including the targeting of POS systems and the use of tools such as Metasploit, Cobalt Strike and AdFind.",
+      "triple": [
+        {
+          "subject": {
+            "name": "TTPs",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "POS systems",
+            "type": "System"
+          },
+          "evidence": {
+            "quote": "the targeting of POS systems"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This activity, combined with the additional TTPs attributed to ITG08, such as the use of Metasploit, Cobalt Strike and AdFind while targeting POS systems, leads us to conclude with confidence that ITG08 is one of the threat actors using TrickBot's PowerTrick and the Anchor malware framework.",
+      "triple": [
+        {
+          "subject": {
+            "name": "ITG08",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "POS systems",
+            "type": "System"
+          },
+          "evidence": {
+            "quote": "such as the use of Metasploit, Cobalt Strike and AdFind while targeting POS systems"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "These varied relationships with elite cybercriminal actors and those who sell them tools, access and software allow ITG08 to continue to rely on its strengths in post-exploitation tactics, such as lateral movement, privilege escalation and data exfiltration, and outsource other attack vectors as needed.",
+      "triple": [
+        {
+          "subject": {
+            "name": "ITG08",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "elite cybercriminal actors",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "varied relationships with elite cybercriminal actors"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The partnership with TrickBot is not the only evolution for ITG08.",
+      "triple": [
+        {
+          "subject": {
+            "name": "ITG08",
+            "type": "ThreatActor"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "TrickBot",
+            "type": "MalwareFamily"
+          },
+          "evidence": {
+            "quote": "partnership with TrickBot"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In recent years, this group has evolved to employ additional means to obtain illicit proceeds, including the targeting of e-commerce environments by injecting malicious code into online checkout pages of compromised websites in a modus operandi known as 'Magecart.'",
+      "triple": [
+        {
+          "subject": {
+            "name": "group",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "e-commerce environments",
+            "type": "OperatingSystem"
+          },
+          "evidence": {
+            "quote": "the targeting of e-commerce environments"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "ITG08 has also been targeting e-commerce environments with a technique known as online skimming or grouped under what's known as Magecart activity.",
+      "triple": [
+        {
+          "subject": {
+            "name": "ITG08",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "e-commerce environments",
+            "type": "Location"
+          },
+          "evidence": {
+            "quote": "has also been targeting e-commerce environments"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "006",
+        "source": "TEXT"
+      }
+    }
+  ]
+}

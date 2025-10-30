@@ -1,0 +1,1245 @@
+{
+  "metrics": {
+    "file_name": "FIN7 Group Uses JavaScript and Stealer DLL Variant in New Attacks.pdf",
+    "model_used": "gemma2:9b",
+    "doc_sha256_id": "4a6dca0b0f0caa40",
+    "num_pages": 16,
+    "num_sentences_total": 139,
+    "num_sentences_used": 92,
+    "num_raw_triples": 92,
+    "num_valid_triples": 51,
+    "num_suspicious_triples": 41,
+    "avg_triples_per_sentence": 1.0,
+    "rejection_stats": {
+      "bad_structure": 0,
+      "invalid_class_or_predicate": 41
+    },
+    "runtime_seconds": 313.2083613872528
+  },
+  "data": [
+    {
+      "context": " FIN7 Group Uses JavaScript and Stealer DLL Variant in New Attacks By Edmund Brumaghin WEDNESDAY, SEPTEMBER 27, 2017 13:38 THREATS",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7 Group",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "JavaScript",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "FIN7 Group Uses JavaScript"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This post was authored by Michael Gorelik and Josh Reynolds Executive Summary Throughout this blog post we will be detailing a newly discovered RTF document family that is being leveraged by the FIN7 group (also known as the Carbanak gang) which is a Knancially-motivated group targeting the Knancial, hospitality, and medical industries.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Michael Gorelik",
+            "type": "Person"
+          },
+          "predicate": "hasAuthor",
+          "object": {
+            "name": "This post",
+            "type": "Report"
+          },
+          "evidence": {
+            "quote": "authored by Michael Gorelik and Josh Reynolds"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The document contains messages enticing the user to click on an embedded object that executes scripts which are used to infect the system with an information stealing malware variant.",
+      "triple": [
+        {
+          "subject": {
+            "name": "object",
+            "type": "DomainName"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "scripts",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "embedded object that executes scripts"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This malware is then used to steal passwords from popular browsers and mail clients which are sent to remote nodes that are Click Base64 Decodewith WScript unprotect.rtf.",
+      "triple": [
+        {
+          "subject": {
+            "name": "malware",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "steal passwords from popular browsers and mail clients",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "This malware is then used to steal passwords from popular browsers and mail clients"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "bot.js b64decode.js task.xml 2 bot.js 5 b64decode.js stealer.dll Decode b64decode.js Injectin Intelligence Center Vulnerability Research Incident Response Blog Support More",
+      "triple": [
+        {
+          "subject": {
+            "name": "b64decode.js",
+            "type": "Filename"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Decode",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "b64decode.js Decode"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "When clicked it launches an infection chain made up of JavaScript, and a Knal shellcode payload that makes use of DNS to load additional shellcode from a remote command and control server.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Knal",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "DNS",
+            "type": "Protocol"
+          },
+          "evidence": {
+            "quote": "makes use of DNS to load additional shellcode"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In this collaboration post with Morphisec Lab and Cisco's Research and EZcacy Team, we are now publishing details of this new document variant that makes use of an LNK embedded OLE object, which extracts a JavaScript bot from a document object, and injects a stealer DLL in memory using PowerShell.",
+      "triple": [
+        {
+          "subject": {
+            "name": "document",
+            "type": "Filepath"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "LNK embedded OLE object",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "which extracts a JavaScript bot from a document object, and injects a stealer DLL in memory using PowerShell."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The details we are releasing are to provide insight into attack methodologies being employed by sophisticated groups such as FIN7 who are consistently changing techniques between attacks to avoid detection, and to demonstrate the detection capabilities of the AMP for Endpoints and Threat Grid product lines.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "attack methodologies",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "attack methodologies being employed by sophisticated groups such as FIN7 who are consistently changing techniques between attacks to avoid detection"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Infection Vector The dropper variant that we encountered makes use of an LNK Kle to execute wscript.exe with the beginning of the JavaScript chain from a word document object: C:\\Windows\\System32\\cmd.exe..\\..\\..\\Windows\\System32\\cmd.exe /C set x=wsc@ript /e:",
+      "triple": [
+        {
+          "subject": {
+            "name": "dropper variant",
+            "type": "Dropper"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "LNK Kle",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "makes use of an LNK Kle"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Application\");this[String.fromCharCode(101)+'va'+'l'] (w.ActiveDocument.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Application",
+            "type": "Application"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "this[String.fromCharCode(101)+'va'+'l']",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Application"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "It also contains the reAective DLL injection PowerShell code to inject an information stealing malware variant DLL which will be discussed further.",
+      "triple": [
+        {
+          "subject": {
+            "name": "PowerShell",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "reAective DLL injection",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "PowerShell code to inject an information stealing malware variant DLL"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "016",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In order to identify similar techniques, we decided to use entropy of a given JavaScript Dle, and the base64 decoding depth to cluster Dles within a scatter plot with theggplot andggiraph R libraries.",
+      "triple": [
+        {
+          "subject": {
+            "name": "JavaScript Dle",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "entropy",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "use entropy of a given JavaScript Dle"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "018",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In the case of these documents it is used to encode JavaScript functionality multiple times, likely in order to avoid common analysis techniques employed by traditional anti-virus software which only emulate JavaScript instructions for a limited amount of iterations.",
+      "triple": [
+        {
+          "subject": {
+            "name": "documents",
+            "type": "Filepath"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "JavaScript functionality",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "In the case of these documents it is used to encode JavaScript functionality"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "It is decoded using an CDO.Message ActiveXObject invocation and specifying the ContentTransferEncoding to be base64 (note that the windows-1251 charset is Cyrillic, which may indicate Russian origin): function b64dec(data){ var cdo = new ActiveXObject(\"CDO.Message\"); var bp = cdo.",
+      "triple": [
+        {
+          "subject": {
+            "name": "cdo",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "ActiveXObject(\"CDO.Message\")",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "var cdo = new ActiveXObject(\"CDO.Message\")"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "ReadText; } This is then evaluated using an obfuscated function invocation, E.G: MyName.getGlct()[String.fromCharCode(101)+'va'+'l'](b64dec(energy)); These base64 decoding steps lead to various execution branches of JavaScript bot functionality, and the injection of a stealer DLL into memory: Figure 1: Detailed Document Infection Chain Using JavaScript and DLL Injection 6 JavaScript Entropy Entropy involves the calculation of disorder and uncertainty within a given amount of data.",
+      "triple": [
+        {
+          "subject": {
+            "name": "JavaScript",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "bot functionality",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "These base64 decoding steps lead to various execution branches of JavaScript bot functionality"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " extracted JavaScript Dles based on this calculation, since variations of these documents contain similar functionality, but employed obfuscation mechanisms makes clustering them diZcult.",
+      "triple": [
+        {
+          "subject": {
+            "name": "JavaScript",
+            "type": "Application"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Dles",
+            "type": "Filename"
+          },
+          "evidence": {
+            "quote": "extracted JavaScript Dles based on this calculation"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Carrera's blog in Python: import math def H(data): if not data: return 0 entropy = 0 for x in range(256): p_x = float(data.count(chr(x)))/len(data) if p_x > 0: entropy += - p_x*math.log(p_x, 2) return entropy This calculation is done for each JavaScript =le and is the X axis of our scatter plots that will be described in the next section.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Carrera's blog",
+            "type": "Unknown"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "Python",
+            "type": "Software"
+          },
+          "evidence": {
+            "quote": "Carrera's blog in Python"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Figure 2: Scatter plot using entropy and base64 decoding depth Write JS tor Task Create Scheduled tasks b64 decode Bot C2 JS WScript JS Execute",
+      "triple": [
+        {
+          "subject": {
+            "name": "Bot",
+            "type": "Bot"
+          },
+          "predicate": "communicatesWith",
+          "object": {
+            "name": "C2",
+            "type": "CommandAndControl"
+          },
+          "evidence": {
+            "quote": "Bot C2"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The bot functionality and C2 contact JavaScript is within multiple sets of =les at close decoding depths and entropy The task scheduling functionality vary in depth and entropy (two separate cases)",
+      "triple": [
+        {
+          "subject": {
+            "name": "bot functionality",
+            "type": "Bot"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "C2 contact JavaScript",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "The bot functionality and C2 contact JavaScript"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Figure 3: Scatter plot of PowerShell DLL documents Compressed Powershel Bnary Scheculed Task XML 2 entropy The outliers are the decoded DLLs and XML task =les.",
+      "triple": [
+        {
+          "subject": {
+            "name": "PowerShell DLL documents",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Compressed Powershel Bnary Scheculed Task XML 2 entropy",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "PowerShell DLL documents Compressed Powershel Bnary Scheculed Task XML 2 entropy"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " r 0; datr 'Dote Jelse (e) Figure 11: Code Comparison PowerShell Write and Execute Functionality Stealer DLL Recovering the DLL  One of the Dnal components of these JavaScript 'decoding chains' is a PowerShell refective DLL injection script which contains copy pasted functions fromPowersploit's Invoke-RefectivePEInjection.",
+      "triple": [
+        {
+          "subject": {
+            "name": "JavaScript",
+            "type": "Application"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "decoding chains",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "'decoding chains'"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The DLL is de-obfuscated by decoding the base64 blob and uses IO.Compression.",
+      "triple": [
+        {
+          "subject": {
+            "name": "DLL",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "IO.Compression",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "uses IO.Compression"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "DefateStream to decompress the resulting bytes.",
+      "triple": [
+        {
+          "subject": {
+            "name": "DefateStream",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "bytes",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "DefateStream to decompress the resulting bytes."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In order to recover the DLL we can simply write the decompressed bytes to disk using [io.Dle]::WriteAllBytes.",
+      "triple": [
+        {
+          "subject": {
+            "name": "[io.Dle]",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "bytes",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "using [io.Dle]::WriteAllBytes"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Firefox String Decoding Import hashing functionality involves resolving the export table for a given DLL (common for packers/malware): add PE header mov edx",
+      "triple": [
+        {
+          "subject": {
+            "name": "Firefox",
+            "type": "Browser"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "String Decoding Import hashing functionality",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "Firefox String Decoding Import hashing functionality"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "[edx+IMAGE add edx, ebp add dereferenced Offset to base address Of module mov obx add ebx, ebp xor ecx ecx Figure 15: PowerShell Injected DLL Hashing Functionality PE Offsets Then using XOR and ROL algorithm over given export values to compare against given hashes for exports to resolve: rol edx , xor",
+      "triple": [
+        {
+          "subject": {
+            "name": "edx",
+            "type": "Unknown"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "XOR",
+            "type": "Protocol"
+          },
+          "evidence": {
+            "quote": "xor edx, "
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This DLL also contains similar stealer functionality, E.G the decryption of Intelliform data using CryptUnprotectData by hashing cached URLs:",
+      "triple": [
+        {
+          "subject": {
+            "name": "DLL",
+            "type": "Application"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "stealer functionality",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "This DLL also contains similar stealer functionality"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Figure 17: PowerShell Injected DLL Intelliform Data Stealing 280020h add OFFFEOOICb Btosd stosd Bub eax , loa eax",
+      "triple": [
+        {
+          "subject": {
+            "name": "PowerShell",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "Intelliform",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "PowerShell Injected DLL Intelliform"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "[ebp+lpSubKey] IpSubKey pusb 80000001b call Regopenkeyk or eax ear jnz loc 100042c3",
+      "triple": [
+        {
+          "subject": {
+            "name": "[ebp+lpSubKey]",
+            "type": "System"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "IpSubKey",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "[ebp+lpSubKey] IpSubKey pusb 80000001b call Regopenkeyk or eax ear jnz loc 100042c3"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "[ebptdwFirstCacheEntryInfoBufferSize] loa 0a1 , pusb call FindFirstUrlcacheEntrya pusb 3000b push Pusb pusb pop call eax mov",
+      "triple": [
+        {
+          "subject": {
+            "name": "pusb",
+            "type": "Unknown"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "FindFirstUrlcacheEntrya",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "pusb call FindFirstUrlcacheEntrya pusb"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "[ebp+lpFirstCachcEntryInfo] car o5 ar jz pop dvord ptr rear] loa pusb push [ebp+lpFirstCacheEntryInfo] IpFirstCacheEntryInfo call ear Pusb Pusb This binary also contains Outlook and Firefox stealer functionality and the ability to steal login information from Google Chrome, Chromium, forks of Chromium and Opera browsers that will be discussed in the next section.",
+      "triple": [
+        {
+          "subject": {
+            "name": "binary",
+            "type": "Malware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "Outlook and Firefox stealer functionality",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "This binary also contains Outlook and Firefox stealer functionality"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Chrome, Chromium and Opera Credential Stealing  The Chrome, Chromium, Chromium forks and Opera credential stealing functionality opens the [Database Path]\\Login Data sqlite3 database, reads the URL, username, and password Delds, and calls CryptUnprotectData to decrypt user passwords.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Chrome",
+            "type": "Application"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "Credential Stealing functionality",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "The Chrome, Chromium, Chromium forks and Opera credential stealing functionality"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The following paths are checked for this database under %APPDATA%, %PROGRAMDATA%, and %LOCALAPPDATA%: \\Google\\Chrome\\User Data\\Default\\Login Data \\Chromium\\User Data\\Default\\Login Data \\MapleStudio\\ChromePlus\\User Data\\Default\\Login Data \\YandexBrowse\\User Data\\Default\\Login Data \\Nichrom\\User Data\\Default\\Login Data \\Comodo\\Dragon\\User Data\\Default\\Login Data",
+      "triple": [
+        {
+          "subject": {
+            "name": "%APPDATA%",
+            "type": "Location"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": null,
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "The following paths are checked for this database under %APPDATA%,"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Although Opera is not a fork of Chromium, the newest version has credentials with the same implementation under the path: \\Opera Software\\Opera Stable\\Login Data Stolen Data Command and Control  ",
+      "triple": [
+        {
+          "subject": {
+            "name": "Opera",
+            "type": "Application"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "credentials",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Opera is not a fork of Chromium, the newest version has credentials"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Command and Control Data Substitution Cipher This is then POSTed to a hardcoded command and control addresses, including the Google Apps Script hosting service (also notice the alfIn variable declaration which is the alphabet used for the substitution cipher): var \"1\" var 7154\" var {(losc(); vor Figure 19:",
+      "triple": [
+        {
+          "subject": {
+            "name": "Command and Control Data Substitution Cipher",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "hardcoded command and control addresses",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "This is then POSTed to a hardcoded command and control addresses"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Command and Control Data ExDltration JavaScript Functionality",
+      "triple": [
+        {
+          "subject": {
+            "name": "Command and Control",
+            "type": "CommandAndControl"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "Data ExDltration JavaScript Functionality",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "Command and Control Data ExDltration JavaScript Functionality"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Path The OLE object can be clicked on within the document during the Threat Grid run using the Open Embedded Object in Word Document playbook, which will automatically execute the embedded object during the Threat Grid run when selected from the submission dropdown menu: Figure 22: Selecting Playbook from Submission Menu Choose playbook None Conduct Active Window Change Default Playbook Dialogue OK Open Embedded Object in Word Document Visit Website Using Internet Explorer Callback URL A depiction of this automated user interaction can be seen below:",
+      "triple": [
+        {
+          "subject": {
+            "name": "Open Embedded Object in Word Document",
+            "type": "AttackPattern"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "document",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "Open Embedded Object in Word Document playbook, which will automatically execute the embedded object during the Threat Grid run when selected from the submission dropdown menu"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 12,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The JavaScript content that is periodically executed can be seen the Artifacts section and can be downloaded or resubmitted for further analysis: Figure 26:",
+      "triple": [
+        {
+          "subject": {
+            "name": "Artifacts",
+            "type": "System"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "JavaScript content",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "The JavaScript content that is periodically executed can be seen the Artifacts section"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 13,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Double Click Here To Unlock Contents Office Document Launchos a Command Shell 100 Categones Poport aror Tags Command Line Schtasks Utility Used to Create Task Imcors: Sha1",
+      "triple": [
+        {
+          "subject": {
+            "name": "Double Click Here To Unlock Contents Office Document",
+            "type": "Filename"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "Command Shell",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "Launchos a Command Shell"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 13,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " This intelligence is then integrated back into the AMP cloud protecting all customers who may be targeted by similar attack methodologies.",
+      "triple": [
+        {
+          "subject": {
+            "name": "intelligence",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "customers",
+            "type": "Person"
+          },
+          "evidence": {
+            "quote": "protecting all customers who may be targeted by similar attack methodologies."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 14,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "AMP for Endpoints  AMP for Endpoints has the ability to observe dynamic activity through a number of methods.",
+      "triple": [
+        {
+          "subject": {
+            "name": "AMP for Endpoints",
+            "type": "Application"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "ability",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "AMP for Endpoints has the ability"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 14,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "One of these is the capture of command line arguments which are then sent to the AMP cloud for analysis.",
+      "triple": [
+        {
+          "subject": {
+            "name": "capture",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "AMP cloud",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "capture of command line arguments which are then sent to the AMP cloud for analysis"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 14,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In this case, we're able to observe the execution of wscript.exe when the OLE object is clicked: Figure 27: Captured Command Line Arguments in AMP for Endpoints Device Trajectory wscript exe",
+      "triple": [
+        {
+          "subject": {
+            "name": "wscript.exe",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "OLE object",
+            "type": "Hardware"
+          },
+          "evidence": {
+            "quote": "execution of wscript.exe when the OLE object is clicked"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 14,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "File SHA-1: eeßcbf12d87c4d388f09b4f69be02e9168292065 .",
+      "triple": [
+        {
+          "subject": {
+            "name": "File",
+            "type": "Unknown"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "SHA-1: eeßcbf12d87c4d388f09b4f69be02e9168292065",
+            "type": "SHA-1"
+          },
+          "evidence": {
+            "quote": "File SHA-1: eeßcbf12d87c4d388f09b4f69be02e9168292065"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 14,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Ie }catch(e) {}; >|Users echo This triggers an Indicator of Compromise which can then be further investigated: 8 6 2017-09-07 22.37.07 UTC OpenIOC: W32 WscriptActiveDocument.ioc Description: The Windows Scripting Host (wscript.exe) was launched with parameters referencing ActiveDocument objects.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Windows Scripting Host",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "parameters referencing ActiveDocument objects",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "The Windows Scripting Host (wscript.exe) was launched with parameters referencing ActiveDocument objects."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 14,
+        "id": "013",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This is indicative of an infection vector technique that reads from an actively opened document for additional code to execute Command Line Arguments: C:|Windows|System32|cmd.exe /c set x-wsc@ript /e:js@cript |Users _ mdS.txt & echo try{w=GetObject( Wor+d Application) this[String fromCharCode( 101)+'va'+'1 ] (w ActiveDocument Shapes(1) TextFrame TextRange Text);}catc h(e){}; > |Users",
+      "triple": [
+        {
+          "subject": {
+            "name": "Command Line Arguments",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "C:|Windows|System32|cmd.exe /c set x-wsc@ript /e:js@cript |Users _ mdS.txt & echo try{w=GetObject( Wor+d Application) this[String fromCharCode( 101)+'va'+'1 ] (w ActiveDocument Shapes(1) TextFrame TextRange Text);}catc h(e){}; > |Users",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "Command Line Arguments: C:|Windows|System32|cmd.exe /c set x-wsc@ript /e:js@cript |Users _ mdS.txt & echo try{w=GetObject( Wor+d Application) this[String fromCharCode( 101)+'va'+'1 ] (w ActiveDocument Shapes(1) TextFrame TextRange Text);}catc h(e){}; > |Users"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 14,
+        "id": "014",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Figure 28: Indicator of Compromise from Captured Command Line Arguments Conclusion The FIN7 group is an example of an advanced adversary targeting a variety of industries using conventional technologies that ship with most versions of Microsoft Windows.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "variety of industries",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "targeting a variety of industries"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 15,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Through the use of Microsoft Word documents to ship entire malware platforms they have the ability to leverage scripting languages to access ActiveX controls, and \"Kle-less\" techniques to inject shipped portable executables into memory using PowerShell without ever having the portable executable touch disk.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Microsoft Word documents",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "malware platforms",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "Through the use of Microsoft Word documents to ship entire malware platforms"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 15,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Snort Rules: 44430-44433 Additional ways our customers can detect and block this threat are listed below.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Snort Rules",
+            "type": "AttackPattern"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "Additional ways our customers can detect and block this threat",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Additional ways our customers can detect and block this threat"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 15,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Indicators of Compromise JavaScript Bot Documents 6bc8770206c5f2bb4079f7583615adeb4076f2e2d0c655fbafedd9669dc3a213 df22408833b2ae58f0d3e2fe87581be31972ef56e0ebf5efafc4e6e0341b5521 2b4991b2a2792436b50404dcf6310ef2af2573505810ebac08e32f17aee3fbbe ebca565e21a42300e19f250f84b927fa3b32debf3fe13003a4aa5b71ed5cbee9 6604d806eb68fdf914dfb6bbf907a4f2bd9b8757fc4da4e7c5e4de141b8d4e2c JavaScript Bot Documents with PowerShell DLL Injection 91f028b1ade885bae2e0c6c3be2f3c3dc692830b45d4cf1a070a0bd159f1f676 ad578311d43d3aea3a5b2908bc6e408b499cc832723225ff915d9a7bc36e0aa4 fadb57aa7a82dbcb2e40c034f52096b63801efc040dd8559a4b8fc873bc962a1 91f028b1ade885bae2e0c6c3be2f3c3dc692830b45d4cf1a070a0bd159f1f676 74a5471c3aa6f9ce0c806e85929c2816ac39082f7fea8dbe8e4e98e986d4be78 f73c7ed3765fec13ffd79aef97de519cfbd6a332e81b8a247fe7d1ccb1946c9c Command and Control IPs 104[.]232[.]34[.]36 5[.]149[.]253[.]126",
+      "triple": [
+        {
+          "subject": {
+            "name": "Indicators of Compromise",
+            "type": "Report"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "JavaScript Bot Documents",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "Indicators of Compromise JavaScript Bot Documents"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 16,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "195[.]54[.]162[.]79 31[.]148[.]219[.]18 Google Apps Script Command and Control URLs hXXps://script[.]google[.]com/macros/s/AKfycbxvGGF- QBkaNIWCBFgjohBtkmyfyRpvm91yCGEvzgDvAJdqfW8_/exec hXXps://script[.]google[.]com/macros/s/AKfycbz6dmNJfCPwFchoq6WkJsMjQu22SJTJ9px hXXps://script[.]google[.]com/macros/s/AKfycbwkNc- 8rk0caDWO5I4KMymvOXVinfOpR1eevZ63xiXDvcoqOE6p/exec hXXps://script[.]google[.]com/macros/s/AKfycbxyiIBW9SHUFV4S5JM6IW- dmVADFOrTJDM7bZspeBf2Kpf4IN0/exec SHARE THIS POST RELATED CONTENT Vulnerability in Tencent WeChat custom browser could lead to remote",
+      "triple": [
+        {
+          "subject": {
+            "name": "195[.]54[.]162[.]79",
+            "type": "IPAddress"
+          },
+          "predicate": "communicatesWith",
+          "object": {
+            "name": "Google Apps Script Command and Control URLs",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "195[.]54[.]162[.]79 Google Apps Script Command and Control URLs"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 16,
+        "id": "003",
+        "source": "TEXT"
+      }
+    }
+  ]
+}

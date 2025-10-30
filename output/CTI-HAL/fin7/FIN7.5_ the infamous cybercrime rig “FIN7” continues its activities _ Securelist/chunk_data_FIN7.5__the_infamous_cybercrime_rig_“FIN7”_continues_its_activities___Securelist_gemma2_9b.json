@@ -1,0 +1,1749 @@
+{
+  "metrics": {
+    "file_name": "FIN7.5_ the infamous cybercrime rig “FIN7” continues its activities _ Securelist.pdf",
+    "model_used": "gemma2:9b",
+    "doc_sha256_id": "25bf421a8fd0ddd0",
+    "num_pages": 14,
+    "num_sentences_total": 173,
+    "num_sentences_used": 107,
+    "num_raw_triples": 107,
+    "num_valid_triples": 72,
+    "num_suspicious_triples": 35,
+    "avg_triples_per_sentence": 1.0,
+    "rejection_stats": {
+      "bad_structure": 0,
+      "invalid_class_or_predicate": 35
+    },
+    "runtime_seconds": 159.4988718032837
+  },
+  "data": [
+    {
+      "context": " FIN7.5: the infamous cybercrime rig 'FIN7' continues its activities APT REPORTS 08 MAY 2019 10 minute read FINTECH // AUTHORS YURY NAMESTNIKOV FÉLIX AIME Expert On August 1, 2018, the US Department of Justice announced that it had arrested several individuals suspected of having ties to the FIN7 cybercrime rig.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "'FIN7' ",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "the infamous cybercrime rig 'FIN7'"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "nance department employees in order to conduct wire transfers to o \" shore accounts.",
+      "triple": [
+        {
+          "subject": {
+            "name": "nance department employees",
+            "type": "Person"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "wire transfers",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "conduct wire transfers"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " as the historic FIN7, leading the researchers to believe that this threat actor had remained active despite the 2018 arrests.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "this threat actor",
+            "type": "ThreatActor"
+          },
+          "evidence": {
+            "quote": "as the historic FIN7, leading the researchers to believe that this threat actor had remained active despite the 2018 arrests."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Recent FIN7 campaigns The FIN7 intrusion set continued its tailored spear phishing campaigns throughout last year.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "spear phishing campaigns",
+            "type": "Phishing"
+          },
+          "evidence": {
+            "quote": "FIN7 intrusion set continued its tailored spear phishing campaigns"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The spear phishing campaigns were remarkably sophisticated from a social engineering perspective.",
+      "triple": [
+        {
+          "subject": {
+            "name": "spear phishing campaigns",
+            "type": "Campaign"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "sophistication",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "remarkably sophisticated"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Malicious Documents We have seen two types of documents sent to victims in these spear phishing campaigns.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Documents",
+            "type": "Filepath"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "victims",
+            "type": "Person"
+          },
+          "evidence": {
+            "quote": "sent to victims"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "rst one exploits the INCLUDEPICTURE feature of Microsoft Word to get context information about the victim's computer, and the availability and version number of Microsoft Word.",
+      "triple": [
+        {
+          "subject": {
+            "name": "rst one",
+            "type": "AttackPattern"
+          },
+          "predicate": "exploits",
+          "object": {
+            "name": "INCLUDEPICTURE feature of Microsoft Word",
+            "type": "Vulnerability_Desc"
+          },
+          "evidence": {
+            "quote": "rst one exploits the INCLUDEPICTURE feature of Microsoft Word"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The second one, which in many cases is an O \" ice document protected with a trivial password, such as '12345', '1234', etc., uses macros to execute a GRIFFON implant on the target's computer.",
+      "triple": [
+        {
+          "subject": {
+            "name": "O \"ice document",
+            "type": "Filepath"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "GRIFFON implant",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "uses macros to execute a GRIFFON implant"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Moreover, the builder allows these to modify di \" erent IOCs, such as the ! lenames of wscript.exe or sctasks.exe copies, etc. IOCs extracted from docs which use sctasks for GRIFFON persistence IOCs extracted from regular documents associated to GRIFFON GRIFFON Implant Griffon malware Spearphishing MSOffice Wscript.exe + JS",
+      "triple": [
+        {
+          "subject": {
+            "name": "wscript.exe",
+            "type": "Filename"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "!lenames",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "IOCs extracted from docs which use sctasks for GRIFFON persistence IOCs extracted from regular documents associated to GRIFFON GRIFFON Implant Griffon malware Spearphishing MSOffice Wscript.exe + JS"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Tinymet Screenshots %appdata%llocall File-less STAGEZ microsoft_appexe via the registry",
+      "triple": [
+        {
+          "subject": {
+            "name": "Tinymet",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "%appdata%\\locall\\File-less STAGEZ",
+            "type": "Filename"
+          },
+          "evidence": {
+            "quote": "Tinymet Screenshots %appdata%llocall File-less STAGEZ"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "on Malware attack pattern The GRIFFON implant is a lightweight JScript validatorstyle implant without any persistence mechanism.",
+      "triple": [
+        {
+          "subject": {
+            "name": "The GRIFFON implant",
+            "type": "AttackPattern"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "any persistence mechanism",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "without any persistence mechanism"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The malware is designed for receiving modules to be executed in-memory and sending the results to C2s.",
+      "triple": [
+        {
+          "subject": {
+            "name": "malware",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "modules",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "receiving modules to be executed"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "rst module downloaded by the GRIFFON malware to the victim's computer is an information-gathering JScript, which allows the cybercriminals to understand the context of the infected workstation.",
+      "triple": [
+        {
+          "subject": {
+            "name": "GRIFFON",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "rst module",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "rst module downloaded by the GRIFFON malware"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This module mainly relies on WMI and Windows objects to deliver results, which will be sent back to the operators.",
+      "triple": [
+        {
+          "subject": {
+            "name": "this module",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "WMI and Windows objects",
+            "type": "Software"
+          },
+          "evidence": {
+            "quote": "relies on WMI and Windows objects to deliver results"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Interestingly, more than 20 artifacts are retrieved from the system by this implant during the reconnaissance stage, from the date and time of operating system installation and membership in a Windows domain to a list of and the resolutions of the workstation's monitors.",
+      "triple": [
+        {
+          "subject": {
+            "name": "this implant",
+            "type": "Malware"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "system",
+            "type": "System"
+          },
+          "evidence": {
+            "quote": "from the system by this implant"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Meterpreter downloader The second module is used by the operators to execute an obfuscated PowerShell script, which contains a Meterpreter downloader widely known as 'Tinymet'.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Meterpreter downloader",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Tinymet",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "'Tinymet'"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This downloader, seen in past FIN7 campaigns, downloads a one-byte XOR-encrypted (eg. with the key equal to 0x50 or 0x51) piece of meterpreter shellcode to execute.",
+      "triple": [
+        {
+          "subject": {
+            "name": "downloader",
+            "type": "Downloader"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "meterpreter shellcode",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "downloads a one-byte XOR-encrypted (eg. with the key equal to 0x50 or 0x51) piece of meterpreter shellcode to execute."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The resulting screenshot is saved at '%TMP%/image.png', sent back to the attackers by the GRIFFON implant and then deleted.",
+      "triple": [
+        {
+          "subject": {
+            "name": "GRIFFON implant",
+            "type": "Malware"
+          },
+          "predicate": "communicatesWith",
+          "object": {
+            "name": "attackers",
+            "type": "Person"
+          },
+          "evidence": {
+            "quote": "sent back to the attackers by the GRIFFON implant"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "013",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "nancial cyberthreats ANCHISES MORAES, OLAF SCHWARZ 04 FEB 2021, 12:00PM 2021 predictions, episode 2: healthcare cyberthreats MARIA NAMESTNIKOVA 11 FEB 2021, 12:00PM 2021 predictions, episode 3: ICS cyberthreats EVGENY GONCHAROV 26 JAN 2021, 12:00PM Kaspersky's Advanced Targeted Threat Predictions For 2021 ARIEL JUNGHEIT, COSTIN RAIU, DAVID EMM 25 JAN 2021, 12:00PM Remote working in 2020: lessons learnt DMITRY GALOV",
+      "triple": [
+        {
+          "subject": {
+            "name": "Kaspersky's Advanced Targeted Threat Predictions For 2021",
+            "type": "Report"
+          },
+          "predicate": "hasAuthor",
+          "object": {
+            "name": "ARIEL JUNGHEIT, COSTIN RAIU, DAVID EMM",
+            "type": "Person"
+          },
+          "evidence": {
+            "quote": "Kaspersky's Advanced Targeted Threat Predictions For 2021 ARIEL JUNGHEIT, COSTIN RAIU, DAVID EMM"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "015",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Here is a PowerLinks-style method used by the attackers to achieve persistence and execute the GRIFFON implant at each user logon.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Attackers",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "PowerLinks-style method",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "Here is a PowerLinks-style method used by the attackers"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Through its light weight and modular architecture, the GRIFFON implant is the perfect validator.",
+      "triple": [
+        {
+          "subject": {
+            "name": "GRIFFON",
+            "type": "Malware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "implan",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "the GRIFFON implant"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "On the hunt for GRIFFON infrastructure Attackers make mistakes, and FIN7 are no exception.",
+      "triple": [
+        {
+          "subject": {
+            "name": "GRIFFON",
+            "type": "Campaign"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "infrastructure",
+            "type": "Infrastructure"
+          },
+          "evidence": {
+            "quote": "On the hunt for GRIFFON infrastructure"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "1 2 3 4 5 6 7 HTTP/1.1 302 Found Server: nginx Date: [retracted] Content-Type: text/html; charset=UTF-8 Content-Length: 0",
+      "triple": [
+        {
+          "subject": {
+            "name": "Server",
+            "type": "Application"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "nginx",
+            "type": "Software"
+          },
+          "evidence": {
+            "quote": "Server: nginx"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Connection: keep-alive Location: https://cloud.google.com/cdn/ Returned headers for most of the GRIFFON C2s servers on port 443 This error allowed us to follow the infrastructure week by week, until an individual pushed on Twitter the heuristic to track their C2 at the end of December 2018.",
+      "triple": [
+        {
+          "subject": {
+            "name": "GRIFFON",
+            "type": "ThreatActor"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "C2s servers on port 443",
+            "type": "Infrastructure"
+          },
+          "evidence": {
+            "quote": "Returned headers for most of the GRIFFON C2s servers on port 443"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "012",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Fake pentest company During the investigation related to the GRIFFON infrastructure, we found a strange overlap between the WHOIS record of an old GRIFFON C2 and the website of a fake company.",
+      "triple": [
+        {
+          "subject": {
+            "name": "WHOIS record",
+            "type": "DomainName"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "website of a fake company",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "overlap between the WHOIS record of an old GRIFFON C2 and the website of a fake company"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "According to the website, that domain supposedly belongs to a legitimate security company 'fully owned by the Russian Government' (sic.)",
+      "triple": [
+        {
+          "subject": {
+            "name": "DomainName",
+            "type": "DomainName"
+          },
+          "predicate": "belongsTo",
+          "object": {
+            "name": "Organization",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "belongs to a legitimate security company"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "and having o \" ices in 'Moscow, Saint Petersburg and Yekaterinburg', but the address says the company is located in Trump Tower, in New York.",
+      "triple": [
+        {
+          "subject": {
+            "name": "company",
+            "type": "Organization"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "ices",
+            "type": "Location"
+          },
+          "evidence": {
+            "quote": "having o 'ices in 'Moscow, Saint Petersburg and Yekaterinburg'"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Phrases and sentences were borrowed from at least the following companies/sites: DKSec - www.dksec.com OKIOK - www.okiok.com/services/tailored-solutions MainNerve - www.mainnerve.com Datics - www.datatics.com/cyber-security Perspective Risk - www.perspectiverisk.com Synack - https:/ /www.synack.com/company FireEye https:/ /www. !",
+      "triple": [
+        {
+          "subject": {
+            "name": "DKSec",
+            "type": "Organization"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "www.dksec.com",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "DKSec - www.dksec.com"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This activity cluster, which Kaspersky Lab has followed for a few years, uses various implants for targeting mainly banks, and developers of banking and money processing software solutions.",
+      "triple": [
+        {
+          "subject": {
+            "name": "this activity cluster",
+            "type": "Campaign"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "various implants",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "uses various implants"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "At the end of 2018, the cluster started to use not only CobaltStrike but also Powershell Empire in order to gain a foothold on the victims' networks.",
+      "triple": [
+        {
+          "subject": {
+            "name": "cluster",
+            "type": "Campaign"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "CobaltStrike",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "use not only CobaltStrike"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "After a successful penetration, it uses its own backdoors and the CobaltStrike framework or Powershell Empire components to hop to interesting parts of the network, where it can monetize its access.",
+      "triple": [
+        {
+          "subject": {
+            "name": "it",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "backdoors and the CobaltStrike framework or Powershell Empire components",
+            "type": "Infrastructure"
+          },
+          "evidence": {
+            "quote": "uses its own backdoors and the CobaltStrike framework or Powershell Empire components"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "FIN7's last campaigns were targeting banks in Europe and Central America.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "banks",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "targeting banks"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This threat actor stole € 13 million from Bank of Valetta, Malta earlier this year.",
+      "triple": [
+        {
+          "subject": {
+            "name": "ThreatActor",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "Bank of Valetta",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "This threat actor stole € 13 million from Bank of Valetta"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "suspected of stealing Example of malicious documents used in the end of 2018 to beginning of 2019 DocuSign FROM THE SAME AUTHORS Cybersecurity of connected healthcare 2020:",
+      "triple": [
+        {
+          "subject": {
+            "name": "DocuSign",
+            "type": "DomainName"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Example of malicious documents",
+            "type": "Filename"
+          },
+          "evidence": {
+            "quote": "Example of malicious documents used in the end of 2018 to beginning of 2019 DocuSign"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "le, which began with 'ms' (mses.exe - FIN7, msutil.exe EmpireMonkey).",
+      "triple": [
+        {
+          "subject": {
+            "name": "le",
+            "type": "AttackPattern"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "mses.exe",
+            "type": "Filename"
+          },
+          "evidence": {
+            "quote": "'ms' (mses.exe"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "le named 'error' in %TEMP% (Errors.txt in the case of FIN7, Errors.bat for EmpireMonkey).",
+      "triple": [
+        {
+          "subject": {
+            "name": "Error",
+            "type": "Filename"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Errors.txt",
+            "type": "Filename"
+          },
+          "evidence": {
+            "quote": "'error' in %TEMP% (Errors.txt in the case of FIN7"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Both used DocuSign decoy documents with di \" erent macros.",
+      "triple": [
+        {
+          "subject": {
+            "name": "DocuSign",
+            "type": "Software"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "decoy documents",
+            "type": "Filename"
+          },
+          "evidence": {
+            "quote": "Both used DocuSign decoy documents"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "rst version we found in September 2018, right after the arrests of the FIN7 members.",
+      "triple": [
+        {
+          "subject": {
+            "name": "members",
+            "type": "Person"
+          },
+          "predicate": "belongsTo",
+          "object": {
+            "name": "FIN7",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "the arrests of the FIN7 members"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "To deliver their malware, the cyber criminals use spearphishing emails with various types of attachments: MS O \" ice documents or spreadsheet !",
+      "triple": [
+        {
+          "subject": {
+            "name": "cyber criminals",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "spearphishing emails",
+            "type": "Phishing"
+          },
+          "evidence": {
+            "quote": "To deliver their malware, the cyber criminals use spearphishing emails"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "014",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "les exploiting some known vulnerability like CVE-2017-11882, or documents with Ole2Link and SCT.",
+      "triple": [
+        {
+          "subject": {
+            "name": "les",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "exploits",
+          "object": {
+            "name": "CVE-2017-11882",
+            "type": "Vulnerability_CVEID"
+          },
+          "evidence": {
+            "quote": "les exploiting some known vulnerability like CVE-2017-11882"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "015",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "They also use AutoIT droppers, password-protected EXE !",
+      "triple": [
+        {
+          "subject": {
+            "name": "They",
+            "type": "Person"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "AutoIT droppers",
+            "type": "Dropper"
+          },
+          "evidence": {
+            "quote": "They also use AutoIT droppers,"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "016",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "SSHon 222 CIDR GRIFFON C2 AVEMARIA C2 Distribution of targets is another factor suggesting that these two malware families may be connected.",
+      "triple": [
+        {
+          "subject": {
+            "name": "SSHon",
+            "type": "MalwareFamily"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "Distribution of targets",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Distribution of targets is another factor suggesting that these two malware families may be connected."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Most AveMaria targets (72%) were in the EU.",
+      "triple": [
+        {
+          "subject": {
+            "name": "AveMaria",
+            "type": "Malware"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "EU",
+            "type": "Region"
+          },
+          "evidence": {
+            "quote": "Most AveMaria targets (72%) were in the EU."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "AveMaria Targets Industry AveMaria Targets Regions suppllers serice poviders Africa Uarutacturing Whosae Retal Souh America",
+      "triple": [
+        {
+          "subject": {
+            "name": "AveMaria",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "Industry",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "AveMaria Targets Industry"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " CopyPaste At the end of 2018, while searching for new FIN7 campaigns via telemetry, we discovered a set of activity that we temporarily called 'CopyPaste' from a previously unknown APT.",
+      "triple": [
+        {
+          "subject": {
+            "name": "CopyPaste",
+            "type": "Campaign"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "'CopyPaste'",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "we temporarily called 'CopyPaste'"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "nancial entities and companies in one African country, which lead us to think that CopyPaste was associated with cybermercenaries or a training center.",
+      "triple": [
+        {
+          "subject": {
+            "name": "CopyPaste",
+            "type": "Malware"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "cybermercenaries or a training center",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "which lead us to think that CopyPaste was associated with cybermercenaries or a training center"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This set of activity relied on open-source tools, such as Powershell Empire, and well-documented red teaming techniques, in order to get a foothold within the victim's networks and avoid detection.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Powershell Empire",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "red teaming techniques",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "such as Powershell Empire, and well-documented red teaming techniques"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Here are the main similarities between CopyPaste and FIN7: Both used the same Microsoft PowerShell argument obfuscation order: 'powershell.exe -NoP -NonI ExecutionPolicy Bypass'.",
+      "triple": [
+        {
+          "subject": {
+            "name": "CopyPaste",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "'powershell.exe -NoP -NonI ExecutionPolicy Bypass'",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "Both used the same Microsoft PowerShell argument obfuscation order: 'powershell.exe -NoP -NonI ExecutionPolicy Bypass'"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "We have only seen FIN7 and CopyPaste use this argument list for executing their malicious Powershell Scripts.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "Powershell Scripts",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "use this argument list for executing their malicious Powershell Scripts"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The Empire C2s associated with CopyPaste had decoy redirections to Digitcert and Microsoft websites and used decoy job employment and tax websites with decoy redirections to host their payloads.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Empire C2s",
+            "type": "CommandAndControl"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "CopyPaste",
+            "type": "Campaign"
+          },
+          "evidence": {
+            "quote": "The Empire C2s associated with CopyPaste"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "FIN7 and Cobalt used decoy 302 HTTP redirections too, FIN7 on its GRIFFON C2s before January 2018, and Cobalt, on its staging servers, similar to CopyPaste.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "GRIFFON C2s",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "FIN7 on its GRIFFON C2s before January 2018"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The links between CopyPaste and FIN7 are still very weak.",
+      "triple": [
+        {
+          "subject": {
+            "name": "CopyPaste",
+            "type": "Organization"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "evidence": {
+            "quote": "links between CopyPaste and FIN7"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "dence, that there are several interconnected groups using very similar toolkits and the same infrastructure to conduct their cyberattacks.",
+      "triple": [
+        {
+          "subject": {
+            "name": "groups",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "toolkits",
+            "type": "MalwareFamily"
+          },
+          "evidence": {
+            "quote": "several interconnected groups using very similar toolkits"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "They rely on a Gri \" on JS backdoor and Cobalt/Meterpreter, and in recent attacks, Powershell Empire.",
+      "triple": [
+        {
+          "subject": {
+            "name": "They",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "Gri ' on JS backdoor and Cobalt/Meterpreter",
+            "type": "Backdoor"
+          },
+          "evidence": {
+            "quote": "They rely on a Gri \" on JS backdoor and Cobalt/Meterpreter"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The second one is CobaltGoblin/Carbanak/EmpireMonkey, which uses the same toolkit, techniques and similar infrastructure but targets only !",
+      "triple": [
+        {
+          "subject": {
+            "name": "CobaltGoblin/Carbanak/EmpireMonkey",
+            "type": "MalwareFamily"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "! ",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "targets only !"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "nancial institutions and associated software/services providers.",
+      "triple": [
+        {
+          "subject": {
+            "name": "nancial institutions",
+            "type": "Organization"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "software/services providers",
+            "type": "Software"
+          },
+          "evidence": {
+            "quote": "nancial institutions and associated software/services providers"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "012",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "We link the AveMaria botnet to these two groups with medium con !",
+      "triple": [
+        {
+          "subject": {
+            "name": "AveMaria",
+            "type": "Botnet"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "these two groups",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "We link the AveMaria botnet to these two groups"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "013",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "AveMaria's targets are mostly suppliers for big companies, and the way AveMaria manages its infrastructure is very similar to FIN7.",
+      "triple": [
+        {
+          "subject": {
+            "name": "AveMaria",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "suppliers for big companies",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "AveMaria's targets are mostly suppliers for big companies"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "015",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The last piece is the newly discovered CopyPaste group, who targeted !",
+      "triple": [
+        {
+          "subject": {
+            "name": "CopyPaste",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "! ",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "who targeted !"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "016",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "nancial entities and companies in one African country, which lead us to think that CopyPaste was associated with cybermercenaries or a training center.",
+      "triple": [
+        {
+          "subject": {
+            "name": "CopyPaste",
+            "type": "MalwareFamily"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "cybermercenaries or a training center",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "which lead us to think that CopyPaste was associated with cybermercenaries or a training center"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "017",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The links between CopyPaste and FIN7 are still very weak.",
+      "triple": [
+        {
+          "subject": {
+            "name": "CopyPaste",
+            "type": "ThreatActor"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "evidence": {
+            "quote": "links between CopyPaste and FIN7"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "018",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "They thus continue to use e \" ective spearphishing campaigns in Subscribe to our weekly e-mails The hottest research right in your inbox Subscribe Email(Required)",
+      "triple": [
+        {
+          "subject": {
+            "name": "They",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "e \"ective spearphishing campaigns",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "They thus continue to use e \"ective spearphishing campaigns"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "022",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "I understand that I can withdraw this consent at any time via e-mail by clicking the 'unsubscribe' link that I !",
+      "triple": [
+        {
+          "subject": {
+            "name": "I",
+            "type": "Person"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "e-mail",
+            "type": "EmailAddress"
+          },
+          "evidence": {
+            "quote": "via e-mail"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "024",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "FIN7/Cobalt phishing documents may seem basic, but when combined with their extensive social engineering and focused targeting, they are quite successful.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7/Cobalt",
+            "type": "ThreatActor"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "phishing documents",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "FIN7/Cobalt phishing documents"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 12,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "dent that they continue to create new personas for use in either targeting or recruiting under a 'new' brand, 'IPC'.",
+      "triple": [
+        {
+          "subject": {
+            "name": "they",
+            "type": "Person"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "personas",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "targeting or recruiting under a 'new' brand, 'IPC'"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 12,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "More information about these and related attacks is available to customers of Kaspersky Intelligence Reports.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Kaspersky Intelligence Reports",
+            "type": "Report"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "More information",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "More information about these and related attacks is available to customers of Kaspersky Intelligence Reports."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 12,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "intelreports@kaspersky.com Indicators of compromise AveMaria 185.61.138.249 tain.warzonedns[.]com noreply377.ddns[.]net 185.162.131.97 91.192.100.62 server.mtcc[.]me doddy !",
+      "triple": [
+        {
+          "subject": {
+            "name": "intelreports@kaspersky.com",
+            "type": "EmailAddress"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "AveMaria",
+            "type": "Campaign"
+          },
+          "evidence": {
+            "quote": "Indicators of compromise AveMaria"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 12,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "toekie.ddns[.]net warmaha.warzonedns[.]com CopyPaste digi-cert[.]org somtelnetworks[.]com geotrusts[.]com",
+      "triple": [
+        {
+          "subject": {
+            "name": "toekie.ddns[.]net",
+            "type": "DomainName"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "warmaha.warzonedns[.]com",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "toekie.ddns[.]net warmaha.warzonedns[.]com"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 12,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " secureclientupdate[.]com digicertweb[.]com sport-pesa[.]org itaxkenya[.]com businessdailyafrica[.]net infotrak-research[.]com nairobiwired[.]com k-24tv[.]com FIN7/GRIFFON hpservice-cdn[.]com realtek-cdn[.]com logitech-cdn[.]com pci-cdn[.]com appleservice-cdn[.]com servicebing-cdn[.]com cisco-cdn[.]com facebook77-cdn[.]com yahooservices-cdn[.]com globaltech-cdn[.]com infosys-cdn[.]com google-services-s5[.]com instagram-cdn[.]com mse-cdn[.]com akamaiservice-cdn[.]com booking-cdn[.]com live-cdn2[.]com cloud $ are-cdn-r5[.]com cdnj-cloud $ are[.]com bing-cdn[.]com",
+      "triple": [
+        {
+          "subject": {
+            "name": "secureclientupdate[.]com",
+            "type": "DomainName"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "$ are-cdn-r5[.]com",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "secureclientupdate[.]com digicertweb[.]com sport-pesa[.]org itaxkenya[.]com businessdailyafrica[.]net infotrak-research[.]com nairobiwired[.]com k-24tv[.]com FIN7/GRIFFON hpservice-cdn[.]com realtek-cdn[.]com logitech-cdn[.]com pci-cdn[.]com appleservice-cdn[.]com servicebing-cdn[.]com cisco-cdn[.]com facebook77-cdn[.]com yahooservices-cdn[.]com globaltech-cdn[.]com infosys-cdn[.]com google-services-s5[.]com instagram-cdn[.]com mse-cdn[.]com akamaiservice-cdn[.]com booking-cdn[.]com live-cdn2[.]com cloud $ are-cdn-r5[.]com cdnj-cloud $ are[.]com bing-cdn[.]com"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 13,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " servicebing-cdn[.]com cdn-yahooapi[.]com cdn-googleapi[.]com googl-analytic[.]com mse-cdn[.]com tw32-cdn[.]com gmail-cdn3[.]com digicert-cdn[.]com vmware-cdn[.]com exchange-cdn[.]com cdn-skype[.]com Search...",
+      "triple": [
+        {
+          "subject": {
+            "name": "servicebing-cdn[.]com",
+            "type": "DomainName"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "Search...",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "servicebing-cdn[.]com cdn-yahooapi[.]com cdn-googleapi[.]com googl-analytic[.]com mse-cdn[.]com tw32-cdn[.]com gmail-cdn3[.]com digicert-cdn[.]com vmware-cdn[.]com exchange-cdn[.]com cdn-skype[.]com Search..."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 14,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "windowsupdatemicrosoft[.]com msdn-cdn[.]com testing-cdn[.]com msdn-update[.]com EmpireMonkey/CobaltGoblin",
+      "triple": [
+        {
+          "subject": {
+            "name": "windowsupdatemicrosoft[.]com",
+            "type": "DomainName"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "EmpireMonkey/CobaltGoblin",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "windowsupdatemicrosoft[.]com msdn-cdn[.]com testing-cdn[.]com msdn-update[.]com EmpireMonkey/CobaltGoblin"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 14,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "(entity)-corporate[.]com (entity)-cert[.]com (entity)-no[.]org (entity)-fr[.]org (entity)-acquisition[.]org (entity)-trust[.]org riscomponents[.]pw nlscdn[.]com IN THE SAME CATEGORY Subscribe BlindEagle \" ying high in Latin America EastWind campaign: new CloudSorcerer attacks on government organizations in Russia APT trends report Q2 2024 CloudSorcerer - A new APT targeting Russian",
+      "triple": [
+        {
+          "subject": {
+            "name": "(entity)-corporate[.]com",
+            "type": "DomainName"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "CloudSorcerer",
+            "type": "MalwareFamily"
+          },
+          "evidence": {
+            "quote": "targeting Russian"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 14,
+        "id": "003",
+        "source": "TEXT"
+      }
+    }
+  ]
+}

@@ -1,0 +1,357 @@
+{
+  "metrics": {
+    "file_name": "To SDB, Or Not To SDB_ FIN7 Leveraging Shim Databases for Persistence _ Google Cloud Blog.pdf",
+    "model_used": "gemma2:9b",
+    "doc_sha256_id": "9fa4b74e987373de",
+    "num_pages": 10,
+    "num_sentences_total": 69,
+    "num_sentences_used": 38,
+    "num_raw_triples": 38,
+    "num_valid_triples": 14,
+    "num_suspicious_triples": 24,
+    "avg_triples_per_sentence": 1.0,
+    "rejection_stats": {
+      "bad_structure": 0,
+      "invalid_class_or_predicate": 24
+    },
+    "runtime_seconds": 72.2973837852478
+  },
+  "data": [
+    {
+      "context": "Mandiant identi # ed that FIN7 also used this technique to install a payment card harvesting utility for persistent access.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "this technique",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "Mandiant identi # ed that FIN7 also used this technique"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Today, shims are mainly used for compatibility purposes for legacy applications.",
+      "triple": [
+        {
+          "subject": {
+            "name": "shims",
+            "type": "Software"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "compatibility purposes for legacy applications",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "are mainly used for compatibility purposes for legacy applications"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Figure 1: Shim database registry keys HKLMISOFTWARELMicrosoftl Windows NTICurrent VersionlAppCompatFlagslCustom HKLMISOFTWARELMicrosoftl Windows NTICurrentVersion|AppCompatFlagsUnstalledSDB Once a shim database has been registered on a system, the shim database # le ('.sdb' # le extension) will be copied to the 'C:\\Windows\\AppPatch\\Custom' directory for 32-bit shims or 'C:\\Windows\\AppPatch\\Custom\\Custom64'",
+      "triple": [
+        {
+          "subject": {
+            "name": "shim database",
+            "type": "Unknown"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": ".sdb # le extension",
+            "type": "Filename"
+          },
+          "evidence": {
+            "quote": " the shim database # le ('.sdb # le extension)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Figure 2 provides a decoded excerpt from a recovered FIN7 PowerShell script showing the parameters for this command.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "PowerShell script",
+            "type": "Software"
+          },
+          "evidence": {
+            "quote": "decoded excerpt from a recovered FIN7 PowerShell script"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Figure 2: Excerpt from a FIN7 PowerShell script to install a custom shim 9 .p.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "PowerShell script",
+            "type": "Software"
+          },
+          "evidence": {
+            "quote": "Figure 2: Excerpt from a FIN7 PowerShell script to install a custom shim 9 .p."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Figure 3: Malicious shim database example Upon registering the custom shim database on a system, a # le named with a random GUID and an '.sdb' extension was wri !",
+      "triple": [
+        {
+          "subject": {
+            "name": "le",
+            "type": "Filename"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "a .sdb extension",
+            "type": "Filename"
+          },
+          "evidence": {
+            "quote": "named with a random GUID and an '.sdb' extension was wri !"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The registered shim database # le had the same MD5 hash as the # le that was initially created in the 'C:\\Windows\\Temp' directory.",
+      "triple": [
+        {
+          "subject": {
+            "name": "# le",
+            "type": "Filename"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "MD5 hash",
+            "type": "MD5"
+          },
+          "evidence": {
+            "quote": "the same MD5 hash as the # le"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " patch both the 32-bit and 64-bit versions of 'services.exe' with their CARBANAK payload.",
+      "triple": [
+        {
+          "subject": {
+            "name": "services.exe",
+            "type": "Application"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "CARBANAK payload",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "with their CARBANAK payload"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "APP_NAME type 'stringref>Microsoft Services<IAPP_NAME> <EXE ID type='hex'>a3ec6475-d421-0249-a69a-bb2dad06e58I</EXE ID> <MATCHING FILE <NAME type 'stringref>services.exe<INAME> <COMPANY_NAME type 'stringref>Microsoft Corporation<ICOMPANY_NAME> <MATCHING FILE> <PATCH REF> <NAME type 'stringref>ServicesFixOI <INAME> <PATCH REF> <",
+      "triple": [
+        {
+          "subject": {
+            "name": "APP_NAME",
+            "type": "Unknown"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "'Microsoft Services'",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "'stringref>Microsoft Services<IAPP_NAME>'"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "For the # rst stage loader, the patch overwrote the 'ScRegisterTCPEndpoint' function at relative vi \" ual address (RVA) '0x0001407c' within the services.exe process with the Contact sales malicious shellcode from the shim database # le.",
+      "triple": [
+        {
+          "subject": {
+            "name": "patch",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "'ScRegisterTCPEndpoint' function",
+            "type": "System"
+          },
+          "evidence": {
+            "quote": "the patch overwrote the 'ScRegisterTCPEndpoint' function"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "45 00 SC 00 MACHINEL 00000250: 53 00 4F 00 46 00 54 00 57 00 41 00 52 00 45 00 S.OFTWARE 00000260:",
+      "triple": [
+        {
+          "subject": {
+            "name": "SC",
+            "type": "Unknown"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "MACHINEL",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "45 00 SC 00 MACHINEL 00000250:"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The shellcode stored within the registry path 'HKLM\\SOFTWARE\\Microso $ \\DRM' used the API function 'RtlDecompressBu % er' to decompress the payload.",
+      "triple": [
+        {
+          "subject": {
+            "name": "shellcode",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "API function 'RtlDecompressBuffer'",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "used the API function 'RtlDecompressBuffer'"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "013",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Figure 9: Shim database code injection process X64",
+      "triple": [
+        {
+          "subject": {
+            "name": "Shim database code injection process",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "X64",
+            "type": "OperatingSystem"
+          },
+          "evidence": {
+            "quote": "Shim database code injection process X64"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The patch contains instructions to read additional shellcode and the CARBANAK payload stored in the registry: \"HKLMSOFTWAREIMicrosoftIDRM\" minute sleep windol services exe svchost.exe Malicious CARBANAK DLL if any file: exe\" Detection Mandiant recommends the following to detect malicious application shimming in an environment: Monitor for new shim database # les created in the default shim database directories of",
+      "triple": [
+        {
+          "subject": {
+            "name": "CARBANAK payload",
+            "type": "Malware"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "HKLMSOFTWAREIMicrosoftIDRM",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "registry: \"HKLMSOFTWAREIMicrosoftIDRM\""
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "003",
+        "source": "TEXT"
+      }
+    }
+  ]
+}

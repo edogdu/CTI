@@ -1,0 +1,573 @@
+{
+  "metrics": {
+    "file_name": "FIN7 Evolution and the Phishing LNK _ Mandiant _ Google Cloud Blog.pdf",
+    "model_used": "gemma2:9b",
+    "doc_sha256_id": "5ecc61b043cb49b3",
+    "num_pages": 12,
+    "num_sentences_total": 76,
+    "num_sentences_used": 44,
+    "num_raw_triples": 44,
+    "num_valid_triples": 23,
+    "num_suspicious_triples": 21,
+    "avg_triples_per_sentence": 1.0,
+    "rejection_stats": {
+      "bad_structure": 0,
+      "invalid_class_or_predicate": 21
+    },
+    "runtime_seconds": 82.01285982131958
+  },
+  "data": [
+    {
+      "context": " Threat Intelligence FIN7 Evolution and the Phishing LNK April 24, 2017 Mandiant Wri !",
+      "triple": [
+        {
+          "subject": {
+            "name": "Threat Intelligence",
+            "type": "Campaign"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "FIN7 Evolution and the Phishing LNK April 24, 2017 Mandiant Wri !",
+            "type": "Campaign"
+          },
+          "evidence": {
+            "quote": "Threat Intelligence FIN7 Evolution and the Phishing LNK April 24, 2017 Mandiant Wri !"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "en by: Nick Carr, Saravanan Mohankumar, Yogesh Londhe, Barry Vengerik, Dominik Weber FIN7 is a \" nancially-motivated threat group that has been associated with malicious operations dating back to late 2015.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "nancially-motivated threat group",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": " nancially-motivated threat group"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "FIN7 is referred to by many vendors as 'Carbanak Group', although we do not equate all usage of the CARBANAK backdoor with FIN7.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "'Carbanak Group'",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "is referred to by many vendors as 'Carbanak Group'"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "FireEye recently observed a FIN7 spear phishing campaign targeting personnel involved with United States Securities and Exchange",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "personnel involved with United States Securities and Exchange",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "targeting personnel involved with United States Securities and Exchange"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In this ongoing campaign, FIN7 is targeting organizations with spear phishing emails containing either a malicious DOCX or RTF \" le - two versions of the same LNK \" le and VBScript technique.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "organizations",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "FIN7 is targeting organizations"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "As with previous campaigns, and as highlighted in our annual M-Trends 2017 repo % , FIN7 is calling stores at targeted organizations to ensure they received the email and a ! empting to walk them through the infection process.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "stores at targeted organizations",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "calling stores at targeted organizations"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Infection Chain While FIN7 has embedded VBE as OLE objects for over a year, they continue to update their script launching mechanisms.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "VBE",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "has embedded VBE as OLE objects"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This VBScript checks if the '58d2a83f777942.26535794.ps1' PowerShell script is running using WMI queries and, if not, launches it.",
+      "triple": [
+        {
+          "subject": {
+            "name": "VBScript",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "WMI queries",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "This VBScript checks if the '58d2a83f777942.26535794.ps1' PowerShell script is running using WMI queries and, if not, launches it."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The shellcode retrieves an additional payload by connecting to the following C2 server using DNS: aaa.stage.14919005.www1.proslr3[.]com Once a successful reply is received from the command and control (C2) server, the PowerShell script executes the embedded Cobalt Strike shellcode.",
+      "triple": [
+        {
+          "subject": {
+            "name": "shellcode",
+            "type": "Malware"
+          },
+          "predicate": "communicatesWith",
+          "object": {
+            "name": "aaa.stage.14919005.www1.proslr3[.]com",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "connecting to the following C2 server using DNS: aaa.stage.14919005.www1.proslr3[.]com"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "ps1 \\Intel\\{BFF4219E-C7D1-2880-AE589C9CD9701C90}\\58d2a83f7776b5.64953395.t xt \\Intel\\{BFF4219E-C7D1-2880-AE589C9CD9701C90}\\58d2a83f7776e0.72726761.v bs \\Intel\\{BFF4219E-C7D1-2880-AE589C9CD9701C90}\\58d2a83f777716.48248237.v bs \\Intel\\{BFF4219E-C7D1-2880-AE58- 9C9CD9701C90}\\58d2a83f777788.86541308.v bs \\Intel\\{BFF4219E-C7D1-2880-AE58- 9C9CD9701C90}\\Foxconn.lnk",
+      "triple": [
+        {
+          "subject": {
+            "name": "ps1",
+            "type": "Application"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "\\Intel\\{BFF4219E-C7D1-2880-AE589C9CD9701C90}\\58d2a83f7776b5.64953395.txt",
+            "type": "Filename"
+          },
+          "evidence": {
+            "quote": "ps1 \\Intel\\{BFF4219E-C7D1-2880-AE589C9CD9701C90}\\58d2a83f7776b5.64953395.txt"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Figure 3: FIN7 phishing lure persistence mechanisms 1C:lWindowslsystem32Ischtasks.exe; \"C:lWindowslsystem32lschtasks Icreate /tn",
+      "triple": [
+        {
+          "subject": {
+            "name": "Figure 3",
+            "type": "Report"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "FIN7 phishing lure persistence mechanisms",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "Figure 3: FIN7 phishing lure persistence mechanisms"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "\"ZSUUvsCJNF\" Itr \"\"C:lWindowslSystem32lWScript.exe\" \"IUsers  [user_name]Untell {BFF4219E-C7DI-2880-AE58 - 9C9CD9701C90}158d2a83f777788.86541308.vbs\" //B\"",
+      "triple": [
+        {
+          "subject": {
+            "name": "ZSUUvsCJNF",
+            "type": "Hash"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Itr",
+            "type": "Filename"
+          },
+          "evidence": {
+            "quote": "ZSUUvsCJNF\" Itr"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "HKEY CURRENT_USERISoftwarelMicrosoftl WindowslCurrentVersionlRun",
+      "triple": [
+        {
+          "subject": {
+            "name": "HKEY CURRENT_USER",
+            "type": "System"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "HKEY CURRENT_USERISoftwarelMicrosoftl WindowslCurrentVersionlRun"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "acker Shortcut Files In many cases, a ! acker-created LNK \" les can reveal valuable information about the a ! acker's development environment.",
+      "triple": [
+        {
+          "subject": {
+            "name": "acker Shortcut Files",
+            "type": "Filename"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "valuable information",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "can reveal valuable information"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "LNK \" les have been valuable during Mandiant incident response investigations as they include volume serial number, NetBIOS name, and MAC address.",
+      "triple": [
+        {
+          "subject": {
+            "name": "LNK",
+            "type": "Filepath"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "volume serial number",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "LNK \" les have been valuable during Mandiant incident response investigations as they include volume serial number"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "012",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "For example, one of these FIN7 LNK \" les contained the following prope % ies: Version: 0 NetBIOS name: andy-pc Droid volume identi \" er: e2c10c40-6f7d4442-bcec-470c96730bca Droid \" le identi \" er: a6eea972-0e2f-11e78b2d-0800273d5268",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7 LNK les",
+            "type": "Filepath"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "Version: 0 NetBIOS name: andy-pc Droid volume identi er: e2c10c40-6f7d4442-bcec-470c96730bca Droid le identi er: a6eea972-0e2f-11e78b2d-0800273d5268",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "has the following prope % ies:"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "013",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Example Phishing Lures Filename: Doc33.docx",
+      "triple": [
+        {
+          "subject": {
+            "name": "Doc33.docx",
+            "type": "Filename"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Example Phishing Lures",
+            "type": "Campaign"
+          },
+          "evidence": {
+            "quote": "Example Phishing Lures Filename: Doc33.docx"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "MD5 : 6a5a42ed234910121dbb7d1994ab5a5e Filename: Mail.",
+      "triple": [
+        {
+          "subject": {
+            "name": "MD5",
+            "type": "MD5"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "6a5a42ed234910121dbb7d1994ab5a5e",
+            "type": "SHA-256"
+          },
+          "evidence": {
+            "quote": "MD5 : 6a5a42ed234910121dbb7d1994ab5a5e"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "% f MD5: 1a9e113b2f3caa7a141a94c8bc187ea7 FIN7 April 2017 Community Protection Event On April 12, in response to FIN7 actively",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "Community Protection Event",
+            "type": "Campaign"
+          },
+          "evidence": {
+            "quote": "in response to FIN7 actively"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " targeting multiple clients, FireEye kicked o & a Community Protection Event (CPE) - a coordinated e & o % by FireEye as a Service (FaaS), Mandiant, FireEye iSight Intelligence, and our product team - to secure all clients a & ected by this campaign.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FireEye",
+            "type": "Organization"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "multiple clients",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "targeting multiple clients"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 12,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Posted in Threat Intelligence-Security & Identity Related articles Threat Intelligence DeFied Expectations - Examining Web3 Heists Threat Intelligence By Mandiant · 18-minute read Threat Intelligence Threat Intelligence A Measure of Motive: How A !",
+      "triple": [
+        {
+          "subject": {
+            "name": "Threat Intelligence",
+            "type": "Campaign"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "! ",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "A !"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 12,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "ackers Weaponize Digital Analytics Tools By Mandiant · 23-minute read Threat Intelligence Threat Intelligence",
+      "triple": [
+        {
+          "subject": {
+            "name": "Threat Intelligence",
+            "type": "Campaign"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "Mandiant",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "ackers Weaponize Digital Analytics Tools By Mandiant"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 12,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "I Spy With My Li ! le Eye: Uncovering an Iranian Counterintelligence Operation By Mandiant · 13-minute read Threat Intelligence PEAKLIGHT: Decoding the Stealthy MemoryOnly Malware Threat Intelligence By Mandiant · 22-minute read",
+      "triple": [
+        {
+          "subject": {
+            "name": "I Spy With My Li ! le Eye",
+            "type": "Report"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "Iranian Counterintelligence Operation",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "Uncovering an Iranian Counterintelligence Operation"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 12,
+        "id": "003",
+        "source": "TEXT"
+      }
+    }
+  ]
+}

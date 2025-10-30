@@ -1,0 +1,693 @@
+{
+  "metrics": {
+    "file_name": "MappingMITREToSandWormAPT.pdf",
+    "model_used": "gemma2:9b",
+    "doc_sha256_id": "c2115cda16accfa1",
+    "num_pages": 12,
+    "num_sentences_total": 77,
+    "num_sentences_used": 46,
+    "num_raw_triples": 46,
+    "num_valid_triples": 28,
+    "num_suspicious_triples": 18,
+    "avg_triples_per_sentence": 1.0,
+    "rejection_stats": {
+      "bad_structure": 0,
+      "invalid_class_or_predicate": 18
+    },
+    "runtime_seconds": 51.70606875419617
+  },
+  "data": [
+    {
+      "context": " < B A C K   T O   B L O G Mapping MITRE ATT&CK to SandWorm APT's Global Campaign A B B Y   T H U R M A N 2 8   O C T O B E R   2 0 2 0 RELIAQUEST On Thursday, October 15th, the United States Department of Justice (DoJ) indicted six Russian military oIcers connected to the SandWorm advanced persistent threat (APT) group, a threat group attributed to Russia's Main Intelligence Directorate (GRU).",
+      "triple": [
+        {
+          "subject": {
+            "name": "SandWorm",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "United States Department of Justice (DoJ)",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "indicted six Russian military oIcers connected to the SandWorm advanced persistent threat (APT) group, a threat group attributed to Russia's Main Intelligence Directorate (GRU)."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The indictment alleged that the men belonged to Military Unit 77445 of the GRU and coordinated a destructive cyber campaign against thousands of US and international corporations, organizations, political campaigns, and governments.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Military Unit 77445",
+            "type": "Organization"
+          },
+          "predicate": "belongsTo",
+          "object": {
+            "name": "GRU",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "belonged to Military Unit 77445 of the GRU"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Throughout the years, Digital Shadows (now ReliaQuest) has followed SandWorm, and we even analyzed the impact of the indictment in our recent ShadowTalk podcast.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Digital Shadows",
+            "type": "Organization"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "ReliaQuest",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "Digital Shadows (now ReliaQuest)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "With this new indictment and a couple of new pieces of information, we thought this would be the perfect opportunity to revisit the tactics, techniques, and procedures (TTPs) behind the SandWorm APT.",
+      "triple": [
+        {
+          "subject": {
+            "name": "SandWorm APT",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "tactics",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "revisit the tactics, techniques, and procedures (TTPs) behind the SandWorm APT."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "A Brief Snapshot of SandWorm Threat Actors SandWorm is an APT group that has been active since at least 2009, with some researchers suggesting the group was involved in attacks against Georgia in 2008.",
+      "triple": [
+        {
+          "subject": {
+            "name": "SandWorm",
+            "type": "ThreatActor"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "APT group",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "SandWorm is an APT group"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "They also represent SandWorm's Srst global law enforcement reaction to their deployment of the NotPetya malware, which crippled networks worldwide.",
+      "triple": [
+        {
+          "subject": {
+            "name": "SandWorm",
+            "type": "ThreatActor"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "deployment of the NotPetya malware",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "deployment of the NotPetya malware"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Notable Campaigns Attributed to SandWorm _",
+      "triple": [
+        {
+          "subject": {
+            "name": "SandWorm",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "Notable Campaigns",
+            "type": "Campaign"
+          },
+          "evidence": {
+            "quote": "Notable Campaigns Attributed to SandWorm"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Around December 2015 and December 2016, SandWorm attempted to destabilize Ukraine by launching cyberattacks against companies that support the country's electric infrastructure, disrupting the supply of electricity to more than 225,000 Ukrainian customers.",
+      "triple": [
+        {
+          "subject": {
+            "name": "SandWorm",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "companies that support the country's electric infrastructure",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "SandWorm attempted to destabilize Ukraine by launching cyberattacks against companies that support the country's electric infrastructure"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "SandWorm launched spearphishing campaigns targeting local government entities, political parties, and campaigns in France, including those connected with French President Emmanuel Macron's presidential campaign.",
+      "triple": [
+        {
+          "subject": {
+            "name": "SandWorm",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "local government entities",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "SandWorm launched spearphishing campaigns targeting local government entities"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " _ SandWorm retaliated against the 2018 Winter Olympics by launching cyberattacks against critical infrastructure after a Russian government-sponsored doping effort led to Russian athletes being unable to participate under the Russian hag.",
+      "triple": [
+        {
+          "subject": {
+            "name": "SandWorm",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "critical infrastructure",
+            "type": "Infrastructure"
+          },
+          "evidence": {
+            "quote": "retailed against the 2018 Winter Olympics by launching cyberattacks against critical infrastructure"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Around April 2018, SandWorm undermined efforts to hold Russia accountable for its use of a weapons-grade nerve agent on foreign soil by launching spearphishing campaigns against international and government organizations investigating the poisoning of a former GRU oIcer and his daughter.",
+      "triple": [
+        {
+          "subject": {
+            "name": "SandWorm",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "international and government organizations",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "SandWorm undermined efforts to hold Russia accountable for its use of a weapons-grade nerve agent on foreign soil by launching spearphishing campaigns against international and government organizations"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "MITRE ATT&CK Mapping INITIAL ACCESS T1566: Phishing SandWorm threat group members primarily used spearphishing emails to gain access to computers or account credentials.",
+      "triple": [
+        {
+          "subject": {
+            "name": "SandWorm",
+            "type": "ThreatActor"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "spearphishing emails",
+            "type": "Phishing"
+          },
+          "evidence": {
+            "quote": "SandWorm threat group members primarily used spearphishing emails"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " commands and scripts to discover system information, execute code, and download malware.",
+      "triple": [
+        {
+          "subject": {
+            "name": "commands",
+            "type": "AttackPattern"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "system information",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "discover system information"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The tool operated only in memory and was not easily detectable by antivirus software.",
+      "triple": [
+        {
+          "subject": {
+            "name": "tool",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "memory",
+            "type": "Hardware"
+          },
+          "evidence": {
+            "quote": "operated only in memory"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "User Execution Many of the spearphishing emails sent by SandWorm contained malware-laced documents that required user execution to deploy.",
+      "triple": [
+        {
+          "subject": {
+            "name": "SandWorm",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "User Execution",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "spearphishing emails sent by SandWorm contained malware-laced documents that required user execution to deploy."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "PERSISTENCE T1078: Valid Accounts To maintain their foothold, SandWorm obtained and repeatedly used existing accounts' credentials to preserve persistence in victim systems.",
+      "triple": [
+        {
+          "subject": {
+            "name": "SandWorm",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "existing accounts' credentials",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "SandWorm obtained and repeatedly used existing accounts' credentials"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "PRIVILEGE ESCALATION T1078: Valid Accounts SandWorm leveraged malware to escalate system privileges and determine whether particular antivirus processors were running, then attempted to identify other computers on the same network to potentially compromise.",
+      "triple": [
+        {
+          "subject": {
+            "name": "SandWorm",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "malware",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "le leveraged malware to escalate system privileges"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " DEFENSE EVASION T1070: Indicator Removal on Host SandWorm used an algorithm to obscure particular features of the Olympic Destroyer malware to obstruct post-attack investigations and avoid detection.",
+      "triple": [
+        {
+          "subject": {
+            "name": "SandWorm",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "algorithm",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "used an algorithm"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "T1036: Masquerading On multiple occasions, SandWorm attempted to masquerade their activity through researching and emulating malware used by the Lazarus Group.",
+      "triple": [
+        {
+          "subject": {
+            "name": "SandWorm",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "activity",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Masquerading On multiple occasions, SandWorm attempted to masquerade their activity"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "T1552: Unsecured Credentials SandWorm leveraged customized malware to overwrite itself to incorporate any additional usernames and passwords that it could obtain from the previous computer before spreading to the next computer.",
+      "triple": [
+        {
+          "subject": {
+            "name": "T1552",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "customized malware",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "Unsecured Credentials SandWorm leveraged customized malware"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " DISCOVERY T1083: File and Directory Discovery SandWorm repeatedly accessed and browsed Sles, ran malicious scripts, and searched compromised machines for credential Sles and Sles containing network conSguration details.",
+      "triple": [
+        {
+          "subject": {
+            "name": "SandWorm",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "Sles",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "SandWorm repeatedly accessed and browsed Sles"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "LATERAL MOVEMENT T1210: Exploitation of Remote Services SandWorm exploited remote services to gain unauthorized access to internal systems.",
+      "triple": [
+        {
+          "subject": {
+            "name": "SandWorm",
+            "type": "ThreatActor"
+          },
+          "predicate": "exploits",
+          "object": {
+            "name": "remote services",
+            "type": "Exploit-kit"
+          },
+          "evidence": {
+            "quote": "SandWorm exploited remote services"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "File and Directory Discovery After gaining access to victims' computers, SandWorm threat actors performed various functions designed to identify, collect, package, and view targeted data, including usernames, IP addresses, and server data relating to RDP sessions on the target computers.",
+      "triple": [
+        {
+          "subject": {
+            "name": "SandWorm",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "victims' computers",
+            "type": "OperatingSystem"
+          },
+          "evidence": {
+            "quote": "After gaining access to victims' computers"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "EXFILTRATION T1078: Valid Accounts SandWorm leveraged legitimate credentials to exSltrate data from a victim network and retrieve internal documents from machines",
+      "triple": [
+        {
+          "subject": {
+            "name": "SandWorm",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "legitimate credentials",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "leveraged legitimate credentials"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "For now, SandWorm's indictments will limit their ability to use the Western Snancial system or travel to any country that may have an extradition agreement with the US.",
+      "triple": [
+        {
+          "subject": {
+            "name": "SandWorm",
+            "type": "ThreatActor"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "Western Snancial system",
+            "type": "System"
+          },
+          "evidence": {
+            "quote": "use the Western Snancial system"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "As nation-state operations are investigated and pieced together through international cooperation, the US will likely continue to Sle indictments against associated actors to increase pressure on them.",
+      "triple": [
+        {
+          "subject": {
+            "name": "US",
+            "type": "Organization"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "associated actors",
+            "type": "Person"
+          },
+          "evidence": {
+            "quote": "indictments against associated actors"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " R E S O U R C E S Related Blogs R E L I A Q U E S T Report Reveals Spearphishing Constitutes 81% of Utilities Sector Alerts 1   M",
+      "triple": [
+        {
+          "subject": {
+            "name": "Report",
+            "type": "Report"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "Spearphishing",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "Report Reveals Spearphishing"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " See GreyMatter in Action Get a live demo of our security operations platform, GreyMatter, and learn how you can improve visibility, reduce complexity, and manage risk in your organization.",
+      "triple": [
+        {
+          "subject": {
+            "name": "GreyMatter",
+            "type": "Software"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "security operations platform",
+            "type": "Software"
+          },
+          "evidence": {
+            "quote": "Get a live demo of our security operations platform, GreyMatter"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "000",
+        "source": "TEXT"
+      }
+    }
+  ]
+}

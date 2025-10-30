@@ -1,0 +1,1677 @@
+{
+  "metrics": {
+    "file_name": "On the Hunt for FIN7_ Pursuing an Enigmatic and Evasive Global Criminal Operation _ Mandiant _ Google Cloud Blog.pdf",
+    "model_used": "gemma2:9b",
+    "doc_sha256_id": "72b2f4bb862a1dc3",
+    "num_pages": 64,
+    "num_sentences_total": 236,
+    "num_sentences_used": 106,
+    "num_raw_triples": 105,
+    "num_valid_triples": 69,
+    "num_suspicious_triples": 36,
+    "avg_triples_per_sentence": 0.9905660377358491,
+    "rejection_stats": {
+      "bad_structure": 0,
+      "invalid_class_or_predicate": 36
+    },
+    "runtime_seconds": 222.04224514961243
+  },
+  "data": [
+    {
+      "context": " Threat Intelligence On the Hunt for FIN7: Pursuing an Enigmatic and Evasive Global Criminal Operation August 1, 2018 Mandiant Wri !",
+      "triple": [
+        {
+          "subject": {
+            "name": "Mandiant",
+            "type": "Organization"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Wri",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Mandiant Wri"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "FIN7 is referred to by many vendors as 'Carbanak Group,' although we do not equate all usage of the CARBANAK backdoor with FIN7.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Carbanak Group",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "'Carbanak Group,' although"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This blog explores the range of FIN7's criminal ventures, the technical innovation and social engineering ingenuity that powered their success, a glimpse into their recent campaigns, their apparent use of a security company as a front for criminal operations, and what their success means for the threat landscape moving forward.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "criminal ventures",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "This blog explores the range of FIN7's criminal ventures"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In some instances, when they encountered and could not obtain payment card data from point of sale (POS) systems secured with end-to-end encryption (E2EE) or point-to-point encryption (P2PE), FIN7 pivoted to target # nance depa % ments within their victim organizations.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "# nance depa % ments",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "FIN7 pivoted to target # nance depa % ments"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Fu % hermore, in April 2017, FireEye repo % ed that FIN7 sent spear phishing emails to personnel involved with United States Securities and Exchange Commission (SEC) # lings at multiple organizations, providing fu % her insight into FIN7's targeting.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "personnel involved with United States Securities and Exchange Commission (SEC) filings",
+            "type": "Person"
+          },
+          "evidence": {
+            "quote": "sent spear phishing emails to personnel involved with United States Securities and Exchange Commission (SEC) # lings"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "During campaigns that FireEye associates with FIN7, victims within the following sectors have been targeted within the United States and Europe: Restaurants *Travel Hospitality *Education Casinos and Gaming *Construction Energy *Retail",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "victims",
+            "type": "Person"
+          },
+          "evidence": {
+            "quote": "have been targeted within the United States and Europe"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "So $ ware *Business services FIN7's Innovation Enabled their Success Throughout FireEye's tracking of FIN7 campaigns, the a !",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "Campaigns",
+            "type": "Campaign"
+          },
+          "evidence": {
+            "quote": "FireEye's tracking of FIN7 campaigns"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "For example, in April 2017, FireEye blogged about FIN7's spear phishing emails that leveraged hidden sho % cut # les (LNK # les) to initiate the infection and VBScript functionality launched by mshta.exe to infect the victim.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "victim",
+            "type": "Person"
+          },
+          "evidence": {
+            "quote": "leveraged hidden sho % cut # les (LNK # les) to initiate the infection and VBScript functionality launched by mshta.exe to infect the victim."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "FireEye also previously repo % ed on FIN7's use of the CARBANAK backdoor as a postexploitation tool to cement their foothold in a network and maintain access to victim environments.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "CARBANAK",
+            "type": "Backdoor"
+          },
+          "evidence": {
+            "quote": "FIN7's use of the CARBANAK backdoor"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "acks dating back to 2013, with usage a ! ributable to FIN7 beginning in late 2015, although how interconnected the campaigns employing the malware over this # ve-year span are is unclear.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "campaigns employing the malware",
+            "type": "Campaign"
+          },
+          "evidence": {
+            "quote": "attributable to FIN7 beginning in late 2015"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "FIN7's use of CARBANAK is pa % icularly notable due to their use of creative persistence mechanisms to launch the backdoor.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "CARBANAK",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "FIN7's use of CARBANAK"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Another notable characteristic of FIN7 has been their heavy use of digital ce % i # cates.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "digital ce % i # cates",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "their heavy use of digital ce % i # cates"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "By digitally signing their phishing documents, backdoors and later stage tools, FIN7 was able to bypass many security controls that may limit execution of macros from O \" ce documents and restrict execution of unsigned binaries on trusted systems.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "phishing documents",
+            "type": "EmailAddress"
+          },
+          "evidence": {
+            "quote": "By digitally signing their phishing documents"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The threat group regularly tested malicious DOC, DOCX, and RTF phishing documents against public repositories to check static detection engine coverage.",
+      "triple": [
+        {
+          "subject": {
+            "name": "threat group",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "public repositories",
+            "type": "HostingTargetLists"
+          },
+          "evidence": {
+            "quote": "tested malicious DOC, DOCX, and RTF phishing documents against public repositories"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "These methods inspired deep command line obfuscation research and the release of Daniel Bohannon's Invoke-DOSfuscation.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Daniel Bohannon",
+            "type": "Person"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "Invoke-DOSfuscation",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "release of Daniel Bohannon's Invoke-DOSfuscation"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Reference Table 2 and Table 3 for a selection of samples and their associated command line obfuscation techniques.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Table 2",
+            "type": "Report"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "selection",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "a selection of samples"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "FIN7's reach extended beyond their targets' computer systems.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "their targets' computer systems",
+            "type": "System"
+          },
+          "evidence": {
+            "quote": "extended beyond their targets' computer systems"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Their phishing has o $ en exploited urgent, high value business ma !",
+      "triple": [
+        {
+          "subject": {
+            "name": "Their",
+            "type": "Unknown"
+          },
+          "predicate": "exploits",
+          "object": {
+            "name": "phishing",
+            "type": "Phishing"
+          },
+          "evidence": {
+            "quote": "Their phishing has o $ en exploited urgent, high value business ma ! "
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Other FIN7 phishing emails masqueraded as detailed catering orders or requests for special menus tailored to individuals with dietary restrictions.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "phishing emails",
+            "type": "Phishing"
+          },
+          "evidence": {
+            "quote": "Other FIN7 phishing emails"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "ern of complaints emerged and has continued for well over a year, where FIN7 has contacted stores and corporate o \" ces to lodge food poisoning complaints with malicious a !",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "contacted stores and corporate o !",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "where FIN7 has contacted stores and corporate o !"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Internally dubbed 'FINdigestion' by FireEye, this pa !",
+      "triple": [
+        {
+          "subject": {
+            "name": "FINdigestion",
+            "type": "Campaign"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "FINdigestion",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "Internally dubbed 'FINdigestion' by FireEye,"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Food poisoning control Center for Food and Applied Nutrition (CFSAN) <fda@CFSAN gov> CF Friday February 16, 2018 at 3*39 PM Show Details FDAdoc 584.9 KB Preview All THE CENTER FOR FOOD SAFETY AND APPLIED NUTRITION (CFSAN) Hallo.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Food poisoning control Center for Food and Applied Nutrition (CFSAN)",
+            "type": "Organization"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "CF",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "Food poisoning control Center for Food and Applied Nutrition (CFSAN) <fda@CFSAN gov> CF Friday February 16, 2018 at 3*39 PM Show Details FDAdoc 584.9 KB Preview All THE CENTER FOR FOOD SAFETY AND APPLIED NUTRITION (CFSAN) Hallo."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "There were 4 reported food poisoning cases in vour state over the past month, including two cases of severe poisoning: It was further detected that food poisoning was caused by cross-contamination from handling raw beef or undercooked hamburgers.",
+      "triple": [
+        {
+          "subject": {
+            "name": "food poisoning",
+            "type": "Unknown"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "cross-contamination from handling raw beef or undercooked hamburgers",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "It was further detected that food poisoning was caused by cross-contamination from handling raw beef or undercooked hamburgers."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "It was brought to our attention that at least three of four patients dined at your restaurant network branches shortly before poisoning and suspect that food was contaminated .",
+      "triple": [
+        {
+          "subject": {
+            "name": "patients",
+            "type": "Person"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "restaurant network branches",
+            "type": "Location"
+          },
+          "evidence": {
+            "quote": "that at least three of four patients dined at your restaurant network branches"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Figure 1: FDA themed spear phishing email",
+      "triple": [
+        {
+          "subject": {
+            "name": "Figure 1",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "FDA themed spear phishing email",
+            "type": "Phishing"
+          },
+          "evidence": {
+            "quote": "Figure 1: FDA themed spear phishing email"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "It is notewo % hy that the BATELEUR backdoor activity # rst identi # ed by Proofpoint in July 2017, which FireEye tracks as a suspected FIN7 subgroup, uses highly-customized graphics for their targets, o $ en created in Adobe Photoshop.",
+      "triple": [
+        {
+          "subject": {
+            "name": "BATELEUR",
+            "type": "Backdoor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "highly-customized graphics",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "uses highly-customized graphics"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In this same phishing campaign, FIN7's malicious a ! achment was graphically themed to match, as shown in Figure 2.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "phishing campaign",
+            "type": "Campaign"
+          },
+          "evidence": {
+            "quote": "In this same phishing campaign, FIN7's malicious a ! achment was graphically themed to match"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "You are trying t0 view this document an online viewer using F Center for Food Safety and Applied Nutrition",
+      "triple": [
+        {
+          "subject": {
+            "name": "You",
+            "type": "Person"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "this document",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "You are trying t0 view this document"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "LNK # les can contain metadata that reveals a ! ributes about the systems on which the LNKs were created, including original # le paths, volume serial numbers, MAC addresses, and hostnames.",
+      "triple": [
+        {
+          "subject": {
+            "name": "LNK #",
+            "type": "Filename"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "metadata",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "LNK # les can contain metadata that reveals a ! ributes about the systems on which the LNKs were created"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "FIN7 LNK metadata shows that the actors routinely used vi % ual machines with generic",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "vi%ual machines",
+            "type": "Hardware"
+          },
+          "evidence": {
+            "quote": "used vi % ual machines"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " hostnames such as ANDY-PC or USER-PC, and default hostnames with the structure WIN-[A-Z0-9]{11} (e.g. WIN-ABCDEFGH1JK).",
+      "triple": [
+        {
+          "subject": {
+            "name": "hostnames",
+            "type": "Unknown"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "ANDY-PC or USER-PC, and default hostnames with the structure WIN-[A-Z0-9]{11} (e.g. WIN-ABCDEFGH1JK)",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "such as ANDY-PC or USER-PC, and default hostnames with the structure WIN-[A-Z0-9]{11} (e.g. WIN-ABCDEFGH1JK)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "FireEye has tracked several hostname and path toolmarks associated with FIN7's operations, which we have used to link clusters of threat activity together.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "hostname and path toolmarks",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "FireEye has tracked several hostname and path toolmarks associated with FIN7's operations"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Notable personas from the technical data, which are explored in more detail in the Technical Appendix section, include: \"andy\" / \"andy-pc\" \"Hass\" \"jimbo\" \" Константин \" (Konstantin) \"oleg\" This analysis allowed us to understand FIN7's systems and correlate future a !",
+      "triple": [
+        {
+          "subject": {
+            "name": "andy",
+            "type": "Person"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "andy-pc",
+            "type": "Person"
+          },
+          "evidence": {
+            "quote": "\"andy\" / \"andy-pc\""
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Video Playback of FIN7 Operations While responding to multiple FIN7 intrusions, FireEye recovered a custom video recording capability used by FIN7 as a pa % of their operations.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "custom video recording capability",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "used by FIN7 as a pa % of their operations."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 12,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "With the patched source code, FireEye can decode and playback FIN7's video monitoring for a ' ected victims in possession of these # les.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FireEye",
+            "type": "Organization"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "patched source code",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "With the patched source code"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 12,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Throughout 2018, FireEye has continued to identify multiple domains registered using pa !",
+      "triple": [
+        {
+          "subject": {
+            "name": "FireEye",
+            "type": "Organization"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "multiple domains registered using pa ",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": " has continued to identify multiple domains registered using pa "
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 13,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Some evidence fu % her characterizing the nature of this campaign suggests these malicious documents were sent to # nancial institution customers in Eastern Europe and Central Asia as early as September 2017.",
+      "triple": [
+        {
+          "subject": {
+            "name": "malicious documents",
+            "type": "Malware"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "# nancial institution customers",
+            "type": "Person"
+          },
+          "evidence": {
+            "quote": "sent to # nancial institution customers"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 13,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The targeting of individuals rather than organizations would mark a signi # cant shi $ in their targeting, although it is also possible that the banks spoofed in these campaigns were FIN7's ultimate targets.",
+      "triple": [
+        {
+          "subject": {
+            "name": "targeting",
+            "type": "AttackPattern"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "individuals",
+            "type": "Person"
+          },
+          "evidence": {
+            "quote": "The targeting of individuals rather than organizations would mark a signi # cant shi $ in their targeting,"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 13,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The documents were meticulously cra $ ed to appear as though they came from legitimate organizations (e.g. restaurant associations and suppliers of POS hardware).",
+      "triple": [
+        {
+          "subject": {
+            "name": "documents",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "legitimate organizations",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "appear as though they came from legitimate organizations"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 13,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "ackers are now leveraging an updated JavaScript backdoor dubbed GRIFFON.",
+      "triple": [
+        {
+          "subject": {
+            "name": "hackers",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "GRIFFON",
+            "type": "Backdoor"
+          },
+          "evidence": {
+            "quote": "are now leveraging an updated JavaScript backdoor dubbed GRIFFON"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 14,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Unveiling FIN7's Front Company and Industry Figure 3: Combi Security logo as retrieved from 2016 cache of combisecurity.com",
+      "triple": [
+        {
+          "subject": {
+            "name": "Combi Security",
+            "type": "Organization"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "FIN7's Front Company",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "Combi Security logo as retrieved from 2016 cache of combisecurity.com"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 14,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "According to U.S. law enforcement, at least a po % ion of FIN7 activity was run out of a front company dubbed Combi Security.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Combi Security",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "a po % ion of FIN7 activity was run out of a front company dubbed Combi Security"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 14,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " its website reveals that the company purpo % ed to be 'the world leaders in the # eld of comprehensive protection of large information systems from modern cyber threats' with headqua % ers in Moscow, Haifa, and Odessa.",
+      "triple": [
+        {
+          "subject": {
+            "name": "the company",
+            "type": "Organization"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "'the world leaders in the # eld of comprehensive protection of large information systems from modern cyber threats'",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "purpo% ed to be 'the world leaders in the # eld of comprehensive protection of large information systems from modern cyber threats'"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 15,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "We have identi # ed job adve % isements for Combi Security that have been posted on popular Russian, Ukrainian, and Uzbek job recruitment sites, as well as numerous individuals who most likely worked for the company.",
+      "triple": [
+        {
+          "subject": {
+            "name": "job advertisements",
+            "type": "Indicator"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "Combi Security",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "job adve % isements for Combi Security"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 15,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "ing individuals as puppets has been a common component of at least some criminal schemes - for example, reshipping mules who are recruited through postings on career sites adve % ising a ! ractive work-from-home jobs - FIN7's veiling of full-scale # nancial compromises as legitimate o ' ensi ve security engagements is pa % icularly notable.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "full-scale # nancial compromises",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "FIN7's veiling of full-scale # nancial compromises"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 15,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The apparent success of Combi Security in recruiting unsuspecting individuals in this manner, may lead to more of this type of technical recruitment by cyber criminals in the future.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Combi Security",
+            "type": "Organization"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "individuals",
+            "type": "Person"
+          },
+          "evidence": {
+            "quote": "recruiting unsuspecting individuals"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 15,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " The criminal organization behind FIN7 is almost ce % ainly comprised of many additional individuals beyond those already apprehended by law enforcement authorities.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "criminal organization",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "The criminal organization behind FIN7"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 16,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Conclusion These recent announcements by U.S. law enforcement highlight the positive impact that can result from synergy between private and public sector organizations in disrupting organized cyber crime operations.",
+      "triple": [
+        {
+          "subject": {
+            "name": "U.S. law enforcement",
+            "type": "Organization"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "positive impact",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "highlight the positive impact"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 17,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Hass \\Desktop\\ Картинки \\New\\outlook3.png cmd.exe /c",
+      "triple": [
+        {
+          "subject": {
+            "name": "Hass",
+            "type": "System"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "cmd.exe",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "Hass \\Desktop\\ Картинки \\New\\outlook3.png cmd.exe"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 19,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "jscript %TEMP%\\crashpad.ini EXIF Creation Time 2018:01:11 13:16:00 C:\\Users\\ Hass \\Desktop\\ Картинки \\New\\outlook2.png cmd.exe /c",
+      "triple": [
+        {
+          "subject": {
+            "name": "jscript",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "%TEMP%\\crashpad.ini",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "jscript %TEMP%\\crashpad.ini"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 19,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "jscript %TEMP%\\crashpad.ini EXIF Creation Time 2017:06:23 15:18:00",
+      "triple": [
+        {
+          "subject": {
+            "name": "jscript",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "%TEMP%\",crashpad.ini",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "jscript %TEMP%\"crashpad.ini"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 19,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " C:\\Users\\ Work \\Desktop\\IMAGES\\outlook2.png wscript.exe //b /e:",
+      "triple": [
+        {
+          "subject": {
+            "name": "C:\\Users\\ Work \\Desktop\\IMAGES\\outlook2.png",
+            "type": "Filename"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "wscript.exe",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "C:\\Users\\ Work \\Desktop\\IMAGES\\outlook2.png wscript.exe //b /e:"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 20,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "jscript %TEMP%\\debug.txt Table 2: Suspected FIN7 spear phishing launch parameters and a # acker local system a ! ifacts @set w=wsc@ript /b /e:",
+      "triple": [
+        {
+          "subject": {
+            "name": "jscript",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "%TEMP%\",debug.txt\" Table 2: Suspected FIN7 spear phishing launch parameters and a # acker local system a ! ifacts @set w=wsc@ript /b /e:",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "jscript %TEMP%\"debug.txt\" Table 2: Suspected FIN7 spear phishing launch parameters and a # acker local system a ! ifacts @set w=wsc@ript /b /e:"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 20,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " (c);}catch(e){} >%HOMEPATH%\\t.txt & wscript //b /e:",
+      "triple": [
+        {
+          "subject": {
+            "name": "%HOMEPATH%",
+            "type": "Filepath"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "\t.txt",
+            "type": "Filename"
+          },
+          "evidence": {
+            "quote": "%HOMEPATH%\t.txt"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 21,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "%TEMP%\\AdobeUpdateMana Table 3: FIN7 spear phishing launch parameters and a # acker local system a ! ifacts FIN7 Tactics, Techniques & Procedures (TTPs) FireEye is providing insight into FIN7's notable methodologies across multiple stages of the a !",
+      "triple": [
+        {
+          "subject": {
+            "name": "%TEMP%\\AdobeUpdateMana",
+            "type": "Filepath"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "a # acker local system a ! ifacts FIN7 Tactics, Techniques & Procedures (TTPs)",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Table 3: FIN7 spear phishing launch parameters and a # acker local system a ! ifacts FIN7 Tactics, Techniques & Procedures (TTPs)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 23,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " level domains such as mail, www1, www2, p (eg. 'mail[.]qefg[.]info')",
+      "triple": [
+        {
+          "subject": {
+            "name": "level domains",
+            "type": "DomainName"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "'mail[.]qefg[.]info'",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "such as mail, www1, www2, p (eg. 'mail[.]qefg[.]info')"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 25,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Newly observed domains registered via NameCheap Unusually long or numerous DNS queries with the structure",
+      "triple": [
+        {
+          "subject": {
+            "name": "domains",
+            "type": "DomainName"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "NameCheap",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "registered via NameCheap"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 26,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "[pw|us|club|info|site|top] (eg. 'pvze[.]club') Outbound connections to newly registered, hyphenated domains Table 4: FIN7 TTPs FIN7 Indicators FireEye is providing these granular technical indicators so that interested pa % ies can be !",
+      "triple": [
+        {
+          "subject": {
+            "name": "[pw|us|club|info|site|top]",
+            "type": "DomainName"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "eg. 'pvze[.]club'",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "'pvze[.]club'"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 26,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "6a5a42ed234910121d 6ac5ae6546746e3a95 754fc509328af413d93 7b2315 ' 1f2d763857aa 99975b5ee2ddd31e89 9eb71edd5ec99294a1 b5829caad7c448c558 c8b8420d1503ae48 '",
+      "triple": [
+        {
+          "subject": {
+            "name": "6a5a42ed234910121d",
+            "type": "SHA-256"
+          },
+          "predicate": "has",
+          "object": {
+            "name": " 6ac5ae6546746e3a95 ",
+            "type": "SHA-256"
+          },
+          "evidence": {
+            "quote": "6a5a42ed234910121d 6ac5ae6546746e3a95"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 28,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " e494356fc0db7ef600 06b9e2fdd2c0eeb78b 80eed9f87a18b0093e b4d48f3e1ae339f2fcb e2a6b351c276d02d71 b14bc8cbc7f2d36179e bbd99ef280efebe906 01d666fcbc4cdcedbf 03e85ad4217775906e",
+      "triple": [
+        {
+          "subject": {
+            "name": "e494356fc0db7ef600",
+            "type": "SHA-256"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "MD5",
+            "type": "MD5"
+          },
+          "evidence": {
+            "quote": "e494356fc0db7ef600 06b9e2fdd2c0eeb78b 80eed9f87a18b0093e b4d48f3e1ae339f2fcb e2a6b351c276d02d71 b14bc8cbc7f2d36179e bbd99ef280efebe906 01d666fcbc4cdcedbf 03e85ad4217775906e"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 29,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " 3b12f36a01326ec649e 402c34d7d6ce92bf5a 41c6861313e731bd3f8 42a2a2352f6b1f5818f3 499ebef3ab31a2f98fc 4b7a742d5c98fc62f0f 4bf691809224d17e49c 511af2b4c62fa4c2bb9 52cf6a63da29331d80 560e72858ee413d7a6 5a0b796c7a6040e02",
+      "triple": [
+        {
+          "subject": {
+            "name": "3b12f36a01326ec649e",
+            "type": "SHA-256"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "402c34d7d6ce92bf5a",
+            "type": "SHA-256"
+          },
+          "evidence": {
+            "quote": "3b12f36a01326ec649e 402c34d7d6ce92bf5a"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 32,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "5d9525b48870dc4381 5dd2e677fd1d65f051b 63e2eb258a85ed4e72 6a860285a6f75219951 6adec78e874232722c 70f0f8db551dd6b084 72d973eb ) c00d2617 74165408 ' 12d195 ) 9d 793511c86a0469d579",
+      "triple": [
+        {
+          "subject": {
+            "name": "5d9525b48870dc4381",
+            "type": "SHA-256"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "SHA-256",
+            "type": "SHA-256"
+          },
+          "evidence": {
+            "quote": "5d9525b48870dc4381"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 33,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " 79628a598303692238 7d664485c53b98180e 82a32d98e68891625b 853a53419d9dbc606d 856cec68ddd28367c0 8608b31a446f42a7f36 8bd798e89d075827cc 94771bcf572d5c0b83 973377e27b5d ' a289f 9788b3faa29ba9eb4c 9b87f9f6498c241f502",
+      "triple": [
+        {
+          "subject": {
+            "name": "79628a598303692238",
+            "type": "SHA-256"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "a289f",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "79628a598303692238 7d664485c53b98180e 82a32d98e68891625b 853a53419d9dbc606d 856cec68ddd28367c0 8608b31a446f42a7f36 8bd798e89d075827cc 94771bcf572d5c0b83 973377e27b5d ' a289f"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 34,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "684c aaf42acedc38565f4c3 b5cc86726ab8f1 ) 3c2 b6f005236a37367a14 c0d122bcdcb6ede7fc c3f48e69bb90be828b c5e94d973ed4f963dd c6cddc475d62503a17",
+      "triple": [
+        {
+          "subject": {
+            "name": "684c aaf42acedc38565f4c3 b5cc86726ab8f1",
+            "type": "SHA-256"
+          },
+          "predicate": "has",
+          "object": {
+            "name": " ) 3c2 b6f005236a37367a14 c0d122bcdcb6ede7fc c3f48e69bb90be828b c5e94d973ed4f963dd c6cddc475d62503a17",
+            "type": "Hash"
+          },
+          "evidence": {
+            "quote": "684c aaf42acedc38565f4c3 b5cc86726ab8f1 ) 3c2 b6f005236a37367a14 c0d122bcdcb6ede7fc c3f48e69bb90be828b c5e94d973ed4f963dd c6cddc475d62503a17"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 35,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " daf7f61acb277ac44 ' f2ac2ec8173db4963d f80a80d25b3393825b fa1c548a5d691ac9ce7 fa93c93a02fe2dee8a faed087e820cad3c02 fc661e18137583dc140 032fe02e54a010d21f 14334c8f93f04965921 2abad0ae32dd72bac5",
+      "triple": [
+        {
+          "subject": {
+            "name": "daf7f61acb277ac44",
+            "type": "SHA-256"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "' f2ac2ec8173db4963d f80a80d25b3393825b fa1c548a5d691ac9ce7 fa93c93a02fe2dee8a faed087e820cad3c02 fc661e18137583dc140 032fe02e54a010d21f 14334c8f93f04965921 2abad0ae32dd72bac5",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "daf7f61acb277ac44 ' f2ac2ec8173db4963d f80a80d25b3393825b fa1c548a5d691ac9ce7 fa93c93a02fe2dee8a faed087e820cad3c02 fc661e18137583dc140 032fe02e54a010d21f 14334c8f93f04965921 2abad0ae32dd72bac5"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 37,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " 189c72bfd8ae31abc ' 5 302ab8bd6a8e ' a58a 40c4c02d1e506a5 ' c f6f9405327d8d15 )",
+      "triple": [
+        {
+          "subject": {
+            "name": "189c72bfd8ae31abc",
+            "type": "SHA-256"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "' 5 302ab8bd6a8e ' a58a 40c4c02d1e506a5 ' c f6f9405327d8d15 )",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "189c72bfd8ae31abc ' 5 302ab8bd6a8e ' a58a 40c4c02d1e506a5 ' c f6f9405327d8d15 )"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 39,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " d4088f8202e0eb27f9 dc8b30c5253f02a790 e020668055eb1d2271 c517f48bf95a4f3ecba d7ca38e21327541787a Malware BABYMETAL BABYMETAL",
+      "triple": [
+        {
+          "subject": {
+            "name": "d4088f8202e0eb27f9",
+            "type": "SHA-256"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Malware",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "d4088f8202e0eb27f9 dc8b30c5253f02a790 e020668055eb1d2271 c517f48bf95a4f3ecba d7ca38e21327541787a Malware BABYMETAL BABYMETAL"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 40,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " BABYMETAL BIRDDOG BIRDDOG CARBANAK CARBANAK CARBANAK CARBANAK CARBANAK CARBANAK CARBANAK CARBANAK CARBANAK CARBANAK CARBANAK CARBANAK",
+      "triple": [
+        {
+          "subject": {
+            "name": "BABYMETAL",
+            "type": "MalwareFamily"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "BIRDDOG",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "BABYMETAL BIRDDOG BIRDDOG"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 41,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " CARBANAK CARBANAK CARBANAK CARBANAK DRIFTPIN DRIFTPIN DRIFTPIN DRIFTPIN SIMPLECRED BIRDDOG IPs",
+      "triple": [
+        {
+          "subject": {
+            "name": "CARBANAK",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "DRIFTPIN",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "CARBANAK CARBANAK CARBANAK CARBANAK DRIFTPIN DRIFTPIN DRIFTPIN DRIFTPIN"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 42,
+        "id": "000",
+        "source": "TEXT"
+      }
+    }
+  ]
+}

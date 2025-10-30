@@ -1,0 +1,669 @@
+{
+  "metrics": {
+    "file_name": "WMIPowerShellBackdoors_POSHSPY.pdf",
+    "model_used": "gemma2:9b",
+    "doc_sha256_id": "c5c6b7fa7330c9f8",
+    "num_pages": 6,
+    "num_sentences_total": 72,
+    "num_sentences_used": 58,
+    "num_raw_triples": 58,
+    "num_valid_triples": 27,
+    "num_suspicious_triples": 31,
+    "avg_triples_per_sentence": 1.0,
+    "rejection_stats": {
+      "bad_structure": 0,
+      "invalid_class_or_predicate": 31
+    },
+    "runtime_seconds": 52.27325916290283
+  },
+  "data": [
+    {
+      "context": "Dunwoody Mandiant has observed APT29 using a stealthy backdoor that we call POSHSPY.",
+      "triple": [
+        {
+          "subject": {
+            "name": "APT29",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "POSHSPY",
+            "type": "Backdoor"
+          },
+          "evidence": {
+            "quote": "APT29 using a stealthy backdoor that we call POSHSPY"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "POSHSPY leverages two of the tools the group frequently uses: PowerShell and Windows Management Instrumentation (WMI).",
+      "triple": [
+        {
+          "subject": {
+            "name": "POSHSPY",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "PowerShell",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "leverages two of the tools the group frequently uses: PowerShell"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "POSHSPY makes the most of using built-in Windows features - so-called 'living o \" the land' - to make an especially stealthy backdoor.",
+      "triple": [
+        {
+          "subject": {
+            "name": "POSHSPY",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "built-in Windows features",
+            "type": "Software"
+          },
+          "evidence": {
+            "quote": "makes the most of using built-in Windows features"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "POSHSPY's use of WMI to both store and persist the backdoor code makes it nearly invisible to anyone not familiar with the intricacies of WMI.",
+      "triple": [
+        {
+          "subject": {
+            "name": "POSHSPY",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "WMI",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "POSHSPY's use of WMI"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Its use of a PowerShell payload means that only legitimate system processes are utilized and that the malicious code execution can only be identi # ed through enhanced logging or in memory.",
+      "triple": [
+        {
+          "subject": {
+            "name": "PowerShell",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "legitimate system processes",
+            "type": "System"
+          },
+          "evidence": {
+            "quote": "Its use of a PowerShell payload means that only legitimate system processes are utilized"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The backdoor's infrequent beaconing, tra $ c obfuscation, extensive encryption and use of geographically local, legitimate websites for command and control (C2) make identi # cation of its network tra $ c di $ cult.",
+      "triple": [
+        {
+          "subject": {
+            "name": "backdoor",
+            "type": "Backdoor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "geographically local, legitimate websites",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "use of geographically local, legitimate websites for command and control (C2)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "We # rst discussed APT29's use of this backdoor as pa % of our 'No Easy Breach' talk.",
+      "triple": [
+        {
+          "subject": {
+            "name": "APT29",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "backdoor",
+            "type": "Backdoor"
+          },
+          "evidence": {
+            "quote": "APT29's use of this backdoor"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "014",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "For additional details on how we # rst identi # ed this backdoor, and the epic investigation it was pa % of, see the slides and presentation.",
+      "triple": [
+        {
+          "subject": {
+            "name": "backdoor",
+            "type": "Backdoor"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "presentation",
+            "type": "Report"
+          },
+          "evidence": {
+            "quote": "how we # rst identi # ed this backdoor, and the epic investigation it was pa % of, see the slides and presentation"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "015",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Threat Intelligence Dissecting One of APT29's Fileless WMI and PowerShell Backdoors (POSHSPY)",
+      "triple": [
+        {
+          "subject": {
+            "name": "APT29",
+            "type": "ThreatActor"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "POSHSPY",
+            "type": "MalwareFamily"
+          },
+          "evidence": {
+            "quote": "one of APT29's Fileless WMI and PowerShell Backdoors (POSHSPY)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "016",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "WMI provides many administrative capabilities on local and remote systems, including querying system information, sta % ing and stopping processes, and se !",
+      "triple": [
+        {
+          "subject": {
+            "name": "WMI",
+            "type": "Application"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "administrative capabilities",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "WMI provides many administrative capabilities"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Windows system WMI data is stored in the WMI common information model (CIM) repository, which consists of several # les in the System32\\wbem\\Repository directory.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Windows system",
+            "type": "OperatingSystem"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "WMI data",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Windows system WMI data"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "WMI classes are the primary structure within WMI.",
+      "triple": [
+        {
+          "subject": {
+            "name": "WMI classes",
+            "type": "Unknown"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "primary structure",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "are the primary structure"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "WMI permanent event subscriptions can be used to trigger actions when speci # ed conditions are met.",
+      "triple": [
+        {
+          "subject": {
+            "name": "WMI permanent event subscriptions",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "actions",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "can be used to trigger actions"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "ackers o & en use this functionality to persist the execution of backdoors at system sta % up.",
+      "triple": [
+        {
+          "subject": {
+            "name": "hackers",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "backdoors",
+            "type": "Backdoor"
+          },
+          "evidence": {
+            "quote": "hackers o & en use this functionality to persist the execution of backdoors"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "WMI Filters de # ne conditions that will trigger a Consumer, including system sta % up, the execution of a program, the passing of a speci # ed time and many others.",
+      "triple": [
+        {
+          "subject": {
+            "name": "WMI Filters",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "Consumer",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "WMI Filters de # ne conditions that will trigger a Consumer"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "013",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "We have observed APT29 use WMI to persist a backdoor and also store the PowerShell backdoor code.",
+      "triple": [
+        {
+          "subject": {
+            "name": "APT29",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "WMI",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "We have observed APT29 use WMI to persist a backdoor"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "016",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This allowed them to install a persistent backdoor without leaving any a % ifacts on the system's hard drive, outside of the WMI repository.",
+      "triple": [
+        {
+          "subject": {
+            "name": "them",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "backdoor",
+            "type": "Backdoor"
+          },
+          "evidence": {
+            "quote": "install a persistent backdoor"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "020",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " The BfeOnServiceSta % TypeChange Filter was bound to the CommandLineEventConsumer WindowsParentalControlsMigration.",
+      "triple": [
+        {
+          "subject": {
+            "name": "BfeOnServiceSta",
+            "type": "Application"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "% TypeChange Filter",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "The BfeOnServiceSta % TypeChange Filter"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The WindowsParentalControlsMigration consumer was con # gured to silently execute a base64-encoded PowerShell command.",
+      "triple": [
+        {
+          "subject": {
+            "name": "WindowsParentalControlsMigration",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "PowerShell",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "execute a base64-encoded PowerShell command"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "WindowsParentalControlsMigration CommandLineTemplate Figure 3 contains the decoded PowerShell command from the 'CommandLineTemplate.'",
+      "triple": [
+        {
+          "subject": {
+            "name": "WindowsParentalControlsMigration",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "CommandLineTemplate",
+            "type": "Software"
+          },
+          "evidence": {
+            "quote": "'CommandLineTemplate.'"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " ICO GIF JPG PNG MP3 BMP The sample in this example used 11 legitimate domains owned by an organization located near the victim.",
+      "triple": [
+        {
+          "subject": {
+            "name": "sample",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "11 legitimate domains",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "The sample in this example used 11 legitimate domains"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Infrequent beaconing, use of DGA and compromised infrastructure for C2, and appended # le headers used to bypass content inspection made this backdoor di $ cult to identify using typical network monitoring techniques.",
+      "triple": [
+        {
+          "subject": {
+            "name": "backdoor",
+            "type": "Backdoor"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "compromised infrastructure",
+            "type": "Infrastructure"
+          },
+          "evidence": {
+            "quote": "use of DGA and compromised infrastructure for C2"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "By 'living o \" the land' they were able to make an extremely discrete backdoor that they can deploy alongside their more conventional and noisier backdoor families, in order to help ensure persistence even a & er remediation.",
+      "triple": [
+        {
+          "subject": {
+            "name": "backdoor",
+            "type": "Backdoor"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "'living o \" the land'",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "'living o \" the land'"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "As stealthy as POSHSPY can be, it comes to light quickly if you know where to look.",
+      "triple": [
+        {
+          "subject": {
+            "name": "POSHSPY",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Stealthy",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "As stealthy as POSHSPY can be"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This presentation by Christopher Glyer and Devon Kerr contains additional information on a ! acker use of WMI in past Mandiant investigations.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Christopher Glyer",
+            "type": "Person"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "! acker",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Christopher Glyer and Devon Kerr contains additional information on a ! acker use of WMI in past Mandiant investigations."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "012",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Posted in Threat Intelligence-Security & Identity Threat Intelligence XRefer: The GeminiAssisted Binary Navigator By Mandiant • 26-minute read Follow us Google Cloud Bridging the Gap: Elevating Red Team Assessments with Application Security Testing By Mandiant • 13-minute read Google Cloud Products Privacy Terms Threat Intelligence (QR)",
+      "triple": [
+        {
+          "subject": {
+            "name": "GeminiAssisted Binary Navigator",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "The GeminiAssisted Binary Navigator By Mandiant",
+            "type": "Report"
+          },
+          "evidence": {
+            "quote": "The GeminiAssisted Binary Navigator By Mandiant"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Coding My Way Out of Here: C2 in Browser Isolation Environments By Mandiant • 8-minute read Help Threat Intelligence Seeing Through a GLASSBRIDGE: Understanding the Digital Marketing Ecosystem Spreading Pro-PRC In ! uence Operations By Google Threat Intelligence Group · 13-minute read English",
+      "triple": [
+        {
+          "subject": {
+            "name": "Coding My Way Out of Here: C2 in Browser Isolation Environments",
+            "type": "Report"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Mandiant",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "By Mandiant"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "003",
+        "source": "TEXT"
+      }
+    }
+  ]
+}

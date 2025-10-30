@@ -1,0 +1,669 @@
+{
+  "metrics": {
+    "file_name": "AnalysisOfCyberattackOnUS.pdf",
+    "model_used": "gemma2:9b",
+    "doc_sha256_id": "c2ec558b95fb4356",
+    "num_pages": 11,
+    "num_sentences_total": 84,
+    "num_sentences_used": 64,
+    "num_raw_triples": 64,
+    "num_valid_triples": 27,
+    "num_suspicious_triples": 37,
+    "avg_triples_per_sentence": 1.0,
+    "rejection_stats": {
+      "bad_structure": 0,
+      "invalid_class_or_predicate": 37
+    },
+    "runtime_seconds": 59.480337381362915
+  },
+  "data": [
+    {
+      "context": "Privacy Statement Third-Party Cookies Microsoft Microsoft Security  Solutions    Products    Threat intelligence    Services",
+      "triple": [
+        {
+          "subject": {
+            "name": "Products",
+            "type": "Software"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Threat intelligence",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Products    Threat intelligence"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "All Microsoft    Blog home / Partners Resources    More    Search  New York 369 of targets Washington; DC.",
+      "triple": [
+        {
+          "subject": {
+            "name": "New York",
+            "type": "Location"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "Washington; DC",
+            "type": "Location"
+          },
+          "evidence": {
+            "quote": "New York 369 of targets Washington; DC"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Our sensors revealed that the campaign primarily targeted public sector institutions and non-governmental organizations like think tanks and research centers, but also included educational institutions and private-sector corporations in the oil and gas, chemical, and hospitality industries.",
+      "triple": [
+        {
+          "subject": {
+            "name": "campaign",
+            "type": "Campaign"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "public sector institutions and non-governmental organizations like think tanks and research centers, but also included educational institutions and private-sector corporations in the oil and gas, chemical, and hospitality industries",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "the campaign primarily targeted public sector institutions and non-governmental organizations like think tanks and research centers, but also included educational institutions and private-sector corporations in the oil and gas, chemical, and hospitality industries"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Meanwhile, numerous alerts in Windows Defender Advanced Threat Protection exposed the attacker techniques across the attack chain.",
+      "triple": [
+        {
+          "subject": {
+            "name": "attacker",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "attack chain",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "exposed the attacker techniques across the attack chain."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Third-party security researchers have attributed the attack to a threat actor named APT29 or CozyBear, which largely overlaps with the activity group that Microsoft calls YTTRIUM.",
+      "triple": [
+        {
+          "subject": {
+            "name": "APT29",
+            "type": "ThreatActor"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "CozyBear",
+            "type": "ThreatActor"
+          },
+          "evidence": {
+            "quote": "apt actor named APT29 or CozyBear"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "012",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Attack overview The aggressive campaign began early in the morning of Wednesday, November 14.",
+      "triple": [
+        {
+          "subject": {
+            "name": "campaign",
+            "type": "Campaign"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "morning",
+            "type": "Time"
+          },
+          "evidence": {
+            "quote": "early in the morning"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Phishing targets in different locations Chicago New York 39 of targets 36% of targets STATES Washington; DC.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Phishing",
+            "type": "AttackPattern"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "Chicago",
+            "type": "Location"
+          },
+          "evidence": {
+            "quote": "Phishing targets in different locations Chicago"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The spear-phishing emails used in this attack resemble file-sharing notifications from OneDrive.",
+      "triple": [
+        {
+          "subject": {
+            "name": "emails",
+            "type": "Phishing"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "file-sharing notifications",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "used in this attack resemble file-sharing notifications"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Encoded content in the LNK file The encoded payload-another heavily obfuscated PowerShell script-is decoded and executed: Decoded second script The second script carves out two additional resources from within the .LNK file: ds7002.PDF (A decoy PDF) cyzfc.dat (The first stage implant) Command and control The first-stage DLL, cyzfc.dat, is created by the PowerShell script in the path %AppData%\\Local\\cyzfc.dat.",
+      "triple": [
+        {
+          "subject": {
+            "name": "PowerShell script",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": ".LNK file",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "The encoded payload-another heavily obfuscated PowerShell script-is decoded and executed"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " The second stage is an instance of Cobalt Strike, a commercially available penetration testing tool, which performs the following steps: Define a local named pipe with the format \\\\.\\pipe\\MSSE-<number>-server, where <number> is a random number between 0 and 9897 Connecting to the pipe, write it global data with size 0x3FE00 Implement a backdoor over the named pipe: Read from the pipe (maximum 0x3FE00 bytes) to an allocated buffer DeXOR the payload onto a new RW memory region, this time with a much simple XOR key: simple XORing every 4 bytes with 0x7CC2885F Turn the region to be RX Create a thread that starts running the payload'",
+      "triple": [
+        {
+          "subject": {
+            "name": "Cobalt Strike",
+            "type": "Software"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "backdoor",
+            "type": "Backdoor"
+          },
+          "evidence": {
+            "quote": "Implement a backdoor over the named pipe"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This configuration information is de-XORed at the third payload runtime: The configuration information itself mostly contains C&C information: CobaltStrike is a feature-rich penetration testing tool that provides remote attackers with a wide range of capabilities, including escalating privileges, capturing user input, executing arbitrary commands through PowerShell or WMI, performing reconnaissance, communicating with C&C servers over various protocols, and downloading and installing additional malware.",
+      "triple": [
+        {
+          "subject": {
+            "name": "CobaltStrike",
+            "type": "Application"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "exploit-kit",
+            "type": "Exploit-kit"
+          },
+          "evidence": {
+            "quote": "CobaltStrike is a feature-rich penetration testing tool that provides remote attackers with a wide range of capabilities, including escalating privileges, capturing user input, executing arbitrary commands through PowerShell or WMI, performing reconnaissance, communicating with C&C servers over various protocols, and downloading and installing additional malware."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "End-to-end defense through Microsoft Threat Protection Microsoft Threat Protection is a comprehensive solution for enterprise networks, protecting identities, endpoints, user data, cloud apps, and infrastructure.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Microsoft Threat Protection",
+            "type": "Software"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "identities, endpoints, user data, cloud apps, and infrastructure",
+            "type": "Infrastructure"
+          },
+          "evidence": {
+            "quote": "protecting identities, endpoints, user data, cloud apps, and infrastructure"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Office 365 ATP has enhanced phishing protection and coverage against new threats and polymorphic variants.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Office 365 ATP",
+            "type": "System"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "phishing protection",
+            "type": "Indicator"
+          },
+          "evidence": {
+            "quote": "has enhanced phishing protection"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Detonation systems in Office 365 ATP caught behavioral markers in links in the emails, allowing us to successfully block campaign emails-including first-seen samples-and protect targeted customers.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Detonation systems",
+            "type": "System"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "behavioral markers",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "Detonation systems in Office 365 ATP caught behavioral markers"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In addition, Office 365 ATP uses security signals from Windows Defender ATP, which had a durable behavior-based antivirus detection (Behavior:Win32/Atosev.gen!A) for the second-stage malware. ",
+      "triple": [
+        {
+          "subject": {
+            "name": "Office 365 ATP",
+            "type": "System"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "security signals from Windows Defender ATP",
+            "type": "Indicator"
+          },
+          "evidence": {
+            "quote": "In addition, Office 365 ATP uses security signals from Windows Defender ATP"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "If you are not already secured against advanced cyberthreat campaigns via email, begin a free Office 365 E5 trial today.",
+      "triple": [
+        {
+          "subject": {
+            "name": "you",
+            "type": "Person"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "advanced cyberthreat campaigns via email",
+            "type": "Phishing"
+          },
+          "evidence": {
+            "quote": "If you are not already secured against advanced cyberthreat campaigns via email"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In addition, the actions of the LNK file are detected behaviorally.",
+      "triple": [
+        {
+          "subject": {
+            "name": "LNK file",
+            "type": "Filepath"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "actions",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "the actions of the LNK file"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Alerts with the following titles are indicative of this attack activity: Artifacts associated with an advanced threat detected Network activity associated with an advanced threat detected Low-reputation arbitrary code executed by signed executable Suspicious LNK file opened Network protection blocks connections to malicious domains and IP addresses.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Alerts",
+            "type": "Indicator"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "this attack activity",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "Alerts with the following titles are indicative of this attack activity:"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "2: C&C connection NetworkCommunicationEvents | where EventTime > ago(10d) | where RemoteUrl == \"pandorasong.com\" //Query 3: Malicious PowerShell ProcessCreationEvents | where EventTime > ago(10d) | where ProcessCommandLine contains \"-noni -ep bypass $zk=' JHB0Z3Q9MHgwMDA1ZTJiZTskdmNxPTB4MDAwNjIzYjY7JHRiPSJkczcwMDIubG5rIjtp ZiAoLW5vdChUZXN0LVBhdGggJHRiKSl7JG9lPUdldC1DaGlsZEl0\"",
+      "triple": [
+        {
+          "subject": {
+            "name": "NetworkCommunicationEvents",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "RemoteUrl == \"pandorasong.com\"",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "where RemoteUrl == \"pandorasong.com\""
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Windows Defender Research team , Microsoft Threat Intelligence Center , and Office 365 ATP research team Indicators of attack Files (SHA-1) ds7002.ZIP: cd92f19d3ad4ec50f6d19652af010fe07dca55e1 ds7002.LNK: e431261c63f94a174a1308defccc674dabbe3609 ds7002.PDF (decoy PDF): 8e928c550e5d44fb31ef8b6f3df2e914acd66873 cyzfc.dat (first-stage): 9858d5cb2a6614be3c48e33911bf9f7978b441bf",
+      "triple": [
+        {
+          "subject": {
+            "name": "ds7002.ZIP",
+            "type": "Filename"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "cd92f19d3ad4ec50f6d19652af010fe07dca55e1",
+            "type": "SHA-1"
+          },
+          "evidence": {
+            "quote": "ds7002.ZIP: cd92f19d3ad4ec50f6d19652af010fe07dca55e1"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " URLs hxxps://www.jmj[.]com/personal/nauerthn_state_gov/VFVKRTdRSm C&C servers pandorasong[.]com (95.216.59.92) (first-stage C&C server) Talk to us Questions, concerns, or insights on this story?",
+      "triple": [
+        {
+          "subject": {
+            "name": "URLs",
+            "type": "URL"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "C&C servers",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "URLs hxxps://www.jmj[.]com/personal/nauerthn_state_gov/VFVKRTdRSm C&C servers pandorasong[.]com (95.216.59.92) (first-stage C&C server)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Join discussions at the Microsoft community and Windows Defender Security Intelligence.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Microsoft",
+            "type": "Organization"
+          },
+          "predicate": "belongsTo",
+          "object": {
+            "name": "Community",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Microsoft community"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Research Threat intelligence Microsoft Defender Attacker techniques, tools, and infrastructure Dec 3, 2018 3 min read Insights from the MITRE ATT&CKbased evaluation of Windows Defender ATP  News Cloud security Microsoft Defender Nov 15, 2018 6 min read What's new in Windows Defender ATP  In MITRE's evaluation of endpoint detection and response solutions, Windows Defender Advanced Threat Protection demonstrated industry-leading optics and detection capabilities.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Windows Defender Advanced Threat Protection",
+            "type": "Software"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "industry-leading optics and detection capabilities",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "industry-leading optics and detection capabilities"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "These enhancements boost Windows Defender ATP and accrue to the broader Microsoft Threat Protection, an integrated solution for securing identities, endpoints, cloud apps, and infrastructure.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Windows Defender ATP",
+            "type": "VirusScanner"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "enhancements",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "These enhancements boost Windows Defender ATP"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Learn more Connect with us on social Education News Incident response Microsoft Defender Nov 28, 2018 5 min read Windows Defender ATP device risk score exposes new cyberattack, drives Conditional access to protect networks  Several weeks ago, the Windows Defender Advanced Threat Protection (Windows Defender ATP) team uncovered a new cyberattack that targeted several high-profile organizations in the energy and food and beverage sectors in Asia.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Windows Defender Advanced Threat Protection (Windows Defender ATP)",
+            "type": "System"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "several high-profile organizations in the energy and food and beverage sectors in Asia",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "that targeted several high-profile organizations in the energy and food and beverage sectors in Asia"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Research Threat intelligence Microsoft Defender Threat actors Apr 22 10 min read Analyzing Forest Blizzard's custom post-compromise tool for exploiting CVE2022-38028 to obtain credentials  Since 2019, Forest Blizzard has used a custom postcompromise tool to exploit a vulnerability in the Windows Print Spooler service that allows elevated permissions.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Forest Blizzard",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "custom post-compromise tool",
+            "type": "MalwareFamily"
+          },
+          "evidence": {
+            "quote": "Since 2019, Forest Blizzard has used a custom postcompromise tool"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Microsoft has issued a security update addressing this vulnerability as CVE2022-38028.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Microsoft",
+            "type": "Organization"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "CVE2022-38028",
+            "type": "Vulnerability_CVEID"
+          },
+          "evidence": {
+            "quote": "addressing this vulnerability as CVE2022-38028"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "007",
+        "source": "TEXT"
+      }
+    }
+  ]
+}

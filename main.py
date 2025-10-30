@@ -4,7 +4,7 @@ import yaml
 import time
 import traceback
 import sys
-from scripts.util.db import (
+from util.db import (
     get_driver,
     ensure_constraints,
     clear_cti_graph as db_clear_cti_graph,
@@ -12,9 +12,9 @@ from scripts.util.db import (
 )
 
 # Extra utility imports
-from scripts.util.dataset import ensure_repo, enumerate_cti_hal
-from scripts.util.id import compute_document_id
-from scripts.util.io import (
+from util.dataset import ensure_repo, enumerate_cti_hal
+from util.id import compute_document_id
+from util.io import (
     save_json as io_save_json,
     load_json as io_load_json,
     load_progress,
@@ -46,7 +46,7 @@ def _clean_state(workdir: Path):
         log(f"[Clean] Warning: could not rotate manifest: {e}")
 
 def stage_extraction(input_path: Path, document_id: str, model: str, ollama_base_url: str, out_dir: Path) -> Path:
-    from scripts.triple_extraction import extraction_semantic_only_v1 as extraction  # local module
+    from triple_extraction import extraction_semantic_only_v1 as extraction  # local module
 
     out_dir.mkdir(parents=True, exist_ok=True)
     stem = input_path.stem.replace(" ", "_")
@@ -69,7 +69,7 @@ def stage_extraction(input_path: Path, document_id: str, model: str, ollama_base
     return chunk_json
 
 def stage_insertion(chunk_json_path: Path, driver) -> None:
-    import scripts.graph.insertion as insertion  # local module
+    import graph_alignment.insertion as insertion  # local module
 
     chunk_obj = io_load_json(chunk_json_path) 
     
@@ -81,7 +81,7 @@ def stage_insertion(chunk_json_path: Path, driver) -> None:
     log("[Insertion] complete")
 
 def stage_embed_cti_entities(chunk_json_path: Path, driver, model: str, ollama_base_url: str) -> None:
-    import scripts.graph.insertion as insertion  # local module
+    import graph_alignment.insertion as insertion  # local module
 
     chunk_obj = io_load_json(chunk_json_path)
     log("[Embedding] embedding CTIEntity nodes...")
@@ -97,7 +97,7 @@ def stage_embed_cti_entities(chunk_json_path: Path, driver, model: str, ollama_b
 def stage_similarity(driver, document_id: str, sim_output_dir: Path, embed_cfg) -> None:
     # set per-run output dir for similarity_scoring
     os.environ["SIM_OUTPUT_DIR"] = str(sim_output_dir)
-    from scripts.graph.similarity_scoring import run_similarity
+    from graph_alignment.similarity_scoring import run_similarity
     log(f"[Similarity] running vector top-k scoring via Neo4j index... -> {sim_output_dir}")
     run_similarity(driver, document_id, sim_output_dir, embed_cfg)
     log("[Similarity] results saved under similarity_scoring outputs/")

@@ -1,0 +1,429 @@
+{
+  "metrics": {
+    "file_name": "UkrainianCriticalInfrastructure.pdf",
+    "model_used": "gemma2:9b",
+    "doc_sha256_id": "a4a5b3d1175e6b44",
+    "num_pages": 9,
+    "num_sentences_total": 93,
+    "num_sentences_used": 64,
+    "num_raw_triples": 64,
+    "num_valid_triples": 17,
+    "num_suspicious_triples": 47,
+    "avg_triples_per_sentence": 1.0,
+    "rejection_stats": {
+      "bad_structure": 0,
+      "invalid_class_or_predicate": 47
+    },
+    "runtime_seconds": 48.67223358154297
+  },
+  "data": [
+    {
+      "context": "Search News & Events Spotlight #PROTECT2024 Resources & Tools SHIELDS UP Careers SHARE:",
+      "triple": [
+        {
+          "subject": {
+            "name": "#PROTECT2024",
+            "type": "Campaign"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "Resources & Tools",
+            "type": "ResourceExploitation"
+          },
+          "evidence": {
+            "quote": "#PROTECT2024 Resources & Tools"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In addition, there have also been reports of malware found in Ukrainian companies in a variety of critical infrastructure sectors.",
+      "triple": [
+        {
+          "subject": {
+            "name": "malware",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "reports",
+            "type": "Report"
+          },
+          "evidence": {
+            "quote": "there have also been reports of malware"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Public reports indicate that the BlackEnergy (BE) malware was discovered on the companies' computer networks, however it is important to note that the role of BE in this event remains unknown pending further technical analysis.",
+      "triple": [
+        {
+          "subject": {
+            "name": "BlackEnergy",
+            "type": "Malware"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "Public reports",
+            "type": "Report"
+          },
+          "evidence": {
+            "quote": "Public reports indicate"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "An interagency team comprised of representatives from the National Cybersecurity and Communications Integration Center (NCCIC)/Industrial Control Systems Cyber Emergency Response Team (ICS-CERT), U.S. Computer Emergency Readiness Team (US-CERT), Department of Energy, Federal Bureau of Investigation, and the North American Electric Reliability Corporation traveled to Ukraine to collaborate and gain more insight.",
+      "triple": [
+        {
+          "subject": {
+            "name": "National Cybersecurity and Communications Integration Center (NCCIC)/Industrial Control Systems Cyber Emergency Response Team (ICS-CERT)",
+            "type": "Organization"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "Ukraine",
+            "type": "Location"
+          },
+          "evidence": {
+            "quote": "traveled to Ukraine"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Additional information on this incident including technical indicators can be found in the TLP GREEN alert (IR-ALERT-H-16-043-01P and subsequent updates) that was released to the US-CERT secure portal.",
+      "triple": [
+        {
+          "subject": {
+            "name": "TLP GREEN alert",
+            "type": "Report"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "technical indicators",
+            "type": "Indicator"
+          },
+          "evidence": {
+            "quote": "including technical indicators can be found"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "It was further reported that in at least one instance, Windows-based human-machine interfaces (HMIs) embedded in remote terminal units were also overwritten with KillDisk.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Windows-based human-machine interfaces (HMIs)",
+            "type": "Application"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "remote terminal units",
+            "type": "Hardware"
+          },
+          "evidence": {
+            "quote": "were also overwritten with KillDisk."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "malware however we do not know whether the malware played a role in the cyber- MITIGATION The first, most important step in cybersecurity is implementation of information resources management best practices.",
+      "triple": [
+        {
+          "subject": {
+            "name": "cybersecurity",
+            "type": "AttackPattern"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "information resources management best practices",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "The first, most important step in cybersecurity is implementation of information resources management best practices"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Key examples include: procurement and licensing of trusted hardware and so \" ware systems; knowing who and what is on your network through hardware and so \" ware asset management automation; on time patching of systems; and strategic technology refresh.",
+      "triple": [
+        {
+          "subject": {
+            "name": "hardware",
+            "type": "Hardware"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "procurement and licensing",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "procurement and licensing of trusted hardware"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "ectively Defend Industrial Control Systems, https://ics-cert.uscert.gov/sites/default/files/documents/Seven%20Steps%20to%20E !",
+      "triple": [
+        {
+          "subject": {
+            "name": "https://ics-cert.uscert.gov/sites/default/files/documents/Seven%20Steps%20to%20E",
+            "type": "URL"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "Industrial Control Systems",
+            "type": "System"
+          },
+          "evidence": {
+            "quote": "ectively Defend Industrial Control Systems"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "ectively%20D efend%20Industrial%20Control%20Systems_S508C.pdf, web site last accessed February 25, 2016.",
+      "triple": [
+        {
+          "subject": {
+            "name": "ectively%20D efend%20Industrial%20Control%20Systems_S508C.pdf",
+            "type": "Filename"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "web site",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "ectively%20D efend%20Industrial%20Control%20Systems_S508C.pdf, web site last accessed February 25, 2016."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "If bidirectional communication is necessary, then use a single open port over a restricted network path.",
+      "triple": [
+        {
+          "subject": {
+            "name": "communication",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "port",
+            "type": "Port"
+          },
+          "evidence": {
+            "quote": "use a single open port"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " As in common networking environments, control system domains can be subject to a myriad of vulnerabilities that can provide malicious actors with a 'backdoor' to gain unauthorized access.",
+      "triple": [
+        {
+          "subject": {
+            "name": "control system domains",
+            "type": "DomainName"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "vulnerabilities",
+            "type": "Vulnerability_Desc"
+          },
+          "evidence": {
+            "quote": "can be subject to a myriad of vulnerabilities"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "NCCIC/ICS-CERT, Improving Industrial Control Systems Cybersecurity with Defense-in-Depth Strategies, https://ics-cert.uscert.gov/sites/default/files/recommended_practices/NCCIC_ICS-CERT_Defense_in_Depth_2016_S508C.pdf , web site last accessed February 25, 2016.",
+      "triple": [
+        {
+          "subject": {
+            "name": "NCCIC/ICS-CERT",
+            "type": "Organization"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Improving Industrial Control Systems Cybersecurity with Defense-in-Depth Strategies",
+            "type": "Report"
+          },
+          "evidence": {
+            "quote": "Improving Industrial Control Systems Cybersecurity with Defense-in-Depth Strategies"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Several recommended practices are available for reading or download, including Improving Industrial Control Systems Cybersecurity with Defense-in-Depth Strategies </sites/default/files/recommended_practices/nccic_ics-cert_defense_in_depth_2016_s508c.pdf> and Seven Steps to E !",
+      "triple": [
+        {
+          "subject": {
+            "name": "Improving Industrial Control Systems Cybersecurity with Defense-in-Depth Strategies",
+            "type": "Report"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "<sites/default/files/recommended_practices/nccic_ics-cert_defense_in_depth_2016_s508c.pdf>",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "Improving Industrial Control Systems Cybersecurity with Defense-in-Depth Strategies </sites/default/files/recommended_practices/nccic_ics-cert_defense_in_depth_2016_s508c.pdf>"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "For more information on securely working with dangerous malware, please see US-CERT Security Tip ST13-003 Handling Destructive Malware at https://www.uscert.gov/ncas/tips/ST13-003 </ncas/tips/st13-003> .",
+      "triple": [
+        {
+          "subject": {
+            "name": "US-CERT Security Tip ST13-003 Handling Destructive Malware",
+            "type": "Report"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "ST13-003 Handling Destructive Malware",
+            "type": "Report"
+          },
+          "evidence": {
+            "quote": "US-CERT Security Tip ST13-003 Handling Destructive Malware"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This can be found at: https://ics-cert.us-cert.gov/alerts/ICS-ALERT-14-281-01E </ics/alerts/icsalert-14-281-01b> .",
+      "triple": [
+        {
+          "subject": {
+            "name": "https://ics-cert.us-cert.gov/alerts/ICS-ALERT-14-281-01E",
+            "type": "URL"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "</ics/alerts/icsalert-14-281-01b>",
+            "type": "URL"
+          },
+          "evidence": {
+            "quote": "https://ics-cert.us-cert.gov/alerts/ICS-ALERT-14-281-01E </ics/alerts/icsalert-14-281-01b>"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "US critical infrastructure asset owners and operators can request access to this information by emailing ics-cert@hq.dhs.gov.",
+      "triple": [
+        {
+          "subject": {
+            "name": "US critical infrastructure asset owners and operators",
+            "type": "Organization"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "this information",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "can request access to this information"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "010",
+        "source": "TEXT"
+      }
+    }
+  ]
+}

@@ -1,0 +1,670 @@
+{
+  "metrics": {
+    "file_name": "Footprints of Fin7_ Pushing New Techniques to Evade Detection - Gigamon Blog.pdf",
+    "model_used": "gemma2:9b",
+    "doc_sha256_id": "12b797f2bcdfa865",
+    "num_pages": 8,
+    "num_sentences_total": 99,
+    "num_sentences_used": 51,
+    "num_raw_triples": 51,
+    "num_valid_triples": 27,
+    "num_suspicious_triples": 24,
+    "avg_triples_per_sentence": 1.0,
+    "rejection_stats": {
+      "bad_structure": 0,
+      "invalid_class_or_predicate": 24
+    },
+    "runtime_seconds": 84.70542907714844
+  },
+  "data": [
+    {
+      "context": "THE BLOG SECURITY ZERO TRUST NETWORKING SERVICE Home (https://blog.gigamon.com/) »",
+      "triple": [
+        {
+          "subject": {
+            "name": "Home",
+            "type": "DomainName"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "https://blog.gigamon.com/",
+            "type": "URL"
+          },
+          "evidence": {
+            "quote": "» https://blog.gigamon.com/ »"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Security (https://blog.gigamon.com/category/security/) » Footprints of Fin7: Pushing New Techniques to Evade Detection SECURITY (HTTPS://BLOG.GIGAMON.COM/CATEGORY/SECURITY/) / OCTOBER 8, 2017 Footprints of Fin7: Pushing New Techniques to Evade Detection ATR (https://blog.gigamon.com/author/atrteam/)",
+      "triple": [
+        {
+          "subject": {
+            "name": "Security",
+            "type": "Organization"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "HTTPS://BLOG.GIGAMON.COM/CATEGORY/SECURITY/",
+            "type": "URL"
+          },
+          "evidence": {
+            "quote": "Security (https://blog.gigamon.com/category/security/)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Additionally, FIN7 has modified the obfuscation utilized by their HALFBAKED backdoor - likely to avoid detection in new or ongoing campaigns.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "HALFBAKED",
+            "type": "Backdoor"
+          },
+          "evidence": {
+            "quote": "FIN7 has modified the obfuscation utilized by their HALFBAKED backdoor"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "These malicious files are embedded into the infection documents using the Object Linking and Embedding (OLE) framework within Windows, which allows objects from one application to be included in another.",
+      "triple": [
+        {
+          "subject": {
+            "name": "malicious files",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "Object Linking and Embedding (OLE)",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "embedded into the infection documents using the Object Linking and Embedding (OLE) framework within Windows"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In the documents released today, FIN7 appears to have pivoted from using OLE embedded LNK files to using OLE embedded CMD files.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "OLE embedded CMD files",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "using OLE embedded CMD files"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Although different in implementation, this is a familiar technique, as FIN7 frequently runs commented out code that they read as a string through the use of JScript's 'eval' function.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "'eval' function",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "as FIN7 frequently runs commented out code that they read as a string through the use of JScript's 'eval' function"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Over the course of the past year, the actor's unique backdoor, HALFBAKED, has continued to morph to improve capabilities and reduce detection surface.",
+      "triple": [
+        {
+          "subject": {
+            "name": "HALFBAKED",
+            "type": "Backdoor"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "capabilities",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "the actor's unique backdoor, HALFBAKED, has continued to morph to improve capabilities"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "New Halfbaked Feature Additionally, the HALFBAKED backdoor now includes a built-in command called 'getNK2', seen here in HALFBAKED's command list (Figure 2).",
+      "triple": [
+        {
+          "subject": {
+            "name": "HALFBAKED",
+            "type": "Backdoor"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "getNK2",
+            "type": "CommandAndControl"
+          },
+          "evidence": {
+            "quote": "includes a built-in command called 'getNK2'"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This may suggest the actor's desire to obtain new phishing targets within a victim organization.",
+      "triple": [
+        {
+          "subject": {
+            "name": "actor",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "phishing targets",
+            "type": "Phishing"
+          },
+          "evidence": {
+            "quote": "obtain new phishing targets"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " victim to the phishing lure, it would allow FIN7 to increase their foothold within a victim organization's network and potentially pivot to new areas.",
+      "triple": [
+        {
+          "subject": {
+            "name": "victim",
+            "type": "Person"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "phishing lure",
+            "type": "Phishing"
+          },
+          "evidence": {
+            "quote": "victim to the phishing lure"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "replace( \"%r2Id%\" CK) ; BY BN) BY BX) \"getNK2\" { BY AX(BY) ; BY BY .",
+      "triple": [
+        {
+          "subject": {
+            "name": "%r2Id%",
+            "type": "Unknown"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "CK",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "; BY BN) BY BX) \"getNK2\" { BY AX(BY) ; BY BY ."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "replace( \"%VBSBody%s\" CN) (https://blog.gigamon.com/wp- (https://www.gigamon.com/content/gigamon/en_us.html) Products Solutions (https://www.gigamon.com/content/gigamon/en_us/contact-us content/uploads/2020/06/10.6_fig2_halfbakedcommands_v2.png) CLOUD VISIBILITY NETWORK SECURITY DATA CENTER VISIBILITY TRAFFIC INTELLIGENCE CLOUD VISIBILITY DATA CENTER VISIBILITY NETWORK SECURITY INDUSTRY FIND A PARTNER NOT A PARTNER?",
+      "triple": [
+        {
+          "subject": {
+            "name": "CN",
+            "type": "DomainName"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "replace( %VBSBody%s)",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "replace( \"\\%VBSBody\\%s\" CN)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Auto-Complete-List-to-another-computer-83558574-20DC- (Https://Www.gigamon.com/Content/Gigamon/E Traffic/Physical-Nodes.html) Traffic/Cloud-Suite.html)",
+      "triple": [
+        {
+          "subject": {
+            "name": "Auto-Complete-List-to-another-computer-83558574-20DC-",
+            "type": "DomainName"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "(Https://Www.gigamon.com/Content/Gigamon/E Traffic/Physical-Nodes.html)",
+            "type": "URL"
+          },
+          "evidence": {
+            "quote": "Auto-Complete-List-to-another-computer-83558574-20DC- (Https://Www.gigamon.com/Content/Gigamon/E Traffic/Physical-Nodes.html)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "016",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "(Https://Community.gigamon.com/Gigamoncp/S/ (Https://Www.gigamon.com/Content/Gigamon/E (Https://Www.gigamon.com/Content/Gigamon/E (Https://Www.gigamon.com/Content/Gigamon/E Traffic/Physical-Nodes/Gigavue-Hc-Series.html) Traffic/Traffic-Intelligence/Gigasmart.html)",
+      "triple": [
+        {
+          "subject": {
+            "name": "(Https://Community.gigamon.com/Gigamoncp/S/",
+            "type": "URL"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "(Https://Www.gigamon.com/Content/Gigamon/E (Https://Www.gigamon.com/Content/Gigamon/E (Https://Www.gigamon.com/Content/Gigamon/E Traffic/Physical-Nodes/Gigavue-Hc-Series.html)",
+            "type": "URL"
+          },
+          "evidence": {
+            "quote": "(Https://Community.gigamon.com/Gigamoncp/S/ (Https://Www.gigamon.com/Content/Gigamon/E (Https://Www.gigamon.com/Content/Gigamon/E (Https://Www.gigamon.com/Content/Gigamon/E Traffic/Physical-Nodes/Gigavue-Hc-Series.html)"
+          },
+          " } ] ] }}  ```json}}  ```json]]  ``` </tbody></table> ```json```]]  ```json```]]  ```json```]] ```json```]]  ```json```]] ```json```]]  ```json```]] ```json```]]  ```json```]] ```json```]]  ```json```]] ```json```]]  ```json```]] ```json```]]  ```json```]]  ```json```]]  ```json```]]  ```json```]]  ```json```]]  ```json```]]  ```json```]]  ```json```]]] ```json```]]  ```json```]]  ```json```]]  ```json```]]  ```json```]]  ```json```]]   ```json```]]  ```json```]]  ```json```]]  ```json```]]  ```json```]]  ```json```]]  ```json```]]  ```json```]]  ```json```]]  ```json```]] ```json```]] ```json```]] ```json```]] ```json```]] ```json```]] ```json```]] ```json```]] ```json```]] ```json```]] ```json```]] ```json```]] ```json```]] ```json```]] ```json```]] ```json```]] ```json```]] ```json```]] ```json```]]  ```json```] ```json```] ```json```]   ```json```] ```json```] ```json```] ```json```] ```json```] ```json```] ```json```] ```json```] ```json```] ```json```] ```json```] ```json```] ```json```]  ```json```] ```json```]   ```json```]  ```json```]  ```json```] `]` `{` ```` `}` ````    `:` :  `: , \"` \"` \\ `\r\n` ``` ``` `": "`, "
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "019",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Healthcare Cloud.html) Warranty (Https://Www.gigamon.com/Content/Gigamon/E Customers Newer versions of outlook no longer use the NK2 Traffic/Application-Intelligence/Application-",
+      "triple": [
+        {
+          "subject": {
+            "name": "Healthcare Cloud.html",
+            "type": "Filename"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Warranty",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Healthcare Cloud.html) Warranty"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "023",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "(Https://Www.gigamon.com/Content/Gigamon/E Life-In-The-Cloud-Podcast.html) Professional Services And-Articles#Forums?",
+      "triple": [
+        {
+          "subject": {
+            "name": "https://www.gigamon.com/Content/Gigamon/E Life-In-The-Cloud-Podcast.html",
+            "type": "URL"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "(Professional Services And-Articles#Forums?)",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": " (Https://Www.gigamon.com/Content/Gigamon/E Life-In-The-Cloud-Podcast.html) Professional Services And-Articles#Forums?"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "024",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "(Https://Www.gigamon.com/Content/Gigamon/E file (https://www.msoutlook.info/question/844), so FIN7 has also Assure Cloud Security And Compliance Network TAPs Azure (Https://Www.gigamon.com/Content/Gigamon/E Network-Changes-Without-Disruption.html) Filtering-Intelligence.html)",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Assure Cloud Security And Compliance Network TAPs Azure",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "so FIN7 has also Assure Cloud Security And Compliance Network TAPs Azure"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "026",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Utm_source=Gigamon.com&Utm_medium=Refer IoT, OT, ICS (Https://Www.gigamon.com/Content/Gigamon/E (Https://Gigamon.my.salesforce- Learning Center written functionality to handle newer versions of Outlook within (Https://Www.gigamon.com/Content/Gigamon/E Put NetOps Back In Control (Https://Www.gigamon.com/Content/Gigamon/E (Https://Www.gigamon.com/Content/Gigamon/E Links&Utm_content=Nav-Support)",
+      "triple": [
+        {
+          "subject": {
+            "name": "Utm_source",
+            "type": "DomainName"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Gigamon.com",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "Utm_source=Gigamon.com"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "027",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "(Https://Www.gigamon.com/Content/Gigamon/E (Https://Www.gigamon.com/Content/Gigamon/E (Https://Www.gigamon.com/Content/Gigamon/E Cloud-Security-Compliance.html) Traffic/Network-Taps.html) Sites.com/Partnerlocator/)",
+      "triple": [
+        {
+          "subject": {
+            "name": "Https://Www.gigamon.com/Content/Gigamon/E",
+            "type": "URL"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "Sites.com/Partnerlocator/",
+            "type": "URL"
+          },
+          "evidence": {
+            "quote": "Https://Www.gigamon.com/Content/Gigamon/E (Https://Www.gigamon.com/Content/Gigamon/E (Https://Www.gigamon.com/Content/Gigamon/E Cloud-Security-Compliance.html) Traffic/Network-Taps.html) Sites.com/Partnerlocator/"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "028",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "JScript function in Figure 3 on the victim system.",
+      "triple": [
+        {
+          "subject": {
+            "name": "JScript function",
+            "type": "Application"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "Figure 3",
+            "type": "Filename"
+          },
+          "evidence": {
+            "quote": "JScript function in Figure 3 on the victim system."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "032",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Shell\"); var pathl sh. ExpandEnvironmentStrings(\"RUSERPROFILES\" )",
+      "triple": [
+        {
+          "subject": {
+            "name": "sh",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "ExpandEnvironmentStrings",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "var pathl sh. ExpandEnvironmentStrings(\"RUSERPROFILES\" )"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "GetFolder(pathl) var fc new Enumerator(f.files); for (; fc.moveNext ( ) ) { npch fc.item(); if(fso.",
+      "triple": [
+        {
+          "subject": {
+            "name": "GetFolder",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "pathl",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "GetFolder(pathl"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "ExpandEnvironmentStrings(\"%localappdatas\" Iicrosoftl |Outlookl | RoamCache var fso.",
+      "triple": [
+        {
+          "subject": {
+            "name": "%localappdatas",
+            "type": "Filepath"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "Iicrosoftl |Outlookl | RoamCache",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "ExpandEnvironmentStrings(\"%localappdatas\" Iicrosoftl |Outlookl | RoamCache"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "GetExtensionName(npch.Name) return npch; }catch(e) {} return TOP Conclusion Detection authors must make trade-offs to optimize signature performance; narrow signatures lead to high fidelity detections, but risk missing changes in actor behaviors, meanwhile broader detection patterns provide better coverage, at the risk of more false positives.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Detection",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "trade-offs",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Conclusion Detection authors must make trade-offs to optimize signature performance"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "013",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Gigamon ThreatINSIGHT™ (https://www.gigamon.com/solutions/gigamon-insight.html) is a network security analytics solution that offers a SaaS capability that enables customers to gain and utilize widespread network visibility for security operations.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Gigamon ThreatINSIGHT™",
+            "type": "Application"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "a SaaS capability",
+            "type": "Software"
+          },
+          "evidence": {
+            "quote": "a SaaS capability that enables customers to gain and utilize widespread network visibility for security operations."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "OLDER ARTICLE Kaspersky and the Department of Homeland Security Binding Operational Directive: Supply Chain Out of Your Control - Technically, Legally, Existentially (https://blog.gigamon.com/2017/10/06/kaspersky- department-homeland-security-binding- operational-directive-supply-chain-controltechnically-legally-existentially/) NEWER ARTICLE Cybersecurity in the Workplace: Adapt or Go the Way of the Dodo (https://blog.gigamon.com/2017/10/08/securitymust-adapt-the-message-of-gartner-securityand-risk-summit-2017/) (https://www.twitter.com/gigamon) (https://www.youtube.com/c (h tps://www.facebo (https://www.",
+      "triple": [
+        {
+          "subject": {
+            "name": "kaspersky",
+            "type": "Organization"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Department of Homeland Security",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "Kaspersky and the Department of Homeland Security Binding Operational Directive"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " } Website Terms (https://www.gigamon.com/content/gigamon/en_us/terms-agreement.html) Privacy Policy (https://www.gigamon.com/content/gigamon/en_us/privacy-policy.html) Cookie Policy (https://www.gigamon.com/content/gigamon/en_us/cookie-policy.html) Security (https://www.gigamon.com/content/gigamon/en_us/security-disclosure.html) Legal (https://www.gigamon.com/content/gigamon/en_us/legal.html) © Gigamon 2024",
+      "triple": [
+        {
+          "subject": {
+            "name": "Website Terms",
+            "type": "URL"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "https://www.gigamon.com/content/gigamon/en_us/terms-agreement.html",
+            "type": "URL"
+          },
+          "evidence": {
+            "quote": "Website Terms (https://www.gigamon.com/content/gigamon/en_us/terms-agreement.html)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "000",
+        "source": "TEXT"
+      }
+    }
+  ]
+}

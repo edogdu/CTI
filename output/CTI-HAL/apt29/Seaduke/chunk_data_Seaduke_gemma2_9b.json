@@ -1,0 +1,477 @@
+{
+  "metrics": {
+    "file_name": "Seaduke.pdf",
+    "model_used": "gemma2:9b",
+    "doc_sha256_id": "9abd88cd969181ec",
+    "num_pages": 7,
+    "num_sentences_total": 98,
+    "num_sentences_used": 45,
+    "num_raw_triples": 45,
+    "num_valid_triples": 19,
+    "num_suspicious_triples": 26,
+    "avg_triples_per_sentence": 1.0,
+    "rejection_stats": {
+      "bad_structure": 0,
+      "invalid_class_or_predicate": 26
+    },
+    "runtime_seconds": 42.47877812385559
+  },
+  "data": [
+    {
+      "context": "Win32.Seadask' by a number of anti-virus companies.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Win32.Seadask",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "by a number of anti-virus companies",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "by a number of anti-virus companies"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Our analysis has turned up more technical details and indicators on the malware itself that aren't mentioned in Symantec's post.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Our analysis",
+            "type": "MalwareAnalysis"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "technical details and indicators",
+            "type": "Indicator"
+          },
+          "evidence": {
+            "quote": "...more technical details and indicators... "
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Here are some of our observations: First Layer of Obfuscation Once the UPX packer is removed from the malware sample, it becomes quickly apparent that we're dealing with a sample compiled using PyInstaller .",
+      "triple": [
+        {
+          "subject": {
+            "name": "UPX packer",
+            "type": "Application"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "malware sample",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "Once the UPX packer is removed from the malware sample"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This program allows an individual to write a program using the Python scripting language and convert it into an executable for the Microsoft Windows, Linux, Mac OSX, Solaris, or AIX platform.",
+      "triple": [
+        {
+          "subject": {
+            "name": "program",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "Python scripting language",
+            "type": "Software"
+          },
+          "evidence": {
+            "quote": "write a program using the Python scripting language"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Extracted Python fi les from Seaduke We can then use a tool such as uncompyle2 to convert the Python byte-code into the original source code.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Seaduke",
+            "type": "Malware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "Python files",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "Extracted Python fi les from Seaduke"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Obfuscation discovered in fi nal payload fi gure 4 Using a little brainpower and search/replace, we can begin identifying and renaming functionality within the malware.",
+      "triple": [
+        {
+          "subject": {
+            "name": "malware",
+            "type": "Malware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "payload",
+            "type": "Filename"
+          },
+          "evidence": {
+            "quote": "in final payload"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Once we decode and decompress this data, we are rewarded with a JSON object containing con fi guration data for this malware:",
+      "triple": [
+        {
+          "subject": {
+            "name": "data",
+            "type": "MalwareAnalysis"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "configuration data",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "containing configuration data for this malware:"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "013",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "When the malware is initially run, it will determine on which operating system it is running.",
+      "triple": [
+        {
+          "subject": {
+            "name": "malware",
+            "type": "Malware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "OperatingSystem",
+            "type": "OperatingSystem"
+          },
+          "evidence": {
+            "quote": "it is running"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Main execution of malware Continuing along, we discover that this malware has the ability to persist using one of the following techniques: Persistence via PowerShell 1 2 Persistence via the Run registry key Persistence via a .lnk fi le stored in the Startup directory 3",
+      "triple": [
+        {
+          "subject": {
+            "name": "malware",
+            "type": "Malware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "Persistence via PowerShell 1 2",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "this malware has the ability to persist using one of the following techniques: Persistence via PowerShell 1 2"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "All network communications are performed over HTTP for this particular sample; however, it appears to support HTTPS as well.",
+      "triple": [
+        {
+          "subject": {
+            "name": "this particular sample",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "HTTP",
+            "type": "Protocol"
+          },
+          "evidence": {
+            "quote": "All network communications are performed over HTTP for this particular sample"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "\\x10\\x12ae9J\\x8a\\xa3|\\x9d\\x85\\x9e\\x8c\\xa8{R\\x90\\xf2p\\xf9\\\\\\xacc\\x04q1 \"first_run_delay\": 0, \"keys\": { \"aes\": \"KIjbzZ/ZxdE5KD2XosXqIbEdrCxy3mqDSSLWJ7BFk3o=\", \"aes_iv\": \"cleUKIi+mAVSKL27O4J/UQ==\" }, \"autoload_settings\": { \"exe_name\": \"LogonUI.exe\", \"app_name\": \"LogonUI.exe\", \"delete_after\": false }, \"host_scripts\": [\"http://monitor.syn[.]cn/rss.php\"], \"referer\": \"https://www.facebook.com/\", \"user_agent\": \"SiteBar/3.3.8 (Bookmark Server; http://sitebar.org/)\", \"key_id\": \"P4BNZR0\", \"enable_autoload\": false } 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17",
+      "triple": [
+        {
+          "subject": {
+            "name": "LogonUI.exe",
+            "type": "Application"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "LogonUI.exe",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": " \"exe_name\": \"LogonUI.exe\", \"app_name\": \"LogonUI.exe\""
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "018",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "First Character : '\\x10' Second Character : '\\x12' String Length (16 ^ 18) : 2 Random String : 'ae' Encrypted Data : '9J\\x8a\\xa3|\\x9d\\x85\\x9e\\x8c\\xa8{R\\x90\\xf2p\\xf9\\\\\\xacc\\x04q1' Finally, the encrypted data is encrypted using the RC4 algorithm.",
+      "triple": [
+        {
+          "subject": {
+            "name": "String Length (16 ^ 18)",
+            "type": "Unknown"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "2",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "String Length (16 ^ 18) : 2"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "If the decrypted data does not produce proper JSON data, Seaduke will discard it and enter a sleep cycle.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Seaduke",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "decrypted data",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "If the decrypted data does not produce proper JSON data, Seaduke will discard it"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "015",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Command cd pwd cdt autoload migrate clone_time download execw get upload b64encode eval",
+      "triple": [
+        {
+          "subject": {
+            "name": "Command",
+            "type": "AttackPattern"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "cd pwd cdt autoload migrate clone_time download execw get upload b64encode eval",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Command cd pwd cdt autoload migrate clone_time download execw get upload b64encode eval"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "018",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " set_update_interval self_exit seppuku Update sleep timer between main network requests Terminate malware Terminate and uninstall malware In order for the 'self_exit' or 'seppuku' commands to properly execute, the attackers must supply a secondary argument of 'YESIAMSURE'.",
+      "triple": [
+        {
+          "subject": {
+            "name": "self_exit",
+            "type": "AttackPattern"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "seppuku",
+            "type": "AttackPattern"
+          },
+          "evidence": {
+            "quote": "In order for the 'self_exit' or 'seppuku' commands to properly execute,"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Additionally, Palo Alto Networks properly categorizes the URL used by Seaduke as malicious.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Seaduke",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "URL",
+            "type": "URL"
+          },
+          "evidence": {
+            "quote": "the URL used by Seaduke"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Back to top TAGS Duke malware Forkmeiamfamous Threat Research Center Related Malware Resources T H R E AT   R E S E A R C H December 20, 2024 Now You See Me, Now You Don't: Using LLMs to Obfuscate Malicious JavaScript Credential stealer Data Augmentation FraudGPT Seaduke Read now Symantec Trojan Next: APT Group UPS Targets US Government with Hacking Team Flash Exploit T H R E AT   R E S E A R C H December 17, 2024 LDAP Enumeration: Unveiling the Double-Edged Sword of Active Directory Stately Taurus",
+      "triple": [
+        {
+          "subject": {
+            "name": "Duke malware",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Forkmeiamfamous",
+            "type": "MalwareFamily"
+          },
+          "evidence": {
+            "quote": "Duke malware Forkmeiamfamous"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Exposing the December 13, 2024 a-Service Operation Redline infostealer Lumma St",
+      "triple": [
+        {
+          "subject": {
+            "name": "a-Service Operation Redline",
+            "type": "Campaign"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Lumma St",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "a-Service Operation Redline infostealer Lumma St"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "By submitting this form, you agree to our Terms of Use and acknowledge our Privacy Statement.",
+      "triple": [
+        {
+          "subject": {
+            "name": "By submitting this form",
+            "type": "Unknown"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "agreement to our Terms of Use and acknowledgement of our Privacy Statement",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "agree to our Terms of Use and acknowledge our Privacy Statement"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "011",
+        "source": "TEXT"
+      }
+    }
+  ]
+}

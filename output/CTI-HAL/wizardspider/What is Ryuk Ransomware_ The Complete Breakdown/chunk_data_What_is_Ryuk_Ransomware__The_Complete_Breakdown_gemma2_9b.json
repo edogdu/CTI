@@ -1,0 +1,2133 @@
+{
+  "metrics": {
+    "file_name": "What is Ryuk Ransomware_ The Complete Breakdown.pdf",
+    "model_used": "gemma2:9b",
+    "doc_sha256_id": "10c293752f5f6113",
+    "num_pages": 17,
+    "num_sentences_total": 260,
+    "num_sentences_used": 162,
+    "num_raw_triples": 162,
+    "num_valid_triples": 88,
+    "num_suspicious_triples": 74,
+    "avg_triples_per_sentence": 1.0,
+    "rejection_stats": {
+      "bad_structure": 0,
+      "invalid_class_or_predicate": 74
+    },
+    "runtime_seconds": 158.43450355529785
+  },
+  "data": [
+    {
+      "context": "The actor name GRIM SPIDER was introduced into CrowdStrike's nomenclature in September 2018 for the group that operates the Ryuk ransomware as a distinct subgroup of the WIZARD SPIDER criminal enterprise.",
+      "triple": [
+        {
+          "subject": {
+            "name": "GRIM SPIDER",
+            "type": "ThreatActor"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "group that operates the Ryuk ransomware",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "for the group that operates the Ryuk ransomware"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "CrowdStrike Intelligence will now solely use the actor name WIZARD SPIDER in association with TrickBot and Ryuk.",
+      "triple": [
+        {
+          "subject": {
+            "name": "CrowdStrike Intelligence",
+            "type": "Organization"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "actor name WIZARD SPIDER",
+            "type": "ThreatActor"
+          },
+          "evidence": {
+            "quote": "will now solely use the actor name WIZARD SPIDER"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Similar to Samas and BitPaymer , Ryuk is specifically used to target enterprise environments.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Ryuk",
+            "type": "Malware"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "enterprise environments",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "target enterprise environments"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Code comparison between versions of Ryuk and Hermes ransomware indicates that Ryuk was derived from the Hermes source code and has been under steady development since its release.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Code comparison",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "Ryuk was derived from the Hermes source code and has been under steady development since its release.",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Code comparison between versions of Ryuk and Hermes ransomware indicates that Ryuk was derived from the Hermes source code and has been under steady development since its release."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "However, Ryuk is only used by WIZARD SPIDER and, unlike Hermes, Ryuk has only been used to target enterprise environments.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Ryuk",
+            "type": "Malware"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "enterprise environments",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Ryuk has only been used to target enterprise environments"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Since Ryuk's appearance in August, the threat actors operating it have netted over 705.80 BTC across 52 transactions for a total current value of $3,701,893.98 USD.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Ryuk",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "threat actors operating it",
+            "type": "ThreatActor"
+          },
+          "evidence": {
+            "quote": "Ryuk's appearance in August, the threat actors operating it"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "We exclusively have decryption software for your situation No decryption software is available in the public.",
+      "triple": [
+        {
+          "subject": {
+            "name": "decryption software",
+            "type": "Software"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "availability",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "have decryption software for your situation No decryption software is available in the public"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "DO NOT RESET OR SHUTDOWN files may be   damaged NOT RENAME OR MOVE the encrypted and readme files DO NOT DELETE readme files This may lead the impossibility of recovery of che certain files To get info (decrypt your files) contact us at Kurtschweickardt@protonmail.con",
+      "triple": [
+        {
+          "subject": {
+            "name": "Kurtschweickardt@protonmail.con",
+            "type": "EmailAddress"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "contact us",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "To get info (decrypt your files) contact us at Kurtschweickardt@protonmail.con"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Ryuk Ransom Note Bearing Strong Resemblance to BitPaymer The ransom email used by Ryuk appears to be unique for each compiled executable.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Ryuk Ransom Note",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "BitPaymer",
+            "type": "Ransomware"
+          },
+          "evidence": {
+            "quote": "Ryuk Ransom Note Bearing Strong Resemblance to BitPaymer"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Our Using threat intelligence, our team has observed several different email addresses, but the same BTC addresses across multiple Ryuk executables.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Ryuk",
+            "type": "MalwareFamily"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "BTC addresses",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "across multiple Ryuk executables."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "On Nov. 29, 2018, WIZARD SPIDER changed how they communicated with their victims.",
+      "triple": [
+        {
+          "subject": {
+            "name": "WIZARD SPIDER",
+            "type": "ThreatActor"
+          },
+          "predicate": "communicatesWith",
+          "object": {
+            "name": "victims",
+            "type": "Person"
+          },
+          "evidence": {
+            "quote": "changed how they communicated with their victims"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "More Enan year ago, world experts recognized Ene impossibilicy Of decipnering pY any except original decoder is available Ene public Antiviruse companies, researchers, IT specialists, and otaer persons help You encrypt Ene NOT RESET OR files may damaged NOT DELBTE reaane files To confirm ouI nonest intentions Sena ranaon ana you will ger ic Can be different conputers your necwork pe sure one key decrypcs files We unlock for free To get info (decrypt Your files) cliffordGolden9s@protonmail_",
+      "triple": [
+        {
+          "subject": {
+            "name": "Ene",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "public Antiviruse companies",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "Ene public Antiviruse companies"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Ryuk Ransom With BTC Address Removed Early Ryuk binaries with the removal of the BTC address contained a PDB path of C:\\Users\\Admin\\Documents\\Visual Studio 2015\\Projects\\ConsoleApplication54new crypted try to clean\\x64\\Release\\ConsoleApplication54.pdb.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Ryuk Ransom",
+            "type": "Malware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "PDB path of C:\\Users\\Admin\\Documents\\Visual Studio 2015\\Projects\\ConsoleApplication54new crypted try to clean\\x64\\Release\\ConsoleApplication54.pdb",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "contained a PDB path of C:\\Users\\Admin\\Documents\\Visual Studio 2015\\Projects\\ConsoleApplication54new crypted try to clean\\x64\\Release\\ConsoleApplication54.pdb"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This PDB path started appearing on Nov. 29, 2018.",
+      "triple": [
+        {
+          "subject": {
+            "name": "PDB path",
+            "type": "Filepath"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "This PDB path",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "This PDB path"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The removal of the BTC addresses occurred a day after the U.S. Department of Justice unsealed indictments for two individuals involved in facilitating cashouts from Samas Bitcoin addresses.",
+      "triple": [
+        {
+          "subject": {
+            "name": "BTC addresses",
+            "type": "DomainName"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "Removal",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "The removal of the BTC addresses"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Ransom Payments Based on observed transactions to known Ryuk BTC addresses, the ransom demand varies significantly.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Ransom Payments",
+            "type": "Unknown"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "ransom demand",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Based on observed transactions to known Ryuk BTC addresses, the ransom demand varies significantly."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This suggests that WIZARD SPIDER (like INDRIK SPIDER with BitPaymer) calculates the ransom amount based on the size and value of the victim organization.",
+      "triple": [
+        {
+          "subject": {
+            "name": "WIZARD SPIDER",
+            "type": "ThreatActor"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "BitPaymer",
+            "type": "MalwareFamily"
+          },
+          "evidence": {
+            "quote": "WIZARD SPIDER (like INDRIK SPIDER with BitPaymer)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "CrowdStrike Falcon¤ Intelligence'¤ believes that the initial compromise is performed through TrickBot, which is typically distributed either via spam email or, through the use of the Emotet (developed and operated by MUMMY SPIDER) geo-based download function.",
+      "triple": [
+        {
+          "subject": {
+            "name": "TrickBot",
+            "type": "Malware"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "initial compromise",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "CrowdStrike Falcon¤ Intelligence'¤ believes that the initial compromise is performed through TrickBot"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Some of TrickBot's modules (such as pwgrab ) could aid in recovering the credentials needed to compromise environments - the SOCKS module in particular has been observed tunneling PowerShell Empire traffic to perform reconnaissance and lateral movement.",
+      "triple": [
+        {
+          "subject": {
+            "name": "TrickBot",
+            "type": "Malware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "modules",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Some of TrickBot's modules"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Through CrowdStrike IR engagements, WIZARD SPIDER has been observed performing the following events on the victim's network, with the end goal of pushing out the Ryuk binary: An obfuscated PowerShell script is executed and connects to a remote IP address.",
+      "triple": [
+        {
+          "subject": {
+            "name": "WIZARD SPIDER",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "victim's network",
+            "type": "Network"
+          },
+          "evidence": {
+            "quote": "performing the following events on the victim's network"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Reconnaissance of the network is conducted using standard Windows command line tools along with external uploaded tools.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Reconnaissance",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "standard Windows command line tools",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "using standard Windows command line tools"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Lateral movement throughout the network is enabled using Remote Desktop Protocol (RDP).",
+      "triple": [
+        {
+          "subject": {
+            "name": "Lateral movement",
+            "type": "AttackPattern"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "Remote Desktop Protocol (RDP)",
+            "type": "Protocol"
+          },
+          "evidence": {
+            "quote": "using Remote Desktop Protocol (RDP)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "PSEXEC is used to push out the Ryuk binary to individual hosts.",
+      "triple": [
+        {
+          "subject": {
+            "name": "PSEXEC",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "Ryuk",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "PSEXEC is used to push out the Ryuk binary"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "013",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "From Hermes to Ryuk: Similarities & Differences Hermes ransomware, the predecessor to Ryuk, was first distributed in February 2017.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Hermes",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Ransomware",
+            "type": "MalwareFamily"
+          },
+          "evidence": {
+            "quote": "Hermes ransomware, the predecessor to Ryuk"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "016",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Hermes was originally sold on forums for $300 USD.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Hermes",
+            "type": "MalwareFamily"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Unknown",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "was originally sold on forums for $300 USD."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The seller of Hermes ransomware appears to have stopped or limited advertising on forums in 2017.",
+      "triple": [
+        {
+          "subject": {
+            "name": "seller",
+            "type": "Person"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "Hermes ransomware",
+            "type": "MalwareFamily"
+          },
+          "evidence": {
+            "quote": "The seller of Hermes ransomware"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Early versions of Hermes were reportedly installed via internet-accessible RDP servers protected by weak credentials.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Hermes",
+            "type": "Malware"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "internet-accessible RDP servers",
+            "type": "Infrastructure"
+          },
+          "evidence": {
+            "quote": "Early versions of Hermes were reportedly installed via internet-accessible RDP servers"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In October 2017, Hermes was deployed as a destructive distraction for a Society for Worldwide Interbank Financial Telecommunication (SWIFT) compromise at the Far Eastern International Bank (FEIB) in Taiwan.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Hermes",
+            "type": "Malware"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "Far Eastern International Bank (FEIB)",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "was deployed as a destructive distraction for a Society for Worldwide Interbank Financial Telecommunication (SWIFT) compromise at the Far Eastern International Bank (FEIB)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Hermes' role in the SWIFT attack is described in more detail in the Attribution section at the end of this blog.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Hermes",
+            "type": "ThreatActor"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "SWIFT attack",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "Hermes' role in the SWIFT attack"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In March 2018, Hermes was observed targeting users in South Korea via the GreenFlash Sundown exploit kit.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Hermes",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "users in South Korea",
+            "type": "Location"
+          },
+          "evidence": {
+            "quote": "targeting users in South Korea"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In mid-August 2018, a modified version of Hermes, dubbed Ryuk, started appearing in a public malware repository.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Hermes",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Ryuk",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "a modified version of Hermes, dubbed Ryuk"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "012",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "From a process and file perspective, Hermes and Ryuk target files in a similar fashion.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Hermes",
+            "type": "Malware"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "files",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "Hermes and Ryuk target files"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "015",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The core differences are Ryuk's logic that handles file access, and the use of a second, embedded public RSA key.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Ryuk",
+            "type": "MalwareFamily"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "a second, embedded public RSA key",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Ryuk's logic that handles file access, and the use of a second, embedded public RSA key."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "016",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The following are characteristics that have not changed: Encrypts files using RSA-2048 and AES-256 Stores keys in the executable using the proprietary Microsoft SIMPLEBLOB format Encrypts mounted devices and remote hosts Uses a file marker of HERMES to mark or check if a file has been encrypted Another notable difference between Hermes and Ryuk is how the encryption keys are created.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Hermes",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "RSA-2048 and AES-256",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "Encrypts files using RSA-2048 and AES-256"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "017",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Because Ryuk does not generate a victim-specific RSA key pair, all hosts can be decrypted with the same decryption key.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Ryuk",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "decryption key",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Because Ryuk does not generate a victim-specific RSA key pair, all hosts can be decrypted with the same decryption key."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This is arguably more secure, since the victim's system will never have access to the unencrypted RSA key pair parameters without paying the ransom.",
+      "triple": [
+        {
+          "subject": {
+            "name": "victim's system",
+            "type": "System"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "access",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "will never have access"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This approach is similar to INDRIK SPIDER's BitPaymer ransomware, which generates a victim-specific sample with a hard-coded public key.",
+      "triple": [
+        {
+          "subject": {
+            "name": "INDRIK SPIDER",
+            "type": "ThreatActor"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "BitPaymer ransomware",
+            "type": "MalwareFamily"
+          },
+          "evidence": {
+            "quote": "which generates a victim-specific sample with a hard-coded public key."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "4. Ryuk Functionality: A Technical Analysis There are two types of Ryuk binaries: a dropper (which is not commonly observed) and the Ryuk executable payload.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Ryuk",
+            "type": "Malware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "two types of binaries",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "There are two types of Ryuk binaries"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Recovery of Ryuk droppers are rare, due to the Ryuk executable payload deleting the dropper when executed.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Ryuk",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "dropper",
+            "type": "Dropper"
+          },
+          "evidence": {
+            "quote": "Recovery of Ryuk droppers are rare, due to the Ryuk executable payload deleting the dropper when executed."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The newly written executable is then run by calling ShellExecuteW .",
+      "triple": [
+        {
+          "subject": {
+            "name": "executable",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "ShellExecuteW",
+            "type": "AttackPattern"
+          },
+          "evidence": {
+            "quote": "then run by calling ShellExecuteW"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "020",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In recent months, Ryuk binaries have continued to deviate further and further from the original Hermes source code, with the threat actors adding and removing functionality often.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Ryuk",
+            "type": "Malware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "binaries",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "Ryuk binaries have continued"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "023",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In November 2018, Falcon Intelligence identified new functionality added to Ryuk that included an anti-analysis infinite loop, a ping-like request to an IP address once the encryption process was completed, and the addition of an appended file extension for encrypted files.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Ryuk",
+            "type": "Malware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "anti-analysis infinite loop",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "new functionality added to Ryuk that included an anti-analysis infinite loop"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "024",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " File Encryption Compared to other families of ransomware, Ryuk has very few safeguards to ensure stability of the host by not encrypting system files.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Ryuk",
+            "type": "MalwareFamily"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "safeguards to ensure stability of the host by not encrypting system files",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "very few safeguards to ensure stability of the host by not encrypting system files"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "For example, many ransomware families contain extensive lists of file extensions or folder names that should not be encrypted (whitelisted), but Ryuk only whitelists three extensions: It will not encrypt files with the extensions exe, dll , or hrmlog .",
+      "triple": [
+        {
+          "subject": {
+            "name": "Ryuk",
+            "type": "Ransomware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": null,
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "For example, many ransomware families contain extensive lists of file extensions or folder names that should not be encrypted (whitelisted), but Ryuk only whitelists three extensions: It will not encrypt files with the extensions exe, dll , or hrmlog ."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The last extension appears to be a debug log filename created by the original Hermes developer.",
+      "triple": [
+        {
+          "subject": {
+            "name": "extension",
+            "type": "Filename"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "debug log filename",
+            "type": "Filename"
+          },
+          "evidence": {
+            "quote": "The last extension appears to be a debug log filename created by the original Hermes developer."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "It should be noted that absent from this list is sys (system drivers), ocx (OLE control extension) and other executable file types.",
+      "triple": [
+        {
+          "subject": {
+            "name": "sys",
+            "type": "System"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "list",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "absent from this list is sys"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Early versions of Ryuk included the whitelisting of ini and lnk files, but these have been removed in recent builds.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Ryuk",
+            "type": "Malware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "whitelisting of ini and lnk files",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Early versions of Ryuk included the whitelisting of ini and lnk files"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "As mentioned in the Hermes to Ryuk section, Ryuk uses a combination of symmetric (AES) and asymmetric (RSA) encryption to encrypt files.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Ryuk",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "a combination of symmetric (AES) and asymmetric (RSA) encryption",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "Ryuk uses a combination of symmetric (AES) and asymmetric (RSA) encryption"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "A thread is created for the encryption of each file and each file is encrypted with its own AES key.",
+      "triple": [
+        {
+          "subject": {
+            "name": "thread",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "encryption of each file",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "A thread is created for the encryption of each file"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "013",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "All directories will have a ransom note of ( RyukReadMe.txt ) written to the directory.",
+      "triple": [
+        {
+          "subject": {
+            "name": "directories",
+            "type": "Unknown"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "( RyukReadMe.txt )",
+            "type": "Filename"
+          },
+          "evidence": {
+            "quote": "will have a ransom note of ( RyukReadMe.txt ) written to the directory."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "015",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Ryuk attempts to encrypt all mounted drives and hosts that have Address Resolution Protocol (ARP) entries (IP addresses) and it enumerates all mounted drives by calling GetLogicalDrives .",
+      "triple": [
+        {
+          "subject": {
+            "name": "Ryuk",
+            "type": "Malware"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "all mounted drives and hosts",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Ryuk attempts to encrypt all mounted drives and hosts"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "016",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Previously, to remain persistent on the host, Ryuk created a registry entry under the Run key using Windows cmd.exe shell.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Ryuk",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "Windows cmd.exe shell",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "using Windows cmd.exe shell"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "If a process is found that is not named csrss.exe, explorer.exe, lsaas.exe, or is running under NT AUTHORITY system account, Ryuk will inject itself into this single process.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Ryuk",
+            "type": "Malware"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "process",
+            "type": "System"
+          },
+          "evidence": {
+            "quote": "Ryuk will inject itself into this single process"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Ryuk uses a combination of VirtualAlloc, WriteProcessMemory and CreateRemoteThread to inject itself into the remote process.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Ryuk",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "VirtualAlloc",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "Ryuk uses a combination of VirtualAlloc"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Process/Service Termination and Anti-Recovery Commands Unlike other families of ransomware, Ryuk does not contain process/service termination and anti-recovery functionality embedded in the executable.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Ryuk",
+            "type": "MalwareFamily"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "process/service termination and anti-recovery functionality",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "Unlike other families of ransomware, Ryuk does not contain process/service termination and anti-recovery functionality embedded in the executable."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " sc config SstpSvc start= disabled … taskkill /IM mspub.exe /F taskkill /IM mydesktopqos.exe /F taskkill /IM mydesktopservice.exe /F",
+      "triple": [
+        {
+          "subject": {
+            "name": "sc",
+            "type": "CommandAndControl"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "SstpSvc",
+            "type": "System"
+          },
+          "evidence": {
+            "quote": "sc config SstpSvc start= disabled"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Process/Services Termination kill.bat Commands CrowdStrike has observed another batch file, named windows.bat , which makes file recovery more difficult on the victim's machine.",
+      "triple": [
+        {
+          "subject": {
+            "name": "windows.bat",
+            "type": "Filename"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "file recovery more difficult",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "makes file recovery more difficult"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "vssadmin Delete Shadows /all /quiet vssadmin resize shadowstorage /for",
+      "triple": [
+        {
+          "subject": {
+            "name": "vssadmin",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "/Delete Shadows /all /quiet",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "vssadmin Delete Shadows /all /quiet"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "=c: /maxsize=401MB vssadmin resize shadowstorage /for=c: /on=c: /maxsize=unbounded vssadmin resize shadowstorage /for=d: /on=d: /maxsize=401MB vssadmin resize shadowstorage /for=d: /on",
+      "triple": [
+        {
+          "subject": {
+            "name": "vssadmin",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "resize shadowstorage",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "vssadmin resize shadowstorage"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "=g: /maxsize=401MB vssadmin resize shadowstorage /for=g: /on=g: /maxsize=unbounded vssadmin resize shadowstorage /for=h: /on",
+      "triple": [
+        {
+          "subject": {
+            "name": "vssadmin",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "resize shadowstorage",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "vssadmin resize shadowstorage"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "=h: /maxsize=401MB vssadmin resize shadowstorage /for=h: /on",
+      "triple": [
+        {
+          "subject": {
+            "name": "vssadmin",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "/maxsize=401MB",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "vssadmin resize shadowstorage /for=h: /on"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "g:\\*.bac g:\\*.bak g:\\*.wbcat g:\\*.bkf g:\\Backup*.*",
+      "triple": [
+        {
+          "subject": {
+            "name": "g:\\*.bac",
+            "type": "Filepath"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": " ",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "g:\\*.bac "
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "022",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "h:\\*.VHD h:\\*.bac h:\\*.bak h:\\*.wbcat h:\\*.bkf h:\\Backup*.*",
+      "triple": [
+        {
+          "subject": {
+            "name": "h:\\*.VHD",
+            "type": "Filepath"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "unknown",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "h:\\*.VHD"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "025",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Try removing them with the backup application which created them.'",
+      "triple": [
+        {
+          "subject": {
+            "name": "backup application",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "them",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Try removing them with the backup application which created them."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The shadow copies are then deleted by calling the command vssadmin Delete Shadows /all /quiet",
+      "triple": [
+        {
+          "subject": {
+            "name": "vssadmin",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "Delete Shadows /all /quiet",
+            "type": "CommandAndControl"
+          },
+          "evidence": {
+            "quote": "calling the command vssadmin Delete Shadows /all /quiet"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The last command of del %0 deletes the executing .bat file.",
+      "triple": [
+        {
+          "subject": {
+            "name": "del",
+            "type": "AttackPattern"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": ".bat file",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "The last command of del %0 deletes the executing .bat file."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "014",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The anti-recovery commands used by Ryuk are more extensive than most ransomware families.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Ryuk",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "anti-recovery commands",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "The anti-recovery commands used by Ryuk"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "015",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Attribution North Korea Open-source reporting has claimed that the Hermes ransomware was developed by the North Korean group STARDUST CHOLLIMA (activities of which have been public reported as part of the 'Lazarus Group'), because Hermes was executed on a host during the SWIFT compromise of FEIB in October 2017.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Hermes ransomware",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "STARDUST CHOLLIMA",
+            "type": "ThreatActor"
+          },
+          "evidence": {
+            "quote": "because Hermes was executed on a host during the SWIFT compromise of FEIB in October 2017."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "019",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The dropper's goal is to propagate the Hermes executable within a network by creating scheduled tasks over SMB sessions using hard-coded credentials.",
+      "triple": [
+        {
+          "subject": {
+            "name": "dropper",
+            "type": "Dropper"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "network",
+            "type": "Network"
+          },
+          "evidence": {
+            "quote": "propagate the Hermes executable within a network"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 12,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The Hermes executable then encrypts files on the host.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Hermes",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "encrypts files",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "The Hermes executable then encrypts files"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 12,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Studio 10, with a linker of Visual Studio 10.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Studio 10",
+            "type": "Application"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "linker",
+            "type": "Software"
+          },
+          "evidence": {
+            "quote": "with a linker"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 13,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Hermes, in contrast, was compiled with Visual Studio 9, with an unknown linker.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Hermes",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Unknown",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "unknown linker"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 13,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Unlike other variants of Hermes, RSW7B37.tmp does not append the exported and encrypted AES key to the end of the file.",
+      "triple": [
+        {
+          "subject": {
+            "name": "RSW7B37.tmp",
+            "type": "Filename"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "AES key",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "does not append the exported and encrypted AES key"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 13,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Figure 5 is a file encrypted by Hermes with the exported AES key appended to the end of the file as a footer.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Hermes",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "AES",
+            "type": "Protocol"
+          },
+          "evidence": {
+            "quote": "encrypted by Hermes with the exported AES key appended"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 13,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Example Hermes Footer with Encrypted AES Key Figure 6 is the end of a file encrypted by the Hermes variant RSW7B37.tmp used in the SWIFT attack.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Hermes variant RSW7B37.tmp",
+            "type": "Filename"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "AES Key",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "encrypted by the Hermes variant RSW7B37.tmp used in the SWIFT attack."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 13,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Therefore, the Hermes executable used in the FEIB SWIFT attack appears never to have been",
+      "triple": [
+        {
+          "subject": {
+            "name": "Hermes",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "FEIB SWIFT attack",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "Hermes executable used in the FEIB SWIFT attack"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 13,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Hermes was originally advertised on exploit[.]in .",
+      "triple": [
+        {
+          "subject": {
+            "name": "Hermes",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "exploit[.]in",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "was originally advertised on exploit[.]in"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 14,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "If Hermes was indeed related to STARDUST CHOLLIMA, it would imply that nation-state threat actors are selling their services on Russian-speaking forums, which is unlikely.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Hermes",
+            "type": "ThreatActor"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "nation-state threat actors are selling their services on Russian-speaking forums",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "If Hermes was indeed related to STARDUST CHOLLIMA, it would imply that nation-state threat actors are selling their services on Russian-speaking forums"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 14,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The Russian threat actor attribution theory is also supported by an early advertisement for Hermes, which stated that their 'software did not work and will on work on RU, UA, BY' [sic].",
+      "triple": [
+        {
+          "subject": {
+            "name": "Hermes",
+            "type": "MalwareFamily"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "software",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "their 'software did not work and will on work on RU, UA, BY' [sic]"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 14,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This refers to functionality implemented in Hermes to check the host to ensure that it is not running on a Russian, Ukrainian, or Belarusian system.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Hermes",
+            "type": "Malware"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "Russian, Ukrainian, or Belarusian system",
+            "type": "System"
+          },
+          "evidence": {
+            "quote": "to check the host to ensure that it is not running on a Russian, Ukrainian, or Belarusian system"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 14,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "If the machine has the value 0419 (Russian), 0422 (Ukrainian) or 0423 (Belarusian), it call ExitProcess to stop executing.",
+      "triple": [
+        {
+          "subject": {
+            "name": "machine",
+            "type": "OperatingSystem"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "value 0419, 0422 or 0423",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "If the machine has the value 0419 (Russian), 0422 (Ukrainian) or 0423 (Belarusian),"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 14,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "While supporting an incident response investigation involving Ryuk, Falcon Intelligence noticed files related to the investigation being uploaded to a filescanning website from an IP address in Moscow, Russia.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Ryuk",
+            "type": "MalwareFamily"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "files related to the investigation being uploaded to a filescanning website",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "While supporting an incident response investigation involving Ryuk, Falcon Intelligence noticed files related to the investigation being uploaded to a filescanning website"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 14,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The file in question was a variant of kill.bat that contained commands previously only observed executed by Ryuk calling ShellExecute .",
+      "triple": [
+        {
+          "subject": {
+            "name": "file",
+            "type": "Filename"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "kill.bat",
+            "type": "Filename"
+          },
+          "evidence": {
+            "quote": "The file in question was a variant of kill.bat"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 14,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The files could have been uploaded by a victim in Russia, but the time frame between the functionality being removed from Ryuk binaries and included in kill.bat was very short.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Ryuk",
+            "type": "MalwareFamily"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "functionality",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "the time frame between the functionality being removed from Ryuk binaries"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 14,
+        "id": "012",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "How CrowdStrike Can Prevent Ryuk The Falcon platform has the ability to detect and prevent Ryuk by taking advantage of the behavioral patterns indicated by the ransomware.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Falcon platform",
+            "type": "System"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "Ryuk",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "indicated by the ransomware"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 14,
+        "id": "019",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The following table contains the hashes of recently compiled Ryuk payloads: 01:10:12 02:33:34 00:15:31",
+      "triple": [
+        {
+          "subject": {
+            "name": "Ryuk",
+            "type": "MalwareFamily"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "hashes",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "The following table contains the hashes of recently compiled Ryuk payloads:"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 17,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The following table contains hashes of Hermes executables that were previously analyzed: 2018-07 13:35:2 2018-07 03:47:5 2018-07 1522:37",
+      "triple": [
+        {
+          "subject": {
+            "name": "2018-07 13:35:2",
+            "type": "Time"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "Hermes executables",
+            "type": "Filename"
+          },
+          "evidence": {
+            "quote": "2018-07 13:35:2 Hermes executables"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 17,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Tweet  Share PROTECT AGAINST MALWARE, RANSOMWARE AND FILELESS ATTACKS Related Content Still Alive: Updates for Well-Known Latin America eCrime Malware Identified in 2023 The Year of Stealth CrowdStrike 2024 Global Threat Report: Adversaries Gain Speed and Stealth",
+      "triple": [
+        {
+          "subject": {
+            "name": "CrowdStrike",
+            "type": "Organization"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "The Year of Stealth",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "The Year of Stealth CrowdStrike 2024 Global Threat Report"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 18,
+        "id": "003",
+        "source": "TEXT"
+      }
+    }
+  ]
+}

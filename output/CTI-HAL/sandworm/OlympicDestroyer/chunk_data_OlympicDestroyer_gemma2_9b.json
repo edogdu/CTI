@@ -1,0 +1,669 @@
+{
+  "metrics": {
+    "file_name": "OlympicDestroyer.pdf",
+    "model_used": "gemma2:9b",
+    "doc_sha256_id": "e8dc14dbcbea9f17",
+    "num_pages": 9,
+    "num_sentences_total": 88,
+    "num_sentences_used": 49,
+    "num_raw_triples": 49,
+    "num_valid_triples": 27,
+    "num_suspicious_triples": 22,
+    "avg_triples_per_sentence": 1.0,
+    "rejection_stats": {
+      "bad_structure": 0,
+      "invalid_class_or_predicate": 22
+    },
+    "runtime_seconds": 48.97658824920654
+  },
+  "data": [
+    {
+      "context": " OLYMPIC Olympic Destroyer Takes Aim At Winter Olympics By Warren Mercer MONDAY, FEBRUARY 12, 2018 08:16",
+      "triple": [
+        {
+          "subject": {
+            "name": "OLYMPIC",
+            "type": "ThreatActor"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Olympic Destroyer",
+            "type": "MalwareFamily"
+          },
+          "evidence": {
+            "quote": "OLYMPIC Olympic Destroyer Takes Aim At Winter Olympics"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Sunday 11th February the Olympic games oNcials conGrmed a cyber attack occurred but did not comment or speculate further.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Olympic games officials",
+            "type": "Person"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "cyber attack occurred",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "conGrmed a cyber attack occurred"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The destructive nature of this malware aims to render the machine unusable by deleting shadow copies, event logs and trying to use PsExec & WMI to further move through the environment.",
+      "triple": [
+        {
+          "subject": {
+            "name": "malware",
+            "type": "Malware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "destructive nature",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "The destructive nature of this malware aims to render the machine unusable"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This is something we have witnessed previously with BadRabbit and Nyetya.",
+      "triple": [
+        {
+          "subject": {
+            "name": "BadRabbit",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Nyetya",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "BadRabbit and Nyetya"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " By checking the ARP table with the Windows API GetIPNetTable; By WMI (using WQL) with the following request: \"SELECT ds_cn FROM ds_computer\".",
+      "triple": [
+        {
+          "subject": {
+            "name": "Windows API GetIPNetTable",
+            "type": "CommandAndControl"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "ARP table",
+            "type": "Hardware"
+          },
+          "evidence": {
+            "quote": "By checking the ARP table with the Windows API GetIPNetTable"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The network propagation is performed using PsExec and WMI (via the Win32_Process class).",
+      "triple": [
+        {
+          "subject": {
+            "name": "network propagation",
+            "type": "AttackPattern"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "PsExec",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "using PsExec"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Here is the code executed remotely: The purpose is to copy the initial stage to the remote system in %ProgramData%\\%COMPUTERNAME%.exe and to execute it via a VBScript.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Code",
+            "type": "AttackPattern"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "%ProgramData%\", \"\"%COMPUTERNAME%.exe\"",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "copy the initial stage to the remote system in %ProgramData%\" \\\"%COMPUTERNAME%.exe\""
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "To perform the lateral movement, the malware needs credentials, it uses 2 stealers described in the next section: The credentials have not been hardcoded into the binary by the attackers themselves.",
+      "triple": [
+        {
+          "subject": {
+            "name": "malware",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "2 stealers",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "it uses 2 stealers"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The malware dynamically updates this list after using the password stealers.",
+      "triple": [
+        {
+          "subject": {
+            "name": "malware",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "password stealers",
+            "type": "Software"
+          },
+          "evidence": {
+            "quote": "after using the password stealers"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "As you can see, the domain attempted to be used is related to Pyeongchang 2018.",
+      "triple": [
+        {
+          "subject": {
+            "name": "domain",
+            "type": "DomainName"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Pyeongchang 2018",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "related to Pyeongchang 2018"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Here is the output format parsed by the initial stage: DESTRUCTOR The destructive portion of this malware starts during initial execution on the victim machine.",
+      "triple": [
+        {
+          "subject": {
+            "name": "DESTRUCTOR",
+            "type": "Malware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "destructive portion",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "The destructive portion of this malware starts"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The initial malware execution results in multiple Gles written to disk, as discussed.",
+      "triple": [
+        {
+          "subject": {
+            "name": "malware",
+            "type": "Malware"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "Gles",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "multiple Gles written to disk"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "By leveraging cmd.exe from the host the malware Grst deletes all possible shadow copies on the system using vssadmin: C:\\Windows\\system32\\cmd.exe /c c:\\Windows\\system32\\vssadmin.exe delete shadows /all /quiet",
+      "triple": [
+        {
+          "subject": {
+            "name": "Grst",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "cmd.exe",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "By leveraging cmd.exe from the host the malware Grst deletes"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This step is executed to ensure that Gle recovery is not trivial - WBAdmin can be used to recover individual Gles, folders and also whole drives so this would be a very convenient tool for a sysadmin to use in order to aid recovery.",
+      "triple": [
+        {
+          "subject": {
+            "name": "WBAdmin",
+            "type": "Software"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "Gle recovery",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "WBAdmin can be used to recover individual Gles, folders and also whole drives so this would be a very convenient tool for a sysadmin to use in order to aid recovery."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " The attacker has now attempted to ensure that recovery is extremely diNcult for any impacted hosts and to further cover their tracks the deletion of the System & Security windows event log is performed, this will be used to try and make any analysis more diNcult.",
+      "triple": [
+        {
+          "subject": {
+            "name": "attacker",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "hosts",
+            "type": "OperatingSystem"
+          },
+          "evidence": {
+            "quote": "The attacker has now attempted to ensure that recovery is extremely diNcult for any impacted hosts"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "wevtutil.exe cl System C:\\Windows\\system32\\cmd.exe /c",
+      "triple": [
+        {
+          "subject": {
+            "name": "wevtutil.exe",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "System",
+            "type": "OperatingSystem"
+          },
+          "evidence": {
+            "quote": "wevtutil.exe cl System"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The purpose of this malware is to perform destruction of the host, leave the computer system okine, and wipe remote data.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Malware",
+            "type": "Malware"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "host",
+            "type": "System"
+          },
+          "evidence": {
+            "quote": "The purpose of this malware is to perform destruction of the host"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Additionally, the destroyer disables all the services on the system: The malware uses the ChangeServiceConGgW API to change the start type to 4 which means: \"Disabled: SpeciGes that the service should not be started.\"",
+      "triple": [
+        {
+          "subject": {
+            "name": "The malware",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "ChangeServiceConGgW API",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "The malware uses the ChangeServiceConGgW API"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Additionally, the malware lists mapped Gle shares and for each share, it will wipe the writable Gles (using either uninitialized data or 0x00 depending of the Gle size).",
+      "triple": [
+        {
+          "subject": {
+            "name": "malware",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "uninitialized data",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "using either uninitialized data or 0x00 depending of the Gle size"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "LEGITIMATE FILE Additionally, the Olympic Destroyer drops the legitimate, digitally signed, PsExec Gle in order to perform lateral movement by using this legitimate tool from Microsoft.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Olympic Destroyer",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "PsExec",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "the Olympic Destroyer drops the legitimate, digitally signed, PsExec Gle in order to perform lateral movement by using this legitimate tool from Microsoft."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Using legitimate tools like PsExec will save the adversary time from writing their own tooling.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Adversary",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "PsExec",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "Using legitimate tools like PsExec"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This would allow the actors to speciGcally pinpoint the moment of the opening ceremony and would allow them to control their time of impact.",
+      "triple": [
+        {
+          "subject": {
+            "name": "actors",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "moment of the opening ceremony",
+            "type": "Time"
+          },
+          "evidence": {
+            "quote": "allow the actors to speciGcally pinpoint the moment of the opening ceremony"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Network Security appliances such asNGFW,NGIPS, andMeraki MX can detect malicious activity associated with this threat.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Network Security appliances",
+            "type": "Hardware"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "malicious activity",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "can detect malicious activity associated with this threat."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "AMP Threat Grid helps identify malicious binaries and build protection into all Cisco Security products.",
+      "triple": [
+        {
+          "subject": {
+            "name": "AMP Threat Grid",
+            "type": "Software"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "malicious binaries",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "identify malicious binaries"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " IOCs Olympic Destroyer: edb1ff2521fb4bf748111f92786d260d40407a2e8463dcd24bb09f908ee13eb9 Browser Stealer: 19ab44a1343db19741b0e0b06bacce55990b6c8f789815daaf3476e0cc30ebea (unpacked: ab5bf79274b6583a00be203256a4eacfa30a37bc889b5493da9456e2d5885c7f ) System Stealer: f188abc33d351c2254d794b525c5a8b79ea78acd3050cd8d27d3ecfc568c2936 (unpacked a7d6dcdf5ca2c426cc6c447cff76834d97bc1fdff2cd14bad0b7c2817408c334 ) Destroyer: ae9a4e244a9b3c77d489dee8aeaf35a7c3ba31b210e76d81ef2e91790f052c85 Psexec (legit): 3337e3875b05e0bfba69ab926532e3f179e8cfbf162ebb60ce58a0281437a7ef",
+      "triple": [
+        {
+          "subject": {
+            "name": "edb1ff2521fb4bf748111f92786d260d40407a2e8463dcd24bb09f908ee13eb9",
+            "type": "SHA-256"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "Browser Stealer",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "IOCs Olympic Destroyer: edb1ff2521fb4bf748111f92786d260d40407a2e8463dcd24bb09f908ee13eb9 Browser Stealer"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Additional Olympic Destroyer: D934CB8D0EADB93F8A57A9B8853C5DB218D5DB78C16A35F374E413884D915016 EDB1FF2521FB4BF748111F92786D260D40407A2E8463DCD24BB09F908EE13EB9 3E27B6B287F0B9F7E85BFE18901D961110AE969D58B44AF15B1D75BE749022C2 28858CC6E05225F7D156D1C6A21ED11188777FA0A752CB7B56038D79A88627CC SHARE THIS POST",
+      "triple": [
+        {
+          "subject": {
+            "name": "Additional Olympic Destroyer",
+            "type": "Malware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "D934CB8D0EADB93F8A57A9B8853C5DB218D5DB78C16A35F374E413884D915016 EDB1FF2521FB4BF748111F92786D260D40407A2E8463DCD24BB09F908EE13EB9 3E27B6B287F0B9F7E85BFE18901D961110AE969D58B44AF15B1D75BE749022C2 28858CC6E05225F7D156D1C6A21ED11188777FA0A752CB7B56038D79A88627CC",
+            "type": "SHA-256"
+          },
+          "evidence": {
+            "quote": "Additional Olympic Destroyer: D934CB8D0EADB93F8A57A9B8853C5DB218D5DB78C16A35F374E413884D915016 EDB1FF2521FB4BF748111F92786D260D40407A2E8463DCD24BB09F908EE13EB9 3E27B6B287F0B9F7E85BFE18901D961110AE969D58B44AF15B1D75BE749022C2 28858CC6E05225F7D156D1C6A21ED11188777FA0A752CB7B56038D79A88627CC"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " © 2024 Cisco Systems, Inc. and/or its aNliates.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Cisco Systems, Inc.",
+            "type": "Organization"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "aNliates",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "and/or its aNliates"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "000",
+        "source": "TEXT"
+      }
+    }
+  ]
+}

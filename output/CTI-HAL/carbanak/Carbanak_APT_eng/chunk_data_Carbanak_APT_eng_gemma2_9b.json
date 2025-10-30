@@ -1,0 +1,2229 @@
+{
+  "metrics": {
+    "file_name": "Carbanak_APT_eng.pdf",
+    "model_used": "gemma2:9b",
+    "doc_sha256_id": "7d2d812d40a62f32",
+    "num_pages": 33,
+    "num_sentences_total": 249,
+    "num_sentences_used": 143,
+    "num_raw_triples": 143,
+    "num_valid_triples": 92,
+    "num_suspicious_triples": 51,
+    "avg_triples_per_sentence": 1.0,
+    "rejection_stats": {
+      "bad_structure": 0,
+      "invalid_class_or_predicate": 51
+    },
+    "runtime_seconds": 237.2213671207428
+  },
+  "data": [
+    {
+      "context": " CARBANAK APT THE GREAT BANK ROBBERY Version 2.1 February, 2015 #TheSAS2015 #Carbanak GREAT' KASPERSKY:",
+      "triple": [
+        {
+          "subject": {
+            "name": "CARBANAK APT",
+            "type": "ThreatActor"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "THE GREAT BANK ROBBERY",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "CARBANAK APT THE GREAT BANK ROBBERY"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Executive Summary From late 2013 onwards, several banks and financial institutions have been attacked by an unknown group of cybercriminals.",
+      "triple": [
+        {
+          "subject": {
+            "name": "cybercriminals",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "banks and financial institutions",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "have been attacked by an unknown group of cybercriminals"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "An analysis of the campaign has revealed that the initial infections were achieved using spear phishing emails that appeared to be legitimate banking communications, with Microsoft Word 97 - 2003 (.doc) and Control Panel Applet (.CPL) files attached.",
+      "triple": [
+        {
+          "subject": {
+            "name": "campaign",
+            "type": "Campaign"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "spear phishing emails",
+            "type": "Phishing"
+          },
+          "evidence": {
+            "quote": "the initial infections were achieved using spear phishing emails"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The email attachments exploit vulnerabilities in Microsoft Office 2003, 2007 and 2010 (CVE-2012-0158 and CVE-2013-3906) and Microsoft Word (CVE-20141761).",
+      "triple": [
+        {
+          "subject": {
+            "name": "email attachments",
+            "type": "Malware"
+          },
+          "predicate": "exploits",
+          "object": {
+            "name": "Microsoft Office 2003, 2007 and 2010 (CVE-2012-0158 and CVE-2013-3906)",
+            "type": "Vulnerability_Desc"
+          },
+          "evidence": {
+            "quote": "exploit vulnerabilities in Microsoft Office 2003, 2007 and 2010 (CVE-2012-0158 and CVE-2013-3906)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Once the vulnerability is successfully exploited, the shellcode decrypts and executes the backdoor known as Carbanak .",
+      "triple": [
+        {
+          "subject": {
+            "name": "vulnerability",
+            "type": "Vulnerability_Desc"
+          },
+          "predicate": "exploits",
+          "object": {
+            "name": "shellcode",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "the vulnerability is successfully exploited, the shellcode decrypts and executes"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Carbanak is a remote backdoor (initially based on Carberp), designed for espionage, data exfiltration and to provide remote access to infected machines.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Carbanak",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Carberp",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "initially based on Carberp"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Based on the results of this operation, the attackers use different lateral movement tools in order to get access to the critical systems in the victim´s infrastructure.",
+      "triple": [
+        {
+          "subject": {
+            "name": "attackers",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "lateral movement tools",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "the attackers use different lateral movement tools"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "013",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "They then install additional software such as the Ammyy Remote Administration Tool, or even compromise SSH servers.",
+      "triple": [
+        {
+          "subject": {
+            "name": "They",
+            "type": "Person"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "SSH servers",
+            "type": "Infrastructure"
+          },
+          "evidence": {
+            "quote": "compromise SSH servers"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "014",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Notably, some of the latest versions of the analyzed Carbanak malware appear not to use any Carberp source code.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Carbanak",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "Carberp source code",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "use any Carberp source code"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "015",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Once the attackers successfully compromise the victim´s network, the primary internal destinations are money processing services, Automated Teller Machines (ATM) and financial accounts.",
+      "triple": [
+        {
+          "subject": {
+            "name": "attackers",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "money processing services",
+            "type": "System"
+          },
+          "evidence": {
+            "quote": "Once the attackers successfully compromise the victim´s network, the primary internal destinations are money processing services,"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "016",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In some cases, the attackers used the Society for Worldwide Interbank Financial Telecommunication (SWIFT) network to transfer money to their accounts.",
+      "triple": [
+        {
+          "subject": {
+            "name": "attackers",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "Society for Worldwide Interbank Financial Telecommunication (SWIFT)",
+            "type": "Network"
+          },
+          "evidence": {
+            "quote": "the attackers used the Society for Worldwide Interbank Financial Telecommunication (SWIFT) network"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "017",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " accounts using the online banking system.",
+      "triple": [
+        {
+          "subject": {
+            "name": "accounts",
+            "type": "System"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "online banking system",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "using the online banking system"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "As part of the attack´s reconnaissance phase, video recordings of the activities of bank employees, particularly system administrators, were made.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Activities",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "Reconnaissance",
+            "type": "AttackPattern"
+          },
+          "evidence": {
+            "quote": "As part of the attack´s reconnaissance phase, video recordings of the activities of bank employees, particularly system administrators, were made."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Stolen funds were transferred out of the affected countries to bank accounts in the US and China.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Stolen funds",
+            "type": "Unknown"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "US and China",
+            "type": "Country"
+          },
+          "evidence": {
+            "quote": "to bank accounts in the US and China"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Additionally some of the C2 servers have log entries indicating connections to systems located in the US.",
+      "triple": [
+        {
+          "subject": {
+            "name": "C2 servers",
+            "type": "CommandAndControl"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "log entries",
+            "type": "Indicator"
+          },
+          "evidence": {
+            "quote": "have log entries"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "012",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This report discusses the attack vectors, infection mechanisms and toolkits used by the attackers to exploit the network after the initial infection, as well as the operational details and geographical distribution of this campaign.",
+      "triple": [
+        {
+          "subject": {
+            "name": "attackers",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "toolkits",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "toolkits used by the attackers to exploit the network after the initial infection"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "014",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In this investigation, we started analyzing all the computers in the bank's infrastructure in order to find the source of the infection.",
+      "triple": [
+        {
+          "subject": {
+            "name": "investigation",
+            "type": "Campaign"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "computers",
+            "type": "Hardware"
+          },
+          "evidence": {
+            "quote": "all the computers in the bank's infrastructure"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "We found spear phishing emails with CPL files attached that, after a successful infection, install the same Carberp-like malware we had previously found in the case involving the ATMs.",
+      "triple": [
+        {
+          "subject": {
+            "name": "spear phishing emails",
+            "type": "Phishing"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "CPL files",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "with CPL files attached that, after a successful infection, install the same Carberp-like malware we had previously found in the case involving the ATMs."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This period of time was used by the attackers to get access to the right victims and critical systems, and to learn how to operate their tools and systems to get the cash out.",
+      "triple": [
+        {
+          "subject": {
+            "name": "attackers",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "right victims",
+            "type": "Person"
+          },
+          "evidence": {
+            "quote": "get access to the right victims"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Thanks to this, long term observation and reconnaissance could be conducted.",
+      "triple": [
+        {
+          "subject": {
+            "name": "this",
+            "type": "Unknown"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "long term observation and reconnaissance",
+            "type": "Reconnaissance"
+          },
+          "evidence": {
+            "quote": "Thanks to this, long term observation and reconnaissance could be conducted."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This allowed the attackers to understand the protocols and daily operational tempo of their targets.",
+      "triple": [
+        {
+          "subject": {
+            "name": "attackers",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "protocols",
+            "type": "Protocol"
+          },
+          "evidence": {
+            "quote": "their targets"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "2.1 Infection and Transmission All observed cases used spear phishing emails with Microsoft Word 97 - 2003 (.doc) files attached or CPL files.",
+      "triple": [
+        {
+          "subject": {
+            "name": "All observed cases",
+            "type": "Campaign"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "spear phishing emails",
+            "type": "Phishing"
+          },
+          "evidence": {
+            "quote": "All observed cases used spear phishing emails"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "013",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The doc files exploit both Microsoft Office (CVE2012-0158 and CVE-2013-3906) and Microsoft Word (CVE- 2014-1761).",
+      "triple": [
+        {
+          "subject": {
+            "name": "doc files",
+            "type": "Filepath"
+          },
+          "predicate": "exploits",
+          "object": {
+            "name": "Microsoft Office",
+            "type": "Software"
+          },
+          "evidence": {
+            "quote": "The doc files exploit both Microsoft Office"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "014",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This is enough to induce a typical employee to open the attachment and execute the malware.",
+      "triple": [
+        {
+          "subject": {
+            "name": "employee",
+            "type": "Person"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "attachment",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "induce a typical employee to open the attachment"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The following is an example of a Carbanak spear phishing email: Bulcunalo Bax 37 Cepreii 7(953) 3413178 ru Translated: Good Day!",
+      "triple": [
+        {
+          "subject": {
+            "name": "Bulcunalo Bax",
+            "type": "Person"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "37 Cepreii 7(953) 3413178 ru",
+            "type": "EmailAddress"
+          },
+          "evidence": {
+            "quote": "Bulcunalo Bax 37 Cepreii 7(953) 3413178 ru"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In this case, the attachment was a CPL file compressed using the Roshal Archive (.rar) format.",
+      "triple": [
+        {
+          "subject": {
+            "name": "attachment",
+            "type": "Malware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "CPL file",
+            "type": "Filename"
+          },
+          "evidence": {
+            "quote": "the attachment was a CPL file"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Once the remote code execution vulnerability is successfully exploited, it installs Carbanak on the victim's system.",
+      "triple": [
+        {
+          "subject": {
+            "name": "vulnerability",
+            "type": "Vulnerability_Desc"
+          },
+          "predicate": "exploits",
+          "object": {
+            "name": "Carbanak",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "Once the remote code execution vulnerability is successfully exploited, it installs Carbanak on the victim's system."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Carbanak copies itself into '%system32%\\com' with the name 'svchost.exe' with the file attributes: system, hidden and read-only.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Carbanak",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "'%system32%\\\\\\com'",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "copies itself into '%system32%\\com'"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "If found on the target system, Carbanak will try to exploit a known vulnerability in Windows XP , Windows Server 2003, Windows Vista, Windows Server 2008, Windows 7, Windows 8, and Windows Server 2012, CVE-2013-3660, for local privilege escalation.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Carbanak",
+            "type": "Malware"
+          },
+          "predicate": "exploits",
+          "object": {
+            "name": "CVE-2013-3660",
+            "type": "Vulnerability_CVEID"
+          },
+          "evidence": {
+            "quote": "exploit a known vulnerability in Windows XP , Windows Server 2003, Windows Vista, Windows Server 2008, Windows 7, Windows 8, and Windows Server 2012, CVE-2013-3660"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "A .BAT script for detecting infections is provided in the Appendixes.",
+      "triple": [
+        {
+          "subject": {
+            "name": "script",
+            "type": "Application"
+          },
+          "predicate": "has",
+          "object": {
+            "name": ".BAT",
+            "type": "Filename"
+          },
+          "evidence": {
+            "quote": "A .BAT script"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Additionally, Carbanak can obtain proxy configuration information from headers sent through an application via SOCKS or HTTP .",
+      "triple": [
+        {
+          "subject": {
+            "name": "Carbanak",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "SOCKS or HTTP",
+            "type": "Protocol"
+          },
+          "evidence": {
+            "quote": "Carbanak can obtain proxy configuration information from headers sent through an application via SOCKS or HTTP"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " To enable connections to the infected computer using the Remote Desktop Protocol (RDP), Carbanak sets Termservice service execution mode to Auto.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Carbanak",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "Termservice service",
+            "type": "System"
+          },
+          "evidence": {
+            "quote": "To enable connections to the infected computer using the Remote Desktop Protocol (RDP), Carbanak sets Termservice service execution mode to Auto."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "If Carbanak detects the banking application BLIZKO (funds transfer software) in the infected computer, it sends a special notification to its C2 server.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Carbanak",
+            "type": "Malware"
+          },
+          "predicate": "communicatesWith",
+          "object": {
+            "name": "C2 server",
+            "type": "CommandAndControl"
+          },
+          "evidence": {
+            "quote": "sends a special notification to its C2 server"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "To communicate with its C2 server, Carbanak uses the HTTP protocol with RC2+Base64 encryption, adding additional characters not included in Base64.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Carbanak",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "HTTP protocol",
+            "type": "Protocol"
+          },
+          "evidence": {
+            "quote": "To communicate with its C2 server, Carbanak uses the HTTP protocol"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The commands are compared with a hash table; if there is a match Carbanak performs the associated action:",
+      "triple": [
+        {
+          "subject": {
+            "name": "Carbanak",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "hash table",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Carbanak performs the associated action:"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " In order to render the malware less suspicious, the latest Carbanak samples are digitally signed: footprintcrsgn.dll MD5 08F83D98B18D3DFF16C35A20E24ED49A Figure 2.",
+      "triple": [
+        {
+          "subject": {
+            "name": "footprintcrsgn.dll",
+            "type": "Filename"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "MD5 08F83D98B18D3DFF16C35A20E24ED49A",
+            "type": "MD5"
+          },
+          "evidence": {
+            "quote": "footprintcrsgn.dll MD5 08F83D98B18D3DFF16C35A20E24ED49A"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Carbanak digital signature footprintcrsgn dll Properties General Digttal Signatures Secunty Details Previous Versions [Digital Signature Details General Advanced Digital Signature Information",
+      "triple": [
+        {
+          "subject": {
+            "name": "Properties",
+            "type": "Application"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "General",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Properties General"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Signer information Name: [Bargaining activel Email: Signing time: Wednesday, September   03, 2014 12:58:30 View Certificate Countersignatures Name of signer: Email address:",
+      "triple": [
+        {
+          "subject": {
+            "name": "Name",
+            "type": "Unknown"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "[Bargaining activel",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Name: [Bargaining activel"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Timestamp COMODO Time 5.. Not available Wednesday, Septem.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Timestamp",
+            "type": "Time"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "COMODO Time",
+            "type": "Time"
+          },
+          "evidence": {
+            "quote": "has COMODO Time"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " PAExec_Move0.dat MD5 972092CBE7791D27FC9FF6E9ACC12CC3 PAExEc 154KB PAExec_Movel dat Properties PAExec 157 KB PAExec !",
+      "triple": [
+        {
+          "subject": {
+            "name": "PAExec_Move0.dat",
+            "type": "Filename"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "972092CBE7791D27FC9FF6E9ACC12CC3",
+            "type": "MD5"
+          },
+          "evidence": {
+            "quote": "PAExec_Move0.dat MD5 972092CBE7791D27FC9FF6E9ACC12CC3"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 12,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Signer information Name: E-mail: INot available Signing time: Wednesday, August   27, 2014 3.20;59 AM View Certificate Countersignatures Name of signer: Email address:",
+      "triple": [
+        {
+          "subject": {
+            "name": "Name",
+            "type": "Unknown"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "E-mail",
+            "type": "EmailAddress"
+          },
+          "evidence": {
+            "quote": "Name: E-mail:"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 12,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Timestamp COMODO Time 5.. Not available Wednesday , August ).dat",
+      "triple": [
+        {
+          "subject": {
+            "name": "Timestamp",
+            "type": "Time"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "COMODO Time",
+            "type": "Time"
+          },
+          "evidence": {
+            "quote": "Timestamp COMODO Time"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 12,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " One of Carbanak's lateral movement tools is also digitally signed: PAExec-6980-PB-FS-01.ex_ MD5 86A5C466947A6A84554843D852478248 Figure 4.",
+      "triple": [
+        {
+          "subject": {
+            "name": "PAExec-6980-PB-FS-01.ex_",
+            "type": "Filename"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "MD5 86A5C466947A6A84554843D852478248",
+            "type": "SHA-256"
+          },
+          "evidence": {
+            "quote": "PAExec-6980-PB-FS-01.ex_ MD5 86A5C466947A6A84554843D852478248"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 13,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Signer informaton Name: Power AdminLg E-mail: Isupport@poweradmin com Signing time: Wednesday, March 05, 2014 1:01:59 AM View Certificate Countersignatures E-mail address:",
+      "triple": [
+        {
+          "subject": {
+            "name": "Signer informaton",
+            "type": "Unknown"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Power AdminLg",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "Name: Power AdminLg"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 13,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Geographical Distribution Known samples of Carbanak have been uploaded to VirusTotal from the following locations:",
+      "triple": [
+        {
+          "subject": {
+            "name": "Carbanak",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Known samples",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "samples of Carbanak have been uploaded"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 14,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Countries from which Carbanak has been uploaded 1 2 2 2 RU 3 DE US No JP 42 BE FR ZZ 10 UA CN 13 Kaspers yLab 2 1",
+      "triple": [
+        {
+          "subject": {
+            "name": "Carbanak",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Kaspersky Lab",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "Kaspers yLab"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 14,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Known exploits that download Carbanak have been uploaded to VirusTotal mostly from Russia.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Exploits",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "Carbanak",
+            "type": "MalwareFamily"
+          },
+          "evidence": {
+            "quote": "Known exploits that download Carbanak have been uploaded to VirusTotal mostly from Russia."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 14,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The analyzed Carbanak samples, excluding some obvious outliers, have the following compilation time distribution:",
+      "triple": [
+        {
+          "subject": {
+            "name": "Carbanak samples",
+            "type": "Malware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "compilation time distribution",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "have the following compilation time distribution"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 15,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Carbanak compilation timestamp distribution 25 08.13 09.13 10.13 11.13 12.13 01.14 02.14 03.14 04.14 05.14 06.14 07.14 08.14 09.14 10.14 11.14 12.14 01.15",
+      "triple": [
+        {
+          "subject": {
+            "name": "Carbanak compilation timestamp distribution",
+            "type": "Campaign"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "25 08.13 09.13 10.13 11.13 12.13 01.14 02.14 03.14 04.14 05.14 06.14 07.14 08.14 09.14 10.14 11.14 12.14 01.15",
+            "type": "Time"
+          },
+          "evidence": {
+            "quote": "Carbanak compilation timestamp distribution 25 08.13 09.13 10.13 11.13 12.13 01.14 02.14 03.14 04.14 05.14 06.14 07.14 08.14 09.14 10.14 11.14 12.14 01.15"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 15,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " It is also very interesting to see the distribution of Carbanak submissions to VirusTotal.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Carbanak",
+            "type": "Malware"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "VirusTotal",
+            "type": "System"
+          },
+          "evidence": {
+            "quote": "distribution of Carbanak submissions to VirusTotal"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 16,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This way we can identify periods when the malware came to the attention of potential victims and security researchers, and helps to reveal peaks in the group's activity: Figure 8.",
+      "triple": [
+        {
+          "subject": {
+            "name": "group",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "potential victims and security researchers",
+            "type": "Person"
+          },
+          "evidence": {
+            "quote": "the malware came to the attention of potential victims and security researchers"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 16,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " The following map shows targets' IP addresses found in three of Carbanak's Linux servers at the end of October 2014:",
+      "triple": [
+        {
+          "subject": {
+            "name": "targets",
+            "type": "Unknown"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "IP addresses",
+            "type": "IPAddress"
+          },
+          "evidence": {
+            "quote": "targets' IP addresses"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 17,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Geographical distribution of targets according to C2 data Map of Carbanak targets Up to 100 financial institutions were hit at more than 300 IP addresses in almost 30 countries worldwide:",
+      "triple": [
+        {
+          "subject": {
+            "name": "Carbanak",
+            "type": "Campaign"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "financial institutions",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "Up to 100 financial institutions were hit"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 17,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Number of target IPs by country EL 9 - 35 35 200 GREAT 0 2014 Kaspersky Lab Republic Britain Switzerland Kong Morocco Germany Australia akistan Bulgaria Iceland Norway Ukraine Canada oland France Taiwan Russia Nepal Brazil Czech Spain Great ' Hong China India USA",
+      "triple": [
+        {
+          "subject": {
+            "name": "Kaspersky Lab",
+            "type": "Organization"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Republic Britain",
+            "type": "Region"
+          },
+          "evidence": {
+            "quote": "Kaspersky Lab Republic Britain"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 17,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Geographical distribution of victims according to C2 data 200 178 180 160 140 120 100 80 40 20 Russia USA Germany Ukraine (anada Taiwan France Spain Hong-L ~Kong 2.3 Lateral movement tools Carbanak uses different tools on infected systems, each one with a different purpose.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Carbanak",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "different tools",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Lateral movement tools Carbanak uses different tools"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 18,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In another instance, a Secure Shell (SSH) backdoor was used to communicate with the C2 server in 190.97.165.126 (operatemesscont.net).",
+      "triple": [
+        {
+          "subject": {
+            "name": "Secure Shell (SSH)",
+            "type": "Backdoor"
+          },
+          "predicate": "communicatesWith",
+          "object": {
+            "name": "C2 server",
+            "type": "CommandAndControl"
+          },
+          "evidence": {
+            "quote": "was used to communicate with the C2 server"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 18,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This indicates that the attackers did not limit themselves to Microsoft Windows environments.",
+      "triple": [
+        {
+          "subject": {
+            "name": "attackers",
+            "type": "ThreatActor"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": null,
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "This indicates"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 18,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In this case, the victim used the Telnet/SSH client PuTTY to connect to the server, and the attackers recompiled the machine's SSH daemon with a backdoor so they could gain direct access.",
+      "triple": [
+        {
+          "subject": {
+            "name": "victim",
+            "type": "Person"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "PuTTY",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "the victim used the Telnet/SSH client PuTTY"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 18,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Logs for these tools indicate that they were accessed from two different IPs, probably used by the attackers, and located in Ukraine and France.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Logs",
+            "type": "Report"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "IPs",
+            "type": "IPAddress"
+          },
+          "evidence": {
+            "quote": "Logs for these tools indicate that they were accessed from two different IPs"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 18,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "We have also found traces of many different tools used by the attackers inside the victim´s network to gain control of additional systems, such as Metasploit, PsExec or Mimikatz.",
+      "triple": [
+        {
+          "subject": {
+            "name": "attackers",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "Metasploit",
+            "type": "Exploit-kit"
+          },
+          "evidence": {
+            "quote": "We have also found traces of many different tools used by the attackers inside the victim´s network to gain control of additional systems, such as Metasploit"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 18,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " 2.4 Command and Control (C2) Servers There appear to be four distinct types of C2 servers: Linux servers used for issuing commands to deployed Carbanak instances and for receiving collected monitoring data; Windows servers used for remote connections to victim systems; Backup servers; and Drop servers where additional executable files (e.g. remote administration tools) are hosted.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Linux servers",
+            "type": "OperatingSystem"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "remote administration tools",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "deployed Carbanak instances and for receiving collected monitoring data; Windows servers used for remote connections to victim systems; Backup servers; and Drop servers where additional executable files (e.g. remote administration tools) are hosted"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 19,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Some of these C2 servers are responsible for dropping Ammyy (configuration and executable files), the KLG plugin configuration (list of processes to monitor) and the VNC server (both 32 and 64 bits to be injected in rundll).",
+      "triple": [
+        {
+          "subject": {
+            "name": "C2 servers",
+            "type": "CommandAndControl"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "Ammyy (configuration and executable files)",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "dropping Ammyy (configuration and executable files)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 19,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Carbanak administration panel running in Linux 2014001010340",
+      "triple": [
+        {
+          "subject": {
+            "name": "Carbanak",
+            "type": "Malware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "administration panel",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "Carbanak administration panel running"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 19,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Carbanak administration panel running in Linux, list of plugins 180010 160016 Figure 13.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Carbanak",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "administration panel",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "Carbanak administration panel"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 20,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In all, 85 different victims belonging to seven communities were found.",
+      "triple": [
+        {
+          "subject": {
+            "name": "victims",
+            "type": "Person"
+          },
+          "predicate": "belongsTo",
+          "object": {
+            "name": "seven communities",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "belonging to seven communities"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 20,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The video file naming conventions used the name of the application in the foreground (e.g., Outlook, Cmd, etc.) and only recorded user activity.",
+      "triple": [
+        {
+          "subject": {
+            "name": "video file naming conventions",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "name of the application in the foreground",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "used the name of the application in the foreground"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 21,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Special video player designed to watch Carbanak´s video stream RDP 11764 .",
+      "triple": [
+        {
+          "subject": {
+            "name": "video player",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "Carbanak's video stream",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "watch Carbanak's video stream"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 21,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "[Query OZ7BASEBOOK Acccrocd IRDP 17873 8936c.",
+      "triple": [
+        {
+          "subject": {
+            "name": "OZ7BASEBOOK",
+            "type": "DomainName"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Acccrocd",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": " OZ7BASEBOOK Acccrocd IRDP"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 21,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "List of PIN KVC used on ATMs Index Random Keys KVC KVC of Key ATM 102 'B3 103 1F3 B6 104 BA 'DE {27 105 BD 10 ;E7 106 1 7A 12 107 '3B 1s 108 16 17 109 18 16C 110 20 77E 111 741 E5 22 112 25 113 26 114 BFE 29 115 'EA 30 292 32 116 1 117 \"56 118 B3 36 \"4F 119 1C 'FB 25c0 ULIC Sensitive bank documents have be found on the servers that were controlling Carbanak.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Sensitive bank documents",
+            "type": "MalwareAnalysis"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "servers",
+            "type": "Infrastructure"
+          },
+          "evidence": {
+            "quote": "have be found on the servers"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 22,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Criminals used no malware to operate the ATM dispenser; instead they used standard utilities to control and test ATM equipment.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Criminals",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "standard utilities",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "used standard utilities to control and test ATM equipment"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 22,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Conclusions Malware targeting the finance industry (both companies and consumers) continues to evolve.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Malware",
+            "type": "Malware"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "finance industry",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Malware targeting the finance industry"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 23,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The Carbanak malware used in the on-going campaign described in this report has been very successful in terms of generating revenue.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Carbanak",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "campaign",
+            "type": "Campaign"
+          },
+          "evidence": {
+            "quote": "The Carbanak malware used in the on-going campaign"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 23,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The Carbanak attackers bypassed these protections, by for example, using the industry-wide funds transfer (the SWIFT network), updating balances of account holders and using disbursement mechanisms (the ATM network).",
+      "triple": [
+        {
+          "subject": {
+            "name": "Carbanak attackers",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "SWIFT network",
+            "type": "Network"
+          },
+          "evidence": {
+            "quote": "using the industry-wide funds transfer (the SWIFT network)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 23,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In neither of these cases did the attackers exploit a vulnerability within the service.",
+      "triple": [
+        {
+          "subject": {
+            "name": "attackers",
+            "type": "ThreatActor"
+          },
+          "predicate": "exploits",
+          "object": {
+            "name": "vulnerability",
+            "type": "Vulnerability_Desc"
+          },
+          "evidence": {
+            "quote": "exploit a vulnerability within the service"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 23,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "As part of an automated reconnaissance phase, the Carbanak malware checked victim systems for the presence of specialized and specific banking software.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Carbanak",
+            "type": "Malware"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "specialized and specific banking software",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "the Carbanak malware checked victim systems for the presence of specialized and specific banking software."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 23,
+        "id": "013",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "To date, attacks against approximately 300 IP addresses around the world have been observed on analyzed C2s.",
+      "triple": [
+        {
+          "subject": {
+            "name": "attacks",
+            "type": "AttackPattern"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "approximately 300 IP addresses around the world",
+            "type": "IPAddress"
+          },
+          "evidence": {
+            "quote": "against approximately 300 IP addresses around the world"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 23,
+        "id": "015",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "We believe that the Carbanak campaign is a clear indicator of a new era in cybercrime in which criminals use APT techniques directly against the financial industry instead of through its customers.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Carbanak campaign",
+            "type": "Campaign"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "new era in cybercrime",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "We believe that the Carbanak campaign is a clear indicator of a new era in cybercrime"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 23,
+        "id": "019",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "#Decrypt Carbanak c2 responce use strict; use warnings; use Crypt::CBC; use Crypt::Cipher::RC2; use MIME::Base64; use LWP::Simple; my $c2 = \"worldnewsonline.pw\"; my $reguest = \"HWUMRbvuwKQCrkOhuckIXpdFgtd|new0878802c8004333a3|data=listprocess|pro cess=svchost.exe|idproces s=4294967295|lBHReFDRDfYG\"; my $iv = \"JybDHkfW\"; #should be random my $key = \"vfDGbiwmiqdN6E2N\"; my $cipher = Crypt::CBC->new( -cipher=>'Cipher::RC2', -header=>'none', -literal_key=>1, -key=>$key, - keysize=>16, -iv=>$iv ); my $ciphertext = $cipher->encrypt($reguest); my $base64_encoded = encode_base64(\"$ciphertext\"); $base64_encoded =~ s/\\x0a//g; $base64_encoded =~ s/\\//\\./g; $base64_encoded =~ s/\\+/-/g; my $base64_encoded_ex = \"${iv}${base64_encoded}.php\"; my $url = \"http://$c2/${base64_encoded_ex}\"; print $url; #http://worldnewsonline.pw/ GURJPuWeUpPMXca9BThbDim0Hdk9YzkJS7m8a19tzQwZxo1vvQr7SHJcCm4tdp ZGp.",
+      "triple": [
+        {
+          "subject": {
+            "name": "my $c2",
+            "type": "DomainName"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "worldnewsonline.pw",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "my $c2 = \"worldnewsonline.pw\";"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 25,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "AE4VfyUz..php| my $contents = get($url); print $contents;",
+      "triple": [
+        {
+          "subject": {
+            "name": "my $contents",
+            "type": "Unknown"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "$contents",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "has my $contents = get($url)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 25,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Decrypt Files from CnC #!/usr/bin/perl -w #Decrypt Files from sended from c2 use strict; use warnings; use Crypt::CBC; use Crypt::Cipher::RC2; use MIME::Base64; use LWP::Simple; my $file=$ARGV[0]; open(DATA, \"<$file\"); open(DATA1, \"<$file\"); open(DATA2, \"<$file\"); binmode(DATA); binmode(DATA1); binmode(DATA2); my ($data, $n, $offset); while (($n = read DATA, $data, 1, $offset) != 0) { $offset += $n; } my $length = $offset; my $iv_len = read DATA1, my $iv, 8, 0; read DATA2, my $crypt_data, $length, 8; my $key = \"vfDGbiwmiqdN6E2N\"; my $cipher = Crypt::CBC->new( -cipher=>'Cipher::RC2', -header=>'none', -literal_key=>1, -key=>$key, - keysize=>16, -iv=>$iv ); my $plaintext = $cipher->decrypt($crypt_data); print \"$plaintext\";",
+      "triple": [
+        {
+          "subject": {
+            "name": "Decrypt Files from CnC",
+            "type": "Filename"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "RC2 cipher vulnerability",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "use Crypt::CBC; use Crypt::Cipher::RC2;"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 26,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "%name%.log SC QUERY state= all | find \"SERVICE_NAME\" | findstr \"Sys$\" if q%ERRORLEVEL% == q0 SC QUERY state= all | find \"SERVICE_NAME\" | findstr \"Sys$\" >> %name%.log if not exist %name%.log",
+      "triple": [
+        {
+          "subject": {
+            "name": "%name%.log",
+            "type": "Filename"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "SC QUERY state= all | find \"SERVICE_NAME\" | findstr \"Sys$\"",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": ">> %name%.log if not exist %name%.log"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 27,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "MD5: 8fa296efaf87ff4d9179283d42372c52 Name of attachment:",
+      "triple": [
+        {
+          "subject": {
+            "name": "MD5",
+            "type": "MD5"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "8fa296efaf87ff4d9179283d42372c52",
+            "type": "Hash"
+          },
+          "evidence": {
+            "quote": "MD5: 8fa296efaf87ff4d9179283d42372c52"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 34,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "C2 key 1234567812345678 RDP on 37.235.54.48:443 MD5:",
+      "triple": [
+        {
+          "subject": {
+            "name": "C2 key",
+            "type": "Unknown"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "1234567812345678",
+            "type": "Hash"
+          },
+          "evidence": {
+            "quote": "C2 key 1234567812345678"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 34,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "2c395f211db2d02cb544448729d0f081 Name of attachment: new.doc Drops executable: MD5: 551d41e2a4dd1497b3b27a91922d29cc (Carbanak) Compiled Mon Aug 04 01:10:40 2014 Connects to: http://worldnewsonline.pw/JybDHkfWGURJPuWeUpPMX/ca9BThbDim0Hdk/9YzkJS7 m8a19tzQwZxo1vvQ/r/7SHJcCm4tdpZGp.dmDwKfMjpWBM18eX8VUiimyaUZMGoClZ6 eShS9tLCKtuHvlMQ3Dc26y90FbPIua.7LGHGZCBPj.vd08DUENC5oAE4VfyUz.shtml C2s on worldnewsonline.pw, worldnews24.pw C2 key JDvkyfhZxkMmDSwUkqvReIvC RDP on 185.10.56.59:443 MD5: 31e16189e9218cb131fdb13e75d0a94f Name of attachment: Анкета-  Заявление.doc Drops executable: MD5: 4e107d20832fff89a41f04c4dff1739b (Carbanak) C2 on public-  dns.us",
+      "triple": [
+        {
+          "subject": {
+            "name": "2c395f211db2d02cb544448729d0f081",
+            "type": "Hash"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "new.doc",
+            "type": "Filename"
+          },
+          "evidence": {
+            "quote": "Name of attachment: new.doc"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 34,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "C2 key 1234567812345678 RDP on 37.235.54.48:443",
+      "triple": [
+        {
+          "subject": {
+            "name": "C2 key",
+            "type": "SHA-256"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "1234567812345678",
+            "type": "Hash"
+          },
+          "evidence": {
+            "quote": "C2 key 1234567812345678"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 34,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " MD5: db83e301564ff613dd1ca23c30a387f0 Name of attachment:",
+      "triple": [
+        {
+          "subject": {
+            "name": "MD5",
+            "type": "MD5"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "db83e301564ff613dd1ca23c30a387f0",
+            "type": "SHA-256"
+          },
+          "evidence": {
+            "quote": "MD5: db83e301564ff613dd1ca23c30a387f0"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 35,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "F/I9CstBYT1rK7kx.440Sbtru.cgi?QVzF=tNM2gdtMLscx5bB4uryjM&PfpxBukmcOaD- Ucygbtzv4=f8fx MD5: f88a983fc0ef5bb446ae63250e7236dd Name of attachment: Приглашение.msg Drops executable: MD5: 3dc8c4af51c8c367fbe7c7feef4f6744 (Carbanak) Compiled Fri Aug 08 00:48:07 2014",
+      "triple": [
+        {
+          "subject": {
+            "name": "F/I9CstBYT1rK7kx.440Sbtru.cgi?QVzF=tNM2gdtMLscx5bB4uryjM&PfpxBukmcOaD- Ucygbtzv4=f8fx",
+            "type": "URL"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "MD5: f88a983fc0ef5bb446ae63250e7236dd",
+            "type": "MD5"
+          },
+          "evidence": {
+            "quote": "MD5: f88a983fc0ef5bb446ae63250e7236dd"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 35,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "C2s on worldnewsonline.pw, worldnews24.pw C2 key vfDGbiwmiqdN6E2N RDP on 185.10.56.59:443 MD5: c4a6a111a070856c49905d815f87ab49 Name of attachment: ЧОСВЯЮООАГЖЦСЦЧОЧю Drops executable: MD5: cb915d1bd7f21b29edc179092e967331 (Carbanak) Connects to: GET /cBAWFvkXi94QxShRTaVVn/YzAxD/X0sZEud.5gNItbvozI3tqT5ly9UYLVii13.bml?tlxCFi Busj=2OVj&9GP=a5houGz&K.F=T&l0.7FBN75=nMPDrlGXq4s7cIAQ0Cl662IwVjxvsiTOlG 0d0pd HTTP/1.1 Host: datsun-  auto.com MD5: 86e48a9be62494bffb3b8e5ecb4a0310 Name of attachment: Приглашение.doc Drops executable: MD5: 3dc8c4af51c8c367fbe7c7feef4f6744 (Carbanak) Compiled Fri Aug 08 00:48:07 2014 MD5: 6c7ac8dfd7bc5c2bb1a6d7aec488c298",
+      "triple": [
+        {
+          "subject": {
+            "name": "C2s",
+            "type": "DomainName"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "worldnewsonline.pw, worldnews24.pw",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "C2s on worldnewsonline.pw, worldnews24.pw"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 35,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Name of attachment: Соответствие ФЗ-  115 от 02.07.2014г..doc, Drops executable: MD5: cb915d1bd7f21b29edc179092e967331 (Carbanak) Compiled Tue Apr 08 05:44:12 2014 Connects to: datsun-  auto.com/bDqxEs/Ta6IPJq3zqmRY-  .5/8SgGLA-",
+      "triple": [
+        {
+          "subject": {
+            "name": "Name of attachment: Соответствие ФЗ-  115 от 02.07.2014г..doc",
+            "type": "Filename"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Carbanak",
+            "type": "MalwareFamily"
+          },
+          "evidence": {
+            "quote": "Drops executable: MD5: cb915d1bd7f21b29edc179092e967331 (Carbanak)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 35,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " APPENDIX 5: MD5 hashes of Carbanak samples 0022c1fe1d6b036de2a08d50ac5446a5 0155738045b331f44d300f4a7d08cf21 0275585c3b871405dd299d458724db3d",
+      "triple": [
+        {
+          "subject": {
+            "name": "0022c1fe1d6b036de2a08d50ac5446a5",
+            "type": "MD5"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "Carbanak samples",
+            "type": "MalwareFamily"
+          },
+          "evidence": {
+            "quote": "MD5 hashes of Carbanak samples"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 36,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "0ad4892ead67e65ec3dd4c978fce7d92 0ad6da9e62a2c985156a9c53f8494171 1046652e0aaa682f89068731fa5e8e50 10e0699f20e31e89c3becfd8bf24cb4c 1300432e537e7ba07840adecf38e543b 15a4eb525072642bb43f3c188a7c3504 16cda323189d8eba4248c0a2f5ad0d8f 1713e551b8118e45d6ea3f05ec1be529 1a4635564172393ae9f43eab85652ba5 1b9b9c8db7735f1793f981d0be556d88 1d1ed892f62559c3f8234c287cb3437c 1e127b92f7102fbd7fa5375e4e5c67d1 1e47e12d11580e935878b0ed78d2294f 1f43a8803498482d360befc6dfab4218 1fd4a01932df638a8c761abacffa0207 20f8e962b2b63170b228ccaff51aeb7d 26d6bb7a4e84bec672fc461487344829 2908afb4de41c64a45e1eb2503169108 2c6112e1e60f083467dc159ffb1ceb6d 2cba1a82a78f4dcbad1087c1b71588c9 2e2aa05a217aacf3105b4ba2288ad475 36cdf98bc79b6997dd4e3a6bed035dca 36dfd1f3bc58401f7d8b56af682f2c38 39012fb6f3a93897f6c5edb1a57f76a0 3dc8c4af51c8c367fbe7c7feef4f6744 407795b49789c2f9ca6eca1fbab3c73e 45691956a1ba4a8ecc912aeb9f1f0612 4afafa81731f8f02ba1b58073b47abdf 4e107d20832fff89a41f04c4dff1739b 4f16b33c074f1c31d26d193ec74aaa56 50f70e18fe0dedabefe9bf7679b6d56c 5443b81fbb439972de9e45d801ce907a 55040dd42ccf19b5af7802cba91dbd7f 551d41e2a4dd1497b3b27a91922d29cc 56bfe560518896b0535e0e4da44266d6 5aeecb78181f95829b6eeeefb2ce4975 5da203fa799d79ed5dde485c1ed6ba76 608bdeb4ce66c96b7a9289f8cf57ce02 6163103103cdacdc2770bd8e9081cfb4 629f0657e70901e3134dcae2e2027396",
+      "triple": [
+        {
+          "subject": {
+            "name": "0ad4892ead67e65ec3dd4c978fce7d92",
+            "type": "Hash"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "0ad6da9e62a2c985156a9c53f8494171",
+            "type": "Hash"
+          },
+          "evidence": {
+            "quote": "0ad4892ead67e65ec3dd4c978fce7d92 0ad6da9e62a2c985156a9c53f8494171"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 36,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "b79f7d41e30cf7d69a4d5d19dda8942e bddbb91388dd2c01068cde88a5fb939e c179ad6f118c97d3db5e04308d48f89e",
+      "triple": [
+        {
+          "subject": {
+            "name": "b79f7d41e30cf7d69a4d5d19dda8942e",
+            "type": "SHA-256"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "hash",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "b79f7d41e30cf7d69a4d5d19dda8942e"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 36,
+        "id": "005",
+        "source": "TEXT"
+      }
+    }
+  ]
+}

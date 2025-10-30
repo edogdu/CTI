@@ -1,0 +1,1605 @@
+{
+  "metrics": {
+    "file_name": "Please Confirm You Received Our APT _ FortiGuard Labs .pdf",
+    "model_used": "gemma2:9b",
+    "doc_sha256_id": "5a0ea94d21f18663",
+    "num_pages": 12,
+    "num_sentences_total": 285,
+    "num_sentences_used": 143,
+    "num_raw_triples": 143,
+    "num_valid_triples": 66,
+    "num_suspicious_triples": 77,
+    "avg_triples_per_sentence": 1.0,
+    "rejection_stats": {
+      "bad_structure": 0,
+      "invalid_class_or_predicate": 77
+    },
+    "runtime_seconds": 160.44580507278442
+  },
+  "data": [
+    {
+      "context": "It began with a spearphishing email to a diplomat in Jordan.",
+      "triple": [
+        {
+          "subject": {
+            "name": "spearphishing email",
+            "type": "Phishing"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "diplomat",
+            "type": "Person"
+          },
+          "evidence": {
+            "quote": "a spearphishing email to a diplomat"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This spearphishing attack targeted a Jordanian diplomat, with the sender pretending to be a colleague from the IT department of the same governmental organization.",
+      "triple": [
+        {
+          "subject": {
+            "name": "spearphishing attack",
+            "type": "AttackPattern"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "Jordanian diplomat",
+            "type": "Person"
+          },
+          "evidence": {
+            "quote": "This spearphishing attack targeted a Jordanian diplomat"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Spearphishing email Fw: Confirmation Receive Document Message (HTML) 0",
+      "triple": [
+        {
+          "subject": {
+            "name": "Spearphishing email",
+            "type": "Phishing"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Fw: Confirmation Receive Document Message (HTML)",
+            "type": "EmailAddress"
+          },
+          "evidence": {
+            "quote": "Fw: Confirmation Receive Document Message (HTML)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "< File Message Tell me what you want to do Tue 4/26 Fw: Confirmation Receive Document Confirmation Receive 1 MB From:",
+      "triple": [
+        {
+          "subject": {
+            "name": "Confirmation",
+            "type": "Unknown"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Receive Document",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Confirmation Receive Document"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "012",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Malicious Excel File The attached Excel file contains a malicious VBA ]Visual Basic Application) macro as opposed to the Excel MacroSheets that other malware such as Emotet and QBot typically use.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Emotet",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "Excel MacroSheets",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "other malware such as Emotet and QBot typically use"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Perhaps these lines were used for testing purposes or were part of a different lure, one in which TeamViewer (remote access and control software used for device maintenance) was used.",
+      "triple": [
+        {
+          "subject": {
+            "name": "TeamViewer",
+            "type": "Software"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "remote access and control software",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "TeamViewer (remote access and control software used for device maintenance)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "017",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "C2 contact Function get fron hostname in arg (cHsg) GetIPfromHostName (qu\" rds joexpediagroup com End Function Function ErrOI Dim ObjWHIService Din objPing Dim objStatus wmiQuery \"Select PingStatus Nnere Address Sec ObjWHIService Sec objPing ObjWMIService.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Function",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "hostname",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "C2 contact Function get fron hostname in arg (cHsg) GetIPfromHostName"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "021",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Unlike most malicious macros, this one uses WMI ]Windows Management Instrumentation) to ping the C2 server instead of a more commonly used tool, such as PowerShell or CMD.",
+      "triple": [
+        {
+          "subject": {
+            "name": "this one",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "WMI (Windows Management Instrumentation)",
+            "type": "Protocol"
+          },
+          "evidence": {
+            "quote": "this one uses WMI (Windows Management Instrumentation)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "023",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Macro start qwzbbbz[four- digits].joexpediagroup[.]com Connected successfully to task scheduler qwzbaez[four- digits].joexpediagroup[.]com Successfully created malicious PE file qwzbbez[four- digits].joexpediagroup[.]com Successfully created XML config file qwzbcez[four- digits].joexpediagroup[.]com Successfully created signed Microsoft PE file qwzbdez[four- digits].joexpediagroup[.]com Double-check malicious PE file was created qwzbeez[four- digits].joexpediagroup[.]com Successful manual execution of malicious PE file qwzafzz[four- digits].joexpediagroup[.]com Begin task scheduler configuration for persistence qwzbbfz[four- digits].joexpediagroup[.]com Successfully created scheduled task As alluded to in the table above, the macro has the capability to create three files.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Macro",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "capability to create three files",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "As alluded to in the table above, the macro has the capability to create three files."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "A malicious PE file was created as %LocalAppData%\\MicrosoftUpdate\\update.exe.",
+      "triple": [
+        {
+          "subject": {
+            "name": "PE file",
+            "type": "Malware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "%LocalAppData%\\\\\\$SystemDrive\\\\MicrosoftUpdate\\\\update.exe",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "was created as %LocalAppData%\\MicrosoftUpdate\\update.exe."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Form caption Microsoft Visual Basic for Applications Confirmation Receive Document.xls",
+      "triple": [
+        {
+          "subject": {
+            "name": "Form",
+            "type": "Application"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Confirmation Receive Document.xls",
+            "type": "Filename"
+          },
+          "evidence": {
+            "quote": "Confirmation Receive Document.xls"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "[UserForml (UserFor Eile Edit View Insert Format Debug Bun Iools Add-Ins Window Help Project - VBAProject UserForml VBAProject (Confirmation Re Microsoft Excel Objects Sheet1 (Confirmation Rect {AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA Sheet2 (Confirmation Rece ThisWorkbook CBiZSBydW",
+      "triple": [
+        {
+          "subject": {
+            "name": "UserForml",
+            "type": "Application"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "VBAProject",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "UserForml VBAProject"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "4gaW 4gRE9TIGIvZGUuDQOKJAAAAAAAAABQR OQAATAEDALW33IOAAAAAAAAAAOAAIgALATAAAHYAAAAI UserForm1 UserForm2 ABAAABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAA UserForm3 C+UAABPAAAAAKAAAMWFAAAAAAAAAAAAAAAAAAAAAA",
+      "triple": [
+        {
+          "subject": {
+            "name": "4gaW",
+            "type": "SHA-1"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "4gRE9TIGIvZGUuDQOKJAAAAAAAAABQR OQAATAEDALW33IOAAAAAAAAAAOAAIgALATAAAHYAAAAI",
+            "type": "SHA-256"
+          },
+          "evidence": {
+            "quote": "4gaW 4gRE9TIGIvZGUuDQOKJAAAAAAAAABQR OQAATAEDALW33IOAAAAAAAAAAOAAIgALATAAAHYAAAAI"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "[BackColor BackStyle BorderColor 8H80000006& [BorderStyle fmBorderStyleNon",
+      "triple": [
+        {
+          "subject": {
+            "name": "[BackColor",
+            "type": "Unknown"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "BackStyle",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "has BackStyle"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "013",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The malware authors also used the Excel macro to create a persistence method for their update.exe file.",
+      "triple": [
+        {
+          "subject": {
+            "name": "malware authors",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "Excel macro",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "The malware authors also used the Excel macro"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Scheduled task Task Scheduler Eile Action View Help Task Scheduler (Local) Name Status Triggers Task Scheduler Microsoft MicrosoftUpdate Running At 8.28 PM on 5/3/2022 After triggered, repeat every 00.04.00 indefinitely OfficeSoftwareProtect WPD General Triggers Actions Conditions Settings History (disabled) Name: MicrosoftUpdate Location:",
+      "triple": [
+        {
+          "subject": {
+            "name": "Task Scheduler",
+            "type": "System"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Eile Action View Help Task Scheduler (Local)",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "Task Scheduler Eile Action View Help Task Scheduler (Local)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Author Microsoft Corporation Description: Microsoft Important Update Library",
+      "triple": [
+        {
+          "subject": {
+            "name": "Microsoft Corporation",
+            "type": "Organization"
+          },
+          "predicate": "hasAuthor",
+          "object": {
+            "name": "Microsoft Corporation",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "Author Microsoft Corporation"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The task is named MicrosoftUpdate and repeats every 4 hours.",
+      "triple": [
+        {
+          "subject": {
+            "name": "The task",
+            "type": "Unknown"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "MicrosoftUpdate",
+            "type": "Campaign"
+          },
+          "evidence": {
+            "quote": "named MicrosoftUpdate"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The macro also uses deprecated IdleSettings properties, such as Duration (which starts the task only if the computer has been idle for ten minutes) and WaitTimeout (which determines how long to wait for an idle condition).",
+      "triple": [
+        {
+          "subject": {
+            "name": "macro",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "IdleSettings properties",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "The macro also uses deprecated IdleSettings properties"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Dropped Files As explained earlier, this malicious Excel macro includes the ability to create three files.",
+      "triple": [
+        {
+          "subject": {
+            "name": "malicious Excel macro",
+            "type": "Malware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "ability to create three files",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "this malicious Excel macro includes the ability to create three files"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "025",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This malware binary was certainly developed by the same group that created the Excel macro, as there are similarities between the two.",
+      "triple": [
+        {
+          "subject": {
+            "name": "malware binary",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Excel macro",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "as there are similarities between the two"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "037",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Begin; this transitions new Dictionary<StateMachine StateTransition, MachineState) new StateMachine StateTransition (MachineStateBegin, MachineCommand.",
+      "triple": [
+        {
+          "subject": {
+            "name": "StateMachine StateTransition",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "Dictionary<StateMachine StateTransition, MachineState)",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "this transitions new Dictionary<StateMachine StateTransition, MachineState)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Alive new StateMachine StateTransition(MachineState.",
+      "triple": [
+        {
+          "subject": {
+            "name": "StateMachine",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "StateTransition",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "StateMachine StateTransition"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Sleep new StateMachine StateTransition(MachineStateAlive, MachineCommand HasData), MachineStateReceive new StateMachine StateTransition (MachineState.",
+      "triple": [
+        {
+          "subject": {
+            "name": "StateMachine",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "StateTransition",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "has StateTransition"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Sleep new StateMachine StateTransition(MachineState",
+      "triple": [
+        {
+          "subject": {
+            "name": "StateMachine",
+            "type": "Application"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "StateTransition",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "StateMachine has StateTransition"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "013",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Receive, MachineCommand DataReceived), MachineState.",
+      "triple": [
+        {
+          "subject": {
+            "name": "MachineCommand",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "DataReceived",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "MachineCommand DataReceived), MachineState."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "014",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "While this malware sleeps in certain program states, other program states require it to contact the C2 server.",
+      "triple": [
+        {
+          "subject": {
+            "name": "malware",
+            "type": "Malware"
+          },
+          "predicate": "communicatesWith",
+          "object": {
+            "name": "C2 server",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "contact the C2 server"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "028",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "[Assembly Explorer Config X Saitama Agent.exe 127 11 Token: RID: 12 PE 128 public static string CharsDomain 'abcdefghijklmnopqrstuvwxyz0123456789 129 Type References 130 References 131 public static string CharsCounter 132 Saitama Agent 133 RID: 14 134 public static string FirstaliveKey \"haruto\" 135 Config @02000003 136 RID: 15 137 private static string[] Domains; 138 DnsClass @02000004 139 11 Token: 0x04000010 RID: 16 Enums @02000005 140 private static int?",
+      "triple": [
+        {
+          "subject": {
+            "name": "Assembly Explorer Config X Saitama Agent.exe",
+            "type": "Filename"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Saitama Agent",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "Assembly Explorer Config X Saitama Agent.exe 127 11 Token: RID: 12 PE 128 public static string CharsDomain 'abcdefghijklmnopqrstuvwxyz0123456789 129 Type References 130 References 131 public static string CharsCounter 132 Saitama Agent"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "null; MachineCommand @02000007 141 MachineState @02000006 142 11 Token: 0x04000011 RID: Program @02000002 143 private static int Counter; 144 RandomMersenneTwister @02OOOOOE 145 11 Token: 0x04000012",
+      "triple": [
+        {
+          "subject": {
+            "name": "MachineCommand",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "@02000007",
+            "type": "SHA-256"
+          },
+          "evidence": {
+            "quote": "MachineCommand @02000007"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Once a subdomain string is generated, the malware randomly chooses one of three domains to concatenate with (joexpediagroup[.]com, asiaworldremit[.]com, or uber-asia[.]com).",
+      "triple": [
+        {
+          "subject": {
+            "name": "malware",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "joexpediagroup[.]com",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "one of three domains to concatenate with (joexpediagroup[.]com"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Perhaps this is a way for the malware to avoid internal IP addresses, such as the 127p.q0p.q0p.q1 local loopback address or the 10p.q0p.q0p.q0 internal subnet. ",
+      "triple": [
+        {
+          "subject": {
+            "name": "malware",
+            "type": "Malware"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "internal IP addresses",
+            "type": "IPAddress"
+          },
+          "evidence": {
+            "quote": "Perhaps this is a way for the malware to avoid internal IP addresses"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "015",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Later in the malware's execution flow, this data from the DNS request is used to define TaskClass properties.",
+      "triple": [
+        {
+          "subject": {
+            "name": "malware",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "data from the DNS request",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "this data from the DNS request is used to define TaskClass properties"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "019",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "DNS tunneling 235 private static bool ProcessData(byte[] data) 236 237 int val Dnsclass.",
+      "triple": [
+        {
+          "subject": {
+            "name": "ProcessData",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "DNS tunneling",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "DNS tunneling"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Add(array); 246 DnsClass._ReceiveByteIndex 0; 247 DnsClass ReceiveDatasize 0; 248 Array.",
+      "triple": [
+        {
+          "subject": {
+            "name": "DnsClass",
+            "type": "Unknown"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "ReceiveDatasize",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "DnsClass ReceiveDatasize"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "ListData is set to the received data from the DNS request.",
+      "triple": [
+        {
+          "subject": {
+            "name": "ListData",
+            "type": "Unknown"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "received data",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "is set to the received data"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "012",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Apparently, this malware uses DNS tunneling to communicate with its C2.",
+      "triple": [
+        {
+          "subject": {
+            "name": "this malware",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "DNS tunneling",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "uses DNS tunneling"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "014",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Several types of tasks are defined for this malware.",
+      "triple": [
+        {
+          "subject": {
+            "name": "this malware",
+            "type": "Malware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "types of tasks",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Several types of tasks are defined for this malware."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "016",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "CompressedCmd, Token: RID: 81 Static 43 , Token:",
+      "triple": [
+        {
+          "subject": {
+            "name": "CompressedCmd",
+            "type": "Unknown"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Token",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "CompressedCmd, Token:"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "020",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The remaining task types are used to send backdoor commands to the malware.",
+      "triple": [
+        {
+          "subject": {
+            "name": "task types",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "backdoor commands",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "used to send backdoor commands"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "024",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "These backdoor commands are meant to be executed through PowerShell or through the Windows CMD interpreter.",
+      "triple": [
+        {
+          "subject": {
+            "name": "backdoor commands",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "PowerShell",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "executed through PowerShell"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "025",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Command Interpreter Payload 1 PS Get-NetIPAddress -AddressFamily IPv4 | Select-Object IPAddress 2 PS Get-NetNeighbor",
+      "triple": [
+        {
+          "subject": {
+            "name": "Command Interpreter Payload 1",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "Get-NetIPAddress",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "PS Get-NetIPAddress -AddressFamily IPv4 | Select-Object IPAddress 2 PS Get-NetNeighbor"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "027",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "-AddressFamily IPv4 | Select-Object \"IPADDress\" 3 CMD whoami 4 PS [System.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Select-Object",
+            "type": "CommandAndControl"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "IPADDress",
+            "type": "IPAddress"
+          },
+          "evidence": {
+            "quote": " Select-Object \"IPADDress\""
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "028",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Base32 is also the same encoding scheme that APT34 has used.",
+      "triple": [
+        {
+          "subject": {
+            "name": "APT34",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "Base32",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "has used"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "DNS exfiltration private int val DnsClass.",
+      "triple": [
+        {
+          "subject": {
+            "name": "DNS",
+            "type": "Protocol"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "exfiltration",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "DNS exfiltration"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "SendDatasize DnsClass._SendByteIndex; int num Math.Min(Config.",
+      "triple": [
+        {
+          "subject": {
+            "name": "SendDatasize",
+            "type": "Application"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "DnsClass._SendByteIndex",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "SendDatasize DnsClass._SendByteIndex"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "if (flag) if (DnsClass._InitReceive(response)) ret MachineConmand HasData; if Dnsclass CheckSend num) if (ret MachineCommand.",
+      "triple": [
+        {
+          "subject": {
+            "name": "MachineCommand",
+            "type": "AttackPattern"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "Data",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "HasData;"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "018",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "It may look like a simple DNS request in a network log, but the exfiltrated data is actually built into the DNS request.",
+      "triple": [
+        {
+          "subject": {
+            "name": "DNS request",
+            "type": "Network"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "exfiltrated data",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "the exfiltrated data is actually built into the DNS request."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "022",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Instead, it relies on the Excel macro to create persistence by way of a scheduled task.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Excel macro",
+            "type": "Application"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "persistence",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "create persistence"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "025",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This malware has the ability to contact three domains (joexpediagroup[.]com, asiaworldremit[.]com, uber-asia[.]com).",
+      "triple": [
+        {
+          "subject": {
+            "name": "Malware",
+            "type": "Malware"
+          },
+          "predicate": "communicatesWith",
+          "object": {
+            "name": "joexpediagroup[.]com",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "contact three domains (joexpediagroup[.]com"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "034",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Similarly, the Excel macro is able to contact the joexpediagroup[.]com domain.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Excel macro",
+            "type": "Application"
+          },
+          "predicate": "communicatesWith",
+          "object": {
+            "name": "joexpediagroup[.]com",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "contact the joexpediagroup[.]com domain."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "035",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Interestingly enough, VirusTotal was able to record a DNS entry.",
+      "triple": [
+        {
+          "subject": {
+            "name": "VirusTotal",
+            "type": "Organization"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "DNS entry",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "record a DNS entry"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "038",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Zi44 uber-asia com uber-asia com Cornmunily Score DETECTION DETAILS RELATIONS COMMUNITY Passive DNS Replication Date resolved Detections Resolver IP 2022 04 27 0 / 88",
+      "triple": [
+        {
+          "subject": {
+            "name": "Zi44",
+            "type": "DomainName"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "uber-asia com",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "Zi44 uber-asia com"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Virustotal DNS results This certainly fits the format used by the malware.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Virustotal",
+            "type": "Organization"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "DNS results",
+            "type": "Indicator"
+          },
+          "evidence": {
+            "quote": "Virustotal DNS results"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The first octet of the IP address is greater than 128, and the remaining octets define the size of the command to be executed.",
+      "triple": [
+        {
+          "subject": {
+            "name": "IP address",
+            "type": "IPAddress"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "size of the command to be executed",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "The first octet of the IP address is greater than 128, and the remaining octets define the size of the command to be executed."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This domain, which may be imitating Expedia travel for Jordan, was created earlier this year, on January 20, 2022.",
+      "triple": [
+        {
+          "subject": {
+            "name": "DomainName",
+            "type": "DomainName"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Expedia travel for Jordan",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "which may be imitating Expedia travel for Jordan"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In the past, this IP address has been used by the NSO group with their Pegasus spyware.",
+      "triple": [
+        {
+          "subject": {
+            "name": "NSO group",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "Pegasus",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "used by the NSO group with their Pegasus spyware"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "018",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Passive DNS records indicate the IP address is currently hosting several suspiciously-named domains, some of which are listed below.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Passive DNS records",
+            "type": "Indicator"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "IP address",
+            "type": "IPAddress"
+          },
+          "evidence": {
+            "quote": "Passive DNS records indicate the IP address"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "021",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Fake domains Registered Domain Attempting to masquerade as astrazeneeca[.]com AstraZeneca astrazencea[.]com AstraZeneca hsbcbkcn[.]com HSBC Bank China valtronics-ae[.]com Valtronics AE ntu-sg-edu[.]com Nanyang Technological University Singapore theworldbank[.]uk World Bank Group coinbasedeutschland[.]com Coinbase for Germany cisco0[.]com Cisco",
+      "triple": [
+        {
+          "subject": {
+            "name": "astrazeneca[.]com",
+            "type": "DomainName"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "AstraZeneca",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "Fake domains Registered Domain Attempting to masquerade as astrazeneeca[.]com AstraZeneca astrazencea[.]com AstraZeneca"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "023",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The amount of effort put into developing this attack is much higher than the average run-of-the-mill phishing/spam campaign, putting it on the level of an APT attack.",
+      "triple": [
+        {
+          "subject": {
+            "name": "amount",
+            "type": "Unknown"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "attack",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "The amount of effort put into developing this attack is much higher than the average run-of-the-mill phishing/spam campaign, putting it on the level of an APT attack."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "They then proceeded to use an Excel macro with advanced techniques, including possible anti-analysis techniques with the mouse check and the sheet visibility switch.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Excel macro",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "advanced techniques",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "They then proceeded to use an Excel macro with advanced techniques"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Furthermore, while state programming is rarely used in malware, in this attack, both the Excel macro and the malware make use of it.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Excel macro",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "state programming",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "make use of it"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "While using DNS tunneling for C2 communications is nothing new, it is rarely seen in practice.",
+      "triple": [
+        {
+          "subject": {
+            "name": "DNS tunneling",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "C2 communications",
+            "type": "CommandAndControl"
+          },
+          "evidence": {
+            "quote": "While using DNS tunneling for C2 communications is nothing new, it is rarely seen in practice."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "From the looks of things, the threat actors did their homework since their backdoor commands clearly demonstrate they already had prior knowledge of their target's internal network infrastructure.",
+      "triple": [
+        {
+          "subject": {
+            "name": "threat actors",
+            "type": "ThreatActor"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "prior knowledge",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "their backdoor commands clearly demonstrate they already had prior knowledge"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Given all the breadcrumbs, this campaign looks to be another one launched by APT34.",
+      "triple": [
+        {
+          "subject": {
+            "name": "campaign",
+            "type": "Campaign"
+          },
+          "predicate": "hasAuthor",
+          "object": {
+            "name": "APT34",
+            "type": "ThreatActor"
+          },
+          "evidence": {
+            "quote": "launched by APT34"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "016",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Fortinet customers are protected from this malicious Excel file and malware binary by FortiGuard AntiVirus, which is included in FortiMail.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FortiGuard AntiVirus",
+            "type": "VirusScanner"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "protection",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Fortinet customers are protected from this malicious Excel file and malware binary by FortiGuard AntiVirus, which is included in FortiMail."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "022",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Learn more about Fortinet's FortiGuard Labs threat research and intelligence organization and the FortiGuard Security Subscriptions and Services portfolio.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FortiGuard Labs",
+            "type": "Organization"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Fortinet's FortiGuard Labs threat research and intelligence organization",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Learn more about Fortinet's FortiGuard Labs threat research and intelligence organization"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 12,
+        "id": "000",
+        "source": "TEXT"
+      }
+    }
+  ]
+}

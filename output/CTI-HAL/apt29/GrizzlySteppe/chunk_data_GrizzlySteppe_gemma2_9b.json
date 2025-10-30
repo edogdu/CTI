@@ -1,0 +1,1341 @@
+{
+  "metrics": {
+    "file_name": "GrizzlySteppe.pdf",
+    "model_used": "gemma2:9b",
+    "doc_sha256_id": "989b2f9278e4e24f",
+    "num_pages": 13,
+    "num_sentences_total": 213,
+    "num_sentences_used": 123,
+    "num_raw_triples": 123,
+    "num_valid_triples": 55,
+    "num_suspicious_triples": 68,
+    "avg_triples_per_sentence": 1.0,
+    "rejection_stats": {
+      "bad_structure": 0,
+      "invalid_class_or_predicate": 68
+    },
+    "runtime_seconds": 113.76173996925354
+  },
+  "data": [
+    {
+      "context": "For more information on the Traffic Light Protocol, see https://www.us-cert.gov/tlp.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Traffic Light Protocol",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "https://www.us-cert.gov/tlp",
+            "type": "URL"
+          },
+          "evidence": {
+            "quote": "see https://www.us-cert.gov/tlp"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This document provides technical details regarding the tools and infrastructure used by the Russian civilian and military intelligence Services (RIS) to compromise and exploit networks and endpoints associated with the U.S. election, as well as a range of U.S. Government, political, and private sector entities.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Russian civilian and military intelligence Services (RIS)",
+            "type": "Organization"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "tools and infrastructure",
+            "type": "Infrastructure"
+          },
+          "evidence": {
+            "quote": "tools and infrastructure used by the Russian civilian and military intelligence Services (RIS)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "However, public attribution of these activities to RIS is supported by technical indicators from the U.S. Intelligence Community, DHS, FBI, the private sector, and other entities.",
+      "triple": [
+        {
+          "subject": {
+            "name": "RIS",
+            "type": "ThreatActor"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "these activities",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "public attribution of these activities to RIS"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This activity by RIS is part of an ongoing campaign of cyber-enabled operations directed at the U.S. government and its citizens.",
+      "triple": [
+        {
+          "subject": {
+            "name": "RIS",
+            "type": "ThreatActor"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "ongoing campaign of cyber-enabled operations",
+            "type": "Campaign"
+          },
+          "evidence": {
+            "quote": "This activity by RIS is part of an ongoing campaign of cyber-enabled operations"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "012",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "These cyber operations have included spearphishing campaigns targeting government organizations, critical infrastructure entities, think tanks, universities, political organizations, and corporations leading to the theft of information.",
+      "triple": [
+        {
+          "subject": {
+            "name": "spearphishing campaigns",
+            "type": "Phishing"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "government organizations",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "targeting government organizations"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "013",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Figure 1: The tactics and techniques used by APT29 and APT 28 to conduct cyber intrusions against target systems ADVERSARY SPACE NEUTRAL SPACE VICTIM SPACE",
+      "triple": [
+        {
+          "subject": {
+            "name": "APT29",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "tactics and techniques",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "The tactics and techniques used by APT29"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Two separate Russian espionage groups Pushes Establishes encrypted communication with APT29 TRADECRAFT Powershell comand Scheduled execution Implant Unique encryption keys Leverages APT29 Silently exfiltrates data TARGETED SYSTEMS Operational Infrastructure Deploys Installs onto X-Agent Leverages APT28 TRADECRAFT",
+      "triple": [
+        {
+          "subject": {
+            "name": "Pushes Establishes",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "predicate": "communicatesWith",
+          "object": {
+            "name": "APT29",
+            "type": "ThreatActor"
+          },
+          "evidence": {
+            "quote": "encrypted communication with APT29"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Remote execution File transmission APT28 Keylogging Operational Leverages Enables remote execution Infrastructure X-Tunnel Both groups have historically targeted government organizations, think tanks, universities, and corporations around the world.",
+      "triple": [
+        {
+          "subject": {
+            "name": "APT28",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "government organizations, think tanks, universities, and corporations around the world",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "Both groups have historically targeted government organizations, think tanks, universities, and corporations around the world"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "These actors set up operational infrastructure to obfuscate their source infrastructure, host domains and malware for targeting organizations, establish command and control nodes, and harvest credentials and other valuable information from their targets.",
+      "triple": [
+        {
+          "subject": {
+            "name": "actors",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "organizations",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "targeting organizations"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "domains, to include domains associated with U.S. organizations and educational institutions, to host malware and send spearphishing emails.",
+      "triple": [
+        {
+          "subject": {
+            "name": "domains",
+            "type": "DomainName"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "malware",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "to host malware"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In the course of that campaign, APT29 successfully compromised a U.S. political party.",
+      "triple": [
+        {
+          "subject": {
+            "name": "APT29",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "U.S. political party",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "successfully compromised a U.S. political party"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This time, the spearphishing email tricked recipients into changing their passwords through a fake webmail domain hosted on APT28 operational infrastructure.",
+      "triple": [
+        {
+          "subject": {
+            "name": "spearphishing email",
+            "type": "Phishing"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "recipients",
+            "type": "Person"
+          },
+          "evidence": {
+            "quote": "tricked recipients into changing their passwords"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Using the harvested credentials, APT28 was able to gain access and steal content, likely leading to the exfiltration of information from multiple senior party members.",
+      "triple": [
+        {
+          "subject": {
+            "name": "APT28",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "harvested credentials",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Using the harvested credentials, APT28 was able to gain access"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Figure 2: APT28's Use of Spearphishing and Stolen Credentials ADVERSARY SPACE NEUTRAL SPACE VICTIM SPACE Russian Intelligence Services Crafts Sent to Email with Recipient malicious link Leverages Gathers credentials Clicks on link and enters credentials Operational Infrastructure Website that Install Iooks legitimate Malicious TARGETED SYSTEMS files Uses credentials to access GRIZZLY STEPPE Move through Exfiltrated to Gather Data of interest Actors likely associated with RIS are continuing to engage in spearphishing campaigns, including one launched as recently as November 2016, just days after the U.S. election.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Actors",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "spearphishing campaigns",
+            "type": "Campaign"
+          },
+          "evidence": {
+            "quote": "Actors likely associated with RIS are continuing to engage in spearphishing campaigns"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Reported Russian Military and Civilian Intelligence Services (RIS)",
+      "triple": [
+        {
+          "subject": {
+            "name": "Reported Russian Military and Civilian Intelligence Services (RIS)",
+            "type": "Organization"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "RIS",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "Reported Russian Military and Civilian Intelligence Services (RIS)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Technical Details Indicators of Compromise (IOCs) IOCs associated with RIS cyber actors are provided within the accompanying .csv and .stix files of JAR-16-20296.",
+      "triple": [
+        {
+          "subject": {
+            "name": "RIS",
+            "type": "ThreatActor"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "JAR-16-20296",
+            "type": "Campaign"
+          },
+          "evidence": {
+            "quote": "IOCs associated with RIS cyber actors are provided within the accompanying .csv and .stix files of JAR-16-20296."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Yara Signature rule PAS_TOOL_PHP_WEB_KIT { meta: description = \"PAS TOOL PHP WEB KIT FOUND\" strings: $php = \"<?php\" $base64decode = /\\='base'\\.\\(\\d+\\*\\d+\\)\\.'_de'\\.'code'/ $strreplace = \"(str_replace(\" $md5 = \".substr(md5(strrev(\" $gzinflate = \"gzinflate\" $cookie = \"_COOKIE\" $isset = \"isset\" condition: (filesize > 20KB and filesize < 22KB) and #cookie == 2 and #isset == 3 and all of them } Actions to Take Using Indicators DHS recommends that network administrators review the IP addresses, file hashes, and Yara signature provided and add the IPs to their watchlist to determine whether malicious activity has been observed within their organizations.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Yara Signature rule PAS_TOOL_PHP_WEB_KIT",
+            "type": "AttackPattern"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "meta: description = \"PAS TOOL PHP WEB KIT FOUND\"",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "Yara Signature rule PAS_TOOL_PHP_WEB_KIT { meta: description = \"PAS TOOL PHP WEB KIT FOUND\""
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "When reviewing network perimeter logs for the IP addresses, organizations may find numerous instances of these IPs attempting to connect to their systems.",
+      "triple": [
+        {
+          "subject": {
+            "name": "IP addresses",
+            "type": "IPAddress"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "their systems",
+            "type": "System"
+          },
+          "evidence": {
+            "quote": "attempting to connect to their systems"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Connections from these IPs may be performing vulnerability scans attempting to identify websites that are vulnerable to cross-site scripting (XSS) or Structured Query Language (SQL) injection attacks.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Connections",
+            "type": "IPAddress"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "websites",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "Connections from these IPs may be performing vulnerability scans attempting to identify websites that are vulnerable to cross-site scripting (XSS) or Structured Query Language (SQL) injection attacks."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "System owners are also advised to run the Yara signature on any system that is suspected to have been targeted by RIS actors.",
+      "triple": [
+        {
+          "subject": {
+            "name": "System",
+            "type": "System"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "RIS actors",
+            "type": "ThreatActor"
+          },
+          "evidence": {
+            "quote": "targeted by RIS actors"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Injection Flaws are broad web application attack techniques that attempt to send commands to a browser, database, or other system, allowing a regular user to control behavior.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Injection Flaws",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "browser",
+            "type": "Browser"
+          },
+          "evidence": {
+            "quote": "send commands to a browser"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "See the United States Computer Emergency Readiness Team (US-CERT) Publication on SQL Injection for more information.",
+      "triple": [
+        {
+          "subject": {
+            "name": "United States Computer Emergency Readiness Team",
+            "type": "Organization"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "SQL Injection",
+            "type": "Vulnerability_Desc"
+          },
+          "evidence": {
+            "quote": "See the United States Computer Emergency Readiness Team (US-CERT) Publication on SQL Injection"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Successful XSS attacks on websites can provide the attacker unauthorized access.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Successful XSS attacks",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "websites",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "Successful XSS attacks on websites"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "For prevention and mitigation strategies against XSS, see US-CERT's Alert on Compromised Web Servers and Web Shells.",
+      "triple": [
+        {
+          "subject": {
+            "name": "US-CERT",
+            "type": "Organization"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "Alert",
+            "type": "Report"
+          },
+          "evidence": {
+            "quote": "see US-CERT's Alert"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Vulnerability Scanning & Patching : Have we implemented regular scans of our network and systems and appropriate patching of known system vulnerabilities?",
+      "triple": [
+        {
+          "subject": {
+            "name": "Vulnerability Scanning & Patching",
+            "type": "AttackPattern"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "our network and systems",
+            "type": "Network"
+          },
+          "evidence": {
+            "quote": "Have we implemented regular scans of our network and systems"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "023",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Use best practices when updating software and patches by only downloading updates from authenticated vendor sites.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Software",
+            "type": "Software"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "authenticated vendor sites",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "only downloading updates from authenticated vendor sites"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Application whitelisting Whitelisting is one of the best security strategies because it allows only specified programs to run while blocking all others, including malicious software.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Application whitelisting",
+            "type": "AttackPattern"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "malicious software",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "including malicious software"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "File Reputation - Tune Anti-Virus file reputation systems to the most aggressive setting possible; some products can limit execution to only the highest reputation files, stopping a wide range of untrustworthy code from gaining control.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Anti-Virus",
+            "type": "Software"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "file reputation systems",
+            "type": "System"
+          },
+          "evidence": {
+            "quote": "Tune Anti-Virus file reputation systems"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "016",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "It may take time for your organization's IT professionals to isolate and remove threats to your systems and restore normal operations.",
+      "triple": [
+        {
+          "subject": {
+            "name": "organization's IT professionals",
+            "type": "Person"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "threats",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "to isolate and remove threats"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "We encourage you to contact DHS NCCIC (NCCICCustomerService@hq.dhs.gov or 888-282-0870), the FBI through a local field office or the FBI's Cyber Division (CyWatch@ic.fbi.gov or 855-292-3937) to report an intrusion and to request incident response resources or technical assistance.",
+      "triple": [
+        {
+          "subject": {
+            "name": "DHS NCCIC",
+            "type": "Organization"
+          },
+          "predicate": "communicatesWith",
+          "object": {
+            "name": "NCCICCustomerService@hq.dhs.gov",
+            "type": "EmailAddress"
+          },
+          "evidence": {
+            "quote": "DHS NCCIC (NCCICCustomerService@hq.dhs.gov or 888-282-0870)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Detailed Mitigation Strategies Protect Against SQL Injection and Other Attacks on Web Services Routinely evaluate known and published vulnerabilities, perform software updates and technology refreshes periodically, and audit external-facing systems for known Web application vulnerabilities.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Web services",
+            "type": "System"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "SQL Injection",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "Protect Against SQL Injection"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Take steps to harden both Web applications and the servers hosting them to reduce the risk of network intrusion via this vector.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Web applications",
+            "type": "Application"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "network intrusion",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "reduce the risk of network intrusion"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Where possible, minimize server fingerprinting by configuring Web servers to avoid responding with banners identifying the server software and version number.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Web servers",
+            "type": "Hardware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "banners identifying the server software and version number",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "responding with banners identifying the server software and version number"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "014",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Secure both the operating system and the application.",
+      "triple": [
+        {
+          "subject": {
+            "name": "operating system",
+            "type": "OperatingSystem"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "Secure",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Secure both the operating system and the application"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "015",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Phishing and Spearphishing Implement a Sender Policy Framework (SPF) record for your organization's Domain Name System (DNS) zone file to minimize risks relating to the receipt of spoofed messages.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Phishing",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "receipt of spoofed messages",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "to minimize risks relating to the receipt of spoofed messages"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Do not provide personal information or information about your organization, including its structure or networks, unless you are certain of a person's authority to have the information.",
+      "triple": [
+        {
+          "subject": {
+            "name": "personal information",
+            "type": "Unknown"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "person",
+            "type": "Person"
+          },
+          "evidence": {
+            "quote": "Do not provide personal information or information about your organization, including its structure or networks, unless you are certain of a person's authority to have the information."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Malicious websites may look identical to a legitimate site, but the URL often includes a variation in spelling or a different domain than the valid website (e.g., .com vs. .net).",
+      "triple": [
+        {
+          "subject": {
+            "name": "Malicious websites",
+            "type": "URL"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "legitimate site",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "but the URL often includes a variation in spelling or a different domain than the valid website"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Information about known phishing attacks is also available online from groups such as the Anti-Phishing Working Group (http://www.antiphishing.org).",
+      "triple": [
+        {
+          "subject": {
+            "name": "Anti-Phishing Working Group",
+            "type": "Organization"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "(http://www.antiphishing.org)",
+            "type": "URL"
+          },
+          "evidence": {
+            "quote": "(http://www.antiphishing.org)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Patch all systems for critical vulnerabilities, prioritizing timely patching of software that processes Internet data, such as web browsers, browser plugins, and document readers.",
+      "triple": [
+        {
+          "subject": {
+            "name": "systems",
+            "type": "System"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "critical vulnerabilities",
+            "type": "Vulnerability_Desc"
+          },
+          "evidence": {
+            "quote": "Patch all systems for critical vulnerabilities"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "012",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Restrict users' ability (permissions) to install and run unwanted software applications, and apply the principle of 'Least Privilege' to all systems and services.",
+      "triple": [
+        {
+          "subject": {
+            "name": "users",
+            "type": "Person"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "unwanted software applications",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "Restrict users' ability (permissions) to install and run unwanted software applications"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "014",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Configure Group Policy to restrict all users to only one login session, where possible.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Group Policy",
+            "type": "Application"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "users",
+            "type": "Person"
+          },
+          "evidence": {
+            "quote": "restrict all users"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "018",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Configure firewalls to disallow RDP traffic coming from outside of the network boundary, except for in specific configurations such as when tunneled through a secondary VPN with lower privileges.",
+      "triple": [
+        {
+          "subject": {
+            "name": "firewalls",
+            "type": "Hardware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "RDP traffic",
+            "type": "Protocol"
+          },
+          "evidence": {
+            "quote": "Configure firewalls to disallow RDP traffic coming from outside of the network boundary"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Be aware that some services (e.g., FTP, telnet, and .rlogin) transmit user credentials in clear text.",
+      "triple": [
+        {
+          "subject": {
+            "name": "services",
+            "type": "Application"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "user credentials",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "transmit user credentials"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Consider restricting access to sensitive password hashes by using a shadow password file or equivalent on UNIX systems.",
+      "triple": [
+        {
+          "subject": {
+            "name": "UNIX systems",
+            "type": "OperatingSystem"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "shadow password file",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "using a shadow password file or equivalent on UNIX systems"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "015",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Upgrade PowerShell to new versions with enhanced logging features and monitor the logs to detect usage of PowerShell commands, which are often malware-related.",
+      "triple": [
+        {
+          "subject": {
+            "name": "PowerShell",
+            "type": "Application"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "new versions",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Upgrade PowerShell to new versions"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Secure logs, potentially in a centralized location, and protect them from modification.",
+      "triple": [
+        {
+          "subject": {
+            "name": "logs",
+            "type": "Unknown"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "centralized location",
+            "type": "Location"
+          },
+          "evidence": {
+            "quote": "potentially in a centralized location,"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "CSAs are DHS personnel assigned to districts throughout the country and territories, with at least one advisor in each of the 10 CSA regions, which mirror the Federal Emergency Management Agency regions.",
+      "triple": [
+        {
+          "subject": {
+            "name": "CSAs",
+            "type": "Organization"
+          },
+          "predicate": "belongsTo",
+          "object": {
+            "name": "DHS",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "CSAs are DHS personnel"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Cyber Resilience Review (CRR) is a no-cost, voluntary assessment to evaluate and enhance cybersecurity within critical infrastructure sectors, as well as state, local, tribal, and territorial governments.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Cyber Resilience Review (CRR)",
+            "type": "Campaign"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "cybersecurity",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "evaluate and enhance cybersecurity"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Visit https://www.cert.org/resilience/rmm.html to learn more about the CERT Resilience Management Model.",
+      "triple": [
+        {
+          "subject": {
+            "name": "https://www.cert.org/resilience/rmm.html",
+            "type": "URL"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "CERT Resilience Management Model",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Visit https://www.cert.org/resilience/rmm.html to learn more about the CERT Resilience Management Model."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "013",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Enhanced Cybersecurity Services (ECS) helps critical infrastructure owners and operators protect their systems by sharing sensitive and classified cyber threat information with Commercial Service Providers (CSPs) and Operational Implementers (OIs).",
+      "triple": [
+        {
+          "subject": {
+            "name": "Commercial Service Providers (CSPs)",
+            "type": "Organization"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "systems",
+            "type": "System"
+          },
+          "evidence": {
+            "quote": "protect their systems"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "014",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "CSPs then use the cyber threat information to protect CI customers.",
+      "triple": [
+        {
+          "subject": {
+            "name": "CSPs",
+            "type": "Organization"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "cyber threat information",
+            "type": "Indicator"
+          },
+          "evidence": {
+            "quote": "use the cyber threat information"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "015",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The Automated Indicator Sharing (AIS) initiative is a DHS effort to create a system where as soon as a company or federal agency observes an attempted compromise, the indicator will be shared in real time with all of our partners, protecting them from that particular threat.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Automated Indicator Sharing (AIS) initiative",
+            "type": "Campaign"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "company or federal agency",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "a company or federal agency observes an attempted compromise"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 12,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Participants will not only receive DHS-developed indicators, but can share indicators they have observed in their own network defense efforts, which DHS will then share with all AIS participants.",
+      "triple": [
+        {
+          "subject": {
+            "name": "DHS",
+            "type": "Organization"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "indicators",
+            "type": "Indicator"
+          },
+          "evidence": {
+            "quote": "indicators they have observed"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 12,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The Cybersecurity Framework (Framework) , developed by the National Institute of Standards and Technology (NIST) in collaboration with the public and private sectors, is a tool that can improve the cybersecurity readiness of entities.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Cybersecurity Framework",
+            "type": "Application"
+          },
+          "predicate": "hasAuthor",
+          "object": {
+            "name": "National Institute of Standards and Technology (NIST)",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "developed by the National Institute of Standards and Technology (NIST)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 12,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "For any questions related to this report, please contact NCCIC or the FBI.",
+      "triple": [
+        {
+          "subject": {
+            "name": "NCCIC",
+            "type": "Organization"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "Contact Information",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "For any questions related to this report, please contact NCCIC or the FBI."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 13,
+        "id": "002",
+        "source": "TEXT"
+      }
+    }
+  ]
+}

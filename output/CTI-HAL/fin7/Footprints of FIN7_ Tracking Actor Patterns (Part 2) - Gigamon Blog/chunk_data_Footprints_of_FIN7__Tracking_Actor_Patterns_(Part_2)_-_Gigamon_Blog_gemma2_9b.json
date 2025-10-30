@@ -1,0 +1,861 @@
+{
+  "metrics": {
+    "file_name": "Footprints of FIN7_ Tracking Actor Patterns (Part 2) - Gigamon Blog.pdf",
+    "model_used": "gemma2:9b",
+    "doc_sha256_id": "13be6a0436757a16",
+    "num_pages": 8,
+    "num_sentences_total": 105,
+    "num_sentences_used": 53,
+    "num_raw_triples": 53,
+    "num_valid_triples": 35,
+    "num_suspicious_triples": 18,
+    "avg_triples_per_sentence": 1.0,
+    "rejection_stats": {
+      "bad_structure": 0,
+      "invalid_class_or_predicate": 18
+    },
+    "runtime_seconds": 69.63109588623047
+  },
+  "data": [
+    {
+      "context": " SECURITY (HTTPS://BLOG.GIGAMON.COM/CATEGORY/SECURITY/) / JULY 26, 2017 Footprints of FIN7: Tracking Actor Patterns (Part 2) ATR (https://blog.gigamon.com/author/atrteam/) Justin Warner (https://blog.gigamon.com/author/justinwarner/) Stephen Hinck (https://blog.gigamon.com/author/stephenhinck/)",
+      "triple": [
+        {
+          "subject": {
+            "name": "SECURITY",
+            "type": "URL"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "HTTPS://BLOG.GIGAMON.COM/CATEGORY/SECURITY/",
+            "type": "URL"
+          },
+          "evidence": {
+            "quote": "SECURITY (HTTPS://BLOG.GIGAMON.COM/CATEGORY/SECURITY/)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This is part two of a blog series detailing Gigamon Applied Threat Research's (ATR) engagements with FIN7 throughout early 2017.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Gigamon Applied Threat Research",
+            "type": "Organization"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "ATR",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "Gigamon Applied Threat Research's (ATR)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Part one (https://blog.gigamon.com/2017/07/25/footprints-of-fin7tracking-actor-patterns-part-1//) focused the network communications and tradecraft involved with FIN7, specifically addressing how patterns in the C2 protocol allowed for Gigamon ATR to gain a deeper understanding of adversary TTPs.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "communicatesWith",
+          "object": {
+            "name": "C2 protocol",
+            "type": "Protocol"
+          },
+          "evidence": {
+            "quote": "how patterns in the C2 protocol allowed"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "End Goal: Financial Gain Based on victimology, internal attacker actions and known data exfiltration, many people have demonstrated FIN7's clear financial motivations (https://www.fireeye.com/blog/threatresearch/2017/04/fin7-phishing-lnk.html).",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Attacker actions",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "victimology, internal attacker actions"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Multi-Stage Dropper During post-exploitation, FIN7 would gain access to the POS environment primarily using PSExec (https://technet.microsoft.com/enus/sysinternals/bb897553.aspx), combined with a custom PowerShell script to deploy their payload.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "POS environment",
+            "type": "System"
+          },
+          "evidence": {
+            "quote": "gain access to the POS environment"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The weaponized PowerShell script was built to load an embedded DLL using reflective injection.",
+      "triple": [
+        {
+          "subject": {
+            "name": "PowerShell script",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "reflective injection",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "using reflective injection"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "While the PowerShell code appeared to include several foundational components from PowerSploit's Invoke-ReflectivePEInjection (https://github.com/PowerShellMafia/PowerSploit/blob/master/CodeExecution/Invoke- ReflectivePEInjection.ps1), it also contained custom modifications that made it unique.",
+      "triple": [
+        {
+          "subject": {
+            "name": "PowerShell code",
+            "type": "MalwareAnalysis"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "Invoke-ReflectivePEInjection",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "several foundational components from PowerSploit's Invoke-ReflectivePEInjection"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Next, the script would allocate memory in its current process and use the System.",
+      "triple": [
+        {
+          "subject": {
+            "name": "script",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "System",
+            "type": "OperatingSystem"
+          },
+          "evidence": {
+            "quote": "use the System"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "With the DLL in memory, the script would then generate custom bootstrap code for binary loading and place that code into memory.",
+      "triple": [
+        {
+          "subject": {
+            "name": "script",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "bootstrap code",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "the script would then generate custom bootstrap code for binary loading and place that code into memory."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "SuserData SCallStub rax, SreflectLoader SCallStub 4= ConvertTo-LittleEndian SOpts.",
+      "triple": [
+        {
+          "subject": {
+            "name": "SCallStub",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "ConvertTo-LittleEndian",
+            "type": "Software"
+          },
+          "evidence": {
+            "quote": "SCallStub uses ConvertTo-LittleEndian"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "014",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Injects Execute Sdbinst.exe 0# Services exe Load and Execute Payload Key Stage Stage (https://blog.gigamon.com/wp-content/uploads/2020/06/2-725-Figure-10-Multistage-Loading-Process.png) Figure 10:",
+      "triple": [
+        {
+          "subject": {
+            "name": "Sdbinst.exe",
+            "type": "Filename"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Payload Key Stage Stage",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Injects Execute Sdbinst.exe 0# Services exe Load and Execute Payload Key Stage Stage"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Based on previous public documentation of FIN7 operations (https://www.fireeye.com/blog/threat-research/2017/05/fin7-shimdatabases-persistence.html), this custom PowerShell loader is a notable divergence from previous FIN7 operational tactics (https://www.fireeye.com/blog/threat-research/2017/05/fin7-shimdatabases-persistence.html); a shift in techniques possibly to CLOUD VISIBILITY NETWORK SECURITY DATA CENTER VISIBILITY TRAFFIC INTELLIGENCE CLOUD VISIBILITY DATA CENTER VISIBILITY NETWORK SECURITY INDUSTRY FIND A PARTNER NOT A PARTNER?",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "FIN7 operations",
+            "type": "Campaign"
+          },
+          "evidence": {
+            "quote": "Based on previous public documentation of FIN7 operations"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "OVERVIEW GET SUPPORT VÜE COMMUNITY CUSTOMERS RESOURCES IN THE NEWS COMPANY INFORMATION (https://www.gigamon.com/content/gigamon/en_us.html) (https://www.gigamon.com/content/gigamon/en_us/contact-us Products Solutions Partners Support Customers EN DEMOS (https://www.gigamon.com/content/gigamon/en_us/l trial.html) CONTACT SALES (https://www.gigamon.com/content/ evade detection based on intel reporting.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Company Information",
+            "type": "Organization"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Gigamon",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "OVERVIEW GET SUPPORT VÜE COMMUNITY CUSTOMERS RESOURCES IN THE NEWS COMPANY INFORMATION (https://www.gigamon.com/content/gigamon/en_us.html) "
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Resources GigaVUE Cloud Suite SSL/TLS Decryption GigaVUE Appliances GigaVUE Fabric Manager Accelerate Cloud Migration Lower Your Tool Costs",
+      "triple": [
+        {
+          "subject": {
+            "name": "GigaVUE Cloud Suite",
+            "type": "Software"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "SSL/TLS Decryption",
+            "type": "Protocol"
+          },
+          "evidence": {
+            "quote": "SSL/TLS Decryption"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Build A Zero Trust Architecture Federal Technology Alliance Partners Become A Partner Partner Portal Login Support And Services Contact Support Customer VÜE Dashboard View All Resource Library Blog (Https://Blog.gigamon.com) About Us",
+      "triple": [
+        {
+          "subject": {
+            "name": "Customer",
+            "type": "Person"
+          },
+          "predicate": "belongsTo",
+          "object": {
+            "name": "VÜE Dashboard",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "Customer VÜE Dashboard"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This shift identifies a likely desire to maintain longer-term access in order to facilitate ongoing theft from a single target environment over time, rather than performing smash and grab campaigns.",
+      "triple": [
+        {
+          "subject": {
+            "name": "this shift",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "a likely desire to maintain longer-term access",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "This shift identifies a likely desire to maintain longer-term access"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Application Filtering (Https://Www.gigamon.com/Content/Gigamon/E Traffic/Application-Intelligence/ApplicationFiltering-Intelligence.html)",
+      "triple": [
+        {
+          "subject": {
+            "name": "Application Filtering",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Https://Www.gigamon.com/Content/Gigamon/E Traffic/Application-Intelligence/ApplicationFiltering-Intelligence.html",
+            "type": "URL"
+          },
+          "evidence": {
+            "quote": "Https://Www.gigamon.com/Content/Gigamon/E Traffic/Application-Intelligence/ApplicationFiltering-Intelligence.html"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "013",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Application Metadata (Https://Www.gigamon.com/Content/Gigamon/E Traffic/Application-Intelligence/ApplicationMetadata.html) (Https://Www.gigamon.com/Content/Gigamon/ Traffic/Physical-Nodes.html) HC Series (Https://Www.gigamon.com/Content/Gigamon/E Traffic/Physical-Nodes/Gigavue-Hc-Series.html)",
+      "triple": [
+        {
+          "subject": {
+            "name": "Application Metadata",
+            "type": "URL"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "(Https://Www.gigamon.com/Content/Gigamon/E Traffic/Application-Intelligence/ApplicationMetadata.html)",
+            "type": "URL"
+          },
+          "evidence": {
+            "quote": "Application Metadata (Https://Www.gigamon.com/Content/Gigamon/E Traffic/Application-Intelligence/ApplicationMetadata.html)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "014",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "GigaSMART (Https://Www.gigamon.com/Content/Gigamon/E Traffic/Traffic-Intelligence/Gigasmart.html) (Https://Www.gigamon.com/Content/Gigamon/E Cloud-Migration.html)",
+      "triple": [
+        {
+          "subject": {
+            "name": "GigaSMART",
+            "type": "Software"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Https://Www.gigamon.com/Content/Gigamon/E Traffic/Traffic-Intelligence/Gigasmart.html",
+            "type": "URL"
+          },
+          "evidence": {
+            "quote": "(Https://Www.gigamon.com/Content/Gigamon/E Traffic/Traffic-Intelligence/Gigasmart.html)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "016",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Make Network Changes Without Disruption (Https://Www.gigamon.com/Content/Gigamon/E Network-Changes-Without-Disruption.html)",
+      "triple": [
+        {
+          "subject": {
+            "name": "Make Network Changes Without Disruption",
+            "type": "URL"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Https://Www.gigamon.com/Content/Gigamon/E Network-Changes-Without-Disruption.html",
+            "type": "URL"
+          },
+          "evidence": {
+            "quote": "https://www.gigamon.com/Content/Gigamon/E%20Network-Changes-Without-Disruption.html"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "020",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Put NetOps Back In Control (Https://Www.gigamon.com/Content/Gigamon/E Operations.html)",
+      "triple": [
+        {
+          "subject": {
+            "name": "Put NetOps Back In Control",
+            "type": "URL"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Https://Www.gigamon.com/Content/Gigamon/E Operations.html",
+            "type": "URL"
+          },
+          "evidence": {
+            "quote": "Https://Www.gigamon.com/Content/Gigamon/E Operations.html"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "021",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "(Https://Www.gigamon.com/Content/Gigamon/E Trust.html) Stronger Security Starts With Network Visibility (Https://Www.gigamon.com/Content/Gigamon/E Operations.html)",
+      "triple": [
+        {
+          "subject": {
+            "name": "Https://Www.gigamon.com/Content/Gigamon/E Trust.html",
+            "type": "URL"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Stronger Security Starts With Network Visibility",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Https://Www.gigamon.com/Content/Gigamon/E Trust.html) Stronger Security Starts With Network Visibility"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "022",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "(Https://Www.gigamon.com/Content/Gigamon/E Financial Services (Https://Www.gigamon.com/Content/Gigamon/E Services.html)",
+      "triple": [
+        {
+          "subject": {
+            "name": "Https://Www.gigamon.com/Content/Gigamon/E Financial Services",
+            "type": "DomainName"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Https://Www.gigamon.com/Content/Gigamon/E Services.html",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "(Https://Www.gigamon.com/Content/Gigamon/E Financial Services (Https://Www.gigamon.com/Content/Gigamon/E Services.html)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "023",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Channel Partners (Https://Www.gigamon.com/Content/Gigamon/E Partners.html) Partner Locator (Https://Gigamon.my.salesforceSites.com/Partnerlocator/) (Https://Www.gigamon.com/Content/Gigamon/E Partners/Become-A-Partner.html)",
+      "triple": [
+        {
+          "subject": {
+            "name": "Channel Partners",
+            "type": "Organization"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Https://Www.gigamon.com/Content/Gigamon/E Partners.html",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "Channel Partners (Https://Www.gigamon.com/Content/Gigamon/E Partners.html)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "025",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Professional Services (Https://Www.gigamon.com/Content/Gigamon/E Services.html) (Https://Community.gigamon.com/Gigamoncp/S/ Utm_source=Gigamon.com&Utm_medium=Refer Links&Utm_content=Nav-Support) Discussion Forum (Https://Community.gigamon.com/Gigamoncp/S/ And-Articles#Forums?",
+      "triple": [
+        {
+          "subject": {
+            "name": "Professional Services",
+            "type": "Organization"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "(Https://Www.gigamon.com/Content/Gigamon/E Services.html)",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "Professional Services (Https://Www.gigamon.com/Content/Gigamon/E Services.html)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "027",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Cloud Journey Podcast (Https://Www.gigamon.com/Content/Gigamon/E Life-In-The-Cloud-Podcast.html)",
+      "triple": [
+        {
+          "subject": {
+            "name": "Cloud Journey Podcast",
+            "type": "Campaign"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "Https://Www.gigamon.com/Content/Gigamon/E Life-In-The-Cloud-Podcast.html",
+            "type": "URL"
+          },
+          "evidence": {
+            "quote": "Targets Https://Www.gigamon.com/Content/Gigamon/E Life-In-The-Cloud-Podcast.html"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "031",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This tactic of using a targeted set of processes allows the malware to be used flexibly in different environments and shows customization in targeting based on each individual victim.",
+      "triple": [
+        {
+          "subject": {
+            "name": "tactic",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "processes",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "This tactic of using a targeted set of processes"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "OpenStack (Https://Www.gigamon.com/Content/Gigamon/E Cloud/Gigavue-Cloud-Suite-Openstack.html) VMware (Https://Www.gigamon.com/Content/Gigamon/E Point-of-Sale Considerations Cloud/Gigavue-Cloud-Suite-Vmware.html)",
+      "triple": [
+        {
+          "subject": {
+            "name": "OpenStack",
+            "type": "DomainName"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Https://Www.gigamon.com/Content/Gigamon/E Cloud/Gigavue-Cloud-Suite-Openstack.html",
+            "type": "URL"
+          },
+          "evidence": {
+            "quote": "Https://Www.gigamon.com/Content/Gigamon/E Cloud/Gigavue-Cloud-Suite-Openstack.html"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "We work with our customers to understand how their individual environment design affects their ability to perform network monitoring, but by the time we are brought in to assist in response it's too late and the priority is containment, mitigation and remediation with the topic of design being revisited in the wake of the breach.",
+      "triple": [
+        {
+          "subject": {
+            "name": "customers",
+            "type": "Person"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "environment design",
+            "type": "ResourceExploitation"
+          },
+          "evidence": {
+            "quote": "their individual environment design"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This hinders or prevents the ability to detect malware communicating external to the environment.",
+      "triple": [
+        {
+          "subject": {
+            "name": "malware",
+            "type": "Malware"
+          },
+          "predicate": "communicatesWith",
+          "object": {
+            "name": "external to the environment",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "malware communicating external to the environment"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Proxying and logging all network communications from POS systems, preferably in a robust security stack that allows for behavioral profiling, enables the detection of, and response to, threats in the environment.",
+      "triple": [
+        {
+          "subject": {
+            "name": "POS systems",
+            "type": "Hardware"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "network communications",
+            "type": "Network"
+          },
+          "evidence": {
+            "quote": "Proxying and logging all network communications from POS systems"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Some examples of patterns to watch include: network traffic volume, hosts communicating with each other, the direction of that communication and the amount of data transmitted.",
+      "triple": [
+        {
+          "subject": {
+            "name": "hosts",
+            "type": "IPAddress"
+          },
+          "predicate": "communicatesWith",
+          "object": {
+            "name": "each other",
+            "type": "IPAddress"
+          },
+          "evidence": {
+            "quote": "hosts communicating with each other"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In addition to whitelisting applications allowed to execute on system involved in processing payment data, whitelisting the ports and IPs that each system is allowed to communicate on will help to prevent lateral movement within the POS environment.",
+      "triple": [
+        {
+          "subject": {
+            "name": "system",
+            "type": "OperatingSystem"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "ports",
+            "type": "Port"
+          },
+          "evidence": {
+            "quote": "whitelisting the ports and IPs that each system is allowed to communicate on"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Controlling network traffic, particularly on ports used for system management (commonly used for lateral movement), ensures that such activity can only occur from certain hosts, and can greatly increase (if not prevent completely, in combination with other controls) the amount of time it takes to pivot within the POS environment, increasing the likelihood of discovery of an active attacker.",
+      "triple": [
+        {
+          "subject": {
+            "name": "controlling network traffic",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "ports used for system management",
+            "type": "Port"
+          },
+          "evidence": {
+            "quote": "Controlling network traffic, particularly on ports used for system management"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "To learn more about Gigamon ATR, please visit www.gigamon.com/research/applied-threat-researchteam.html (https://www.gigamon.com/research/applied-threatresearch-team.html).",
+      "triple": [
+        {
+          "subject": {
+            "name": "Gigamon ATR",
+            "type": "MalwareFamily"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "www.gigamon.com/research/applied-threat-researchteam.html",
+            "type": "URL"
+          },
+          "evidence": {
+            "quote": "To learn more about Gigamon ATR, please visit www.gigamon.com/research/applied-threat-researchteam.html"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "004",
+        "source": "TEXT"
+      }
+    }
+  ]
+}

@@ -1,0 +1,1101 @@
+{
+  "metrics": {
+    "file_name": "APT34 targets Jordan Government using new Saitama backdoor.pdf",
+    "model_used": "gemma2:9b",
+    "doc_sha256_id": "3f2e19c537691003",
+    "num_pages": 15,
+    "num_sentences_total": 120,
+    "num_sentences_used": 74,
+    "num_raw_triples": 74,
+    "num_valid_triples": 45,
+    "num_suspicious_triples": 29,
+    "avg_triples_per_sentence": 1.0,
+    "rejection_stats": {
+      "bad_structure": 0,
+      "invalid_class_or_predicate": 29
+    },
+    "runtime_seconds": 219.25964879989624
+  },
+  "data": [
+    {
+      "context": " Home > Blog THREAT INTELLIGENCE APT34 targets Jordan Government using new Saitama backdoor Posted:  May 10, 2022  by Threat Intelligence Team On April 26th, we identiCed a suspicious email that targeted a government oFcial from Jordan's foreign ministry.",
+      "triple": [
+        {
+          "subject": {
+            "name": "APT34",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "Jordan Government",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "APT34 targets Jordan Government"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Also known as OilRig/COBALT GYPSY/IRN2/HELIX KITTEN, APT34 is an Iranian threat group that has targeted Middle Eastern countries and victims Categories Breaches Product News Ransomware Threat Intelligence Vulnerabilities",
+      "triple": [
+        {
+          "subject": {
+            "name": "APT34",
+            "type": "ThreatActor"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "OilRig/COBALT GYPSY/IRN2/HELIX KITTEN",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "Also known as OilRig/COBALT GYPSY/IRN2/HELIX KITTEN, APT34"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The group is known to focus on the Cnancial, governmental, energy, chemical, and telecommunication sectors.",
+      "triple": [
+        {
+          "subject": {
+            "name": "group",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "Cnancial, governmental, energy, chemical, and telecommunication sectors",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "The group is known to focus on the Cnancial, governmental, energy, chemical, and telecommunication sectors"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In this blog post, we describe the attack ]ow and share details about the Saitama backdoor.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Saitama",
+            "type": "Backdoor"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "attack ",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "we describe the attack ]ow and share details about the Saitama backdoor."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Malicious email Dle The malicious email was sent to the victim via a Microsoft Outlook account with the subject 'ConCrmation Receive Document' with an Excel Cle called 'ConCrmation Receive Document.xls'.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Malicious email",
+            "type": "EmailAddress"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "victim",
+            "type": "Person"
+          },
+          "evidence": {
+            "quote": "sent to the victim via"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Eacto F Excel document The Excel attachment contains a macro that performs malicious activities.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Excel document",
+            "type": "Filepath"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "macro",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "The Excel attachment contains a macro"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " to show Content of Documment After enabling the macro, the image is replaced with the Jordan government's the coat of the arms: 4 The macro has been executed on WorkBook_Open().",
+      "triple": [
+        {
+          "subject": {
+            "name": "macro",
+            "type": "Application"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "WorkBook_Open()",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "The macro has been executed on WorkBook_Open()"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Calls the 'eNotif' function which is used to send a notiCcation of each steps of macro execution to its server using the DNS protocol.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Calls",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "DNS protocol",
+            "type": "Protocol"
+          },
+          "evidence": {
+            "quote": "using the DNS protocol"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Creates a TaskService object and Gets the task folder that contains the list of the current tasks Calls ENotif function",
+      "triple": [
+        {
+          "subject": {
+            "name": "TaskService",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "Task folder",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "Creates a TaskService object and Gets the task folder that contains the list of the current tasks Calls ENotif function"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Load by manually accessing the VTable of the IUnknown.",
+      "triple": [
+        {
+          "subject": {
+            "name": "VTable",
+            "type": "Software"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "IUnknown",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "accessing the VTable of the IUnknown"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This technique was taken from Github (link).",
+      "triple": [
+        {
+          "subject": {
+            "name": "Technique",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "Github",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "from Github"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "VarPcrarray (bytes) ByVal Din pArrY vValues (0) VIypes (O) 16422 Din pRef LongPtr: pRef Din VarPtr (pRef) VIypes(-) 16396 IRer DispCallFunc (ObjPtr (dom) 45 4, vbLorg, 2 , VIypes(0) , Dr aRef aRef, pRef, 1s aRef \"Saicama Agert.Program\" End Sub DeCnes a xml schema for a scheduled task and registers it using the RegisterTask function.",
+      "triple": [
+        {
+          "subject": {
+            "name": "VarPcrarray",
+            "type": "Filename"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "(bytes)",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "VarPcrarray (bytes)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The name of the scheduled task is MicrosoftUpdate and is used to make update.exe persistent.",
+      "triple": [
+        {
+          "subject": {
+            "name": "MicrosoftUpdate",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "scheduled task",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "The name of the scheduled task is MicrosoftUpdate and is used to make update.exe persistent."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "k?xml versior encoding= UTF-16\" xlns <RegistrationInfo?",
+      "triple": [
+        {
+          "subject": {
+            "name": "k?xml versior encoding= UTF-16",
+            "type": "Malware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "xlns <RegistrationInfo?",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": " k?xml versior encoding= UTF-16\" xlns <RegistrationInfo?"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Author> <DescriptionaMicrosoft Important Update</Description> <IRegistrationInfo> <Triggers> <TineTrigger?",
+      "triple": [
+        {
+          "subject": {
+            "name": "Description",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "<DescriptionaMicrosoft Important Update>",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "hasAlias"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "It has the following interesting pdb path: E:SaitamaSaitama.AgentobjReleaseSaitama.Agent.pdb .",
+      "triple": [
+        {
+          "subject": {
+            "name": "pdb",
+            "type": "Filename"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "E:\\Saitama\\Saitama.AgentobjRelease\\Saitama.Agent.pdb",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "has the following interesting pdb path: E:SaitamaSaitama.AgentobjReleaseSaitama.Agent.pdb"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Saitama backdoor abuses the DNS protocol for its command and control communications.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Saitama",
+            "type": "Backdoor"
+          },
+          "predicate": "communicatesWith",
+          "object": {
+            "name": "DNS protocol",
+            "type": "Protocol"
+          },
+          "evidence": {
+            "quote": "abuses the DNS protocol for its command and control communications"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "APt34 INSIGHTS UNDERSTANDING SAITAMA ABUSES DNS PROTOCOL A practical example In Malwarebytes we recently discovered a new campaing attributed to APT34, using a new backdoor that we have called Saitama.",
+      "triple": [
+        {
+          "subject": {
+            "name": "APT34",
+            "type": "ThreatActor"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "Saitama",
+            "type": "Backdoor"
+          },
+          "evidence": {
+            "quote": "a new backdoor that we have called Saitama."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This infographic will help the public to understand how Saitama abuses DNS protocol.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Saitama",
+            "type": "Person"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "DNS protocol",
+            "type": "Protocol"
+          },
+          "evidence": {
+            "quote": "how Saitama abuses DNS protocol"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Hardcoced word ` haruto shufle MERSENNE Config Counter TWISTER (7805) modulus these nurtbers frorn moculus, characters from celault alphabet are being extracied usirg their genorate relalive posilion example will assumne Using the counter as seed , that our numbor 7805 alchabct is gcncratcd char long aslawordremit com or joerpediagroup com applico aharutoIhe",
+      "triple": [
+        {
+          "subject": {
+            "name": "ahartoIhe",
+            "type": "EmailAddress"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "7805",
+            "type": "Port"
+          },
+          "evidence": {
+            "quote": " 7805 alchabct is gcncratcd char long aslawordremit com or joerpediagroup com applico aharutoIhe"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Custom nbnAvxanrj joexpediagroup com Base36 alcnabet razupgnv2wo STEP 2 RESPONSE FROM SERVER NOT NOT NOT USED USED USED AgentlD",
+      "triple": [
+        {
+          "subject": {
+            "name": "AgentlD",
+            "type": "DomainName"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "nbnAvxanrj joexpediagroup com Base36 alcnabet razupgnv2wo STEP 2 RESPONSE FROM SERVER NOT NOT NOT USED USED USED",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "AgentlD hasAlias nbnAvxanrj joexpediagroup com Base36 alcnabet razupgnv2wo STEP 2 RESPONSE FROM SERVER NOT NOT NOT USED USED USED"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "STEP 5 RECEIVE COMMAND RECEIVE Offset COUNTER AgentlD (7807) (203) MERSENNE Base36 Base36 Base36 TWISTER Custom Base36 cfxaaa k7myyynr6 asiaworldremit com STEP 6 RESPONSE FROM SERVER TYPE OF COMMAND COMMAND COMMAND COMMAND (Ist byte) (2nd byte) (3rd byte)",
+      "triple": [
+        {
+          "subject": {
+            "name": "AgentlD",
+            "type": "IPAddress"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "(7807)",
+            "type": "Port"
+          },
+          "evidence": {
+            "quote": "AgentlD (7807)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "696e 5665 7273 ndous [Vers 00000018 69c2 a26e 2e37 3630 760 00000024 3150 COUNTER (7808) buller scllted Mersenne Buff slze (38) 09",
+      "triple": [
+        {
+          "subject": {
+            "name": "696e",
+            "type": "Filename"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "Vers",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "696e 5665 7273 ndous [Vers 00000018 69c2 a26e 2e37 3630 760 00000024 3150 "
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Custom Basca6 Base36 Base36 Base36 AgentID (203) Basca6 RECEIE Malwarebytes Another element that we found interesting about this backdoor is the way that it is implemented.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Basca6",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "AgentID (203)",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Custom Basca6 Base36 Base36 Base36 AgentID (203) Basca6"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "ALIVE This state fetches the C&C server, expecting to receive a command from the attackers.",
+      "triple": [
+        {
+          "subject": {
+            "name": "state",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "C&C server",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "fetches the C&C server"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Collections Generic; using Systen IO; namespace Saitama.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Collections",
+            "type": "Application"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "Generic",
+            "type": "Software"
+          },
+          "evidence": {
+            "quote": "Collections Generic; "
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "0x02000003 RID: public class Config Token: RID: 0x00002164 File Offset: public static void Init() ('Config Load( ))",
+      "triple": [
+        {
+          "subject": {
+            "name": "public class Config",
+            "type": "Application"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "Token: RID: 0x00002164 File Offset:",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "public class Config has Token: RID: 0x00002164 File Offset:"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Figure 9 shows an example of the generated subdomain: D2s: QueryId Ox-EED QUERY (Scandard querr) Query for cless QueryIdercifler: 20205 Flags Query, Opcode QUERY (Scandard query)",
+      "triple": [
+        {
+          "subject": {
+            "name": "Query",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "QUERY",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Query for cless QueryIdercifler: 20205 Flags Query, Opcode QUERY"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "If the performed DNS request fails, the next stage is SLEEP .",
+      "triple": [
+        {
+          "subject": {
+            "name": "performed DNS request",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "SLEEP",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "If the performed DNS request fails, the next stage is SLEEP ."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "For example, unsuccessful DNS requests puts the backdoor in sleep mode for a time between 6 and 8 hours!",
+      "triple": [
+        {
+          "subject": {
+            "name": "backdoor",
+            "type": "Backdoor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "DNS requests",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "unsuccessful DNS requests puts the backdoor"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Token: 0x04000001 RID: public static int DelayMinAlive 21600000; Token: 0x04000002 RID: public static int DelayMaxAlive 28800000;",
+      "triple": [
+        {
+          "subject": {
+            "name": "Token: 0x04000001",
+            "type": "Unknown"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "DelayMinAlive",
+            "type": "Time"
+          },
+          "evidence": {
+            "quote": " Token: 0x04000001 RID: public static int DelayMinAlive 21600000;"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Commands are sent using the IP address Celd that is returned by the DNS requests.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Commands",
+            "type": "AttackPattern"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "Celd",
+            "type": "IPAddress"
+          },
+          "evidence": {
+            "quote": "using the IP address Celd"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The backdoor will concatenate responses, building buffers in that way.",
+      "triple": [
+        {
+          "subject": {
+            "name": "backdoor",
+            "type": "Backdoor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "buffers",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "building buffers"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "DO (DoTask) That state will execute commands received from the server.",
+      "triple": [
+        {
+          "subject": {
+            "name": "That",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "server",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "commands received from the server"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " contain internal IPs and also internal domain names (like ise-posture.mofagov.gover.local).",
+      "triple": [
+        {
+          "subject": {
+            "name": "internal domain names",
+            "type": "DomainName"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "contain",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "contain internal IPs and also internal domain names (like ise-posture.mofagov.gover.local)."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 14,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "That shows that this malware was clearly targeted and also indicates that the actor has some previous knowledge about the internal infrastructure of the victim.",
+      "triple": [
+        {
+          "subject": {
+            "name": "malware",
+            "type": "Malware"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "knowledge",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "that this malware was clearly targeted and also indicates that the actor has some previous knowledge about the internal infrastructure of the victim."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 14,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "SEND - SEND AND RECEIVE The Send state is used to send the results generated by commands to the actor's server.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Send state",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "commands",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "The Send state is used to send the results generated by commands"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 14,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "As domain names are used to exCltrate unknown amounts of data, attackers had to split this data in different buffers.",
+      "triple": [
+        {
+          "subject": {
+            "name": "attackers",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "domain names",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "As domain names are used to exCltrate unknown amounts of data,"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 14,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Send Products Pricing Partners Resources Support Attribution There are several indicators that suggest that this campaign has been operated by APT34.",
+      "triple": [
+        {
+          "subject": {
+            "name": "this campaign",
+            "type": "Campaign"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "APT34",
+            "type": "ThreatActor"
+          },
+          "evidence": {
+            "quote": "operated by APT34"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 14,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Maldoc similarity: The madoc used in this campaign shared some similarities with maldocs used in previous campaigns of this actor.",
+      "triple": [
+        {
+          "subject": {
+            "name": "mado",
+            "type": "Malware"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "similarities",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "shared some similarities"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 14,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Victims similarity: The group is known to target the government of Jordan and this is the case in this campaign.",
+      "triple": [
+        {
+          "subject": {
+            "name": "group",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "government of Jordan",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "the group is known to target the government of Jordan"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 15,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Payload similarity: DNS is the most common method used byAPT34 for its C&C communications.",
+      "triple": [
+        {
+          "subject": {
+            "name": "APT34",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "DNS",
+            "type": "Protocol"
+          },
+          "evidence": {
+            "quote": "used by APT34 for its C&C communications"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 15,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The Saitama backdoor uses a similar Base32 encoding for sending data to the servers that is used by DNSpionage.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Saitama",
+            "type": "Backdoor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "Base32 encoding",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "The Saitama backdoor uses a similar Base32 encoding"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 15,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " IOCs Maldoc: ConCrmation Receive Document.xls 26884f872f4fae13da21fa2a24c24e963ee1eb66da47e270246d6d9dc7204c2b Saitama backdoor: update.exe e0872958b8d3824089e5e1cfab03d9d98d22b9bcb294463818d721380075a52d C2s: uber-asia.com asiaworldremit.com joexpediagroup.com Related articles THREAT INTELLIGENCE",
+      "triple": [
+        {
+          "subject": {
+            "name": "ConCrmation Receive Document.xls",
+            "type": "Filename"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Maldoc",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "IOCs Maldoc: ConCrmation Receive Document.xls"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 16,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "New phishing campaign uses Discord for… payload delivery  3 minutes Discor RANSOMWARE Ransomware review: July 2024  3 minutes THREAT INTELLIGENCE WorkersDevBackdoor and MadMxShell converge in… malvertising campaigns  7 minutes",
+      "triple": [
+        {
+          "subject": {
+            "name": "New phishing campaign",
+            "type": "Campaign"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "Discord",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "uses Discord"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 16,
+        "id": "001",
+        "source": "TEXT"
+      }
+    }
+  ]
+}

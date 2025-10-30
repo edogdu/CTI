@@ -1,0 +1,765 @@
+{
+  "metrics": {
+    "file_name": "Profile of an Adversary - FIN7 _ Deepwatch.pdf",
+    "model_used": "gemma2:9b",
+    "doc_sha256_id": "bfb17230702514d5",
+    "num_pages": 12,
+    "num_sentences_total": 96,
+    "num_sentences_used": 59,
+    "num_raw_triples": 59,
+    "num_valid_triples": 31,
+    "num_suspicious_triples": 28,
+    "avg_triples_per_sentence": 1.0,
+    "rejection_stats": {
+      "bad_structure": 0,
+      "invalid_class_or_predicate": 28
+    },
+    "runtime_seconds": 71.58425951004028
+  },
+  "data": [
+    {
+      "context": " 05.13.19 Threat Report < https://www.deepwatch.com/blog_category/threat-report/> Profile of an Adversary - FIN7 By Bryan Austin Estimated Reading Time: 10 minutes The majority of companies in either the Retail or Hospitality industries are [sadly] familiar with FIN7.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "companies",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "The majority of companies in either the Retail or Hospitality industries are [sadly] familiar with FIN7."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Since then FIN7 has been identified by many organizations, including: FireEye - FIN7 CrowdStrike - Carbon Spider Media - Carbanak Gang/Group",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Carbon Spider",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "FIN7 CrowdStrike - Carbon Spider"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This group has suspected ties to Russian organized crime and has netted roughly $1 Billion USD in the last half-decade.",
+      "triple": [
+        {
+          "subject": {
+            "name": "This group",
+            "type": "ThreatActor"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "suspected ties to Russian organized crime",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "has suspected ties to Russian organized crime"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Additionally, the group has strong ties to Ukraine, where 3 members of the FIN7 group were arrested in 2018, though often times Russian cyber operations find their first deployment in Ukraine.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "group",
+            "type": "ThreatActor"
+          },
+          "evidence": {
+            "quote": "Additionally, the group has strong ties to Ukraine, where 3 members of the FIN7 group were arrested in 2018,"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Targeting The FIN7 group began by targeting banks in the Russian Federation, but in 2015 began to transition their targeting to a broader scope to include the Middle East, Europe and the United States.",
+      "triple": [
+        {
+          "subject": {
+            "name": "The FIN7 group",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "banks",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "Targeting The FIN7 group began by targeting banks in the Russian Federation"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Historically the group has targeted individuals who are listed in the organizations SEC",
+      "triple": [
+        {
+          "subject": {
+            "name": "the group",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "individuals",
+            "type": "Person"
+          },
+          "evidence": {
+            "quote": "Historically the group has targeted individuals"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This starts as a spear phishing email sent to the initial target.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Spear phishing email",
+            "type": "Phishing"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "initial target",
+            "type": "Person"
+          },
+          "evidence": {
+            "quote": "sent to the initial target"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The exchange then leads to an initial document delivery that is usually benign but possesses a tracking pixel that allows the actor to verify whether or not the target is opening attachments, and if so can provide initial visibility into the system of the target.",
+      "triple": [
+        {
+          "subject": {
+            "name": "actor",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "target",
+            "type": "Person"
+          },
+          "evidence": {
+            "quote": "allows the actor to verify whether or not the target is opening attachments"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This document has either a VBA macro or an embedded OLE which persuades the target to run these in order to drop the first stage loaders.",
+      "triple": [
+        {
+          "subject": {
+            "name": "document",
+            "type": "Report"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "VBA macro",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "This document has either a VBA macro or an embedded OLE"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "014",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "If the first stage loader is not dropped, the attacker resumes the threat tactic and escalates the issue to the target's supervisor which indicates an extensive amount of OSINT and revealing the extent the",
+      "triple": [
+        {
+          "subject": {
+            "name": "attacker",
+            "type": "ThreatActor"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "extensive amount of OSINT",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "which indicates an extensive amount of OSINT"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "015",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "There is also a possible connection to the 2016 SWIFT attacks, many of which have since been attributed to North Korea, however evidence of this is limited and open to interpretation.",
+      "triple": [
+        {
+          "subject": {
+            "name": "connection",
+            "type": "Unknown"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "2016 SWIFT attacks",
+            "type": "Campaign"
+          },
+          "evidence": {
+            "quote": "There is also a possible connection to the 2016 SWIFT attacks,"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The group typically follows a standard sequence of events: Spear phishing a target with a document loaded with a malware payload which as of May 2018 has been the Gri \" on payload, or a combination of SQLRat and DNSBot historically.",
+      "triple": [
+        {
+          "subject": {
+            "name": "group",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "target",
+            "type": "Person"
+          },
+          "evidence": {
+            "quote": "Spear phishing a target with a document loaded with a malware payload"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This begins the beaconing back to the Cobalt Strike servers.",
+      "triple": [
+        {
+          "subject": {
+            "name": "beacon",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "Cobalt Strike servers",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "beaconing back to the Cobalt Strike servers"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "From there the adversary loads process injection tools or memory scrapers (commonly mimikatz) and pivots using tools like powersploit, RDP services, and PowerAdmin Exec.",
+      "triple": [
+        {
+          "subject": {
+            "name": "adversary",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "process injection tools or memory scrapers (commonly mimikatz)",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "loads process injection tools or memory scrapers (commonly mimikatz)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Currently, the group is using macro enabled word documents and spear phishing to deliver initial payloads that pull down second stage loaders like Spy. Sekur, although recently the Bateleur JavaScript",
+      "triple": [
+        {
+          "subject": {
+            "name": "the group",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "macro enabled word documents and spear phishing",
+            "type": "Phishing"
+          },
+          "evidence": {
+            "quote": "Currently, the group is using macro enabled word documents and spear phishing"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "014",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " backdoor has come into fashion as of November 2017.",
+      "triple": [
+        {
+          "subject": {
+            "name": "backdoor",
+            "type": "Backdoor"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "come into fashion",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "backdoor has come into fashion"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Additionally, the group heavily targets the following CVEs: CVE-2015-2545 < https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20152545> CVE-2015-1701 < https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20151701> CVE-2017-0199 < https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20170199>",
+      "triple": [
+        {
+          "subject": {
+            "name": "group",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "CVE-2015-2545",
+            "type": "Vulnerability_CVEID"
+          },
+          "evidence": {
+            "quote": "heavily targets the following CVEs: CVE-2015-2545"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The group has begun branching out in using various malware versions and a full listing of the known IOCs for the new SQLRat and DNSBot additionally the Astra PHP panel are included at the end of this document as well as a list of links to the open source projects to allow for greater research.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Astra PHP panel",
+            "type": "Application"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "the new SQLRat and DNSBot",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "a full listing of the known IOCs for the new SQLRat and DNSBot additionally the Astra PHP panel are included"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Due to FIN7's heavy use of spear phishing to deliver malicious MSFT O # ce documents to users, the most common exploits are scripts written in PowerShell or VBA and executed as macros in the documents.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "spear phishing",
+            "type": "Phishing"
+          },
+          "evidence": {
+            "quote": "Due to FIN7's heavy use of spear phishing"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Though FIN7 does not actively exploit vulnerabilities at the time of this writing (e.g. CVE's 2545, 1701, & 0199), they can potentially begin to do so in the future.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "CVE's 2545, 1701, & 0199",
+            "type": "Vulnerability_CVEID"
+          },
+          "evidence": {
+            "quote": "e.g. CVE's 2545, 1701, & 0199"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Vulnerability Management allows you to take an in depth stock of your IT assets.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Vulnerability Management",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "IT assets",
+            "type": "System"
+          },
+          "evidence": {
+            "quote": "Vulnerability Management allows you to take an in depth stock of your IT assets."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "TTPs posted by intelligence and research groups can help prioritize patches based on exploits available for the vulnerability.",
+      "triple": [
+        {
+          "subject": {
+            "name": "TTPs",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "vulnerability",
+            "type": "Vulnerability_Desc"
+          },
+          "evidence": {
+            "quote": "can help prioritize patches based on exploits available for the vulnerability."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Properly configured EDR, script blocking can prevent things like JavaScript or macros to deploy while OS hardening guidelines modeled after groups like NIST and CIS will also cause more issues for attackers than most tools.",
+      "triple": [
+        {
+          "subject": {
+            "name": "EDR",
+            "type": "System"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "script blocking",
+            "type": "Software"
+          },
+          "evidence": {
+            "quote": "Properly configured EDR, script blocking can prevent things like JavaScript or macros to deploy"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Patch Relevant CVEs CVE-2015-2545 < https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20152545> CVE-2015-1701 < https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20151701> CVE-2017-0199 < https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20170199> Log & Monitor on Enterprise Host Environment Task Scheduler jobs New Task Scheduler jobs %appdata%\\Roaming\\Microsoft\\Templates\\ %appdata%\\local\\Storage\\ Alert (& Groom) on the Monitored Enterprise Host Environment Task Scheduler jobs with .js extension New Task Scheduler jobs with .js extension %appdata%\\Roaming\\Microsoft\\Templates\\*.dot %appdata%\\local\\Storage\\*.dot Blocking macro execution in application userland with GPO EDR JS and macro script blocking Conclusion In conclusion, FIN7 is an adversary worthy of concern with compromises resulting in the loss of up to a billion dollars.",
+      "triple": [
+        {
+          "subject": {
+            "name": "CVE-2015-2545",
+            "type": "Vulnerability_CVEID"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "< https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20152545>",
+            "type": "URL"
+          },
+          "evidence": {
+            "quote": "CVE-2015-2545 < https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20152545>"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Additionally, knowledge of the group's tools, tactics, and processes allow defenders to more e \" ectively predict the actions of the attacker, all of which can reduce your costs and the threats to your organization.",
+      "triple": [
+        {
+          "subject": {
+            "name": "group",
+            "type": "ThreatActor"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "tools",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "knowledge of the group's tools"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This tipper, as of late April 2019, contains new TTPs and IOCs that are worth a review by members.",
+      "triple": [
+        {
+          "subject": {
+            "name": "tipper",
+            "type": "Malware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "TTPs and IOCs",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "contains new TTPs and IOCs"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Here is the summary of those: Mapping the specific new malware signatures Mapping the specific new domains Astra IOC in particular Two years ago, FIN7 uploaded their Carbanak Malware to VirusTotal containing over 100k Lines of Code (LoC) Indicators of Compromise (IoC) Indicator - Payload delivery Type - sha256 Signature -af60d8dfe30776b24823435b6e160d526ae500ce5583aee1ebbc909721d65120 Name - sqlRat Indicator - Network activity Type - ip-dst Signature - 31.18.219.133 Name - N/A Indicator - Payload delivery Type - sha256 Signature -151a90d31f218b91053656aa61bcdbcc98d2009b31b90de76d74fb3b163bb420 Name - sqlRat Indicator - Network activity Type - ip-dst",
+      "triple": [
+        {
+          "subject": {
+            "name": "sqlRat",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Name",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Name - sqlRat"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Signature - 185.117.89.134 Name - N/A Indicator - Payload delivery Type - sha256 Signature -fe8f6d366546c2e935cf01aae7233e12445f10b815b28702e739e6951475f687",
+      "triple": [
+        {
+          "subject": {
+            "name": "Signature",
+            "type": "Indicator"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "fe8f6d366546c2e935cf01aae7233e12445f10b815b28702e739e6951475f687",
+            "type": "SHA-256"
+          },
+          "evidence": {
+            "quote": "Signature -fe8f6d366546c2e935cf01aae7233e12445f10b815b28702e739e6951475f687"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Name - sqlRat Indicator - Payload delivery Type - sha256 Signature -d9ac4ef250a05ef8bd22c3227fd11df420cd663d5009b89a95466c1e0c301c1d Name - sqlRat Indicator - Payload delivery Type - sha256 Signature - 2296e672f49cc9f8802571970a58fe86f8fafaf841fc44fe5c73e291eaa55daa Name - sqlRat Indicator - Network activity Type - ip-dst Signature - 185.15.25.79 Name - N/A Indicator - Payload delivery Type - sha256 Signature -5236ec183f819c5e5cbe3d7a1f8e5b3478b23cebacc5daa501f563e1971bace5 Name - sqlRat Indicator - Payload delivery Type - sha256 Signature -ee0cb9e6de83f807ccf9c3a02b384c1fb6e59f7de720f1eaf37141bf0487f5e6",
+      "triple": [
+        {
+          "subject": {
+            "name": "sqlRat",
+            "type": "Indicator"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "d9ac4ef250a05ef8bd22c3227fd11df420cd663d5009b89a95466c1e0c301c1d",
+            "type": "SHA-256"
+          },
+          "evidence": {
+            "quote": "Name - sqlRat Indicator - Payload delivery Type - sha256 Signature -d9ac4ef250a05ef8bd22c3227fd11df420cd663d5009b89a95466c1e0c301c1d"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Indicator - Payload delivery Type - sha256 Signature -cfb152969e61e740fbb85c89239d3 \" 6a319657d5fc28a971e0592604174f4e7 Name - DNSRat Indicator - Network activity Type - domain Signature - bigmoneyforus.com Name - N/A Indicator - Network activity Type - domain Signature - magicsoundmusic.com Name - N/A Indicator - Payload installation Type - sha256 Signature -3622154e566f4f3c87c81f6757d94707a7c74b1133866f8e5ebf2568f878c10f Name - TiniMet Indicator - Payload installation Type - sha256 Signature -2c73b87dbf21af4361b70b214b09cd92beb77ebcc6638be82b08e99fa564378a Name - TiniMet Indicator - Payload installation Type - sha256 Signature -6ef59d0ef5922c79bcc447c05af95de84a29e09048e12167994085eda3107a99 Name - TiniMet Indicator - Payload installation",
+      "triple": [
+        {
+          "subject": {
+            "name": "cfb152969e61e740fbb85c89239d3 6a319657d5fc28a971e0592604174f4e7",
+            "type": "SHA-256"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "Payload delivery Type",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "Indicator - Payload delivery Type - sha256 Signature -cfb152969e61e740fbb85c89239d3 6a319657d5fc28a971e0592604174f4e7"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Type - sha256 Signature -1439d301d931c8c4b00717b9057b23f0eb50049916a48773b17397135194424a Name - TiniMet Indicator - Payload delivery Type - yara Signature - rule astra_docs { meta: description=ver1 of astra_docs\" author=\"JDP\" strings: $header = {d0cf11e0a1b11ae1} $a1 = \"PROTECTED CONTENT\" ascii wide nocase $a11 = \"CONTROL\" ascii wide nocase $b1 = \"ConForm\" ascii wide $b2 = \"Reanimator Extreme Edition\" ascii wide nocase $b3 = \"Unlock document service.\"",
+      "triple": [
+        {
+          "subject": {
+            "name": "Type",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Payload delivery",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Type - sha256 Signature -1439d301d931c8c4b00717b9057b23f0eb50049916a48773b17397135194424a Name - TiniMet Indicator - Payload delivery"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 12,
+        "id": "000",
+        "source": "TEXT"
+      }
+    }
+  ]
+}

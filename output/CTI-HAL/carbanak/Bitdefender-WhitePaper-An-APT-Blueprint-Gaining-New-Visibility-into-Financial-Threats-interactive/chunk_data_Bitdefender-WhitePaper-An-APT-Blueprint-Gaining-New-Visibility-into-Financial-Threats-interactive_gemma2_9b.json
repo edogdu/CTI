@@ -1,0 +1,1557 @@
+{
+  "metrics": {
+    "file_name": "Bitdefender-WhitePaper-An-APT-Blueprint-Gaining-New-Visibility-into-Financial-Threats-interactive.pdf",
+    "model_used": "gemma2:9b",
+    "doc_sha256_id": "0eeffb445b0ddf16",
+    "num_pages": 15,
+    "num_sentences_total": 156,
+    "num_sentences_used": 104,
+    "num_raw_triples": 104,
+    "num_valid_triples": 64,
+    "num_suspicious_triples": 40,
+    "avg_triples_per_sentence": 1.0,
+    "rejection_stats": {
+      "bad_structure": 0,
+      "invalid_class_or_predicate": 40
+    },
+    "runtime_seconds": 134.17234992980957
+  },
+  "data": [
+    {
+      "context": "The initial point of compromise found in our investigation involved the use of spear-phishing emails with malicious URLs and tainted documents rigged to download a Cobalt Strike beacon component.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Spear-phishing emails",
+            "type": "Phishing"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "malicious URLs",
+            "type": "URL"
+          },
+          "evidence": {
+            "quote": "spear-phishing emails with malicious URLs"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Bitdefender's forensic analysis revealed some key compromise tactics: Financial institutions in Eastern Europe remain the primary focus of the criminal group, which uses spear phishing as the main attack vector The presence of Cobalt Strike hacking tools is the key indicator that the financial institutions were targeted by the Carbanak cyber-criminal gang In the reconnaissance phase, data related to banking applications and internal procedures was collected and prepared for exfiltration, to be used for the final stage of the attack Infrastructure reconnaissance mainly occurred after business hours or on weekends to avoid triggering security alarms It only took attackers a couple hours from initial compromise to fully established foothold and lateral movement, showing experience, knowledge and coordination The final goal of the targeted attack was to compromise the ATM networks, potentially to cash out at ATMs in a coordinated physical and infrastructure criminal operation Several spear-phishing campaigns attributed to Carbanak, all occurring between March and May 2018, were analyzed by security researchers in 2018.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Carbanak",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "Financial institutions",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "Financial institutions in Eastern Europe remain the primary focus of the criminal group"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "These campaigns impersonated emails from high-profile organizations, such as IBM or European Central Bank, but also cybersecurity companies.",
+      "triple": [
+        {
+          "subject": {
+            "name": "campaigns",
+            "type": "Campaign"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "emails",
+            "type": "EmailAddress"
+          },
+          "evidence": {
+            "quote": "These campaigns impersonated emails"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "While most forensic investigations focus on offering a highly technical analysis of the payloads used by the Carbanak group, Bitdefender's investigation offers a complete timeline of events, from the moment the email reached the victim's inbox to the moment of the heist.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Carbanak group",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "payloads",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "offers a highly technical analysis of the payloads used by the Carbanak group"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " A History of Criminal Activity One of the most prolific APT-style cyberattacks, specifically targeting the financial sector, is known as Carbanak.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Carbanak",
+            "type": "Campaign"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "financial sector",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "specifically targeting the financial sector"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Discovered in 2014, the campaign quickly gained notoriety after compromising the security systems of 100 banks in 40 countries and stealing up to $1 billion in the process.",
+      "triple": [
+        {
+          "subject": {
+            "name": "campaign",
+            "type": "Campaign"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "security systems of 100 banks",
+            "type": "System"
+          },
+          "evidence": {
+            "quote": "compromising the security systems of 100 banks"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Banks in countries such as Russia, the United Kingdom, the Netherlands, Spain, Romania, Belarus, Poland, Estonia, Bulgaria, Georgia, Moldova, Kyrgyzstan, Armenia, Taiwan and Malaysia have allegedly been targeted with spearphishing emails, luring victims into clicking malicious URLs and executing booby-trapped documents.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Banks",
+            "type": "Organization"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "spearphishing emails",
+            "type": "Phishing"
+          },
+          "evidence": {
+            "quote": "have allegedly been targeted with spearphishing emails"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "A Carbanak trademark in cyberattacks remains the use of Cobalt Strike - a powerful pentesting tool designed for exploiting and executing malicious code, simulating post-exploitation actions of advanced threat actors - which allows them to infiltrate the organization, move laterally, exfiltrate data, and deploy anti-forensic and evasion tools.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Cobalt Strike",
+            "type": "AttackPattern"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "organization",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "allows them to infiltrate the organization"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "While the end results of such an attack can be easily assessed in financial losses, little information has been publicly available until now on how the attack occurs step-by-step within a compromised organization.",
+      "triple": [
+        {
+          "subject": {
+            "name": "attack",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "organization",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "how the attack occurs step-by-step within a compromised organization"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The APT-style cybercriminal group has a long track record of successfully targeting financial institutions around the world to either cash out at ATMs or perform wire transfers using the bank's internal systems.",
+      "triple": [
+        {
+          "subject": {
+            "name": "APT-style cybercriminal group",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "financial institutions",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "has a long track record of successfully targeting financial institutions"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The spear-phishing emails sent to the financial institutions either end up with victims downloading a tampered document meant to download the Cobalt Strike beacon or to exploit several unpatched Remote Code Execution Vulnerabilities and deploy a backdoor.",
+      "triple": [
+        {
+          "subject": {
+            "name": "spear-phishing emails",
+            "type": "Phishing"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "financial institutions",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "sent to the financial institutions"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "1 - Windows Script Component (.sct) file sample, embedded in spearphishing attachment (md5: bb784d55895db10b67b1b4f1f5b0be16) <PXML version= 1.0\"?> Kscriptlet> Kregistration description-\"YBkjNBHBbhcdgg\" progid-\"YBkjNBHBbhcdgg\" version=\"1.00\" classid-\"{776c4d34-7148-7a35-7a32-6c6656427465}' KIregistration> Kscript language-\"JScript\" var dq=\"|x22 ;var s= IxSC\" ;var wl= Ix3C\" ;var XC=\"CmD ;var xy= XC",
+      "triple": [
+        {
+          "subject": {
+            "name": "Windows Script Component (.sct) file sample",
+            "type": "Filename"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "md5: bb784d55895db10b67b1b4f1f5b0be16",
+            "type": "MD5"
+          },
+          "evidence": {
+            "quote": "embedded in spearphishing attachment (md5: bb784d55895db10b67b1b4f1f5b0be16)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Ic XC + dq %tmP%\" s1 MGsCOxPSNK. txt dq;var new ActiveXObject( WScript.",
+      "triple": [
+        {
+          "subject": {
+            "name": "txt",
+            "type": "Filename"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "dq",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "txt dq"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Shell\" ) Run(xy, 0, 1) ; Klscript> < / scriptlet Designed for stealth infiltration within the targeted system, the attacks use reconnaissance tools designed to assess the state of the victim's workstation and determine what tools should be downloaded next, or even open decoy documents similar to the one in Fig.2, to avoid drawing victims' suspicion.",
+      "triple": [
+        {
+          "subject": {
+            "name": "attacks",
+            "type": "AttackPattern"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "targeted system",
+            "type": "System"
+          },
+          "evidence": {
+            "quote": "Designed for stealth infiltration within the targeted system"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "They were able to maintain a low network footprint and avoid suspicion by using selected single workstations as a hub for centralizing collected information and for communication with their command & control server, outside the regular working hours of the bank.",
+      "triple": [
+        {
+          "subject": {
+            "name": "They",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "selected single workstations",
+            "type": "Hardware"
+          },
+          "evidence": {
+            "quote": "using selected single workstations as a hub"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "015",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "After compromising the first victim, the aggressors' next goal was to find admin-level credentials that would allow them to move across the entire infrastructure.",
+      "triple": [
+        {
+          "subject": {
+            "name": "aggressors",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "first victim",
+            "type": "Person"
+          },
+          "evidence": {
+            "quote": "After compromising the first victim"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "016",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " A carefully executed network reconnaissance and lateral movement plan was unfolding during this time.",
+      "triple": [
+        {
+          "subject": {
+            "name": "plan",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "network",
+            "type": "Network"
+          },
+          "evidence": {
+            "quote": "A carefully executed network reconnaissance and lateral movement plan was unfolding during this time."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Initial compromise Two victims were tricked into opening the spear-phishing attachment, initially compromising two separate endpoints.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Two victims",
+            "type": "Person"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "spear-phishing attachment",
+            "type": "Phishing"
+          },
+          "evidence": {
+            "quote": "Two victims were tricked into opening the spear-phishing attachment,"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The document opened by both employees used three exploit  methods  for  Remote  Code  Execution  in  Microsoft  Word: CVE-2017-8570 , CVE-2017-11882 ,  and CVE-2018-0802.",
+      "triple": [
+        {
+          "subject": {
+            "name": "document",
+            "type": "Filepath"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "CVE-2017-8570",
+            "type": "Vulnerability_CVEID"
+          },
+          "evidence": {
+            "quote": "used three exploit  methods for Remote Code Execution in Microsoft Word: CVE-2017-8570 , CVE-2017-11882 , and CVE-2018-0802"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Finally, a backdoor from the Command and Control Server was used to establish persistence in the infrastructure.",
+      "triple": [
+        {
+          "subject": {
+            "name": "backdoor",
+            "type": "Backdoor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "Command and Control Server",
+            "type": "CommandAndControl"
+          },
+          "evidence": {
+            "quote": "a backdoor from the Command and Control Server was used"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "2 - Decoy document sample displayed on the victim's machine 6 c2a9443aac258a6OdBcace430839cf9f.doc [Compatibility Mode] Word FILE HOME INSERT DESIGN PAGE LAYOUT REFERENCES MAILINGS REVIEW VIEW Sign in Find Calibri Aa 21 AaBbCcDc AaBbCcDc AaBbC Paste Normal 1No Spac.",
+      "triple": [
+        {
+          "subject": {
+            "name": "c2a9443aac258a6OdBcace430839cf9f.doc",
+            "type": "Filename"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Decoy document sample",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "2 - Decoy document sample displayed on the victim's machine 6 c2a9443aac258a6OdBcace430839cf9f.doc [Compatibility Mode] Word FILE HOME INSERT DESIGN PAGE LAYOUT REFERENCES MAILINGS REVIEW VIEW Sign in Find Calibri Aa 21 AaBbCcDc AaBbCcDc AaBbC Paste Normal 1No Spac."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Heading Select - Clipboard Font Paragraph Styles Editing Frror parsing document.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Editing",
+            "type": "Application"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "document",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "Frror parsing document."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Day 0 (continued) 17:05 to 18:20 As soon as the first spear-phishing email was accessed, events occurred as follows: -Three Microsoft Word exploits (mentioned above) were used; -Cobalt Strike beacon was delivered and used to discover and map the organization's internal network, with the purpose of collecting administrative level credentials; -Credentials for one Domain Administrator were compromised and used throughout the duration of the attack; -Credentials were 'tested' on one of the Domain Controller servers to make sure they're valid, resulting in its compromise At least two more endpoints were compromised by the end of the day.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Microsoft Word exploits",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "Three Microsoft Word exploits",
+            "type": "Exploit-kit"
+          },
+          "evidence": {
+            "quote": "Three Microsoft Word exploits (mentioned above) were used;"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Days 1 to 28 Numerous workstations were systemically compromised in a search for critical information that the cybercriminals could use.",
+      "triple": [
+        {
+          "subject": {
+            "name": "cybercriminals",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "workstations",
+            "type": "OperatingSystem"
+          },
+          "evidence": {
+            "quote": "Numerous workstations were systemically compromised in a search for critical information that the cybercriminals could use."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Between Day 30 to 46, over a period of 17 days, a series of archives were created containing manuals, guides and training materials for different applications.",
+      "triple": [
+        {
+          "subject": {
+            "name": "archives",
+            "type": "Filepath"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "manuals, guides and training materials",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "containing manuals, guides and training materials"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Day 46 to 63 Using a compromised domain administrator account, attackers remotely dial into various network workstations and ultimately remove the archives used to store the baking materials, to cover their tracks Starting on Day 33 , attackers connected to servers and hosts with access to banking applications.",
+      "triple": [
+        {
+          "subject": {
+            "name": "attackers",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "compromised domain administrator account",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Using a compromised domain administrator account"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The system belonged to the adversary and accessed the organization network through a VPN tunnel established by the Cobalt Strike beacon component, to contact the internal corporate network systems.",
+      "triple": [
+        {
+          "subject": {
+            "name": "system",
+            "type": "System"
+          },
+          "predicate": "belongsTo",
+          "object": {
+            "name": "adversary",
+            "type": "ThreatActor"
+          },
+          "evidence": {
+            "quote": "The system belonged to the adversary"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Technical Analysis - experts only Below is a detailed analysis of the key indicators of compromise that helped build the APT timeline.",
+      "triple": [
+        {
+          "subject": {
+            "name": "APT timeline",
+            "type": "Campaign"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "key indicators of compromise",
+            "type": "Indicator"
+          },
+          "evidence": {
+            "quote": "helped build the APT timeline"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The following events help paint a clear picture of actions immediately after the spear-phishing email attachment was opened, and show how the threat actors move laterally across the infrastructure and how they gathered relevant documentation.",
+      "triple": [
+        {
+          "subject": {
+            "name": "spear-phishing email attachment",
+            "type": "EmailAddress"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "attachment",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "spear-phishing email attachment was opened"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The 'swift-fraud[.]com/documents/94563784.doc' URL  was  opened  from  the  body  of  an  email  received  in  a spearphishing campaign targeting financial institutions.",
+      "triple": [
+        {
+          "subject": {
+            "name": "URL",
+            "type": "DomainName"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "financial institutions",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "targeting financial institutions"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "According to other threat reports , the same URL has been used in delivering other tainted documents, potentially part of similar campaigns aimed at other financial institutions.",
+      "triple": [
+        {
+          "subject": {
+            "name": "URL",
+            "type": "DomainName"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "tainted documents",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "the same URL has been used in delivering other tainted documents"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Analysis of the document on one of the systems reveals the steps involved in compromising the targeted system via the spear phishing email.",
+      "triple": [
+        {
+          "subject": {
+            "name": "document",
+            "type": "Filepath"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "steps",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "Analysis of the document on one of the systems reveals the steps involved in compromising the targeted system via the spear phishing email."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Its role is to launch into execution the component 'MGsCOxPSNK.txt' MGsCOxPSNK.txt (4bee6ff39103ffe31118260f9b1c4884)",
+      "triple": [
+        {
+          "subject": {
+            "name": "Its role",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "MGsCOxPSNK.txt",
+            "type": "Filename"
+          },
+          "evidence": {
+            "quote": "launch into execution the component 'MGsCOxPSNK.txt'"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "013",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "/ns tCrrDqBQoCcEkbnK.txt' cqHfjCkTtMwG.doc (c2a9443aac258a60d8cace43e839cf9f) This file can be found at the path: C:\\Users\\[redacted]\\AppData\\Local\\Temp\\cqHfjCkTtMwG.doc.",
+      "triple": [
+        {
+          "subject": {
+            "name": "/ns tCrrDqBQoCcEkbnK.txt'",
+            "type": "Filename"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "cqHfjCkTtMwG.doc",
+            "type": "Filename"
+          },
+          "evidence": {
+            "quote": " /ns tCrrDqBQoCcEkbnK.txt' cqHfjCkTtMwG.doc"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "017",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The decrypted JavaScript will be saved at the path '%APPDATA%\\<registry_value>.txt' where registry_value  =  'HKEY_CURRENT_USER\\Software\\Microsoft\\Notepad[USERNAME]\\303F1428C3F'.  ",
+      "triple": [
+        {
+          "subject": {
+            "name": "decrypted JavaScript",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "%APPDATA%\\\registry_value.txt",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "The decrypted JavaScript will be saved at the path '%APPDATA%\registry_value.txt'"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Before  exiting,  the  DLL  will self-delete.",
+      "triple": [
+        {
+          "subject": {
+            "name": "DLL",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "self-delete",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "the DLL will self-delete"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The backdoor '%APPDATA%\\9D01CA.txt' was then executed via 'regsrv32' (ex. 'regsvr32 /S",
+      "triple": [
+        {
+          "subject": {
+            "name": "backdoor",
+            "type": "Backdoor"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "'%APPDATA%\\9D01CA.txt'",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "The backdoor '%APPDATA%\\9D01CA.txt' was then executed via 'regsrv32'"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "After this communication, the component waited for instructions from the C&C 'nl[.][redacted][.]kz/api/v1' .",
+      "triple": [
+        {
+          "subject": {
+            "name": "component",
+            "type": "Malware"
+          },
+          "predicate": "communicatesWith",
+          "object": {
+            "name": "'nl[.][redacted][.]kz/api/v1'",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "the component waited for instructions from the C&C 'nl[.][redacted][.]kz/api/v1'"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The traffic with the C&C was encrypted and the commands received from the C&C would split into five types: 'd&exec' : download and execute payload (EXE of DLL) 'more_eggs' : download additional scripts (including self-update) and save them in '%APPDATA%' 'gtfo' : self delete/registry cleanup 'more_onion' : runs additional downloaded scripts 'via_x' : execute command shell commands All files mentioned in this stage of the attack were created on the system on Day 0 at around 16:49 , when the first download link was accessed.",
+      "triple": [
+        {
+          "subject": {
+            "name": "traffic",
+            "type": "Network"
+          },
+          "predicate": "communicatesWith",
+          "object": {
+            "name": "C&C",
+            "type": "CommandAndControl"
+          },
+          "evidence": {
+            "quote": "The traffic with the C&C was encrypted"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "It is worth mentioning that a binary executable named 'rad353F7.tmp ', which appeared on the system at a later date, Day 6 , was most certainly downloaded on the system by the Javascript Backdoor '9D01CA.txt' .",
+      "triple": [
+        {
+          "subject": {
+            "name": "rad353F7.tmp ",
+            "type": "Filename"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "binary executable",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "a binary executable named 'rad353F7.tmp '"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "012",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "On one of the two workstations, the decoy file has the creation time of Day 0 at 16:49:09 (10 seconds later than the other workstation) and the path C:\\Users\\[redacted]\\AppData\\Local\\ Temp\\cqHfjCkTtMwG.doc .",
+      "triple": [
+        {
+          "subject": {
+            "name": "C:\\Users\\[redacted]\\AppData\\Local\\Temp\\cqHfjCkTtMwG.doc",
+            "type": "Filepath"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "Day 0 at 16:49:09 (10 seconds later than the other workstation)",
+            "type": "Time"
+          },
+          "evidence": {
+            "quote": "the creation time of Day 0 at 16:49:09 (10 seconds later than the other workstation)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "015",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "After the compromise of the domain administrator account, a network discovery is performed and systems start to be logged on via remote desktop protocol to reach the objective of infiltrating the network and gathering information.",
+      "triple": [
+        {
+          "subject": {
+            "name": "domain administrator account",
+            "type": "Organization"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "compromise",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "After the compromise of the domain administrator account"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "017",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "On that day, attackers remotely dialed into the workstation and started accessing various network locations in an attempt to find various internal banking application files and documents.",
+      "triple": [
+        {
+          "subject": {
+            "name": "attackers",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "workstation",
+            "type": "System"
+          },
+          "evidence": {
+            "quote": "attackers remotely dialed into the workstation"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "From Day 10 to Day 27 , the same workstation was used to connect to other internal network server.",
+      "triple": [
+        {
+          "subject": {
+            "name": "workstation",
+            "type": "Hardware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "other internal network server",
+            "type": "Network"
+          },
+          "evidence": {
+            "quote": "the same workstation was used to connect to other internal network server"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "On Day 28 at 10:43:57 and 19:53:49, two .zip archive containing internal documents were created.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Day 28",
+            "type": "Time"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": ".zip archive",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "On Day 28 at 10:43:57 and 19:53:49, two .zip archive containing internal documents were created."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "On Day 46 , attackers deleted a series of documents and folders from the workstation, potentially to cover their tracks and leave no evidence regarding the collected documents.",
+      "triple": [
+        {
+          "subject": {
+            "name": "attackers",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "workstation",
+            "type": "Hardware"
+          },
+          "evidence": {
+            "quote": "attackers deleted a series of documents and folders from the workstation"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Cobalt Strike Beacon Capabilities The Cobalt Strike beacon is a malicious agent implant that, once dropped on a compromised system, calls back to the attacker and checks for new commands to be executed on the compromised system.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Cobalt Strike beacon",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "malicious agent implant",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "The Cobalt Strike beacon is a malicious agent implant that"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 12,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The asynchronous mode keeps commands in a queue and, when the beacon connects to a C&C, it downloads commands, executes them, and finally reports results to the C&C server.",
+      "triple": [
+        {
+          "subject": {
+            "name": "beacon",
+            "type": "Bot"
+          },
+          "predicate": "communicatesWith",
+          "object": {
+            "name": "C&C",
+            "type": "CommandAndControl"
+          },
+          "evidence": {
+            "quote": "it connects to a C&C"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 12,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This can be particularly useful when trying to keep a low network footprint and not trigger any alarms by constantly 'chatting' back and forth with the C&C server.",
+      "triple": [
+        {
+          "subject": {
+            "name": "network footprint",
+            "type": "Network"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "alarms",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "'chatting' back and forth with the C&C server."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 12,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "By supporting malleable communication with the C&C server, it can help attackers blend malicious traffic as legitimate, by allowing them to transform and store data, interpret it backwards, and extract and recover that data from a transaction.",
+      "triple": [
+        {
+          "subject": {
+            "name": "it",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "communicatesWith",
+          "object": {
+            "name": "C&C server",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "malleable communication with the C&C server"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 12,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Cobalt Strike Framework capabilities different commands can be executed (some leave traces in the events) session passing - to hijack sessions alternate parent processes upload and download files file System Commands (listfiles, make/remove directories etc.)",
+      "triple": [
+        {
+          "subject": {
+            "name": "Cobalt Strike Framework",
+            "type": "Application"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "capabilities",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Cobalt Strike Framework capabilities"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 12,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Keystrokes and Screenshots (the tools for these actions are injected in different processes) SOCKS Proxy - set up a SOCKS proxy server to tunnel traffic through Beacon Reverse Pivoting Privilege Escalation Elevate with an Exploit Elevate with Known Credentials Get SYSTEM - token impersonation for the SYSTEM user UAC Bypass Privileges - enable the privileges assigned to your current access token Mimikatz - Beacon integrates Mimikatz (although in other cases it can use different tools such as Modified Windows Vault Password Dumper or Hook Password Change) Credential and Hash Harvesting - injects into LSASS and dumps the password hashes for local users on the current system Port Scanner Network and Host Enumeration - interrogates and discovers targets in a Windows active directory network Kerberos Tickets - inject a Kerberos ticket in the current session, making the interaction with remote systems possible using the current tickets' rights Lateral Movement - lateral movement can be performed when a domain admin or a domain user that has admin on the target",
+      "triple": [
+        {
+          "subject": {
+            "name": "Beacon",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "Mimikatz",
+            "type": "Software"
+          },
+          "evidence": {
+            "quote": "Beacon integrates Mimikatz (although in other cases it can use different tools such as Modified Windows Vault Password Dumper or Hook Password Change)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 12,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Conclusions The  Carbanak  group,  which  has  a  long  track  record  of  compromising  infrastructure  belonging  to  financial  institutions,  is  still active.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Carbanak",
+            "type": "ThreatActor"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "long track record",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "which has a long track record"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 13,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Bitdefender's  investigation  shows  the  attackers'  main  methods  remain  to  quietly  infiltrate  the  infrastructure  by  establishing  a foothold on an employee's system, then move laterally across the infrastructure or elevate privileges to find critical systems that manage financial transactions or ATM networks.",
+      "triple": [
+        {
+          "subject": {
+            "name": "attackers",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "infrastructure",
+            "type": "Infrastructure"
+          },
+          "evidence": {
+            "quote": "quietly infiltrate the infrastructure"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 13,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This  attack  falls  in  line  with  previous  objectives  observed  in  past  attacks  on  other  financial  institutions,  as  the  cybercriminal organization targeted the ATM network to reach systems belonging to key people within the organization who have access to ATM systems.",
+      "triple": [
+        {
+          "subject": {
+            "name": "cybercriminal organization",
+            "type": "Organization"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "ATM network",
+            "type": "Network"
+          },
+          "evidence": {
+            "quote": "targeted the ATM network"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 13,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "If  the  attack  had succeeded, it would have given hackers control over the ATM network, while money mules would have been standing by the ATM machines at pre-set time intervals to cash them out.",
+      "triple": [
+        {
+          "subject": {
+            "name": "hackers",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "ATM network",
+            "type": "Network"
+          },
+          "evidence": {
+            "quote": "given hackers control over the ATM network"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 13,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "It is not uncommon in a targeted attack for phishing emails to bypass anti-spam solutions deployed at the mail server level, which is why it is good practice to deploy an in-depth security model that ensures URL filtering, behavior-based detection techniques and sandboxing, aside from classical anti-malware solutions.",
+      "triple": [
+        {
+          "subject": {
+            "name": "phishing emails",
+            "type": "Phishing"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "anti-spam solutions",
+            "type": "Software"
+          },
+          "evidence": {
+            "quote": "for phishing emails to bypass anti-spam solutions"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 13,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Appendix A: IOCs File IOCs: psexesvc.exe Network IOCs: 94.140.116.176 87dfac39f577e5f52f0724455e8832a8",
+      "triple": [
+        {
+          "subject": {
+            "name": "psexesvc.exe",
+            "type": "Application"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "Network IOCs",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "psexesvc.exe Network IOCs:"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 14,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Appendix B: smrs.exe (d68351f754a508a386c06946c8e79088) Downloader that downloads a shellcode, which in turn downloads the beacon.",
+      "triple": [
+        {
+          "subject": {
+            "name": "smrs.exe",
+            "type": "Application"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Downloader",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": " smrs.exe (d68351f754a508a386c06946c8e79088) Downloader"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 15,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Same file/hash as 'smrs.exe', just under a different name.",
+      "triple": [
+        {
+          "subject": {
+            "name": "smrs.exe",
+            "type": "Filename"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "smrs.exe",
+            "type": "Filename"
+          },
+          "evidence": {
+            "quote": "Same file/hash as 'smrs.exe'"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 15,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "nusb1mon.exe (ddb9553c6e4e4908b5c7fbbdc4795d6c) Tool that takes screenshots at specific time intervals.",
+      "triple": [
+        {
+          "subject": {
+            "name": "nusb1mon.exe",
+            "type": "Application"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "ddb9553c6e4e4908b5c7fbbdc4795d6c",
+            "type": "SHA-256"
+          },
+          "evidence": {
+            "quote": "nusb1mon.exe (ddb9553c6e4e4908b5c7fbbdc4795d6c)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 15,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Bitdefender-WhitePaper-APTBluePrint-CREAT3496-31M1416s-en_EN Bitdefender is a global cybersecurity leader protecting over 500 million systems in more than 150 countries.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Bitdefender",
+            "type": "Organization"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Bitdefender-WhitePaper-APTBluePrint-CREAT3496-31M1416s-en_EN",
+            "type": "Filename"
+          },
+          "evidence": {
+            "quote": "Bitdefender-WhitePaper-APTBluePrint-CREAT3496-31M1416s-en_EN"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 16,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Today, Bitdefender is also the provider of choice, embedded in over 38% of the world's security solutions.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Bitdefender",
+            "type": "VirusScanner"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "provider of choice",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "provider of choice"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 16,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Through R&D, alliances and partnership teams, Bitdefender has elevated the highest standards of security excellence in both its number- one-ranked technology and its strategic alliances with the world's leading virtualization and cloud technology providers.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Bitdefender",
+            "type": "Organization"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "strategic alliances",
+            "type": "Campaign"
+          },
+          "evidence": {
+            "quote": "strategic alliances with the world's leading virtualization and cloud technology providers"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 16,
+        "id": "009",
+        "source": "TEXT"
+      }
+    }
+  ]
+}

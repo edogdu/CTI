@@ -1,0 +1,39 @@
+{
+  "count": 2,
+  "items": [
+    {
+      "triple": {
+        "subject": {
+          "name": "TA",
+          "type": "threat-actor"
+        },
+        "predicate": "uses",
+        "object": {
+          "name": "Yamux",
+          "type": "malware"
+        },
+        "evidence": {
+          "quote": "abusing Yamux"
+        }
+      },
+      "repair": "deterministic"
+    },
+    {
+      "triple": {
+        "subject": {
+          "name": "(1912)",
+          "type": "domain-name"
+        },
+        "predicate": "communicates_with",
+        "object": {
+          "name": "usel.netcatgroup.site:443",
+          "type": "url"
+        },
+        "evidence": {
+          "quote": "Host: usel.netcatgroup.site:443"
+        }
+      },
+      "repair": "deterministic"
+    }
+  ]
+}

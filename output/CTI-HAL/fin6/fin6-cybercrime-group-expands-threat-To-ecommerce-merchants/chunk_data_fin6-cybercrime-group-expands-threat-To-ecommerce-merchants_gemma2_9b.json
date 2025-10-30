@@ -1,0 +1,813 @@
+{
+  "metrics": {
+    "file_name": "fin6-cybercrime-group-expands-threat-To-ecommerce-merchants.pdf",
+    "model_used": "gemma2:9b",
+    "doc_sha256_id": "6457194ded3726f6",
+    "num_pages": 7,
+    "num_sentences_total": 67,
+    "num_sentences_used": 53,
+    "num_raw_triples": 53,
+    "num_valid_triples": 33,
+    "num_suspicious_triples": 20,
+    "avg_triples_per_sentence": 1.0,
+    "rejection_stats": {
+      "bad_structure": 0,
+      "invalid_class_or_predicate": 20
+    },
+    "runtime_seconds": 52.439390659332275
+  },
+  "data": [
+    {
+      "context": "In September 2017, forensic investigations of several undisclosed entities revealed evidence that FIN6 actors changed to target card-not-present (CNP) data when they could not deploy their malware in the POS environment.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN6 actors",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "card-not-present (CNP) data",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "changed to target card-not-present (CNP) data"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The majority of eCommerce compromises reported in 2018 involved direct targeting of vulnerabilities within the eCommerce website itself.",
+      "triple": [
+        {
+          "subject": {
+            "name": "eCommerce compromises",
+            "type": "Malware"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "vulnerabilities within the eCommerce website itself",
+            "type": "Vulnerability_Desc"
+          },
+          "evidence": {
+            "quote": "direct targeting of vulnerabilities within the eCommerce website itself"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "As one of the more sophisticated groups targeting eCommerce merchants, FIN6 brings their POS compromise approach to the emerging threat landscape of CNP breaches.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN6",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "eCommerce merchants",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "targeting eCommerce merchants"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "FIN6 targets companies, using phishing emails in an attempt to infect the targeted victim's network.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN6",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "companies",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "FIN6 targets companies"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "PFD assesses that the increased focus of a sophisticated cybercrime group, such as FIN6, on eCommerce environments is a broader representation of the overall cybercriminal focus on the CNP space.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN6",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "eCommerce environments",
+            "type": "Location"
+          },
+          "evidence": {
+            "quote": "the increased focus of a sophisticated cybercrime group, such as FIN6, on eCommerce environments"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "At the end of 2018, Visa Payment Intelligence analysts discovered that FIN6 actors targeted multiple high value eCommerce merchants with malicious documents that contained links to a malicious server that allowed the execution of PowerShell scripts, granting the attackers direct access to the merchants' networks.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN6",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "multiple high value eCommerce merchants",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "targeted multiple high value eCommerce merchants"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The PowerShell scripts were only present in memory, and did not download additional files to the user's machine, making it difficult for the victim to detect.",
+      "triple": [
+        {
+          "subject": {
+            "name": "PowerShell scripts",
+            "type": "Application"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "additional files",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "download additional files"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "012",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Figure 1 - FIN6 eCommerce Attack Flow Malicious Server Link to Malicious Server Clicked More_eggs Dropper = Downloaded Code Merchant Workstation 01 01 01 00 00 00",
+      "triple": [
+        {
+          "subject": {
+            "name": "More_eggs",
+            "type": "Dropper"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Downloaded Code",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "More_eggs Dropper = Downloaded Code"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Visa Public Visa Payment Fraud Disruption specialized version of the AMMYY remote administration tool (RAT) known as FlawedAmmyy .",
+      "triple": [
+        {
+          "subject": {
+            "name": "Visa Public Visa Payment Fraud Disruption",
+            "type": "Campaign"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "FlawedAmmyy",
+            "type": "RemoteAccessTrojan-RAT"
+          },
+          "evidence": {
+            "quote": "specialized version of the AMMYY remote administration tool (RAT) known as FlawedAmmyy"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In the most recent cases, attackers then establish persistent access to the victim's network using Meterpreter related code, allowing the attackers to maintain a remote connection to the infected system.",
+      "triple": [
+        {
+          "subject": {
+            "name": "attackers",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "Meterpreter related code",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "using Meterpreter related code"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Internal Reconnaissance FIN6 uses legitimate publicly available tools to map the internal network and conduct reconnaissance.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN6",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "legitimate publicly available tools",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "FIN6 uses legitimate publicly available tools"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "During the reconnaissance phase, the actors gather information on systems running SQL Database Server instances and dump schemas for multiple databases and SQL user accounts.",
+      "triple": [
+        {
+          "subject": {
+            "name": "actors",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "systems",
+            "type": "System"
+          },
+          "evidence": {
+            "quote": "gather information on systems running SQL Database Server instances"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The actors also target network credentials using a malware family known as Stealer One (see below in the section Technical Analysis and Indicators of Compromise ).",
+      "triple": [
+        {
+          "subject": {
+            "name": "actors",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "network credentials",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "The actors also target network credentials"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "AdFind (a free command-line tool for querying Active Directory) ProcDump (a Microsoft SysInternals command-line utility used to perform analysis of running processes).",
+      "triple": [
+        {
+          "subject": {
+            "name": "AdFind",
+            "type": "Application"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "a free command-line tool for querying Active Directory",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "AdFind (a free command-line tool for querying Active Directory)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Escalate Privileges Once FIN6's accesses are established with preferred backdoors, they use additional public utilities, such as Windows Credentials Editor and Metasploit-related tools, for privilege escalation and credential harvesting.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN6",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "Windows Credentials Editor",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "they use additional public utilities, such as Windows Credentials Editor and Metasploit-related tools"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Investigations show that FIN6 relies on PowerShell scripts and Meterpreter based shells to maintain access to and move laterally through the network (see below in the section Technical Analysis and Indicators of Compromise ).",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN6",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "PowerShell scripts",
+            "type": "Software"
+          },
+          "evidence": {
+            "quote": "relies on PowerShell scripts"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The malware targets a variety of applications, including email clients, web browsers, FTP clients, and other file transfer utilities.",
+      "triple": [
+        {
+          "subject": {
+            "name": "malware",
+            "type": "Malware"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "applications",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "The malware targets a variety of applications"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Visa Public Visa Payment Fraud Disruption Encoded PowerShell Commands Visa analyzed a number of encoded PowerShell commands identified in recent FIN6 activity and determined the majority are related to Metasploit activity, including: Metasploit Bind TCP Stager (different local ports were observed) - 46.4.113[.]237:443 - 185.154.52[.]140:443 Metasploit Reverse TCP Stager Metasploit Reverse HTTPS Stager Network IOCs Malicious C2 Domains static.akamaitechnologies[.]kz contactlistsagregator[.]com teamviewer[.]com onlinemail[.]kz",
+      "triple": [
+        {
+          "subject": {
+            "name": "Metasploit Bind TCP Stager",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "46.4.113[.]237:443 - 185.154.52[.]140:443",
+            "type": "Port"
+          },
+          "evidence": {
+            "quote": "Metasploit Bind TCP Stager (different local ports were observed) - 46.4.113[.]237:443 - 185.154.52[.]140:443"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " More_Eggs Network IOCs In addition to the C2 information provided, which can change, below are some network IOCs that can be used to detect More_Eggs beaconing out of the network:",
+      "triple": [
+        {
+          "subject": {
+            "name": "More_Eggs",
+            "type": "Campaign"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "network",
+            "type": "Network"
+          },
+          "evidence": {
+            "quote": "More_Eggs beaconing out of the network"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "0B Connectivity Check The malware checks network connectivity by sending an HTTP HEAD (GET in some new versions) request to the following legitimate URL: hxxp://www[.]w3[.]org/1999/XSL/Format 1B Sleep Function",
+      "triple": [
+        {
+          "subject": {
+            "name": "malware",
+            "type": "Malware"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "hxxp://www[.]w3[.]org/1999/XSL/Format",
+            "type": "URL"
+          },
+          "evidence": {
+            "quote": "The malware checks network connectivity by sending an HTTP HEAD (GET in some new versions) request to the following legitimate URL: hxxp://www[.]w3[.]org/1999/XSL/Format"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The malware issues an HTTP GET request to the following Google public DNS IP, which takes a few seconds to complete, causing the program to pause its activity temporarily.",
+      "triple": [
+        {
+          "subject": {
+            "name": "malware",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "HTTP GET request",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "The malware issues an HTTP GET request"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This is used as a method to avoid detection, by delaying further exploitation: hxxp://8.8.8[.]8/<Random Path> User-Agent : Mozilla/4.0 (compatible; Win32; WinHttp.WinHttpRequest.5) Recommendations & Additional Resources Visa recommends clients take the following actions to mitigate against these threats: Institute recurring checks in local networks for IOCs provided in this report.",
+      "triple": [
+        {
+          "subject": {
+            "name": "hxxp://8.8.8[.]8/<Random Path>",
+            "type": "URL"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "exploitation",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "avoid detection, by delaying further exploitation"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Verify the implementation of required security patches: Payment Card Industry Data Security Standard (PCI DSS) requires that all system components and software are protected from known vulnerabilities by installing security patches.",
+      "triple": [
+        {
+          "subject": {
+            "name": "system components",
+            "type": "System"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "known vulnerabilities",
+            "type": "Vulnerability_Desc"
+          },
+          "evidence": {
+            "quote": "all system components and software are protected from known vulnerabilities"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Regularly scan and test eCommerce sites for vulnerabilities or malware.",
+      "triple": [
+        {
+          "subject": {
+            "name": "eCommerce sites",
+            "type": "DomainName"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "vulnerabilities",
+            "type": "Vulnerability_Desc"
+          },
+          "evidence": {
+            "quote": "for vulnerabilities"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This is the most secure way to protect the merchant and their customers from eCommerce skimming malware.",
+      "triple": [
+        {
+          "subject": {
+            "name": "merchant",
+            "type": "Person"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "eCommerce skimming malware",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "from eCommerce skimming malware"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "When merchants use a validated and secure service provider, risk exposure for CNP fraud and compromise decreases.",
+      "triple": [
+        {
+          "subject": {
+            "name": "merchants",
+            "type": "Person"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "a validated and secure service provider",
+            "type": "Software"
+          },
+          "evidence": {
+            "quote": "When merchants use a validated and secure service provider"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "015",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "A list of validated, registered service providers is available on the Global Registry of Service Providers.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Global Registry of Service Providers",
+            "type": "Organization"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "list of validated, registered service providers",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "A list of validated, registered service providers is available on the Global Registry of Service Providers."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "016",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Comply consistently with industry security standards , such as the Payment Card Industry Data Security Standard (PCI DSS), including the PCI Best Practices for Securing e-Commerce, January 2017.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Payment Card Industry Data Security Standard",
+            "type": "Organization"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "PCI DSS",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "including the PCI Best Practices for Securing e-Commerce"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "017",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Visa Public Visa Payment Fraud Disruption",
+      "triple": [
+        {
+          "subject": {
+            "name": "Visa Public",
+            "type": "Organization"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "Payment Fraud Disruption",
+            "type": "Campaign"
+          },
+          "evidence": {
+            "quote": "Visa Public Visa Payment Fraud Disruption"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "018",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Visa Public Visa Payment Fraud Disruption Set up a Web Application Firewall to block suspicious and malicious requests from reaching the website.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Visa Public Visa Payment Fraud Disruption",
+            "type": "Campaign"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "Web Application Firewall",
+            "type": "Software"
+          },
+          "evidence": {
+            "quote": "set up a Web Application Firewall to block suspicious and malicious requests from reaching the website"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Additional Resources Visa eCommerce Malware Webinar Visa Merchant Library PCI Best Practices for Securing e-Commerce, January 2017 PCI How-to Guide for Incident Management PCI Data Security Standard Contact Information For more information, please contact paymentintelligence@visa.com",
+      "triple": [
+        {
+          "subject": {
+            "name": "paymentintelligence@visa.com",
+            "type": "EmailAddress"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "For more information, please contact",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "please contact paymentintelligence@visa.com"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "To report a data breach, contact Visa Fraud Control: Asia Pacific Region, Central Europe/Middle East/Africa Region: VIFraudControl@visa.com Europe:  Datacompromise@visa.com Latin America & Caribbean: LACFraudInvestigations@visa.com U.S. and Canada:",
+      "triple": [
+        {
+          "subject": {
+            "name": "Visa Fraud Control",
+            "type": "Organization"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "Data breach",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "To report a data breach"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "USFraudControl@visa.com Disclaimer: This report is intended for informational purposes only and should not be relied upon for operational, marketing, legal, technical, tax, financial or other advice.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Disclaimer",
+            "type": "Unknown"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "This report is intended for informational purposes only and should not be relied upon for operational, marketing, legal, technical, tax, financial or other advice.",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "This report is intended for informational purposes only and should not be relied upon"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "011",
+        "source": "TEXT"
+      }
+    }
+  ]
+}

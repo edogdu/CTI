@@ -1,0 +1,597 @@
+{
+  "metrics": {
+    "file_name": "FIN6-Morphisec.pdf",
+    "model_used": "gemma2:9b",
+    "doc_sha256_id": "0d1852d26432d6c4",
+    "num_pages": 12,
+    "num_sentences_total": 95,
+    "num_sentences_used": 50,
+    "num_raw_triples": 50,
+    "num_valid_triples": 24,
+    "num_suspicious_triples": 26,
+    "avg_triples_per_sentence": 1.0,
+    "rejection_stats": {
+      "bad_structure": 0,
+      "invalid_class_or_predicate": 26
+    },
+    "runtime_seconds": 90.72701740264893
+  },
+  "data": [
+    {
+      "context": "This post was authored by Michael Gorelik and Alon Groisman .",
+      "triple": [
+        {
+          "subject": {
+            "name": "Michael Gorelik",
+            "type": "Person"
+          },
+          "predicate": "hasAuthor",
+          "object": {
+            "name": "This post",
+            "type": "Report"
+          },
+          "evidence": {
+            "quote": "authored by Michael Gorelik and Alon Groisman"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "More specifically, on the 6 of February we identified an extremely high number of prevention events stopping Cobalt Strike backdoor execution, with some of the attacks expressly targeting Point of Sale VMWare Horizon thin clients.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Cobalt Strike",
+            "type": "Backdoor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "Point of Sale VMWare Horizon thin clients",
+            "type": "Hardware"
+          },
+          "evidence": {
+            "quote": "targeting Point of Sale VMWare Horizon thin clients"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "th Based on the initial indicators, we identified FrameworkPOS scraping malware installed on some of the thin clients, after initializing PowerShell/WMI stages that downloaded and reflectively loaded Cobalt-Strike beacon with PowerShell extension directly into the memory.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FrameworkPOS",
+            "type": "Malware"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "thin clients",
+            "type": "Hardware"
+          },
+          "evidence": {
+            "quote": "identified FrameworkPOS scraping malware installed on some of the thin clients"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "We found many indicators linking specifically to the FIN6 group (WMI/PowerShell, FrameworkPOS, lateral movement and privilege escalation), with the difference of moving from Metasploit to Cobalt-Strike).",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN6",
+            "type": "ThreatActor"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "WMI/PowerShell, FrameworkPOS, lateral movement and privilege escalation",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "linking specifically to the FIN6 group (WMI/PowerShell, FrameworkPOS, lateral movement and privilege escalation)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "If successful, the Cobalt Strike beacon payload gives attackers full control over the infected system and the ability to move laterally to other systems, harvest user credentials, execute code Email* Company* Subscribe Whitepaper Get Cybersecurity Budgets Approved Quantify Your Risk Search Our Site Keyword...",
+      "triple": [
+        {
+          "subject": {
+            "name": "Cobalt Strike beacon payload",
+            "type": "Malware"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "infected system",
+            "type": "System"
+          },
+          "evidence": {
+            "quote": "gives attackers full control over the infected system"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Digging deeper into the notification and the telemetry, we identified victims across the United States, Japan and India from the finance, insurance and healthcare (diagnostic image processing) sectors, as well as additional targets globally.",
+      "triple": [
+        {
+          "subject": {
+            "name": "victims",
+            "type": "Person"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "United States",
+            "type": "Country"
+          },
+          "evidence": {
+            "quote": "victims across the United States"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "However, at least some of them are executed through WMI which may indicate an intermediate stage.",
+      "triple": [
+        {
+          "subject": {
+            "name": "WMI",
+            "type": "Software"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "intermediate stage",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "which may indicate an intermediate stage"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "FileName Sb; $s.Arguments= ~w hidden powershell ~W ~C 'powershell",
+      "triple": [
+        {
+          "subject": {
+            "name": "FileName",
+            "type": "Filename"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Sb",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "FileName Sb;"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "[char]1lO+[char] 99) BtACgALABbAEMAbwBuAHYAZQBYAHQAXQA6ADoARgBYAG8AbQBCAGEAcwBIADYANABTAHQAcgBI AG4AZwAOACIASAAOAHMASQBBAEEAQQBBAEEAQQBBAEEAQQBMADEAWAArADQALwBhAHUAaABMA( sAZQBmAGsAcgBVAHEATwBWAEEASGBVAEYAdwBXAHQATABwAFUACAAXAGUASQBZAGwAdgBFAGOZ JAVASCRIPT <script> a=new Activexobject (\"WScript Shell\" ) run ( powershell exe hidden ençodedçommand HNASQBBAEEAQQBBAEEAQQBBAEEAQQBMADEAWAAvADIALwBhAEBAQgBUAC8AdQBmAHcAVg n BAT",
+      "triple": [
+        {
+          "subject": {
+            "name": "JAVASCRIPT",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "<script>",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "JAVASCRIPT <script>"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Ib Ic start Ib Imin powershell exe =w hidden encodedcommand JABzADOAIgBlAHcALQBPAGIAagBlAGMAdAAgAEkATwAuAEOAZQBtAGSAcgBSAFMA AYQBtACgALABbAEMAbwBuAHYAZQBYAHQAXQA6ADoARgByAG8AbQBCAGEAcwBlADY QAcgBpAG4AZwAoACIASAAOAHMASQBBAEEAQQBBAEEAQQBBAEEAQQBLADEAVwBXA EBAQGBSACsATABYAC8AQwBEADUAVwBTAGEAQwBpAFgAdwBuAFoAbwBwAFUAcgBq4",
+      "triple": [
+        {
+          "subject": {
+            "name": "Ib Ic start Ib Imin",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "powershell",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "Ib Ic start Ib Imin powershell"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "@shift /0 powershell ~nop =W hidden encodedcommand JABzADOATgBlAHcALQBPAGIAagBlAGMAdAAgAEkATwAuAEOAZQBtAG AYQBtACgALABbAEMAbwBuAHYAZQBYAHQAXQA6ADoARgByAG8AbQBCA QAcgBpAG4AZwAoACIASAAOAHMASQBBAEEAQQBBAEEAQQBBAEEAQQBM FMAQgBMACsAZQBmAHcAcgBtAEEANABZAFIAbgBkAGEAQgBSAC8AOQB AFUAVwBsAEYAZQBwAGEAMwBYAGQANABGAFEASQBtADEASgBNAFkAQw 77 7,D 5~ PowerShell Stager All the various scripts are decoded to the following PowerShell pattern: The script above decompresses an additional level of PowerShell stager (regular Gzip): Set-StrictMode ~Version",
+      "triple": [
+        {
+          "subject": {
+            "name": "@shift",
+            "type": "AttackPattern"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "/0",
+            "type": "CommandAndControl"
+          },
+          "evidence": {
+            "quote": "@shift /0 powershell ~nop ="
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "SDoIt sassembly using System; using Systen.",
+      "triple": [
+        {
+          "subject": {
+            "name": "SDoIt",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "System",
+            "type": "OperatingSystem"
+          },
+          "evidence": {
+            "quote": "sassembly using System; using Systen."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "InteropServices; namespace inject public class func [Flags] public enum AllocationType Ox1000 , Reserve 0x2000",
+      "triple": [
+        {
+          "subject": {
+            "name": "AllocationType",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "Ox1000, Reserve 0x2000",
+            "type": "SHA-256"
+          },
+          "evidence": {
+            "quote": "AllocationType Ox1000 , Reserve 0x2000"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "CompilerParameters sparans ReferencedAssenblies AddRange (@ ( \"Systen.dll [PsObject] Assembly.",
+      "triple": [
+        {
+          "subject": {
+            "name": "CompilerParameters",
+            "type": "Unknown"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "Systen.dll",
+            "type": "Filename"
+          },
+          "evidence": {
+            "quote": "Systen.dll"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "[System Convert] FromBase64String /OiJAAAAYInlNdJki",
+      "triple": [
+        {
+          "subject": {
+            "name": "[System Convert]",
+            "type": "Software"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "/OiJAAAAYInlNdJki",
+            "type": "Filename"
+          },
+          "evidence": {
+            "quote": "FromBase64String /OiJAAAAYInlNdJki"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "[IntPtr] Sthread [inject func] CreateThread (0 0, Sbuffer, result return Linject func]",
+      "triple": [
+        {
+          "subject": {
+            "name": "Sthread",
+            "type": "OperatingSystem"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "CreateThread",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "Sthread CreateThread"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "([IntPtr]::size start-job param ($a) IEX ~RunAs32 -Argunent SDoIt",
+      "triple": [
+        {
+          "subject": {
+            "name": "SDoIt",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "([IntPtr]::size start-job param ($a) IEX ~RunAs32 -Argunent",
+            "type": "CommandAndControl"
+          },
+          "evidence": {
+            "quote": "SDoIt\""
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Shellcode Stager The injected shellcode is a regular Metasploit downloader shellcode that traverses the PEB, resolves the function names by the standard ROR 13 hash, and downloads the next stage shellcode directly into memory from the C2.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Shellcode Stager",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "Metasploit downloader shellcode",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "The injected shellcode is a regular Metasploit downloader shellcode"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "012",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The pattern of the C2 download request destination is generally URL:PORT/[a-zA-Z0-9]{4}.",
+      "triple": [
+        {
+          "subject": {
+            "name": "pattern",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "URL:PORT/[a-zA-Z0-9]{4}",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "The pattern of the C2 download request destination is generally URL:PORT/[a-zA-Z0-9]{4}."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "013",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Hex View[ Enums Imports Exports proc near Strings window dword ptr Address Length Type   String cld loc_8F hei^1 pusha mov ebp, esp xor edx , edx edx , {s:[edx+3eh] 00000053 User-Agent: Mozilla/5.0 (Wir bbing c.za mov edx, [edx+eCh] edx, [edx+14h] 00000015 Cobalt Strike Beacon Morphisec observed 2 types of beacons during this campaign, the first one is a regular direct reflective loaded Cobalt Strike DLL beacon, usually XOR encoded.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Cobalt Strike",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Beacon",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "Cobalt Strike Beacon"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The second type is a shellcode backdoor beacon with PowerShell and Mimikatz functionality.",
+      "triple": [
+        {
+          "subject": {
+            "name": "shellcode",
+            "type": "Malware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "backdoor beacon",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "shellcode backdoor beacon"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In turn, this, on login, uses rundll32.exe with System privileges to execute and export function 'workerInstance' from a",
+      "triple": [
+        {
+          "subject": {
+            "name": "this",
+            "type": "Unknown"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "rundll32.exe",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "uses rundll32.exe"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " downloaded binary DLL 'Assistant32.dll'.",
+      "triple": [
+        {
+          "subject": {
+            "name": "downloaded binary",
+            "type": "Unknown"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "'Assistant32.dll'",
+            "type": "Filename"
+          },
+          "evidence": {
+            "quote": "'Assistant32.dll'"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "if result 10 GetModuleFileNameA(hModule, &Filename, @xl04u); 11 PathRemoveFileSpecA(&Filename); Removes the filename from the full 12 CopyBuffer(&v3, @xl04u, &Filename); Copy the base path into V3 13 ConcatBuffer(&v3, @xl04u, \"Ilbtdata.dat\" ); new filepath with btdata.dat 14 SavePath(&v3); 15 SetErrorMode(0x8003u) ; 16 Scrap(); 17 result WaitWrapper(); 18 19 return result; 20 } Path The malware XOR's (xor 0xAA)",
+      "triple": [
+        {
+          "subject": {
+            "name": "Filename",
+            "type": "Filename"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "@xl04u",
+            "type": "vHash"
+          },
+          "evidence": {
+            "quote": "GetModuleFileNameA(hModule, &Filename, @xl04u);"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "008",
+        "source": "TEXT"
+      }
+    }
+  ]
+}

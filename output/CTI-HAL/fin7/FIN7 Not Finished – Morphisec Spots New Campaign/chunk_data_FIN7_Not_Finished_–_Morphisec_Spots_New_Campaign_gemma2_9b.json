@@ -1,0 +1,501 @@
+{
+  "metrics": {
+    "file_name": "FIN7 Not Finished – Morphisec Spots New Campaign.pdf",
+    "model_used": "gemma2:9b",
+    "doc_sha256_id": "16c4cd1437042000",
+    "num_pages": 10,
+    "num_sentences_total": 73,
+    "num_sentences_used": 46,
+    "num_raw_triples": 46,
+    "num_valid_triples": 20,
+    "num_suspicious_triples": 26,
+    "avg_triples_per_sentence": 1.0,
+    "rejection_stats": {
+      "bad_structure": 0,
+      "invalid_class_or_predicate": 26
+    },
+    "runtime_seconds": 201.4477071762085
+  },
+  "data": [
+    {
+      "context": " FIN7 ATTACK ANALYSIS It seems like the rumors of FIN7's decline have been hasty.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "rumors",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "It seems like the rumors of FIN7's decline have been hasty."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "FIN7, also known as Carbanak, is one of the major threat groups tracked by Morphisec and numerous other security entities, and among the top three criminal computer intrusion cases that the FBI is currently working.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Carbanak",
+            "type": "ThreatActor"
+          },
+          "evidence": {
+            "quote": "also known as Carbanak"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "They target very specific industries, hospitality hotels and restaurants - being one of them, and are behind a string of high-profile breaches including Red Robin, Chili's, Arby's, Burgerville, Omni Hotels and Saks Fifth Avenue, among many others.",
+      "triple": [
+        {
+          "subject": {
+            "name": "They",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "very specific industries, hospitality hotels and restaurants",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "They target very specific industries, hospitality hotels and restaurants"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In the case of Burgerville, malware sat on the company's network collecting payment data for nearly a year before it was discovered.",
+      "triple": [
+        {
+          "subject": {
+            "name": "malware",
+            "type": "Malware"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "company's network",
+            "type": "Network"
+          },
+          "evidence": {
+            "quote": "malware sat on the company's network"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Recent Posts Vulnerability Whisperer: Turning Headaches to High-Fives Decoding the Puzzle: Cicada3301 Ransomware Threat Analysis Preventing Threats Before Infiltration: Morphisec AMTD in Action From Trading Floors to ATMs: 5 Unexpected Cyber Exposure",
+      "triple": [
+        {
+          "subject": {
+            "name": "Cicada3301",
+            "type": "MalwareFamily"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "Recent Posts Vulnerability Whisperer",
+            "type": "System"
+          },
+          "evidence": {
+            "quote": "Decoding the Puzzle: Cicada3301 Ransomware Threat Analysis"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The initial document was probably sent within the Baltic region (or tested there).",
+      "triple": [
+        {
+          "subject": {
+            "name": "document",
+            "type": "Unknown"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "Baltic region",
+            "type": "Region"
+          },
+          "evidence": {
+            "quote": "within the Baltic region (or tested there)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "First Posts by Tag Automated Moving Target Defense (147) Cyber Security News (130) Threat Research (128) Morphisec Labs (117)",
+      "triple": [
+        {
+          "subject": {
+            "name": "Threat Research",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "First Posts by Tag Automated Moving Target Defense",
+            "type": "Campaign"
+          },
+          "evidence": {
+            "quote": "Threat Research (128) Morphisec Labs (117)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "ber abovo TAKE A POWER TRIP It uses social engineering to convince the recipient to enable macros through the use of the images, logo and tagline of a newly launched, legitimate VPN tool InvinciBull by cybersecurity company Finjan.",
+      "triple": [
+        {
+          "subject": {
+            "name": "ber abovo",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "social engineering",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "It uses social engineering"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Shell Yfiro hkydho oxnananz , False onlavtev vonire\" Ren tingSho\"Parcgrach KsgBox iguanuvn 610 'ancevertical JinHorizontal JinVerbcal Ccopy Examining the metadata of the document, it clearly shows that the document was created on the 11.02.2018: PS oletimes exe pletimes 0 .51 http:/ /decalage; info/python oletools THIS IS WORK IN PROGRESS check updates regularly Please report any issue at https://github com /decalagez /oletools/issues FILE: 16e1230088a346787261023530622445elf8b8b8c9celfO2Sdllbfffd5ol7ca82 Stream/Storage name Modification Time Creation Time Root 2018-11-02 22:20:27 None None None IxosDocumentsummaryInform None None",
+      "triple": [
+        {
+          "subject": {
+            "name": "document",
+            "type": "Filepath"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "16e1230088a346787261023530622445elf8b8b8c9celfO2Sdllbfffd5ol7ca82 Stream/Storage name",
+            "type": "Filename"
+          },
+          "evidence": {
+            "quote": "FILE: 16e1230088a346787261023530622445elf8b8b8c9celfO2Sdllbfffd5ol7ca82 Stream/Storage name"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The deobfuscated JavaScript is actually a backdoor component that directly communicates to the C2 server (in this case hxxps://bing-cdn[.]com).",
+      "triple": [
+        {
+          "subject": {
+            "name": "backdoor component",
+            "type": "Backdoor"
+          },
+          "predicate": "communicatesWith",
+          "object": {
+            "name": "C2 server",
+            "type": "CommandAndControl"
+          },
+          "evidence": {
+            "quote": "directly communicates to the C2 server"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " JavaScript command, which can be evaluated by eval.",
+      "triple": [
+        {
+          "subject": {
+            "name": "JavaScript",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "command",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "JavaScript command"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Although there have been slight modifications in the Macro delivery in the last couple of campaigns, the JavaScript backdoor stays the same, including its communication protocol.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Macro",
+            "type": "Malware"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "modifications",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "slight modifications in the Macro delivery"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "During the first request, the MAC address and the computer domain are also delivered to the target C2.",
+      "triple": [
+        {
+          "subject": {
+            "name": "first request",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "MAC address",
+            "type": "Hardware"
+          },
+          "evidence": {
+            "quote": "the MAC address"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Some additional observations that can be used to create Yara-rules for this campaign are the locations of the loaded VBControl files that are written in clear text as part of the document files: InkEd.dlIEOTNUDNUDN Additional Samples",
+      "triple": [
+        {
+          "subject": {
+            "name": "InkEd.dlIEOTNUDNUDN",
+            "type": "Filename"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "VBControl files",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "that are written in clear text as part of the document files: InkEd.dlIEOTNUDNUDN Additional Samples"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " After this search, we identified more samples that were created just a couple of days ago and point to a known C2 registered to the same entity (hxxps://googleapi-cdn[.]com)",
+      "triple": [
+        {
+          "subject": {
+            "name": "samples",
+            "type": "Malware"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "C2",
+            "type": "CommandAndControl"
+          },
+          "evidence": {
+            "quote": "point to a known C2"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The document was submitted from Ukraine (yet another former soviet union country) with the name 'dinners.doc' (f5f8ab9863dc12d04731b1932fc3609742de68252c706952f31894fc21746bb8).",
+      "triple": [
+        {
+          "subject": {
+            "name": "document",
+            "type": "Filename"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "'dinners.doc'",
+            "type": "Filename"
+          },
+          "evidence": {
+            "quote": "'dinners.doc'"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " PS c: oletimes exe oletimes 0.51 http: / /decalage; info/python/oletools",
+      "triple": [
+        {
+          "subject": {
+            "name": "PS",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "oletimes exe",
+            "type": "Filename"
+          },
+          "evidence": {
+            "quote": "PS c: oletimes exe"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "THIS IS WORK IN PROGRESS Check updates Please report issue at https: '/github.",
+      "triple": [
+        {
+          "subject": {
+            "name": "https://github",
+            "type": "URL"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "Check updates",
+            "type": "Campaign"
+          },
+          "evidence": {
+            "quote": "Check updates Please report issue at https: '/github"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "com/decalagez /oletools/issues 'ILE: If5f8ab9863dc12d04731b1932fc3609742de68252c706952f31894f021746bb8 Stream/Storage name Modification Time Creation Time Root 2018-10-31 15:44:12 None None None any The macro is nearly identical to that described above except that wscript->script, errors->settings, has multiple captions instead of a single one.",
+      "triple": [
+        {
+          "subject": {
+            "name": "com/decalagez /oletools/issues",
+            "type": "URL"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "ILE: If5f8ab9863dc12d04731b1932fc3609742de68252c706952f31894f021746bb8",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "com/decalagez /oletools/issues 'ILE: If5f8ab9863dc12d04731b1932fc3609742de68252c706952f31894f021746bb8"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Workers in any industry should stay vigilant against social engineering methods although with today's highly targeted campaigns this can sometimes be tough to spot.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Workers",
+            "type": "Person"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "social engineering methods",
+            "type": "Phishing"
+          },
+          "evidence": {
+            "quote": "stay vigilant against social engineering methods"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "001",
+        "source": "TEXT"
+      }
+    }
+  ]
+}

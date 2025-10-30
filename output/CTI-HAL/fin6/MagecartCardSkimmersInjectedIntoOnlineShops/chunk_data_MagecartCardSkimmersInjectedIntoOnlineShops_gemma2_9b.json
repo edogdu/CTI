@@ -1,0 +1,573 @@
+{
+  "metrics": {
+    "file_name": "MagecartCardSkimmersInjectedIntoOnlineShops.pdf",
+    "model_used": "gemma2:9b",
+    "doc_sha256_id": "8929aa9cc0e34a19",
+    "num_pages": 8,
+    "num_sentences_total": 117,
+    "num_sentences_used": 53,
+    "num_raw_triples": 53,
+    "num_valid_triples": 23,
+    "num_suspicious_triples": 30,
+    "avg_triples_per_sentence": 1.0,
+    "rejection_stats": {
+      "bad_structure": 0,
+      "invalid_class_or_predicate": 30
+    },
+    "runtime_seconds": 77.46251773834229
+  },
+  "data": [
+    {
+      "context": " Cyber Crime Magecart Card Skimmers Injected Into Online Shops We discovered that the online credit card skimming attack known as Magecart or E-Skimming was actively operating on 3,126 online shops.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Magecart",
+            "type": "AttackPattern"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "online shops",
+            "type": "Infrastructure"
+          },
+          "evidence": {
+            "quote": "actively operating on 3,126 online shops"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "We discovered that the online credit card skimming attack known as Magecart or E-Skimming was actively operating on 3,126 online shops.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Magecart",
+            "type": "AttackPattern"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "E-Skimming",
+            "type": "AttackPattern"
+          },
+          "evidence": {
+            "quote": "known as Magecart or E-Skimming"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "We found malicious code injected into a JavaScript library provided by Volusion to their client shops.",
+      "triple": [
+        {
+          "subject": {
+            "name": "JavaScript library",
+            "type": "Application"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "malicious code",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "We found malicious code injected into a JavaScript library provided by Volusion to their client shops."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The loaded script is almost a direct copy of a normal JavaScript library but has a credit card skimmer carefully integrated.",
+      "triple": [
+        {
+          "subject": {
+            "name": "script",
+            "type": "Application"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "credit card skimmer",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "but has a credit card skimmer carefully integrated"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "When customers submit their payment information, the skimmer will copy and send the personal information and credit card details to an exfiltration server belonging to the attackers.",
+      "triple": [
+        {
+          "subject": {
+            "name": "skimmer",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "exfiltration server",
+            "type": "Infrastructure"
+          },
+          "evidence": {
+            "quote": "the skimmer will copy and send the personal information and credit card details to an exfiltration server"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "As of publication, Volusion has acknowledged and fixed the issue.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Volusion",
+            "type": "Organization"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "issue",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "has acknowledged and fixed the issue"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "015",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Online credit card skimming attack chain E-Commerce Cloud Platform 2 Injected script is delivered to front-end stores Web server Front-end store Front-end store Front-end store Customers Attacker access online compromises shops and e-commerce load card platform to skimmer Customer Customer Customer inject malicious Attacker script Card skimmer sends payment information Attacker receives stolen to exlfiltration server credit card data Exlfiltration server 02019 TREND MICRO Figure 2.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Attacker",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "shops and e-commerce load card platform",
+            "type": "Infrastructure"
+          },
+          "evidence": {
+            "quote": "Attacker access online compromises shops and e-commerce load card platform to skimmer"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "United States 74.4% Australia 9.7% Canada 3.9% Japan 28% United Kingdom TOTAL New Zealand 1.19 42,550 Germany 0.6% France 0.5% Singapore 0.5% Taiwan 0.5% Others 4.7% 02019 TREND MICRO",
+      "triple": [
+        {
+          "subject": {
+            "name": "United States",
+            "type": "Location"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "74.4%",
+            "type": "Time"
+          },
+          "evidence": {
+            "quote": "United States 74.4%"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Considering the modus operandi, we believe the attackers are from Magecart Group 6, which has also been identified as the notorious threat actor FIN6.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Magecart Group 6",
+            "type": "ThreatActor"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "FIN6",
+            "type": "ThreatActor"
+          },
+          "evidence": {
+            "quote": "which has also been identified as the notorious threat actor FIN6"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Malicious script injected into Volusion's JavaScript library https: /",
+      "triple": [
+        {
+          "subject": {
+            "name": "Volusion",
+            "type": "Organization"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "JavaScript library",
+            "type": "Software"
+          },
+          "evidence": {
+            "quote": "injected into Volusion's JavaScript library"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "016",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Comparison of the original Volusion script (left) and the script with injection (right); the injected malicious code is highlighted '~childConstructors) push(o), e.wiog delete function call(arguments push(o) widget .bridge(i",
+      "triple": [
+        {
+          "subject": {
+            "name": "script",
+            "type": "Software"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "malicious code",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "the injected malicious code"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "this-each( function data(this 0); return charAt(0) (s = n[r] apply(n 'ces-js n.prototype.widgetFullNare jquery ~error(no (r) 'string typeof call(arguments this widget call methods init length @.widget.",
+      "triple": [
+        {
+          "subject": {
+            "name": "this",
+            "type": "Unknown"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "n[r]",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "this 0); return charAt(0) (s = n[r] apply"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Comparison of the JavaScript library injected with the skimmer (left) and the original 'jscookie' library (right) cookle catcn (0) return <ey jar[key] Jar; key jar[key] Jar; function (5) set; null , null , null , null , null , if (typeof function function queryo) var window ,sessionStorage window.",
+      "triple": [
+        {
+          "subject": {
+            "name": "skimmer",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "cookle catcn",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Comparison of the JavaScript library injected with the skimmer (left) and the original 'jscookie' library (right) cookle catcn"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "016",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "sessionStorage.getIte if (d) POST url; S(document) ready( function 0 S('#CreditCardkunber length valo Ic.startsWith(') 88 split(' ); (var length window-sessionStorage.setIten( opt_ true; setInterval(function {var S('#btnSubmito setInterval(function 0 {var setInterval(function {var S(' #DupCheckou setInterval( function S('#bluecheck- queryu; return set; function (ke) api.get function (ke) function (key) getJSON function (key) return get(key return get(key function (key attributes) function (key attributes) set(key extend(attributes set(key extend(attributes erpires; expires: apidefaults lines: defaults cookic The skimmer copies the information on the entire payment form: the victim's name, address, phone number, email address, and credit card details (the number, cardholder name, expiration month, expiration year, and CVV number).",
+      "triple": [
+        {
+          "subject": {
+            "name": "skimmer",
+            "type": "Malware"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "entire payment form",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "The skimmer copies the information on the entire payment form:"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "017",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The next time the skimmer is loaded (usually on the page after the payment), it will detect if there is data inside sessionStorage and it will use HTTP POST to send the stolen payment information to a remote server at 'hxxps[:]//volusion-cdn[.]com/analytics/beacon' for exfiltration.",
+      "triple": [
+        {
+          "subject": {
+            "name": "skimmer",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "HTTP POST",
+            "type": "Protocol"
+          },
+          "evidence": {
+            "quote": "it will use HTTP POST"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "if (f && && m && y && t) { split(''); for (var < t.length c = t[i]; t[i] = t[i + 2]; t[i + 2] = c; utmz opt_in_out join( )); return true Note that the attackers used the domain 'volusion-cdn[.]com' for their exfiltration server, a similar name to Volusion's legitimate server.",
+      "triple": [
+        {
+          "subject": {
+            "name": "attackers",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "volusion-cdn[.]com",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "the attackers used the domain 'volusion-cdn[.]com' for their exfiltration server"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "013",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "A possible reason why the attackers stored the skimmer on Google Storage is because Volusion is also running its service on the Google Cloud Platform.",
+      "triple": [
+        {
+          "subject": {
+            "name": "attackers",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "skimmer",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "stored the skimmer"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "014",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Evidence of Magecart or FIN6 As previously mentioned, based on the modus operandi, we believe the attackers are from Magecart Group 6, also known as the threat actor FIN6.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Magecart Group 6",
+            "type": "ThreatActor"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "FIN6",
+            "type": "ThreatActor"
+          },
+          "evidence": {
+            "quote": "also known as the threat actor FIN6"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "015",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This single hack of Volusion allows them to receive credit card data from 3,126 online shops.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Volusion",
+            "type": "Organization"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "This single hack",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "This single hack of Volusion"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "018",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In this case, the domain of the exfiltration server is 'volusion-cdn[.]com' - very similar to the valid domain 'cdn3[.]volusion[.]com' from Volusion.",
+      "triple": [
+        {
+          "subject": {
+            "name": "domain",
+            "type": "DomainName"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "'cdn3[.]volusion[.]com'",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "very similar to the valid domain 'cdn3[.]volusion[.]com' from Volusion."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "020",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Both old and current skimmers are written with jQuery, serialize the stolen data, and use the jQuery.ajax function to POST data to a remote server.",
+      "triple": [
+        {
+          "subject": {
+            "name": "skimmers",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "jQuery.ajax",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "use the jQuery.ajax function"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "023",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The previous Group 6 skimmer binds to event 'mouseup' and event 'touchend'.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Group 6",
+            "type": "ThreatActor"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "skimmer",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "The previous Group 6 skimmer"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Tags | | Endpoints Cyber Crime Research TrojanSpy.JS.MAGECART.C TrojanSpy.",
+      "triple": [
+        {
+          "subject": {
+            "name": "TrojanSpy",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "TrojanSpy.JS.MAGECART.C",
+            "type": "Filename"
+          },
+          "evidence": {
+            "quote": "TrojanSpy.JS.MAGECART.C"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "006",
+        "source": "TEXT"
+      }
+    }
+  ]
+}

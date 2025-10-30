@@ -1,0 +1,573 @@
+{
+  "metrics": {
+    "file_name": "MoreEggsBackdoorProofpoint.pdf",
+    "model_used": "gemma2:9b",
+    "doc_sha256_id": "007fca5fbc292f41",
+    "num_pages": 9,
+    "num_sentences_total": 80,
+    "num_sentences_used": 45,
+    "num_raw_triples": 45,
+    "num_valid_triples": 23,
+    "num_suspicious_triples": 22,
+    "avg_triples_per_sentence": 1.0,
+    "rejection_stats": {
+      "bad_structure": 0,
+      "invalid_class_or_predicate": 22
+    },
+    "runtime_seconds": 4438.122784137726
+  },
+  "data": [
+    {
+      "context": "ENGLISH ( AMERICAS ) FEBRUARY 21, 2019 | PROOFPOINT THREAT INSIGHT TEAM Overview Since the middle of 2018, Proofpoint has been tracking campaigns abusing legitimate messaging services, offering fake jobs, and repeatedly following up via email to ultimately deliver the More_eggs backdoor.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Proofpoint",
+            "type": "Organization"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "More_eggs",
+            "type": "Backdoor"
+          },
+          "evidence": {
+            "quote": "deliver the More_eggs backdoor"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "These campaigns primarily targeted US companies in various industries including retail, entertainment, pharmacy, and others that commonly employ online payments, such as online shopping portals.",
+      "triple": [
+        {
+          "subject": {
+            "name": "campaigns",
+            "type": "Campaign"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "US companies",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "These campaigns primarily targeted US companies"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The actor sending these campaigns attempts to establish rapport with potential victims by abusing LinkedIn's direct messaging service.",
+      "triple": [
+        {
+          "subject": {
+            "name": "actor",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "potential victims",
+            "type": "Person"
+          },
+          "evidence": {
+            "quote": "attempts to establish rapport with potential victims"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Initially the actor uses a fraudulent, but legitimately created LinkedIn profile to initiate contact with individuals at the targeted company by sending invitations with a short message ( Figure 1 ) .",
+      "triple": [
+        {
+          "subject": {
+            "name": "actor",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "fraudulent, but legitimately created LinkedIn profile",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "Initially the actor uses a fraudulent, but legitimately created LinkedIn profile"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "012",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "please add me to your LinkedIn network Message (HTML) 2 File Meszage If there are problems with how this message is displayed, click here to view it in a web browser.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Message",
+            "type": "Unknown"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "File Meszage",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Message (HTML) 2 File Meszage"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Linkedln and the Linkedln logo are registered trademarks of Linkedln Josephine Pena Within a week, the actor sends a direct email to the target's work address reminding the recipient about the prior attempt to communicate on LinkedIn ( Figure 2 ) .",
+      "triple": [
+        {
+          "subject": {
+            "name": "LinkedIn",
+            "type": "DomainName"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Linkedln",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "Linkedln and the Linkedln logo are registered trademarks of Linkedln Josephine Pena"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "It uses the target's professional title, as it appears on LinkedIn, as the subject, and often suggests the recipient click on a link to see the noted job description.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Phishing",
+            "type": "AttackPattern"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "target's professional title",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "It uses the target's professional title"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Figure 2 : Example follow up email to the target's work address, with a malicious URL.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Figure 2",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "malicious URL",
+            "type": "URL"
+          },
+          "evidence": {
+            "quote": "with a malicious URL."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "CONTACT US Download should start automatically in seconds Youhave chosento open: vacancy doc' whichis: BIN file Would you liketo save thls file?",
+      "triple": [
+        {
+          "subject": {
+            "name": "CONTACT US Download",
+            "type": "Filename"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "vacancy doc'",
+            "type": "Filename"
+          },
+          "evidence": {
+            "quote": "Youhave chosento open: vacancy doc' whichis:"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "FOLLOW US cancel Save File Address: 3401 W Cypress St, Suite 202 Tampa FL 33607 in Phone:",
+      "triple": [
+        {
+          "subject": {
+            "name": "Address",
+            "type": "Location"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "3401 W Cypress St, Suite 202 Tampa FL 33607",
+            "type": "IPAddress"
+          },
+          "evidence": {
+            "quote": "Address: 3401 W Cypress St, Suite 202 Tampa FL 33607"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Valued Partners Fax: AD Resources 877,406.3349 Field Employee Handbook Email: Contact USA Staffing Privacy Policy doc 'doc",
+      "triple": [
+        {
+          "subject": {
+            "name": "Valued Partners Fax",
+            "type": "EmailAddress"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "AD Resources 877,406.3349",
+            "type": "IPAddress"
+          },
+          "evidence": {
+            "quote": "Valued Partners Fax: AD Resources 877,406.3349"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "012",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Example malicious Microsoft Word document that uses macros to download More_eggs. 0",
+      "triple": [
+        {
+          "subject": {
+            "name": "Microsoft Word document",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "macros",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "uses macros"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Examples of the types of techniques used by the actor to deliver the final More_eggs payload include:",
+      "triple": [
+        {
+          "subject": {
+            "name": "actor",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "More_eggs",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "the actor to deliver the final More_eggs payload"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Josephine Pena Manager; HR Tools This actor uses a variety of tools to distribute malware.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Josephine Pena",
+            "type": "Person"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "tools",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "This actor uses a variety of tools to distribute malware."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Notably, documents created with this builder use the CMSTP bypass as described in [ 2 ] .",
+      "triple": [
+        {
+          "subject": {
+            "name": "documents",
+            "type": "Filepath"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "CMSTP bypass",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "use the CMSTP bypass"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Both Palo Alto Networks [ 3] and QuoScient [ 4] have previously described documents created with this kit.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Palo Alto Networks",
+            "type": "Organization"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "documents",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "have previously described documents"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Depending on the variant it may exploit CVE -2017 -0199, CVE -2017 -8570,",
+      "triple": [
+        {
+          "subject": {
+            "name": "variant",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "exploits",
+          "object": {
+            "name": "CVE -2017 -0199",
+            "type": "Vulnerability_CVEID"
+          },
+          "evidence": {
+            "quote": "exploit CVE -2017 -0199"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "-8759, CVE -2017 -11882, CVE -2018 -0802, and/or CVE -2018 -8174.",
+      "triple": [
+        {
+          "subject": {
+            "name": "CVE -2017 -11882",
+            "type": "Vulnerability_CVEID"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "-8759",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "and/or CVE -2017 -11882, CVE -2018 -0802, and/or CVE -2018 -8174"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "013",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Notably, VenomKit often also uses the same CMSTP bypass as Taurus.",
+      "triple": [
+        {
+          "subject": {
+            "name": "VenomKit",
+            "type": "MalwareFamily"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "CMSTP bypass",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "uses the same CMSTP bypass"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "014",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Documents from this kit have previously been discussed by Quoscient [ 4 ] .",
+      "triple": [
+        {
+          "subject": {
+            "name": "Documents",
+            "type": "Filepath"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "this kit",
+            "type": "Exploit-kit"
+          },
+          "evidence": {
+            "quote": "Documents from this kit"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "015",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The malware was first documented by Trend Micro [ 5 ] .",
+      "triple": [
+        {
+          "subject": {
+            "name": "malware",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Trend Micro [ 5 ] ",
+            "type": "Report"
+          },
+          "evidence": {
+            "quote": "The malware was first documented by Trend Micro [ 5 ] ."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "019",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Conclusion As threat actors continue to turn away from very large-scale 'spray and pray' campaigns and focus on persistent infections with downloaders, RATs, bankers, and other malware, increasingly sophisticated social engineering and stealthy malware are making their way into a range of campaigns.",
+      "triple": [
+        {
+          "subject": {
+            "name": "threat actors",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "persistent infections",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "continue to turn away from very large-scale 'spray and pray' campaigns and focus on persistent infections"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This actor provides compelling examples of these new approaches, using LinkedIn scraping, multi-vector and multistep contacts with recipients, personalized lures, and varied attack techniques to distribute the More_eggs downloader, which in turn can distribute the malware of their choice based on system profiles transmitted to the threat actor.",
+      "triple": [
+        {
+          "subject": {
+            "name": "actor",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "LinkedIn scraping",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "using LinkedIn scraping"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "003",
+        "source": "TEXT"
+      }
+    }
+  ]
+}

@@ -1,0 +1,453 @@
+{
+  "metrics": {
+    "file_name": "UkrainianPowerAuthorityAttacks.pdf",
+    "model_used": "gemma2:9b",
+    "doc_sha256_id": "36c5b7977654bc13",
+    "num_pages": 4,
+    "num_sentences_total": 52,
+    "num_sentences_used": 32,
+    "num_raw_triples": 32,
+    "num_valid_triples": 18,
+    "num_suspicious_triples": 14,
+    "avg_triples_per_sentence": 1.0,
+    "rejection_stats": {
+      "bad_structure": 0,
+      "invalid_class_or_predicate": 14
+    },
+    "runtime_seconds": 28.537148475646973
+  },
+  "data": [
+    {
+      "context": " Cloud Threat Intelligence Sandworm Team and the Ukrainian Power Authority Attacks January 7, 2016 Mandiant Wri !",
+      "triple": [
+        {
+          "subject": {
+            "name": "Cloud Threat Intelligence",
+            "type": "Organization"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Sandworm Team",
+            "type": "ThreatActor"
+          },
+          "evidence": {
+            "quote": "Cloud Threat Intelligence Sandworm Team"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "acks were directly responsible for power outages in Ukraine.",
+      "triple": [
+        {
+          "subject": {
+            "name": "acks",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "power outages",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "acks were directly responsible for power outages"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Fu % hermore, Sandworm Team's previous interest in US and European critical systems underscores the threat they pose (see below for more on Sandworm Team.)",
+      "triple": [
+        {
+          "subject": {
+            "name": "Sandworm Team",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "US and European critical systems",
+            "type": "System"
+          },
+          "evidence": {
+            "quote": "US and European critical systems"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Many details of the event remain unknown, and given the nature of the incident, especially the use of destructive malware, we do not anticipate every detail will be exposed.",
+      "triple": [
+        {
+          "subject": {
+            "name": "event",
+            "type": "Campaign"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "destructive malware",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "the use of destructive malware"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "012",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "However, we have linked Sandworm Team to the incident, principally based on BlackEnergy 3, the malware that has become their calling card.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Sandworm Team",
+            "type": "ThreatActor"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "BlackEnergy 3",
+            "type": "MalwareFamily"
+          },
+          "evidence": {
+            "quote": "principally based on BlackEnergy 3, the malware that has become their calling card."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "013",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In that campaign, we saw targeting of Ukrainian government o & cials, members of the EU and NATO.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Campaign",
+            "type": "Campaign"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "Ukrainian government officials",
+            "type": "Person"
+          },
+          "evidence": {
+            "quote": "targeting of Ukrainian government o & cials"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "016",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Sho % ly a \" er releasing information on their espionage operations, our friends at TrendMicro found evidence that the operators were not only conducting classic strategic espionage but targeting SCADA systems as well.",
+      "triple": [
+        {
+          "subject": {
+            "name": "operators",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "SCADA systems",
+            "type": "System"
+          },
+          "evidence": {
+            "quote": "targeting SCADA systems as well"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "017",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "However, the unique malware variant, BlackEnergy 3, reemerged in Ukraine early in 2015, where we had $ rst found Sandworm Team.",
+      "triple": [
+        {
+          "subject": {
+            "name": "BlackEnergy 3",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Sandworm Team",
+            "type": "ThreatActor"
+          },
+          "evidence": {
+            "quote": "where we had rst found Sandworm Team"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Throughout 2015 we saw increased intrusion activity using BlackEnergy 3.",
+      "triple": [
+        {
+          "subject": {
+            "name": "BlackEnergy 3",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "intrusion activity",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "using BlackEnergy 3"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "We warned our clients of new features suggesting an increased focus on European targets though veri $ cation of targets was not possible at the time.",
+      "triple": [
+        {
+          "subject": {
+            "name": "clients",
+            "type": "Person"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "European targets",
+            "type": "Location"
+          },
+          "evidence": {
+            "quote": "We warned our clients of new features suggesting an increased focus on European targets"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Additionally, we warned our customers about the targeting of both media and regional power authorities in the Ukraine, sectors later a # ected by cyber a ! acks.",
+      "triple": [
+        {
+          "subject": {
+            "name": "customers",
+            "type": "Person"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "media and regional power authorities in the Ukraine",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "we warned our customers about the targeting of both media and regional power authorities in the Ukraine"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Some of this information was recently shared by the folks at ESET, who have also been following Sandworm Team very closely for quite some time.",
+      "triple": [
+        {
+          "subject": {
+            "name": "ESET",
+            "type": "Organization"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "folks",
+            "type": "Person"
+          },
+          "evidence": {
+            "quote": "the folks at ESET"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "As ESET has, we place this malware within the greater context of activity tied to BlackEnergy 3, which we believe is Sandworm Team.",
+      "triple": [
+        {
+          "subject": {
+            "name": "ESET",
+            "type": "Organization"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "Malware",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "As ESET has, we place this malware within the greater context of activity tied to BlackEnergy 3"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Fu % hermore, iSIGHT's own sources indicate that BlackEnergy 3 malware was deployed on at least one of the Ukrainian power systems a # ected by KillDisk.",
+      "triple": [
+        {
+          "subject": {
+            "name": "iSIGHT",
+            "type": "Organization"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "BlackEnergy 3 malware",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "iSIGHT's own sources indicate that BlackEnergy 3 malware"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "On their o & cial website, the Ukrainian security service, SBU, made this claim.",
+      "triple": [
+        {
+          "subject": {
+            "name": "SBU",
+            "type": "Organization"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Ukrainian security service",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "On their o & cial website, the Ukrainian security service, SBU, made this claim."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "016",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Targeting of critical entities in Ukraine throughout 2015, during a time of war, fu % her presaged a desire to disrupt infrastructure.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Targeting",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "critical entities in Ukraine",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "Targeting of critical entities in Ukraine"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Posted in Threat Intelligence-Security & Identity Related articles Threat Intelligence Threat Intelligence XRefer: The Gemini-Assisted Binary Navigator By Mandiant · 26-minute read Follow us Help Google Cloud English Bridging the Gap: Elevating Red Team Assessments with Application Security Testing By Mandiant · 13-minute read Google Cloud Products Threat Intelligence (QR)",
+      "triple": [
+        {
+          "subject": {
+            "name": "Threat Intelligence",
+            "type": "Campaign"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "QR",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "Threat Intelligence (QR)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Spreading ProPRC In \" uence Operations By Google Threat Intelligence Group · 13minute read",
+      "triple": [
+        {
+          "subject": {
+            "name": "Spreading ProPRC In \"uence Operations",
+            "type": "Campaign"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "Google Threat Intelligence Group",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "Spreading ProPRC In \"uence Operations By Google Threat Intelligence Group"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "008",
+        "source": "TEXT"
+      }
+    }
+  ]
+}

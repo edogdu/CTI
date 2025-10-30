@@ -1,0 +1,744 @@
+{
+  "metrics": {
+    "file_name": "Cyble_OperationShadowCat-Targeting-Indian-Political-Observers(07-24-2024).pdf",
+    "model_used": "gemma2:9b",
+    "num_pages": 14,
+    "num_sentences_total": 152,
+    "num_sentences_used": 88,
+    "num_raw_triples": 351,
+    "num_valid_triples": 31,
+    "num_suspicious_triples": 0,
+    "avg_triples_per_sentence": 3.9886363636363638,
+    "rejection_stats": {
+      "bad_structure": 0,
+      "invalid_class_or_predicate": 0
+    },
+    "runtime_seconds": 1151.1911973953247
+  },
+  "data": [
+    {
+      "context": " Operation ShadowCat: Targeting Indian Political Observers via a Stealthy RAT cyble.com /blog/operation-shadowcat-targeting-indian-political-observers-via-a-stealthy-rat July 24, 2024 C) BLE Operation Shadowcat: Targeting Indian Political Observers via a Stealthy RAT KeyTakeaways Cyble Research and Intelligence Labs (CRIL) came across an intriguing shortcut (.LNK) file masquerading as a legitimate Office document.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Operation Shadowcat",
+            "type": "Campaign"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "Indian Political Observers",
+            "type": "Person"
+          },
+          "evidence": {
+            "quote": "Targeting Indian Political Observers"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The decompressed payload is then injected into PowerShell.exe using the Asynchronous Procedure Call (APC) injection method.",
+      "triple": [
+        {
+          "subject": {
+            "name": "decompressed payload",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "PowerShell.exe",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "injected into PowerShell.exe"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The TA excludes infections from Russian-speaking regions, indicating that the TA could potentially be a Russian-speaking individual or group.",
+      "triple": [
+        {
+          "subject": {
+            "name": "TA",
+            "type": "ThreatActor"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "Russian-speaking regions",
+            "type": "Region"
+          },
+          "evidence": {
+            "quote": "indicating that the TA could potentially be a Russian-speaking individual or group"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Based on the lure used in this campaign, we observed that the TA is targeting individuals with a keen interest in Indian political affairs.  ",
+      "triple": [
+        {
+          "subject": {
+            "name": "TA",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "individuals with a keen interest in Indian political affairs",
+            "type": "Person"
+          },
+          "evidence": {
+            "quote": "targeting individuals with a keen interest in Indian political affairs"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Once executed, the .LNK file runs a PowerShell command that drops a malicious .NET loader file and a decoy Word document on the victim's machine.",
+      "triple": [
+        {
+          "subject": {
+            "name": ".LNK file",
+            "type": "Filepath"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "PowerShell command",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "runs a PowerShell command"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "012",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Start in: Shortcut key: None Run: Minimised Comment: Type: Rich Text DocumertSize: 40 KB Open File Location Change Icon.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Shortcut key",
+            "type": "Unknown"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "None",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Shortcut key: None"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "When the user executes the LNK file, it loads the embedded PowerShell script, as shown in the figure below.",
+      "triple": [
+        {
+          "subject": {
+            "name": "LNK file",
+            "type": "Filepath"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "PowerShell script",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "loads the embedded PowerShell script"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The next section of the PowerShell script is intended to delete the original LNK file and open a lure document.",
+      "triple": [
+        {
+          "subject": {
+            "name": "PowerShell script",
+            "type": "Software"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "LNK file",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "delete the original LNK file"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Before creating the lure document, the script first searches the current directory for any '.LNK' files that have the same size as the original LNK file.",
+      "triple": [
+        {
+          "subject": {
+            "name": "script",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": ".LNK files",
+            "type": "Filename"
+          },
+          "evidence": {
+            "quote": "searches the current directory for any '.LNK' files"
+          }
+        },
+        {
+          "subject": {
+            "name": "script",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": ".LNK files",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "searches the current directory for any '.LNK' files"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Lure Document: The script then opens the newly created lure document, which appears to be a question posed to the Indian parliament, submitted by a member of the Rajya Sabha or 'Council of States' in India.",
+      "triple": [
+        {
+          "subject": {
+            "name": "script",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "newly created lure document",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "The script then opens the newly created lure document"
+          }
+        },
+        {
+          "subject": {
+            "name": "script",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "lure document",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "opens the newly created lure document"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Will the Minister of Labour and Employment be pleased to state: unions, public representatives for increasing the minimum pension in the EPF Pension Scheme; (b) if so, the demands of the stakeholders in brief; (c) the response of Government thereto; (d) whether Government would consider positively the hike in minimum pension for the EPF subscribers, in view of rise in the cost of living index and hike in wages; (e) if so, by when it is expected to be announced; whether pension calculation formula will be revised since the present one is arbitrary and biased against pensioners; and (9) if so, Government's Based on the lure document, it is evident that the Threat Actor (TA) is targeting individuals who have a specific interest in Indian political affairs.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Threat Actor (TA)",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "individuals who have a specific interest in Indian political affairs",
+            "type": "Person"
+          },
+          "evidence": {
+            "quote": "Based on the lure document, it is evident that the Threat Actor (TA) is targeting individuals who have a specific interest in Indian political affairs"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The final section of the PowerShell script is designed to load a malicious binary file (DLL) decoded from base64 in two ways.",
+      "triple": [
+        {
+          "subject": {
+            "name": "PowerShell script",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "base64",
+            "type": "Protocol"
+          },
+          "evidence": {
+            "quote": "decoded from base64"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The image below shows the code responsible for loading the DLL file.",
+      "triple": [
+        {
+          "subject": {
+            "name": "code",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "DLL file",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "loading the DLL file"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Once the DLL file is loaded into PowerShell's memory, it uses the previously de-obfuscated URLs for further execution.",
+      "triple": [
+        {
+          "subject": {
+            "name": "DLL file",
+            "type": "Filepath"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "URLs",
+            "type": "URL"
+          },
+          "evidence": {
+            "quote": "uses the previously de-obfuscated URLs"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "014",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Steganography Technique Upon successfully obtaining the PNG content, the DLL file proceeds to parse the PNG file and decompress the hidden GZip content present within the image, as shown below.",
+      "triple": [
+        {
+          "subject": {
+            "name": "PNG content",
+            "type": "Filepath"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "DLL file",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "the PNG content, the DLL file proceeds to parse the PNG file"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The TA may have altered this image to help deliver malware, leading us to suspect that they could also be of Russian origin.",
+      "triple": [
+        {
+          "subject": {
+            "name": "TA",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "image",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "altered this image"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "IC 99 DA 33 06 F2 6C 87 81 87 41 Cd E5 28 88 0220h: 1333 77 85 75 Ad 46 81 0230h:",
+      "triple": [
+        {
+          "subject": {
+            "name": "IC 99 DA 33 06 F2 6C 87 81 87 41 Cd E5 28 88 0220h",
+            "type": "Hash"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "1333 77 85 75 Ad 46 81 0230h",
+            "type": "Hash"
+          },
+          "evidence": {
+            "quote": "IC 99 DA 33 06 F2 6C 87 81 87 41 Cd E5 28 88 0220h: 1333 77 85 75 Ad 46 81 0230h"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "016",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The shellcode is generated using Donut - an open-source project.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Donut",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "shellcode",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "is generated using Donut"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The loader retrieves the API names by performing a simple XOR operation, passing the encrypted string and key as parameters to a function, as shown below.",
+      "triple": [
+        {
+          "subject": {
+            "name": "loader",
+            "type": "Downloader"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "XOR operation",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "performing a simple XOR operation"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "013",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The queued APC will execute the shellcode when the thread enters a resume state.",
+      "triple": [
+        {
+          "subject": {
+            "name": "APC",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "shellcode",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "execute the shellcode"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The TA is abusing Yamux to multiplex multiple communication streams over a single connection, making their network traffic less conspicuous.",
+      "triple": [
+        {
+          "subject": {
+            "name": "TA",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "Yamux",
+            "type": "Software"
+          },
+          "evidence": {
+            "quote": "abusing Yamux to multiplex"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Secsy goftp - It's an open-source High-level FTP client utilized by TA to facilitate file transfers or downloads on a compromised system.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Secsy goftp",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "High-level FTP client",
+            "type": "Software"
+          },
+          "evidence": {
+            "quote": "utilizes High-level FTP client"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "C&C Communication: The RAT connects to its Command & Control (C&C) server via a WebSocket connection on port 443.",
+      "triple": [
+        {
+          "subject": {
+            "name": "RAT",
+            "type": "RemoteAccessTrojan-RAT"
+          },
+          "predicate": "communicatesWith",
+          "object": {
+            "name": "C&C server",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "connects to its Command & Control (C&C) server"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Utilizing WebSockets over port 443, which is usually designated for secure HTTPS traffic, helps the RAT bypass traditional network security measures, as WebSocket traffic is often less monitored and more challenging to detect compared to standard HTTP or other protocols.",
+      "triple": [
+        {
+          "subject": {
+            "name": "RAT",
+            "type": "RemoteAccessTrojan-RAT"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "WebSockets",
+            "type": "Protocol"
+          },
+          "evidence": {
+            "quote": "Utilizing WebSockets over port 443"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The custom 'NetCat' subprotocol suggests that the RAT may be using Netcat-like features for establishing a reverse shell, transferring data, executing commands, or performing remote control operations.",
+      "triple": [
+        {
+          "subject": {
+            "name": "RAT",
+            "type": "RemoteAccessTrojan-RAT"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "NetCat",
+            "type": "Protocol"
+          },
+          "evidence": {
+            "quote": "'NetCat' subprotocol"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 12,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Additionally, the original, unedited image that the TA later altered via steganography was posted on a social media platform commonly used by Russian-speaking users, yet another factor that may indicate that the TA is either a Russian speaker or group.",
+      "triple": [
+        {
+          "subject": {
+            "name": "TA",
+            "type": "ThreatActor"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "Russian speaker or group",
+            "type": "Person"
+          },
+          "evidence": {
+            "quote": "may indicate that the TA is either a Russian speaker or group"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 12,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The final payload, a RAT written in Go, facilitates remote access and potential ransomware deployment.",
+      "triple": [
+        {
+          "subject": {
+            "name": "RAT",
+            "type": "RemoteAccessTrojan-RAT"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "Go",
+            "type": "Software"
+          },
+          "evidence": {
+            "quote": "written in Go"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 12,
+        "id": "014",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Although we cannot precisely attribute the activity to a specific threat actor or APT group, the evidence suggests it is likely the work of a financially motivated, Russian-speaking group or Ransomware-as-a-Service (RaaS) entity.",
+      "triple": [
+        {
+          "subject": {
+            "name": "activity",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "financially motivated, Russian-speaking group or Ransomware-as-a-Service (RaaS) entity",
+            "type": "ThreatActor"
+          },
+          "evidence": {
+            "quote": "the evidence suggests it is likely the work of a financially motivated, Russian-speaking group or Ransomware-as-a-Service (RaaS) entity"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 12,
+        "id": "017",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " rule Go_based_RAT { meta: author = \"Cyble Research and Intelligence Labs\" description = \"Detects RAT written in GO\" date = \"2024-07-24\" os = \"Windows\" strings: $a =   \"network/tlsdial\" nocase wide ascii $b =   \"tools/sharphound\" nocase wide ascii $c =   \"process/kill\" nocase wide ascii $d =   \"sysinfo/osvers\" nocase wide ascii $e =   \"process/kill\" nocase wide ascii condition: uint16(0) == 0x5A4D and",
+      "triple": [
+        {
+          "subject": {
+            "name": "Go_based_RAT",
+            "type": "AttackPattern"
+          },
+          "predicate": "hasAuthor",
+          "object": {
+            "name": "Cyble Research and Intelligence Labs",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "author = \"Cyble Research and Intelligence Labs\""
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 15,
+        "id": "000",
+        "source": "TEXT"
+      }
+    }
+  ]
+}

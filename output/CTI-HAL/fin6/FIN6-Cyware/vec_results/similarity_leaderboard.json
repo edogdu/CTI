@@ -1,0 +1,2867 @@
+[
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775434",
+      "name": "Windows' Remote Desktop Protocol (RDP)",
+      "type": "Protocol",
+      "contexts": [
+        "Just like its PoS exploits, FIN6 relied on Windows' Remote Desktop Protocol (RDP) to move laterally across aected networks.",
+        "Following the compromise of this system, analysts identi fi ed FIN6 leveraged stolen credentials to move laterally within the environment using the Windows' Remote Desktop Protocol (RDP)."
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:768024",
+      "name": "Remote Service Session Hijacking: RDP Hijacking",
+      "description": "Adversaries may hijack a legitimate user’s remote desktop session to move laterally within an environment. Remote desktop is a common feature in operating systems. It allows a user to log into an interactive session with a system desktop graphical user interface on a remote system. Microsoft refers to its implementation of the Remote Desktop Protocol (RDP) as Remote Desktop Services (RDS).(Citation: TechNet Remote Desktop Services)\n\nAdversaries may perform RDP session hijacking which involves stealing a legitimate user's remote session. Typically, a user is notified when someone else is trying to steal their session. With System permissions and using Terminal Services Console, `c:\\windows\\system32\\tscon.exe [session number to be stolen]`, an adversary can hijack a session without the need for credentials or prompts to the user.(Citation: RDP Hijacking Korznikov) This can be done remotely or locally and with active or disconnected sessions.(Citation: RDP Hijacking Medium) It can also lead to [Remote System Discovery](https://attack.mitre.org/techniques/T1018) and Privilege Escalation by stealing a Domain Admin or higher privileged account session. All of this can be done by using native Windows commands, but it has also been added as a feature in red teaming tools.(Citation: Kali Redsnarf)",
+      "uri": "http://example.com/ucoex#T1563.002",
+      "clean_id": "T1563.002",
+      "labels": [
+        "Resource",
+        "UcoexMITREATTACK",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.8316603503632127,
+      "dot": 0.8316604495048523,
+      "euclidean": 0.580240786075592,
+      "db_score": 0.915830135345459
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775434",
+      "name": "Windows' Remote Desktop Protocol (RDP)",
+      "type": "Protocol",
+      "contexts": [
+        "Just like its PoS exploits, FIN6 relied on Windows' Remote Desktop Protocol (RDP) to move laterally across aected networks.",
+        "Following the compromise of this system, analysts identi fi ed FIN6 leveraged stolen credentials to move laterally within the environment using the Windows' Remote Desktop Protocol (RDP)."
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:767624",
+      "name": "Remote Services: Remote Desktop Protocol",
+      "description": "Adversaries may use [Valid Accounts](https://attack.mitre.org/techniques/T1078) to log into a computer using the Remote Desktop Protocol (RDP). The adversary may then perform actions as the logged-on user.\n\nRemote desktop is a common feature in operating systems. It allows a user to log into an interactive session with a system desktop graphical user interface on a remote system. Microsoft refers to its implementation of the Remote Desktop Protocol (RDP) as Remote Desktop Services (RDS).(Citation: TechNet Remote Desktop Services) \n\nAdversaries may connect to a remote system over RDP/RDS to expand access if the service is enabled and allows access to accounts with known credentials. Adversaries will likely use Credential Access techniques to acquire credentials to use with RDP. Adversaries may also use RDP in conjunction with the [Accessibility Features](https://attack.mitre.org/techniques/T1546/008) or [Terminal Services DLL](https://attack.mitre.org/techniques/T1505/005) for Persistence.(Citation: Alperovitch Malware)",
+      "uri": "http://example.com/ucoex#T1021.001",
+      "clean_id": "T1021.001",
+      "labels": [
+        "Resource",
+        "UcoexMITREATTACK",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.8263294878791542,
+      "dot": 0.8263292908668518,
+      "euclidean": 0.5893564224243164,
+      "db_score": 0.9131647348403931
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775387",
+      "name": "FIN6",
+      "type": "ThreatActor",
+      "contexts": [
+        "As one of the more sophisticated groups targeting eCommerce merchants, FIN6 brings their POS compromise approach to the emerging threat landscape of CNP breaches.",
+        "FIN6 targets companies, using phishing emails in an attempt to infect the targeted victim's network.",
+        "PFD assesses that the increased focus of a sophisticated cybercrime group, such as FIN6, on eCommerce environments is a broader representation of the overall cybercriminal focus on the CNP space.",
+        "At the end of 2018, Visa Payment Intelligence analysts discovered that FIN6 actors targeted multiple high value eCommerce merchants with malicious documents that contained links to a malicious server that allowed the execution of PowerShell scripts, granting the attackers direct access to the merchants' networks.",
+        "Internal Reconnaissance FIN6 uses legitimate publicly available tools to map the internal network and conduct reconnaissance.",
+        "Escalate Privileges Once FIN6's accesses are established with preferred backdoors, they use additional public utilities, such as Windows Credentials Editor and Metasploit-related tools, for privilege escalation and credential harvesting.",
+        "Investigations show that FIN6 relies on PowerShell scripts and Meterpreter based shells to maintain access to and move laterally through the network (see below in the section Technical Analysis and Indicators of Compromise ).",
+        "Just like its PoS exploits, FIN6 relied on Windows' Remote Desktop Protocol (RDP) to move laterally across aected networks.",
+        "FIN6, which is one of the sophisticated cybercriminal groups, has now moved to deploy ransomware in its attacks.",
+        "This movement enabled FIN6 to then inject LockerGoga and Ryuk ransomware.",
+        "We found many indicators linking specifically to the FIN6 group (WMI/PowerShell, FrameworkPOS, lateral movement and privilege escalation), with the difference of moving from Metasploit to Cobalt-Strike).",
+        "Considering the modus operandi, we believe the attackers are from Magecart Group 6, which has also been identified as the notorious threat actor FIN6.",
+        "Evidence of Magecart or FIN6 As previously mentioned, based on the modus operandi, we believe the attackers are from Magecart Group 6, also known as the threat actor FIN6.",
+        " Cloud Blog Solutions & technology Threat Intelligence Pick-Six: Intercepting a FIN6 Intrusion, an Actor Recently Tied to Ryuk and LockerGoga Ransomware April 5, 2019 Mandiant Wri tt en by: Brendan McKeague, Van Ta, Ben Fedore, Geo ff Ackerman, Alex Pennino, Andrew Thompson, Douglas Bienstock Summary",
+        "Recently, FireEye Managed Defense detected and responded to a FIN6 intrusion at a customer within the engineering industry, which seemed out of character due to FIN6's historical targeting of payment card data.",
+        "This blog post details the latest FIN6 tactics, techniques, and procedures (TTPs), including ties to the use of LockerGoga and Ryuk ransomware families.",
+        "The subsequent investigation revealed FIN6 was in the initial phase of an intrusion using stolen credentials, Cobalt Strike, Metasploit, and publicly available tools such as Ad fi nd and 7-Zip to conduct internal reconnaissance, compress data, and aid their overall mission.",
+        "Managed Defense utilized Windows Registry Shellbag entries to reconstruct FIN6's actions on compromised systems that were consistent with lateral movement.",
+        "Following the compromise of this system, analysts identi fi ed FIN6 leveraged stolen credentials to move laterally within the environment using the Windows' Remote Desktop Protocol (RDP).",
+        "Following the RDP connection to systems, FIN6 used two di ff erent techniques to establish a foothold: First technique: FIN6 used PowerShell to execute an encoded command.",
+        "The investigations observed FIN6 using similar tools, tactics, and procedures that were observed by FireEye Managed Defense during the earlier phases of the a tt ack lifecycle.",
+        "Lateral Movement FIN6 used encoded PowerShell commands to install Cobalt Strike on compromised systems.",
+        "FIN6 automated the deployment of kill.bat and the LockerGoga ransomware using batch script fi les.",
+        "Given that these intrusions have been sustained for almost a year, we expect that continued research into fu rt her intrusion a tt empts may enable us to more fully answer these questions regarding FIN6's current status.",
+        " FOLLOW THE MONEY: 0 7 DISSECTING THE OPERATIONS OF THE CYBER CRIME GROUP FIN6 SS FC PAN Primary Account",
+        "In 2015, FireEye Threat Intelligence supported several Mandiant Consulting investigations in the hospitality and retail sectors where FIN6 actors had aggressively targeted and compromised pointof-sale (POS) systems, making off with millions of payment card numbers.",
+        "In one case, GRABNEW malware was found on a victim computer that FIN6 later used in its operations.",
+        "FIN6's use of GRABNEW, or credentials collected by GRABNEW, is not altogether surprising and possibly points to a cyber crime support ecosystem that opens doors to threat actors capable of lateral movement and more damaging activities.",
+        "After gaining access with valid credentials, we observed FIN6 leveraging components of the Metasploit Framework to establish their foothoold.",
+        "For example, in one case, FIN6 used a Metasploit PowerShell module to download and execute shellcode and to set up a local listener that would execute shellcode received over a specific port.",
+        "Similarly, FIN6 used at least two downloaders called HARDTACK and SHIPBREAD (apparent variations on Metasploit payloads) to establish backdoor access to the compromised environment.",
+        "Once their accesses were established with preferred backdoors, FIN6 used additional public utilities such as Windows Credentials Editor for privilege escalation and credential harvesting.",
+        "2  Continuing their use of Metasploit-related tools, FIN6 also used Metasploit's PsExec NTDSGRAB module to obtain a copy of the Active Directory database (ntds.dit).",
+        "Specific tools used by FIN6 included Microsoft's built-in SQL querying tool (osql.exe), Query Express (a free, portable graphical SQL client capable of connecting to Microsoft SQL and Oracle databases) and AdFind, a free command-line tool for querying Active Directory.",
+        "To maintain presence and support interactive access in the environment, FIN6 leveraged the publicly available Plink command-line utility (part of the PuTTY SSH and Telnet suite) to create SSH tunnels to CnC servers under their control.",
+        "We have identified stolen data from several of FIN6's victims being sold by this vendor as far back as 2014."
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:767122",
+      "name": "FinFisher",
+      "description": "[FinFisher](https://attack.mitre.org/software/S0182) is a government-grade commercial surveillance spyware reportedly sold exclusively to government agencies for use in targeted and lawful criminal investigations. It is heavily obfuscated and uses multiple anti-analysis techniques. It has other variants including [Wingbird](https://attack.mitre.org/software/S0176). (Citation: FinFisher Citation) (Citation: Microsoft SIR Vol 21) (Citation: FireEye FinSpy Sept 2017) (Citation: Securelist BlackOasis Oct 2017) (Citation: Microsoft FinFisher March 2018)",
+      "uri": "http://example.com/ucoex#S0182",
+      "clean_id": "S0182",
+      "labels": [
+        "Resource",
+        "UcoexSOFTWARE",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.8167924503335416,
+      "dot": 0.8167925477027893,
+      "euclidean": 0.6053224205970764,
+      "db_score": 0.9083962440490723
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775436",
+      "name": "LockerGoga and Ryuk ransomware",
+      "type": "Malware",
+      "contexts": [
+        "This movement enabled FIN6 to then inject LockerGoga and Ryuk ransomware."
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:767659",
+      "name": "Ryuk",
+      "description": "[Ryuk](https://attack.mitre.org/software/S0446) is a ransomware designed to target enterprise environments that has been used in attacks since at least 2018. [Ryuk](https://attack.mitre.org/software/S0446) shares code similarities with Hermes ransomware.(Citation: CrowdStrike Ryuk January 2019)(Citation: FireEye Ryuk and Trickbot January 2019)(Citation: FireEye FIN6 Apr 2019)",
+      "uri": "http://example.com/ucoex#S0446",
+      "clean_id": "S0446",
+      "labels": [
+        "Resource",
+        "UcoexSOFTWARE",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.8138943758262692,
+      "dot": 0.8138945698738098,
+      "euclidean": 0.6100913286209106,
+      "db_score": 0.906947135925293
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775444",
+      "name": "Ryuk ransomware",
+      "type": "Ransomware",
+      "contexts": [
+        "Malware and Vulnerabilities 7 Trinity FireEye Ryuk ransomware  NEXT Anubis"
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:767659",
+      "name": "Ryuk",
+      "description": "[Ryuk](https://attack.mitre.org/software/S0446) is a ransomware designed to target enterprise environments that has been used in attacks since at least 2018. [Ryuk](https://attack.mitre.org/software/S0446) shares code similarities with Hermes ransomware.(Citation: CrowdStrike Ryuk January 2019)(Citation: FireEye Ryuk and Trickbot January 2019)(Citation: FireEye FIN6 Apr 2019)",
+      "uri": "http://example.com/ucoex#S0446",
+      "clean_id": "S0446",
+      "labels": [
+        "Resource",
+        "UcoexSOFTWARE",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.8100703215431401,
+      "dot": 0.8100705146789551,
+      "euclidean": 0.6163274645805359,
+      "db_score": 0.905035138130188
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775387",
+      "name": "FIN6",
+      "type": "ThreatActor",
+      "contexts": [
+        "As one of the more sophisticated groups targeting eCommerce merchants, FIN6 brings their POS compromise approach to the emerging threat landscape of CNP breaches.",
+        "FIN6 targets companies, using phishing emails in an attempt to infect the targeted victim's network.",
+        "PFD assesses that the increased focus of a sophisticated cybercrime group, such as FIN6, on eCommerce environments is a broader representation of the overall cybercriminal focus on the CNP space.",
+        "At the end of 2018, Visa Payment Intelligence analysts discovered that FIN6 actors targeted multiple high value eCommerce merchants with malicious documents that contained links to a malicious server that allowed the execution of PowerShell scripts, granting the attackers direct access to the merchants' networks.",
+        "Internal Reconnaissance FIN6 uses legitimate publicly available tools to map the internal network and conduct reconnaissance.",
+        "Escalate Privileges Once FIN6's accesses are established with preferred backdoors, they use additional public utilities, such as Windows Credentials Editor and Metasploit-related tools, for privilege escalation and credential harvesting.",
+        "Investigations show that FIN6 relies on PowerShell scripts and Meterpreter based shells to maintain access to and move laterally through the network (see below in the section Technical Analysis and Indicators of Compromise ).",
+        "Just like its PoS exploits, FIN6 relied on Windows' Remote Desktop Protocol (RDP) to move laterally across aected networks.",
+        "FIN6, which is one of the sophisticated cybercriminal groups, has now moved to deploy ransomware in its attacks.",
+        "This movement enabled FIN6 to then inject LockerGoga and Ryuk ransomware.",
+        "We found many indicators linking specifically to the FIN6 group (WMI/PowerShell, FrameworkPOS, lateral movement and privilege escalation), with the difference of moving from Metasploit to Cobalt-Strike).",
+        "Considering the modus operandi, we believe the attackers are from Magecart Group 6, which has also been identified as the notorious threat actor FIN6.",
+        "Evidence of Magecart or FIN6 As previously mentioned, based on the modus operandi, we believe the attackers are from Magecart Group 6, also known as the threat actor FIN6.",
+        " Cloud Blog Solutions & technology Threat Intelligence Pick-Six: Intercepting a FIN6 Intrusion, an Actor Recently Tied to Ryuk and LockerGoga Ransomware April 5, 2019 Mandiant Wri tt en by: Brendan McKeague, Van Ta, Ben Fedore, Geo ff Ackerman, Alex Pennino, Andrew Thompson, Douglas Bienstock Summary",
+        "Recently, FireEye Managed Defense detected and responded to a FIN6 intrusion at a customer within the engineering industry, which seemed out of character due to FIN6's historical targeting of payment card data.",
+        "This blog post details the latest FIN6 tactics, techniques, and procedures (TTPs), including ties to the use of LockerGoga and Ryuk ransomware families.",
+        "The subsequent investigation revealed FIN6 was in the initial phase of an intrusion using stolen credentials, Cobalt Strike, Metasploit, and publicly available tools such as Ad fi nd and 7-Zip to conduct internal reconnaissance, compress data, and aid their overall mission.",
+        "Managed Defense utilized Windows Registry Shellbag entries to reconstruct FIN6's actions on compromised systems that were consistent with lateral movement.",
+        "Following the compromise of this system, analysts identi fi ed FIN6 leveraged stolen credentials to move laterally within the environment using the Windows' Remote Desktop Protocol (RDP).",
+        "Following the RDP connection to systems, FIN6 used two di ff erent techniques to establish a foothold: First technique: FIN6 used PowerShell to execute an encoded command.",
+        "The investigations observed FIN6 using similar tools, tactics, and procedures that were observed by FireEye Managed Defense during the earlier phases of the a tt ack lifecycle.",
+        "Lateral Movement FIN6 used encoded PowerShell commands to install Cobalt Strike on compromised systems.",
+        "FIN6 automated the deployment of kill.bat and the LockerGoga ransomware using batch script fi les.",
+        "Given that these intrusions have been sustained for almost a year, we expect that continued research into fu rt her intrusion a tt empts may enable us to more fully answer these questions regarding FIN6's current status.",
+        " FOLLOW THE MONEY: 0 7 DISSECTING THE OPERATIONS OF THE CYBER CRIME GROUP FIN6 SS FC PAN Primary Account",
+        "In 2015, FireEye Threat Intelligence supported several Mandiant Consulting investigations in the hospitality and retail sectors where FIN6 actors had aggressively targeted and compromised pointof-sale (POS) systems, making off with millions of payment card numbers.",
+        "In one case, GRABNEW malware was found on a victim computer that FIN6 later used in its operations.",
+        "FIN6's use of GRABNEW, or credentials collected by GRABNEW, is not altogether surprising and possibly points to a cyber crime support ecosystem that opens doors to threat actors capable of lateral movement and more damaging activities.",
+        "After gaining access with valid credentials, we observed FIN6 leveraging components of the Metasploit Framework to establish their foothoold.",
+        "For example, in one case, FIN6 used a Metasploit PowerShell module to download and execute shellcode and to set up a local listener that would execute shellcode received over a specific port.",
+        "Similarly, FIN6 used at least two downloaders called HARDTACK and SHIPBREAD (apparent variations on Metasploit payloads) to establish backdoor access to the compromised environment.",
+        "Once their accesses were established with preferred backdoors, FIN6 used additional public utilities such as Windows Credentials Editor for privilege escalation and credential harvesting.",
+        "2  Continuing their use of Metasploit-related tools, FIN6 also used Metasploit's PsExec NTDSGRAB module to obtain a copy of the Active Directory database (ntds.dit).",
+        "Specific tools used by FIN6 included Microsoft's built-in SQL querying tool (osql.exe), Query Express (a free, portable graphical SQL client capable of connecting to Microsoft SQL and Oracle databases) and AdFind, a free command-line tool for querying Active Directory.",
+        "To maintain presence and support interactive access in the environment, FIN6 leveraged the publicly available Plink command-line utility (part of the PuTTY SSH and Telnet suite) to create SSH tunnels to CnC servers under their control.",
+        "We have identified stolen data from several of FIN6's victims being sold by this vendor as far back as 2014."
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:767285",
+      "name": "FrameworkPOS",
+      "description": "[FrameworkPOS](https://attack.mitre.org/software/S0503) is a point of sale (POS) malware used by [FIN6](https://attack.mitre.org/groups/G0037) to steal payment card data from sytems that run physical POS devices.(Citation: SentinelOne FrameworkPOS September 2019)",
+      "uri": "http://example.com/ucoex#S0503",
+      "clean_id": "S0503",
+      "labels": [
+        "Resource",
+        "UcoexSOFTWARE",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.8027457477298825,
+      "dot": 0.8027456998825073,
+      "euclidean": 0.6280991435050964,
+      "db_score": 0.9013729095458984
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775436",
+      "name": "LockerGoga and Ryuk ransomware",
+      "type": "Malware",
+      "contexts": [
+        "This movement enabled FIN6 to then inject LockerGoga and Ryuk ransomware."
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:767946",
+      "name": "LockerGoga",
+      "description": "[LockerGoga](https://attack.mitre.org/software/S0372) is ransomware that was first reported in January 2019, and has been tied to various attacks on European companies, including industrial and manufacturing firms.(Citation: Unit42 LockerGoga 2019)(Citation: CarbonBlack LockerGoga 2019)",
+      "uri": "http://example.com/ucoex#S0372",
+      "clean_id": "S0372",
+      "labels": [
+        "Resource",
+        "UcoexSOFTWARE",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.7967268814822678,
+      "dot": 0.796726644039154,
+      "euclidean": 0.6376096606254578,
+      "db_score": 0.898363471031189
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775387",
+      "name": "FIN6",
+      "type": "ThreatActor",
+      "contexts": [
+        "As one of the more sophisticated groups targeting eCommerce merchants, FIN6 brings their POS compromise approach to the emerging threat landscape of CNP breaches.",
+        "FIN6 targets companies, using phishing emails in an attempt to infect the targeted victim's network.",
+        "PFD assesses that the increased focus of a sophisticated cybercrime group, such as FIN6, on eCommerce environments is a broader representation of the overall cybercriminal focus on the CNP space.",
+        "At the end of 2018, Visa Payment Intelligence analysts discovered that FIN6 actors targeted multiple high value eCommerce merchants with malicious documents that contained links to a malicious server that allowed the execution of PowerShell scripts, granting the attackers direct access to the merchants' networks.",
+        "Internal Reconnaissance FIN6 uses legitimate publicly available tools to map the internal network and conduct reconnaissance.",
+        "Escalate Privileges Once FIN6's accesses are established with preferred backdoors, they use additional public utilities, such as Windows Credentials Editor and Metasploit-related tools, for privilege escalation and credential harvesting.",
+        "Investigations show that FIN6 relies on PowerShell scripts and Meterpreter based shells to maintain access to and move laterally through the network (see below in the section Technical Analysis and Indicators of Compromise ).",
+        "Just like its PoS exploits, FIN6 relied on Windows' Remote Desktop Protocol (RDP) to move laterally across aected networks.",
+        "FIN6, which is one of the sophisticated cybercriminal groups, has now moved to deploy ransomware in its attacks.",
+        "This movement enabled FIN6 to then inject LockerGoga and Ryuk ransomware.",
+        "We found many indicators linking specifically to the FIN6 group (WMI/PowerShell, FrameworkPOS, lateral movement and privilege escalation), with the difference of moving from Metasploit to Cobalt-Strike).",
+        "Considering the modus operandi, we believe the attackers are from Magecart Group 6, which has also been identified as the notorious threat actor FIN6.",
+        "Evidence of Magecart or FIN6 As previously mentioned, based on the modus operandi, we believe the attackers are from Magecart Group 6, also known as the threat actor FIN6.",
+        " Cloud Blog Solutions & technology Threat Intelligence Pick-Six: Intercepting a FIN6 Intrusion, an Actor Recently Tied to Ryuk and LockerGoga Ransomware April 5, 2019 Mandiant Wri tt en by: Brendan McKeague, Van Ta, Ben Fedore, Geo ff Ackerman, Alex Pennino, Andrew Thompson, Douglas Bienstock Summary",
+        "Recently, FireEye Managed Defense detected and responded to a FIN6 intrusion at a customer within the engineering industry, which seemed out of character due to FIN6's historical targeting of payment card data.",
+        "This blog post details the latest FIN6 tactics, techniques, and procedures (TTPs), including ties to the use of LockerGoga and Ryuk ransomware families.",
+        "The subsequent investigation revealed FIN6 was in the initial phase of an intrusion using stolen credentials, Cobalt Strike, Metasploit, and publicly available tools such as Ad fi nd and 7-Zip to conduct internal reconnaissance, compress data, and aid their overall mission.",
+        "Managed Defense utilized Windows Registry Shellbag entries to reconstruct FIN6's actions on compromised systems that were consistent with lateral movement.",
+        "Following the compromise of this system, analysts identi fi ed FIN6 leveraged stolen credentials to move laterally within the environment using the Windows' Remote Desktop Protocol (RDP).",
+        "Following the RDP connection to systems, FIN6 used two di ff erent techniques to establish a foothold: First technique: FIN6 used PowerShell to execute an encoded command.",
+        "The investigations observed FIN6 using similar tools, tactics, and procedures that were observed by FireEye Managed Defense during the earlier phases of the a tt ack lifecycle.",
+        "Lateral Movement FIN6 used encoded PowerShell commands to install Cobalt Strike on compromised systems.",
+        "FIN6 automated the deployment of kill.bat and the LockerGoga ransomware using batch script fi les.",
+        "Given that these intrusions have been sustained for almost a year, we expect that continued research into fu rt her intrusion a tt empts may enable us to more fully answer these questions regarding FIN6's current status.",
+        " FOLLOW THE MONEY: 0 7 DISSECTING THE OPERATIONS OF THE CYBER CRIME GROUP FIN6 SS FC PAN Primary Account",
+        "In 2015, FireEye Threat Intelligence supported several Mandiant Consulting investigations in the hospitality and retail sectors where FIN6 actors had aggressively targeted and compromised pointof-sale (POS) systems, making off with millions of payment card numbers.",
+        "In one case, GRABNEW malware was found on a victim computer that FIN6 later used in its operations.",
+        "FIN6's use of GRABNEW, or credentials collected by GRABNEW, is not altogether surprising and possibly points to a cyber crime support ecosystem that opens doors to threat actors capable of lateral movement and more damaging activities.",
+        "After gaining access with valid credentials, we observed FIN6 leveraging components of the Metasploit Framework to establish their foothoold.",
+        "For example, in one case, FIN6 used a Metasploit PowerShell module to download and execute shellcode and to set up a local listener that would execute shellcode received over a specific port.",
+        "Similarly, FIN6 used at least two downloaders called HARDTACK and SHIPBREAD (apparent variations on Metasploit payloads) to establish backdoor access to the compromised environment.",
+        "Once their accesses were established with preferred backdoors, FIN6 used additional public utilities such as Windows Credentials Editor for privilege escalation and credential harvesting.",
+        "2  Continuing their use of Metasploit-related tools, FIN6 also used Metasploit's PsExec NTDSGRAB module to obtain a copy of the Active Directory database (ntds.dit).",
+        "Specific tools used by FIN6 included Microsoft's built-in SQL querying tool (osql.exe), Query Express (a free, portable graphical SQL client capable of connecting to Microsoft SQL and Oracle databases) and AdFind, a free command-line tool for querying Active Directory.",
+        "To maintain presence and support interactive access in the environment, FIN6 leveraged the publicly available Plink command-line utility (part of the PuTTY SSH and Telnet suite) to create SSH tunnels to CnC servers under their control.",
+        "We have identified stolen data from several of FIN6's victims being sold by this vendor as far back as 2014."
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:767008",
+      "name": "PUNCHTRACK",
+      "description": "[PUNCHTRACK](https://attack.mitre.org/software/S0197) is non-persistent point of sale (POS) system malware utilized by [FIN8](https://attack.mitre.org/groups/G0061) to scrape payment card data. (Citation: FireEye Fin8 May 2016) (Citation: FireEye Know Your Enemy FIN8 Aug 2016)",
+      "uri": "http://example.com/ucoex#S0197",
+      "clean_id": "S0197",
+      "labels": [
+        "Resource",
+        "UcoexSOFTWARE",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.7936216346766514,
+      "dot": 0.7936215400695801,
+      "euclidean": 0.6424614191055298,
+      "db_score": 0.89681077003479
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775436",
+      "name": "LockerGoga and Ryuk ransomware",
+      "type": "Malware",
+      "contexts": [
+        "This movement enabled FIN6 to then inject LockerGoga and Ryuk ransomware."
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:766674",
+      "name": "GrimAgent",
+      "description": "[GrimAgent](https://attack.mitre.org/software/S0632) is a backdoor that has been used before the deployment of [Ryuk](https://attack.mitre.org/software/S0446) ransomware since at least 2020; it is likely used by [FIN6](https://attack.mitre.org/groups/G0037) and [Wizard Spider](https://attack.mitre.org/groups/G0102).(Citation: Group IB GrimAgent July 2021)",
+      "uri": "http://example.com/ucoex#S0632",
+      "clean_id": "S0632",
+      "labels": [
+        "Resource",
+        "UcoexSOFTWARE",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.7931417452946445,
+      "dot": 0.7931416034698486,
+      "euclidean": 0.6432079672813416,
+      "db_score": 0.8965708613395691
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775440",
+      "name": "point-of-sale (POS) environments",
+      "type": "Location",
+      "contexts": [
+        "As the frequency of these intrusions deploying ransomware has increased, the cadence of activity traditionally attributed to FIN6-intrusions targeting point-of-sale (POS) environments, deploying TRINITY malware and sharing other key characteristics-has declined.",
+        "As the frequency of these intrusions deploying ransomware have increased, the cadence of activity traditionally a tt ributed to FIN6-intrusions targeting point-of-sale (POS) environments, deploying TRINITY malware and sharing other key characteristics-has declined."
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:767285",
+      "name": "FrameworkPOS",
+      "description": "[FrameworkPOS](https://attack.mitre.org/software/S0503) is a point of sale (POS) malware used by [FIN6](https://attack.mitre.org/groups/G0037) to steal payment card data from sytems that run physical POS devices.(Citation: SentinelOne FrameworkPOS September 2019)",
+      "uri": "http://example.com/ucoex#S0503",
+      "clean_id": "S0503",
+      "labels": [
+        "Resource",
+        "UcoexSOFTWARE",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.7922944898780876,
+      "dot": 0.792294442653656,
+      "euclidean": 0.6445238590240479,
+      "db_score": 0.8961472511291504
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775387",
+      "name": "FIN6",
+      "type": "ThreatActor",
+      "contexts": [
+        "As one of the more sophisticated groups targeting eCommerce merchants, FIN6 brings their POS compromise approach to the emerging threat landscape of CNP breaches.",
+        "FIN6 targets companies, using phishing emails in an attempt to infect the targeted victim's network.",
+        "PFD assesses that the increased focus of a sophisticated cybercrime group, such as FIN6, on eCommerce environments is a broader representation of the overall cybercriminal focus on the CNP space.",
+        "At the end of 2018, Visa Payment Intelligence analysts discovered that FIN6 actors targeted multiple high value eCommerce merchants with malicious documents that contained links to a malicious server that allowed the execution of PowerShell scripts, granting the attackers direct access to the merchants' networks.",
+        "Internal Reconnaissance FIN6 uses legitimate publicly available tools to map the internal network and conduct reconnaissance.",
+        "Escalate Privileges Once FIN6's accesses are established with preferred backdoors, they use additional public utilities, such as Windows Credentials Editor and Metasploit-related tools, for privilege escalation and credential harvesting.",
+        "Investigations show that FIN6 relies on PowerShell scripts and Meterpreter based shells to maintain access to and move laterally through the network (see below in the section Technical Analysis and Indicators of Compromise ).",
+        "Just like its PoS exploits, FIN6 relied on Windows' Remote Desktop Protocol (RDP) to move laterally across aected networks.",
+        "FIN6, which is one of the sophisticated cybercriminal groups, has now moved to deploy ransomware in its attacks.",
+        "This movement enabled FIN6 to then inject LockerGoga and Ryuk ransomware.",
+        "We found many indicators linking specifically to the FIN6 group (WMI/PowerShell, FrameworkPOS, lateral movement and privilege escalation), with the difference of moving from Metasploit to Cobalt-Strike).",
+        "Considering the modus operandi, we believe the attackers are from Magecart Group 6, which has also been identified as the notorious threat actor FIN6.",
+        "Evidence of Magecart or FIN6 As previously mentioned, based on the modus operandi, we believe the attackers are from Magecart Group 6, also known as the threat actor FIN6.",
+        " Cloud Blog Solutions & technology Threat Intelligence Pick-Six: Intercepting a FIN6 Intrusion, an Actor Recently Tied to Ryuk and LockerGoga Ransomware April 5, 2019 Mandiant Wri tt en by: Brendan McKeague, Van Ta, Ben Fedore, Geo ff Ackerman, Alex Pennino, Andrew Thompson, Douglas Bienstock Summary",
+        "Recently, FireEye Managed Defense detected and responded to a FIN6 intrusion at a customer within the engineering industry, which seemed out of character due to FIN6's historical targeting of payment card data.",
+        "This blog post details the latest FIN6 tactics, techniques, and procedures (TTPs), including ties to the use of LockerGoga and Ryuk ransomware families.",
+        "The subsequent investigation revealed FIN6 was in the initial phase of an intrusion using stolen credentials, Cobalt Strike, Metasploit, and publicly available tools such as Ad fi nd and 7-Zip to conduct internal reconnaissance, compress data, and aid their overall mission.",
+        "Managed Defense utilized Windows Registry Shellbag entries to reconstruct FIN6's actions on compromised systems that were consistent with lateral movement.",
+        "Following the compromise of this system, analysts identi fi ed FIN6 leveraged stolen credentials to move laterally within the environment using the Windows' Remote Desktop Protocol (RDP).",
+        "Following the RDP connection to systems, FIN6 used two di ff erent techniques to establish a foothold: First technique: FIN6 used PowerShell to execute an encoded command.",
+        "The investigations observed FIN6 using similar tools, tactics, and procedures that were observed by FireEye Managed Defense during the earlier phases of the a tt ack lifecycle.",
+        "Lateral Movement FIN6 used encoded PowerShell commands to install Cobalt Strike on compromised systems.",
+        "FIN6 automated the deployment of kill.bat and the LockerGoga ransomware using batch script fi les.",
+        "Given that these intrusions have been sustained for almost a year, we expect that continued research into fu rt her intrusion a tt empts may enable us to more fully answer these questions regarding FIN6's current status.",
+        " FOLLOW THE MONEY: 0 7 DISSECTING THE OPERATIONS OF THE CYBER CRIME GROUP FIN6 SS FC PAN Primary Account",
+        "In 2015, FireEye Threat Intelligence supported several Mandiant Consulting investigations in the hospitality and retail sectors where FIN6 actors had aggressively targeted and compromised pointof-sale (POS) systems, making off with millions of payment card numbers.",
+        "In one case, GRABNEW malware was found on a victim computer that FIN6 later used in its operations.",
+        "FIN6's use of GRABNEW, or credentials collected by GRABNEW, is not altogether surprising and possibly points to a cyber crime support ecosystem that opens doors to threat actors capable of lateral movement and more damaging activities.",
+        "After gaining access with valid credentials, we observed FIN6 leveraging components of the Metasploit Framework to establish their foothoold.",
+        "For example, in one case, FIN6 used a Metasploit PowerShell module to download and execute shellcode and to set up a local listener that would execute shellcode received over a specific port.",
+        "Similarly, FIN6 used at least two downloaders called HARDTACK and SHIPBREAD (apparent variations on Metasploit payloads) to establish backdoor access to the compromised environment.",
+        "Once their accesses were established with preferred backdoors, FIN6 used additional public utilities such as Windows Credentials Editor for privilege escalation and credential harvesting.",
+        "2  Continuing their use of Metasploit-related tools, FIN6 also used Metasploit's PsExec NTDSGRAB module to obtain a copy of the Active Directory database (ntds.dit).",
+        "Specific tools used by FIN6 included Microsoft's built-in SQL querying tool (osql.exe), Query Express (a free, portable graphical SQL client capable of connecting to Microsoft SQL and Oracle databases) and AdFind, a free command-line tool for querying Active Directory.",
+        "To maintain presence and support interactive access in the environment, FIN6 leveraged the publicly available Plink command-line utility (part of the PuTTY SSH and Telnet suite) to create SSH tunnels to CnC servers under their control.",
+        "We have identified stolen data from several of FIN6's victims being sold by this vendor as far back as 2014."
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:767110",
+      "name": "FLIPSIDE",
+      "description": "[FLIPSIDE](https://attack.mitre.org/software/S0173) is a simple tool similar to Plink that is used by [FIN5](https://attack.mitre.org/groups/G0053) to maintain access to victims. (Citation: Mandiant FIN5 GrrCON Oct 2016)",
+      "uri": "http://example.com/ucoex#S0173",
+      "clean_id": "S0173",
+      "labels": [
+        "Resource",
+        "UcoexSOFTWARE",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.7884739981262682,
+      "dot": 0.788473904132843,
+      "euclidean": 0.6504243612289429,
+      "db_score": 0.8942370414733887
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775436",
+      "name": "LockerGoga and Ryuk ransomware",
+      "type": "Malware",
+      "contexts": [
+        "This movement enabled FIN6 to then inject LockerGoga and Ryuk ransomware."
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:766677",
+      "name": "Seth-Locker",
+      "description": "[Seth-Locker](https://attack.mitre.org/software/S0639) is a ransomware with some remote control capabilities that has been in use since at least 2021.\n(Citation: Trend Micro Ransomware February 2021)",
+      "uri": "http://example.com/ucoex#S0639",
+      "clean_id": "S0639",
+      "labels": [
+        "Resource",
+        "UcoexSOFTWARE",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.7860118023164154,
+      "dot": 0.7860117554664612,
+      "euclidean": 0.6541990637779236,
+      "db_score": 0.8930058479309082
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775387",
+      "name": "FIN6",
+      "type": "ThreatActor",
+      "contexts": [
+        "As one of the more sophisticated groups targeting eCommerce merchants, FIN6 brings their POS compromise approach to the emerging threat landscape of CNP breaches.",
+        "FIN6 targets companies, using phishing emails in an attempt to infect the targeted victim's network.",
+        "PFD assesses that the increased focus of a sophisticated cybercrime group, such as FIN6, on eCommerce environments is a broader representation of the overall cybercriminal focus on the CNP space.",
+        "At the end of 2018, Visa Payment Intelligence analysts discovered that FIN6 actors targeted multiple high value eCommerce merchants with malicious documents that contained links to a malicious server that allowed the execution of PowerShell scripts, granting the attackers direct access to the merchants' networks.",
+        "Internal Reconnaissance FIN6 uses legitimate publicly available tools to map the internal network and conduct reconnaissance.",
+        "Escalate Privileges Once FIN6's accesses are established with preferred backdoors, they use additional public utilities, such as Windows Credentials Editor and Metasploit-related tools, for privilege escalation and credential harvesting.",
+        "Investigations show that FIN6 relies on PowerShell scripts and Meterpreter based shells to maintain access to and move laterally through the network (see below in the section Technical Analysis and Indicators of Compromise ).",
+        "Just like its PoS exploits, FIN6 relied on Windows' Remote Desktop Protocol (RDP) to move laterally across aected networks.",
+        "FIN6, which is one of the sophisticated cybercriminal groups, has now moved to deploy ransomware in its attacks.",
+        "This movement enabled FIN6 to then inject LockerGoga and Ryuk ransomware.",
+        "We found many indicators linking specifically to the FIN6 group (WMI/PowerShell, FrameworkPOS, lateral movement and privilege escalation), with the difference of moving from Metasploit to Cobalt-Strike).",
+        "Considering the modus operandi, we believe the attackers are from Magecart Group 6, which has also been identified as the notorious threat actor FIN6.",
+        "Evidence of Magecart or FIN6 As previously mentioned, based on the modus operandi, we believe the attackers are from Magecart Group 6, also known as the threat actor FIN6.",
+        " Cloud Blog Solutions & technology Threat Intelligence Pick-Six: Intercepting a FIN6 Intrusion, an Actor Recently Tied to Ryuk and LockerGoga Ransomware April 5, 2019 Mandiant Wri tt en by: Brendan McKeague, Van Ta, Ben Fedore, Geo ff Ackerman, Alex Pennino, Andrew Thompson, Douglas Bienstock Summary",
+        "Recently, FireEye Managed Defense detected and responded to a FIN6 intrusion at a customer within the engineering industry, which seemed out of character due to FIN6's historical targeting of payment card data.",
+        "This blog post details the latest FIN6 tactics, techniques, and procedures (TTPs), including ties to the use of LockerGoga and Ryuk ransomware families.",
+        "The subsequent investigation revealed FIN6 was in the initial phase of an intrusion using stolen credentials, Cobalt Strike, Metasploit, and publicly available tools such as Ad fi nd and 7-Zip to conduct internal reconnaissance, compress data, and aid their overall mission.",
+        "Managed Defense utilized Windows Registry Shellbag entries to reconstruct FIN6's actions on compromised systems that were consistent with lateral movement.",
+        "Following the compromise of this system, analysts identi fi ed FIN6 leveraged stolen credentials to move laterally within the environment using the Windows' Remote Desktop Protocol (RDP).",
+        "Following the RDP connection to systems, FIN6 used two di ff erent techniques to establish a foothold: First technique: FIN6 used PowerShell to execute an encoded command.",
+        "The investigations observed FIN6 using similar tools, tactics, and procedures that were observed by FireEye Managed Defense during the earlier phases of the a tt ack lifecycle.",
+        "Lateral Movement FIN6 used encoded PowerShell commands to install Cobalt Strike on compromised systems.",
+        "FIN6 automated the deployment of kill.bat and the LockerGoga ransomware using batch script fi les.",
+        "Given that these intrusions have been sustained for almost a year, we expect that continued research into fu rt her intrusion a tt empts may enable us to more fully answer these questions regarding FIN6's current status.",
+        " FOLLOW THE MONEY: 0 7 DISSECTING THE OPERATIONS OF THE CYBER CRIME GROUP FIN6 SS FC PAN Primary Account",
+        "In 2015, FireEye Threat Intelligence supported several Mandiant Consulting investigations in the hospitality and retail sectors where FIN6 actors had aggressively targeted and compromised pointof-sale (POS) systems, making off with millions of payment card numbers.",
+        "In one case, GRABNEW malware was found on a victim computer that FIN6 later used in its operations.",
+        "FIN6's use of GRABNEW, or credentials collected by GRABNEW, is not altogether surprising and possibly points to a cyber crime support ecosystem that opens doors to threat actors capable of lateral movement and more damaging activities.",
+        "After gaining access with valid credentials, we observed FIN6 leveraging components of the Metasploit Framework to establish their foothoold.",
+        "For example, in one case, FIN6 used a Metasploit PowerShell module to download and execute shellcode and to set up a local listener that would execute shellcode received over a specific port.",
+        "Similarly, FIN6 used at least two downloaders called HARDTACK and SHIPBREAD (apparent variations on Metasploit payloads) to establish backdoor access to the compromised environment.",
+        "Once their accesses were established with preferred backdoors, FIN6 used additional public utilities such as Windows Credentials Editor for privilege escalation and credential harvesting.",
+        "2  Continuing their use of Metasploit-related tools, FIN6 also used Metasploit's PsExec NTDSGRAB module to obtain a copy of the Active Directory database (ntds.dit).",
+        "Specific tools used by FIN6 included Microsoft's built-in SQL querying tool (osql.exe), Query Express (a free, portable graphical SQL client capable of connecting to Microsoft SQL and Oracle databases) and AdFind, a free command-line tool for querying Active Directory.",
+        "To maintain presence and support interactive access in the environment, FIN6 leveraged the publicly available Plink command-line utility (part of the PuTTY SSH and Telnet suite) to create SSH tunnels to CnC servers under their control.",
+        "We have identified stolen data from several of FIN6's victims being sold by this vendor as far back as 2014."
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:767815",
+      "name": "Ursnif",
+      "description": "[Ursnif](https://attack.mitre.org/software/S0386) is a banking trojan and variant of the Gozi malware observed being spread through various automated exploit kits, [Spearphishing Attachment](https://attack.mitre.org/techniques/T1566/001)s, and malicious links.(Citation: NJCCIC Ursnif Sept 2016)(Citation: ProofPoint Ursnif Aug 2016) [Ursnif](https://attack.mitre.org/software/S0386) is associated primarily with data theft, but variants also include components (backdoors, spyware, file injectors, etc.) capable of a wide variety of behaviors.(Citation: TrendMicro Ursnif Mar 2015)",
+      "uri": "http://example.com/ucoex#S0386",
+      "clean_id": "S0386",
+      "labels": [
+        "Resource",
+        "UcoexSOFTWARE",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.7857063327535789,
+      "dot": 0.7857065200805664,
+      "euclidean": 0.654666006565094,
+      "db_score": 0.8928531408309937
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775436",
+      "name": "LockerGoga and Ryuk ransomware",
+      "type": "Malware",
+      "contexts": [
+        "This movement enabled FIN6 to then inject LockerGoga and Ryuk ransomware."
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:767569",
+      "name": "Ragnar Locker",
+      "description": "[Ragnar Locker](https://attack.mitre.org/software/S0481) is a ransomware that has been in use since at least December 2019.(Citation: Sophos Ragnar May 2020)(Citation: Cynet Ragnar Apr 2020)",
+      "uri": "http://example.com/ucoex#S0481",
+      "clean_id": "S0481",
+      "labels": [
+        "Resource",
+        "UcoexSOFTWARE",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.782312128819481,
+      "dot": 0.7823120355606079,
+      "euclidean": 0.6598300337791443,
+      "db_score": 0.8911561369895935
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775435",
+      "name": "ransomware",
+      "type": "Malware",
+      "contexts": [
+        "FIN6, which is one of the sophisticated cybercriminal groups, has now moved to deploy ransomware in its attacks.",
+        "For more comprehensive recommendations for addressing ransomware, please refer to our Ransomware Protection and Containment Strategies blog post and the linked white paper.",
+        "Another ransomware attack vector against small and medium !",
+        "Ransomware Data Encryption Upon execution, the malware will begin to perform privilege checking to determine what permissions the running account has, primarily checking for the SeDebugPrivilege permission, as detailed later in User Rights Checking and Malware Logic.",
+        "Like other recent malware the ransomware utilizes the highly effective EternalBlue exploit for Windows SMB vulnerabilities to copy itself to other systems and execute, which is detailed later in this post.",
+        "This was most likely done to ensure that ransomware was not installed and executed twice on a system, much in the same way a mutex or a file lock (Linux based), is used to prevent multiple instances from running on a system.  ",
+        "It is demonstrably faster than other ransomwareÕs Òdwell time,Ó roughly 72 days and 12 hours, according to data from 2019."
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:766477",
+      "name": "INC Ransomware",
+      "description": "[INC Ransomware](https://attack.mitre.org/software/S1139) is a ransomware strain that has been used by the [INC Ransom](https://attack.mitre.org/groups/G1032) group since at least 2023 against multiple industry sectors worldwide. [INC Ransomware](https://attack.mitre.org/software/S1139) can employ partial encryption combined with multi-threading to speed encryption.(Citation: SentinelOne INC Ransomware)(Citation: Huntress INC Ransom Group August 2023)(Citation: Secureworks GOLD IONIC April 2024)",
+      "uri": "http://example.com/ucoex#S1139",
+      "clean_id": "S1139",
+      "labels": [
+        "Resource",
+        "UcoexSOFTWARE",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.7763532596266138,
+      "dot": 0.776353120803833,
+      "euclidean": 0.6687999963760376,
+      "db_score": 0.8881765604019165
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775441",
+      "name": "LockerGoga",
+      "type": "Malware",
+      "contexts": [
+        "Lateral Movement Techniques LockerGoga Publisher Cyware  PREVIOUS Zero-day aw leaves TP- Link routers open to remote att ..."
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:767946",
+      "name": "LockerGoga",
+      "description": "[LockerGoga](https://attack.mitre.org/software/S0372) is ransomware that was first reported in January 2019, and has been tied to various attacks on European companies, including industrial and manufacturing firms.(Citation: Unit42 LockerGoga 2019)(Citation: CarbonBlack LockerGoga 2019)",
+      "uri": "http://example.com/ucoex#S0372",
+      "clean_id": "S0372",
+      "labels": [
+        "Resource",
+        "UcoexSOFTWARE",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.7713341627520808,
+      "dot": 0.7713339328765869,
+      "euclidean": 0.6762629747390747,
+      "db_score": 0.8856670260429382
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775437",
+      "name": "Windows Service",
+      "type": "OperatingSystem",
+      "contexts": [
+        "The second technique involved the use of a Windows Service created by Metasploit, that was used to communicate with a C2 server for dropping additional payloads into compromised systems."
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:767261",
+      "name": "Masquerading: Masquerade Task or Service",
+      "description": "Adversaries may attempt to manipulate the name of a task or service to make it appear legitimate or benign. Tasks/services executed by the Task Scheduler or systemd will typically be given a name and/or description.(Citation: TechNet Schtasks)(Citation: Systemd Service Units) Windows services will have a service name as well as a display name. Many benign tasks and services exist that have commonly associated names. Adversaries may give tasks or services names that are similar or identical to those of legitimate ones.\n\nTasks or services contain other fields, such as a description, that adversaries may attempt to make appear legitimate.(Citation: Palo Alto Shamoon Nov 2016)(Citation: Fysbis Dr Web Analysis)",
+      "uri": "http://example.com/ucoex#T1036.004",
+      "clean_id": "T1036.004",
+      "labels": [
+        "Resource",
+        "UcoexMITREATTACK",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.7708446333778779,
+      "dot": 0.7708448171615601,
+      "euclidean": 0.6769866943359375,
+      "db_score": 0.8854222893714905
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775440",
+      "name": "point-of-sale (POS) environments",
+      "type": "Location",
+      "contexts": [
+        "As the frequency of these intrusions deploying ransomware has increased, the cadence of activity traditionally attributed to FIN6-intrusions targeting point-of-sale (POS) environments, deploying TRINITY malware and sharing other key characteristics-has declined.",
+        "As the frequency of these intrusions deploying ransomware have increased, the cadence of activity traditionally a tt ributed to FIN6-intrusions targeting point-of-sale (POS) environments, deploying TRINITY malware and sharing other key characteristics-has declined."
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:766761",
+      "name": "Exploitation of Remote Services",
+      "description": "Adversaries may exploit a software vulnerability to take advantage of a programming error in a program, service, or within the operating system software or kernel itself to enable remote service abuse. A common goal for post-compromise exploitation of remote services is for initial access into and lateral movement throughout the ICS environment to enable access to targeted systems. (Citation: Enterprise ATT&CK)\n\nICS asset owners and operators have been affected by ransomware (or disruptive malware masquerading as ransomware) migrating from enterprise IT to ICS environments: WannaCry, NotPetya, and BadRabbit. In each of these cases, self-propagating (wormable) malware initially infected IT networks, but through exploit (particularly the SMBv1-targeting MS17-010 vulnerability) spread to industrial networks, producing significant impacts. (Citation: Joe Slowik April 2019)",
+      "uri": "http://example.com/ucoex#T0866",
+      "clean_id": "T0866",
+      "labels": [
+        "Resource",
+        "UcoexMITREATTACK",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.770305867122205,
+      "dot": 0.7703060507774353,
+      "euclidean": 0.6777821183204651,
+      "db_score": 0.8851529359817505
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775439",
+      "name": "FIN6-intrusions",
+      "type": "ThreatActor",
+      "contexts": [
+        "As the frequency of these intrusions deploying ransomware has increased, the cadence of activity traditionally attributed to FIN6-intrusions targeting point-of-sale (POS) environments, deploying TRINITY malware and sharing other key characteristics-has declined.",
+        "As the frequency of these intrusions deploying ransomware have increased, the cadence of activity traditionally a tt ributed to FIN6-intrusions targeting point-of-sale (POS) environments, deploying TRINITY malware and sharing other key characteristics-has declined."
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:767285",
+      "name": "FrameworkPOS",
+      "description": "[FrameworkPOS](https://attack.mitre.org/software/S0503) is a point of sale (POS) malware used by [FIN6](https://attack.mitre.org/groups/G0037) to steal payment card data from sytems that run physical POS devices.(Citation: SentinelOne FrameworkPOS September 2019)",
+      "uri": "http://example.com/ucoex#S0503",
+      "clean_id": "S0503",
+      "labels": [
+        "Resource",
+        "UcoexSOFTWARE",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.7698988181292307,
+      "dot": 0.7698987722396851,
+      "euclidean": 0.6783820986747742,
+      "db_score": 0.8849493265151978
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775439",
+      "name": "FIN6-intrusions",
+      "type": "ThreatActor",
+      "contexts": [
+        "As the frequency of these intrusions deploying ransomware has increased, the cadence of activity traditionally attributed to FIN6-intrusions targeting point-of-sale (POS) environments, deploying TRINITY malware and sharing other key characteristics-has declined.",
+        "As the frequency of these intrusions deploying ransomware have increased, the cadence of activity traditionally a tt ributed to FIN6-intrusions targeting point-of-sale (POS) environments, deploying TRINITY malware and sharing other key characteristics-has declined."
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:766831",
+      "name": "Loss of Availability",
+      "description": "Adversaries may attempt to disrupt essential components or systems to prevent owner and operator from delivering products or services. (Citation: Corero) (Citation: Michael J. Assante and Robert M. Lee) (Citation: Tyson Macaulay) \n\nAdversaries may leverage malware to delete or encrypt critical data on HMIs, workstations, or databases.\n\nIn the 2021 Colonial Pipeline ransomware incident, pipeline operations were temporally halted on May 7th and were not fully restarted until May 12th. (Citation: Colonial Pipeline Company May 2021)",
+      "uri": "http://example.com/ucoex#T0826",
+      "clean_id": "T0826",
+      "labels": [
+        "Resource",
+        "UcoexMITREATTACK",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.7687160052399629,
+      "dot": 0.7687160968780518,
+      "euclidean": 0.6801236867904663,
+      "db_score": 0.8843579292297363
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775440",
+      "name": "point-of-sale (POS) environments",
+      "type": "Location",
+      "contexts": [
+        "As the frequency of these intrusions deploying ransomware has increased, the cadence of activity traditionally attributed to FIN6-intrusions targeting point-of-sale (POS) environments, deploying TRINITY malware and sharing other key characteristics-has declined.",
+        "As the frequency of these intrusions deploying ransomware have increased, the cadence of activity traditionally a tt ributed to FIN6-intrusions targeting point-of-sale (POS) environments, deploying TRINITY malware and sharing other key characteristics-has declined."
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:766831",
+      "name": "Loss of Availability",
+      "description": "Adversaries may attempt to disrupt essential components or systems to prevent owner and operator from delivering products or services. (Citation: Corero) (Citation: Michael J. Assante and Robert M. Lee) (Citation: Tyson Macaulay) \n\nAdversaries may leverage malware to delete or encrypt critical data on HMIs, workstations, or databases.\n\nIn the 2021 Colonial Pipeline ransomware incident, pipeline operations were temporally halted on May 7th and were not fully restarted until May 12th. (Citation: Colonial Pipeline Company May 2021)",
+      "uri": "http://example.com/ucoex#T0826",
+      "clean_id": "T0826",
+      "labels": [
+        "Resource",
+        "UcoexMITREATTACK",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.7684586920191416,
+      "dot": 0.7684587836265564,
+      "euclidean": 0.6805019378662109,
+      "db_score": 0.884229302406311
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775435",
+      "name": "ransomware",
+      "type": "Malware",
+      "contexts": [
+        "FIN6, which is one of the sophisticated cybercriminal groups, has now moved to deploy ransomware in its attacks.",
+        "For more comprehensive recommendations for addressing ransomware, please refer to our Ransomware Protection and Containment Strategies blog post and the linked white paper.",
+        "Another ransomware attack vector against small and medium !",
+        "Ransomware Data Encryption Upon execution, the malware will begin to perform privilege checking to determine what permissions the running account has, primarily checking for the SeDebugPrivilege permission, as detailed later in User Rights Checking and Malware Logic.",
+        "Like other recent malware the ransomware utilizes the highly effective EternalBlue exploit for Windows SMB vulnerabilities to copy itself to other systems and execute, which is detailed later in this post.",
+        "This was most likely done to ensure that ransomware was not installed and executed twice on a system, much in the same way a mutex or a file lock (Linux based), is used to prevent multiple instances from running on a system.  ",
+        "It is demonstrably faster than other ransomwareÕs Òdwell time,Ó roughly 72 days and 12 hours, according to data from 2019."
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:768280",
+      "name": "Prestige",
+      "description": "[Prestige](https://attack.mitre.org/software/S1058) ransomware has been used by [Sandworm Team](https://attack.mitre.org/groups/G0034) since at least March 2022, including against transportation and related logistics industries in Ukraine and Poland in October 2022.(Citation: Microsoft Prestige ransomware October 2022)",
+      "uri": "http://example.com/ucoex#S1058",
+      "clean_id": "S1058",
+      "labels": [
+        "Resource",
+        "UcoexSOFTWARE",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.7674175778129604,
+      "dot": 0.7674176692962646,
+      "euclidean": 0.6820300221443176,
+      "db_score": 0.8837087154388428
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775437",
+      "name": "Windows Service",
+      "type": "OperatingSystem",
+      "contexts": [
+        "The second technique involved the use of a Windows Service created by Metasploit, that was used to communicate with a C2 server for dropping additional payloads into compromised systems."
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:766408",
+      "name": "System Services: Service Execution",
+      "description": "Adversaries may abuse the Windows service control manager to execute malicious commands or payloads. The Windows service control manager (<code>services.exe</code>) is an interface to manage and manipulate services.(Citation: Microsoft Service Control Manager) The service control manager is accessible to users via GUI components as well as system utilities such as <code>sc.exe</code> and [Net](https://attack.mitre.org/software/S0039).\n\n[PsExec](https://attack.mitre.org/software/S0029) can also be used to execute commands or payloads via a temporary Windows service created through the service control manager API.(Citation: Russinovich Sysinternals) Tools such as [PsExec](https://attack.mitre.org/software/S0029) and <code>sc.exe</code> can accept remote servers as arguments and may be used to conduct remote execution.\n\nAdversaries may leverage these mechanisms to execute malicious content. This can be done by either executing a new or modified service. This technique is the execution used in conjunction with [Windows Service](https://attack.mitre.org/techniques/T1543/003) during service persistence or privilege escalation.",
+      "uri": "http://example.com/ucoex#T1569.002",
+      "clean_id": "T1569.002",
+      "labels": [
+        "Resource",
+        "UcoexMITREATTACK",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.7660871186464115,
+      "dot": 0.7660869359970093,
+      "euclidean": 0.6839779615402222,
+      "db_score": 0.8830435276031494
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775434",
+      "name": "Windows' Remote Desktop Protocol (RDP)",
+      "type": "Protocol",
+      "contexts": [
+        "Just like its PoS exploits, FIN6 relied on Windows' Remote Desktop Protocol (RDP) to move laterally across aected networks.",
+        "Following the compromise of this system, analysts identi fi ed FIN6 leveraged stolen credentials to move laterally within the environment using the Windows' Remote Desktop Protocol (RDP)."
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:767461",
+      "name": "Remote Access Tools: Remote Desktop Software",
+      "description": "An adversary may use legitimate desktop support software to establish an interactive command and control channel to target systems within networks. Desktop support software provides a graphical interface for remotely controlling another computer, transmitting the display output, keyboard input, and mouse control between devices using various protocols. Desktop support software, such as `VNC`, `Team Viewer`, `AnyDesk`, `ScreenConnect`, `LogMein`, `AmmyyAdmin`, and other remote monitoring and management (RMM) tools, are commonly used as legitimate technical support software and may be allowed by application control within a target environment.(Citation: Symantec Living off the Land)(Citation: CrowdStrike 2015 Global Threat Report)(Citation: CrySyS Blog TeamSpy) \n \nRemote access modules/features may also exist as part of otherwise existing software such as Zoom or Google Chrome’s Remote Desktop.(Citation: Google Chrome Remote Desktop)(Citation: Chrome Remote Desktop) ",
+      "uri": "http://example.com/ucoex#T1219.002",
+      "clean_id": "T1219.002",
+      "labels": [
+        "Resource",
+        "UcoexMITREATTACK",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.7648816424467137,
+      "dot": 0.7648815512657166,
+      "euclidean": 0.6857380270957947,
+      "db_score": 0.8824408054351807
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775434",
+      "name": "Windows' Remote Desktop Protocol (RDP)",
+      "type": "Protocol",
+      "contexts": [
+        "Just like its PoS exploits, FIN6 relied on Windows' Remote Desktop Protocol (RDP) to move laterally across aected networks.",
+        "Following the compromise of this system, analysts identi fi ed FIN6 leveraged stolen credentials to move laterally within the environment using the Windows' Remote Desktop Protocol (RDP)."
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:768131",
+      "name": "Server Software Component: Terminal Services DLL",
+      "description": "Adversaries may abuse components of Terminal Services to enable persistent access to systems. Microsoft Terminal Services, renamed to Remote Desktop Services in some Windows Server OSs as of 2022, enable remote terminal connections to hosts. Terminal Services allows servers to transmit a full, interactive, graphical user interface to clients via RDP.(Citation: Microsoft Remote Desktop Services)\n\n[Windows Service](https://attack.mitre.org/techniques/T1543/003)s that are run as a \"generic\" process (ex: <code>svchost.exe</code>) load the service's DLL file, the location of which is stored in a Registry entry named <code>ServiceDll</code>.(Citation: Microsoft System Services Fundamentals) The <code>termsrv.dll</code> file, typically stored in `%SystemRoot%\\System32\\`, is the default <code>ServiceDll</code> value for Terminal Services in `HKLM\\System\\CurrentControlSet\\services\\TermService\\Parameters\\`.\n\nAdversaries may modify and/or replace the Terminal Services DLL to enable persistent access to victimized hosts.(Citation: James TermServ DLL) Modifications to this DLL could be done to execute arbitrary payloads (while also potentially preserving normal <code>termsrv.dll</code> functionality) as well as to simply enable abusable features of Terminal Services. For example, an adversary may enable features such as concurrent [Remote Desktop Protocol](https://attack.mitre.org/techniques/T1021/001) sessions by either patching the <code>termsrv.dll</code> file or modifying the <code>ServiceDll</code> value to point to a DLL that provides increased RDP functionality.(Citation: Windows OS Hub RDP)(Citation: RDPWrap Github) On a non-server Windows OS this increased functionality may also enable an adversary to avoid Terminal Services prompts that warn/log out users of a system when a new RDP session is created.",
+      "uri": "http://example.com/ucoex#T1505.005",
+      "clean_id": "T1505.005",
+      "labels": [
+        "Resource",
+        "UcoexMITREATTACK",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.7633621974751714,
+      "dot": 0.7633622884750366,
+      "euclidean": 0.6879504919052124,
+      "db_score": 0.881680965423584
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775434",
+      "name": "Windows' Remote Desktop Protocol (RDP)",
+      "type": "Protocol",
+      "contexts": [
+        "Just like its PoS exploits, FIN6 relied on Windows' Remote Desktop Protocol (RDP) to move laterally across aected networks.",
+        "Following the compromise of this system, analysts identi fi ed FIN6 leveraged stolen credentials to move laterally within the environment using the Windows' Remote Desktop Protocol (RDP)."
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:768053",
+      "name": "OS Credential Dumping: DCSync",
+      "description": "Adversaries may attempt to access credentials and other sensitive information by abusing a Windows Domain Controller's application programming interface (API)(Citation: Microsoft DRSR Dec 2017) (Citation: Microsoft GetNCCChanges) (Citation: Samba DRSUAPI) (Citation: Wine API samlib.dll) to simulate the replication process from a remote domain controller using a technique called DCSync.\n\nMembers of the Administrators, Domain Admins, and Enterprise Admin groups or computer accounts on the domain controller are able to run DCSync to pull password data(Citation: ADSecurity Mimikatz DCSync) from Active Directory, which may include current and historical hashes of potentially useful accounts such as KRBTGT and Administrators. The hashes can then in turn be used to create a [Golden Ticket](https://attack.mitre.org/techniques/T1558/001) for use in [Pass the Ticket](https://attack.mitre.org/techniques/T1550/003)(Citation: Harmj0y Mimikatz and DCSync) or change an account's password as noted in [Account Manipulation](https://attack.mitre.org/techniques/T1098).(Citation: InsiderThreat ChangeNTLM July 2017)\n\nDCSync functionality has been included in the \"lsadump\" module in [Mimikatz](https://attack.mitre.org/software/S0002).(Citation: GitHub Mimikatz lsadump Module) Lsadump also includes NetSync, which performs DCSync over a legacy replication protocol.(Citation: Microsoft NRPC Dec 2017)",
+      "uri": "http://example.com/ucoex#T1003.006",
+      "clean_id": "T1003.006",
+      "labels": [
+        "Resource",
+        "UcoexMITREATTACK",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.7610138707227091,
+      "dot": 0.7610135078430176,
+      "euclidean": 0.691355288028717,
+      "db_score": 0.8805069923400879
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775435",
+      "name": "ransomware",
+      "type": "Malware",
+      "contexts": [
+        "FIN6, which is one of the sophisticated cybercriminal groups, has now moved to deploy ransomware in its attacks.",
+        "For more comprehensive recommendations for addressing ransomware, please refer to our Ransomware Protection and Containment Strategies blog post and the linked white paper.",
+        "Another ransomware attack vector against small and medium !",
+        "Ransomware Data Encryption Upon execution, the malware will begin to perform privilege checking to determine what permissions the running account has, primarily checking for the SeDebugPrivilege permission, as detailed later in User Rights Checking and Malware Logic.",
+        "Like other recent malware the ransomware utilizes the highly effective EternalBlue exploit for Windows SMB vulnerabilities to copy itself to other systems and execute, which is detailed later in this post.",
+        "This was most likely done to ensure that ransomware was not installed and executed twice on a system, much in the same way a mutex or a file lock (Linux based), is used to prevent multiple instances from running on a system.  ",
+        "It is demonstrably faster than other ransomwareÕs Òdwell time,Ó roughly 72 days and 12 hours, according to data from 2019."
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:766446",
+      "name": "Akira",
+      "description": "[Akira](https://attack.mitre.org/software/S1129) ransomware, written in C++, is most prominently (but not exclusively) associated with the ransomware-as-a-service entity [Akira](https://attack.mitre.org/groups/G1024). [Akira](https://attack.mitre.org/software/S1129) ransomware has been used in attacks across North America, Europe, and Australia, with a focus on critical infrastructure sectors including manufacturing, education, and IT services. [Akira](https://attack.mitre.org/software/S1129) ransomware employs hybrid encryption and threading to increase the speed and efficiency of encryption and runtime arguments for tailored attacks. Notable variants include Rust-based [Megazord](https://attack.mitre.org/software/S1191) for targeting Windows and [Akira _v2](https://attack.mitre.org/software/S1194) for targeting VMware ESXi servers.(Citation: Kersten Akira 2023)(Citation: CISA Akira Ransomware APR 2024)(Citation: Cisco Akira Ransomware OCT 2024)",
+      "uri": "http://example.com/ucoex#S1129",
+      "clean_id": "S1129",
+      "labels": [
+        "Resource",
+        "UcoexSOFTWARE",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.7609686281606265,
+      "dot": 0.7609684467315674,
+      "euclidean": 0.6914207935333252,
+      "db_score": 0.8804843425750732
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775440",
+      "name": "point-of-sale (POS) environments",
+      "type": "Location",
+      "contexts": [
+        "As the frequency of these intrusions deploying ransomware has increased, the cadence of activity traditionally attributed to FIN6-intrusions targeting point-of-sale (POS) environments, deploying TRINITY malware and sharing other key characteristics-has declined.",
+        "As the frequency of these intrusions deploying ransomware have increased, the cadence of activity traditionally a tt ributed to FIN6-intrusions targeting point-of-sale (POS) environments, deploying TRINITY malware and sharing other key characteristics-has declined."
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:768172",
+      "name": "Playcrypt",
+      "description": "[Playcrypt](https://attack.mitre.org/software/S1162) is a ransomware that has been used by [Play](https://attack.mitre.org/groups/G1040) since at least 2022 in attacks against against the business, government, critical infrastructure, healthcare, and media sectors in North America, South America, and Europe. [Playcrypt](https://attack.mitre.org/software/S1162) derives its name from adding the .play extension to encrypted files and has overlap with tactics and tools associated with Hive and Nokoyawa ransomware and infrastructure associated with Quantum ransomware.(Citation: Microsoft PlayCrypt August 2022)(Citation: CISA Play Ransomware Advisory December 2023)(Citation: Trend Micro Ransomware Spotlight Play July 2023)",
+      "uri": "http://example.com/ucoex#S1162",
+      "clean_id": "S1162",
+      "labels": [
+        "Resource",
+        "UcoexSOFTWARE",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.7589377351143447,
+      "dot": 0.758937418460846,
+      "euclidean": 0.6943517327308655,
+      "db_score": 0.8794689178466797
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775435",
+      "name": "ransomware",
+      "type": "Malware",
+      "contexts": [
+        "FIN6, which is one of the sophisticated cybercriminal groups, has now moved to deploy ransomware in its attacks.",
+        "For more comprehensive recommendations for addressing ransomware, please refer to our Ransomware Protection and Containment Strategies blog post and the linked white paper.",
+        "Another ransomware attack vector against small and medium !",
+        "Ransomware Data Encryption Upon execution, the malware will begin to perform privilege checking to determine what permissions the running account has, primarily checking for the SeDebugPrivilege permission, as detailed later in User Rights Checking and Malware Logic.",
+        "Like other recent malware the ransomware utilizes the highly effective EternalBlue exploit for Windows SMB vulnerabilities to copy itself to other systems and execute, which is detailed later in this post.",
+        "This was most likely done to ensure that ransomware was not installed and executed twice on a system, much in the same way a mutex or a file lock (Linux based), is used to prevent multiple instances from running on a system.  ",
+        "It is demonstrably faster than other ransomwareÕs Òdwell time,Ó roughly 72 days and 12 hours, according to data from 2019."
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:766677",
+      "name": "Seth-Locker",
+      "description": "[Seth-Locker](https://attack.mitre.org/software/S0639) is a ransomware with some remote control capabilities that has been in use since at least 2021.\n(Citation: Trend Micro Ransomware February 2021)",
+      "uri": "http://example.com/ucoex#S0639",
+      "clean_id": "S0639",
+      "labels": [
+        "Resource",
+        "UcoexSOFTWARE",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.7584318374652765,
+      "dot": 0.7584317922592163,
+      "euclidean": 0.6950801014900208,
+      "db_score": 0.8792159557342529
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775440",
+      "name": "point-of-sale (POS) environments",
+      "type": "Location",
+      "contexts": [
+        "As the frequency of these intrusions deploying ransomware has increased, the cadence of activity traditionally attributed to FIN6-intrusions targeting point-of-sale (POS) environments, deploying TRINITY malware and sharing other key characteristics-has declined.",
+        "As the frequency of these intrusions deploying ransomware have increased, the cadence of activity traditionally a tt ributed to FIN6-intrusions targeting point-of-sale (POS) environments, deploying TRINITY malware and sharing other key characteristics-has declined."
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:766688",
+      "name": "SMOKEDHAM",
+      "description": "[SMOKEDHAM](https://attack.mitre.org/software/S0649) is a Powershell-based .NET backdoor that was first reported in May 2021; it has been used by at least one ransomware-as-a-service affiliate.(Citation: FireEye Shining A Light on DARKSIDE May 2021)(Citation: FireEye SMOKEDHAM June 2021)",
+      "uri": "http://example.com/ucoex#S0649",
+      "clean_id": "S0649",
+      "labels": [
+        "Resource",
+        "UcoexSOFTWARE",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.7574800577688424,
+      "dot": 0.7574797868728638,
+      "euclidean": 0.6964479088783264,
+      "db_score": 0.8787400126457214
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775435",
+      "name": "ransomware",
+      "type": "Malware",
+      "contexts": [
+        "FIN6, which is one of the sophisticated cybercriminal groups, has now moved to deploy ransomware in its attacks.",
+        "For more comprehensive recommendations for addressing ransomware, please refer to our Ransomware Protection and Containment Strategies blog post and the linked white paper.",
+        "Another ransomware attack vector against small and medium !",
+        "Ransomware Data Encryption Upon execution, the malware will begin to perform privilege checking to determine what permissions the running account has, primarily checking for the SeDebugPrivilege permission, as detailed later in User Rights Checking and Malware Logic.",
+        "Like other recent malware the ransomware utilizes the highly effective EternalBlue exploit for Windows SMB vulnerabilities to copy itself to other systems and execute, which is detailed later in this post.",
+        "This was most likely done to ensure that ransomware was not installed and executed twice on a system, much in the same way a mutex or a file lock (Linux based), is used to prevent multiple instances from running on a system.  ",
+        "It is demonstrably faster than other ransomwareÕs Òdwell time,Ó roughly 72 days and 12 hours, according to data from 2019."
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:766722",
+      "name": "ProLock",
+      "description": "[ProLock](https://attack.mitre.org/software/S0654) is a ransomware strain that has been used in Big Game Hunting (BGH) operations since at least 2020, often obtaining initial access with [QakBot](https://attack.mitre.org/software/S0650). [ProLock](https://attack.mitre.org/software/S0654) is the successor to PwndLocker ransomware which was found to contain a bug allowing decryption without ransom payment in 2019.(Citation: Group IB Ransomware September 2020)",
+      "uri": "http://example.com/ucoex#S0654",
+      "clean_id": "S0654",
+      "labels": [
+        "Resource",
+        "UcoexSOFTWARE",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.7552972131613239,
+      "dot": 0.7552973031997681,
+      "euclidean": 0.6995753049850464,
+      "db_score": 0.8776485323905945
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775439",
+      "name": "FIN6-intrusions",
+      "type": "ThreatActor",
+      "contexts": [
+        "As the frequency of these intrusions deploying ransomware has increased, the cadence of activity traditionally attributed to FIN6-intrusions targeting point-of-sale (POS) environments, deploying TRINITY malware and sharing other key characteristics-has declined.",
+        "As the frequency of these intrusions deploying ransomware have increased, the cadence of activity traditionally a tt ributed to FIN6-intrusions targeting point-of-sale (POS) environments, deploying TRINITY malware and sharing other key characteristics-has declined."
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:766805",
+      "name": "DEATHRANSOM",
+      "description": "[DEATHRANSOM](https://attack.mitre.org/software/S0616) is ransomware written in C that has been used since at least 2020, and has potential overlap with [FIVEHANDS](https://attack.mitre.org/software/S0618) and [HELLOKITTY](https://attack.mitre.org/software/S0617).(Citation: FireEye FiveHands April 2021)",
+      "uri": "http://example.com/ucoex#S0616",
+      "clean_id": "S0616",
+      "labels": [
+        "Resource",
+        "UcoexSOFTWARE",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.7519158420663068,
+      "dot": 0.7519159317016602,
+      "euclidean": 0.7043923735618591,
+      "db_score": 0.8759579062461853
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775441",
+      "name": "LockerGoga",
+      "type": "Malware",
+      "contexts": [
+        "Lateral Movement Techniques LockerGoga Publisher Cyware  PREVIOUS Zero-day aw leaves TP- Link routers open to remote att ..."
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:766677",
+      "name": "Seth-Locker",
+      "description": "[Seth-Locker](https://attack.mitre.org/software/S0639) is a ransomware with some remote control capabilities that has been in use since at least 2021.\n(Citation: Trend Micro Ransomware February 2021)",
+      "uri": "http://example.com/ucoex#S0639",
+      "clean_id": "S0639",
+      "labels": [
+        "Resource",
+        "UcoexSOFTWARE",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.7506367415569271,
+      "dot": 0.7506366968154907,
+      "euclidean": 0.7062057256698608,
+      "db_score": 0.8753184080123901
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775441",
+      "name": "LockerGoga",
+      "type": "Malware",
+      "contexts": [
+        "Lateral Movement Techniques LockerGoga Publisher Cyware  PREVIOUS Zero-day aw leaves TP- Link routers open to remote att ..."
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:767152",
+      "name": "ShadowPad",
+      "description": "[ShadowPad](https://attack.mitre.org/software/S0596) is a modular backdoor that was first identified in a supply chain compromise of the NetSarang software in mid-July 2017. The malware was originally thought to be exclusively used by [APT41](https://attack.mitre.org/groups/G0096), but has since been observed to be used by various Chinese threat activity groups. (Citation: Recorded Future RedEcho Feb 2021)(Citation: Securelist ShadowPad Aug 2017)(Citation: Kaspersky ShadowPad Aug 2017) ",
+      "uri": "http://example.com/ucoex#S0596",
+      "clean_id": "S0596",
+      "labels": [
+        "Resource",
+        "UcoexSOFTWARE",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.7471708066056236,
+      "dot": 0.7471709847450256,
+      "euclidean": 0.7110967040061951,
+      "db_score": 0.8735853433609009
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775437",
+      "name": "Windows Service",
+      "type": "OperatingSystem",
+      "contexts": [
+        "The second technique involved the use of a Windows Service created by Metasploit, that was used to communicate with a C2 server for dropping additional payloads into compromised systems."
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:768067",
+      "name": "Hijack Execution Flow: Services File Permissions Weakness",
+      "description": "Adversaries may execute their own malicious payloads by hijacking the binaries used by services. Adversaries may use flaws in the permissions of Windows services to replace the binary that is executed upon service start. These service processes may automatically execute specific binaries as part of their functionality or to perform other actions. If the permissions on the file system directory containing a target binary, or permissions on the binary itself are improperly set, then the target binary may be overwritten with another binary using user-level permissions and executed by the original process. If the original process and thread are running under a higher permissions level, then the replaced binary will also execute under higher-level permissions, which could include SYSTEM.\n\nAdversaries may use this technique to replace legitimate binaries with malicious ones as a means of executing code at a higher permissions level. If the executing process is set to run at a specific time or during a certain event (e.g., system bootup) then this technique can also be used for persistence.",
+      "uri": "http://example.com/ucoex#T1574.010",
+      "clean_id": "T1574.010",
+      "labels": [
+        "Resource",
+        "UcoexMITREATTACK",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.7456170764933274,
+      "dot": 0.7456170320510864,
+      "euclidean": 0.7132781744003296,
+      "db_score": 0.872808575630188
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775439",
+      "name": "FIN6-intrusions",
+      "type": "ThreatActor",
+      "contexts": [
+        "As the frequency of these intrusions deploying ransomware has increased, the cadence of activity traditionally attributed to FIN6-intrusions targeting point-of-sale (POS) environments, deploying TRINITY malware and sharing other key characteristics-has declined.",
+        "As the frequency of these intrusions deploying ransomware have increased, the cadence of activity traditionally a tt ributed to FIN6-intrusions targeting point-of-sale (POS) environments, deploying TRINITY malware and sharing other key characteristics-has declined."
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:766725",
+      "name": "Diavol",
+      "description": "[Diavol](https://attack.mitre.org/software/S0659) is a ransomware variant first observed in June 2021 that is capable of prioritizing file types to encrypt based on a pre-configured list of extensions defined by the attacker.  The [Diavol](https://attack.mitre.org/software/S0659) Ransomware-as-a Service (RaaS) program is managed by [Wizard Spider](https://attack.mitre.org/groups/G0102) and it has been observed being deployed by [Bazar](https://attack.mitre.org/software/S0534).(Citation: Fortinet Diavol July 2021)(Citation: FBI Flash Diavol January 2022)(Citation: DFIR Diavol Ransomware December 2021)(Citation: Microsoft Ransomware as a Service)",
+      "uri": "http://example.com/ucoex#S0659",
+      "clean_id": "S0659",
+      "labels": [
+        "Resource",
+        "UcoexSOFTWARE",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.7435716115576226,
+      "dot": 0.7435718774795532,
+      "euclidean": 0.7161403894424438,
+      "db_score": 0.8717857599258423
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775439",
+      "name": "FIN6-intrusions",
+      "type": "ThreatActor",
+      "contexts": [
+        "As the frequency of these intrusions deploying ransomware has increased, the cadence of activity traditionally attributed to FIN6-intrusions targeting point-of-sale (POS) environments, deploying TRINITY malware and sharing other key characteristics-has declined.",
+        "As the frequency of these intrusions deploying ransomware have increased, the cadence of activity traditionally a tt ributed to FIN6-intrusions targeting point-of-sale (POS) environments, deploying TRINITY malware and sharing other key characteristics-has declined."
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:766761",
+      "name": "Exploitation of Remote Services",
+      "description": "Adversaries may exploit a software vulnerability to take advantage of a programming error in a program, service, or within the operating system software or kernel itself to enable remote service abuse. A common goal for post-compromise exploitation of remote services is for initial access into and lateral movement throughout the ICS environment to enable access to targeted systems. (Citation: Enterprise ATT&CK)\n\nICS asset owners and operators have been affected by ransomware (or disruptive malware masquerading as ransomware) migrating from enterprise IT to ICS environments: WannaCry, NotPetya, and BadRabbit. In each of these cases, self-propagating (wormable) malware initially infected IT networks, but through exploit (particularly the SMBv1-targeting MS17-010 vulnerability) spread to industrial networks, producing significant impacts. (Citation: Joe Slowik April 2019)",
+      "uri": "http://example.com/ucoex#T0866",
+      "clean_id": "T0866",
+      "labels": [
+        "Resource",
+        "UcoexMITREATTACK",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.743296028781884,
+      "dot": 0.743296205997467,
+      "euclidean": 0.716525137424469,
+      "db_score": 0.8716480135917664
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775447",
+      "name": "CYWARE",
+      "type": "Organization",
+      "contexts": [
+        "Malware and Vulnerabilities RESOURCES LUNCH & LEARN Threat Intel Management Series CYWARE Collaborate Respond"
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:767404",
+      "name": "Obtain Capabilities: Malware",
+      "description": "Adversaries may buy, steal, or download malware that can be used during targeting. Malicious software can include payloads, droppers, post-compromise tools, backdoors, packers, and C2 protocols. Adversaries may acquire malware to support their operations, obtaining a means for maintaining control of remote machines, evading defenses, and executing post-compromise behaviors.\n\nIn addition to downloading free malware from the internet, adversaries may purchase these capabilities from third-party entities. Third-party entities can include technology companies that specialize in malware development, criminal marketplaces (including Malware-as-a-Service, or MaaS), or from individuals. In addition to purchasing malware, adversaries may steal and repurpose malware from third-party entities (including other adversaries).",
+      "uri": "http://example.com/ucoex#T1588.001",
+      "clean_id": "T1588.001",
+      "labels": [
+        "Resource",
+        "UcoexMITREATTACK",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.7428017582410247,
+      "dot": 0.7428020238876343,
+      "euclidean": 0.7172145247459412,
+      "db_score": 0.8714008331298828
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775444",
+      "name": "Ryuk ransomware",
+      "type": "Ransomware",
+      "contexts": [
+        "Malware and Vulnerabilities 7 Trinity FireEye Ryuk ransomware  NEXT Anubis"
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:766674",
+      "name": "GrimAgent",
+      "description": "[GrimAgent](https://attack.mitre.org/software/S0632) is a backdoor that has been used before the deployment of [Ryuk](https://attack.mitre.org/software/S0446) ransomware since at least 2020; it is likely used by [FIN6](https://attack.mitre.org/groups/G0037) and [Wizard Spider](https://attack.mitre.org/groups/G0102).(Citation: Group IB GrimAgent July 2021)",
+      "uri": "http://example.com/ucoex#S0632",
+      "clean_id": "S0632",
+      "labels": [
+        "Resource",
+        "UcoexSOFTWARE",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.7423007623495035,
+      "dot": 0.7423006296157837,
+      "euclidean": 0.717912495136261,
+      "db_score": 0.8711503744125366
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775437",
+      "name": "Windows Service",
+      "type": "OperatingSystem",
+      "contexts": [
+        "The second technique involved the use of a Windows Service created by Metasploit, that was used to communicate with a C2 server for dropping additional payloads into compromised systems."
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:768131",
+      "name": "Server Software Component: Terminal Services DLL",
+      "description": "Adversaries may abuse components of Terminal Services to enable persistent access to systems. Microsoft Terminal Services, renamed to Remote Desktop Services in some Windows Server OSs as of 2022, enable remote terminal connections to hosts. Terminal Services allows servers to transmit a full, interactive, graphical user interface to clients via RDP.(Citation: Microsoft Remote Desktop Services)\n\n[Windows Service](https://attack.mitre.org/techniques/T1543/003)s that are run as a \"generic\" process (ex: <code>svchost.exe</code>) load the service's DLL file, the location of which is stored in a Registry entry named <code>ServiceDll</code>.(Citation: Microsoft System Services Fundamentals) The <code>termsrv.dll</code> file, typically stored in `%SystemRoot%\\System32\\`, is the default <code>ServiceDll</code> value for Terminal Services in `HKLM\\System\\CurrentControlSet\\services\\TermService\\Parameters\\`.\n\nAdversaries may modify and/or replace the Terminal Services DLL to enable persistent access to victimized hosts.(Citation: James TermServ DLL) Modifications to this DLL could be done to execute arbitrary payloads (while also potentially preserving normal <code>termsrv.dll</code> functionality) as well as to simply enable abusable features of Terminal Services. For example, an adversary may enable features such as concurrent [Remote Desktop Protocol](https://attack.mitre.org/techniques/T1021/001) sessions by either patching the <code>termsrv.dll</code> file or modifying the <code>ServiceDll</code> value to point to a DLL that provides increased RDP functionality.(Citation: Windows OS Hub RDP)(Citation: RDPWrap Github) On a non-server Windows OS this increased functionality may also enable an adversary to avoid Terminal Services prompts that warn/log out users of a system when a new RDP session is created.",
+      "uri": "http://example.com/ucoex#T1505.005",
+      "clean_id": "T1505.005",
+      "labels": [
+        "Resource",
+        "UcoexMITREATTACK",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.7412853549378687,
+      "dot": 0.7412854433059692,
+      "euclidean": 0.7193257212638855,
+      "db_score": 0.8706426620483398
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775441",
+      "name": "LockerGoga",
+      "type": "Malware",
+      "contexts": [
+        "Lateral Movement Techniques LockerGoga Publisher Cyware  PREVIOUS Zero-day aw leaves TP- Link routers open to remote att ..."
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:767923",
+      "name": "Hannotog",
+      "description": "[Hannotog](https://attack.mitre.org/software/S1211) is a type of backdoor malware uniquely assoicated with [Lotus Blossom](https://attack.mitre.org/groups/G0030) operations since at least 2022.(Citation: Symantec Bilbug 2022)",
+      "uri": "http://example.com/ucoex#S1211",
+      "clean_id": "S1211",
+      "labels": [
+        "Resource",
+        "UcoexSOFTWARE",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.739752383261635,
+      "dot": 0.739752471446991,
+      "euclidean": 0.7214536070823669,
+      "db_score": 0.8698762059211731
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775441",
+      "name": "LockerGoga",
+      "type": "Malware",
+      "contexts": [
+        "Lateral Movement Techniques LockerGoga Publisher Cyware  PREVIOUS Zero-day aw leaves TP- Link routers open to remote att ..."
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:767569",
+      "name": "Ragnar Locker",
+      "description": "[Ragnar Locker](https://attack.mitre.org/software/S0481) is a ransomware that has been in use since at least December 2019.(Citation: Sophos Ragnar May 2020)(Citation: Cynet Ragnar Apr 2020)",
+      "uri": "http://example.com/ucoex#S0481",
+      "clean_id": "S0481",
+      "labels": [
+        "Resource",
+        "UcoexSOFTWARE",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.7392412113238825,
+      "dot": 0.7392411231994629,
+      "euclidean": 0.7221617102622986,
+      "db_score": 0.8696205019950867
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775443",
+      "name": "Trinity",
+      "type": "Campaign",
+      "contexts": [
+        "Malware and Vulnerabilities 7 Trinity FireEye Ryuk ransomware  NEXT Anubis"
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:767622",
+      "name": "Anubis",
+      "description": "[Anubis](https://attack.mitre.org/software/S0422) is Android malware that was originally used for cyber espionage, and has been retooled as a banking trojan.(Citation: Cofense Anubis)",
+      "uri": "http://example.com/ucoex#S0422",
+      "clean_id": "S0422",
+      "labels": [
+        "Resource",
+        "UcoexSOFTWARE",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.7377968459613691,
+      "dot": 0.7377970218658447,
+      "euclidean": 0.7241590619087219,
+      "db_score": 0.8688983917236328
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775437",
+      "name": "Windows Service",
+      "type": "OperatingSystem",
+      "contexts": [
+        "The second technique involved the use of a Windows Service created by Metasploit, that was used to communicate with a C2 server for dropping additional payloads into compromised systems."
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:766095",
+      "name": "System Service Discovery",
+      "description": "Adversaries may try to gather information about registered local system services. Adversaries may obtain information about services using tools as well as OS utility commands such as <code>sc query</code>, <code>tasklist /svc</code>, <code>systemctl --type=service</code>, and <code>net start</code>.\n\nAdversaries may use the information from [System Service Discovery](https://attack.mitre.org/techniques/T1007) during automated discovery to shape follow-on behaviors, including whether or not the adversary fully infects the target and/or attempts specific actions.",
+      "uri": "http://example.com/ucoex#T1007",
+      "clean_id": "T1007",
+      "labels": [
+        "Resource",
+        "UcoexMITREATTACK",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.7362919855987983,
+      "dot": 0.736291766166687,
+      "euclidean": 0.7262341380119324,
+      "db_score": 0.8681459426879883
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775444",
+      "name": "Ryuk ransomware",
+      "type": "Ransomware",
+      "contexts": [
+        "Malware and Vulnerabilities 7 Trinity FireEye Ryuk ransomware  NEXT Anubis"
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:768466",
+      "name": "RansomHub",
+      "description": "[RansomHub](https://attack.mitre.org/software/S1212) is a ransomware-as-a-service (RaaS) offering with Windows, ESXi, Linux, and FreeBSD versions that has been in use since at least 2024 to target organizations in multiple sectors globally. [RansomHub](https://attack.mitre.org/software/S1212) operators may have purchased and rebranded resources from Knight  (formerly Cyclops) Ransomware which shares infrastructure, feature, and code overlaps with [RansomHub](https://attack.mitre.org/software/S1212).(Citation: CISA RansomHub AUG 2024)(Citation: Group-IB RansomHub FEB 2025)",
+      "uri": "http://example.com/ucoex#S1212",
+      "clean_id": "S1212",
+      "labels": [
+        "Resource",
+        "UcoexSOFTWARE",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.7338910420070837,
+      "dot": 0.7338911294937134,
+      "euclidean": 0.729532778263092,
+      "db_score": 0.8669455051422119
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775444",
+      "name": "Ryuk ransomware",
+      "type": "Ransomware",
+      "contexts": [
+        "Malware and Vulnerabilities 7 Trinity FireEye Ryuk ransomware  NEXT Anubis"
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:766446",
+      "name": "Akira",
+      "description": "[Akira](https://attack.mitre.org/software/S1129) ransomware, written in C++, is most prominently (but not exclusively) associated with the ransomware-as-a-service entity [Akira](https://attack.mitre.org/groups/G1024). [Akira](https://attack.mitre.org/software/S1129) ransomware has been used in attacks across North America, Europe, and Australia, with a focus on critical infrastructure sectors including manufacturing, education, and IT services. [Akira](https://attack.mitre.org/software/S1129) ransomware employs hybrid encryption and threading to increase the speed and efficiency of encryption and runtime arguments for tailored attacks. Notable variants include Rust-based [Megazord](https://attack.mitre.org/software/S1191) for targeting Windows and [Akira _v2](https://attack.mitre.org/software/S1194) for targeting VMware ESXi servers.(Citation: Kersten Akira 2023)(Citation: CISA Akira Ransomware APR 2024)(Citation: Cisco Akira Ransomware OCT 2024)",
+      "uri": "http://example.com/ucoex#S1129",
+      "clean_id": "S1129",
+      "labels": [
+        "Resource",
+        "UcoexSOFTWARE",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.7336774429505928,
+      "dot": 0.7336772680282593,
+      "euclidean": 0.7298253178596497,
+      "db_score": 0.8668386936187744
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775447",
+      "name": "CYWARE",
+      "type": "Organization",
+      "contexts": [
+        "Malware and Vulnerabilities RESOURCES LUNCH & LEARN Threat Intel Management Series CYWARE Collaborate Respond"
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:767373",
+      "name": "Container and Resource Discovery",
+      "description": "Adversaries may attempt to discover containers and other resources that are available within a containers environment. Other resources may include images, deployments, pods, nodes, and other information such as the status of a cluster.\n\nThese resources can be viewed within web applications such as the Kubernetes dashboard or can be queried via the Docker and Kubernetes APIs.(Citation: Docker API)(Citation: Kubernetes API) In Docker, logs may leak information about the environment, such as the environment’s configuration, which services are available, and what cloud provider the victim may be utilizing. The discovery of these resources may inform an adversary’s next steps in the environment, such as how to perform lateral movement and which methods to utilize for execution. ",
+      "uri": "http://example.com/ucoex#T1613",
+      "clean_id": "T1613",
+      "labels": [
+        "Resource",
+        "UcoexMITREATTACK",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.7311553083473077,
+      "dot": 0.7311553955078125,
+      "euclidean": 0.7332730889320374,
+      "db_score": 0.8655775785446167
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775445",
+      "name": "trojan",
+      "type": "Trojan",
+      "contexts": [
+        "trojan spotted stealing PayPal credentia ..."
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:767342",
+      "name": "Red Alert 2.0",
+      "description": "[Red Alert 2.0](https://attack.mitre.org/software/S0539) is a banking trojan that masquerades as a VPN client.(Citation: Sophos Red Alert 2.0) ",
+      "uri": "http://example.com/ucoex#S0539",
+      "clean_id": "S0539",
+      "labels": [
+        "Resource",
+        "UcoexSOFTWARE",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.7302013635635376,
+      "dot": 0.7302013635635376,
+      "euclidean": 0.7345728278160095,
+      "db_score": 0.8651007413864136
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775444",
+      "name": "Ryuk ransomware",
+      "type": "Ransomware",
+      "contexts": [
+        "Malware and Vulnerabilities 7 Trinity FireEye Ryuk ransomware  NEXT Anubis"
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:768203",
+      "name": "Akira _v2",
+      "description": "[Akira _v2](https://attack.mitre.org/software/S1194) is a Rust-based variant of [Akira](https://attack.mitre.org/software/S1129) ransomware that has been in use since at least 2024. [Akira _v2](https://attack.mitre.org/software/S1194) is designed to target VMware ESXi servers and includes a new command-line argument set and other expanded capabilities.(Citation: CISA Akira Ransomware APR 2024)(Citation: Cisco Akira Ransomware OCT 2024)(Citation: Palo Alto Howling Scorpius DEC 2024)",
+      "uri": "http://example.com/ucoex#S1194",
+      "clean_id": "S1194",
+      "labels": [
+        "Resource",
+        "UcoexSOFTWARE",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.7299560082116098,
+      "dot": 0.7299562692642212,
+      "euclidean": 0.734906792640686,
+      "db_score": 0.864978015422821
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775447",
+      "name": "CYWARE",
+      "type": "Organization",
+      "contexts": [
+        "Malware and Vulnerabilities RESOURCES LUNCH & LEARN Threat Intel Management Series CYWARE Collaborate Respond"
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:766649",
+      "name": "Siloscape",
+      "description": "[Siloscape](https://attack.mitre.org/software/S0623) is malware that targets Kubernetes clusters through Windows containers. [Siloscape](https://attack.mitre.org/software/S0623) was first observed in March 2021.(Citation: Unit 42 Siloscape Jun 2021)",
+      "uri": "http://example.com/ucoex#S0623",
+      "clean_id": "S0623",
+      "labels": [
+        "Resource",
+        "UcoexSOFTWARE",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.7298299735075124,
+      "dot": 0.7298296689987183,
+      "euclidean": 0.7350780367851257,
+      "db_score": 0.8649150133132935
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775447",
+      "name": "CYWARE",
+      "type": "Organization",
+      "contexts": [
+        "Malware and Vulnerabilities RESOURCES LUNCH & LEARN Threat Intel Management Series CYWARE Collaborate Respond"
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:766534",
+      "name": "yty",
+      "description": "[yty](https://attack.mitre.org/software/S0248) is a modular, plugin-based malware framework. The components of the framework are written in a variety of programming languages. (Citation: ASERT Donot March 2018)",
+      "uri": "http://example.com/ucoex#S0248",
+      "clean_id": "S0248",
+      "labels": [
+        "Resource",
+        "UcoexSOFTWARE",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.7295430366278444,
+      "dot": 0.7295427322387695,
+      "euclidean": 0.735468327999115,
+      "db_score": 0.8647715449333191
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775447",
+      "name": "CYWARE",
+      "type": "Organization",
+      "contexts": [
+        "Malware and Vulnerabilities RESOURCES LUNCH & LEARN Threat Intel Management Series CYWARE Collaborate Respond"
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:767712",
+      "name": "Software Discovery",
+      "description": "Adversaries may attempt to get a listing of software and software versions that are installed on a system or in a cloud environment. Adversaries may use the information from [Software Discovery](https://attack.mitre.org/techniques/T1518) during automated discovery to shape follow-on behaviors, including whether or not the adversary fully infects the target and/or attempts specific actions.\n\nSuch software may be deployed widely across the environment for configuration management or security reasons, such as [Software Deployment Tools](https://attack.mitre.org/techniques/T1072), and may allow adversaries broad access to infect devices or move laterally.\n\nAdversaries may attempt to enumerate software for a variety of reasons, such as figuring out what security measures are present or if the compromised system has a version of software that is vulnerable to [Exploitation for Privilege Escalation](https://attack.mitre.org/techniques/T1068).",
+      "uri": "http://example.com/ucoex#T1518",
+      "clean_id": "T1518",
+      "labels": [
+        "Resource",
+        "UcoexMITREATTACK",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.7295195733928171,
+      "dot": 0.7295194864273071,
+      "euclidean": 0.7355004549026489,
+      "db_score": 0.8647598028182983
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775445",
+      "name": "trojan",
+      "type": "Trojan",
+      "contexts": [
+        "trojan spotted stealing PayPal credentia ..."
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:768457",
+      "name": "Cannon",
+      "description": "[Cannon](https://attack.mitre.org/software/S0351) is a Trojan with variants written in C# and Delphi. It was first observed in April 2018. (Citation: Unit42 Cannon Nov 2018)(Citation: Unit42 Sofacy Dec 2018)",
+      "uri": "http://example.com/ucoex#S0351",
+      "clean_id": "S0351",
+      "labels": [
+        "Resource",
+        "UcoexSOFTWARE",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.7275550365447998,
+      "dot": 0.7275550365447998,
+      "euclidean": 0.7381665706634521,
+      "db_score": 0.8637775182723999
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775448",
+      "name": "Collaborate Respond",
+      "type": "Campaign",
+      "contexts": [
+        "Malware and Vulnerabilities RESOURCES LUNCH & LEARN Threat Intel Management Series CYWARE Collaborate Respond"
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:766591",
+      "name": "Develop Capabilities: Malware",
+      "description": "Adversaries may develop malware and malware components that can be used during targeting. Building malicious software can include the development of payloads, droppers, post-compromise tools, backdoors (including backdoored images), packers, C2 protocols, and the creation of infected removable media. Adversaries may develop malware to support their operations, creating a means for maintaining control of remote machines, evading defenses, and executing post-compromise behaviors.(Citation: Mandiant APT1)(Citation: Kaspersky Sofacy)(Citation: ActiveMalwareEnergy)(Citation: FBI Flash FIN7 USB)\n\nAs with legitimate development efforts, different skill sets may be required for developing malware. The skills needed may be located in-house, or may need to be contracted out. Use of a contractor may be considered an extension of that adversary's malware development capabilities, provided the adversary plays a role in shaping requirements and maintains a degree of exclusivity to the malware.\n\nSome aspects of malware development, such as C2 protocol development, may require adversaries to obtain additional infrastructure. For example, malware developed that will communicate with Twitter for C2, may require use of [Web Services](https://attack.mitre.org/techniques/T1583/006).(Citation: FireEye APT29)",
+      "uri": "http://example.com/ucoex#T1587.001",
+      "clean_id": "T1587.001",
+      "labels": [
+        "Resource",
+        "UcoexMITREATTACK",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.7248650193214417,
+      "dot": 0.7248650193214417,
+      "euclidean": 0.7418019771575928,
+      "db_score": 0.8624324798583984
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775445",
+      "name": "trojan",
+      "type": "Trojan",
+      "contexts": [
+        "trojan spotted stealing PayPal credentia ..."
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:767271",
+      "name": "LookBack",
+      "description": "[LookBack](https://attack.mitre.org/software/S0582) is a remote access trojan written in C++ that was used against at least three US utility companies in July 2019. The TALONITE activity group has been observed using [LookBack](https://attack.mitre.org/software/S0582).(Citation: Proofpoint LookBack Malware Aug 2019)(Citation: Dragos TALONITE)(Citation: Dragos Threat Report 2020)",
+      "uri": "http://example.com/ucoex#S0582",
+      "clean_id": "S0582",
+      "labels": [
+        "Resource",
+        "UcoexSOFTWARE",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.7246115311285611,
+      "dot": 0.7246114015579224,
+      "euclidean": 0.7421433925628662,
+      "db_score": 0.8623057007789612
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775445",
+      "name": "trojan",
+      "type": "Trojan",
+      "contexts": [
+        "trojan spotted stealing PayPal credentia ..."
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:767962",
+      "name": "Dridex",
+      "description": "[Dridex](https://attack.mitre.org/software/S0384) is a prolific banking Trojan that first appeared in 2014. By December 2019, the US Treasury estimated [Dridex](https://attack.mitre.org/software/S0384) had infected computers in hundreds of banks and financial institutions in over 40 countries, leading to more than $100 million in theft. [Dridex](https://attack.mitre.org/software/S0384) was created from the source code of the Bugat banking Trojan (also known as Cridex).(Citation: Dell Dridex Oct 2015)(Citation: Kaspersky Dridex May 2017)(Citation: Treasury EvilCorp Dec 2019)",
+      "uri": "http://example.com/ucoex#S0384",
+      "clean_id": "S0384",
+      "labels": [
+        "Resource",
+        "UcoexSOFTWARE",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.7232407991312029,
+      "dot": 0.7232409715652466,
+      "euclidean": 0.7439882755279541,
+      "db_score": 0.8616203665733337
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775445",
+      "name": "trojan",
+      "type": "Trojan",
+      "contexts": [
+        "trojan spotted stealing PayPal credentia ..."
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:767570",
+      "name": "Cerberus",
+      "description": "[Cerberus](https://attack.mitre.org/software/S0480) is a banking trojan whose usage can be rented on underground forums and marketplaces. Prior to being available to rent, the authors of [Cerberus](https://attack.mitre.org/software/S0480) claim was used in private operations for two years.(Citation: Threat Fabric Cerberus)",
+      "uri": "http://example.com/ucoex#S0480",
+      "clean_id": "S0480",
+      "labels": [
+        "Resource",
+        "UcoexSOFTWARE",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.7228628196014811,
+      "dot": 0.7228630781173706,
+      "euclidean": 0.7444960474967957,
+      "db_score": 0.8614314198493958
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775448",
+      "name": "Collaborate Respond",
+      "type": "Campaign",
+      "contexts": [
+        "Malware and Vulnerabilities RESOURCES LUNCH & LEARN Threat Intel Management Series CYWARE Collaborate Respond"
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:767404",
+      "name": "Obtain Capabilities: Malware",
+      "description": "Adversaries may buy, steal, or download malware that can be used during targeting. Malicious software can include payloads, droppers, post-compromise tools, backdoors, packers, and C2 protocols. Adversaries may acquire malware to support their operations, obtaining a means for maintaining control of remote machines, evading defenses, and executing post-compromise behaviors.\n\nIn addition to downloading free malware from the internet, adversaries may purchase these capabilities from third-party entities. Third-party entities can include technology companies that specialize in malware development, criminal marketplaces (including Malware-as-a-Service, or MaaS), or from individuals. In addition to purchasing malware, adversaries may steal and repurpose malware from third-party entities (including other adversaries).",
+      "uri": "http://example.com/ucoex#T1588.001",
+      "clean_id": "T1588.001",
+      "labels": [
+        "Resource",
+        "UcoexMITREATTACK",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.7194424678889032,
+      "dot": 0.7194427251815796,
+      "euclidean": 0.749076247215271,
+      "db_score": 0.8597211837768555
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775448",
+      "name": "Collaborate Respond",
+      "type": "Campaign",
+      "contexts": [
+        "Malware and Vulnerabilities RESOURCES LUNCH & LEARN Threat Intel Management Series CYWARE Collaborate Respond"
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:768333",
+      "name": "Dynamic Resolution",
+      "description": "Adversaries may dynamically establish connections to command and control infrastructure to evade common detections and remediations. This may be achieved by using malware that shares a common algorithm with the infrastructure the adversary uses to receive the malware's communications. This algorithm can be used to dynamically adjust parameters such as the domain name, IP address, or port number the malware uses for command and control.",
+      "uri": "http://example.com/ucoex#T1637",
+      "clean_id": "T1637",
+      "labels": [
+        "Resource",
+        "UcoexMITREATTACK",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.7186084650288183,
+      "dot": 0.7186083793640137,
+      "euclidean": 0.7501885890960693,
+      "db_score": 0.8593041896820068
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775446",
+      "name": "PayPal credentia",
+      "type": "Unknown",
+      "contexts": [
+        "trojan spotted stealing PayPal credentia ..."
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:767962",
+      "name": "Dridex",
+      "description": "[Dridex](https://attack.mitre.org/software/S0384) is a prolific banking Trojan that first appeared in 2014. By December 2019, the US Treasury estimated [Dridex](https://attack.mitre.org/software/S0384) had infected computers in hundreds of banks and financial institutions in over 40 countries, leading to more than $100 million in theft. [Dridex](https://attack.mitre.org/software/S0384) was created from the source code of the Bugat banking Trojan (also known as Cridex).(Citation: Dell Dridex Oct 2015)(Citation: Kaspersky Dridex May 2017)(Citation: Treasury EvilCorp Dec 2019)",
+      "uri": "http://example.com/ucoex#S0384",
+      "clean_id": "S0384",
+      "labels": [
+        "Resource",
+        "UcoexSOFTWARE",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.7167085488537434,
+      "dot": 0.7167087197303772,
+      "euclidean": 0.7527170777320862,
+      "db_score": 0.8583542704582214
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775448",
+      "name": "Collaborate Respond",
+      "type": "Campaign",
+      "contexts": [
+        "Malware and Vulnerabilities RESOURCES LUNCH & LEARN Threat Intel Management Series CYWARE Collaborate Respond"
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:767697",
+      "name": "Develop Capabilities",
+      "description": "Adversaries may build capabilities that can be used during targeting. Rather than purchasing, freely downloading, or stealing capabilities, adversaries may develop their own capabilities in-house. This is the process of identifying development requirements and building solutions such as malware, exploits, and self-signed certificates. Adversaries may develop capabilities to support their operations throughout numerous phases of the adversary lifecycle.(Citation: Mandiant APT1)(Citation: Kaspersky Sofacy)(Citation: Bitdefender StrongPity June 2020)(Citation: Talos Promethium June 2020)\n\nAs with legitimate development efforts, different skill sets may be required for developing capabilities. The skills needed may be located in-house, or may need to be contracted out. Use of a contractor may be considered an extension of that adversary's development capabilities, provided the adversary plays a role in shaping requirements and maintains a degree of exclusivity to the capability.",
+      "uri": "http://example.com/ucoex#T1587",
+      "clean_id": "T1587",
+      "labels": [
+        "Resource",
+        "UcoexMITREATTACK",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.7164465865024122,
+      "dot": 0.7164467573165894,
+      "euclidean": 0.7530651092529297,
+      "db_score": 0.8582233786582947
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775448",
+      "name": "Collaborate Respond",
+      "type": "Campaign",
+      "contexts": [
+        "Malware and Vulnerabilities RESOURCES LUNCH & LEARN Threat Intel Management Series CYWARE Collaborate Respond"
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:767052",
+      "name": "PcShare",
+      "description": "[PcShare](https://attack.mitre.org/software/S1050) is an open source remote access tool that has been modified and used by Chinese threat actors, most notably during the FunnyDream campaign since late 2018.(Citation: Bitdefender FunnyDream Campaign November 2020)(Citation: GitHub PcShare 2014)",
+      "uri": "http://example.com/ucoex#S1050",
+      "clean_id": "S1050",
+      "labels": [
+        "Resource",
+        "UcoexSOFTWARE",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.7156361002488256,
+      "dot": 0.7156360149383545,
+      "euclidean": 0.7541404366493225,
+      "db_score": 0.8578180074691772
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775446",
+      "name": "PayPal credentia",
+      "type": "Unknown",
+      "contexts": [
+        "trojan spotted stealing PayPal credentia ..."
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:767570",
+      "name": "Cerberus",
+      "description": "[Cerberus](https://attack.mitre.org/software/S0480) is a banking trojan whose usage can be rented on underground forums and marketplaces. Prior to being available to rent, the authors of [Cerberus](https://attack.mitre.org/software/S0480) claim was used in private operations for two years.(Citation: Threat Fabric Cerberus)",
+      "uri": "http://example.com/ucoex#S0480",
+      "clean_id": "S0480",
+      "labels": [
+        "Resource",
+        "UcoexSOFTWARE",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.7148721045713051,
+      "dot": 0.7148723602294922,
+      "euclidean": 0.7551528811454773,
+      "db_score": 0.8574360609054565
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775446",
+      "name": "PayPal credentia",
+      "type": "Unknown",
+      "contexts": [
+        "trojan spotted stealing PayPal credentia ..."
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:767552",
+      "name": "DEFENSOR ID",
+      "description": "[DEFENSOR ID](https://attack.mitre.org/software/S0479) is a banking trojan capable of clearing a victim’s bank account or cryptocurrency wallet and taking over email or social media accounts. [DEFENSOR ID](https://attack.mitre.org/software/S0479) performs the majority of its malicious functionality by abusing Android’s accessibility service.(Citation: ESET DEFENSOR ID) ",
+      "uri": "http://example.com/ucoex#S0479",
+      "clean_id": "S0479",
+      "labels": [
+        "Resource",
+        "UcoexSOFTWARE",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.7117927579385657,
+      "dot": 0.7117925882339478,
+      "euclidean": 0.7592196464538574,
+      "db_score": 0.8558963537216187
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775446",
+      "name": "PayPal credentia",
+      "type": "Unknown",
+      "contexts": [
+        "trojan spotted stealing PayPal credentia ..."
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:767217",
+      "name": "Pay2Key",
+      "description": "[Pay2Key](https://attack.mitre.org/software/S0556) is a ransomware written in C++ that has been used by [Fox Kitten](https://attack.mitre.org/groups/G0117) since at least July 2020 including campaigns against Israeli companies. [Pay2Key](https://attack.mitre.org/software/S0556) has been incorporated with a leak site to display stolen sensitive information to further pressure victims into payment.(Citation: ClearkSky Fox Kitten February 2020)(Citation: Check Point Pay2Key November 2020)",
+      "uri": "http://example.com/ucoex#S0556",
+      "clean_id": "S0556",
+      "labels": [
+        "Resource",
+        "UcoexSOFTWARE",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.7115661089105086,
+      "dot": 0.7115664482116699,
+      "euclidean": 0.7595183253288269,
+      "db_score": 0.8557829856872559
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775446",
+      "name": "PayPal credentia",
+      "type": "Unknown",
+      "contexts": [
+        "trojan spotted stealing PayPal credentia ..."
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:767881",
+      "name": "Azorult",
+      "description": "[Azorult](https://attack.mitre.org/software/S0344) is a commercial Trojan that is used to steal information from compromised hosts. [Azorult](https://attack.mitre.org/software/S0344) has been observed in the wild as early as 2016.\nIn July 2018, [Azorult](https://attack.mitre.org/software/S0344) was seen used in a spearphishing campaign against targets in North America. [Azorult](https://attack.mitre.org/software/S0344) has been seen used for cryptocurrency theft. (Citation: Unit42 Azorult Nov 2018)(Citation: Proofpoint Azorult July 2018)",
+      "uri": "http://example.com/ucoex#S0344",
+      "clean_id": "S0344",
+      "labels": [
+        "Resource",
+        "UcoexSOFTWARE",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.7114852918964972,
+      "dot": 0.7114852070808411,
+      "euclidean": 0.7596245408058167,
+      "db_score": 0.8557425737380981
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775443",
+      "name": "Trinity",
+      "type": "Campaign",
+      "contexts": [
+        "Malware and Vulnerabilities 7 Trinity FireEye Ryuk ransomware  NEXT Anubis"
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:766810",
+      "name": "FIVEHANDS",
+      "description": "[FIVEHANDS](https://attack.mitre.org/software/S0618) is a customized version of [DEATHRANSOM](https://attack.mitre.org/software/S0616) ransomware written in C++. [FIVEHANDS](https://attack.mitre.org/software/S0618) has been used since at least 2021, including in Ransomware-as-a-Service (RaaS) campaigns, sometimes along with [SombRAT](https://attack.mitre.org/software/S0615).(Citation: FireEye FiveHands April 2021)(Citation: NCC Group Fivehands June 2021)",
+      "uri": "http://example.com/ucoex#S0618",
+      "clean_id": "S0618",
+      "labels": [
+        "Resource",
+        "UcoexSOFTWARE",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.704708404190851,
+      "dot": 0.7047082781791687,
+      "euclidean": 0.7684940099716187,
+      "db_score": 0.8523541688919067
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775443",
+      "name": "Trinity",
+      "type": "Campaign",
+      "contexts": [
+        "Malware and Vulnerabilities 7 Trinity FireEye Ryuk ransomware  NEXT Anubis"
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:767151",
+      "name": "Prikormka",
+      "description": "[Prikormka](https://attack.mitre.org/software/S0113) is a malware family used in a campaign known as Operation Groundbait. It has predominantly been observed in Ukraine and was used as early as 2008. (Citation: ESET Operation Groundbait)",
+      "uri": "http://example.com/ucoex#S0113",
+      "clean_id": "S0113",
+      "labels": [
+        "Resource",
+        "UcoexSOFTWARE",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.7044790211009396,
+      "dot": 0.7044789791107178,
+      "euclidean": 0.7687925696372986,
+      "db_score": 0.8522394895553589
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775443",
+      "name": "Trinity",
+      "type": "Campaign",
+      "contexts": [
+        "Malware and Vulnerabilities 7 Trinity FireEye Ryuk ransomware  NEXT Anubis"
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:767605",
+      "name": "Sykipot",
+      "description": "[Sykipot](https://attack.mitre.org/software/S0018) is malware that has been used in spearphishing campaigns since approximately 2007 against victims primarily in the US. One variant of [Sykipot](https://attack.mitre.org/software/S0018) hijacks smart cards on victims. (Citation: Alienvault Sykipot DOD Smart Cards) The group using this malware has also been referred to as Sykipot. (Citation: Blasco 2013)",
+      "uri": "http://example.com/ucoex#S0018",
+      "clean_id": "S0018",
+      "labels": [
+        "Resource",
+        "UcoexSOFTWARE",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.7038748970330007,
+      "dot": 0.7038750648498535,
+      "euclidean": 0.7695780992507935,
+      "db_score": 0.8519374132156372
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775443",
+      "name": "Trinity",
+      "type": "Campaign",
+      "contexts": [
+        "Malware and Vulnerabilities 7 Trinity FireEye Ryuk ransomware  NEXT Anubis"
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:768172",
+      "name": "Playcrypt",
+      "description": "[Playcrypt](https://attack.mitre.org/software/S1162) is a ransomware that has been used by [Play](https://attack.mitre.org/groups/G1040) since at least 2022 in attacks against against the business, government, critical infrastructure, healthcare, and media sectors in North America, South America, and Europe. [Playcrypt](https://attack.mitre.org/software/S1162) derives its name from adding the .play extension to encrypted files and has overlap with tactics and tools associated with Hive and Nokoyawa ransomware and infrastructure associated with Quantum ransomware.(Citation: Microsoft PlayCrypt August 2022)(Citation: CISA Play Ransomware Advisory December 2023)(Citation: Trend Micro Ransomware Spotlight Play July 2023)",
+      "uri": "http://example.com/ucoex#S1162",
+      "clean_id": "S1162",
+      "labels": [
+        "Resource",
+        "UcoexSOFTWARE",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.7026589464314357,
+      "dot": 0.7026586532592773,
+      "euclidean": 0.7711561918258667,
+      "db_score": 0.851329505443573
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775442",
+      "name": "Publisher",
+      "type": "Organization",
+      "contexts": [
+        "Lateral Movement Techniques LockerGoga Publisher Cyware  PREVIOUS Zero-day aw leaves TP- Link routers open to remote att ..."
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:768429",
+      "name": "Lateral Movement",
+      "description": "The adversary is trying to move through your environment.\n\nLateral Movement consists of techniques that adversaries use to enter and control remote systems on a network. Following through on their primary objective often requires exploring the network to find their target and subsequently gaining access to it. Reaching their objective often involves pivoting through multiple systems and accounts to gain. Adversaries might install their own remote access tools to accomplish Lateral Movement or use legitimate credentials with native network and operating system tools, which may be stealthier. ",
+      "uri": "http://example.com/ucoex#TA0008",
+      "clean_id": "TA0008",
+      "labels": [
+        "Resource",
+        "UcoexTACTICS",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.6930692195892334,
+      "dot": 0.6930692195892334,
+      "euclidean": 0.7834931015968323,
+      "db_score": 0.8465346097946167
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775442",
+      "name": "Publisher",
+      "type": "Organization",
+      "contexts": [
+        "Lateral Movement Techniques LockerGoga Publisher Cyware  PREVIOUS Zero-day aw leaves TP- Link routers open to remote att ..."
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:768020",
+      "name": "DarkComet",
+      "description": "[DarkComet](https://attack.mitre.org/software/S0334) is a Windows remote administration tool and backdoor.(Citation: TrendMicro DarkComet Sept 2014)(Citation: Malwarebytes DarkComet March 2018)",
+      "uri": "http://example.com/ucoex#S0334",
+      "clean_id": "S0334",
+      "labels": [
+        "Resource",
+        "UcoexSOFTWARE",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.6839825668376525,
+      "dot": 0.6839827299118042,
+      "euclidean": 0.7950062155723572,
+      "db_score": 0.8419913053512573
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775442",
+      "name": "Publisher",
+      "type": "Organization",
+      "contexts": [
+        "Lateral Movement Techniques LockerGoga Publisher Cyware  PREVIOUS Zero-day aw leaves TP- Link routers open to remote att ..."
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:768478",
+      "name": "Lateral Movement",
+      "description": "The adversary is trying to move through your ICS environment.\n\nLateral Movement consists of techniques that adversaries use to enter and control remote systems on a network. These techniques abuse default credentials, known accounts, and vulnerable services, and may also leverage dual-homed devices and systems that reside on both the IT and OT networks. The adversary uses these techniques to pivot to their next point in the environment, positioning themselves to where they want to be or think they should be. Following through on their primary objective often requires [Discovery](https://attack.mitre.org/tactics/TA0102) of the network and [Collection](https://attack.mitre.org/tactics/TA0100) to develop awareness of unique ICS devices and processes, in order to find their target and subsequently gain access to it. Reaching this objective often involves pivoting through multiple systems, devices, and accounts. Adversaries may install their own remote tools to accomplish Lateral Movement or leverage default tools, programs, and manufacturer set or other legitimate credentials native to the network, which may be stealthier.",
+      "uri": "http://example.com/ucoex#TA0109",
+      "clean_id": "TA0109",
+      "labels": [
+        "Resource",
+        "UcoexTACTICS",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.6839812397956848,
+      "dot": 0.6839812397956848,
+      "euclidean": 0.7950078248977661,
+      "db_score": 0.8419906497001648
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775442",
+      "name": "Publisher",
+      "type": "Organization",
+      "contexts": [
+        "Lateral Movement Techniques LockerGoga Publisher Cyware  PREVIOUS Zero-day aw leaves TP- Link routers open to remote att ..."
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:766899",
+      "name": "AsyncRAT",
+      "description": "[AsyncRAT](https://attack.mitre.org/software/S1087) is an open-source remote access tool originally available through the NYANxCAT Github repository that has been used in malicious campaigns.(Citation: Morphisec Snip3 May 2021)(Citation: Cisco Operation Layover September 2021)(Citation: Telefonica Snip3 December 2021)",
+      "uri": "http://example.com/ucoex#S1087",
+      "clean_id": "S1087",
+      "labels": [
+        "Resource",
+        "UcoexSOFTWARE",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.6839432716369629,
+      "dot": 0.6839432716369629,
+      "euclidean": 0.795055627822876,
+      "db_score": 0.8419716358184814
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775438",
+      "name": "Metasploit",
+      "type": "Software",
+      "contexts": [
+        "The second technique involved the use of a Windows Service created by Metasploit, that was used to communicate with a C2 server for dropping additional payloads into compromised systems.",
+        "Once the Metasploit reverse TCP stager executed, it downloaded and"
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:767698",
+      "name": "Multi-Stage Channels",
+      "description": "Adversaries may create multiple stages for command and control that are employed under different conditions or for certain functions. Use of multiple stages may obfuscate the command and control channel to make detection more difficult.\n\nRemote access tools will call back to the first-stage command and control server for instructions. The first stage may have automated capabilities to collect basic host information, update tools, and upload additional files. A second remote access tool (RAT) could be uploaded at that point to redirect the host to the second-stage command and control server. The second stage will likely be more fully featured and allow the adversary to interact with the system through a reverse shell and additional RAT features.\n\nThe different stages will likely be hosted separately with no overlapping infrastructure. The loader may also have backup first-stage callbacks or [Fallback Channels](https://attack.mitre.org/techniques/T1008) in case the original first-stage communication path is discovered and blocked.",
+      "uri": "http://example.com/ucoex#T1104",
+      "clean_id": "T1104",
+      "labels": [
+        "Resource",
+        "UcoexMITREATTACK",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.6835922598838806,
+      "dot": 0.6835922598838806,
+      "euclidean": 0.7954970598220825,
+      "db_score": 0.8417960405349731
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775442",
+      "name": "Publisher",
+      "type": "Organization",
+      "contexts": [
+        "Lateral Movement Techniques LockerGoga Publisher Cyware  PREVIOUS Zero-day aw leaves TP- Link routers open to remote att ..."
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:768421",
+      "name": "Lateral Movement",
+      "description": "The adversary is trying to move through your environment.\n\nLateral movement consists of techniques that enable an adversary to access and control remote systems on a network and could, but does not necessarily, include execution of tools on remote systems. The lateral movement techniques could allow an adversary to gather information from a system without needing additional tools, such as a remote access tool.",
+      "uri": "http://example.com/ucoex#TA0033",
+      "clean_id": "TA0033",
+      "labels": [
+        "Resource",
+        "UcoexTACTICS",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.6831536670740047,
+      "dot": 0.6831537485122681,
+      "euclidean": 0.7960481643676758,
+      "db_score": 0.8415768146514893
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775438",
+      "name": "Metasploit",
+      "type": "Software",
+      "contexts": [
+        "The second technique involved the use of a Windows Service created by Metasploit, that was used to communicate with a C2 server for dropping additional payloads into compromised systems.",
+        "Once the Metasploit reverse TCP stager executed, it downloaded and"
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:766765",
+      "name": "Standard Application Layer Protocol",
+      "description": "Adversaries may establish command and control capabilities over commonly used application layer protocols such as HTTP(S), OPC, RDP, telnet, DNP3, and modbus. These protocols may be used to disguise adversary actions as benign network traffic. Standard protocols may be seen on their associated port or in some cases over a non-standard port.  Adversaries may use these protocols to reach out of the network for command and control, or in some cases to other infected devices within the network.",
+      "uri": "http://example.com/ucoex#T0869",
+      "clean_id": "T0869",
+      "labels": [
+        "Resource",
+        "UcoexMITREATTACK",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.681539790263226,
+      "dot": 0.6815399527549744,
+      "euclidean": 0.7980730533599854,
+      "db_score": 0.84076988697052
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775438",
+      "name": "Metasploit",
+      "type": "Software",
+      "contexts": [
+        "The second technique involved the use of a Windows Service created by Metasploit, that was used to communicate with a C2 server for dropping additional payloads into compromised systems.",
+        "Once the Metasploit reverse TCP stager executed, it downloaded and"
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:767145",
+      "name": "Application Layer Protocol: File Transfer Protocols",
+      "description": "Adversaries may communicate using application layer protocols associated with transferring files to avoid detection/network filtering by blending in with existing traffic. Commands to the remote system, and often the results of those commands, will be embedded within the protocol traffic between the client and server. \n\nProtocols such as SMB(Citation: US-CERT TA18-074A), FTP(Citation: ESET Machete July 2019), FTPS, and TFTP that transfer files may be very common in environments.  Packets produced from these protocols may have many fields and headers in which data can be concealed. Data could also be concealed within the transferred files. An adversary may abuse these protocols to communicate with systems under their control within a victim network while also mimicking normal, expected traffic. ",
+      "uri": "http://example.com/ucoex#T1071.002",
+      "clean_id": "T1071.002",
+      "labels": [
+        "Resource",
+        "UcoexMITREATTACK",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.6813545174522934,
+      "dot": 0.6813547611236572,
+      "euclidean": 0.7983051538467407,
+      "db_score": 0.8406772613525391
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775438",
+      "name": "Metasploit",
+      "type": "Software",
+      "contexts": [
+        "The second technique involved the use of a Windows Service created by Metasploit, that was used to communicate with a C2 server for dropping additional payloads into compromised systems.",
+        "Once the Metasploit reverse TCP stager executed, it downloaded and"
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:766764",
+      "name": "Lateral Tool Transfer",
+      "description": "Adversaries may transfer tools or other files from one system to another to stage adversary tools or other files over the course of an operation. (Citation: Enterprise ATT&CK) Copying of files may also be performed laterally between internal victim systems to support Lateral Movement with remote Execution using inherent file sharing protocols such as file sharing over SMB to connected network shares. (Citation: Enterprise ATT&CK)\n\nIn control systems environments, malware may use SMB and other file sharing protocols to move laterally through industrial networks.",
+      "uri": "http://example.com/ucoex#T0867",
+      "clean_id": "T0867",
+      "labels": [
+        "Resource",
+        "UcoexMITREATTACK",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.6745659335154097,
+      "dot": 0.6745657324790955,
+      "euclidean": 0.8067638874053955,
+      "db_score": 0.8372830152511597
+    }
+  },
+  {
+    "source": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:775438",
+      "name": "Metasploit",
+      "type": "Software",
+      "contexts": [
+        "The second technique involved the use of a Windows Service created by Metasploit, that was used to communicate with a C2 server for dropping additional payloads into compromised systems.",
+        "Once the Metasploit reverse TCP stager executed, it downloaded and"
+      ],
+      "labels": [
+        "Vectorized",
+        "CTIEntity"
+      ]
+    },
+    "target": {
+      "uid": "4:cda268ee-b34b-4603-900e-54303207d7db:768181",
+      "name": "Compromise Software Supply Chain",
+      "description": "Adversaries may manipulate application software prior to receipt by a final consumer for the purpose of data or system compromise. Supply chain compromise of software can take place in a number of ways, including manipulation of the application source code, manipulation of the update/distribution mechanism for that software, or replacing compiled releases with a modified version.",
+      "uri": "http://example.com/ucoex#T1474.003",
+      "clean_id": "T1474.003",
+      "labels": [
+        "Resource",
+        "UcoexMITREATTACK",
+        "Vectorized",
+        "SimilarityTarget"
+      ]
+    },
+    "scores": {
+      "cosine": 0.6740446518845894,
+      "dot": 0.6740443706512451,
+      "euclidean": 0.8074096441268921,
+      "db_score": 0.8370223045349121
+    }
+  }
+]

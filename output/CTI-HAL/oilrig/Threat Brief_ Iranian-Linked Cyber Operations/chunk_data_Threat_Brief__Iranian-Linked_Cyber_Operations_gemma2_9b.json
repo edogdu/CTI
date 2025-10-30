@@ -1,0 +1,933 @@
+{
+  "metrics": {
+    "file_name": "Threat Brief_ Iranian-Linked Cyber Operations.pdf",
+    "model_used": "gemma2:9b",
+    "doc_sha256_id": "39dcfd4675cab6d7",
+    "num_pages": 5,
+    "num_sentences_total": 78,
+    "num_sentences_used": 57,
+    "num_raw_triples": 57,
+    "num_valid_triples": 38,
+    "num_suspicious_triples": 19,
+    "avg_triples_per_sentence": 1.0,
+    "rejection_stats": {
+      "bad_structure": 0,
+      "invalid_class_or_predicate": 19
+    },
+    "runtime_seconds": 64.06046199798584
+  },
+  "data": [
+    {
+      "context": " NATION-STATE CYBERATTACKS Threat Brief: Iranian-Linked Cyber Operations 6 min read Threat Research Center High Pro fi le Threats Nation-State Cyberattacks By: Published: 9 January, 2020 at 6:00 PM PST Categories: Tags: Unit 42 High Profile Threats , Nation-State Cyberattacks Advanced Persistent Threat , APT34 , Cobalt Gypsy , DarkHydrus , Elfin , Evasive Serpens , Helix Kitten , Magic hound , MuddyWater , Newscaster , OilRig , Refined Kitten , Shamoon , Shamoon 2 , Shamoon 3 , Static Kitten Share Under Attack?",
+      "triple": [
+        {
+          "subject": {
+            "name": "Nation-State Cyberattacks",
+            "type": "AttackPattern"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "Threat Brief: Iranian-Linked Cyber Operations",
+            "type": "Report"
+          },
+          "evidence": {
+            "quote": "NATION-STATE CYBERATTACKS Threat Brief: Iranian-Linked Cyber Operations"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Overview of Iran-Linked Campaigns: Some of the currently active groups or campaigns publicly attributed by the industry as originating from Iran are: OilRig (AKA APT34/Helix Kitten) MagicHound (AKA APT35/Newscaster/Cobalt Gypsy)",
+      "triple": [
+        {
+          "subject": {
+            "name": "OilRig",
+            "type": "Campaign"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "APT34/Helix Kitten",
+            "type": "Campaign"
+          },
+          "evidence": {
+            "quote": "OilRig (AKA APT34/Helix Kitten)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " DarkHydrus Shamoon MuddyWater (AKA Static Kitten)",
+      "triple": [
+        {
+          "subject": {
+            "name": "DarkHydrus",
+            "type": "ThreatActor"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Static Kitten",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "(AKA Static Kitten)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "A smaller number of highly focused destructive attacks have been observed over time, beginning with the original Shamoon attack in 2012, with additional iterations years after, and more recently with StoneDrill and ZeroCleare.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Shamoon",
+            "type": "AttackPattern"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "original Shamoon attack",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "beginning with the original Shamoon attack in 2012"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Iranian TTPs: Behaviorally, several tactics and techniques have been observed across multiple groups and campaigns over time.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Iranian TTPs",
+            "type": "ThreatActor"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "Behaviorally",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "several tactics and techniques have been observed across multiple groups and campaigns over time."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The following is a list of commonly observed tactics and techniques along with their associated ATT&CK IDs: Phishing ( T1193 and T1192 )",
+      "triple": [
+        {
+          "subject": {
+            "name": "Phishing",
+            "type": "AttackPattern"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "T1193 and T1192",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "Phishing ( T1193 and T1192 )"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Credential harvesting ( T1078 , T1003 , T1503 , T1081 , T1214 ) DNS Tunneling ( T1071 ) DNS Hijacking ( T1326 )",
+      "triple": [
+        {
+          "subject": {
+            "name": "Credential harvesting",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "T1078",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": " Credential harvesting ( T1078"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "EldoS RawDisk driver ( T1485 , T1488 , T1487 , S0364 ) Malicious macros ( T1204 ) Weaponized Excel and Word documents ( T1204 , T1221 , T1173 ) Script based backdoors ( T1064 , T1027 )",
+      "triple": [
+        {
+          "subject": {
+            "name": "EldoS RawDisk driver",
+            "type": "Software"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "T1485, T1488, T1487, S0364",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "EldoS RawDisk driver ( T1485 , T1488 , T1487 , S0364 )"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Webshell deployment ( T1108 , T1133 , T1190 , T1027 )",
+      "triple": [
+        {
+          "subject": {
+            "name": "Webshell deployment",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "T1108, T1133, T1190, T1027",
+            "type": "Vulnerability_CVEID"
+          },
+          "evidence": {
+            "quote": "Webshell deployment ( T1108 , T1133 , T1190 , T1027 )"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Scheduled tasks ( T1053 ) Use of Mimikatz ( T1003 , T1207 , T1098 , T1081 , S0002 ) Exploitation of enterprise VPN Software ( T1133 , T1210 )",
+      "triple": [
+        {
+          "subject": {
+            "name": "Scheduled tasks",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "Mimikatz",
+            "type": "Exploit-kit"
+          },
+          "evidence": {
+            "quote": "Use of Mimikatz ( T1003 , T1207 , T1098 , T1081 , S0002 )"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "013",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "General Mitigations: With this knowledge of common behaviors, some mitigations recommendations are: Increase education and awareness against phishing attacks in your organization via exercises and informational resources Enable or implement multi-factor authentication on public facing systems, or more preferably, across the entire organization Enable or implement credential theft detection features in network security devices Enable or implement anomalous DNS behavior detection/prevention capability Blacklist EldoS RawDisk driver, unless absolutely required for business purposes Review security policies for macro documents and restrict execution where possible Review security policies for script fi le execution on endpoints and restrict where possible Review all public facing network applications and deploy up-to-date patches Enable or implement domain or URL categorization features in network security devices Scan endpoints for new or unknown scheduled tasks Implement detection and prevention logic for behaviors associated with Mimikatz Patch remotely exposed software for known vulnerabilities as soon as possible Palo Alto Networks' Customer Mitigations: Palo Alto Networks customers should adopt best practices and evaluate their security posture to protect against the threats outlined in this document as well as other threats that may impact their network and users.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Palo Alto Networks' Customer Mitigations",
+            "type": "Campaign"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "best practices and evaluate their security posture to protect against the threats outlined in this document as well as other threats that may impact their network and users",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "Palo Alto Networks' Customer Mitigations: Palo Alto Networks customers should adopt best practices and evaluate their security posture to protect against the threats outlined in this document as well as other threats that may impact their network and users"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "014",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Best Practice Resources Best Practice Assessment Security Lifecycle Review Group Details OilRig (AKA APT34/Helix Kitten)",
+      "triple": [
+        {
+          "subject": {
+            "name": "OilRig",
+            "type": "ThreatActor"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "APT34/Helix Kitten",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "(AKA APT34/Helix Kitten)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "015",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " https://attack.mitre.org/groups/G0049/ OilRig is a threat group Unit 42 named and discovered in May 2016.",
+      "triple": [
+        {
+          "subject": {
+            "name": "OilRig",
+            "type": "ThreatActor"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Unit 42",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "OilRig is a threat group Unit 42 named and discovered in May 2016."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In their spear-phishing attacks, OilRig preferred macro-enabled Microsoft O ffi ce (Word and Excel) documents to install their custom payloads that came in the form of portable executables (PE), PowerShell and VBScripts.",
+      "triple": [
+        {
+          "subject": {
+            "name": "OilRig",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "spear-phishing attacks",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "In their spear-phishing attacks"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "OilRig's custom payloads frequently used DNS tunneling as a command and control (C2) channel.",
+      "triple": [
+        {
+          "subject": {
+            "name": "OilRig",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "DNS tunneling",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "OilRig's custom payloads frequently used DNS tunneling"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Once gaining access to an end point, actors would use credential dumping tools, such as Mimikatz to gather credentials to legitimate accounts to then move laterally to other systems on the network.",
+      "triple": [
+        {
+          "subject": {
+            "name": "actors",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "Mimikatz",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "use credential dumping tools, such as Mimikatz"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "When presented with a webserver, OilRig would install a webshell as another ingress point to maintain access to the network.",
+      "triple": [
+        {
+          "subject": {
+            "name": "OilRig",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "webshell",
+            "type": "Webshell"
+          },
+          "evidence": {
+            "quote": "install a webshell"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "References Magic Hound (AKA APT35/Newscaster/Cobalt Gypsy) https://attack.mitre.org/groups/G0059/",
+      "triple": [
+        {
+          "subject": {
+            "name": "Magic Hound",
+            "type": "ThreatActor"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "APT35/Newscaster/Cobalt Gypsy",
+            "type": "ThreatActor"
+          },
+          "evidence": {
+            "quote": "(AKA APT35/Newscaster/Cobalt Gypsy)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The Magic Hound campaign targeted energy, government, and technology organizations with spear-phishing emails as a delivery mechanism.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Magic Hound",
+            "type": "Campaign"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "energy, government, and technology organizations",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "The Magic Hound campaign targeted energy, government, and technology organizations"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Framework PE fi les, Meterpreter, IRC bots, an open sourced Meterpreter module called Magic Unicorn, and an open sourced Python RAT called Pupy.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Framework",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "PE files",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "Framework PE fi les"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The custom tools used in the Magic Hound campaign provided connections to other threat groups, such as the IRC Bot which was very similar to the Parastoo tool associated with the NEWSCASTER threat group.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Magic Hound",
+            "type": "Campaign"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "custom tools",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "The custom tools used in the Magic Hound campaign"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "012",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Also, a Magic Hound C2 server was also used as a C2 server for a tool called MPKBot that had been associated with the Rocket Kitten threat group.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Magic Hound C2 server",
+            "type": "CommandAndControl"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "MPKBot",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "a Magic Hound C2 server was also used as a C2 server for a tool called MPKBot"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "013",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "They use spear-phishing attacks with a domain masquerading technique to make the links in their emails appear legitimate.",
+      "triple": [
+        {
+          "subject": {
+            "name": "They",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "spear-phishing attacks",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "They use spear-phishing attacks"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "015",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "A recent report uncovered this threat group's attack infrastructure, which leveraged commercial VPN providers in addition to compromised systems to use as proxies to further mask their origins.",
+      "triple": [
+        {
+          "subject": {
+            "name": "threat group",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "commercial VPN providers",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "which leveraged commercial VPN providers"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "017",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "fi reeye.com/blog/threat-research/2017/09/apt33-insights-into-iranian-cyber-espionage.html https://blog.trendmicro.com/trendlabs-security-intelligence/more-than-a-dozen-obfuscated-apt33-botnets-used-for-extreme-narrow-targeting/ DarkHydrus https://attack.mitre.org/groups/G0079/",
+      "triple": [
+        {
+          "subject": {
+            "name": "fi reeye.com/blog/threat-research/2017/09/apt33-insights-into-iranian-cyber-espionage.html",
+            "type": "URL"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "DarkHydrus",
+            "type": "ThreatActor"
+          },
+          "evidence": {
+            "quote": "fi reeye.com/blog/threat-research/2017/09/apt33-insights-into-iranian-cyber-espionage.html https://blog.trendmicro.com/trendlabs-security-intelligence/more-than-a-dozen-obfuscated-apt33-botnets-used-for-extreme-narrow-targeting/ DarkHydrus"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The DarkHydrus threat group has targeted government entities and educational institutions with spear-phishing attacks and credential harvesting campaigns.",
+      "triple": [
+        {
+          "subject": {
+            "name": "DarkHydrus",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "government entities and educational institutions",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "The DarkHydrus threat group has targeted government entities and educational institutions"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The original Shamoon attack was launched in 2012 and targeted two speci fi c organizations in the energy sector with the goal of rendering their respective computer systems inoperable by wiping their disks.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Shamoon attack",
+            "type": "AttackPattern"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "two specific organizations",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "The original Shamoon attack was launched in 2012 and targeted two specific organizations"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The attack package included a commercially available driver to execute the wiping tasks and also included a worming component which allowed the package to spread within a target organization in an automated manner.",
+      "triple": [
+        {
+          "subject": {
+            "name": "attack package",
+            "type": "Malware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "commercially available driver",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "included a commercially available driver"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Since the original 2012 attack, two other instances of Shamoon have been discovered, in 2016 as well as 2018.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Shamoon",
+            "type": "MalwareFamily"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Shamoon",
+            "type": "MalwareFamily"
+          },
+          "evidence": {
+            "quote": "two other instances of Shamoon have been discovered"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "References https://securelist.com/shamoon-the-wiper-copycats-at-work/57854/ https://unit42.paloaltonetworks.com/unit42-shamoon-2-return-disttrack-wiper/ https://unit42.paloaltonetworks.com/unit42-second-wave-shamoon-2-attacks-identi fi ed/ https://unit42.paloaltonetworks.com/unit42-shamoon-2-delivering-disttrack/ https://unit42.paloaltonetworks.com/shamoon-3-targets-oil-gas-organization/ https://unit42.paloaltonetworks.com/shamoon-3-modi fi ed-open-source-wiper-contains-verse-from-the-quran/ MuddyWater (AKA Static Kitten)",
+      "triple": [
+        {
+          "subject": {
+            "name": "MuddyWater",
+            "type": "ThreatActor"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Static Kitten",
+            "type": "ThreatActor"
+          },
+          "evidence": {
+            "quote": "MuddyWater (AKA Static Kitten)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "012",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This group generally used spear-phishing with macro-enabled O ffi ce documents to deliver their payloads, which were either embedded directly in the macro, or hosted on a fi rst stage C2 server.",
+      "triple": [
+        {
+          "subject": {
+            "name": "group",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "spear-phishing with macro-enabled O ffi ce documents",
+            "type": "Phishing"
+          },
+          "evidence": {
+            "quote": "This group generally used spear-phishing with macro-enabled O ffi ce documents"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "015",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "These C2 servers were observed to be either third party fi le hosting sites or code sharing repositories such as GitHub.",
+      "triple": [
+        {
+          "subject": {
+            "name": "C2 servers",
+            "type": "CommandAndControl"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "file hosting sites",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "These C2 servers were observed to be either third party fi le hosting sites"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "016",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "A signi fi cant portion of MuddyWater's toolset consisted of open sourced redteaming tools such as Invoke-Obfuscation, Lazagne, Mimikatz, etc.",
+      "triple": [
+        {
+          "subject": {
+            "name": "MuddyWater",
+            "type": "ThreatActor"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "Invoke-Obfuscation",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "MuddyWater's toolset consisted of open sourced redteaming tools such as Invoke-Obfuscation"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "017",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "References https://unit42.paloaltonetworks.com/unit42-muddying-the-water-targeted-attacks-in-the-middle-east/ https://securelist.com/muddywater/88059/ https://www.clearskysec.com/muddywater2/ https://blog.trendmicro.com/trendlabs-security-intelligence/muddywater-resurfaces-uses-multi-stage-backdoor-powerstats-v3-and-new-postexploitation-tools/ Conclusion Assuming the highlighted groups are indeed Iranian in origin, their activity has been well documented and the various groups often times use very similar tactics and techniques to execute their attacks, such as the heavy use of spear-phishing and credential harvesting.",
+      "triple": [
+        {
+          "subject": {
+            "name": "highlighted groups",
+            "type": "Organization"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Iranian",
+            "type": "Person"
+          },
+          "evidence": {
+            "quote": "Assuming the highlighted groups are indeed Iranian in origin"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "018",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Indicators Unit 42 has consolidated the IOCs of the referenced groups in this report and stored them in our GitHub repository.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Indicators Unit 42",
+            "type": "Organization"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "IOCs of the referenced groups in this report",
+            "type": "Indicator"
+          },
+          "evidence": {
+            "quote": "has consolidated the IOCs of the referenced groups in this report"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Link to IOCs on GitHub Back to top TAGS Advanced Persistent Threat APT34 Cobalt Gypsy DarkHydrus El fi n Evasive Serpens Helix Kitten Magic hound MuddyWater Newscaster OilRig Re fi ned Kitten Shamoon Shamoon 2 Shamoon 3 Static Kitten Threat Research Center",
+      "triple": [
+        {
+          "subject": {
+            "name": "APT34",
+            "type": "ThreatActor"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Cobalt Gypsy",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "APT34 Cobalt Gypsy"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "U P S Threat Actor Groups Tracked by Palo Alto Networks Unit 42 Academic Serpens Agent Serpens Agonizing Serpens Read now T H R E AT   R E S E A R C H Operation Diplomatic Specter: An Ac Chinese Cyberespionage Campaign Rare Tool Set to Target Governmental in the Middle East, Africa and Asia Advanced Persistent Threat China J00",
+      "triple": [
+        {
+          "subject": {
+            "name": "Operation Diplomatic Specter",
+            "type": "Campaign"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "Governmental",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "Target Governmental in the Middle East, Africa and Asia"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "From Backdoor 42 42 MITIGATING Cloud Unit , MITRE Recommendations WIth Extortion Expert SURFACE 42",
+      "triple": [
+        {
+          "subject": {
+            "name": "Backdoor",
+            "type": "Backdoor"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "42 42 MITIGATING Cloud Unit",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Backdoor 42 42 MITIGATING Cloud Unit"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "009",
+        "source": "TEXT"
+      }
+    }
+  ]
+}

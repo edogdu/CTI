@@ -1,0 +1,1197 @@
+{
+  "metrics": {
+    "file_name": "Behind the CARBANAK Backdoor - Mandiant.pdf",
+    "model_used": "gemma2:9b",
+    "doc_sha256_id": "dcd7e6e05545907f",
+    "num_pages": 13,
+    "num_sentences_total": 150,
+    "num_sentences_used": 94,
+    "num_raw_triples": 94,
+    "num_valid_triples": 49,
+    "num_suspicious_triples": 45,
+    "avg_triples_per_sentence": 1.0,
+    "rejection_stats": {
+      "bad_structure": 0,
+      "invalid_class_or_predicate": 45
+    },
+    "runtime_seconds": 85.11969566345215
+  },
+  "data": [
+    {
+      "context": " Cloud Blog Solutions & technology Contact sales Ecosystem Developers & Practitioners Threat Intelligence Behind the CARBANAK Backdoor June 12, 2017 Mandiant Wri !",
+      "triple": [
+        {
+          "subject": {
+            "name": "Cloud Blog Solutions",
+            "type": "Organization"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Ecosystem",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "Behind the CARBANAK Backdoor June 12, 2017 Mandiant Wri !"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In this blog, we will take a closer look at the powe \" ul, versatile backdoor known as CARBANAK (aka Anunak ).",
+      "triple": [
+        {
+          "subject": {
+            "name": "CARBANAK",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Anunak",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "CARBANAK (aka Anunak"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "For some additional background on the CARBANAK backdoor, see the papers by Kaspersky and Group-IB and Fox-It.",
+      "triple": [
+        {
+          "subject": {
+            "name": "CARBANAK",
+            "type": "Backdoor"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "papers by Kaspersky and Group-IB and Fox-It",
+            "type": "Report"
+          },
+          "evidence": {
+            "quote": "see the papers by Kaspersky and Group-IB and Fox-It"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "CARBANAK is a full-featured backdoor with data-stealing capabilities and a plugin architecture.",
+      "triple": [
+        {
+          "subject": {
+            "name": "CARBANAK",
+            "type": "Malware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "data-stealing capabilities",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "with data-stealing capabilities"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Some of its capabilities include key logging, desktop video capture, VNC, HTTP form grabbing, # le system management, # le transfer, TCP tunneling, HTTP proxy, OS destruction, POS and Outlook data the $ and reverse shell.",
+      "triple": [
+        {
+          "subject": {
+            "name": "System",
+            "type": "OperatingSystem"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "$",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "OS destruction, POS and Outlook data the $"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Most of these data-stealing capabilities were present in the oldest variants of CARBANAK that we have seen and some were added over time.",
+      "triple": [
+        {
+          "subject": {
+            "name": "CARBANAK",
+            "type": "Malware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "data-stealing capabilities",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "data-stealing capabilities"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "0x007CFABF video Desktop video recording 0x06E533C4 download Downloads executable and injects into new process 0x00684509 ammyy Ammyy Admin tool",
+      "triple": [
+        {
+          "subject": {
+            "name": "0x007CFABF",
+            "type": "Hash"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "video Desktop video recording",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "0x007CFABF video Desktop video recording"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "pproxy Sta % s HTTP proxy 0x07203363 killos Renders computer unbootable by wiping the MBR 0x078B9664 reboot Reboots the operating system 0x07BC54BC tunnel Creates a network tunnel 0x07B40571 adminka Adds new C2 server or proxy address for pseudo-HTTP protocol 0x079C9CC2 server Adds new C2 server for custom binary protocol",
+      "triple": [
+        {
+          "subject": {
+            "name": "pproxy",
+            "type": "Application"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "HTTP proxy",
+            "type": "Protocol"
+          },
+          "evidence": {
+            "quote": "pproxy Sta % s HTTP proxy"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "It contains commands in the same form as those listed in Table 2 that are automatically executed by the backdoor when it is sta % ed.",
+      "triple": [
+        {
+          "subject": {
+            "name": "backdoor",
+            "type": "Backdoor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "commands",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "that are automatically executed by the backdoor when it is sta % ed."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The state command sets a global variable containing a series of Boolean values represented as ASCII values '0' or '1' and also adds itself to the con # guration # le.",
+      "triple": [
+        {
+          "subject": {
+            "name": "state",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "'0'",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": " '0' or '1' "
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Ce % ain commands, when executed, add themselves to the con # guration so they will persist across (or be pa % of) reboots.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Ce % ain commands",
+            "type": "CommandAndControl"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "con # guration",
+            "type": "System"
+          },
+          "evidence": {
+            "quote": "add themselves to the con # guration"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Figure 1: Con \" guration \" le that adds new C2 server and forces the datastealing backdoor to use it",
+      "triple": [
+        {
+          "subject": {
+            "name": "Con",
+            "type": "Campaign"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "C2 server",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "adds new C2 server"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Figure 2: Con \" guration \" le that adds TCP tunnels and records desktop video Command and Control CARBANAK communicates to its C2 servers via pseudo-HTTP or a custom binary protocol.",
+      "triple": [
+        {
+          "subject": {
+            "name": "CARBANAK",
+            "type": "CommandAndControl"
+          },
+          "predicate": "communicatesWith",
+          "object": {
+            "name": "C2 servers",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "CARBANAK communicates to its C2 servers"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Pseudo-HTTP Protocol Messages for the pseudo-HTTP protocol are delimited with the '|' character.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Protocol",
+            "type": "Protocol"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "'|' character",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "are delimited with the '|' character"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "A message sta % s with a host ID composed by concatenating a hash value generated from the computer's hostname and MAC address to a string likely used as a campaign code.",
+      "triple": [
+        {
+          "subject": {
+            "name": "message",
+            "type": "Campaign"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "% s",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "a host ID composed by concatenating a hash value generated from the computer's hostname and MAC address to a string likely used as a campaign code."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The malware then appends a script extension (php, bml, or cgi) with a random number of random parameters or a # le extension from the following list with no parameters: gif, jpg, png, htm, html, php.",
+      "triple": [
+        {
+          "subject": {
+            "name": "malware",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "script extension (php, bml, or cgi)",
+            "type": "Filename"
+          },
+          "evidence": {
+            "quote": "The malware then appends a script extension (php, bml, or cgi)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This URI is then used in a GET or POST request.",
+      "triple": [
+        {
+          "subject": {
+            "name": "URI",
+            "type": "DomainName"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "GET or POST request",
+            "type": "Protocol"
+          },
+          "evidence": {
+            "quote": "This URI is then used in a GET or POST request."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Figure 5: Sample pseudo-HTTP beacon The pseudo-HTTP protocol uses any proxies discovered by the HTTP proxy monitoring thread or added by the adminka command.",
+      "triple": [
+        {
+          "subject": {
+            "name": "pseudo-HTTP protocol",
+            "type": "Protocol"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "any proxies",
+            "type": "Network"
+          },
+          "evidence": {
+            "quote": "The pseudo-HTTP protocol uses any proxies"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The backdoor also searches for proxy con # gurations to use in the registry at HKCU\\So $ ware\\Microso $ \\Windows\\CurrentVersion\\Internet Se !",
+      "triple": [
+        {
+          "subject": {
+            "name": "backdoor",
+            "type": "Backdoor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "proxy con # gurations",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "searches for proxy con # gurations to use"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Custom Binary Protocol Figure 6 describes the structure of the malware's custom binary protocol.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Malware",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "Custom Binary Protocol",
+            "type": "Protocol"
+          },
+          "evidence": {
+            "quote": "the malware's custom binary protocol"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "012",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This protocol has undergone several changes over the years, each version building upon the previous version in some way.",
+      "triple": [
+        {
+          "subject": {
+            "name": "protocol",
+            "type": "Protocol"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "changes",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "This protocol has undergone several changes over the years"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "015",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " In the earliest version of the binary protocol, we have discovered that the message bodies that are stored in the # eld are simply XORed with the host ID.",
+      "triple": [
+        {
+          "subject": {
+            "name": "message bodies",
+            "type": "Unknown"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "XOR",
+            "type": "AttackPattern"
+          },
+          "evidence": {
+            "quote": "that the message bodies that are stored in the # eld are simply XORed with the host ID."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Rather than using the host ID as the key, this version uses a random XOR key between 32 and 64 bytes in length that is generated for each session.",
+      "triple": [
+        {
+          "subject": {
+            "name": "this version",
+            "type": "Software"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "a random XOR key",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "uses a random XOR key"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "A 256-bit AES session key is generated and used to encrypt both message headers and bodies separately.",
+      "triple": [
+        {
+          "subject": {
+            "name": "256-bit AES session key",
+            "type": "SHA-256"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "message headers and bodies",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "is generated and used to encrypt both message headers and bodies separately."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "012",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "All subsequent messages are encrypted with AES in CBC mode.",
+      "triple": [
+        {
+          "subject": {
+            "name": "messages",
+            "type": "Unknown"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "AES",
+            "type": "Protocol"
+          },
+          "evidence": {
+            "quote": "encrypted with AES"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "014",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The Roundup We have rounded up 220 samples of the CARBANAK backdoor and compiled a table that highlights some interesting details that we",
+      "triple": [
+        {
+          "subject": {
+            "name": "CARBANAK",
+            "type": "Backdoor"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Roundup",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "220 samples of the CARBANAK backdoor and compiled a table that highlights some interesting details that we"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "016",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This data provides us with a unique insight into the operational aspect of CARBANAK and can be downloaded here.",
+      "triple": [
+        {
+          "subject": {
+            "name": "CARBANAK",
+            "type": "ThreatActor"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "operational aspect",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "This data provides us with a unique insight into the operational aspect of CARBANAK"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Protocol Evolution As described earlier, CARBANAK's binary protocol has undergone several signi # cant changes over the years.",
+      "triple": [
+        {
+          "subject": {
+            "name": "CARBANAK",
+            "type": "MalwareFamily"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "binary protocol",
+            "type": "Protocol"
+          },
+          "evidence": {
+            "quote": "CARBANAK's binary protocol"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "It has been observed that some builds of this data-stealing backdoor use outdated versions of the protocol.",
+      "triple": [
+        {
+          "subject": {
+            "name": "builds",
+            "type": "Software"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "protocol",
+            "type": "Protocol"
+          },
+          "evidence": {
+            "quote": "use outdated versions of the protocol"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Figure 7: Timeline of binary protocol versions *It is likely that we are missing an earlier build that utilized version 3.",
+      "triple": [
+        {
+          "subject": {
+            "name": "binary",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "version 3",
+            "type": "Protocol"
+          },
+          "evidence": {
+            "quote": "utilized version 3"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "These minor changes suggest that the code is quickly modi # ed and compiled to adapt to the needs of the operator for pa % icular targets.",
+      "triple": [
+        {
+          "subject": {
+            "name": "code",
+            "type": "Malware"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "particular targets",
+            "type": "Location"
+          },
+          "evidence": {
+            "quote": "to adapt to the needs of the operator for particular targets"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In some cases, there is a close proximity of the compile time of a CARBANAK sample to the month speci # ed in a pa % icular campaign code.",
+      "triple": [
+        {
+          "subject": {
+            "name": "compile time",
+            "type": "Time"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "CARBANAK sample",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "a close proximity of the compile time of a CARBANAK sample"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Figure 8: Campaign code to compile time relationships Recent Updates Recently, 64 bit variants of the backdoor have been discovered.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Recent Updates",
+            "type": "Unknown"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "64 bit variants",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Recently, 64 bit variants of the backdoor have been discovered."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " FIN7 In all Mandiant investigations to date where the CARBANAK backdoor has been discovered, the activity has been a ! ributed to the FIN7 threat group.",
+      "triple": [
+        {
+          "subject": {
+            "name": "CARBANAK",
+            "type": "Backdoor"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "evidence": {
+            "quote": "to the FIN7 threat group."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 12,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "FIN7 has been extremely active against the U.S. restaurant and hospitality industries since mid-2015.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "U.S. restaurant and hospitality industries",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "has been extremely active against the U.S. restaurant and hospitality industries"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 12,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "FIN7 uses CARBANAK as a post-exploitation tool in later phases of an intrusion to cement their foothold in a network and maintain access, frequently using the video command to monitor users and learn about the victim network, as well as the tunnel command to proxy connections into isolated po % ions of the victim environment.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "CARBANAK",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "FIN7 uses CARBANAK"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 12,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "FIN7 has consistently utilized legally purchased code signing ce % i # cates to sign their CARBANAK payloads.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "legally purchased code signing certificates",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "has consistently utilized legally purchased code signing ce % i # cates"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 12,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "We have covered recent FIN7 activity in previous public blog posts: FIN7 Spear Phishing Campaign Targets Personnel Involved in SEC Filings FIN7 Evolution and the Phishing LNK To SDB, Or Not To SDB: FIN7 Leveraging Shim Databases for Persistence The FireEye iSIGHT Intelligence MySIGHT Po % al contains additional information on our investigations and observations into FIN7 activity.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "Personnel Involved in SEC Filings",
+            "type": "Person"
+          },
+          "evidence": {
+            "quote": "FIN7 Spear Phishing Campaign Targets Personnel Involved in SEC Filings"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 12,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Most notably, the infrastructure utilized in this campaign overlapped with LAZIOK, NETWIRE and other malware targeting similar # nancial entities in these regions.",
+      "triple": [
+        {
+          "subject": {
+            "name": "infrastructure",
+            "type": "Infrastructure"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "#nancial entities",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "targeting similar # nancial entities"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 12,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "ORM , and Toshliph ) has been previously associated with CARBANAK in various campaigns.",
+      "triple": [
+        {
+          "subject": {
+            "name": "ORM",
+            "type": "Organization"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Toshliph",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "ORM , and Toshliph )"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 13,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "We have seen it deployed in initial spear phishing by FIN7 in the # rst half of 2016.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "spear phishing",
+            "type": "Phishing"
+          },
+          "evidence": {
+            "quote": "deployed in initial spear phishing by FIN7"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 13,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Cypho % Labs also revealed that variants of DRIFTPIN associated with this cluster of activity had been deployed via the RIG exploit kit placed on two compromised Ukrainian banks' websites.",
+      "triple": [
+        {
+          "subject": {
+            "name": "DRIFTPIN",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "variants",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "variants of DRIFTPIN associated with this cluster of activity"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 13,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This cluster of activity continues to be active now to this day, targeting similar entities.",
+      "triple": [
+        {
+          "subject": {
+            "name": "this cluster of activity",
+            "type": "Campaign"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "similar entities",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "targeting similar entities"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 13,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Additional details on this latest activity are available on the FireEye iSIGHT Intelligence MySIGHT Po % al.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FireEye iSIGHT Intelligence MySIGHT Po",
+            "type": "Campaign"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "Additional details",
+            "type": "Report"
+          },
+          "evidence": {
+            "quote": "Additional details on this latest activity are available"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 13,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Earlier CARBANAK Activity In December 2014, Group-IB and Fox-IT released a repo % about an organized criminal group using malware called \"Anunak\" that has targeted Eastern European banks, U.S. and European point-of-sale systems and other entities.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Group-IB",
+            "type": "Organization"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "%",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "a repo % about an organized criminal group using malware called \"Anunak\""
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 13,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The details that can be extracted from CARBANAK provide us with a unique insight into the operational details behind this datastealing malware.",
+      "triple": [
+        {
+          "subject": {
+            "name": "CARBANAK",
+            "type": "MalwareFamily"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "details",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "The details that can be extracted from CARBANAK"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 13,
+        "id": "015",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Has Arisen From the DUST AI-Powered Learning: Your NIST NICE Prompt Library (Built with Google Gemini) Scaling Up Malware Analysis with Gemini 1.5 Flash Emboldened and Evolving: A Snapshot of Cyber Threats Facing NATO Follow us Help Google Cloud English Google Cloud Products modify it or have a close relationship to the developer(s).",
+      "triple": [
+        {
+          "subject": {
+            "name": "Google Cloud",
+            "type": "Organization"
+          },
+          "predicate": "hasAuthor",
+          "object": {
+            "name": "Gemini 1.5",
+            "type": "MalwareAnalysis"
+          },
+          "evidence": {
+            "quote": "Scaling Up Malware Analysis with Gemini 1.5"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 14,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "ackers that allows the operator to con # gure details such as C2 addresses, C2 encryption keys, and a campaign code.",
+      "triple": [
+        {
+          "subject": {
+            "name": "hackers",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "C2 addresses",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "C2 addresses"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 14,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Varying campaign codes indicate that independent or loosely a ' liated criminal actors are employing CARBANAK in a widerange of intrusions that target a variety of industries but are especially directed at # nancial institutions across the globe, as well as the restaurant and hospitality sectors within the U.S. Posted in Threat Intelligence-Security & Identity Privacy Terms",
+      "triple": [
+        {
+          "subject": {
+            "name": "Campaign",
+            "type": "Campaign"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "independent or loosely a ' liated criminal actors",
+            "type": "ThreatActor"
+          },
+          "evidence": {
+            "quote": "Varying campaign codes indicate that independent or loosely a ' liated criminal actors are employing CARBANAK"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 14,
+        "id": "006",
+        "source": "TEXT"
+      }
+    }
+  ]
+}

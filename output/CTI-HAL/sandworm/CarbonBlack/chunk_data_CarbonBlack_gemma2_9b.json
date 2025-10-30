@@ -1,0 +1,1437 @@
+{
+  "metrics": {
+    "file_name": "CarbonBlack.pdf",
+    "model_used": "gemma2:9b",
+    "doc_sha256_id": "72bb90e4fb1e4df5",
+    "num_pages": 11,
+    "num_sentences_total": 110,
+    "num_sentences_used": 87,
+    "num_raw_triples": 87,
+    "num_valid_triples": 59,
+    "num_suspicious_triples": 28,
+    "avg_triples_per_sentence": 1.0,
+    "rejection_stats": {
+      "bad_structure": 0,
+      "invalid_class_or_predicate": 28
+    },
+    "runtime_seconds": 71.82929134368896
+  },
+  "data": [
+    {
+      "context": " Featured Categories VMware Security Threat Analysis Unit Carbon Black Threat Research Technical Analysis: Petya / NotPetya Ransomware June 28, 2017 / 24 min read Share on: On June 27, public announcements were made about a large-scale campaign of ransomware attacks across Europe.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Ransomware attacks",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "Europe",
+            "type": "Region"
+          },
+          "evidence": {
+            "quote": "across Europe"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The metadata for the analyzed sample is noted below: File Size : 362,360 MD5: 71b6a493388e7d0b40c83ce903bc6b04 SHA1: 34f917aaba5684fbe56d3c57d48ef2a1aa7cf06d SHA256: 027cc450ef5f8c5f653329641ec1fed91f694e0d229928963b30f6b0d7d3a745 Fuzzy: 6144:y/Bt80VmNTBo/x95ZjAetGDN3VFNq7pC+9OqFoK30b3ni5rdQY/CdUOs2:",
+      "triple": [
+        {
+          "subject": {
+            "name": "File Size",
+            "type": "Unknown"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "362,360",
+            "type": "Time"
+          },
+          "evidence": {
+            "quote": "File Size : 362,360"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "y/X4NTS/x9jNG+w+9OqFoK323qdQYKUG Magic: PE32 executable for MS Windows (DLL) (console)",
+      "triple": [
+        {
+          "subject": {
+            "name": "Magic",
+            "type": "Malware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "PE32 executable for MS Windows (DLL) (console)",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "Magic: PE32 executable for MS Windows (DLL) (console)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Intel 80386 32-bit Import Hash: 52dd60b5f3c9e2f17c2e303e8c8d4eab Compiled Time: Sun Jun 18 07:14:36 2017 UTC PE Sections (5): Name       Size       MD5 .text      48,640     c5bd3bb710ae377938b17980692b785b .rdata     34,304     46418e52b546c1f696eb8a524f18c56e .data      20,992     5216f0c62d1fd41b1d558e129e18d0fe .rsrc      247,808    f07e68575f50a62382d99e182baa05d5 .reloc     3,584      c5d1d4cdade7dcfbe14ec10dcf66cfb1 + 0x57000    6,008      da2b0b17905e8afae0eaca35e831be9e (Authenticode Signature)",
+      "triple": [
+        {
+          "subject": {
+            "name": "Intel 80386 32-bit Import Hash",
+            "type": "Hash"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "52dd60b5f3c9e2f17c2e303e8c8d4eab",
+            "type": "SHA-256"
+          },
+          "evidence": {
+            "quote": "Intel 80386 32-bit Import Hash: 52dd60b5f3c9e2f17c2e303e8c8d4eab"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This sample was compiled recently (18 June 2017 at 07:14:36 UTC) and contains an expired digital signature signed by Microsoft.",
+      "triple": [
+        {
+          "subject": {
+            "name": "sample",
+            "type": "Malware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "expired digital signature",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "contains an expired digital signature"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This sample utilizes SysInternals PsExec v1.98 for remote execution, with the PsExec digital signature copied and applied to the malware.",
+      "triple": [
+        {
+          "subject": {
+            "name": "sample",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "SysInternals PsExec v1.98",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "utilizes SysInternals PsExec v1.98"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " SysInternals Digital Signature Found on Malware 2 Initial analysis suggests that the malware is a new variant of the Petya family of ransomware.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Malware 2",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Petya family of ransomware",
+            "type": "MalwareFamily"
+          },
+          "evidence": {
+            "quote": "Initial analysis suggests that the malware is a new variant of the Petya family of ransomware."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This recent sample follows the encryption and ransom note functionality seen in Petya samples.",
+      "triple": [
+        {
+          "subject": {
+            "name": "this recent sample",
+            "type": "Malware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "encryption and ransom note functionality",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "follows the encryption and ransom note functionality seen in Petya samples."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "However, further analysis suggests otherwise, leading to industry concerns of actual attribution and naming, with the colloquial names given of 'NotPetya' and 'Schrodinger's Petya.'",
+      "triple": [
+        {
+          "subject": {
+            "name": "NotPetya",
+            "type": "AttackPattern"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "'Schrodinger's Petya'",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "'NotPetya' and 'Schrodinger's Petya.'"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The malware itself, a Windows DLL library, is typically saved to the local Windows folder as perfc.dat if it runs with SeDebugPrivilege permission.",
+      "triple": [
+        {
+          "subject": {
+            "name": "malware",
+            "type": "Malware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "Windows DLL library",
+            "type": "Software"
+          },
+          "evidence": {
+            "quote": "The malware itself, a Windows DLL library"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "If it does not have this privilege, it saves perfc.dat to the All Users application data directory (CSIDL_COMMON_APPDATA) which is resolved by Windows to either C:\\ProgramData or 'C:\\Documents and Settings\\All Users\\Application Data'.",
+      "triple": [
+        {
+          "subject": {
+            "name": "it",
+            "type": "Unknown"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "perfc.dat",
+            "type": "Filename"
+          },
+          "evidence": {
+            "quote": "saves perfc.dat"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The malware must be executed with a direct call to its export of ordinal 1, seen as '#1' in the command line.",
+      "triple": [
+        {
+          "subject": {
+            "name": "malware",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "export of ordinal 1",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "executed with a direct call to its export of ordinal 1"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "There are various reasons why malware tends to use this style of execution, with the most common being to prevent execution within a sandbox.",
+      "triple": [
+        {
+          "subject": {
+            "name": "malware",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "this style of execution",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "malware tends to use this style of execution"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Ransomware Data Encryption Upon execution, the malware will begin to perform privilege checking to determine what permissions the running account has, primarily checking for the SeDebugPrivilege permission, as detailed later in User Rights Checking and Malware Logic.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Ransomware",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "Data Encryption",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Data Encryption Upon execution"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "If the running user has the SeDebugPrivilege permission, the malware will assume it has administrative privileges, it will then attempt to encrypt the drive using the known Petya code.",
+      "triple": [
+        {
+          "subject": {
+            "name": "malware",
+            "type": "Malware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "administrative privileges",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "it will then attempt to encrypt the drive using the known Petya code."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This is performed by overwriting the Master Boot Record (MBR) of the hard drive (PhysicalDrive0) with malicious code that displays a fake 'chkdsk.exe' partition repair screen as it encrypts the hard drive, shown below.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Master Boot Record (MBR)",
+            "type": "Hardware"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "malicious code",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "overwriting the Master Boot Record (MBR) of the hard drive (PhysicalDrive0) with malicious code"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "012",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This is a technique that is known to exist in Petya, using nearly identical text and code.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Petya",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "nearly identical text and code",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "using nearly identical text and code"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "013",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This is the reason why the malware was initially considered to be Petya upon dynamic analysis, although static analysis showed vastly different code for the remainder of the malware's functionality.",
+      "triple": [
+        {
+          "subject": {
+            "name": "malware",
+            "type": "Malware"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "code",
+            "type": "Filename"
+          },
+          "evidence": {
+            "quote": "vastly different code for the remainder of the malware's functionality"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "014",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " MBR-based Ransom Note Alternatively, if the user is not running with administrative privileges, as determined by a lack of SeDebugPrivilege, the malware will use a user-space encryption routine, which is a different routine from the one detailed above.",
+      "triple": [
+        {
+          "subject": {
+            "name": "SeDebugPrivilege",
+            "type": "Vulnerability_Desc"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "user-space encryption routine",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "as determined by a lack of SeDebugPrivilege, the malware will use a user-space encryption routine"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "After the malware is finished obtaining privileges on the system, it looks for specific processes running on the system.  ",
+      "triple": [
+        {
+          "subject": {
+            "name": "Malware",
+            "type": "Malware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "privileges",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "After the malware is finished obtaining privileges on the system, it looks for specific processes running on the system."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The malware authors use a proprietary XOR encryption routine to mask what process names they are looking for.  ",
+      "triple": [
+        {
+          "subject": {
+            "name": "Malware",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "proprietary XOR encryption routine",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "The malware authors use a proprietary XOR encryption routine"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This is done after performing additional operating system checks which include ensuring that the system is not version 5.1/5.2 (Windows XP) or 6.1 (Windows 7).",
+      "triple": [
+        {
+          "subject": {
+            "name": "system",
+            "type": "OperatingSystem"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "version 5.1/5.2 (Windows XP) or 6.1 (Windows 7)",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "ensuring that the system is not version 5.1/5.2 (Windows XP) or 6.1 (Windows 7)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "wevtutil cl Setup & wevtutil cl System & wevtutil cl Security & wevtutil cl Application & fsutil usn deletejournal /D",
+      "triple": [
+        {
+          "subject": {
+            "name": "wevtutil",
+            "type": "Application"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "Setup",
+            "type": "System"
+          },
+          "evidence": {
+            "quote": "wevtutil cl Setup"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "%c:' Anti-forensics Commands The command will use the wevtutil command to clear (cl) the logs for the Setup, System, Security, and Application event logs.",
+      "triple": [
+        {
+          "subject": {
+            "name": "command",
+            "type": "CommandAndControl"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "wevtutil",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "use the wevtutil command"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "It then uses the fsutil command to delete (/D) the USN change journal from the current drive (noted as %c character type).",
+      "triple": [
+        {
+          "subject": {
+            "name": "It",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "fsutil command",
+            "type": "CommandAndControl"
+          },
+          "evidence": {
+            "quote": "It then uses the fsutil command"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Before the sample exits it will force a reboot of the infected system using one of three methods.  ",
+      "triple": [
+        {
+          "subject": {
+            "name": "sample",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "one of three methods",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "using one of three methods"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Like other recent malware the ransomware utilizes the highly effective EternalBlue exploit for Windows SMB vulnerabilities to copy itself to other systems and execute, which is detailed later in this post.",
+      "triple": [
+        {
+          "subject": {
+            "name": "ransomware",
+            "type": "Malware"
+          },
+          "predicate": "exploits",
+          "object": {
+            "name": "EternalBlue exploit for Windows SMB vulnerabilities",
+            "type": "Vulnerability_Desc"
+          },
+          "evidence": {
+            "quote": "the ransomware utilizes the highly effective EternalBlue exploit for Windows SMB vulnerabilities to copy itself to other systems and execute"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In addition to the SMB exploit propagation method, the malware also attempts to establish default administrative network shares (Admin$) with a call to WNetAddConnection2() using a null username and password.",
+      "triple": [
+        {
+          "subject": {
+            "name": "malware",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "SMB exploit propagation method",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "In addition to the SMB exploit propagation method"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "By using null for these two values, the network connection is made using the current user's credentials, which directly affect organizations with shared local administrator accounts.",
+      "triple": [
+        {
+          "subject": {
+            "name": "network connection",
+            "type": "Network"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "current user's credentials",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "By using null for these two values, the network connection is made using the current user's credentials"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "If a connection is made to the remote system, the malware will create a copy of itself directly on the other system using standard CreateFile() and WriteFile() API routines.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Malware",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "CreateFile()",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "using standard CreateFile() and WriteFile() API routines."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The malware also has the ability to extract an embedded and compressed resource (resource 3) containing the SysInternals PsExec.exe utility.",
+      "triple": [
+        {
+          "subject": {
+            "name": "malware",
+            "type": "Malware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "embedded and compressed resource (resource 3)",
+            "type": "ResourceExploitation"
+          },
+          "evidence": {
+            "quote": "The malware also has the ability to extract an embedded and compressed resource (resource 3)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This utility is then used to execute this file on the remote system.",
+      "triple": [
+        {
+          "subject": {
+            "name": "utility",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "file",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "This utility is then used to execute this file"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "PsExec Remote Execution Command Line Construction Failing that, the malware will then leverage the existing Windows WMI utility to execute the file on the remote system, which is displayed in the image below: WMIC Remote Execution Command Line Construction",
+      "triple": [
+        {
+          "subject": {
+            "name": "malware",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "Windows WMI utility",
+            "type": "System"
+          },
+          "evidence": {
+            "quote": "the malware will then leverage the existing Windows WMI utility"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " As noted earlier, upon initial execution the sample will check several system privileges to determine the appropriate execution path.  ",
+      "triple": [
+        {
+          "subject": {
+            "name": "sample",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "system privileges",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "check several system privileges"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The area highlighted in red below shows where a function (labeled here as filename_check) is called, where the sample will check to see if the file C:\\Windows\\perfc is present on the system.",
+      "triple": [
+        {
+          "subject": {
+            "name": "filename_check",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "C:\\Windows\\perfc",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "where the sample will check to see if the file C:\\Windows\\perfc is present on the system."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "If present, the process will exit, which is leading many to call this a 'kill switch' in the ransomware.  ",
+      "triple": [
+        {
+          "subject": {
+            "name": "process",
+            "type": "Application"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "'kill switch'",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "'kill switch'"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This was most likely done to ensure that ransomware was not installed and executed twice on a system, much in the same way a mutex or a file lock (Linux based), is used to prevent multiple instances from running on a system.  ",
+      "triple": [
+        {
+          "subject": {
+            "name": "ransomware",
+            "type": "Malware"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "system",
+            "type": "System"
+          },
+          "evidence": {
+            "quote": "that ransomware was not installed and executed twice on a system"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "After the alterations have completed the sample will remove forensic artifacts in the manner detailed in Table 1 above, and then shut down as described in Table 2 above.",
+      "triple": [
+        {
+          "subject": {
+            "name": "sample",
+            "type": "Malware"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "forensic artifacts",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "remove forensic artifacts"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "If file already exists, exit the process Privilege and Drive Access Checks Prior to Scanning The function (highlighted in green in the image above) will gather system information and then enumerate the other systems on the domain.  ",
+      "triple": [
+        {
+          "subject": {
+            "name": "function",
+            "type": "Application"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "domain",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "then enumerate the other systems on the domain"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Grabbing Local System Info and Enumerating Systems SMB propagation As previously referenced, this sample is also capable of spreading through SMB kernel exploitation (MS17-010, commonly referred to as EternalBlue).  ",
+      "triple": [
+        {
+          "subject": {
+            "name": "sample",
+            "type": "Malware"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "Local System Info and Enumerating Systems SMB propagation",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "Grabbing Local System Info and Enumerating Systems SMB propagation"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The function displayed in the image below shows the sample building the SMB header, which will be used in the exploitation process.",
+      "triple": [
+        {
+          "subject": {
+            "name": "function",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "SMB header",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "building the SMB header"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The area, highlighted in green, shows where the sample will send SMB packets and then wait for a response from the targeted system.",
+      "triple": [
+        {
+          "subject": {
+            "name": "sample",
+            "type": "Malware"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "targeted system",
+            "type": "System"
+          },
+          "evidence": {
+            "quote": "where the sample will send SMB packets and then wait for a response from the targeted system"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "These strings were encoded using a simple XOR key of 0x72.",
+      "triple": [
+        {
+          "subject": {
+            "name": "strings",
+            "type": "Unknown"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "XOR key",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "using a simple XOR key"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "PC NETWORK PROGRAM 1.0 LANMAN1.0 Windows for Workgroups 3.1a LM1.2X002",
+      "triple": [
+        {
+          "subject": {
+            "name": "PC NETWORK PROGRAM",
+            "type": "Software"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "1.0 LANMAN1.0 Windows for Workgroups 3.1a LM1.2X002",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "PC NETWORK PROGRAM 1.0 LANMAN1.0 Windows for Workgroups 3.1a LM1.2X002"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "LANMAN2.1 NT LM 0.12 Decoded Strings used in SMB Exploitation",
+      "triple": [
+        {
+          "subject": {
+            "name": "LANMAN2.1 NT LM 0.12 Decoded Strings",
+            "type": "AttackPattern"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "SMB Exploitation",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "used in SMB Exploitation"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "If the sample finds an exploitable system, it will perform in the same manner that existing ransomware acted by passing a shellcode payload to the target system.  ",
+      "triple": [
+        {
+          "subject": {
+            "name": "sample",
+            "type": "Malware"
+          },
+          "predicate": "exploits",
+          "object": {
+            "name": "system",
+            "type": "System"
+          },
+          "evidence": {
+            "quote": "If the sample finds an exploitable system"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The function highlighted in the image below shows where the shellcode is first decoded with a simple XOR value of 0xCC.",
+      "triple": [
+        {
+          "subject": {
+            "name": "function",
+            "type": "Unknown"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "shellcode",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "shows where the shellcode is first decoded"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This is a very powerful privilege that allows the malware to perform near system level tasks.",
+      "triple": [
+        {
+          "subject": {
+            "name": "malware",
+            "type": "Malware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "privilege",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "allows the malware to perform near system level tasks"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "SeTcbPrivilege - This is another very powerful privilege that allows the owning process to act as part of the operating system.",
+      "triple": [
+        {
+          "subject": {
+            "name": "SeTcbPrivilege",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "privilege",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "allows the owning process to act as part of the operating system"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Prior to any major function being executed, the malware attempts to gain any/all of the above privileges.",
+      "triple": [
+        {
+          "subject": {
+            "name": "malware",
+            "type": "Malware"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "privileges",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "the malware attempts to gain any/all of the above privileges."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Most notably are the methods for which to encrypt files on the system and in rebooting the system after infection.",
+      "triple": [
+        {
+          "subject": {
+            "name": "methods",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "files",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "for which to encrypt files"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Credential Harvesting If the variant detects that its process is running with SeDebugPrivilege privileges it will call a function that is highlighted in red in the image below.",
+      "triple": [
+        {
+          "subject": {
+            "name": "variant",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "SeDebugPrivilege privileges",
+            "type": "OperatingSystem"
+          },
+          "evidence": {
+            "quote": "that its process is running with SeDebugPrivilege privileges"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This function will initially attempt to determine if the operating system is either x86 or 64-bit and then it will either load a password dumper from either Resource '1' or '2' (which ultimately are x86 and 64-bit executable files respectively).",
+      "triple": [
+        {
+          "subject": {
+            "name": "function",
+            "type": "Unknown"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "This function will initially attempt to determine if the operating system is either x86 or 64-bit and then it will either load a password dumper from either Resource '1' or '2' (which ultimately are x86 and 64-bit executable files respectively)",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "This function will initially attempt to determine if the operating system is either x86 or 64-bit and then it will either load a password dumper from either Resource '1' or '2' (which ultimately are x86 and 64-bit executable files respectively)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "It should be noted that all of the four resources are stored as compressed buffers that can be inflated with zlib.",
+      "triple": [
+        {
+          "subject": {
+            "name": "resources",
+            "type": "ResourceExploitation"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "compressed buffers",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "stored as compressed buffers"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Each resource contains a DWORD value at offset 0 that is the length of the data once it is inflated.",
+      "triple": [
+        {
+          "subject": {
+            "name": "resource",
+            "type": "ResourceExploitation"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "DWORD value",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Each resource contains a DWORD value"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "012",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "(Editor's Note: This post was updated on 30 June to clarify the reboot sequence and adjust filename case for one process hash.)",
+      "triple": [
+        {
+          "subject": {
+            "name": "post",
+            "type": "Report"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "This post was updated on 30 June to clarify the reboot sequence and adjust filename case for one process hash.",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "hasAlias"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "017",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " for Credential Harvesting Related Articles Misc NetSupport RAT: The RAT King Returns Alan Ngo , Abe Schneider , Fae Carlisle / November 20, 2023 / 18 min read Resources Blogs Careers News and Stories Topics Trust Center",
+      "triple": [
+        {
+          "subject": {
+            "name": "Resources",
+            "type": "ResourceExploitation"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Blogs, Careers, News and Stories, Topics, Trust Center",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Resources Blogs Careers News and Stories Topics Trust Center"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "An Update on Jupyter Infostealer Swee Lai Lee , Bria Beathley , Abe Schneider , Alan November 6, 2023 / 18 min read N / ...",
+      "triple": [
+        {
+          "subject": {
+            "name": "Jupyter Infostealer",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Swee Lai Lee",
+            "type": "Person"
+          },
+          "evidence": {
+            "quote": "Jupyter Infostealer Swee Lai Lee"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Misc Hunting Vulnerable Kernel Drivers October 31, 2023 / 34 min Takahiro Haruyama / read Support Broadcom Support Documentation Hands-On Labs   ",
+      "triple": [
+        {
+          "subject": {
+            "name": "Takahiro Haruyama",
+            "type": "Person"
+          },
+          "predicate": "hasAuthor",
+          "object": {
+            "name": "Misc Hunting Vulnerable Kernel Drivers October 31, 2023 / 34 min",
+            "type": "Report"
+          },
+          "evidence": {
+            "quote": "Takahiro Haruyama"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "003",
+        "source": "TEXT"
+      }
+    }
+  ]
+}

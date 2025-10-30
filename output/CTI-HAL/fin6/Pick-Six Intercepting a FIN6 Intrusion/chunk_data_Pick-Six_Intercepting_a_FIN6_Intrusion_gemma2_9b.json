@@ -1,0 +1,717 @@
+{
+  "metrics": {
+    "file_name": "Pick-Six Intercepting a FIN6 Intrusion.pdf",
+    "model_used": "gemma2:9b",
+    "doc_sha256_id": "b1dd06503cc6cf2c",
+    "num_pages": 1,
+    "num_sentences_total": 78,
+    "num_sentences_used": 56,
+    "num_raw_triples": 56,
+    "num_valid_triples": 29,
+    "num_suspicious_triples": 27,
+    "avg_triples_per_sentence": 1.0,
+    "rejection_stats": {
+      "bad_structure": 0,
+      "invalid_class_or_predicate": 27
+    },
+    "runtime_seconds": 73.55727028846741
+  },
+  "data": [
+    {
+      "context": " Cloud Blog Solutions & technology Threat Intelligence Pick-Six: Intercepting a FIN6 Intrusion, an Actor Recently Tied to Ryuk and LockerGoga Ransomware April 5, 2019 Mandiant Wri tt en by: Brendan McKeague, Van Ta, Ben Fedore, Geo ff Ackerman, Alex Pennino, Andrew Thompson, Douglas Bienstock Summary",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN6",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "Ryuk and LockerGoga Ransomware",
+            "type": "Ransomware"
+          },
+          "evidence": {
+            "quote": "an Actor Recently Tied to Ryuk and LockerGoga Ransomware"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Recently, FireEye Managed Defense detected and responded to a FIN6 intrusion at a customer within the engineering industry, which seemed out of character due to FIN6's historical targeting of payment card data.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN6",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "payment card data",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "FIN6's historical targeting of payment card data"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This blog post details the latest FIN6 tactics, techniques, and procedures (TTPs), including ties to the use of LockerGoga and Ryuk ransomware families.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN6",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "LockerGoga",
+            "type": "MalwareFamily"
+          },
+          "evidence": {
+            "quote": "ties to the use of LockerGoga and Ryuk ransomware families"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The subsequent investigation revealed FIN6 was in the initial phase of an intrusion using stolen credentials, Cobalt Strike, Metasploit, and publicly available tools such as Ad fi nd and 7-Zip to conduct internal reconnaissance, compress data, and aid their overall mission.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN6",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "Cobalt Strike",
+            "type": "Exploit-kit"
+          },
+          "evidence": {
+            "quote": "using stolen credentials, Cobalt Strike"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "014",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Managed Defense investigated activity on two systems initially detected as compromised by FireEye Endpoint Security, the industry leading endpoint security solution that was ranked as the most e ff ective endpoint detection and response (EDR) solution.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FireEye Endpoint Security",
+            "type": "Software"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "industry leading endpoint security solution",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "the industry leading endpoint security solution"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "015",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Managed Defense utilized Windows Registry Shellbag entries to reconstruct FIN6's actions on compromised systems that were consistent with lateral movement.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN6",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "compromised systems",
+            "type": "System"
+          },
+          "evidence": {
+            "quote": "reconstruct FIN6's actions on compromised systems"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "019",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Following the compromise of this system, analysts identi fi ed FIN6 leveraged stolen credentials to move laterally within the environment using the Windows' Remote Desktop Protocol (RDP).",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN6",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "Windows' Remote Desktop Protocol (RDP)",
+            "type": "Protocol"
+          },
+          "evidence": {
+            "quote": "using the Windows' Remote Desktop Protocol (RDP)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "021",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Following the RDP connection to systems, FIN6 used two di ff erent techniques to establish a foothold: First technique: FIN6 used PowerShell to execute an encoded command.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN6",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "PowerShell",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "FIN6 used PowerShell"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "022",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Figure 1: Base64 encoded command The encoded payload was a Cobalt Strike h tt psstager that was injected into the PowerShell process that ran the command.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Cobalt Strike",
+            "type": "AttackPattern"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "h tt psstager",
+            "type": "SSDeep"
+          },
+          "evidence": {
+            "quote": "Cobalt Strike h tt psstager"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "024",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The Cobalt Strike h tt psstager was con fi gured to download a second payload from hxxps://176.126.85[.]207:443/7sJh.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Cobalt Strike h tt psstager",
+            "type": "Malware"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "second payload",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "download a second payload"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "025",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "FireEye retrieved this resource and determined it was a shellcode payload con fi gured to download a third payload from hxxps://176.126.85[.]207/ca.",
+      "triple": [
+        {
+          "subject": {
+            "name": "resource",
+            "type": "Unknown"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "shellcode payload",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "FireEye retrieved this resource and determined it was a shellcode payload"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "026",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The Metasploit reverse HTTP payload was con fi gured to communicate with the command and control (C2) IP address 176.126.85[.]207 with a randomly named resource such as '/ilX9zObq6LleAF8BBdsdHwRjapd8_1Tl4Y-9Rc6hMbPXHPgVTWTtb0x fb 7BpIyC1Lia31F5gCN_btvkad7aR2JF5ySRLZmTtY' over TCP po rt 443.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Metasploit reverse HTTP payload",
+            "type": "Malware"
+          },
+          "predicate": "communicatesWith",
+          "object": {
+            "name": "176.126.85[.]207",
+            "type": "IPAddress"
+          },
+          "evidence": {
+            "quote": "communicate with the command and control (C2) IP address 176.126.85[.]207"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "031",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "nd.exe -f (objectcategory=organizationalUnit) > ad_ous.txt ad fi nd.exe -subnets -f (objectCategory=subnet) > ad_subnets.txt ad fi nd.exe -f \"(objectcategory=group)\" > ad_group.txt ad fi nd.exe -gcb -sc trustdmp > ad_trustdmp.txt 7.exe a -mx3 ad.7z ad_*",
+      "triple": [
+        {
+          "subject": {
+            "name": "nd.exe",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "-f (objectcategory=organizationalUnit)",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "nd.exe -f (objectcategory=organizationalUnit)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "035",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The investigations observed FIN6 using similar tools, tactics, and procedures that were observed by FireEye Managed Defense during the earlier phases of the a tt ack lifecycle.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN6",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "tools, tactics, and procedures",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "using similar tools, tactics, and procedures"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "043",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Lateral Movement FIN6 used encoded PowerShell commands to install Cobalt Strike on compromised systems.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN6",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "encoded PowerShell commands",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "Lateral Movement FIN6 used encoded PowerShell commands"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "045",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The a tt acker made use of Cobalt Strike's 'psexec' lateral movement command to create a Windows service named with a random 16-character string on the target system and execute encoded PowerShell.",
+      "triple": [
+        {
+          "subject": {
+            "name": "attacker",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "Cobalt Strike's 'psexec'",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "The a tt acker made use of Cobalt Strike's 'psexec'"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "046",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In some cases, the encoded PowerShell commands were used to download and execute content hosted on the paste site hxxps://pastebin[.]com.",
+      "triple": [
+        {
+          "subject": {
+            "name": "PowerShell commands",
+            "type": "CommandAndControl"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "content",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "the encoded PowerShell commands were used to download and execute content"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "047",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The distribution servers were used to stage the LockerGoga ransomware, additional utilities, and deployment scripts to automate installation of the ransomware.",
+      "triple": [
+        {
+          "subject": {
+            "name": "distribution servers",
+            "type": "Infrastructure"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "LockerGoga ransomware",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "stage the LockerGoga ransomware"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "049",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "FIN6 automated the deployment of kill.bat and the LockerGoga ransomware using batch script fi les.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN6",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "batch script files",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "automated the deployment of kill.bat and the LockerGoga ransomware using batch script fi les"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "052",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Figure 2: Strings from deployment BAT fi les start copy svchost.exe \\\\10.1.1.1\\c$\\windows\\temp\\start psexec.exe \\\\10.1.1.1 -u domain\\domainadmin -p \"pass Ransomware Ryuk is a ransomware that uses a combination of public and symmetric-key cryptography to encrypt fi les on the host computer.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Strings",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "BAT fi les",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "Strings from deployment BAT fi les"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "059",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "LockerGoga is ransomware that uses 1024-bit RSA and 128-bit AES encryption to encrypt fi les and leaves ransom notes in the root directory and shared desktop directory.",
+      "triple": [
+        {
+          "subject": {
+            "name": "LockerGoga",
+            "type": "Ransomware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "1024-bit RSA and 128-bit AES encryption",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "uses 1024-bit RSA and 128-bit AES encryption"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "060",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Additional information about Ryuk and LockerGoga is available on the FireEye Intelligence po rt al: 1800015730 and 19-00002005 Attribution FIN6 has traditionally conducted intrusions targeting payment card data from Point-of-Sale (POS) or eCommerce systems.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Ryuk",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "1800015730",
+            "type": "Report"
+          },
+          "evidence": {
+            "quote": "Additional information about Ryuk and LockerGoga is available on the FireEye Intelligence po rt al: 1800015730 and 19-00002005"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "061",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "However, we have recently identi fi ed multiple targeted Ryuk and LockerGoga ransomware incidents showing ties to FIN6, through both Mandiant incident response investigations and FireEye Intelligence research into threats impacting other organizations.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Ryuk",
+            "type": "Ransomware"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "multiple targeted incidents",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "identi fi ed multiple targeted Ryuk and LockerGoga ransomware incidents"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "063",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "We have traced these intrusions back to July 2018, and they have repo rt edly cost victims tens of millions of dollars.",
+      "triple": [
+        {
+          "subject": {
+            "name": "these intrusions",
+            "type": "Campaign"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "victims",
+            "type": "Person"
+          },
+          "evidence": {
+            "quote": "We have traced these intrusions back to July 2018, and they have reportedly cost victims tens of millions of dollars."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "064",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "As the frequency of these intrusions deploying ransomware have increased, the cadence of activity traditionally a tt ributed to FIN6-intrusions targeting point-of-sale (POS) environments, deploying TRINITY malware and sharing other key characteristics-has declined.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN6-intrusions",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "point-of-sale (POS) environments",
+            "type": "Location"
+          },
+          "evidence": {
+            "quote": "targeting point-of-sale (POS) environments"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "065",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Given that these intrusions have been sustained for almost a year, we expect that continued research into fu rt her intrusion a tt empts may enable us to more fully answer these questions regarding FIN6's current status.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN6",
+            "type": "ThreatActor"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "intrusion attempts",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "further intrusion attempts"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "070",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Indicators Type Indicator Network 31.220.45[.]151 46.166.173[.]109 62.210.136[.]65",
+      "triple": [
+        {
+          "subject": {
+            "name": "Indicators",
+            "type": "Indicator"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "31.220.45\\.[.]151",
+            "type": "IPAddress"
+          },
+          "evidence": {
+            "quote": "31.220.45[.]151"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "071",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "12597de0e709e44442418e89721b9140 32ea267296c8694c0b5f5baeacf34b0e 395d52f738eb75852fe501df13231c8d 39b7c130f1a02665fd72d65f4f9cb634 3c5575ce80e0847360cd2306c64b51a0 46d781620afc536afa25381504059612 4ec86a35f6982e6545b771376a6f65bb 73e7ddd6b49cdaa982ea8cb578f3af15 8452d52034d3b2cb612dbc59ed609163 8c099a15a19b6e5b29a3794abf8a5878 9d3fdb1e370c0ee6315b4625ecf2ac55 d2f9335a305440d91702c803b6d046b6 34187a34d0a3c5d63016c26346371b54 ad_users.txt ad_trustdmp.txt ad_subnets.txt ad_ous.txt ad_group.txt ad_computers.txt 7.exe Kill.bat Svchost.exe Mstdc.exe Detecting the Techniques",
+      "triple": [
+        {
+          "subject": {
+            "name": "12597de0e709e44442418e89721b9140",
+            "type": "SHA-256"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "ad_users.txt",
+            "type": "Filename"
+          },
+          "evidence": {
+            "quote": "12597de0e709e44442418e89721b9140 ad_users.txt"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "074",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The following table contains several speci fi c detection names, including methodology detections for several tools and techniques that applied to the initial infection activity as well as additional detection names for the ransomware used by FIN6.",
+      "triple": [
+        {
+          "subject": {
+            "name": "detection names",
+            "type": "Unknown"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "initial infection activity",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "methodology detections for several tools and techniques that applied to the initial infection activity"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "075",
+        "source": "TEXT"
+      }
+    }
+  ]
+}

@@ -1,0 +1,237 @@
+{
+  "metrics": {
+    "file_name": "fact_sheet_how_fin7_attached_and_stole_data_0.pdf",
+    "model_used": "gemma2:9b",
+    "doc_sha256_id": "9b88a8a88303a9b9",
+    "num_pages": 3,
+    "num_sentences_total": 30,
+    "num_sentences_used": 19,
+    "num_raw_triples": 19,
+    "num_valid_triples": 9,
+    "num_suspicious_triples": 10,
+    "avg_triples_per_sentence": 1.0,
+    "rejection_stats": {
+      "bad_structure": 0,
+      "invalid_class_or_predicate": 10
+    },
+    "runtime_seconds": 37.28349757194519
+  },
+  "data": [
+    {
+      "context": "For example, when targeting a hotel chain, the sender of the phishing email might claim to be interested in making a reservation with details enclosed in the attachment.  ",
+      "triple": [
+        {
+          "subject": {
+            "name": "sender",
+            "type": "Person"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "hotel chain",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "targeting a hotel chain"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "When targeting a restaurant, the phishing email might refer to placing a large catering order or voice a complaint about prior service or food quality, further described in an attachment.  ",
+      "triple": [
+        {
+          "subject": {
+            "name": "phishing email",
+            "type": "Phishing"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "restaurant",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "When targeting a restaurant"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Through a specially designed control panel, FIN7 could download a wide array of additional malware to the victim computer, remotely send commands and receive data, and move laterally through the company's network.  ",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "victim computer",
+            "type": "OperatingSystem"
+          },
+          "evidence": {
+            "quote": "download a wide array of additional malware to the victim computer"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "FIN7's malware allowed its members to conduct surveillance on company employees, including taking screen shots and even video recordings of desktop activity, enabling them to secretly steal credentials and other network information.  ",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7's malware",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Surveillance",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "allowed its members to conduct surveillance"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "FIN7 then used its unauthorized access to the victim's computer system to locate and extract various information and property of value, such as financial information and caches of customer payment card data.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "unauthorized access",
+            "type": "Backdoor"
+          },
+          "evidence": {
+            "quote": "then used its unauthorized access"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "012",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Selling Stolen Cards Since 2015, FIN7 successfully stole data for more than 16 million payment cards, many of which have been offered for sale through online underground marketplaces for stolen data.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "payment cards",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "data for more than 16 million payment cards"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "FIN7 uses an arsenal of constantly evolving malware tools and hacking techniques, and controls infected computers through a complex web of servers located throughout the world.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "arsenal of constantly evolving malware tools and hacking techniques",
+            "type": "MalwareFamily"
+          },
+          "evidence": {
+            "quote": "FIN7 uses an arsenal of constantly evolving malware tools and hacking techniques"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The masterminds behind the criminal enterprise created a fake computer security business called Combi Security, which they used to recruit new members and to add a thin veil of legitimacy to the hacking scheme.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Combi Security",
+            "type": "Organization"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "fake computer security business",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "a fake computer security business called Combi Security"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " @revital-travel con Drder Mesrage Hello, Enclosedfile cortains a thereccssary infcrmation and orderin ourwebsite:",
+      "triple": [
+        {
+          "subject": {
+            "name": "@revital-travel",
+            "type": "EmailAddress"
+          },
+          "predicate": "communicatesWith",
+          "object": {
+            "name": "Drder Mesrage",
+            "type": "Person"
+          },
+          "evidence": {
+            "quote": "con Drder Mesrage Hello,"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "000",
+        "source": "TEXT"
+      }
+    }
+  ]
+}

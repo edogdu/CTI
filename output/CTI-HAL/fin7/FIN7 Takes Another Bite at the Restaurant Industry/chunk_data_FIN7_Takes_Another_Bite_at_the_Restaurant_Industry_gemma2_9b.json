@@ -1,0 +1,909 @@
+{
+  "metrics": {
+    "file_name": "FIN7 Takes Another Bite at the Restaurant Industry.pdf",
+    "model_used": "gemma2:9b",
+    "doc_sha256_id": "4b4e788645eab7ad",
+    "num_pages": 12,
+    "num_sentences_total": 122,
+    "num_sentences_used": 71,
+    "num_raw_triples": 71,
+    "num_valid_triples": 37,
+    "num_suspicious_triples": 34,
+    "avg_triples_per_sentence": 1.0,
+    "rejection_stats": {
+      "bad_structure": 0,
+      "invalid_class_or_predicate": 34
+    },
+    "runtime_seconds": 248.17912912368774
+  },
+  "data": [
+    {
+      "context": " Cybersecurity Blog Cybersecurity News, Threat Research, And",
+      "triple": [
+        {
+          "subject": {
+            "name": "Cybersecurity Blog",
+            "type": "Unknown"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "Threat Research",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "And"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Aside from these updated techniques, Morphisec's investigation revealed an almost perfect match to FIN7 attack methods.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Morphisec's",
+            "type": "Organization"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "updated techniques",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "Aside from these updated techniques"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Past highly successful and damaging attacks on banks, SEC personnel, large restaurant chains and hospitality organizations have all been attributed to the financiallymotivated FIN7 group.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "highly successful and damaging attacks",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "have all been attributed to the financiallymotivated FIN7 group."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "FIN7, which is also associated with the Carbanak gang, must be seen as one of the leading threat actor groups operating today.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Carbanak gang",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "which is also associated with the Carbanak gang"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Recent Posts Vulnerability Whisperer: Turning Headaches to High-Fives Decoding the Puzzle: Cicada3301 Ransomware Threat Analysis Preventing Threats Before Infiltration: Morphisec AMTD in Action From Trading Floors to ATMs: 5 Unexpected Cyber Exposure",
+      "triple": [
+        {
+          "subject": {
+            "name": "Recent Posts",
+            "type": "Report"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Vulnerability Whisperer",
+            "type": "Report"
+          },
+          "evidence": {
+            "quote": "Recent Posts Vulnerability Whisperer"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The Word document executes a fileless attack that uses DNS queries to deliver the next shellcode stage (Meterpreter).",
+      "triple": [
+        {
+          "subject": {
+            "name": "Word document",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "DNS queries",
+            "type": "Protocol"
+          },
+          "evidence": {
+            "quote": "uses DNS queries"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "However, in this new variant, all the DNS activity is initiated and executed solely from memory - unlike previous attacks which used PowerShell commands.",
+      "triple": [
+        {
+          "subject": {
+            "name": "this new variant",
+            "type": "Unknown"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "PowerShell commands",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "used PowerShell commands"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Details for true-deals.com SEARCH IN GOOGLE SEARCH IN VIRUSTOTAL Classifier prediction: suspicious Umbrella risk score: DNS queries 10k 1 14.",
+      "triple": [
+        {
+          "subject": {
+            "name": "true-deals.com",
+            "type": "DomainName"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "SEARCH IN GOOGLE SEARCH IN VIRUSTOTAL",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "true-deals.com SEARCH IN GOOGLE SEARCH IN VIRUSTOTAL"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "By contrast, Morphisec's Moving Target Defensebased technology prevents the attack in its early stages, before any channel to the attacker is opened.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Morphisec's Moving Target Defense",
+            "type": "Software"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "attack",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "prevents the attack"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "014",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "First Posts by Tag Automated Moving Target Defense (148) Cyber Security News (130) Threat Research (129) Morphisec Labs (118)",
+      "triple": [
+        {
+          "subject": {
+            "name": "Automated Moving Target Defense",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "First Posts by Tag",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Automated Moving Target Defense (148)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "016",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " TECHNICAL ANALYSIS Below we describe the full technical details, beginning with the initial email through the final Meterpreter session used to hijack the computer.",
+      "triple": [
+        {
+          "subject": {
+            "name": "initial email",
+            "type": "EmailAddress"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "computer",
+            "type": "System"
+          },
+          "evidence": {
+            "quote": "beginning with the initial email through the final Meterpreter session used to hijack the computer"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "PHISHING EMAIL: As seen in the email below, FIN7's attack campaign targets restaurants.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "restaurants",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "FIN7's attack campaign targets restaurants"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "A Order.rtf (all the identified hashes are listed at the end).",
+      "triple": [
+        {
+          "subject": {
+            "name": "Order.rtf",
+            "type": "Filename"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "hashes",
+            "type": "Hash"
+          },
+          "evidence": {
+            "quote": "all the identified hashes are listed at the end)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Enclosed file contains all catering information Click on edit at the of the page and than double click to unlock content Sincerely yours, Adrian Clark Wilds Ltd.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Adrian Clark",
+            "type": "Person"
+          },
+          "predicate": "hasAuthor",
+          "object": {
+            "name": "Enclosed file",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "Enclosed file contains all catering information Click on edit at the of the page and than double click to unlock content Sincerely yours, Adrian Clark Wilds Ltd."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Tags top WORD DELIVERY: The attached .rtf file uses OLE and has many similarities to previous FIN7 attacks.",
+      "triple": [
+        {
+          "subject": {
+            "name": "The attached .rtf file",
+            "type": "Filepath"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "OLE",
+            "type": "Protocol"
+          },
+          "evidence": {
+            "quote": "uses OLE"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "But this attack, instead of activating hta files (mshta.exe) from within the link, executes obfuscated JavaScript code.",
+      "triple": [
+        {
+          "subject": {
+            "name": "attack",
+            "type": "AttackPattern"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "obfuscated JavaScript code",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "executes obfuscated JavaScript code"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "012",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "JAVASCRIPT CODE SNIPPETS: exe 3092 Process SUCCESS PID; 1728, Command line; 11.11 wscnptexe 1728 Start SUCCESS Parert PID: 3092, Comma wscnpt exe 1728 Thread SUCCESS Thread ID: 4572 Event Properties Event Process Stack Date: 6/8/2017 11:11-50 AM Thread: 2824",
+      "triple": [
+        {
+          "subject": {
+            "name": "exe",
+            "type": "Filename"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "wscnptexe",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "11.11 wscnptexe 1728"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Process Start Result: SUCCESS Path: Duration: Parent PID: 3092 Command line: Creale Cmd Process Creaie",
+      "triple": [
+        {
+          "subject": {
+            "name": "Process",
+            "type": "Unknown"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "SUCCESS",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Process Start Result: SUCCESS"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "File folder Favorites 3/8/2016 11.21 AM File folder Links 3/8/2016 11.21 AM File folder My Documents 2/20/2017 6.53 PM",
+      "triple": [
+        {
+          "subject": {
+            "name": "File folder Favorites",
+            "type": "Filename"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "3/8/2016 11.21 AM",
+            "type": "Time"
+          },
+          "evidence": {
+            "quote": "File folder Favorites 3/8/2016 11.21 AM"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "File folder My Music 3/8/2016 11.21 AM File folder My Pictures 3/8/2016 11.21 AM File folder My Videos 3/8/2016 11.21 AM File folder OpenVPN 2/16/2017 1258 PM",
+      "triple": [
+        {
+          "subject": {
+            "name": "File folder",
+            "type": "Filename"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "3/8/2016 11.21 AM",
+            "type": "Time"
+          },
+          "evidence": {
+            "quote": "3/8/2016 11.21 AM"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "File folder bin 10/28/2016 4.05 PM File folder Contacts 3/8/2016 11.21 AM File folder Desktop 6/8/2017 9.04 PM File folder doc 10/28/2016 4.05 PM File folder Downloads 6/8/2017 9.14 PM File folder Favorites 3/8/2016 11.21 AM File folder Links 3/8/2016 11.21 AM File folder My Documents 2/20/2017 6.53 PM",
+      "triple": [
+        {
+          "subject": {
+            "name": "File folder bin",
+            "type": "Filename"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "10/28/2016 4.05 PM",
+            "type": "Time"
+          },
+          "evidence": {
+            "quote": "File folder bin 10/28/2016 4.05 PM"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "File folder My Music 3/8/2016 11.21 AM File folder My Pictures 3/8/2016 11.21 AM File folder My Videos 3/8/2016 11.21 AM File folder OpenVPN 2/16/2017 12.58 PM File folder Saved Games 3/8/2016 11.21 AM File folder Searches 2/20/2017 6.53 PM",
+      "triple": [
+        {
+          "subject": {
+            "name": "File folder My Music",
+            "type": "Filename"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "3/8/2016 11.21 AM",
+            "type": "Time"
+          },
+          "evidence": {
+            "quote": "File folder My Music 3/8/2016 11.21 AM"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The latter PowerShell injects a shellcode into its own process using well-known CreateThread and VirtualAlloc techniques: Set-Stfictvoje Invcke(Snul] funcrion tncooing 88 SHELLCODE: The shellcode phase of this attack is unique and",
+      "triple": [
+        {
+          "subject": {
+            "name": "PowerShell",
+            "type": "Application"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "CreateThread and VirtualAlloc techniques",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "using well-known CreateThread and VirtualAlloc techniques"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "已蓝 sub_21788Fprocnear ;FUNCTIONCHUNKAT00217130SIZE08000070BYTES pop xOr push noU push push push push call push nOU ebp eax,eax 48h;'a' ah,18h 1999h /FFFFh SE553A458h ebp eax edi,eax ;kernel32 ?",
+      "triple": [
+        {
+          "subject": {
+            "name": "FUNCTIONCHUNKAT00217130SIZE08000070BYTES",
+            "type": "Unknown"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "48h",
+            "type": "SHA-1"
+          },
+          "evidence": {
+            "quote": "48h"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In the DNS query pattern, it is very clear to see that alphabetical modification of the subdomain prefix is used: push push push push call mOU eax 6173664h esp 726774Ch ebp ebx,61h; 'al ;kernel32 !",
+      "triple": [
+        {
+          "subject": {
+            "name": "DNS query pattern",
+            "type": "AttackPattern"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "alphabetical modification of the subdomain prefix",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "alphabetical modification of the subdomain prefix is used:"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "trup deals con) 0021711E 0021711E 058e0860 0021711E 058e 088 0021711E 058e08a 0021711E 058e08c 0021711E 0021711E 058e 0900",
+      "triple": [
+        {
+          "subject": {
+            "name": "trup",
+            "type": "Malware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "0021711E 0021711E 058e0860 0021711E 058e 088 0021711E 058e08a 0021711E 058e08c 0021711E 0021711E 058e 0900",
+            "type": "SHA-256"
+          },
+          "evidence": {
+            "quote": "trup deals con) 0021711E 0021711E 058e0860 0021711E 058e 088 0021711E 058e08a 0021711E 058e08c 0021711E 0021711E 058e 0900"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "0021711E 058e092 002171E 058e 0940 0021711E dnsapi DnsQuery (baa stage .12019683 ns?",
+      "triple": [
+        {
+          "subject": {
+            "name": "0021711E 058e092",
+            "type": "SHA-256"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "dnsapi DnsQuery (baa stage .12019683 ns?",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": " 0021711E 058e092 dnsapi DnsQuery (baa stage .12019683 ns?"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "trup deals con) 0021711E 058e09a0 0021711E HGIAEAAAAAAFAPPNAGIPALFKCFGGIAFA 0021711E 058e09e 0021711E 0021711E 0021711E seg000 0021711E OCAGJGOCAEEEPFDCAGNGPGEGFCOANANA seg000 0021711E 0021711E seg000: 0021711E dnsapi:DnsQuery (caa stage .12019683",
+      "triple": [
+        {
+          "subject": {
+            "name": "seg000",
+            "type": "Filename"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "dnsapi:DnsQuery (caa stage .12019683",
+            "type": "Exploit-kit"
+          },
+          "evidence": {
+            "quote": "seg000 dnsapi:DnsQuery (caa stage .12019683"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "021701cb Push push 192.168.199.1} Standord 021701d5",
+      "triple": [
+        {
+          "subject": {
+            "name": "021701cb",
+            "type": "SHA-256"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Push push",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "021701cb Push push 192.168.199.1} Standord 021701d5"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "5eg000: 0540002B 5eg000: 0540002C se9000: 0540002E 5eg0005 05400031 5e9000: 05400033 5eg000: 05400034 5eg000: 05400035 insb METERPRETER:",
+      "triple": [
+        {
+          "subject": {
+            "name": "5eg000",
+            "type": "SHA-256"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "0540002B",
+            "type": "Hash"
+          },
+          "evidence": {
+            "quote": "5eg000: 0540002B"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Just before this step executed, we extracted the dll from memory and uploaded it to VirusTotal.",
+      "triple": [
+        {
+          "subject": {
+            "name": "this step",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "dll from memory",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "extracted the dll from memory"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "If this dll was saved on disk, many security solutions would immediately identify it as a CobaltStrike Meterpreter, which is used by many attackers and pen testers.",
+      "triple": [
+        {
+          "subject": {
+            "name": "dll",
+            "type": "Filename"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "CobaltStrike Meterpreter",
+            "type": "MalwareFamily"
+          },
+          "evidence": {
+            "quote": "as a CobaltStrike Meterpreter"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "MORPHISEC Support Solutions Products Partners Under Attack?",
+      "triple": [
+        {
+          "subject": {
+            "name": "MORPHISEC",
+            "type": "Organization"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "Products",
+            "type": "Software"
+          },
+          "evidence": {
+            "quote": "MORPHISEC Support Solutions Products Partners Under Attack?"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "012",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " Detection ratio: 30 58 0U Analysis date: 2017-06-08 16.21.34 UTC ( 0 minutes ago Analysis File detail Additional information Comments Votes Antivirus Result Update Ad-Aware Gen: Variant_Application Hack Tool CobaltStrike.",
+      "triple": [
+        {
+          "subject": {
+            "name": "CobaltStrike",
+            "type": "MalwareFamily"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Hack Tool",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "Variant_Application Hack Tool CobaltStrike."
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "20170608 AhnLab-V3 Hack ToollWin32 Cobalt R197271 20170608",
+      "triple": [
+        {
+          "subject": {
+            "name": "AhnLab-V3",
+            "type": "MalwareFamily"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Hack ToollWin32 Cobalt R197271",
+            "type": "Filename"
+          },
+          "evidence": {
+            "quote": "AhnLab-V3 Hack ToollWin32 Cobalt R197271"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "001",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Antiy-AVL Hack Tool/Win32 Cobalt 20170608 Arcabit Trojan Application Hack Tool CobaltStrike 1 20170608 BitDefender 20170608 CAT-QuickHeal Trojan Skeeyah 20170607 CrowdStrike Falcon (ML) malicious_confidence_1009 (D) 20170420 DrWeb BackDoor Meterpreter 4 20170608 Emsisoft Gen: Variant Application Hack Tool CobaltStrike (B) 20170608 Endgame malicious (high confidence) 20170515 ESET-NOD32 variant of Win32/RiskWare CobaltStrike Beacon A 20170608 F-Secure Gen: Variant Application Hack Tool 20170608 GData Gen: Variant Application Hack Tool CobaltStrike 20170608 Ikarus Trojan Win32 Conbea 20170608 Invincea heuristic 20170607 KZAntiVirus Unwanted-Program 004c3a6f1 20170608 CONCLUSIONS: FIN7 constantly upgrades their attacks and evasion techniques, thus becoming even more dangerous and unpredictable.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FIN7",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "attacks and evasion techniques",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "FIN7 constantly upgrades their attacks and evasion techniques"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Attacker email account: adrian.1987clark@yahoo.com",
+      "triple": [
+        {
+          "subject": {
+            "name": "adrian.1987clark@yahoo.com",
+            "type": "EmailAddress"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Attacker email account",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Attacker email account: adrian.1987clark@yahoo.com"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 12,
+        "id": "004",
+        "source": "TEXT"
+      }
+    }
+  ]
+}
