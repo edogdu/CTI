@@ -46,14 +46,15 @@ def _clean_state(workdir: Path):
         log(f"[Clean] Warning: could not rotate manifest: {e}")
 
 def stage_extraction(input_path: Path, document_id: str, model: str, ollama_base_url: str, out_dir: Path) -> Path:
-    from scripts.triple_extraction import extraction as extraction  # local module
+    from scripts.triple_extraction import extraction_semantic_only_v1 as extraction  # local module
 
     out_dir.mkdir(parents=True, exist_ok=True)
     stem = input_path.stem.replace(" ", "_")
     chunk_json = out_dir / f"chunk_data_{stem}_{model.replace(':','_')}.json"
 
     log(f"[Extraction] model={model}, file={input_path}")
-    extractor = extraction.CyberTripleExtractor(str(input_path), document_id, model_name=model, ollama_base_url=ollama_base_url)
+    extractor = extraction.CyberTripleExtractor(str(input_path), model_name=model, ollama_base_url=ollama_base_url)
+    extractor.document_id = document_id,
     raw_chunk_results = extractor.run()
     extractor.build_dict(raw_chunk_results)
 
