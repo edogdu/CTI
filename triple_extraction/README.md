@@ -1,22 +1,30 @@
 Description of all the scripts related to triple extraction
 
-***extraction_consensus_plus_invalid.py*** -
+##  Method 2 – Triple Consensus and Repair
 
-Modification of extraction_consensus.py script that performs automated triple extraction and consensus filtering from Cyber Threat Intelligence (CTI) reports in PDF format.
-  It converts documents into text using Docling, splits content by page and sentence with SpaCy, and uses multiple prompt variants with a local gemma2:9b worker to extract candidate subject–predicate–object triples.
-  It still uses MALOnt ontology in this version but other ontologies can be applied with further modification.
-  Extracted triples are compared across prompt outputs using a consensus filter, keeping only those that appear in at least two prompt results.
-  BIGGEST CHANGE from the original extraction_consensus.py:
-      Valid triples are saved to chunk_data_gemma2_9b.json, while non-consensus or schema-invalid ones (e.g., wrong type, malformed structure) are stored separately in invalid_triples_gemma2_9b.json for later repair.
-      The location of all stored JSONs is CTI/scripts/triple_extraction/extracted_triples folder
+Located in the **`/triple_consensus_and_repair/`** folder, this method refines CTI triple extraction results by filtering, validating, and repairing triples that fail schema or consensus checks.
 
-***repair_invalid_triples.py*** -
+---
 
-Loads previously failed triples from CTI/scripts/trirple_extraction/extracted_triples/invalid_triples_gemma2_9b.json.
-  applies deterministic normalization (det_fix) to clean names, types, and predicates, and validates them against a predefined STIX/UCO schema. 
-  Triples that still fail are re-evaluated using a local LLM (via Ollama) in two passes: a strict repair (schema-compliant only) and, if needed, a loose repair (allowing slight paraphrasing of entity names).
-  All repaired triples are saved to _repaired_valid.json, while unfixable ones go to _still_invalid.json inside the extracted_triples folder, along with top failure reasons and runtime metrics. 
-  This process increases dataset quality and ensures final triples conform to STIX 2.1 domain and range rules.
+### extraction_consensus_plus_invalid.py
+
+Performs automated triple extraction and consensus filtering on CTI reports in PDF format.  
+Uses **Docling** for text conversion, **SpaCy** for segmentation, and a local **`gemma2:9b`** model for multiple prompt-based extractions.  
+Valid triples are saved to:  
+`triple_extraction/extracted_triples/chunk_data_gemma2_9b.json`  
+Invalid or non-consensus triples are stored in:  
+`triple_extraction/extracted_triples/invalid_triples_gemma2_9b.json`  
+for later repair.
+
+---
+
+### repair_invalid_triples.py
+
+Loads invalid triples from  
+`triple_extraction/extracted_triples/invalid_triples_gemma2_9b.json`,  
+applies deterministic normalization (`det_fix`), validates against **STIX/UCO schema**, and performs a strict LLM repair pass using **`gemma2:9b`** - followed by a **loose LLM pass only if beneficial**.    
+Repaired triples are saved to `invalid_triples_gemma2_9b_repaired_valid.json`, and remaining invalid ones to `invalid_triples_gemma2_9b_still_invalid.json`, improving overall dataset accuracy and schema compliance.
+
 
 
 ### Semantic Chunking Triple Extraction
