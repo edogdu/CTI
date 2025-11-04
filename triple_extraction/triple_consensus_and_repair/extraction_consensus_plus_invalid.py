@@ -9,13 +9,17 @@ from langchain_community.llms import Ollama
 import spacy   
 import re
 import sys
+
+PARENT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+if PARENT not in sys.path:
+    sys.path.insert(0, PARENT)
 try:
     # Prefer package-relative import when called via scripts.triple_extraction.extraction_consensus
-    from .consensus import consensus_filter  # legacy filename (as referenced here)
+    from consensus import consensus_filter  # legacy filename (as referenced here)
 except Exception:
     try:
         # If the correctly-spelled module exists instead
-        from .consensus import consensus_filter
+        from consensus import consensus_filter
     except Exception:
         # Fallback: allow absolute import if running the file directly
         from consensus import consensus_filter  # type: ignore
@@ -550,10 +554,10 @@ if __name__ == "__main__":
     ]
     #---------------------------------------------------------------------------
     script_dir = Path(__file__).parent
-    input_pdf = script_dir / "Cyble_OperationShadowCat-Targeting-Indian-Political-Observers(07-24-2024).pdf"
+    input_pdf = script_dir.parent / "Cyble_OperationShadowCat-Targeting-Indian-Political-Observers(07-24-2024).pdf"
 
     if not input_pdf.exists():
-        print(f"Input PDF not found: {input_pdf}\nTip: place PDF in the sript folder and change the name of input_pdf variable.")
+        print(f"Input PDF not found: {input_pdf}\nTip: place PDF in the script folder or update input_pdf.")
         sys.exit(1)
 
     print(f"Using input PDF: {input_pdf}")
