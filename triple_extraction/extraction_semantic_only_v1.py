@@ -1,834 +1,620 @@
-# extraction_semantic_chunk_v2.py
-# Semantic-chunk CTI triple extraction with:
-# - Embedding-based chunking (max-min, self-contained)
-# - Bigger chunk targets with coalescing
-# - Boilerplate filtering
-# - Page spillover context for continuity
-# - Chunk-only LLM extraction with optional consensus
-# - MALONT-lite validation
-# - Embedding cache (on-disk)
-# - Chunk previews and rich metrics
+# triple_extraction/extraction_semantic_only_v1.py
+from __future__ import annotations
 
-import os, re, json, time, math, hashlib, pickle
-from collections import defaultdict
-from typing import List, Dict, Any, Tuple
+import os, re, json, time, hashlib, logging, random
+from dataclasses import dataclass
+from typing import List, Tuple, Dict, Any, Optional
 
-import requests
-import spacy
-import numpy as np
-from spacy.matcher import PhraseMatcher
-from docling.document_converter import DocumentConverter
-from langchain_community.llms import Ollama
-
-# ---------- optional consensus helper ----------
+# ----------------------- Optional sentence splitter --------------------------
 try:
-    from consensus import consensus_filter
-    _HAVE_CONSENSUS = True
-except Exception:
-    _HAVE_CONSENSUS = False
-
-
-# =========================
-# Config and utilities
-# =========================
-
-def ensure_ollama_model(model_name="gemma2:9b", base_url="http://localhost:11434"):
-    try:
-        resp = requests.get(f"{base_url}/api/tags", timeout=20)
-        resp.raise_for_status()
-        models = [m.get("name") for m in resp.json().get("models", [])]
-        if model_name not in models:
-            print(f"[ollama] Model '{model_name}' not found. Pulling...")
-            pull_resp = requests.post(f"{base_url}/api/pull", json={"name": model_name}, timeout=1800)
-            pull_resp.raise_for_status()
-            print(f"[ollama] Model '{model_name}' pulled.")
-        else:
-            print(f"[ollama] Model '{model_name}' available.")
-    except Exception as e:
-        print(f"[warn] Ollama check failed: {e}")
-
-
-def sha1(s: str) -> str:
-    return hashlib.sha1(s.encode("utf-8", errors="ignore")).hexdigest()
-
-
-# =========================
-# NLP setup
-# =========================
-
-try:
-    nlp = spacy.load("en_core_web_sm")
-except OSError:
-    from spacy.cli import download
-    download("en_core_web_sm")
-    nlp = spacy.load("en_core_web_sm")
-
-if "sentencizer" not in nlp.pipe_names:
-    nlp.add_pipe("sentencizer")
-
-matcher = PhraseMatcher(nlp.vocab, attr="LOWER")
-
-
-# =========================
-# Boilerplate filtering
-# =========================
-
-_BOILERPLATE_PATTERNS = [
-    r"\b(cookie|cookies|privacy|manage cookies|accept|reject)\b",
-    r"\b(all microsoft|sign in|search the blog|more|solutions|products|services)\b",
-    r"\bsubscribe\b|\bshare\b|\bread more\b|\bheader\b|\bfooter\b",
-    r"^\s*[A-Z]{2,}(?:\s+[A-Z]{2,})*\s*$",           # ALL CAPS menus
-    r"^\s*©\s*\d{4}\s",                               # copyright
-    r"^\s*[\uE000-\uF8FF\uf000-\uf8ff].*$",          # icon fonts
-]
-
-_BP = [re.compile(p, re.I) for p in _BOILERPLATE_PATTERNS]
-
-def is_boilerplate(sent: str) -> bool:
-    s = sent.strip()
-    if len(s) < 8:
-        return True
-    return any(rx.search(s) for rx in _BP)
-
-def filter_sentences(sentences: List[str]) -> List[str]:
-    return [s for s in sentences if not is_boilerplate(s)]
-
-
-# =========================
-# MALONT-lite schema
-# =========================
-
-MALONT_CLASSES = [
-    'Staging','Adware','CommandAndControl','Spyware','DDoS','DomainName','Dropper','Port','MD5',
-    'Protocol','VirusScanner','Downloader','Ransomware','OperatingSystem','Rootkit',
-    'AttackPattern_SmallDescription','IPAddress','Bootkit','Hardware','SSDeep','Application',
-    'AttackPattern','Phishing','Campaign','SHA-256','System','Vulnerability_Desc','Anonymization',
-    'Backdoor','Location','Organization','Reconnaissance','Exploit-kit','Time','MalwareAnalysis',
-    'ResourceExploitation','SHA','HostingMalware','SHA-1','Unknown','HostingTargetLists','Hash',
-    'AttackPattern_LargeDescription','Software','Network','Indicator','Trojan','Botnet','Worm',
-    'EmailAddress','Malware','RogueSecuritySoftware','vHash','Filepath','Region','Report','Virus',
-    'ThreatActor','Keylogger','Browser','ScreenCapture','Vulnerability_CVEID','URL','Wiper',
-    'Filename','Infrastructure','MalwareFamily','Person','Webshell','Vulnerability','Bot',
-    'RemoteAccessTrojan-RAT','Country','Exfiltration','Amplification'
-]
-
-MALONT_PREDS = [
-    "targets","communicatesWith","uses","has","hasAlias","hasVulnerability",
-    "indicates","exploits","hasAuthor","belongsTo"
-]
-
-# seed matcher for cheap relevance checks
-try:
-    matcher.add("MALONT", [nlp.make_doc(term) for term in MALONT_CLASSES])
-except Exception:
-    pass
-
-def is_valid_triple(t: dict) -> bool:
-    if not isinstance(t, dict):
-        return False
-    s, o, p = t.get("subject"), t.get("object"), t.get("predicate")
-    if not isinstance(s, dict) or not isinstance(o, dict) or not isinstance(p, str):
-        return False
-    st, ot = (s.get("type"), o.get("type"))
-    sn, on = (s.get("name"), o.get("name"))
-    if not sn or not on:
-        return False
-    if st not in MALONT_CLASSES or ot not in MALONT_CLASSES:
-        return False
-    if p.strip() not in MALONT_PREDS:
-        return False
-    q = (t.get("evidence") or {}).get("quote", "")
-    if not isinstance(q, str) or not q.strip():
-        return False
-    return True
-
-
-# =========================
-# Embedding client with cache
-# =========================
-
-class Embedder:
-    def __init__(self, base_url="http://localhost:11434", model="nomic-embed-text",
-                 cache_dir=".embed_cache", batch_size=64, timeout=60):
-        self.base_url = base_url.rstrip("/")
-        self.model = model
-        self.batch_size = batch_size
-        self.timeout = timeout
-        self.cache_dir = cache_dir
-        os.makedirs(cache_dir, exist_ok=True)
-        self.cache_index_path = os.path.join(cache_dir, "index.pkl")
-        self.cache: Dict[str, List[float]] = {}
-        if os.path.exists(self.cache_index_path):
+    import spacy
+    _NLP = None
+    def _nlp():
+        global _NLP
+        if _NLP is None:
             try:
-                with open(self.cache_index_path, "rb") as f:
-                    self.cache = pickle.load(f)
+                _NLP = spacy.load("en_core_web_sm")
             except Exception:
-                self.cache = {}
+                _NLP = spacy.blank("en")
+                if "sentencizer" not in _NLP.pipe_names:
+                    _NLP.add_pipe("sentencizer")
+        return _NLP
+    _HAVE_SPACY = True
+except Exception:
+    _HAVE_SPACY = False
+    def _nlp(): return None
 
-    def save_cache(self):
-        try:
-            with open(self.cache_index_path, "wb") as f:
-                pickle.dump(self.cache, f)
-        except Exception:
-            pass
+# ----------------------- Lightweight TF-IDF embeddings -----------------------
+try:
+    from sklearn.feature_extraction.text import TfidfVectorizer
+    from sklearn.metrics.pairwise import cosine_similarity as _sk_cos
+    _HAVE_SCIKIT = True
+except Exception:
+    _HAVE_SCIKIT = False
 
-    def _embed_one(self, text: str) -> List[float]:
-        try:
-            r = requests.post(
-                f"{self.base_url}/api/embeddings",
-                json={"model": self.model, "prompt": text},
-                timeout=self.timeout,
-            )
-            r.raise_for_status()
-            v = r.json().get("embedding") or []
-            if not v:
-                return []
-            # L2 normalize
-            arr = np.array(v, dtype=float)
-            n = np.linalg.norm(arr) or 1.0
-            return (arr / n).tolist()
-        except Exception:
-            return []
+# ----------------------- HTTP client (Ollama) --------------------------------
+import requests
 
-    def embed(self, sentences: List[str], doc_id="") -> List[List[float]]:
-        out: List[List[float]] = []
-        to_compute_idx = []
-        # locate in cache
-        for i, s in enumerate(sentences):
-            key = f"{doc_id}:{sha1(s)}"
-            if key in self.cache:
-                out.append(self.cache[key])
-            else:
-                out.append(None)
-                to_compute_idx.append((i, key, s))
+# =============================================================================
+# Config
+# =============================================================================
 
-        # batch compute remaining
-        for start in range(0, len(to_compute_idx), self.batch_size):
-            batch = to_compute_idx[start:start+self.batch_size]
-            for i, key, s in batch:
-                vec = self._embed_one(s)
-                if vec:
-                    self.cache[key] = vec
-                out[i] = vec if vec else None
-        return out
+# In extraction_semantic_only_v1.py
 
 
-# =========================
-# Semantic chunking (max-min)
-# =========================
+@dataclass
+class Config:
+    # LLM
+    model_name: str = os.environ.get("CTI_MODEL_NAME", "gemma2:9b")
+    ollama_base_url: str = os.environ.get("OLLAMA_BASE_URL", "http://localhost:11434")
+    use_llm: bool = bool(int(os.environ.get("USE_LLM", "1")))
+    # prompting & consensus
+    num_prompts: int = int(os.environ.get("NUM_PROMPTS", "3"))   # prompts per chunk
+    consensus_m: int = int(os.environ.get("CONSENSUS_M", "2"))   # appear in >= m prompts
+    # chunking
+    TARGET_MIN_WORDS: int = int(os.environ.get("CHUNK_MIN_WORDS", "1"))
+    TARGET_MAX_WORDS: int = int(os.environ.get("CHUNK_MAX_WORDS", "220"))
+    MM_MIN_SIM_THRESH: float = float(os.environ.get("CHUNK_MIN_SIM", "0.12"))
+    MM_OVERLAP_WORDS: int = int(os.environ.get("CHUNK_OVERLAP", "25"))
+    MM_LOOKAHEAD: int = int(os.environ.get("CHUNK_LOOKAHEAD", "3"))
+    MIN_CTITERM_DENSITY: float = float(os.environ.get("MIN_CTI_DENSITY", "0.005"))
+    
 
-def cosine(a: np.ndarray, b: np.ndarray) -> float:
-    na = np.linalg.norm(a)
-    nb = np.linalg.norm(b)
-    if na == 0 or nb == 0:
-        return 0.0
-    return float(np.dot(a/na, b/nb))
+config = Config()
 
+
+# =============================================================================
+# STIX ontology + notebook-normalization (matches your evaluation)
+# =============================================================================
+STIX_ENTITY_TYPES = {
+    "malware","tool","attack-pattern","threat-actor","intrusion-set",
+    "infrastructure","campaign","indicator","vulnerability","identity",
+    "tactic","technique","sub-technique","c2","domain","ip"
+}
+STIX_REL_TYPES = {
+    "uses","delivers","drops","downloads","installs","exploits","targets",
+    "communicates-with","beacons-to","hosts-on","controls","indicates",
+    "attributed-to","mitigates","part-of","related-to","located-in"
+}
+
+RE_TECHNIQUE     = re.compile(r"\bT\d{4}(?:\.\d{3})?\b", re.I)
+RE_CVE           = re.compile(r"\bCVE-\d{4}-\d{4,7}\b", re.I)
+RE_IPV4          = re.compile(r"\b(?:(?:25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(?:25[0-5]|2[0-4]\d|[01]?\d\d?)\b")
+RE_DOMAIN        = re.compile(r"\b(?=.{4,253}\b)(?!-)(?:[a-z0-9-]{1,63}\.)+[a-z]{2,63}\b", re.I)
+
+def canonical_entity_type(t: str) -> str:
+    t = (t or "").lower().strip()
+    alias = {
+        "attack pattern":"attack-pattern", "attack-pattern":"attack-pattern",
+        "technique":"attack-pattern", "sub-technique":"attack-pattern",
+        "tactic":"tactic", "c2":"infrastructure", "server":"infrastructure",
+        "actor":"threat-actor", "group":"intrusion-set",
+        "vuln":"vulnerability", "cve":"vulnerability",
+        "program":"tool", "utility":"tool",
+        "org":"identity", "organization":"identity", "company":"identity",
+        "sector":"identity", "industry":"identity"
+    }
+    return alias.get(t, t if t in STIX_ENTITY_TYPES else t)
+
+def detect_implicit_type(text: str) -> str | None:
+    s = (text or "").strip()
+    if RE_TECHNIQUE.search(s):     return "attack-pattern"
+    if RE_CVE.search(s):           return "vulnerability"
+    if RE_IPV4.search(s):          return "infrastructure"
+    if RE_DOMAIN.search(s):        return "infrastructure"
+    return None
+
+_MAL_TOOL_ALIASES = {
+    "powershell.exe":"powershell", "pwsh":"powershell",
+    "mimikatz.exe":"mimikatz", "cobalt strike":"cobalt_strike",
+    "x-agent":"xagent","x-tunnel":"xtunnel",
+    "apt28":"fancy bear","sednit":"fancy bear",
+    "cozy bear":"apt29","cozybear":"apt29","cozyduke":"apt29","the dukes":"apt29",
+    "trick bot":"trickbot", "trickbot.exe":"trickbot",
+    "cobaltstrike":"cobalt_strike", "fancybear":"fancy bear", "ta505":"ta505"
+}
+
+def normalize_entity_label(text: str, etype: str | None = None) -> str:
+    if not text: return ""
+    s = text.strip()
+    etype = canonical_entity_type(etype or "") or detect_implicit_type(s) or ""
+
+    m = RE_TECHNIQUE.search(s)
+    if m: return m.group(0).upper()
+    m = RE_CVE.search(s)
+    if m: return m.group(0).upper()
+
+    if etype == "infrastructure":
+        s2 = s.lower()
+        s2 = re.sub(r"^https?://", "", s2)
+        s2 = s2.split("/")[0]
+        return s2
+
+    base = re.sub(r"[\"'`]", "", s).strip()
+    base = re.sub(r"\s+", " ", base)
+    base_l = base.lower()
+    for ext in [".exe",".dll",".sys",".bin",".dat",".tmp",".ps1",".bat",".cmd",".js",".jar",".zip",".rar"]:
+        if base_l.endswith(ext): base = base[:-len(ext)]
+    base_l = base.lower()
+    base_l = _MAL_TOOL_ALIASES.get(base_l, base_l)
+    return base_l
+
+_PRED_MAP = {
+    "use":"uses","uses":"uses","used":"uses","using":"uses",
+    "execute":"uses","executes":"uses","executed":"uses","run":"uses","runs":"uses","leverages":"uses","utilizes":"uses","invokes":"uses","calls":"uses","implements":"uses",
+    "deliver":"delivers","delivers":"delivers","drops":"drops","drop":"drops","download":"downloads","downloads":"downloads","install":"installs","installs":"installs",
+    "beacon":"beacons-to","beacons":"beacons-to","beacons-to":"beacons-to","communicates":"communicates-with","communicates-with":"communicates-with","contacts":"communicates-with","connects to":"communicates-with",
+    "hosts on":"hosts-on","hosts-on":"hosts-on","hosted on":"hosts-on",
+    "target":"targets","targets":"targets","attack":"targets","attacks":"targets","compromises":"targets",
+    "exploit":"exploits","exploits":"exploits","abuses":"exploits",
+    "attributed to":"attributed-to","linked to":"related-to","associated with":"related-to","part of":"part-of","part-of":"part-of",
+    "indicates":"indicates","mitigates":"mitigates","controls":"controls","located in":"located-in","located-in":"located-in"
+}
+def normalize_predicate_for_embedding(p: str) -> str:
+    if not p: return "uses"
+    q = p.strip().lower()
+    q = re.sub(r"\s+", " ", q)
+    return _PRED_MAP.get(q, q if q in STIX_REL_TYPES else "related-to")
+
+def normalize_predicate(p: str) -> str:
+    return normalize_predicate_for_embedding(p)
+
+def _canon_text(s: str) -> str:
+    return re.sub(r"\s+", " ", (s or "").strip()).lower()
+def infer_entity_type_from_name(name: str) -> str:
+    n = (name or "").strip()
+    n_l = n.lower()
+
+    # hard signals
+    if RE_TECHNIQUE.search(n):     return "attack-pattern"
+    if RE_CVE.search(n):           return "vulnerability"
+    if RE_IPV4.search(n) or RE_DOMAIN.search(n): return "infrastructure"
+
+    # heuristics
+    if re.search(r"\b(apt|group|crew|bear|team|lazarus|ta\d+)\b", n_l): return "intrusion-set"
+    if re.search(r"\b(phish|spear.?phish|credential|brute|exfiltrat|payload|lateral|persistence|t\d{4})\b", n_l): return "attack-pattern"
+    if re.search(r"\b(malware|trojan|ransom|worm|bot|backdoor|loader|infostealer)\b", n_l): return "malware"
+    if re.search(r"\b(tool|framework|beacon|ps1|powershell|mimikatz|cobalt ?strike|metasploit)\b", n_l): return "tool"
+    if re.search(r"\b(c2|command[- ]and[- ]control|server|ip|domain|dns|infrastructure)\b", n_l): return "infrastructure"
+    if re.search(r"\b(inc|corp|llc|ltd|company|organization|sector|bank|government|ministry)\b", n_l): return "identity"
+
+    # default fallback: identity (entity mentioned)
+    return "identity"
+
+# =============================================================================
+# Sentence splitting & filtering
+# =============================================================================
+def sent_tokenize(text: str) -> List[str]:
+    if _HAVE_SPACY:
+        doc = _nlp()(text)
+        return [s.text for s in doc.sents if s.text.strip()]
+    return [s for s in re.split(r"(?<=[.!?])\s+", text) if s and s.strip()]
+
+_CTI_TERMS = re.compile(r"\b(APT|MITRE|CVE-\d{4}-\d{4,7}|phishing|lateral|Cobalt ?Strike|beacon|payload|ransom|exfiltrat|persistence|C2|command[- ]and[- ]control|TTPs?)\b", re.I)
+def _word_count(s: str) -> int:
+    return len(re.findall(r"\w+", s))
+
+def filter_sentences(sents: List[str]) -> List[str]:
+    out = []
+    for s in sents:
+        s2 = s.strip()
+        if len(s2) >= 3:
+            out.append(s2)
+    return out
+
+def _chunk_relevant(sents: List[str]) -> bool:
+    text = " ".join(sents)
+    if not text.strip(): return False
+    dense = len(_CTI_TERMS.findall(text)) / max(1, _word_count(text))
+    return dense >= config.MIN_CTITERM_DENSITY or _word_count(text) >= config.TARGET_MIN_WORDS
+
+# =============================================================================
+# TF-IDF embedder
+# =============================================================================
+class TfidfEmbedder:
+    def __init__(self):
+        self._vec = None
+        self._cache: Dict[str, Any] = {}
+    def embed(self, sentences: List[str], doc_id: str):
+        key = f"{doc_id}:{len(sentences)}"
+        if key in self._cache:
+            return self._cache[key][1]
+        if not _HAVE_SCIKIT:
+            mat = [[1.0] for _ in sentences]
+            self._cache[key] = (sentences, mat)
+            return mat
+        self._vec = TfidfVectorizer(ngram_range=(1,2), min_df=1)
+        mat = self._vec.fit_transform(sentences)
+        self._cache[key] = (sentences, mat)
+        return mat
+    def cosine(self, A, B):
+        if not _HAVE_SCIKIT:
+            return [[1.0 if i==j else 0.0 for j in range(len(B))] for i in range(len(A))]
+        return _sk_cos(A, B)
+
+# =============================================================================
+# Semantic chunking (max-min style)
+# =============================================================================
 def maxmin_semantic_chunks(
     sentences: List[str],
-    embeddings: List[List[float]],
-    min_sim_threshold: float = 0.25,
-    max_words: int = 380,
-    overlap_words: int = 120,
-    lookahead: int = 6,
+    embeddings,
+    min_sim_threshold: float,
+    max_words: int,
+    overlap_words: int,
+    lookahead: int
 ) -> List[Dict[str, Any]]:
-    """
-    Simple max-min chunker:
-    - Start a chunk
-    - iteratively add sentences whose sim to current centroid >= threshold
-    - stop when max_words reached
-    - add overlap_words context between chunks by sentence spill
-    """
-    # pack valid vectors
-    vecs = [np.array(v, dtype=np.float32) if isinstance(v, list) else None for v in embeddings]
     n = len(sentences)
+    if n == 0: return []
+    def cos_ii(i, j):
+        if _HAVE_SCIKIT:
+            return float(embeddings[i].dot(embeddings[j].T).toarray().ravel()[0])
+        return 1.0 if i==j else 0.0
     chunks = []
     i = 0
     while i < n:
-        # start a new chunk at i
         start = i
-        # skip empty or extremely short sentences
-        cur_sents = [sentences[i]]
-        cur_vecs = [vecs[i]] if vecs[i] is not None else []
-        # running centroid
-        if cur_vecs:
-            centroid = np.mean(cur_vecs, axis=0)
-        else:
-            centroid = None
-
-        # grow the chunk
+        cur_words = _word_count(sentences[i])
+        last_i = i
         j = i + 1
-        while j < n:
-            # compute tentative size
-            new_text = " ".join(cur_sents + [sentences[j]])
-            if len(new_text.split()) > max_words:
-                break
-            # check similarity
+        while j < n and cur_words < max_words:
             ok = True
-            if centroid is not None and vecs[j] is not None:
-                sim = cosine(centroid, vecs[j])
-                if sim < min_sim_threshold:
-                    ok = False
-            # allow a small lookahead to keep topical continuity
-            if not ok and lookahead > 0:
-                window = min(n, j + lookahead)
-                found = False
-                for k in range(j+1, window):
-                    if vecs[k] is not None and centroid is not None:
-                        if cosine(centroid, vecs[k]) >= min_sim_threshold:
-                            found = True
-                            break
-                if not found:
-                    break
-
-            # accept sentence j
-            cur_sents.append(sentences[j])
-            if vecs[j] is not None:
-                cur_vecs.append(vecs[j])
-                centroid = np.mean(cur_vecs, axis=0)
+            for k in range(max(i, j - lookahead), j):
+                if cos_ii(last_i, k) < min_sim_threshold:
+                    ok = False; break
+            if not ok: break
+            cur_words += _word_count(sentences[j])
+            last_i = j
             j += 1
-
-        # record chunk
-        text = " ".join(cur_sents).strip()
-        size_words = len(text.split())
-        # min pair sim inside chunk for preview
-        mps = 1.0
-        if len(cur_vecs) >= 2:
-            mps = 1.0
-            for a in range(len(cur_vecs)):
-                for b in range(a+1, len(cur_vecs)):
-                    mps = min(mps, cosine(cur_vecs[a], cur_vecs[b]))
-        chunks.append({
-            "start": start,
-            "end": j,
-            "text": text,
-            "size_words": size_words,
-            "min_pair_sim": mps
-        })
-
-        # overlap: step back by overlap_words worth of sentences
-        if j >= n:
-            break
-        # compute how many sentences approximate overlap_words
-        back = 0
-        wcount = 0
-        k = len(cur_sents) - 1
-        while k >= 0 and wcount < overlap_words:
-            wcount += len(cur_sents[k].split())
-            back += 1
-            k -= 1
-        # next chunk starts with last back sentences minus 1 to avoid zero progress
-        i = max(start + len(cur_sents) - back, start + 1)
-
+        end = j
+        text = " ".join(sentences[start:end])
+        chunks.append({"start": start, "end": end, "text": text})
+        if end >= n: break
+        # overlap
+        if overlap_words > 0:
+            words, k = 0, end - 1
+            while k > start and words < overlap_words:
+                words += _word_count(sentences[k]); k -= 1
+            i = max(k + 1, start + 1)
+        else:
+            i = end
     return chunks
 
+def _coalesce_short(chunks: List[Dict[str, Any]], sentences: List[str], min_words: int, max_words: int) -> List[Dict[str, Any]]:
+    if not chunks: return []
+    out, buf = [], None
+    for ch in chunks:
+        if buf is None:
+            buf = ch
+        elif _word_count(buf["text"]) < min_words:
+            buf = {"start": buf["start"], "end": ch["end"], "text": " ".join(sentences[buf["start"]:ch["end"]])}
+        else:
+            out.append(buf); buf = ch
+    if buf: out.append(buf)
+    capped = []
+    for ch in out:
+        if _word_count(ch["text"]) <= max_words:
+            capped.append(ch)
+        else:
+            mid = (ch["start"] + ch["end"]) // 2
+            capped.append({"start": ch["start"], "end": mid, "text": " ".join(sentences[ch["start"]:mid])})
+            capped.append({"start": mid, "end": ch["end"], "text": " ".join(sentences[mid:ch["end"]])})
+    return capped
 
-# =========================
-# Extractor
-# =========================
-
-class CyberTripleExtractor:
-    def __init__(
-        self,
-        file_path: str,
-        model_name="gemma2:9b",
-        ollama_base_url="http://localhost:11434",
-    ):
-        self.file_path = file_path
-        self.model_name = model_name
-        self.ollama_base_url = ollama_base_url
-
-        # IO
-        self.converter = DocumentConverter()
-        ensure_ollama_model(model_name, ollama_base_url)
-        self.llm = Ollama(
-            model=model_name,
-            base_url=ollama_base_url,
-            num_ctx=3072,
-            format="json",
-            stop=["</think>", "<think>"],
-        )
-
-        # Embeddings
-        self.embedder = Embedder(
-            base_url=ollama_base_url,
-            model="nomic-embed-text",
-            cache_dir=".embed_cache",
-            batch_size=64,
-            timeout=60
-        )
-
-        # Chunking knobs
-        self.MM_MIN_SIM_THRESH = 0.25
-        self.MM_MAX_WORDS = 380
-        self.MM_OVERLAP_WORDS = 140
-        self.MM_LOOKAHEAD = 6
-
-        # Coalescing target sizes
-        self.TARGET_MIN_WORDS = 160
-        self.TARGET_MAX_WORDS = 420
-
-        # Page spillover
-        self.SPILLOVER_SENTENCES = 2
-
-        # Extraction
-        self.MAX_RELATIONS_PER_CHUNK = 18
-        self.CHUNK_CONTEXT_LIMIT = 2200
-        self.PROMPT_VARIANTS = 3
-
-        # Scoping
-        self.PAGE_LIMIT = None  # set to an int to debug fewer pages
-
-        # Metrics
-        self.pages_parsed = 0
-        self.raw_triples = 0
-        self.valid_triples = []
-        self.suspicious_triples = 0
-        self.runtime_seconds = 0
-        self.rejection_stats = {"bad_structure": 0, "invalid_class_or_predicate": 0}
-        self.chunk_data = []
-        self._chunks_preview = []
-
-    # ---------- relevance ----------
-    def _ner_hit(self, text):
-        doc = nlp(text)
-        labels = {e.label_ for e in doc.ents}
-        return bool(labels & {"ORG","PRODUCT","GPE","DATE"})
-
-    def _onto_hit(self, text):
+# =============================================================================
+# Ollama client (Gemma 2 9B)
+# =============================================================================
+class OllamaClient:
+    def __init__(self, model: str, base_url: str):
+        self.model = model
+        self.base = base_url.rstrip("/")
+    def invoke(self, prompt: str) -> str:
+        print(">>> sending prompt to Ollama:", prompt[:120])
         try:
-            return len(matcher(nlp(text))) > 0
-        except Exception:
-            return False
+            
 
-    def _chunk_relevant(self, sentences: List[str]) -> bool:
-        block = " ".join(sentences).lower()
-        has_kw = any(
-            kw in block for kw in [
-                "apt","malware","c2","command and control","phishing","ransomware",
-                "exploit","cve-","lateral movement","persistence","beacon","cobalt strike",
-                "exfiltration","loader","backdoor","webshell","ioc","infrastructure"
-            ]
-        )
-        ner = any(self._ner_hit(s) for s in sentences)
-        onto = any(self._onto_hit(s) for s in sentences)
-        return has_kw or ner or onto
+            resp = requests.post(
+                f"{self.base}/api/generate",
+                json={"model": self.model, "prompt": prompt, "stream": False},
+                timeout=180,
+            )
+            resp.raise_for_status()
+            data = resp.json()
+            return data.get("response", "") or ""
+        except Exception as e:
+            logging.getLogger(__name__).warning("LLM call failed: %s", e)
+            return '[]'  # JSON parse will just yield empty triples
 
-    # ---------- doc to page text ----------
-    def chunk_by_page(self, doc):
-        page_chunks = defaultdict(str)
-        for ti in doc.texts:
-            if not getattr(ti, "prov", None):
-                continue
-            if hasattr(ti, "content_layer") and ti.content_layer != "body":
-                continue
-            try:
-                p = ti.prov[0].page_no
-                page_chunks[p] += " " + ti.text.strip()
-            except Exception:
-                continue
-        return sorted(page_chunks.items())
+# =============================================================================
+# Prompts (you asked to see them explicitly)
+# =============================================================================
+SYSTEM_STIX = (
+    "Extract cyber threat intelligence triples in JSON.\n"
+    "Use ONLY these entity types and relationship types.\n"
+    "Entity types: threat-actor | intrusion-set | malware | tool | campaign | infrastructure | indicator | vulnerability | attack-pattern | x-mitre-tactic | identity\n"
+    "Relationship types: uses | targets | indicates | exploits | communicates-with | part-of | related-to\n"
+    "Return strictly this JSON array of objects:\n"
+    "[{ \"subject\": {\"name\":\"...\",\"type\":\"<entity-type>\"}, \"predicate\":\"<relationship-type>\", \"object\": {\"name\":\"...\",\"type\":\"<entity-type>\"} }]"
+)
 
-    # ---------- coalesce undersized chunks ----------
-    def _coalesce_short(self, chunks, sentences, min_words=160, max_words=420):
-        if not chunks:
-            return []
-        out = []
-        buf = None
-        for ch in chunks:
-            start, end = int(ch["start"]), int(ch["end"])
-            text = ch.get("text") or " ".join(sentences[start:end])
-            size = len(text.split())
-            if buf is None:
-                buf = {"start": start, "end": end, "text": text, "size_words": size, "min_pair_sim": ch.get("min_pair_sim")}
-                continue
-            if buf["size_words"] < min_words or (size < min_words and buf["size_words"] + size <= max_words):
-                buf["end"] = end
-                buf["text"] = (buf["text"] + " " + text).strip()
-                buf["size_words"] = len(buf["text"].split())
-                mp = ch.get("min_pair_sim")
-                if buf.get("min_pair_sim") is None or (mp is not None and mp < buf["min_pair_sim"]):
-                    buf["min_pair_sim"] = mp
-            else:
-                out.append(buf)
-                buf = {"start": start, "end": end, "text": text, "size_words": size, "min_pair_sim": ch.get("min_pair_sim")}
-        if buf:
-            out.append(buf)
-        # hard cap
-        final = []
-        for ch in out:
-            if ch["size_words"] <= max_words:
-                final.append(ch)
-            else:
-                s_idx, e_idx = ch["start"], ch["end"]
-                cur, cur_words, cur_start = [], 0, s_idx
-                for i in range(s_idx, e_idx):
-                    w = len(sentences[i].split())
-                    if cur and cur_words + w > max_words:
-                        txt = " ".join(cur)
-                        final.append({"start": cur_start, "end": i, "text": txt, "size_words": len(txt.split()), "min_pair_sim": ch.get("min_pair_sim")})
-                        cur, cur_words, cur_start = [], 0, i
-                    cur.append(sentences[i])
-                    cur_words += w
-                if cur:
-                    txt = " ".join(cur)
-                    final.append({"start": cur_start, "end": e_idx, "text": txt, "size_words": len(txt.split()), "min_pair_sim": ch.get("min_pair_sim")})
-        return final
-
-    # ---------- prompts ----------
-    def _schema(self):
-        return """
+def _schema() -> str:
+    return """
 [
   {
-    "subject": {"name": "<string>", "type": "<type-from-list>"},
-    "predicate": "<predicate-from-list>",
-    "object": {"name": "<string>", "type": "<type-from-list>"},
-    "evidence": {"quote": "<exact substring from the text>"}
+    "subject": {"name": "<string>", "type": "<entity-type>"},
+    "predicate": "<relationship-type>",
+    "object": {"name": "<string>", "type": "<entity-type>"}
   }
 ]
 """.strip()
 
-    def _prompts_for_chunk(self, chunk_text: str) -> List[str]:
-        types = ", ".join(MALONT_CLASSES)
-        preds = ", ".join(MALONT_PREDS)
-        schema = self._schema()
-        snippet = chunk_text[: self.CHUNK_CONTEXT_LIMIT]
+def _prompts_for_chunk(text: str, n: int) -> List[str]:
+    text = text.strip()
+    schema = _schema()
+    # Three distinct “personalities” — consensus works best with diversity
+    p1 = f"""{SYSTEM_STIX}
 
-        p1 = f"""
-Extract up to {self.MAX_RELATIONS_PER_CHUNK} explicit CTI triples across the text.
-Use ONLY types in [{types}] and predicates in [{preds}].
-Each triple must include evidence.quote as an exact substring from the text.
 Text:
-\"\"\"{snippet}\"\"\"
-Output {schema}
-""".strip()
+\"\"\"{text[:2200]}\"\"\"
 
-        p2 = f"""
-Work predicate-first across the entire text. Do not output uncertain fields.
-Types: [{types}]
-Predicates: [{preds}]
+Rules:
+- Only output triples explicitly supported by the text
+- No guesses, no invented entities
+- Names should be lowercase strings when possible
+- Use allowed types/predicates only
+Output {schema}
+"""
+    p2 = f"""{SYSTEM_STIX}
+
+Strategy:
+- Read the whole passage first
+- Extract a small set of high-confidence triples (<= 18)
+- If a field is uncertain, omit the triple
+
 Text:
-\"\"\"{snippet}\"\"\"
+\"\"\"{text[:2200]}\"\"\"
 Output {schema}
-""".strip()
+"""
+    p3 = f"""{SYSTEM_STIX}
 
-        p3 = f"""
-Extract ALL explicit CTI triples. No guessing. Exact entity names only.
-Types allowed: [{types}]
-Predicates allowed: [{preds}]
-Each triple must include an evidence.quote as an exact substring.
+Constraints:
+- Every triple must be justified by an explicit phrase
+- Use 'attack-pattern' for MITRE techniques (e.g., T1059, spearphishing)
+- Map organizations/companies/sectors to 'identity'
+- Map IPs/domains/C2 to 'infrastructure'
+- Do not include duplicates
+
 Text:
-\"\"\"{snippet}\"\"\"
+\"\"\"{text[:2200]}\"\"\"
 Output {schema}
-""".strip()
+"""
+    variants = [p1, p2, p3]
+    random.seed(len(text))
+    random.shuffle(variants)
+    return variants[:max(1, n)]
 
-        if self.PROMPT_VARIANTS == 1:
-            return [p1]
-        if self.PROMPT_VARIANTS == 2:
-            return [p1, p3]
-        return [p1, p2, p3]
+# =============================================================================
+# Parse/normalize/consensus
+# =============================================================================
+def _parse_any_json(text: str) -> Any:
+    if not text: return []
+    t = text.strip()
+    if t.startswith("```"):
+        t = re.sub(r"^```(json)?", "", t).strip()
+        t = re.sub(r"```$", "", t).strip()
+    try:
+        obj = json.loads(t)
+        if isinstance(obj, list): return obj
+        if isinstance(obj, dict): return [obj]
+    except Exception:
+        pass
+    m = re.search(r"\[[\s\S]*\]", t)
+    if m:
+        try: return json.loads(m.group(0))
+        except Exception: pass
+    return []
 
-    # ---------- JSON parse helpers ----------
-    _JARR = re.compile(r"\[[\s\S]*\]")
-    _JOBJ = re.compile(r"\{[\s\S]*\}")
+def _as_triple_list(obj: Any) -> List[Dict[str, Any]]:
+    if not isinstance(obj, list): return []
+    out = []
+    for t in obj:
+        if not isinstance(t, dict): continue
+        s = t.get("subject") or {}
+        o = t.get("object") or {}
+        out.append({
+            "subject":{"name": s.get("name") or s.get("text") or "", "type": s.get("type") or ""},
+            "predicate": t.get("predicate") or t.get("relation") or "",
+            "object":{"name": o.get("name") or o.get("text") or "", "type": o.get("type") or ""},
+        })
+    return out
 
-    def _parse_any_json(self, resp) -> Any:
-        try:
-            if isinstance(resp, (list, dict)):
-                return resp
-            s = str(resp)
-            try:
-                return json.loads(s)
-            except Exception:
-                pass
-            m = self._JARR.search(s)
-            if m:
-                return json.loads(m.group(0))
-            m = self._JOBJ.search(s)
-            if m:
-                return json.loads(m.group(0))
-        except Exception:
-            return None
-        return None
+ALLOWED_STIX_TYPES = {
+    "threat-actor","intrusion-set","malware","tool","campaign","infrastructure",
+    "indicator","vulnerability","attack-pattern","x-mitre-tactic","identity"
+}
+ALLOWED_STIX_PREDS = {"uses","targets","indicates","exploits","communicates-with","part-of","related-to"}
 
-    def _as_triple_list(self, obj):
-        if obj is None:
-            return []
-        if isinstance(obj, list):
-            return [t for t in obj if isinstance(t, dict)]
-        if isinstance(obj, dict):
-            return [obj]
-        if isinstance(obj, str) and obj.strip().upper() in {"NO_TRIPLES","NONE"}:
-            return []
-        return []
+def _valid_stix_triple_dict(t: dict) -> bool:
+    try:
+        sname = _canon_text((t.get("subject") or {}).get("name"))
+        oname = _canon_text((t.get("object") or {}).get("name"))
+        if not (sname and oname): return False
 
-    # ---------- run ----------
-    def run(self):
-        t0 = time.time()
-        print(f"[load] Converting document {os.path.basename(self.file_path)}")
-        result = self.converter.convert(self.file_path)
-        doc = result.document
+        st = normalize_entity_label((t.get("subject") or {}).get("type"))
+        ot = normalize_entity_label((t.get("object") or {}).get("type"))
+        if not st: st = normalize_entity_label(infer_entity_type_from_name(sname))
+        if not ot: ot = normalize_entity_label(infer_entity_type_from_name(oname))
 
-        page_chunks = self.chunk_by_page(doc)
-        self.pages_parsed = len(page_chunks)
-        print(f"[load] Found {self.pages_parsed} pages")
+        p  = normalize_predicate((t.get("predicate") or ""))
+        return (p in ALLOWED_STIX_PREDS) and (st in ALLOWED_STIX_TYPES) and (ot in ALLOWED_STIX_TYPES)
+    except Exception:
+        return False
 
-        # page spillover buffer
-        prev_page_tail: List[str] = []
 
-        chunk_results = []
+def normalize_triple_dict(t: dict) -> Tuple[str,str,str]:
+    s = normalize_entity_label((t.get("subject") or {}).get("name"), (t.get("subject") or {}).get("type"))
+    p = normalize_predicate((t.get("predicate") or ""))
+    o = normalize_entity_label((t.get("object") or {}).get("name"), (t.get("object") or {}).get("type"))
+    return (_canon_text(s), p, _canon_text(o))
 
-        for page_no, page_text in page_chunks:
-            if self.PAGE_LIMIT and page_no > self.PAGE_LIMIT:
-                print(f"[info] Stopping at PAGE_LIMIT={self.PAGE_LIMIT}")
-                break
+def consensus_filter(lists: List[List[Dict[str, Any]]], m: int = 2) -> List[Dict[str, Any]]:
+    """Majority vote on normalized (s,p,o,st,ot)."""
+    from collections import Counter
+    ctr, canon_map = Counter(), {}
+    for li in lists:
+        seen = set()
+        for t in li:
+            s = _canon_text((t.get("subject") or {}).get("name"))
+            st = canonical_entity_type((t.get("subject") or {}).get("type"))
+            p  = normalize_predicate(t.get("predicate"))
+            o = _canon_text((t.get("object")  or {}).get("name"))
+            ot = canonical_entity_type((t.get("object")  or {}).get("type"))
+            key = json.dumps({"s":s,"st":st,"p":p,"o":o,"ot":ot}, sort_keys=True)
+            if key not in seen:
+                seen.add(key); ctr[key]+=1
+                canon_map[key] = {"subject":{"name":s,"type":st},"predicate":p,"object":{"name":o,"type":ot}}
+    return [canon_map[k] for k,c in ctr.items() if c>=m]
 
-            # split sentences
-            doc_spacy = nlp(page_text)
-            sentences = [s.text for s in doc_spacy.sents]
+# =============================================================================
+# Extractor class
+# =============================================================================
+class CyberTripleExtractor:
+    def __init__(self, model_name: str = None, base_url: str = None):
+        self.model_name = model_name or config.model_name
+        self.base_url   = (base_url or config.ollama_base_url).rstrip("/")
+        self.embedder   = TfidfEmbedder()
+        self.llm        = OllamaClient(self.model_name, self.base_url)
 
-            # prepend spillover sentences from previous page for embedding continuity
-            spillover_prefix = prev_page_tail.copy()
-            full_for_embed = spillover_prefix + sentences
+        # expose chunking params
+        self.TARGET_MIN_WORDS = config.TARGET_MIN_WORDS
+        self.TARGET_MAX_WORDS = config.TARGET_MAX_WORDS
+        self.MM_MIN_SIM_THRESH = config.MM_MIN_SIM_THRESH
+        self.MM_OVERLAP_WORDS  = config.MM_OVERLAP_WORDS
+        self.MM_LOOKAHEAD      = config.MM_LOOKAHEAD
 
-            # filter boilerplate after building full list so spillover can match
-            sentences = filter_sentences(sentences)
-            full_for_embed = filter_sentences(full_for_embed)
+    def chunk(self, text: str) -> Tuple[List[Dict[str, Any]], List[str]]:
+        sents = filter_sentences(sent_tokenize(text or ""))
+        if not sents: return [], []
+        doc_id = f"eval:{hashlib.sha1((text[:1000] or '').encode('utf-8','ignore')).hexdigest()}"
+        mats = self.embedder.embed(sents, doc_id=doc_id)
+        chunks = maxmin_semantic_chunks(
+            sentences=sents,
+            embeddings=mats,
+            min_sim_threshold=self.MM_MIN_SIM_THRESH,
+            max_words=self.TARGET_MAX_WORDS,
+            overlap_words=self.MM_OVERLAP_WORDS,
+            lookahead=self.MM_LOOKAHEAD
+        )
+        chunks = _coalesce_short(chunks, sents, self.TARGET_MIN_WORDS, self.TARGET_MAX_WORDS)
+        # annotate relevance
+        for ch in chunks:
+            ch["relevant"] = _chunk_relevant(sents[ch["start"]:ch["end"]])
+        return chunks, sents
 
-            if not sentences:
-                prev_page_tail = []
-                continue
+# =============================================================================
+# Public entrypoints (used by eval_cli)
+# =============================================================================
+def extract_triples_from_text(
+    text: str,
+    model_name: str = None,
+    ollama_base_url: str = None
+) -> List[Tuple[str,str,str]]:
+    """
+    Semantic chunking → multi-prompt LLM extraction (Gemma2-9B via Ollama) → consensus → STIX-normalized triples.
+    """
+    ex = CyberTripleExtractor(model_name=model_name, base_url=ollama_base_url)
+    chunks, sents = ex.chunk(text)
+    if not chunks: return []
 
-            print(f"[chunking] Page {page_no}: {len(sentences)} sentences after filtering")
-            # embed
-            doc_id = f"{os.path.basename(self.file_path)}:p{page_no}"
-            vecs = self.embedder.embed(full_for_embed, doc_id=doc_id)
+    triples_out: List[Tuple[str,str,str]] = []
 
-            # slice back to current page portion
-            spill = len(spillover_prefix)
-            vecs = vecs[spill:] if spill > 0 else vecs
+    for ch in chunks:
+        if not ch.get("relevant") and not getattr(config, "RELEVANCE_OFF", False):
+        
+            continue
+        chunk_text = ch.get("text") or " ".join(sents[ch["start"]:ch["end"]])
 
-            # build semantic chunks
-            start_t = time.time()
-            chunks = maxmin_semantic_chunks(
-                sentences=sentences,
-                embeddings=vecs,
-                min_sim_threshold=self.MM_MIN_SIM_THRESH,
-                max_words=self.MM_MAX_WORDS,
-                overlap_words=self.MM_OVERLAP_WORDS,
-                lookahead=self.MM_LOOKAHEAD
-            )
-            # coalesce to target sizes
-            chunks = self._coalesce_short(chunks, sentences, self.TARGET_MIN_WORDS, self.TARGET_MAX_WORDS)
-            dt = time.time() - start_t
-            print(f"[chunking] Page {page_no}: built {len(chunks)} chunks in {dt:.1f}s")
+        if config.use_llm:
+            prompts = _prompts_for_chunk(chunk_text, n=max(1, config.num_prompts))
+            lists: List[List[Dict[str, Any]]] = []
+            for p in prompts:
+                resp   = ex.llm.invoke(p)
+                parsed = _parse_any_json(resp)
+                triples = _as_triple_list(parsed)
+                for t in triples:
+                    subj = t.get("subject") or {}
+                    obj  = t.get("object")  or {}
+                    # fill missing types
+                    if not subj.get("type"):
+                        subj["type"] = infer_entity_type_from_name(subj.get("name",""))
+                    if not obj.get("type"):
+                        obj["type"]  = infer_entity_type_from_name(obj.get("name",""))
 
-            # record preview
-            self._chunks_preview.append({
-                "page": page_no,
-                "num_chunks": len(chunks),
-                "chunks": [
-                    {
-                        "chunk_id": idx,
-                        "start_sent_idx": int(ch["start"]),
-                        "end_sent_idx": int(ch["end"]),
-                        "size_words": ch.get("size_words"),
-                        "min_pair_sim": ch.get("min_pair_sim"),
-                        "text_preview": (ch.get("text","")[:260] + "...") if len(ch.get("text","")) > 263 else ch.get("text","")
-                    } for idx, ch in enumerate(chunks)
-                ]
-            })
+                    # normalize to your STIX set
+                    subj["type"] = normalize_entity_label(subj.get("type"))
+                    obj["type"]  = normalize_entity_label(obj.get("type"))
+                    t["predicate"] = normalize_predicate(t.get("predicate"))
 
-            # extract per chunk
-            for ch_id, ch in enumerate(chunks):
-                s_idx, e_idx = int(ch["start"]), int(ch["end"])
-                ch_sents = sentences[s_idx:e_idx]
-                if not self._chunk_relevant(ch_sents):
-                    continue
+                # keep raw; consensus works on normalized keys
+                lists.append(triples)
 
-                chunk_text = ch.get("text","")
-                prompts = self._prompts_for_chunk(chunk_text)
-                lists = []
-                for p in prompts:
-                    try:
-                        resp = self.llm.invoke(p)
-                        parsed = self._parse_any_json(resp)
-                        triples = self._as_triple_list(parsed)
-                    except Exception:
-                        triples = []
-                    lists.append(triples)
-                    self.raw_triples += len(triples)
+            fused = consensus_filter(lists, m=config.consensus_m) if config.consensus_m > 1 else [t for li in lists for t in li]
 
-                if _HAVE_CONSENSUS:
-                    fused = consensus_filter(
-                        lists,
-                        allowed_types=MALONT_CLASSES,
-                        allowed_preds=MALONT_PREDS,
-                        m=2,
-                        tau_name=0.90
-                    )
-                else:
-                    # simple union
-                    fused, seen = [], set()
-                    for lst in lists:
-                        for t in lst:
-                            k = json.dumps(t, sort_keys=True)
-                            if k not in seen:
-                                seen.add(k)
-                                fused.append(t)
+            # validate + normalize final
+            for t in fused:
+                if _valid_stix_triple_dict(t):
+                    s,p,o = normalize_triple_dict(t)
+                    if s and p and o:
+                        triples_out.append((s,p,o))
+        else:
+            # deterministic fallback (not used when USE_LLM=1)
+            pass
 
-                accepted = []
-                for t in fused:
-                    if is_valid_triple(t):
-                        tt = dict(t)
-                        tt["_validity"] = "strict"
-                        tt["_chunk"] = {
-                            "page": page_no,
-                            "chunk_id": ch_id,
-                            "start": s_idx,
-                            "end": e_idx,
-                            "size_words": ch.get("size_words"),
-                            "min_pair_sim": ch.get("min_pair_sim")
-                        }
-                        accepted.append(tt)
-                        self.valid_triples.append(tt)
-                        print(f"[ACCEPT] {tt['subject']} —{tt['predicate']}→ {tt['object']}  [p{page_no} c{ch_id}]")
-                    else:
-                        self.suspicious_triples += 1
+    # dedupe
+    seen = set(); deduped = []
+    for t in triples_out:
+        k = json.dumps(t, sort_keys=True)
+        if k not in seen:
+            seen.add(k); deduped.append(t)
+    return deduped
 
-                if accepted:
-                    chunk_results.append(("[CHUNK]", page_no, ch_id, accepted))
+def extract_triples_from_file(
+    file_path: str,
+    model_name: str = None,
+    ollama_base_url: str = None
+) -> List[Tuple[str,str,str]]:
+    with open(file_path, "r", encoding="utf-8", errors="ignore") as f:
+        raw = f.read()
+    return extract_triples_from_text(raw, model_name=model_name, ollama_base_url=ollama_base_url)
 
-            # prepare spillover for next page
-            prev_page_tail = sentences[-self.SPILLOVER_SENTENCES:] if len(sentences) >= self.SPILLOVER_SENTENCES else sentences
-
-        # persist cache
-        self.embedder.save_cache()
-        self.runtime_seconds = time.time() - t0
-        return chunk_results
-
-    # ---------- build + save ----------
-    def build_dict(self, chunk_results):
-        self.chunk_data = []
-        for ctx, page_no, ch_id, triples in chunk_results:
-            valids = [t for t in triples if t.get("_validity") == "strict" or is_valid_triple(t)]
-            if not valids:
-                continue
-            self.chunk_data.append({
-                "context": ctx,
-                "triple": valids,
-                "metadata": {
-                    "page_number": page_no,
-                    "id": str(ch_id).zfill(3),
-                    "source": "CHUNK"
-                }
-            })
-        return self.chunk_data
-
-    def _write_chunks_preview(self, out_dir):
-        os.makedirs(out_dir, exist_ok=True)
-        jp = os.path.join(out_dir, "chunks_preview.json")
-        tp = os.path.join(out_dir, "chunks_preview.txt")
-        try:
-            with open(jp, "w", encoding="utf-8") as f:
-                json.dump(self._chunks_preview, f, indent=2, ensure_ascii=False)
-            with open(tp, "w", encoding="utf-8") as f:
-                for page in self._chunks_preview:
-                    print(f"Page {page['page']} — {page['num_chunks']} chunks", file=f)
-                    for ch in page["chunks"]:
-                        print(f"  [Chunk {ch['chunk_id']}] sidx={ch['start_sent_idx']} eidx={ch['end_sent_idx']} size={ch['size_words']} min_pair_sim={ch['min_pair_sim']}", file=f)
-                        print(f"    preview: {ch['text_preview']}", file=f)
-                    print("", file=f)
-            print(f"[write] Chunk previews → {jp} and {tp}")
-        except Exception as e:
-            print(f"[warn] Failed to write chunk previews: {e}")
-
-    def safe_filename(self, name: str) -> str:
-        return re.sub(r'[<>:\"/\\|?*]', '_', name)
-
-    def save_to_json(self, output_filename="chunk_data.json", base_dir=None):
-        try:
-            # Extract document name (no extension)
-            doc_name = os.path.splitext(os.path.basename(self.file_path))[0]
-
-            # Get full path and split into parts
-            abs_path = os.path.abspath(self.file_path)
-            parts = abs_path.split(os.sep)
-
-            # Detect base branch folder
-            anchor_folders = ["dataset", "similarity_scoring", "vec_results"]
-            anchor_index = None
-            for folder in anchor_folders:
-                if folder in parts:
-                    anchor_index = parts.index(folder)
-                    break
-
-            # Mirror structure under /output/
-            if anchor_index is not None:
-                rel_parts = parts[anchor_index + 1:-1]  # e.g., CTI-HAL/apt29
-                rel_path = os.path.join(*rel_parts) if rel_parts else ""
-                project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-                output_dir = os.path.join(project_root, "output", rel_path, doc_name, "vec_results")
-            else:
-                # fallback
-                project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-                output_dir = os.path.join(project_root, "output", doc_name, "vec_results")
-
-            # Allow override
-            if base_dir:
-                output_dir = base_dir
-
-            os.makedirs(output_dir, exist_ok=True)
-            filename = self.safe_filename(os.path.basename(output_filename))
-            output_path = os.path.join(output_dir, filename)
-
-            # ---- METRICS ----
-            strict = sum(
-                1
-                for item in self.chunk_data
-                for t in item.get("triple", [])
-                if t.get("_validity") == "strict"
-            )
-
-            metrics = {
-                "file_name": os.path.basename(self.file_path),
-                "model_used": self.model_name,
-                "num_pages": self.pages_parsed,
-                "num_raw_triples": self.raw_triples,
-                "num_valid_triples": len(self.valid_triples),
-                "num_suspicious_triples": self.suspicious_triples,
-                "runtime_seconds": self.runtime_seconds,
-                "num_valid_triples_strict": strict
-            }
-
-            payload = {"metrics": metrics, "data": self.chunk_data}
-
-            # ---- SAVE ----
-            with open(output_path, "w", encoding="utf-8") as f:
-                json.dump(payload, f, indent=2, ensure_ascii=False)
-
-            # Save chunk previews in same directory
-            self._write_chunks_preview(output_dir)
-
-            print(f"[write] Results saved to: {output_path}")
-
-        except Exception as e:
-            print(f"[warn] Failed to save JSON: {e}")
-
+# =============================================================================
+# CLI smoke test
+# =============================================================================
 if __name__ == "__main__":
-    # Adjust path and model as needed
-    pdf_path = "cti-analysis/AnalysisOfCyberattackOnUS.pdf"
-    extractor = CyberTripleExtractor(
-        pdf_path,
-        model_name="gemma2:9b",
-        ollama_base_url="http://localhost:11434"
-    )
-    results = extractor.run()
-    extractor.build_dict(results)
-    out_name = extractor.safe_filename(f"chunk_data_{extractor.model_name}.json")
-    # Save all results to the unified output folder
-    extractor.save_to_json(
-        output_filename=out_name,
-        base_dir=os.path.join("output", "extracted_triples")
-    )
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--text", help="Inline text to extract from")
+    ap.add_argument("--file", help="Path to a text file")
+    ap.add_argument("--model", default=config.model_name)
+    ap.add_argument("--base", default=config.ollama_base_url)
+    ap.add_argument("--prompts", type=int, default=config.num_prompts)
+    ap.add_argument("--consensus", type=int, default=config.consensus_m)
+    ap.add_argument("--no-llm", action="store_true")
+    args = ap.parse_args()
 
+    config.num_prompts = max(1, int(args.prompts))
+    config.consensus_m = max(1, int(args.consensus))
+    config.use_llm = not args.no_llm
+
+    sample = args.text
+    if args.file and not sample:
+        with open(args.file, "r", encoding="utf-8", errors="ignore") as f:
+            sample = f.read()
+    if not sample:
+        sample = "APT29 used spearphishing to deploy Cobalt Strike and communicated with a C2 server."
+
+    t0 = time.time()
+    triples = extract_triples_from_text(sample, model_name=args.model, ollama_base_url=args.base)
+    dt = time.time() - t0
+    for t in triples:
+        print(t)
+    print(f"\nExtracted {len(triples)} triples in {dt:.2f}s (model={args.model})")

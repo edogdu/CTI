@@ -1,0 +1,282 @@
+[
+  {
+    "page": 1,
+    "num_chunks": 1,
+    "chunks": [
+      {
+        "chunk_id": 0,
+        "start_sent_idx": 0,
+        "end_sent_idx": 5,
+        "size_words": 121,
+        "min_pair_sim": 0.4359692633152008,
+        "text_preview": "COSMICDUKE Cosmu with a twist of MiniDuke TLP: WHITE In this document we report on our analysis of CosmicDuke - the first malware seen to include code from both the notorious MiniDuke APT trojan and another longstanding threat, the informationstealing Cosmu fa..."
+      }
+    ]
+  },
+  {
+    "page": 2,
+    "num_chunks": 2,
+    "chunks": [
+      {
+        "chunk_id": 0,
+        "start_sent_idx": 0,
+        "end_sent_idx": 15,
+        "size_words": 373,
+        "min_pair_sim": 0.3835858702659607,
+        "text_preview": "FIGURE 1: SIMPLIFIED OVERVIEW OF COSMICDUKE'S CHAIN OF ACTION MiniDuke Loader Cosmu Info-stealer Exploit Dropper Decoy Attacker INTRODUCTION In early 2013, the MiniDuke malware was discovered in use in a series of attacks against NATO and European government a..."
+      },
+      {
+        "chunk_id": 1,
+        "start_sent_idx": 8,
+        "end_sent_idx": 19,
+        "size_words": 255,
+        "min_pair_sim": 0.38687199354171753,
+        "text_preview": "Once the victim opens the file, the malware gains persistence on the system and starts collecting information. The data collection components include a keylogger, clipboard stealer, screenshotter, and password stealers for a variety of popular chat, email and ..."
+      }
+    ]
+  },
+  {
+    "page": 3,
+    "num_chunks": 2,
+    "chunks": [
+      {
+        "chunk_id": 0,
+        "start_sent_idx": 0,
+        "end_sent_idx": 16,
+        "size_words": 372,
+        "min_pair_sim": 0.40809884667396545,
+        "text_preview": "ARRIVAL At this time, we have no information on how the CosmicDuke attack files are delivered to the victims, though based on the findings from the analysis, we can make an educated guess. It is possible that the PDF documents containing exploits were emailed ..."
+      },
+      {
+        "chunk_id": 1,
+        "start_sent_idx": 8,
+        "end_sent_idx": 19,
+        "size_words": 207,
+        "min_pair_sim": 0.3947684168815613,
+        "text_preview": "Once launched, the file drops the malware onto the system (such files are therefore referred to as droppers in the rest of this documents). To do so, the malware's executable file is first disguised as an image or document to make it seem innocuous. When launc..."
+      }
+    ]
+  },
+  {
+    "page": 4,
+    "num_chunks": 2,
+    "chunks": [
+      {
+        "chunk_id": 0,
+        "start_sent_idx": 0,
+        "end_sent_idx": 16,
+        "size_words": 362,
+        "min_pair_sim": 0.3439921438694,
+        "text_preview": "TECHNICAL DETAILS CosmicDuke samples can be divided into 3 distinct groups based on similarities between the C&C servers they contact, file characteristics and decoy document used. The full details of how the samples were grouped is listed on page 11; Figure 2..."
+      },
+      {
+        "chunk_id": 1,
+        "start_sent_idx": 10,
+        "end_sent_idx": 21,
+        "size_words": 260,
+        "min_pair_sim": 0.24466577172279358,
+        "text_preview": "Why go through the trouble of exploiting anything if you can simply trick the user into double-clicking an executable that looks a lot like a document file? As the screenshot demonstrates, unchecking 'Hide extensions for known filetypes' does not help. The thr..."
+      }
+    ]
+  },
+  {
+    "page": 5,
+    "num_chunks": 1,
+    "chunks": [
+      {
+        "chunk_id": 0,
+        "start_sent_idx": 0,
+        "end_sent_idx": 28,
+        "size_words": 360,
+        "min_pair_sim": 0.312746524810791,
+        "text_preview": "DROPPER: DECOYS CosmicDuke dropper files all display some kind of a decoy document or image to distract the user when the attack file is launched. The following are the droppers used by Group #1. Here are the filenames of the decoys, as displayed in Windows, a..."
+      }
+    ]
+  },
+  {
+    "page": 6,
+    "num_chunks": 1,
+    "chunks": [
+      {
+        "chunk_id": 0,
+        "start_sent_idx": 0,
+        "end_sent_idx": 13,
+        "size_words": 374,
+        "min_pair_sim": 0.4389079809188843,
+        "text_preview": "The code used by CosmicDuke to exploit the CVE-20110611 vulnerability appears to be derived from this proofof-concept code that was made available in early 2011: y http://www.exploit-db.com/exploits/17473/ Some of these exploit files have interesting filenames..."
+      }
+    ]
+  },
+  {
+    "page": 7,
+    "num_chunks": 2,
+    "chunks": [
+      {
+        "chunk_id": 0,
+        "start_sent_idx": 0,
+        "end_sent_idx": 25,
+        "size_words": 370,
+        "min_pair_sim": 0.2926076054573059,
+        "text_preview": "MAIN COMPONENT: INFO-STEALER The Cosmu info-stealer is the main component of the CosmicDuke malware. The technical description of the info-stealer is based on analysis of the following sample: SHA1: b072577447cdf3936d95e612057e510dd3435963. PERSISTENCE Cosmu h..."
+      },
+      {
+        "chunk_id": 1,
+        "start_sent_idx": 12,
+        "end_sent_idx": 34,
+        "size_words": 290,
+        "min_pair_sim": 0.2995709776878357,
+        "text_preview": "obj y net y host y lsa y cms y dsp y sql y dhcp y srv y dns y ip PASSWORD STEALING The malware targets the following software: y Instant messaging  Skype The malware steals Skype login MD5. The attacker can obtain victim's Skype username and password by using..."
+      }
+    ]
+  },
+  {
+    "page": 8,
+    "num_chunks": 2,
+    "chunks": [
+      {
+        "chunk_id": 0,
+        "start_sent_idx": 0,
+        "end_sent_idx": 17,
+        "size_words": 323,
+        "min_pair_sim": 0.3603854179382324,
+        "text_preview": "y Others  Windows credentials LM and NT hashes, cached domain passwords, LSA secrets.  WLAN Cosmu uses WlanGetProfile to retrieve plain text keys for WLANs. CERTIFICATE STEALING Cosmu exports certificates and, if available, the associated private keys from s..."
+      },
+      {
+        "chunk_id": 1,
+        "start_sent_idx": 12,
+        "end_sent_idx": 20,
+        "size_words": 233,
+        "min_pair_sim": 0.3603854179382324,
+        "text_preview": "Cosmu searches removable drives for a broader set of files - only files whose filename matches any of the following patterns are skipped/ignored: y *.exe y *.ndb y *.mp3 y *.avi An interesting detail is that Cosmu skips searching the removable drive if the vol..."
+      }
+    ]
+  },
+  {
+    "page": 9,
+    "num_chunks": 2,
+    "chunks": [
+      {
+        "chunk_id": 0,
+        "start_sent_idx": 0,
+        "end_sent_idx": 20,
+        "size_words": 373,
+        "min_pair_sim": 0.31270796060562134,
+        "text_preview": "The sample makes HTTP GET requests to the server(s) specified in the configuration. The GET request contains the following fields in this order: y m or mgn y Auth y Session y DataID y FamilyID y BranchID y VolumeID y User y Query. The first field, m or mgn, do..."
+      },
+      {
+        "chunk_id": 1,
+        "start_sent_idx": 15,
+        "end_sent_idx": 26,
+        "size_words": 256,
+        "min_pair_sim": 0.33805352449417114,
+        "text_preview": "Here are the known keys: y pHG5AS4deKLil9ADdR2BcA1hTNm0FQz3 y 3Pf4GxTaDnx50qWe2Xz62uSptFsR3g3P y AdjustKernelTableFromSSDTSpace2\\x00 y FB7V61C7509E4L99BDZ7F74A79A69CDF Even though only the first 32 bytes are used as the RC4 key, the first two RC4 keys in the a..."
+      }
+    ]
+  },
+  {
+    "page": 10,
+    "num_chunks": 1,
+    "chunks": [
+      {
+        "chunk_id": 0,
+        "start_sent_idx": 0,
+        "end_sent_idx": 13,
+        "size_words": 112,
+        "min_pair_sim": 0.48833030462265015,
+        "text_preview": "FIGURE 6: TIMELINE OF COMPILATION TIMESTAMPS & FILENAMES FOR COSMICDUKE'S DROPPERS, LOADERS & INFO-STEALERS Jul 6 May 28 Jun 13 Feb 7 Jul 27 Apr 18 Mar 3 Mar 4 Mar 5 Mar 6 Apr 11 Feb 27 Nov 13 Dec  4 Jun 20 Aug 2 Sep  3 2012 2013 2014 4fc6701a621f2a5ce3451c796..."
+      }
+    ]
+  },
+  {
+    "page": 11,
+    "num_chunks": 1,
+    "chunks": [
+      {
+        "chunk_id": 0,
+        "start_sent_idx": 0,
+        "end_sent_idx": 17,
+        "size_words": 304,
+        "min_pair_sim": 0.37431660294532776,
+        "text_preview": "FIGURE 7: INFO-STEALER GROUPS & C&C SERVERS USED PER GROUP 212.76.128.149 178.170.164.84 195.43.94.104 RUSSIA 91.224.141.235 NETHERLANDS 94.242.199.88 LUXEMBOURG 46.246.120.178 SWEDEN 199.231.188.109 UNITED STATES 95.154.228.106 UNITED KINGDOM 188.241.115.41 R..."
+      }
+    ]
+  },
+  {
+    "page": 12,
+    "num_chunks": 2,
+    "chunks": [
+      {
+        "chunk_id": 0,
+        "start_sent_idx": 0,
+        "end_sent_idx": 23,
+        "size_words": 373,
+        "min_pair_sim": 0.36105412244796753,
+        "text_preview": "y c:\\botgenstudio\\generations\\8f1777b0\\bin\\Bot.pdb y c:\\botgenstudio\\generations\\fed14e50\\bin\\Bot.pdb y c:\\botgenstudio\\generations\\55ff7700\\bin\\Bot.pdb All samples in this group use the same RC4 key: 'FB7V61C7509E4L99BDZ7F74A79A69CDF' The servers used by this..."
+      },
+      {
+        "chunk_id": 1,
+        "start_sent_idx": 14,
+        "end_sent_idx": 27,
+        "size_words": 218,
+        "min_pair_sim": 0.37338608503341675,
+        "text_preview": "One other sample in Group #2 (sha1: fb3b8f6494b211386381a7e4f6524d3e4643c9e9) shows a similar PDB path. The servers used by this group are exclusive to this group, i.e., the other sample groups do not use any of the servers group #2 uses. Group #3 The most rec..."
+      }
+    ]
+  },
+  {
+    "page": 13,
+    "num_chunks": 1,
+    "chunks": [
+      {
+        "chunk_id": 0,
+        "start_sent_idx": 0,
+        "end_sent_idx": 1,
+        "size_words": 8,
+        "min_pair_sim": 1.0,
+        "text_preview": "APPENDIX A | SAMPLES Exploit files Droppers Loaders"
+      }
+    ]
+  },
+  {
+    "page": 14,
+    "num_chunks": 1,
+    "chunks": [
+      {
+        "chunk_id": 0,
+        "start_sent_idx": 0,
+        "end_sent_idx": 1,
+        "size_words": 25,
+        "min_pair_sim": 1.0,
+        "text_preview": "APPENDIX A | SAMPLES (CON'D) Info-stealers The filenames for all Info-stealer samples are all generated at runtime (see the Persistence section on page 7) ."
+      }
+    ]
+  },
+  {
+    "page": 15,
+    "num_chunks": 1,
+    "chunks": [
+      {
+        "chunk_id": 0,
+        "start_sent_idx": 0,
+        "end_sent_idx": 1,
+        "size_words": 4,
+        "min_pair_sim": 1.0,
+        "text_preview": "APPENDIX B | SERVERS"
+      }
+    ]
+  },
+  {
+    "page": 16,
+    "num_chunks": 1,
+    "chunks": [
+      {
+        "chunk_id": 0,
+        "start_sent_idx": 0,
+        "end_sent_idx": 1,
+        "size_words": 12,
+        "min_pair_sim": 1.0,
+        "text_preview": "viruslab@f-secure.com For an electronic version of this document, please go to: http://www.f-secure.com/en/web/labs_global/whitepapers/technical"
+      }
+    ]
+  }
+]

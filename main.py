@@ -46,7 +46,7 @@ def _clean_state(workdir: Path):
         log(f"[Clean] Warning: could not rotate manifest: {e}")
 
 def stage_extraction(input_path: Path, document_id: str, model: str, ollama_base_url: str, out_dir: Path) -> Path:
-    from triple_extraction import extraction_semantic_only_v1 as extraction  # local module
+    from triple_extraction import extraction_semantic_consensus as extraction  # local module
 
     out_dir.mkdir(parents=True, exist_ok=True)
     stem = input_path.stem.replace(" ", "_")
