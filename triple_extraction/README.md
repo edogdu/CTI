@@ -25,6 +25,13 @@ Loads invalid triples from
 applies deterministic normalization (`det_fix`), validates against **STIX/UCO schema**, and performs a strict LLM repair pass using **`gemma2:9b`** - followed by a **loose LLM pass only if beneficial**.    
 Repaired triples are saved to `invalid_triples_gemma2_9b_repaired_valid.json`, and remaining invalid ones to `invalid_triples_gemma2_9b_still_invalid.json`, improving overall dataset accuracy and schema compliance.
 
+### repair_invalid_triples_w_Markov_smoothing.py
+
+Loads invalid triples from  
+`triple_extraction/extracted_triples/invalid_triples_gemma2_9b.json`,  
+applies deterministic normalization (`det_fix`), applies Markov Smoothing, validates against **STIX/UCO schema**, and performs a strict LLM repair pass using **`gemma2:9b`** - followed by a **loose LLM pass only if beneficial**.    
+Repaired triples are saved to `invalid_triples_gemma2_9b_repaired.json`, and remaining invalid ones to `invalid_triples_gemma2_9b_still_bad.json`, improving overall dataset accuracy and schema compliance.
+
 
 
 ### Semantic Chunking Triple Extraction
