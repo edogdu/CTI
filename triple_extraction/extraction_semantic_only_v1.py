@@ -325,7 +325,7 @@ class OllamaClient:
             return '[]'  # JSON parse will just yield empty triples
 
 # =============================================================================
-# Prompts (you asked to see them explicitly)
+# Prompts 
 # =============================================================================
 SYSTEM_STIX = (
     "Extract cyber threat intelligence triples in JSON.\n"

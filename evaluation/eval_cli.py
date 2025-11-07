@@ -10,7 +10,7 @@ import triple_extraction.extraction_semantic_only_v1 as ext
 from triple_extraction.extraction_semantic_only_v1 import extract_triples_from_text
 
 # --- Notebook-style evaluation helpers you requested
-from triple_extraction.evaluation.notebook_eval import (
+from evaluation.notebook_eval import (
     cti_hal_ground_truth,
     evaluate_sample_vector_similarity,
 )

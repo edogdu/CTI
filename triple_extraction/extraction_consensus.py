@@ -9,11 +9,11 @@ import spacy
 import re
 try:
     # Prefer package-relative import when called via scripts.triple_extraction.extraction_consensus
-    from .consensus import consensus_filter  # legacy filename (as referenced here)
+    from ..consensus import consensus_filter  # legacy filename (as referenced here)
 except Exception:
     try:
         # If the correctly-spelled module exists instead
-        from .consensus import consensus_filter
+        from ..consensus import consensus_filter
     except Exception:
         # Fallback: allow absolute import if running the file directly
         from consensus import consensus_filter  # type: ignore
