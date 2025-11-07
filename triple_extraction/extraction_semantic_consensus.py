@@ -22,7 +22,7 @@ from langchain_community.llms import Ollama
 
 # ---------- optional consensus helper ----------
 try:
-    from consensus import consensus_filter
+    from triple_extraction.consensus import consensus_filter
     _HAVE_CONSENSUS = True
 except Exception:
     _HAVE_CONSENSUS = False

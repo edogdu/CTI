@@ -16,7 +16,7 @@ import numpy as np
 # ============================================================================
 
 def generate_response(prompt: str, 
-                     model: str = "qwen2.5:14b",
+                     model: str = "Gemma29:b",
                      base_url: str = "http://localhost:11434",
                      max_tokens: int = 1200,
                      temperature: float = 0.1,

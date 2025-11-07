@@ -65,7 +65,7 @@ def build_pipeline(config: Config, extractor_names: list[str]) -> Pipeline:
 
     # optional consensus filter
     try:
-        from consensus import consensus_filter
+        from triple_extraction.consensus import consensus_filter
         pipe.add_filter(consensus_filter(config))
     except Exception:
         print("Note: Consensus filter not available")

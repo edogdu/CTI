@@ -17,7 +17,7 @@ from evaluation.notebook_eval import (
 
 # --- Dataset loaders
 try:
-    from datasets.loaders import (
+    from evaluation.loaders import (
         load_cti_hal_samples,
         load_anno_ctr_samples,
         load_dnrti_samples,
