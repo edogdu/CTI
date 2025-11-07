@@ -1,6 +1,26 @@
-Description of all the scripts related to triple extraction
+# Triple Extraction
 
-##  Method 2 – Triple Consensus and Repair
+## Baseline Extraction
+
+The main extraction process lives inside [extraction.py](https://github.com/edogdu/CTI/blob/main/triple_extraction/extraction.py). This process...
+
+### Baseline Results
+
+Record Valid vs Invalid triples, # of extracted triples, Avg contexts per entity, etc
+
+## Methods
+
+### Consensus
+
+...
+
+### Semantic Chunking
+
+...
+
+### Markov Filtering & Skew Zero Forcing
+
+##  Triple Consensus and Repair
 
 Located in the **`/triple_consensus_and_repair/`** folder, this method refines CTI triple extraction results by filtering, validating, and repairing triples that fail schema or consensus checks.
 
