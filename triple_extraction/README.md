@@ -20,7 +20,7 @@ Record Valid vs Invalid triples, # of extracted triples, Avg contexts per entity
 
 ### Markov Filtering & Skew Zero Forcing
 
-##  Triple Consensus and Repair
+##  Triple Validation and Repair
 
 Located in the **`/triple_consensus_and_repair/`** folder, this method refines CTI triple extraction results by filtering, validating, and repairing triples that fail schema or consensus checks.
 
@@ -53,6 +53,24 @@ applies deterministic normalization (`det_fix`), applies Markov Smoothing, valid
 Repaired triples are saved to `invalid_triples_gemma2_9b_repaired.json`, and remaining invalid ones to `invalid_triples_gemma2_9b_still_bad.json`, improving overall dataset accuracy and schema compliance.
 
 
+##  Extraction & Repair Results Comparison
+
+| Ontology  | Original Invalid Triples | Processing Pipeline                  | ⏱️ Time (s) | ✅ Repaired | ❌ Invalid | 📝 Notes |
+|------------|--------------------------|--------------------------------------|-------------|----------|------------|----------|
+| **STIX 2.1** | 272 | Deterministic + 2 LLM passes          | 203.6 s     | 4        | 268        | Conservative validation aligned with STIX 2.1 standards. Low repair rate due to strict schema and relationship constraints—most triples were filtered rather than corrected. |
+| **STIX 2.1** | 272 | Deterministic + Markov + 2 LLM passes | 814.4 s     | 91       | 181        | Markov smoothing improved contextual alignment and reduced repair needs. Lower invalid rate indicates higher validity in the original extraction while maintaining STIX 2.1’s strict relationship standards. |
+| **MalOnt**   | 280 | Deterministic + 2 LLM passes          | 60.5 s      | 207      | 73         | Lower repair rate demonstrates higher validity in the original extraction phase. More flexible ontology mapping required fewer downstream fixes. |
+| **MalOnt**   | 280 | Deterministic + Markov + 2 LLM passes | 220 s       | 248      | 32         | High valid count achieved mainly through successful LLM and Markov repairs. Although final accuracy is high, many triples were corrected rather than valid from the start. |
+
+
+**Summary Insights**
+-  **Lower invalid (repair) rates** reflect **greater validity in the original extraction**, requiring fewer downstream LLM corrections.  
+-  **STIX 2.1** enforces **strict entity typing and relationship standards**, ensuring schema compliance but yielding higher initial invalid counts.  
+-  **MalOnt** allows broader ontology mappings, producing faster alignment with fewer restrictions.  
+-  **Markov smoothing** enhances contextual continuity and predicate coherence, reducing correction needs across both ontologies.
+
+
+---
 
 ### Semantic Chunking Triple Extraction
 
