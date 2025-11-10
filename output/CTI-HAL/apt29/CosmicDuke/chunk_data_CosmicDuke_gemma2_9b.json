@@ -4,17 +4,17 @@
     "model_used": "gemma2:9b",
     "doc_sha256_id": "31b467652f6d205a",
     "num_pages": 16,
-    "num_sentences_total": 265,
-    "num_sentences_used": 157,
-    "num_raw_triples": 156,
-    "num_valid_triples": 99,
-    "num_suspicious_triples": 57,
-    "avg_triples_per_sentence": 0.9936305732484076,
+    "num_sentences_total": 275,
+    "num_sentences_used": 163,
+    "num_raw_triples": 162,
+    "num_valid_triples": 119,
+    "num_suspicious_triples": 0,
+    "avg_triples_per_sentence": 0.9938650306748467,
     "rejection_stats": {
       "bad_structure": 0,
-      "invalid_class_or_predicate": 57
+      "invalid_class_or_predicate": 72
     },
-    "runtime_seconds": 150.92611360549927
+    "runtime_seconds": 712.6
   },
   "data": [
     {
@@ -23,15 +23,15 @@
         {
           "subject": {
             "name": "COSMICDUKE",
-            "type": "MalwareFamily"
+            "type": "ThreatActor"
           },
           "predicate": "hasAlias",
           "object": {
             "name": "Cosmu",
-            "type": "MalwareFamily"
+            "type": "Unknown"
           },
           "evidence": {
-            "quote": "COSMICDUKE Cosmu with a twist of MiniDuke"
+            "quote": "COSMICDUKE Cosmu"
           }
         }
       ],
@@ -49,14 +49,15 @@
             "name": "CosmicDuke",
             "type": "Malware"
           },
-          "predicate": "hasVulnerability",
+          "predicate": "uses",
           "object": {
             "name": "MiniDuke APT trojan",
             "type": "Trojan"
           },
           "evidence": {
-            "quote": "the first malware seen to include code from both the notorious MiniDuke APT trojan"
-          }
+            "quote": "include code from both the notorious MiniDuke APT trojan"
+          },
+          "repaired": true
         }
       ],
       "metadata": {
@@ -94,16 +95,16 @@
       "triple": [
         {
           "subject": {
-            "name": "F-SECURE LABS SECURITY RESPONSE",
-            "type": "Organization"
+            "name": "Dropper",
+            "type": "Malware"
           },
-          "predicate": "hasVulnerability",
+          "predicate": "hasAlias",
           "object": {
-            "name": "Malware Analysis Whitepaper",
-            "type": "Report"
+            "name": "RLO Dropper",
+            "type": "Malware"
           },
           "evidence": {
-            "quote": "F-SECURE LABS SECURITY RESPONSE Malware Analysis Whitepaper"
+            "quote": "Dropper: RLO Dropper"
           }
         }
       ],
@@ -121,13 +122,13 @@
             "name": "MiniDuke Loader",
             "type": "Malware"
           },
-          "predicate": "hasAlias",
+          "predicate": "uses",
           "object": {
             "name": "Cosmu",
             "type": "Application"
           },
           "evidence": {
-            "quote": "MiniDuke Loader Cosmu Info-stealer"
+            "quote": "MiniDuke Loader Cosmu"
           }
         }
       ],
@@ -143,16 +144,17 @@
         {
           "subject": {
             "name": "MiniDuke loaders",
-            "type": "AttackPattern"
+            "type": "Malware"
           },
           "predicate": "targets",
           "object": {
-            "name": "memory",
+            "name": null,
             "type": "System"
           },
           "evidence": {
             "quote": "being decompressed and loaded into memory"
-          }
+          },
+          "repaired": true
         }
       ],
       "metadata": {
@@ -186,6 +188,31 @@
       }
     },
     {
+      "context": "Some of these are older than the oldest publicly documented MiniDuke samples, implying that the shared code might have been originally used by Cosmu, not MiniDuke.",
+      "triple": [
+        {
+          "subject": {
+            "name": "shared code",
+            "type": "MalwareFamily"
+          },
+          "predicate": "hasAuthor",
+          "object": {
+            "name": "Cosmu",
+            "type": "ThreatActor"
+          },
+          "evidence": {
+            "quote": "might have been originally used by Cosmu"
+          },
+          "repaired": true
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
       "context": "For convenience, we decided to name the samples showing this amalgamation of MiniDuke-derived loader and Cosmu-derived payload CosmicDuke .",
       "triple": [
         {
@@ -196,10 +223,10 @@
           "predicate": "hasAlias",
           "object": {
             "name": "CosmicDuke",
-            "type": "MalwareFamily"
+            "type": "DomainName"
           },
           "evidence": {
-            "quote": "we decided to name the samples showing this amalgamation of MiniDuke-derived loader and Cosmu-derived payload CosmicDuke"
+            "quote": "showing this amalgamation of MiniDuke-derived loader and Cosmu-derived payload CosmicDuke"
           }
         }
       ],
@@ -223,13 +250,37 @@
             "type": "Filepath"
           },
           "evidence": {
-            "quote": "The filenames and content used in CosmicDuke's attack files to lure victims into opening them contain references"
+            "quote": "The filenames and content used in CosmicDuke's attack files to lure victims into opening them"
           }
         }
       ],
       "metadata": {
         "page_number": 2,
         "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The filenames and content chosen seem to be tailored to their target's interests, though at the time of writing, we have no further information on the identity or location of these victims.",
+      "triple": [
+        {
+          "subject": {
+            "name": "filenames",
+            "type": "Filename"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "victim's interests",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "tailored to their target's interests"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "008",
         "source": "TEXT"
       }
     },
@@ -243,17 +294,43 @@
           },
           "predicate": "targets",
           "object": {
-            "name": "victims",
+            "name": null,
             "type": "Person"
           },
           "evidence": {
-            "quote": "CosmicDuke infections start by tricking victims into opening either a PDF file that contains an exploit or a Windows executable whose filename is manipulated to make it look like a document or image file."
-          }
+            "quote": "CosmicDuke infections start by tricking victims into opening"
+          },
+          "repaired": true
         }
       ],
       "metadata": {
         "page_number": 2,
         "id": "009",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Once the victim opens the file, the malware gains persistence on the system and starts collecting information.",
+      "triple": [
+        {
+          "subject": {
+            "name": "malware",
+            "type": "Malware"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "persistence",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "the malware gains persistence"
+          },
+          "repaired": true
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "010",
         "source": "TEXT"
       }
     },
@@ -265,13 +342,13 @@
             "name": "keylogger",
             "type": "Keylogger"
           },
-          "predicate": "has",
+          "predicate": "targets",
           "object": {
-            "name": "data collection components",
-            "type": "Unknown"
+            "name": "variety of popular chat, email and web browsing programs",
+            "type": "Application"
           },
           "evidence": {
-            "quote": "The data collection components include a keylogger"
+            "quote": "a keylogger, clipboard stealer, screenshotter, and password stealers for a variety of popular chat, email and web browsing programs"
           }
         }
       ],
@@ -287,15 +364,15 @@
         {
           "subject": {
             "name": "it",
-            "type": "Unknown"
+            "type": "Malware"
           },
           "predicate": "has",
           "object": {
             "name": "capability to export cryptographic certificates and the associated private keys",
-            "type": "Unknown"
+            "type": "AttackPattern_LargeDescription"
           },
           "evidence": {
-            "quote": "has the capability to export cryptographic certificates and the associated private keys"
+            "quote": "and has the capability to export cryptographic certificates and the associated private keys"
           }
         }
       ],
@@ -306,50 +383,27 @@
       }
     },
     {
-      "context": "F-Secure has detections for all the different malicious components used by the Cosmu variants described in this report.",
-      "triple": [
-        {
-          "subject": {
-            "name": "F-Secure",
-            "type": "Organization"
-          },
-          "predicate": "has",
-          "object": {
-            "name": "detections",
-            "type": "Indicator"
-          },
-          "evidence": {
-            "quote": "F-Secure has detections"
-          }
-        }
-      ],
-      "metadata": {
-        "page_number": 2,
-        "id": "015",
-        "source": "TEXT"
-      }
-    },
-    {
-      "context": "We have seen dozens of Cosmu samples that share code with MiniDuke.",
+      "context": "In addition to stealing information from the system, Cosmu allows the attacker to download and execute other malware on the system.",
       "triple": [
         {
           "subject": {
             "name": "Cosmu",
-            "type": "MalwareFamily"
+            "type": "Malware"
           },
-          "predicate": "hasAlias",
+          "predicate": "uses",
           "object": {
-            "name": "MiniDuke",
-            "type": "MalwareFamily"
+            "name": "other malware",
+            "type": "Malware"
           },
           "evidence": {
-            "quote": "share code with MiniDuke"
-          }
+            "quote": "download and execute other malware"
+          },
+          "repaired": true
         }
       ],
       "metadata": {
         "page_number": 2,
-        "id": "017",
+        "id": "014",
         "source": "TEXT"
       }
     },
@@ -359,15 +413,15 @@
         {
           "subject": {
             "name": "MiniDuke loaders",
-            "type": "Malware"
+            "type": "MalwareFamily"
           },
           "predicate": "uses",
           "object": {
-            "name": "samples",
-            "type": "Unknown"
+            "name": "Cosmu info-stealers",
+            "type": "MalwareFamily"
           },
           "evidence": {
-            "quote": "the differences between the MiniDuke loaders and Cosmu info-stealers used in the samples"
+            "quote": "the differences between the MiniDuke loaders and Cosmu info-stealers"
           }
         }
       ],
@@ -378,26 +432,73 @@
       }
     },
     {
-      "context": "Regardless of any tricks played with the filenames, the files themselves are Windows executables, and many email solutions today prevent users from opening attached executable files.",
+      "context": "TARGET This analysis is based on examination of files we gathered through our sample collection systems.",
       "triple": [
         {
           "subject": {
-            "name": "files",
-            "type": "Filename"
+            "name": "analysis",
+            "type": "MalwareAnalysis"
           },
-          "predicate": "has",
+          "predicate": "targets",
           "object": {
-            "name": "Windows executables",
-            "type": "Application"
+            "name": "files",
+            "type": "Filepath"
+          },
+          "repaired": true
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "020",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Based on the nature of the filenames and decoy documents used, and the fact that the MiniDuke loader is known to be used as a part of targeted attacks, we suspect that CosmicDuke may also be used in such operations.",
+      "triple": [
+        {
+          "subject": {
+            "name": "MiniDuke loader",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "targeted attacks",
+            "type": "AttackPattern_SmallDescription"
           },
           "evidence": {
-            "quote": "Windows executables"
+            "quote": "MiniDuke loader is known to be used as a part of targeted attacks"
+          },
+          "repaired": true
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "021",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "It is possible that the PDF documents containing exploits were emailed to the targeted users as file attachments.",
+      "triple": [
+        {
+          "subject": {
+            "name": "PDF documents",
+            "type": "Filepath"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "exploits",
+            "type": "Exploit-kit"
+          },
+          "evidence": {
+            "quote": "containing exploits"
           }
         }
       ],
       "metadata": {
         "page_number": 3,
-        "id": "004",
+        "id": "001",
         "source": "TEXT"
       }
     },
@@ -406,17 +507,18 @@
       "triple": [
         {
           "subject": {
-            "name": "CosmicDuke malware samples",
-            "type": "Malware"
+            "name": "exploit files",
+            "type": "Filepath"
           },
-          "predicate": "uses",
+          "predicate": "has",
           "object": {
-            "name": "exploits",
-            "type": "AttackPattern_LargeDescription"
+            "name": "malicious Flash object",
+            "type": "Application"
           },
           "evidence": {
-            "quote": "use exploits to gain entry"
-          }
+            "quote": "start with a malicious Flash object"
+          },
+          "repaired": true
         }
       ],
       "metadata": {
@@ -431,15 +533,15 @@
         {
           "subject": {
             "name": "file",
-            "type": "Malware"
+            "type": "Filename"
           },
           "predicate": "exploits",
           "object": {
-            "name": "CVE-2011-0611",
+            "name": "CVE-2011-0611 vulnerability",
             "type": "Vulnerability_CVEID"
           },
           "evidence": {
-            "quote": "exploits the known CVE-2011-0611 vulnerability"
+            "quote": "the object exploits the known CVE-2011-0611 vulnerability"
           }
         }
       ],
@@ -463,7 +565,7 @@
             "type": "Vulnerability_Desc"
           },
           "evidence": {
-            "quote": "the malware simply straightaway exploits the vulnerability"
+            "quote": "exploits the vulnerability"
           }
         }
       ],
@@ -478,8 +580,8 @@
       "triple": [
         {
           "subject": {
-            "name": "CosmicDuke",
-            "type": "MalwareFamily"
+            "name": "CosmicDuke samples",
+            "type": "Malware"
           },
           "predicate": "uses",
           "object": {
@@ -498,6 +600,31 @@
       }
     },
     {
+      "context": "Once launched, the file drops the malware onto the system (such files are therefore referred to as droppers in the rest of this documents).",
+      "triple": [
+        {
+          "subject": {
+            "name": "file",
+            "type": "Dropper"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "malware",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "the file drops the malware"
+          },
+          "repaired": true
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
       "context": "To do so, the malware's executable file is first disguised as an image or document to make it seem innocuous.",
       "triple": [
         {
@@ -505,7 +632,7 @@
             "name": "malware",
             "type": "Malware"
           },
-          "predicate": "has",
+          "predicate": "uses",
           "object": {
             "name": "executable file",
             "type": "Filepath"
@@ -529,13 +656,13 @@
             "name": "malware",
             "type": "Malware"
           },
-          "predicate": "has",
+          "predicate": "targets",
           "object": {
-            "name": "files",
-            "type": "Filepath"
+            "name": "system",
+            "type": "System"
           },
           "evidence": {
-            "quote": "the malware's malicious files"
+            "quote": "the malware's malicious files are silently installed and executed on the system"
           }
         }
       ],
@@ -546,16 +673,40 @@
       }
     },
     {
+      "context": "The different ways it collects information from the infected machine are as follows: y Keylogger y Taking screenshots y Stealing data from clipboard y",
+      "triple": [
+        {
+          "subject": {
+            "name": "Keylogger",
+            "type": "Keylogger"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "information collection",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "y Keylogger"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "016",
+        "source": "TEXT"
+      }
+    },
+    {
       "context": "Stealing files y Stealing PKI certificates and associated private keys y Stealing usernames and passwords from browsers, instant messengers and email clients y Stealing WLAN passwords y Stealing Windows password hashes DATA TRANSMISSION",
       "triple": [
         {
           "subject": {
-            "name": "Stealing files",
+            "name": "AttackPattern",
             "type": "AttackPattern_SmallDescription"
           },
           "predicate": "targets",
           "object": {
-            "name": null,
+            "name": "Files",
             "type": "Unknown"
           },
           "evidence": {
@@ -577,13 +728,13 @@
             "name": "malware",
             "type": "Malware"
           },
-          "predicate": "uses",
+          "predicate": "has",
           "object": {
-            "name": "FTP",
-            "type": "Protocol"
+            "name": "information",
+            "type": "Unknown"
           },
           "evidence": {
-            "quote": "automatically uploaded to remote servers via FTP"
+            "quote": "The information collected by the malware is automatically uploaded to remote servers via FTP."
           }
         }
       ],
@@ -594,21 +745,96 @@
       }
     },
     {
+      "context": "Our analysis also reveals various details of the remote sites contacted by CosmicDuke, including the login credentials used and the FTP folder structure.",
+      "triple": [
+        {
+          "subject": {
+            "name": "CosmicDuke",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "remote sites",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "remote sites contacted by CosmicDuke"
+          },
+          "repaired": true
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "019",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "A list of the servers CosmicDuke malware connects to is on page 15.",
+      "triple": [
+        {
+          "subject": {
+            "name": "CosmicDuke malware",
+            "type": "Malware"
+          },
+          "predicate": "communicatesWith",
+          "object": {
+            "name": "list of servers",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "A list of the servers CosmicDuke malware connects to is on page 15."
+          },
+          "repaired": true
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "021",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " TECHNICAL DETAILS CosmicDuke samples can be divided into 3 distinct groups based on similarities between the C&C servers they contact, file characteristics and decoy document used.",
+      "triple": [
+        {
+          "subject": {
+            "name": "CosmicDuke",
+            "type": "MalwareFamily"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "C&C servers",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "between the C&C servers they contact"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "000",
+        "source": "TEXT"
+      }
+    },
+    {
       "context": "The full details of how the samples were grouped is listed on page 11; Figure 2 at left provides a quick summary of the grouping as they relate to how CosmicDuke is delivered, and the decoy documents shown.",
       "triple": [
         {
           "subject": {
-            "name": "samples",
-            "type": "Malware"
+            "name": "CosmicDuke",
+            "type": "AttackPattern"
           },
-          "predicate": "hasAlias",
+          "predicate": "targets",
           "object": {
-            "name": "groupings",
+            "name": "Figure 2",
             "type": "Unknown"
           },
           "evidence": {
-            "quote": "The full details of how the samples were grouped is listed on page 11"
-          }
+            "quote": "how CosmicDuke is delivered, and the decoy documents shown."
+          },
+          "repaired": true
         }
       ],
       "metadata": {
@@ -627,12 +853,13 @@
           },
           "predicate": "uses",
           "object": {
-            "name": "dropper files",
+            "name": "3 dropper files",
             "type": "Dropper"
           },
           "evidence": {
-            "quote": "spread using 3 dropper files"
-          }
+            "quote": "is spread using 3 dropper files"
+          },
+          "repaired": true
         }
       ],
       "metadata": {
@@ -651,8 +878,8 @@
           },
           "predicate": "uses",
           "object": {
-            "name": "exploit-loaded files and dropper files",
-            "type": "Unknown"
+            "name": "exploit-loaded files",
+            "type": "Malware"
           },
           "evidence": {
             "quote": "uses both exploit-loaded files and dropper files"
@@ -675,11 +902,11 @@
           },
           "predicate": "hasAlias",
           "object": {
-            "name": ".doc",
-            "type": "Filename"
+            "name": "GROUP #1 DROPPERS",
+            "type": "Unknown"
           },
           "evidence": {
-            "quote": " CosmicDuke dropper files GROUP #1 DROPPERS: rcs .Заказ .doc"
+            "quote": "CosmicDuke dropper files GROUP #1 DROPPERS"
           }
         }
       ],
@@ -714,26 +941,50 @@
       }
     },
     {
-      "context": "The threeletter file extensions seen at the end of the filename is not the real file extension.",
+      "context": "GROUP #2 EXPLOITS & DROPPERS FIGURE 2: COSMICDUKE SAMPLES GROUPED BY INFECTION VECTOR Name Type Size rcs.3aras.doc Screensaver 396KB res.Ukraine-Gas-Pipelines-Security-Report-March-2014.pdf Screen saver 920KB rcs.18.jpg Screen saver 792 KB rcs.",
       "triple": [
         {
           "subject": {
-            "name": "filename",
-            "type": "Filename"
+            "name": "GROUP #2",
+            "type": "Organization"
           },
-          "predicate": "has",
+          "predicate": "exploits",
           "object": {
-            "name": "threeletter file extensions",
-            "type": "Unknown"
+            "name": "DROPPERS",
+            "type": "Malware"
           },
           "evidence": {
-            "quote": "The threeletter file extensions seen at the end of the filename is not the real file extension."
+            "quote": "GROUP #2 EXPLOITS & DROPPERS"
           }
         }
       ],
       "metadata": {
         "page_number": 4,
-        "id": "012",
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "D5C_1365527283-jpg Screen saver 420 KB Sivil Durum Raporu Kriz Merkexe-yazi.pdf Application 682KB filename readily visible to the users is translated from Turkish as 'civilian crisis center status report'.",
+      "triple": [
+        {
+          "subject": {
+            "name": "D5C_1365527283-jpg",
+            "type": "Filename"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "Screen saver",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "D5C_1365527283-jpg Screen saver"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 4,
+        "id": "008",
         "source": "TEXT"
       }
     },
@@ -751,7 +1002,7 @@
             "type": "Filename"
           },
           "evidence": {
-            "quote": "by using the Right-to-Left Override (RLO) feature in Windows to hide the file's correct file extension, .exe or .scr, and replace it with .jpg, .pdf or .doc"
+            "quote": "using the Right-to-Left Override (RLO) feature in Windows to hide the file's correct file extension, .exe or .scr, and replace it with .jpg, .pdf or .doc"
           }
         }
       ],
@@ -767,7 +1018,7 @@
         {
           "subject": {
             "name": "file",
-            "type": "Unknown"
+            "type": "Filename"
           },
           "predicate": "uses",
           "object": {
@@ -775,7 +1026,7 @@
             "type": "Unknown"
           },
           "evidence": {
-            "quote": "it uses an NVIDIA icon"
+            "quote": "uses an NVIDIA icon"
           }
         }
       ],
@@ -790,12 +1041,12 @@
       "triple": [
         {
           "subject": {
-            "name": "product name",
+            "name": "fake product name",
             "type": "Unknown"
           },
           "predicate": "hasAlias",
           "object": {
-            "name": "Cosmu samples",
+            "name": "Cosmu",
             "type": "MalwareFamily"
           },
           "evidence": {
@@ -858,21 +1109,41 @@
       }
     },
     {
+      "context": "Based on the characters СЖС-1295 and ГХРП found in the decoy, the document looks like an order for growth hormones.",
+      "triple": [
+        {
+          "subject": {
+            "name": "document",
+            "type": "Application"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "order for growth hormones",
+            "type": "Unknown"
+          },
+          "repaired": true
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
       "context": "The document contains full delivery address, including the name of the person placing the order.",
       "triple": [
         {
           "subject": {
             "name": "document",
-            "type": "Report"
+            "type": "Filepath"
           },
           "predicate": "has",
           "object": {
             "name": "full delivery address",
             "type": "Unknown"
           },
-          "evidence": {
-            "quote": "contains full delivery address"
-          }
+          "repaired": true
         }
       ],
       "metadata": {
@@ -882,11 +1153,35 @@
       }
     },
     {
+      "context": "An interesting detail about the image file of a receipt (Image 3) shown by rcs.18.jpg is that it contains EXIF metadata, including the date when the photo was taken and the model of the mobile phone that was used to take the photo.",
+      "triple": [
+        {
+          "subject": {
+            "name": "image file",
+            "type": "Filename"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "EXIF metadata",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "contains EXIF metadata"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
       "context": "The third dropper file we've seen uses the filename 'rcs. Ukraine-Gas-Pipelines-Security-Report-March-2014.pdf', and displays the decoy document shown in Image 6.",
       "triple": [
         {
           "subject": {
-            "name": "third dropper file",
+            "name": "Dropper",
             "type": "Dropper"
           },
           "predicate": "uses",
@@ -954,6 +1249,76 @@
       }
     },
     {
+      "context": "http://moneymorning.com/2014/03/04/disru Today's Markets Today's Markets Private Brefing DJIA-11.17 (-0.07%) 16,340.08 NASDAQ16.14(0.37%）4,323.33 S&P0.57(0.03%）1,868.20 ARCHIVES ABOUTUS WhyDisrupted Ukraine GasPipelinesWon'tSend",
+      "triple": [
+        {
+          "subject": {
+            "name": "Ukraine GasPipelines",
+            "type": "Infrastructure"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": " ",
+            "type": "Organization"
+          },
+          "repaired": true
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "015",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "co8eTy BO3bMy CKC1295+ TXPn 2 Image 4: Decoy shown by rcs.DSC_1365527283.jpg Tep:8922044K1:2902119521 Apec:rHecx0Ke YA，47 1313:18.03.2014BpH:15:25:46 BocT3K:QII KoeeK KoT1He:8-S00-555-74-94 1:7000p6.3:7000py6.",
+      "triple": [
+        {
+          "subject": {
+            "name": "rcs.DSC_1365527283.jpg",
+            "type": "Filename"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "Image 4: Decoy",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "shown by rcs.DSC_1365527283.jpg"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "020",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Hoep1ee0Ha/cqera:9635406675 Kone:2901975465",
+      "triple": [
+        {
+          "subject": {
+            "name": "Hoep1ee0Ha/cqera",
+            "type": "DomainName"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Kone:2901975465",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Hoep1ee0Ha/cqera:9635406675 Kone:2901975465"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 5,
+        "id": "025",
+        "source": "TEXT"
+      }
+    },
+    {
       "context": "The code used by CosmicDuke to exploit the CVE-20110611 vulnerability appears to be derived from this proofof-concept code that was made available in early 2011: y http://www.exploit-db.com/exploits/17473/",
       "triple": [
         {
@@ -1002,20 +1367,44 @@
       }
     },
     {
+      "context": "The PISM mentioned in the latter presumably refers to the Polish Institute of International Affairs",
+      "triple": [
+        {
+          "subject": {
+            "name": "PISM",
+            "type": "Organization"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Polish Institute of International Affairs",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "The PISM mentioned in the latter presumably refers to the Polish Institute of International Affairs"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
       "context": "LOADER: MINIDUKE 3RD STAGE The CosmicDuke samples we analyzed used the same loader as MiniDuke's stage 3 [2] samples, making this the first occasion in which we've seen other malware using this particular loader.",
       "triple": [
         {
           "subject": {
-            "name": "LOADER: MINIDUKE 3RD STAGE",
-            "type": "Malware"
+            "name": "CosmicDuke",
+            "type": "MalwareFamily"
           },
           "predicate": "uses",
           "object": {
-            "name": "MiniDuke's stage 3 samples",
-            "type": "Malware"
+            "name": "MiniDuke 3rd stage",
+            "type": "Unknown"
           },
           "evidence": {
-            "quote": "used the same loader as MiniDuke's stage 3 [2] samples"
+            "quote": "The CosmicDuke samples we analyzed used the same loader as MiniDuke's stage 3 [2] samples"
           }
         }
       ],
@@ -1031,15 +1420,15 @@
         {
           "subject": {
             "name": "loader",
-            "type": "Malware"
+            "type": "MalwareFamily"
           },
           "predicate": "hasAlias",
           "object": {
             "name": "CosmicDuke",
-            "type": "MalwareFamily"
+            "type": "ThreatActor"
           },
           "evidence": {
-            "quote": "parallel usage of the loader in the CosmicDuke"
+            "quote": "parallel usage of the loader in the CosmicDuke and MiniDuke families"
           }
         }
       ],
@@ -1054,12 +1443,12 @@
       "triple": [
         {
           "subject": {
-            "name": "samples",
+            "name": "loader",
             "type": "Malware"
           },
           "predicate": "has",
           "object": {
-            "name": "compilation date",
+            "name": "compilation date of March 24 2011",
             "type": "Time"
           },
           "evidence": {
@@ -1079,7 +1468,7 @@
         {
           "subject": {
             "name": "loader",
-            "type": "Application"
+            "type": "Malware"
           },
           "predicate": "uses",
           "object": {
@@ -1087,7 +1476,7 @@
             "type": "Malware"
           },
           "evidence": {
-            "quote": "The earlier use of the loader with a Cosmu payload"
+            "quote": "the earlier use of the loader with a Cosmu payload"
           }
         }
       ],
@@ -1146,30 +1535,6 @@
       }
     },
     {
-      "context": "Also of interest is that once the MiniDuke loader was updated, we saw CosmicDuke samples take the updated loader into use in mid-April 1 2014, a few months after MiniDuke started using the latest loader in mid-December 2013.",
-      "triple": [
-        {
-          "subject": {
-            "name": "MiniDuke",
-            "type": "Malware"
-          },
-          "predicate": "uses",
-          "object": {
-            "name": "loader",
-            "type": "Unknown"
-          },
-          "evidence": {
-            "quote": "MiniDuke started using the latest loader"
-          }
-        }
-      ],
-      "metadata": {
-        "page_number": 6,
-        "id": "013",
-        "source": "TEXT"
-      }
-    },
-    {
       "context": "Polish Institute of International Affairs; http://www.pism.pl/en CIRCL - Computer Incident Response Center Luxembourg; Analysis of a stage 3 Miniduke sample; published 30 May 2013; http://www.circl.lu/assets/files/tr-14/circl-analysisreport-miniduke-stage3-public.pdf Laboratory of Cryptography and System Security (CrySyS Lab); MiniDuke: Indicators; published 27 February 2013; http://www.crysys.hu/miniduke/miniduke_indicators_public.pdf FIGURE 3: FILENAMES AND SHA1 VALUES OF COSMICDUKE EXPLOIT FILES",
       "triple": [
         {
@@ -1198,16 +1563,16 @@
       "triple": [
         {
           "subject": {
-            "name": "[Unknown]",
-            "type": "SHA"
+            "name": "Unknown",
+            "type": "Unknown"
           },
           "predicate": "has",
           "object": {
-            "name": "353540c6619f2bba2351babad736599811d3392e Bulletin-PISM-No-31-(625)-March-10-2014.pdf",
-            "type": "Filename"
+            "name": "353540c6619f2bba2351babad736599811d3392e",
+            "type": "SHA-256"
           },
           "evidence": {
-            "quote": " [Unknown] 353540c6619f2bba2351babad736599811d3392e Bulletin-PISM-No-31-(625)-March-10-2014.pdf"
+            "quote": "Unknown 353540c6619f2bba2351babad736599811d3392e"
           }
         }
       ],
@@ -1218,26 +1583,26 @@
       }
     },
     {
-      "context": " MAIN COMPONENT: INFO-STEALER The Cosmu info-stealer is the main component of the CosmicDuke malware.",
+      "context": "march.pdf c671786abd87d214a28d136b6bafd4e33ee66951 nota.pdf 5295b09592d5a651ca3f748f0e6401bd48fe7bda FIGURE 4: MILESTONES IN PARALLEL LOADER USE* IN COSMU AND MINIDUKE FAMILIES Mar 24 2011 Apr 18 2014 Dec 14 2013 Nov 13  2012 Jun 18 2012 MiniDuke 2014 2013 2012 2011 Nov 13 2012 Cosmu *Based on the compilation timestamps of the loader Original MiniDuke loader Updated MiniDuke loader",
       "triple": [
         {
           "subject": {
-            "name": "Cosmu",
-            "type": "Malware"
+            "name": "march.pdf",
+            "type": "Filename"
           },
           "predicate": "hasAlias",
           "object": {
-            "name": "INFO-STEALER",
-            "type": "AttackPattern_SmallDescription"
+            "name": "c671786abd87d214a28d136b6bafd4e33ee66951",
+            "type": "SHA-256"
           },
           "evidence": {
-            "quote": "INFO-STEALER"
+            "quote": "march.pdf c671786abd87d214a28d136b6bafd4e33ee66951"
           }
         }
       ],
       "metadata": {
-        "page_number": 7,
-        "id": "000",
+        "page_number": 6,
+        "id": "017",
         "source": "TEXT"
       }
     },
@@ -1251,8 +1616,8 @@
           },
           "predicate": "has",
           "object": {
-            "name": "mechanisms",
-            "type": "Unknown"
+            "name": "a couple of different mechanisms",
+            "type": "AttackPattern_LargeDescription"
           },
           "evidence": {
             "quote": "Cosmu has a couple of different mechanisms"
@@ -1266,17 +1631,42 @@
       }
     },
     {
+      "context": "It executes the malware at system startup.",
+      "triple": [
+        {
+          "subject": {
+            "name": "malware",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "system",
+            "type": "System"
+          },
+          "evidence": {
+            "quote": "It executes the malware at system startup."
+          },
+          "repaired": true
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
       "context": "The size of the service binary on disk varies, but typically the real size is 5120 bytes (based on PE headers) and the SHA1 value is 7803f160af428bcfb4b9ea2aba07886f232cde4e.",
       "triple": [
         {
           "subject": {
             "name": "service binary",
-            "type": "Filename"
+            "type": "Filepath"
           },
           "predicate": "has",
           "object": {
             "name": "5120 bytes",
-            "type": "Unknown"
+            "type": "Time"
           },
           "evidence": {
             "quote": "the real size is 5120 bytes"
@@ -1290,12 +1680,37 @@
       }
     },
     {
+      "context": "The service itself is very straightforward: it opens a handle to explorer.exe process, duplicates its process token, reads the path of the actual malware binary from registry (key HKLM\\Software\\JavaSoft, value Supplement) and starts the malware using the duplicated process token.",
+      "triple": [
+        {
+          "subject": {
+            "name": "service",
+            "type": "System"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "explorer.exe",
+            "type": "Application"
+          },
+          "evidence": {
+            "quote": "it opens a handle to explorer.exe process"
+          },
+          "repaired": true
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
       "context": "The binaries on the disk have a variable length of zero-padding but they are all essentially copies of the original malware binary.",
       "triple": [
         {
           "subject": {
             "name": "binaries",
-            "type": "Malware"
+            "type": "Filepath"
           },
           "predicate": "has",
           "object": {
@@ -1303,7 +1718,7 @@
             "type": "Unknown"
           },
           "evidence": {
-            "quote": "have a variable length of zero-padding"
+            "quote": "The binaries on the disk have a variable length of zero-padding"
           }
         }
       ],
@@ -1318,16 +1733,16 @@
       "triple": [
         {
           "subject": {
-            "name": "usbmon.exe",
-            "type": "Filename"
+            "name": "Cosmu",
+            "type": "MalwareFamily"
           },
           "predicate": "hasAlias",
           "object": {
-            "name": "Cosmu copies",
-            "type": "Malware"
+            "name": "usbmon.exe",
+            "type": "Filename"
           },
           "evidence": {
-            "quote": "filenames for both the Cosmu copies and the service binary are generated by randomly taking two items from the following list and concatenating them, resulting in filenames like usbmon.exe,"
+            "quote": "filenames like usbmon.exe"
           }
         }
       ],
@@ -1342,12 +1757,12 @@
       "triple": [
         {
           "subject": {
-            "name": "malware",
+            "name": "The malware",
             "type": "Malware"
           },
           "predicate": "targets",
           "object": {
-            "name": "software",
+            "name": "the following software",
             "type": "Software"
           },
           "evidence": {
@@ -1366,7 +1781,7 @@
       "triple": [
         {
           "subject": {
-            "name": "attacker",
+            "name": "Attacker",
             "type": "ThreatActor"
           },
           "predicate": "uses",
@@ -1386,30 +1801,6 @@
       }
     },
     {
-      "context": "The attack was publicly documented in 2006   ",
-      "triple": [
-        {
-          "subject": {
-            "name": "attack",
-            "type": "AttackPattern"
-          },
-          "predicate": "hasVulnerability",
-          "object": {
-            "name": "publicly documented",
-            "type": "Unknown"
-          },
-          "evidence": {
-            "quote": "publicly documented"
-          }
-        }
-      ],
-      "metadata": {
-        "page_number": 7,
-        "id": "017",
-        "source": "TEXT"
-      }
-    },
-    {
       "context": " Google Talk Cosmu decrypts and steals saved credentials from Google Talk.",
       "triple": [
         {
@@ -1419,11 +1810,11 @@
           },
           "predicate": "uses",
           "object": {
-            "name": "decrypts and steals saved credentials",
+            "name": "decrypts and steals saved credentials from Google Talk",
             "type": "AttackPattern_LargeDescription"
           },
           "evidence": {
-            "quote": "decrypts and steals saved credentials"
+            "quote": "decrypts and steals saved credentials from Google Talk"
           }
         }
       ],
@@ -1441,19 +1832,44 @@
             "name": "Email clients",
             "type": "Application"
           },
-          "predicate": "uses",
+          "predicate": "hasAlias",
           "object": {
             "name": "Thunderbird Cosmu",
-            "type": "Malware"
+            "type": "AttackPattern_LargeDescription"
           },
           "evidence": {
-            "quote": "Email clients  Thunderbird Cosmu steals"
+            "quote": "Email clients  Thunderbird Cosmu"
           }
         }
       ],
       "metadata": {
         "page_number": 7,
         "id": "026",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The malware does not decrypt the credentials.",
+      "triple": [
+        {
+          "subject": {
+            "name": "The malware",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "credentials",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "The malware does not decrypt the credentials."
+          },
+          "repaired": true
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "027",
         "source": "TEXT"
       }
     },
@@ -1467,11 +1883,11 @@
           },
           "predicate": "uses",
           "object": {
-            "name": "decrypts and steals saved credentials",
+            "name": "decryption",
             "type": "Unknown"
           },
           "evidence": {
-            "quote": "decrypts and steals saved credentials"
+            "quote": "decrypts"
           }
         }
       ],
@@ -1510,16 +1926,16 @@
       "triple": [
         {
           "subject": {
-            "name": "Others",
-            "type": "Person"
+            "name": "y",
+            "type": "ThreatActor"
           },
-          "predicate": "targets",
+          "predicate": "has",
           "object": {
-            "name": "Windows credentials",
+            "name": "Windows credentials LM and NT hashes, cached domain passwords, LSA secrets",
             "type": "Unknown"
           },
           "evidence": {
-            "quote": "y Others  Windows credentials"
+            "quote": "y Others  Windows credentials LM and NT hashes, cached domain passwords, LSA secrets"
           }
         }
       ],
@@ -1540,7 +1956,7 @@
           "predicate": "uses",
           "object": {
             "name": "WlanGetProfile",
-            "type": "Software"
+            "type": "Application"
           },
           "evidence": {
             "quote": "WLAN Cosmu uses WlanGetProfile"
@@ -1563,11 +1979,11 @@
           },
           "predicate": "uses",
           "object": {
-            "name": "password 'saribas'",
+            "name": "saribas",
             "type": "Unknown"
           },
           "evidence": {
-            "quote": "The malware uses the password 'saribas' to encrypt the exported data."
+            "quote": "uses the password 'saribas'"
           }
         }
       ],
@@ -1588,10 +2004,10 @@
           "predicate": "targets",
           "object": {
             "name": "files",
-            "type": "Filename"
+            "type": "Filepath"
           },
           "evidence": {
-            "quote": "Cosmu searches the hard drives and network drives for files that match any of the below patterns:"
+            "quote": "Cosmu searches the hard drives and network drives for files that match"
           }
         }
       ],
@@ -1602,26 +2018,26 @@
       }
     },
     {
-      "context": "An interesting detail is that Cosmu skips searching the removable drive if the volume name is 'trandescend' (case insensitive comparison).",
+      "context": "Cosmu searches removable drives for a broader set of files - only files whose filename matches any of the following patterns are skipped/ignored: y *.exe y *.ndb y *.mp3 y *.avi",
       "triple": [
         {
           "subject": {
             "name": "Cosmu",
-            "type": "Malware"
+            "type": "Application"
           },
           "predicate": "targets",
           "object": {
-            "name": "'trandescend'",
-            "type": "DomainName"
+            "name": "removable drives",
+            "type": "Hardware"
           },
           "evidence": {
-            "quote": "Cosmu skips searching the removable drive if the volume name is 'trandescend'"
+            "quote": "Cosmu searches removable drives"
           }
         }
       ],
       "metadata": {
         "page_number": 8,
-        "id": "014",
+        "id": "013",
         "source": "TEXT"
       }
     },
@@ -1639,7 +2055,7 @@
             "type": "Application"
           },
           "evidence": {
-            "quote": "is implemented using the GetKeyboardState API"
+            "quote": "using the GetKeyboardState API"
           }
         }
       ],
@@ -1650,26 +2066,27 @@
       }
     },
     {
-      "context": "Key logging is skipped if one of the following AV process is running on the system: y avp.exe y acs.exe y outpost.exe y mcvsescn.exe y mcods.exe y navapsvc.exe y kav.exe y AvastSvc.exe y AvastUi.exe y nod32krn.exe y nod32.exe y ekern.exe y dwengine.exe y MsMpEng.exe y msseces.exe y ekrn.exe y savservice.exe y scfservice.exe y savadminservice.exe SCREENSHOTTER Cosmu takes screenshots periodically and sends them to the attacker, together with other stolen data.",
+      "context": "The configuration can contain the following information: y HTTP server IPs and URL paths y FTP server IPs, usernames and passwords y WebDav IPs, usernames and passwords y Filename prefix and file extension for downloaded files y Filename prefix and file extension for exfiltrated data In all the configurations we have seen, the servers are specified using IP addresses, not domain names.",
       "triple": [
         {
           "subject": {
-            "name": "SCREENSHOTTER",
-            "type": "Application"
+            "name": "configuration",
+            "type": "Software"
           },
-          "predicate": "targets",
+          "predicate": "has",
           "object": {
-            "name": "attacker",
-            "type": "Person"
+            "name": "HTTP server IPs and URL paths",
+            "type": "URL"
           },
           "evidence": {
-            "quote": "Cosmu takes screenshots periodically and sends them to the attacker, together with other stolen data."
-          }
+            "quote": "y HTTP server IPs and URL paths"
+          },
+          "repaired": true
         }
       ],
       "metadata": {
         "page_number": 8,
-        "id": "017",
+        "id": "020",
         "source": "TEXT"
       }
     },
@@ -1683,7 +2100,7 @@
           },
           "predicate": "has",
           "object": {
-            "name": "ID of the sample",
+            "name": "ID",
             "type": "Unknown"
           },
           "evidence": {
@@ -1698,11 +2115,33 @@
       }
     },
     {
+      "context": "It is the same 8-character hex digit that can be found in the PDB path, among other places.",
+      "triple": [
+        {
+          "subject": {
+            "name": "8-character hex digit",
+            "type": "Hash"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "PDB path",
+            "type": "Filepath"
+          },
+          "repaired": true
+        }
+      ],
+      "metadata": {
+        "page_number": 9,
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
       "context": "The 256-character string is generated by selecting characters randomly from the following 32-character alphabet: abcdefghijklmnopqrstuvwxyz012345 The malware uses the FTP servers and WebDav servers both for exfiltrating the collected data and for updating the malware.",
       "triple": [
         {
           "subject": {
-            "name": "The malware",
+            "name": "malware",
             "type": "Malware"
           },
           "predicate": "uses",
@@ -1711,7 +2150,7 @@
             "type": "Network"
           },
           "evidence": {
-            "quote": "The malware uses the FTP servers and WebDav servers"
+            "quote": "the malware uses the FTP servers and WebDav servers"
           }
         }
       ],
@@ -1727,7 +2166,7 @@
         {
           "subject": {
             "name": "Cosmu samples",
-            "type": "Malware"
+            "type": "MalwareFamily"
           },
           "predicate": "has",
           "object": {
@@ -1741,7 +2180,7 @@
       ],
       "metadata": {
         "page_number": 9,
-        "id": "027",
+        "id": "024",
         "source": "TEXT"
       }
     },
@@ -1750,46 +2189,47 @@
       "triple": [
         {
           "subject": {
-            "name": "these old samples",
-            "type": "Malware"
+            "name": "These",
+            "type": "Unknown"
           },
           "predicate": "uses",
           "object": {
             "name": "MiniDuke loader",
-            "type": "Dropper"
+            "type": "Malware"
           },
           "evidence": {
-            "quote": "use the MiniDuke loader"
-          }
+            "quote": "These old samples do not use the MiniDuke loader"
+          },
+          "repaired": true
         }
       ],
       "metadata": {
         "page_number": 9,
-        "id": "030",
+        "id": "027",
         "source": "TEXT"
       }
     },
     {
-      "context": "For example, the credentials and same FTP folder structure used by the old samples have been used on another Cosmu FTP server that is still active.",
+      "context": " FIGURE 6: TIMELINE OF COMPILATION TIMESTAMPS & FILENAMES FOR COSMICDUKE'S DROPPERS, LOADERS & INFO-STEALERS Jul 6 May 28",
       "triple": [
         {
           "subject": {
-            "name": "credentials",
-            "type": "Unknown"
+            "name": "FIGURE 6",
+            "type": "Report"
           },
-          "predicate": "uses",
+          "predicate": "indicates",
           "object": {
-            "name": "FTP folder structure",
+            "name": "TIMELINE OF COMPILATION TIMESTAMPS & FILENAMES FOR COSMICDUKE'S DROPPERS, LOADERS & INFO-STEALERS",
             "type": "Unknown"
           },
           "evidence": {
-            "quote": "the credentials and same FTP folder structure"
+            "quote": "FIGURE 6: TIMELINE OF COMPILATION TIMESTAMPS & FILENAMES FOR COSMICDUKE'S DROPPERS, LOADERS & INFO-STEALERS"
           }
         }
       ],
       "metadata": {
-        "page_number": 9,
-        "id": "032",
+        "page_number": 10,
+        "id": "000",
         "source": "TEXT"
       }
     },
@@ -1801,7 +2241,7 @@
             "name": "4fc6701a621f2a5ce3451c7969e4361bc3b836eb",
             "type": "SHA-256"
           },
-          "predicate": "has",
+          "predicate": "hasVulnerability",
           "object": {
             "name": "2c7c9ceeb61eac89e18b6e4ae0c855d982a0f232",
             "type": "SHA-256"
@@ -1822,16 +2262,16 @@
       "triple": [
         {
           "subject": {
-            "name": "Info-stealers Loaders",
-            "type": "MalwareFamily"
+            "name": "fb3b8f6494b211386381a7e4f6524d3e4643c9e9",
+            "type": "SHA-256"
           },
           "predicate": "hasAlias",
           "object": {
-            "name": "*.tmp",
-            "type": "Filename"
+            "name": "Info-stealers Loaders *.tmp",
+            "type": "MalwareFamily"
           },
           "evidence": {
-            "quote": "Info-stealers Loaders *.tmp"
+            "quote": "fb3b8f6494b211386381a7e4f6524d3e4643c9e9 Info-stealers Loaders *.tmp"
           }
         }
       ],
@@ -1849,7 +2289,7 @@
             "name": "Ukraine-Gas-Pipelines- Security-Report-March-2014.pdf",
             "type": "Filename"
           },
-          "predicate": "hasAlias",
+          "predicate": "has",
           "object": {
             "name": "5a199a75411047903b7ba7851bf705ec545f6da9",
             "type": "SHA-256"
@@ -1866,20 +2306,44 @@
       }
     },
     {
+      "context": "[Unknown] 764add69922342b8c4200d64652fbee1376adf1c",
+      "triple": [
+        {
+          "subject": {
+            "name": "764add69922342b8c4200d64652fbee1376adf1c",
+            "type": "Hash"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "[Unknown]",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": " [Unknown] 764add69922342b8c4200d64652fbee1376adf1c"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "010",
+        "source": "TEXT"
+      }
+    },
+    {
       "context": "[Unknown] b54b3c67f1827dab4cc2b3de94ff0af4e5db3d4c",
       "triple": [
         {
           "subject": {
-            "name": "Unknown",
-            "type": "Unknown"
+            "name": "b54b3c67f1827dab4cc2b3de94ff0af4e5db3d4c",
+            "type": "SHA-256"
           },
           "predicate": "has",
           "object": {
-            "name": "b54b3c67f1827dab4cc2b3de94ff0af4e5db3d4c",
-            "type": "Hash"
+            "name": "[Unknown]",
+            "type": "MalwareAnalysis"
           },
           "evidence": {
-            "quote": "Unknown b54b3c67f1827dab4cc2b3de94ff0af4e5db3d4c"
+            "quote": "b54b3c67f1827dab4cc2b3de94ff0af4e5db3d4c"
           }
         }
       ],
@@ -1899,11 +2363,11 @@
           },
           "predicate": "has",
           "object": {
-            "name": "[fecdba1d903a51499a3953b4df1d850fbd5438bd 16aa08ba5e1d27ac68b6ebf24d846bf6f2a204d1 853679ae3172e448d676cbc9503f1474a5ca656f 98f81b03a3b0f7b0b914d783683817953e8d4cf0 f9ba115b673be04ac09c9ee497ef03c5aa75429e]",
-            "type": "SHA"
+            "name": "fecdba1d903a51499a3953b4df1d850fbd5438bd",
+            "type": "SHA-256"
           },
           "evidence": {
-            "quote": "[Unknown] fecdba1d903a51499a3953b4df1d850fbd5438bd 16aa08ba5e1d27ac68b6ebf24d846bf6f2a204d1 853679ae3172e448d676cbc9503f1474a5ca656f 98f81b03a3b0f7b0b914d783683817953e8d4cf0 f9ba115b673be04ac09c9ee497ef03c5aa75429e"
+            "quote": "fecdba1d903a51499a3953b4df1d850fbd5438bd"
           }
         }
       ],
@@ -1923,12 +2387,13 @@
           },
           "predicate": "targets",
           "object": {
-            "name": "INFO-STEALER GROUPS & C&C SERVERS USED PER GROUP",
+            "name": "INFO-STEALER GROUPS & C&C SERVERS",
             "type": "Unknown"
           },
           "evidence": {
             "quote": "212.76.128.149"
-          }
+          },
+          "repaired": true
         }
       ],
       "metadata": {
@@ -1962,16 +2427,41 @@
       }
     },
     {
+      "context": "PBD PATH CONTAINS: 'KSK' (LATEST SAMPLES) GROUP #2 RC4 KEY: ADJUSTKERNELTABLE FROMSSDTSPACE2\\X00 DELIVERY: DROPPERS, EXPLOITS PBD PATH CONTAINS: 'NITRO' AND 'SVA' DOWN IN JUNE 2014 LIVE IN JUNE 2014 COMPILATION TIMELINE All droppers were compiled on 2013-08-02.  ",
+      "triple": [
+        {
+          "subject": {
+            "name": "All droppers",
+            "type": "Dropper"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "System",
+            "type": "OperatingSystem"
+          },
+          "evidence": {
+            "quote": "Compilations timeline All droppers were compiled on 2013-08-02."
+          },
+          "repaired": true
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
       "context": "Kaspersky  [7] , (md5: 6bc34809e44c40b61dd29e0a387ee682) was compiled.",
       "triple": [
         {
           "subject": {
             "name": "Kaspersky",
-            "type": "Malware"
+            "type": "Application"
           },
           "predicate": "has",
           "object": {
-            "name": "md5: 6bc34809e44c40b61dd29e0a387ee682",
+            "name": "6bc34809e44c40b61dd29e0a387ee682",
             "type": "MD5"
           },
           "evidence": {
@@ -1986,21 +2476,47 @@
       }
     },
     {
+      "context": "Most of the info-stealers were compiled in February and March 2014.",
+      "triple": [
+        {
+          "subject": {
+            "name": "info-stealers",
+            "type": "Malware"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "February and March 2014",
+            "type": "Time"
+          },
+          "evidence": {
+            "quote": "Most of the info-stealers were compiled in February and March 2014."
+          },
+          "repaired": true
+        }
+      ],
+      "metadata": {
+        "page_number": 11,
+        "id": "013",
+        "source": "TEXT"
+      }
+    },
+    {
       "context": "The program database (PDB) path y Server address and credentials y The loader y Filenames and decoy content Full list of the servers contacted by samples in these groupings in available in Appendix B | Servers on page 15.",
       "triple": [
         {
           "subject": {
-            "name": "program database (PDB)",
-            "type": "Filename"
-          },
-          "predicate": "has",
-          "object": {
-            "name": "path",
+            "name": "program database (PDB) path",
             "type": "Filepath"
           },
+          "predicate": "targets",
+          "object": {
+            "name": "Servers",
+            "type": "DomainName"
+          },
           "evidence": {
-            "quote": "The program database (PDB) path"
-          }
+            "quote": "The program database (PDB) path y Server address and credentials y The loader y Filenames and decoy content Full list of the servers contacted by samples in these groupings in available in Appendix B | Servers on page 15."
+          },
+          "repaired": true
         }
       ],
       "metadata": {
@@ -2014,16 +2530,16 @@
       "triple": [
         {
           "subject": {
-            "name": "samples",
+            "name": "Samples",
             "type": "Malware"
           },
           "predicate": "has",
           "object": {
-            "name": "PDB path on the infected system's C:\\ drive that contains the directory 'botgenstudio'",
+            "name": "directory 'botgenstudio'",
             "type": "Filepath"
           },
           "evidence": {
-            "quote": "have a PDB path on the infected system's C:\\ drive that contains the directory 'botgenstudio'"
+            "quote": "'botgenstudio'"
           }
         }
       ],
@@ -2041,7 +2557,7 @@
             "name": "BitDefender",
             "type": "Organization"
           },
-          "predicate": "hasAuthor",
+          "predicate": "hasAlias",
           "object": {
             "name": "M. Tivadar, B. Balazs & C.Istrate",
             "type": "Person"
@@ -2089,7 +2605,7 @@
             "name": "y",
             "type": "Unknown"
           },
-          "predicate": "uses",
+          "predicate": "targets",
           "object": {
             "name": "c:\\botgenstudio\\generations\\8f1777b0\\bin\\Bot.pdb",
             "type": "Filepath"
@@ -2106,30 +2622,6 @@
       }
     },
     {
-      "context": "The IP address of the servers used by this group of samples are in Luxembourg, Netherlands, and Russia.",
-      "triple": [
-        {
-          "subject": {
-            "name": "this group of samples",
-            "type": "Malware"
-          },
-          "predicate": "uses",
-          "object": {
-            "name": "servers",
-            "type": "Hardware"
-          },
-          "evidence": {
-            "quote": "The IP address of the servers used by this group of samples"
-          }
-        }
-      ],
-      "metadata": {
-        "page_number": 12,
-        "id": "002",
-        "source": "TEXT"
-      }
-    },
-    {
       "context": "Group #2 All samples in this group have a PDB path that contains directories named 'NITRO' and 'SVA'.",
       "triple": [
         {
@@ -2139,8 +2631,8 @@
           },
           "predicate": "has",
           "object": {
-            "name": "directories named 'NITRO' and 'SVA'",
-            "type": "Unknown"
+            "name": "'NITRO' and 'SVA'",
+            "type": "Filepath"
           },
           "evidence": {
             "quote": "have a PDB path that contains directories named 'NITRO' and 'SVA'"
@@ -2150,6 +2642,30 @@
       "metadata": {
         "page_number": 12,
         "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "bin\\Bot.pdb y D:\\PRODUCTION\\NITRO\\SVA\\Generations\\80B8A0BA\\ bin\\bot.pdb All samples except one in this group use PDF files with exploits as an infection vector.",
+      "triple": [
+        {
+          "subject": {
+            "name": "All samples",
+            "type": "Malware"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "PDF files with exploits",
+            "type": "Filepath"
+          },
+          "evidence": {
+            "quote": "use PDF files with exploits as an infection vector"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 12,
+        "id": "010",
         "source": "TEXT"
       }
     },
@@ -2182,17 +2698,18 @@
       "triple": [
         {
           "subject": {
-            "name": "d:\\sva\\nitro\\botgenstudio\\interface\\generations\\80ddfcc1\\bin\\Bot.pdb",
+            "name": "PDB path",
             "type": "Filepath"
           },
-          "predicate": "has",
+          "predicate": "hasAlias",
           "object": {
-            "name": "Both 'SVA' and 'NITRO'",
+            "name": "'SVA'",
             "type": "Unknown"
           },
           "evidence": {
-            "quote": "it also contains 'botgenstudio', again making it similar to Group #1."
-          }
+            "quote": "it also contains 'SVA'"
+          },
+          "repaired": true
         }
       ],
       "metadata": {
@@ -2215,7 +2732,7 @@
             "type": "SHA-1"
           },
           "evidence": {
-            "quote": "shows a similar PDB path"
+            "quote": "sha1: fb3b8f6494b211386381a7e4f6524d3e4643c9e9"
           }
         }
       ],
@@ -2233,7 +2750,7 @@
             "name": "Group #3 samples",
             "type": "Malware"
           },
-          "predicate": "has",
+          "predicate": "hasVulnerability",
           "object": {
             "name": "exploits or droppers",
             "type": "Exploit-kit"
@@ -2255,7 +2772,7 @@
         {
           "subject": {
             "name": "Group #3",
-            "type": "ThreatActor"
+            "type": "Campaign"
           },
           "predicate": "uses",
           "object": {
@@ -2263,7 +2780,7 @@
             "type": "Malware"
           },
           "evidence": {
-            "quote": "use the original MiniDuke loader"
+            "quote": "still use the original MiniDuke loader, while most recent ones are using the updated MiniDuke loader."
           }
         }
       ],
@@ -2278,16 +2795,16 @@
       "triple": [
         {
           "subject": {
-            "name": "latest samples",
+            "name": "samples",
             "type": "Malware"
           },
           "predicate": "uses",
           "object": {
-            "name": "y D:\\\\\\\\\\\\PRODUCTION\\\\\\NITRO\\\\\\KSK\\\\\\Generations\\\\\\70BCDEA1\\\\\\ bin\\\\Bot.pdb",
+            "name": "y D:\\\\\nPRODUCTION\\\\NITRO\\\\KSK\\\\Generations\\\\70BCDEA1\\\\ bin\\\\Bot.pdb",
             "type": "Filepath"
           },
           "evidence": {
-            "quote": "the latest samples use the following PDB path: y D:\\\\\\\\\\\\PRODUCTION\\\\\\\\NITRO\\\\\\KSK\\\\\\Generations\\\\\\70BCDEA1\\\\\\ bin\\\\Bot.pdb"
+            "quote": "use the following PDB path: y D:\\\\\nPRODUCTION\\\\NITRO\\\\KSK\\\\Generations\\\\70BCDEA1\\\\ bin\\\\Bot.pdb"
           }
         }
       ],
@@ -2298,26 +2815,27 @@
       }
     },
     {
-      "context": "This is quite similar to Group #2, though it seems 'SVA' has been replaced by 'KSK'.",
+      "context": "All samples in Group #3 connect to an FTP server at IP 188.116.32.164 using the same username ('adair') and password.",
       "triple": [
         {
           "subject": {
-            "name": "Group #2",
-            "type": "ThreatActor"
+            "name": "samples",
+            "type": "Malware"
           },
-          "predicate": "hasAlias",
+          "predicate": "uses",
           "object": {
-            "name": "KSK",
-            "type": "Organization"
+            "name": "FTP server at IP 188.116.32.164",
+            "type": "Infrastructure"
           },
           "evidence": {
-            "quote": "'KSK' has been replaced by 'KSK'"
-          }
+            "quote": "connect to an FTP server at IP 188.116.32.164"
+          },
+          "repaired": true
         }
       ],
       "metadata": {
         "page_number": 12,
-        "id": "023",
+        "id": "024",
         "source": "TEXT"
       }
     },
@@ -2355,41 +2873,17 @@
           },
           "predicate": "uses",
           "object": {
-            "name": "updated loader",
-            "type": "Malware"
+            "name": "updated loader with the SHA1 value fecdba1d903a51499a3953b4df1d850fbd5438bd",
+            "type": "SHA-1"
           },
           "evidence": {
-            "quote": "which uses the updated loader"
+            "quote": "uses the updated loader with t the SHA1 value"
           }
         }
       ],
       "metadata": {
         "page_number": 12,
         "id": "026",
-        "source": "TEXT"
-      }
-    },
-    {
-      "context": "The updated loader has PDB path, C:\\Projects\\NEMESIS\\ nemesis-gemina\\nemesis\\bin\\carriers\\ezlzma_x86_exe.",
-      "triple": [
-        {
-          "subject": {
-            "name": "loader",
-            "type": "Malware"
-          },
-          "predicate": "has",
-          "object": {
-            "name": "PDB path, C:\\Projects\\NEMESIS\\ nemesis-gemina\\nemesis\\bin\\carriers\\ezlzma_x86_exe.",
-            "type": "Filepath"
-          },
-          "evidence": {
-            "quote": "has PDB path, C:\\Projects\\NEMESIS\\ nemesis-gemina\\nemesis\\bin\\carriers\\ezlzma_x86_exe."
-          }
-        }
-      ],
-      "metadata": {
-        "page_number": 12,
-        "id": "027",
         "source": "TEXT"
       }
     }

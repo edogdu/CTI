@@ -5,6 +5,7 @@ From your notebook - LLM interaction, JSON repair, embedding
 File: core/utils.py
 """
 import json
+from multiprocessing.util import debug
 import re
 import requests
 from typing import List, Optional
@@ -16,7 +17,7 @@ import numpy as np
 # ============================================================================
 
 def generate_response(prompt: str, 
-                     model: str = "Gemma29:b",
+                     model: str = "gemma2:9b",
                      base_url: str = "http://localhost:11434",
                      max_tokens: int = 1200,
                      temperature: float = 0.1,
@@ -24,6 +25,7 @@ def generate_response(prompt: str,
     """
     Generate LLM response (from your notebook).
     """
+    
     try:
         response = requests.post(
             f"{base_url}/api/generate",

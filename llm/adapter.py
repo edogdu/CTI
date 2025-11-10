@@ -1,6 +1,0 @@
-# llm/adapter.py
-from typing import List, Protocol
-
-class LLM(Protocol):
-    def invoke(self, prompt: str) -> str: ...
-    def embed(self, texts: List[str]) -> List[List[float]]: ...

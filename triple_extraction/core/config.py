@@ -23,7 +23,7 @@ class Config:
         self.DNRTI_DIR = os.getenv("DNRTI_DIR", "/content/DNRTI")
         
         # Model configuration
-        self.MODEL_NAME = os.getenv("MODEL_NAME", "qwen2.5:14b")
+        self.MODEL_NAME = os.getenv("MODEL_NAME", "gemma2:9b")
         self.OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
         self.TEMPERATURE = float(os.getenv("TEMPERATURE", "0.1"))
         self.MAX_TOKENS = int(os.getenv("MAX_TOKENS", "1200"))

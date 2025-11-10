@@ -4,40 +4,49 @@
     "model_used": "gemma2:9b",
     "doc_sha256_id": "999c00af537eba4a",
     "num_pages": 20,
-    "num_sentences_total": 293,
-    "num_sentences_used": 188,
-    "num_raw_triples": 188,
-    "num_valid_triples": 87,
-    "num_suspicious_triples": 101,
+    "num_sentences_total": 296,
+    "num_sentences_used": 189,
+    "num_raw_triples": 189,
+    "num_valid_triples": 100,
+    "num_suspicious_triples": 0,
     "avg_triples_per_sentence": 1.0,
     "rejection_stats": {
-      "bad_structure": 0,
-      "invalid_class_or_predicate": 101
+      "bad_structure": 51,
+      "invalid_class_or_predicate": 75
     },
-    "runtime_seconds": 174.66022562980652
+    "runtime_seconds": 919.93,
+    "processes_used": {
+      "run_sentence": true,
+      "run_semantic": false,
+      "consensus_on_sentence": false,
+      "consensus_on_chunk": false,
+      "consensus_passes": 3,
+      "consensus_m": 2,
+      "use_repair": true
+    }
   },
   "data": [
     {
-      "context": "| || BLOG BLOG BLOG CrowdStrike's work with the Democratic National Committee: Setting the record straight June 05, 2020 | editorialteam | From The Front Lines = 1].6, void @); m(a, \"); 66 && splice(b, 1); return @.replace(RegExp(\" g\") = 0, d = @;d < @;d < use inp June 5, 2020 UPDATE Blog update following the release of the testimony by Shawn Henry, CSO and President of CrowdStrike Services, before the House Intelligence Committee that was recently declassified.",
+      "context": "June 5, 2020 UPDATE Blog update following the release of the testimony by Shawn Henry, CSO and President of CrowdStrike Services, before the House Intelligence Committee that was recently declassified.",
       "triple": [
         {
           "subject": {
-            "name": "Shawn Henry",
-            "type": "Person"
+            "name": "CrowdStrike Services",
+            "type": "Organization"
           },
           "predicate": "hasAlias",
           "object": {
-            "name": "CSO and President of CrowdStrike Services",
-            "type": "Organization"
+            "name": "Shawn Henry",
+            "type": "Person"
           },
           "evidence": {
-            "quote": "Shawn Henry, CSO and President of CrowdStrike Services"
+            "quote": "CSO and President of CrowdStrike Services"
           }
         }
       ],
       "metadata": {
         "page_number": 1,
-        "id": "002",
+        "id": "004",
         "source": "TEXT"
       }
     },
@@ -49,43 +58,20 @@
             "name": "CrowdStrike",
             "type": "Organization"
           },
-          "predicate": "hasVulnerability",
+          "predicate": "targets",
           "object": {
             "name": "breach",
-            "type": "AttackPattern_LargeDescription"
+            "type": "Vulnerability"
           },
           "evidence": {
-            "quote": "suspected breach"
-          }
+            "quote": "CrowdStrike was contacted on April 30, 2016 to respond to a suspected breach."
+          },
+          "repaired": true
         }
       ],
       "metadata": {
         "page_number": 1,
-        "id": "004",
-        "source": "TEXT"
-      }
-    },
-    {
-      "context": "We began our work with the DNC on May 1, 2016, collecting intelligence and analyzing the breach.",
-      "triple": [
-        {
-          "subject": {
-            "name": "DNC",
-            "type": "Organization"
-          },
-          "predicate": "hasVulnerability",
-          "object": {
-            "name": "breach",
-            "type": "AttackPattern_LargeDescription"
-          },
-          "evidence": {
-            "quote": "analyzing the breach"
-          }
-        }
-      ],
-      "metadata": {
-        "page_number": 1,
-        "id": "005",
+        "id": "006",
         "source": "TEXT"
       }
     },
@@ -94,7 +80,7 @@
       "triple": [
         {
           "subject": {
-            "name": "intruders",
+            "name": "adversaries",
             "type": "ThreatActor"
           },
           "predicate": "targets",
@@ -109,26 +95,24 @@
       ],
       "metadata": {
         "page_number": 1,
-        "id": "006",
+        "id": "008",
         "source": "TEXT"
       }
     },
     {
-      "context": "According to testimony by DNC IT contractor Yared Tamene Wolde-Yohannes, the FBI attributed the breach to the Russian Government in September 2015 (page 7).",
+      "context": "The DNC contacted CrowdStrike to respond to a suspected cyber attack impacting its network.",
       "triple": [
         {
           "subject": {
             "name": "DNC",
             "type": "Organization"
           },
-          "predicate": "hasVulnerability",
+          "predicate": "targets",
           "object": {
-            "name": "breach",
-            "type": "Exploit-kit"
+            "name": "CrowdStrike",
+            "type": "Organization"
           },
-          "evidence": {
-            "quote": "the FBI attributed the breach"
-          }
+          "repaired": true
         }
       ],
       "metadata": {
@@ -138,21 +122,44 @@
       }
     },
     {
+      "context": "The DNC was first alerted to the hack by the FBI in September 2015.",
+      "triple": [
+        {
+          "subject": {
+            "name": "DNC",
+            "type": "Organization"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "hack",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "The DNC was first alerted to the hack"
+          },
+          "repaired": true
+        }
+      ],
+      "metadata": {
+        "page_number": 1,
+        "id": "012",
+        "source": "TEXT"
+      }
+    },
+    {
       "context": " third-party industry experts, like CrowdStrike, to investigate and remediate cyber attacks when they suspect a breach even if they are collaborating with law enforcement.",
       "triple": [
         {
           "subject": {
-            "name": "CrowdStrike",
-            "type": "Organization"
-          },
-          "predicate": "hasAlias",
-          "object": {
             "name": "third-party industry experts",
-            "type": "Organization"
+            "type": "Person"
           },
-          "evidence": {
-            "quote": "like CrowdStrike"
-          }
+          "predicate": "targets",
+          "object": {
+            "name": "cyber attacks",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "repaired": true
         }
       ],
       "metadata": {
@@ -186,6 +193,28 @@
       }
     },
     {
+      "context": "Following a comprehensive investigation that CrowdStrike detailed publicly, the company concluded in May 2016 that two separate Russian intelligence-affiliated adversaries breached the DNC network.",
+      "triple": [
+        {
+          "subject": {
+            "name": "CrowdStrike",
+            "type": "Organization"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "two separate Russian intelligence-affiliated adversaries breached the DNC network",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "repaired": true
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
       "context": "To reference, CrowdStrike's account of their DNC investigation, published on June 14, 2016, 'CrowdStrike Services Inc., our Incident Response group, was called by the Democratic National Committee (DNC), the formal governing body for the US Democratic Party, to respond to a suspected breach.",
       "triple": [
         {
@@ -199,13 +228,37 @@
             "type": "Organization"
           },
           "evidence": {
-            "quote": "CrowdStrike Services Inc., our Incident Response group"
+            "quote": "'CrowdStrike Services Inc., our Incident Response group, '"
           }
         }
       ],
       "metadata": {
         "page_number": 2,
         "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "We deployed our IR team and technology and immediately identified two sophisticated adversaries on the network - COZY BEAR and FANCY BEAR….",
+      "triple": [
+        {
+          "subject": {
+            "name": "COZY BEAR",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "network",
+            "type": "Network"
+          },
+          "evidence": {
+            "quote": "two sophisticated adversaries on the network - COZY BEAR and FANCY BEAR…"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 2,
+        "id": "006",
         "source": "TEXT"
       }
     },
@@ -220,7 +273,7 @@
           "predicate": "targets",
           "object": {
             "name": "DNC",
-            "type": "Organization"
+            "type": "DomainName"
           },
           "evidence": {
             "quote": "At DNC, COZY BEAR intrusion has been identified"
@@ -238,16 +291,16 @@
       "triple": [
         {
           "subject": {
-            "name": "CrowdStrike's",
+            "name": "CrowdStrike",
             "type": "Organization"
           },
-          "predicate": "hasVulnerability",
+          "predicate": "indicates",
           "object": {
-            "name": "conclusion",
-            "type": "Report"
+            "name": "Russia was behind the DNC hack",
+            "type": "AttackPattern_LargeDescription"
           },
           "evidence": {
-            "quote": "CrowdStrike's conclusion"
+            "quote": "CrowdStrike's conclusion that Russia was behind the DNC hack is supported"
           }
         }
       ],
@@ -258,21 +311,47 @@
       }
     },
     {
+      "context": "Senator Richard Burr (R North Carolina), who served as Chairman of the Senate Intelligence Committee at the time the report was issued, confirmed this finding: 'The Committee found no reason to dispute the Intelligence Community's conclusions.'",
+      "triple": [
+        {
+          "subject": {
+            "name": "Senator Richard Burr",
+            "type": "Person"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Chairman of the Senate Intelligence Committee",
+            "type": "Organization"
+          },
+          "evidence": {
+            "quote": "'The Committee found no reason to dispute the Intelligence Community's conclusions.'"
+          },
+          "repaired": true
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "005",
+        "source": "TEXT"
+      }
+    },
+    {
       "context": "The Intelligence Community Assessment, published on January 6, 2017 also confirms that Russia was behind the DNC hack, stating on page 2 of the report: 'In July 2015, Russian intelligence gained access to Democratic National Committee (DNC) networks and maintained that access until at least June 2016.",
       "triple": [
         {
           "subject": {
-            "name": "Russian intelligence",
+            "name": "Russia",
             "type": "ThreatActor"
           },
           "predicate": "targets",
           "object": {
-            "name": "Democratic National Committee (DNC) networks",
-            "type": "Network"
+            "name": "DNC networks",
+            "type": "DomainName"
           },
           "evidence": {
-            "quote": "'In July 2015, Russian intelligence gained access to Democratic National Committee (DNC) networks'"
-          }
+            "quote": "'In July 2015, Russian intelligence gained access to Democratic National Committee (DNC) networks and maintained that access until at least June 2016."
+          },
+          "repaired": true
         }
       ],
       "metadata": {
@@ -282,20 +361,44 @@
       }
     },
     {
+      "context": "This unclassified ODNI report was based on extensive classified intelligence collected by the CIA, NSA, and FBI; the ODNI determined the classified intelligence should not be released in order to protect the sensitive sources and methods by which it was collected.",
+      "triple": [
+        {
+          "subject": {
+            "name": "ODNI",
+            "type": "Organization"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "sensitive sources and methods",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "protect the sensitive sources and methods by which it was collected"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
       "context": "It's also worth noting that other security companies, including Fidelis and FireEye have supported CrowdStrike's analysis.",
       "triple": [
         {
           "subject": {
-            "name": "CrowdStrike",
+            "name": "Fidelis",
             "type": "Organization"
           },
           "predicate": "hasAlias",
           "object": {
-            "name": "CrowdStrike's analysis",
-            "type": "Report"
+            "name": "CrowdStrike",
+            "type": "Organization"
           },
           "evidence": {
-            "quote": "CrowdStrike's analysis"
+            "quote": "have supported CrowdStrike's analysis"
           }
         }
       ],
@@ -316,7 +419,7 @@
           "predicate": "has",
           "object": {
             "name": "evidence",
-            "type": "Report"
+            "type": "Unknown"
           },
           "evidence": {
             "quote": "Does CrowdStrike have evidence"
@@ -343,13 +446,57 @@
             "type": "Indicator"
           },
           "evidence": {
-            "quote": "indicators of exfiltration"
+            "quote": "had indicators of exfiltration"
           }
         }
       ],
       "metadata": {
         "page_number": 3,
         "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "We collect forensics, evidence of prior activity on the network, map where the adversary has gained access and prepare remediation plans.",
+      "triple": [
+        {
+          "subject": {
+            "name": "adversary",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "where",
+            "type": "Location"
+          },
+          "repaired": true
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "017",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "In this particular case, CrowdStrike saw circumstantial evidence of data exfiltration from the DNC network.",
+      "triple": [
+        {
+          "subject": {
+            "name": "CrowdStrike",
+            "type": "Organization"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "data exfiltration from the DNC network",
+            "type": "Exfiltration"
+          },
+          "repaired": true
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "018",
         "source": "TEXT"
       }
     },
@@ -367,7 +514,7 @@
             "type": "Indicator"
           },
           "evidence": {
-            "quote": "had indicators of exfiltration"
+            "quote": "'Counsel just reminded me that, as it relates to the DNC' we have indicators that data was exfiltrated."
           }
         }
       ],
@@ -387,11 +534,11 @@
           },
           "predicate": "indicates",
           "object": {
-            "name": "data exfiltrated from the DNC",
+            "name": "data was exfiltrated from the DNC",
             "type": "Unknown"
           },
           "evidence": {
-            "quote": "we have indicators that it was exfiltrated"
+            "quote": "We have indicators that it was exfiltrated"
           }
         }
       ],
@@ -402,21 +549,46 @@
       }
     },
     {
+      "context": "We didn't have a network sensor in place that saw data leave'",
+      "triple": [
+        {
+          "subject": {
+            "name": "We",
+            "type": "Person"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "network sensor",
+            "type": "Hardware"
+          },
+          "evidence": {
+            "quote": "didn't have a network sensor in place"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 3,
+        "id": "024",
+        "source": "TEXT"
+      }
+    },
+    {
       "context": "On page 32 of the testimony, Henry also explains that 'We don't have video of it happening, but there are indicators that it happened' and 'we did not have concrete evidence that data was exfiltrated from the DNC, but we have indicators that it was exfiltrated.'",
       "triple": [
         {
           "subject": {
-            "name": "indicators",
-            "type": "Indicator"
+            "name": "Henry",
+            "type": "Person"
           },
           "predicate": "indicates",
           "object": {
-            "name": "it happened",
-            "type": "AttackPattern_LargeDescription"
+            "name": null,
+            "type": "Exfiltration"
           },
           "evidence": {
-            "quote": "'We don't have video of it happening, but there are indicators that it happened'"
-          }
+            "quote": "On page 32 of the testimony, Henry also explains that 'We don't have video of it happening, but there are indicators that it happened' and 'we did not have concrete evidence that data was exfiltrated from the DNC, but we have indicators that it was exfiltrated.'"
+          },
+          "repaired": true
         }
       ],
       "metadata": {
@@ -426,50 +598,51 @@
       }
     },
     {
-      "context": "Is it true that part of the exfiltration happened after CrowdStrike was already engaged by the DNC?",
+      "context": "As another reference point, the independent report by Special Counsel Robert S. Mueller also cites the theft of documents from the DNC and DCCC on page 40, stating the following: 'Officers from Unit 26165 stole thousands of documents from the DCCC and DNC networks, including significant amounts of data pertaining to the 2016 U.S. federal elections.",
       "triple": [
         {
           "subject": {
-            "name": "CrowdStrike",
-            "type": "Organization"
+            "name": "Officers",
+            "type": "Person"
           },
           "predicate": "targets",
           "object": {
-            "name": "DNC",
-            "type": "Organization"
+            "name": "DCCC and DNC networks",
+            "type": "Network"
           },
           "evidence": {
-            "quote": "was already engaged by the DNC"
+            "quote": "'Officers from Unit 26165 stole thousands of documents from the DCCC and DNC networks'"
           }
         }
       ],
       "metadata": {
         "page_number": 3,
-        "id": "033",
+        "id": "031",
         "source": "TEXT"
       }
     },
     {
-      "context": " This question about the specific timeline of the exfiltration is addressed directly by Shawn Henry in his testimony on page 26. '",
+      "context": "Stolen documents included internal strategy documents, fundraising data, opposition research, and emails from the work inboxes of DNC employees.'",
       "triple": [
         {
           "subject": {
-            "name": "Shawn Henry",
-            "type": "Person"
+            "name": "documents",
+            "type": "Unknown"
           },
-          "predicate": "hasAuthor",
+          "predicate": "has",
           "object": {
-            "name": "testimony",
-            "type": "Report"
+            "name": "internal strategy documents",
+            "type": "AttackPattern_SmallDescription"
           },
           "evidence": {
-            "quote": "his testimony"
-          }
+            "quote": "Stolen documents included internal strategy documents"
+          },
+          "repaired": true
         }
       ],
       "metadata": {
-        "page_number": 4,
-        "id": "000",
+        "page_number": 3,
+        "id": "032",
         "source": "TEXT"
       }
     },
@@ -483,7 +656,7 @@
           },
           "predicate": "targets",
           "object": {
-            "name": "infrastructure",
+            "name": "new infrastructure",
             "type": "Infrastructure"
           },
           "evidence": {
@@ -498,30 +671,6 @@
       }
     },
     {
-      "context": "So that would have been June 10th when we started.",
-      "triple": [
-        {
-          "subject": {
-            "name": "we",
-            "type": "Person"
-          },
-          "predicate": "targets",
-          "object": {
-            "name": "June 10th",
-            "type": "Time"
-          },
-          "evidence": {
-            "quote": "when we started"
-          }
-        }
-      ],
-      "metadata": {
-        "page_number": 4,
-        "id": "008",
-        "source": "TEXT"
-      }
-    },
-    {
       "context": "Of note, it is a standard practice in incident response to first coordinate a remediation event to prevent the adversary from doing further damage and following that to fully restore network functionality.",
       "triple": [
         {
@@ -531,11 +680,11 @@
           },
           "predicate": "targets",
           "object": {
-            "name": "adversary",
-            "type": "ThreatActor"
+            "name": "remediation event",
+            "type": "AttackPattern_SmallDescription"
           },
           "evidence": {
-            "quote": "to prevent the adversary from doing further damage"
+            "quote": "first coordinate a remediation event to prevent the adversary from doing further damage"
           }
         }
       ],
@@ -550,46 +699,20 @@
       "triple": [
         {
           "subject": {
-            "name": "DNC",
-            "type": "Organization"
+            "name": "DNC endpoints",
+            "type": "IPAddress"
           },
           "predicate": "targets",
           "object": {
-            "name": "endpoints",
-            "type": "Hardware"
+            "name": "attacks",
+            "type": "AttackPattern_SmallDescription"
           },
-          "evidence": {
-            "quote": "Did any DNC endpoints protected by your technology get breached in subsequent attacks?"
-          }
+          "repaired": true
         }
       ],
       "metadata": {
         "page_number": 5,
         "id": "005",
-        "source": "TEXT"
-      }
-    },
-    {
-      "context": "There is no indication of subsequent breaches taking place on any DNC machine protected by CrowdStrike Falcon®.",
-      "triple": [
-        {
-          "subject": {
-            "name": "DNC",
-            "type": "Organization"
-          },
-          "predicate": "targets",
-          "object": {
-            "name": "breaches",
-            "type": "AttackPattern_SmallDescription"
-          },
-          "evidence": {
-            "quote": "taking place on any DNC machine"
-          }
-        }
-      ],
-      "metadata": {
-        "page_number": 5,
-        "id": "006",
         "source": "TEXT"
       }
     },
@@ -607,7 +730,7 @@
             "type": "EmailAddress"
           },
           "evidence": {
-            "quote": "Russia stole Democratic Party emails"
+            "quote": "stole Democratic Party emails"
           }
         }
       ],
@@ -631,7 +754,7 @@
             "type": "Organization"
           },
           "evidence": {
-            "quote": "that CrowdStrike was hired to investigate"
+            "quote": "this is the timeline of the DNC hack that CrowdStrike was hired to investigate."
           }
         }
       ],
@@ -655,8 +778,9 @@
             "type": "Network"
           },
           "evidence": {
-            "quote": "Russian intelligence gained access to Democratic National Committee (DNC) networks"
-          }
+            "quote": "' Russian intelligence gained access to Democratic National Committee (DNC) networks "
+          },
+          "repaired": true
         }
       ],
       "metadata": {
@@ -679,13 +803,38 @@
             "type": "System"
           },
           "evidence": {
-            "quote": "attacks on election systems"
-          }
+            "quote": "Russian intelligence actors engaged in attacks on election systems"
+          },
+          "repaired": true
         }
       ],
       "metadata": {
         "page_number": 5,
         "id": "016",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " The attacks continued through June 2016 (p30.)",
+      "triple": [
+        {
+          "subject": {
+            "name": "attacks",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "June 2016",
+            "type": "Time"
+          },
+          "evidence": {
+            "quote": "The attacks continued through June 2016 (p30.)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "000",
         "source": "TEXT"
       }
     },
@@ -703,13 +852,88 @@
             "type": "Network"
           },
           "evidence": {
-            "quote": "stole thousands of documents from the DCCC and DNC networks"
+            "quote": "…stole thousands of documents from the DCCC and DNC networks"
           }
         }
       ],
       "metadata": {
         "page_number": 6,
         "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Stolen documents included internal strategy documents, fundraising data, opposition research, and emails from the work inboxes of DNC employees.'",
+      "triple": [
+        {
+          "subject": {
+            "name": "documents",
+            "type": "Filepath"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "internal strategy documents",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "Stolen documents included internal strategy documents"
+          },
+          "repaired": true
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "(p40) April 14, 2016: 'The GRU began stealing DCCC data shortly after it gained access to the network.",
+      "triple": [
+        {
+          "subject": {
+            "name": "GRU",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "DCCC data",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "'The GRU began stealing DCCC data shortly after it gained access to the network.'"
+          },
+          "repaired": true
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "On April 14, 2016 (approximately three days after the initial intrusion) GRU officers downloaded rar.exe onto the DCCC's document server.",
+      "triple": [
+        {
+          "subject": {
+            "name": "GRU officers",
+            "type": "Person"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "rar.exe",
+            "type": "Filename"
+          },
+          "evidence": {
+            "quote": "downloaded rar.exe"
+          },
+          "repaired": true
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "005",
         "source": "TEXT"
       }
     },
@@ -738,6 +962,28 @@
       }
     },
     {
+      "context": "The DNC contractor discovered unusual activity on the DNC network.",
+      "triple": [
+        {
+          "subject": {
+            "name": "DNC contractor",
+            "type": "Person"
+          },
+          "predicate": "indicates",
+          "object": {
+            "name": "unusual activity",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "repaired": true
+        }
+      ],
+      "metadata": {
+        "page_number": 6,
+        "id": "008",
+        "source": "TEXT"
+      }
+    },
+    {
       "context": "'…the first day that we found activity on our network that was unusual, nefarious by adversaries…' \"we saw sort of very loud activity… on one of our Window servers that couldn't have been done by one of us…an authorized user.",
       "triple": [
         {
@@ -751,7 +997,7 @@
             "type": "Network"
           },
           "evidence": {
-            "quote": "that was unusual, nefarious by adversaries… we saw sort of very loud activity… on one of our Window servers that couldn't have been done by one of us…an authorized user."
+            "quote": "on our network that was unusual, nefarious by adversaries…"
           }
         }
       ],
@@ -762,26 +1008,149 @@
       }
     },
     {
-      "context": "(p26) June 10-13, 2016: The DNC network remediation took place.",
+      "context": "With DNC permission, CrowdStrike continued to share information from the breach through December 2016, including 'digital images' or copies of hard-drives.",
       "triple": [
         {
           "subject": {
-            "name": "DNC network",
-            "type": "Network"
+            "name": "CrowdStrike",
+            "type": "Organization"
           },
-          "predicate": "hasVulnerability",
+          "predicate": "communicatesWith",
           "object": {
-            "name": "remediation",
-            "type": "AttackPattern_LargeDescription"
+            "name": "DNC",
+            "type": "Organization"
           },
           "evidence": {
-            "quote": "DNC network remediation took place"
+            "quote": "With DNC permission, CrowdStrike continued to share information"
           }
         }
       ],
       "metadata": {
         "page_number": 7,
-        "id": "001",
+        "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "(p35) June 14, 2016: The DNC, via CrowdStrike, publicly announced the breach of the DNC network and detailed its investigation.",
+      "triple": [
+        {
+          "subject": {
+            "name": "DNC",
+            "type": "Organization"
+          },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "breach",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "breach"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Separate cyber activity continued on state election systems through Dec 29, 2016 ( p25-26.)",
+      "triple": [
+        {
+          "subject": {
+            "name": "Separate cyber activity",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "state election systems",
+            "type": "System"
+          },
+          "evidence": {
+            "quote": "Separate cyber activity continued on state election systems"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "011",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "(p50) September 20, 2016: 'On September 20, 2016, the GRU began to generate copies of the DNC data using function designed to allow users to produce backups of databases (referred to as 'snapshots').",
+      "triple": [
+        {
+          "subject": {
+            "name": "GRU",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "function designed to allow users to produce backups of databases",
+            "type": "Software"
+          },
+          "evidence": {
+            "quote": "On September 20, 2016, the GRU began to generate copies of the DNC data using function designed to allow users to produce backups of databases (referred to as 'snapshots')."
+          },
+          "repaired": true
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "013",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The GRU then stole those snapshots by moving them to account that they controlled, from there the copies were moved to GRU-controlled computers.",
+      "triple": [
+        {
+          "subject": {
+            "name": "GRU",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "account",
+            "type": "DomainName"
+          },
+          "evidence": {
+            "quote": "they controlled"
+          },
+          "repaired": true
+        }
+      ],
+      "metadata": {
+        "page_number": 7,
+        "id": "014",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " The GRU stole approximately 300 gigabytes of data from the DNC cloud-based account.'",
+      "triple": [
+        {
+          "subject": {
+            "name": "GRU",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "DNC cloud-based account",
+            "type": "Unknown"
+          },
+          "evidence": {
+            "quote": "The GRU stole approximately 300 gigabytes of data from the DNC cloud-based account."
+          },
+          "repaired": true
+        }
+      ],
+      "metadata": {
+        "page_number": 8,
+        "id": "000",
         "source": "TEXT"
       }
     },
@@ -793,13 +1162,13 @@
             "name": "United States",
             "type": "Country"
           },
-          "predicate": "hasVulnerability",
+          "predicate": "has",
           "object": {
             "name": "election infrastructure",
             "type": "Infrastructure"
           },
           "evidence": {
-            "quote": "'that its incapacitation or destruction would have a devastating effect on the country.'"
+            "quote": "the United States' election infrastructure"
           }
         }
       ],
@@ -819,11 +1188,11 @@
           },
           "predicate": "hasAlias",
           "object": {
-            "name": "Organization",
-            "type": "Organization"
+            "name": "We were founded in California",
+            "type": "Location"
           },
           "evidence": {
-            "quote": "Here are a few key facts about CrowdStrike:"
+            "quote": "We were founded in California"
           }
         }
       ],
@@ -834,26 +1203,26 @@
       }
     },
     {
-      "context": "We have never had physical possession of the DNC servers .   ",
+      "context": "The Washington Post , The Russians manipulated our elections.",
       "triple": [
         {
           "subject": {
-            "name": "DNC",
+            "name": "The Washington Post",
             "type": "Organization"
           },
-          "predicate": "hasVulnerability",
+          "predicate": "indicates",
           "object": {
-            "name": "servers",
-            "type": "Hardware"
+            "name": "The Russians manipulated our elections",
+            "type": "AttackPattern_LargeDescription"
           },
           "evidence": {
-            "quote": "physical possession of the DNC servers"
+            "quote": "The Washington Post , The Russians manipulated our elections."
           }
         }
       ],
       "metadata": {
         "page_number": 8,
-        "id": "011",
+        "id": "017",
         "source": "TEXT"
       }
     },
@@ -871,7 +1240,7 @@
             "type": "AttackPattern_LargeDescription"
           },
           "evidence": {
-            "quote": "Discusses the CrowdStrike conspiracy theory and how it has been debunked."
+            "quote": "how it has been debunked"
           }
         }
       ],
@@ -891,8 +1260,8 @@
           },
           "predicate": "hasAlias",
           "object": {
-            "name": "the CrowdStrike theory",
-            "type": "AttackPattern_LargeDescription"
+            "name": "theory",
+            "type": "Unknown"
           },
           "evidence": {
             "quote": "Discusses the CrowdStrike theory"
@@ -906,78 +1275,6 @@
       }
     },
     {
-      "context": "NBC News ,   Debunking The Crowdstrike Conspiracy Theory Discusses the CrowdStrike theory and how it has been debunked.",
-      "triple": [
-        {
-          "subject": {
-            "name": "CrowdStrike",
-            "type": "Organization"
-          },
-          "predicate": "indicates",
-          "object": {
-            "name": "conspiracy theory",
-            "type": "AttackPattern_LargeDescription"
-          },
-          "evidence": {
-            "quote": "Discusses the CrowdStrike theory and how it has been debunked."
-          }
-        }
-      ],
-      "metadata": {
-        "page_number": 9,
-        "id": "007",
-        "source": "TEXT"
-      }
-    },
-    {
-      "context": " With regards to our investigation of the DNC hack in 2016, we provided all forensic evidence and analysis to the FBI.",
-      "triple": [
-        {
-          "subject": {
-            "name": "investigation",
-            "type": "AttackPattern"
-          },
-          "predicate": "targets",
-          "object": {
-            "name": "DNC hack",
-            "type": "Campaign"
-          },
-          "evidence": {
-            "quote": "investigation of the DNC hack"
-          }
-        }
-      ],
-      "metadata": {
-        "page_number": 10,
-        "id": "000",
-        "source": "TEXT"
-      }
-    },
-    {
-      "context": "FAQ on Recent News Coverage of CrowdStrike Is your owner Ukrainian?",
-      "triple": [
-        {
-          "subject": {
-            "name": "CrowdStrike",
-            "type": "Organization"
-          },
-          "predicate": "hasAlias",
-          "object": {
-            "name": "Recent News Coverage",
-            "type": "Report"
-          },
-          "evidence": {
-            "quote": "FAQ on Recent News Coverage of CrowdStrike"
-          }
-        }
-      ],
-      "metadata": {
-        "page_number": 10,
-        "id": "002",
-        "source": "TEXT"
-      }
-    },
-    {
       "context": "CrowdStrike was founded by George Kurtz and Dmitri Alperovitch.",
       "triple": [
         {
@@ -987,11 +1284,11 @@
           },
           "predicate": "hasAuthor",
           "object": {
-            "name": "George Kurtz",
+            "name": "George Kurtz and Dmitri Alperovitch",
             "type": "Person"
           },
           "evidence": {
-            "quote": "was founded by George Kurtz"
+            "quote": "was founded by George Kurtz and Dmitri Alperovitch"
           }
         }
       ],
@@ -1006,17 +1303,18 @@
       "triple": [
         {
           "subject": {
-            "name": "Foundstone",
-            "type": "Organization"
+            "name": "He",
+            "type": "Person"
           },
           "predicate": "hasAlias",
           "object": {
-            "name": "a worldwide security products and services company",
-            "type": "Unknown"
+            "name": "Foundstone",
+            "type": "Organization"
           },
           "evidence": {
-            "quote": "He also started Foundstone, a worldwide security products and services company"
-          }
+            "quote": "He also started Foundstone"
+          },
+          "repaired": true
         }
       ],
       "metadata": {
@@ -1026,74 +1324,48 @@
       }
     },
     {
-      "context": "Do you stand behind your work for the DNC?",
+      "context": "CrowdStrike's Co-founder Dmitri Alperovitch is a Russia-born U.S. citizen, who has spent all of his adult life in the United States, and has no connection to Ukraine.",
       "triple": [
         {
           "subject": {
-            "name": "DNC",
+            "name": "Dmitri Alperovitch",
+            "type": "Person"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "Russia-born U.S. citizen",
+            "type": "Unknown"
+          },
+          "repaired": true
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "007",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Did you comply with FBI's requests for information?",
+      "triple": [
+        {
+          "subject": {
+            "name": "FBI",
             "type": "Organization"
           },
           "predicate": "targets",
           "object": {
-            "name": "work",
+            "name": "information",
             "type": "Unknown"
           },
           "evidence": {
-            "quote": "for the DNC"
+            "quote": "requests for information"
           }
         }
       ],
       "metadata": {
         "page_number": 10,
-        "id": "009",
-        "source": "TEXT"
-      }
-    },
-    {
-      "context": "Additionally, our findings have been supported by the U.S. intelligence community and other cybersecurity companies.",
-      "triple": [
-        {
-          "subject": {
-            "name": "findings",
-            "type": "Indicator"
-          },
-          "predicate": "hasAlias",
-          "object": {
-            "name": "U.S. intelligence community and other cybersecurity companies",
-            "type": "Organization"
-          },
-          "evidence": {
-            "quote": "our findings have been supported by the U.S. intelligence community and other cybersecurity companies"
-          }
-        }
-      ],
-      "metadata": {
-        "page_number": 10,
-        "id": "011",
-        "source": "TEXT"
-      }
-    },
-    {
-      "context": "We've provided all forensic evidence and analysis to the FBI related to the DNC investigation as requested.",
-      "triple": [
-        {
-          "subject": {
-            "name": "We",
-            "type": "Person"
-          },
-          "predicate": "has",
-          "object": {
-            "name": "forensic evidence and analysis",
-            "type": "Report"
-          },
-          "evidence": {
-            "quote": "We've provided all forensic evidence and analysis"
-          }
-        }
-      ],
-      "metadata": {
-        "page_number": 10,
-        "id": "014",
+        "id": "013",
         "source": "TEXT"
       }
     },
@@ -1105,19 +1377,43 @@
             "name": "FBI",
             "type": "Organization"
           },
-          "predicate": "hasAlias",
+          "predicate": "targets",
           "object": {
-            "name": "this investigation",
-            "type": "Campaign"
+            "name": "information request",
+            "type": "Unknown"
           },
           "evidence": {
-            "quote": "related to this investigation"
+            "quote": "requests for information from the FBI related to this investigation"
           }
         }
       ],
       "metadata": {
         "page_number": 10,
         "id": "015",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "They do the same for the machine's memory, capturing evidence that would otherwise be lost at the next reboot, and they monitor and store the traffic passing through the victim's network.",
+      "triple": [
+        {
+          "subject": {
+            "name": "They",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "machine's memory",
+            "type": "Hardware"
+          },
+          "evidence": {
+            "quote": "They do the same for the machine's memory"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "020",
         "source": "TEXT"
       }
     },
@@ -1132,7 +1428,7 @@
           "predicate": "targets",
           "object": {
             "name": "breaches",
-            "type": "AttackPattern_SmallDescription"
+            "type": "AttackPattern_LargeDescription"
           },
           "evidence": {
             "quote": "stop breaches"
@@ -1146,26 +1442,48 @@
       }
     },
     {
-      "context": "CrowdStrike is not affiliated with any political party.",
+      "context": "Are you affiliated with the Democratic party?",
       "triple": [
         {
           "subject": {
-            "name": "CrowdStrike",
-            "type": "Organization"
+            "type": "Person",
+            "value": "You"
           },
-          "predicate": "hasAlias",
+          "predicate": "belongsTo",
           "object": {
-            "name": "Political Party",
-            "type": "Organization"
+            "type": "Organization",
+            "value": "Democratic party"
+          },
+          "repaired": true
+        }
+      ],
+      "metadata": {
+        "page_number": 10,
+        "id": "025",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "We have never worked for Secretary Clinton or her campaign, and never had access to her server or emails.",
+      "triple": [
+        {
+          "subject": {
+            "name": "We",
+            "type": "Person"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "access",
+            "type": "Unknown"
           },
           "evidence": {
-            "quote": "affiliated with any political party"
+            "quote": "never had access"
           }
         }
       ],
       "metadata": {
         "page_number": 10,
-        "id": "026",
+        "id": "032",
         "source": "TEXT"
       }
     },
@@ -1177,43 +1495,19 @@
             "name": "CrowdStrike",
             "type": "Organization"
           },
-          "predicate": "hasVulnerability",
+          "predicate": "has",
           "object": {
-            "name": "DNC hack",
+            "name": "investigation",
             "type": "Campaign"
           },
           "evidence": {
-            "quote": "CrowdStrike's investigation of the DNC hack"
+            "quote": "CrowdStrike's investigation"
           }
         }
       ],
       "metadata": {
         "page_number": 10,
         "id": "034",
-        "source": "TEXT"
-      }
-    },
-    {
-      "context": "Debunking The Crowdstrike Conspiracy Theory CNN, September 30, 2019: \"Don't miss the totally debunked conspiracy theory Donald Trump pushed in the Ukraine call\" AP/Washington Post, September 27, 2019: \"Why Trump asked Ukraine's president about 'CrowdStrike'\" Daily Beast, September 25, 2019: \"The Truth About Trump's Insane Ukraine 'Server' Conspiracy\" Wired, September 25, 2019: \"How Trump's Ukraine Mess Entangled CrowdStrike\" Daily Beast, July 17, 2019: \"Trump's 'Missing DNC Server' Is Neither Missing Nor a Server\" Security Week, October 4, 2018: \"The DNC Hacker Indictment: A Lesson in Failed Misattribution\" Daily Beast, July 16, 2018 : \"Trump's 'Missing DNC Server' Is Neither Missing Nor a Server\" Daily Beast, June 13, 2018: \"Mueller Indicts 12 Russian Officers for Hacking Dems in 2016\" U.S. Department of Justice Indictment, June 13, 2018: \"Case 1:18-cr-00215-ABJ\" ArsTechnica, March 23, 2018: \"DNC 'lone hacker' Guccifer 2.0 pegged as Russian spy after opsec fail' Tech Crunch, March 22, 2018:",
-      "triple": [
-        {
-          "subject": {
-            "name": "CrowdStrike",
-            "type": "Organization"
-          },
-          "predicate": "targets",
-          "object": {
-            "name": "Ukraine",
-            "type": "Location"
-          },
-          "evidence": {
-            "quote": "Why Trump asked Ukraine's president about 'CrowdStrike'"
-          }
-        }
-      ],
-      "metadata": {
-        "page_number": 11,
-        "id": "001",
         "source": "TEXT"
       }
     },
@@ -1231,7 +1525,7 @@
             "type": "Organization"
           },
           "evidence": {
-            "quote": "More evidence ties alleged DNC hacker Guccifer 2.0 to Russian intelligence'"
+            "quote": "alleged DNC hacker Guccifer 2.0"
           }
         }
       ],
@@ -1242,41 +1536,17 @@
       }
     },
     {
-      "context": " not being hacked is probably wrong' Daily Beast, July 20, 2017: \"Putin's Hackers Now Under AttackFrom Microsoft' Washington Post, July 6, 2017: \"Here's the public evidence that supports the idea that Russia interfered in the 2016 election' Senate testimony of Thomas Rid, March 30, 2017 Senate testimony of Kevin Mandia, March 30, 2017 Wired Magazine, March 5, 2017: 'Hunting the DNC hackers: how Crowdstrike found proof Russia hacked the Democrats' New York Times, Jan. 6, 2017: 'Intelligence Report on Russian Hacking' (includes full copy of the official U.S. Intelligence and Law Enforcement Agency report): New York Times, Dec. 13, 2016: 'The Perfect Weapon: How Russian Cyberpower Invaded the U.S.' Washington Post, June 20, 2016: 'Cyber researchers confirm Russian government hack of Democratic National Committee' ThreatConnect Blog, June 17, 2016: 'Rebooting Watergate:",
-      "triple": [
-        {
-          "subject": {
-            "name": "Crowdstrike",
-            "type": "Organization"
-          },
-          "predicate": "targets",
-          "object": {
-            "name": "Russia",
-            "type": "Person"
-          },
-          "evidence": {
-            "quote": "Hunting the DNC hackers: how Crowdstrike found proof Russia hacked the Democrats'"
-          }
-        }
-      ],
-      "metadata": {
-        "page_number": 12,
-        "id": "000",
-        "source": "TEXT"
-      }
-    },
-    {
       "context": "Tapping into the Democratic National Committee' SecureWorks Blog, June 16, 2016: 'Russian Threat Group Targets Clinton Campaign' June 15, 2016 UPDATE:",
       "triple": [
         {
           "subject": {
-            "name": "Russian Threat Group",
-            "type": "ThreatActor"
+            "name": "Democratic National Committee",
+            "type": "Organization"
           },
           "predicate": "targets",
           "object": {
             "name": "Clinton Campaign",
-            "type": "Organization"
+            "type": "Campaign"
           },
           "evidence": {
             "quote": "'Russian Threat Group Targets Clinton Campaign'"
@@ -1297,13 +1567,13 @@
             "name": "CrowdStrike Services Inc.",
             "type": "Organization"
           },
-          "predicate": "targets",
+          "predicate": "hasAlias",
           "object": {
-            "name": "Democratic National Committee (DNC)",
+            "name": "our Incident Response group",
             "type": "Organization"
           },
           "evidence": {
-            "quote": "was called by the Democratic National Committee (DNC)"
+            "quote": "CrowdStrike Services Inc., our Incident Response group,"
           }
         }
       ],
@@ -1314,11 +1584,36 @@
       }
     },
     {
+      "context": "We deployed our IR team and technology and immediately identified two sophisticated adversaries on the network - COZY BEAR and FANCY BEAR.",
+      "triple": [
+        {
+          "subject": {
+            "name": "COZY BEAR",
+            "type": "ThreatActor"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "FANCY BEAR",
+            "type": "ThreatActor"
+          },
+          "evidence": {
+            "quote": "COZY BEAR and FANCY BEAR"
+          },
+          "repaired": true
+        }
+      ],
+      "metadata": {
+        "page_number": 12,
+        "id": "012",
+        "source": "TEXT"
+      }
+    },
+    {
       "context": "In particular, we identified advanced methods consistent with nation-state level capabilities including deliberate targeting and 'access management' tradecraft - both groups were constantly going back into the environment to change out their implants, modify persistent methods, move to new Command & Control channels and perform other tasks to try to stay ahead of being detected.",
       "triple": [
         {
           "subject": {
-            "name": "both groups",
+            "name": "groups",
             "type": "ThreatActor"
           },
           "predicate": "targets",
@@ -1327,13 +1622,38 @@
             "type": "System"
           },
           "evidence": {
-            "quote": "going back into the environment"
+            "quote": "'access management' tradecraft - both groups were constantly going back into the environment"
           }
         }
       ],
       "metadata": {
         "page_number": 12,
         "id": "016",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Both adversaries engage in extensive political and economic espionage for the benefit of the government of the Russian Federation and are believed to be closely linked to the Russian government's powerful and highly capable intelligence services.",
+      "triple": [
+        {
+          "subject": {
+            "name": "adversaries",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "political and economic espionage",
+            "type": "AttackPattern_LargeDescription"
+          },
+          "evidence": {
+            "quote": "Both adversaries engage in extensive political and economic espionage"
+          },
+          "repaired": true
+        }
+      ],
+      "metadata": {
+        "page_number": 12,
+        "id": "017",
         "source": "TEXT"
       }
     },
@@ -1393,14 +1713,12 @@
             "name": "Victims",
             "type": "Person"
           },
-          "predicate": "hasAlias",
+          "predicate": "targets",
           "object": {
             "name": "Western Europe",
-            "type": "Region"
+            "type": "Location"
           },
-          "evidence": {
-            "quote": "have also been observed in Western Europe"
-          }
+          "repaired": true
         }
       ],
       "metadata": {
@@ -1410,20 +1728,45 @@
       }
     },
     {
+      "context": "COZY BEAR's preferred intrusion method is a broadly targeted spearphish campaign that typically includes web links to a malicious dropper.",
+      "triple": [
+        {
+          "subject": {
+            "name": "COZY BEAR",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "spearphish campaign",
+            "type": "Campaign"
+          },
+          "evidence": {
+            "quote": "COZY BEAR's preferred intrusion method is a broadly targeted spearphish campaign"
+          },
+          "repaired": true
+        }
+      ],
+      "metadata": {
+        "page_number": 12,
+        "id": "021",
+        "source": "TEXT"
+      }
+    },
+    {
       "context": "Once executed on the machine, the code will deliver one of a number of sophisticated Remote Access Tools (RATs), including AdobeARM, ATI-Agent, and MiniDionis.",
       "triple": [
         {
           "subject": {
             "name": "code",
-            "type": "Malware"
+            "type": "Application"
           },
-          "predicate": "uses",
+          "predicate": "targets",
           "object": {
             "name": "Remote Access Tools (RATs)",
-            "type": "AttackPattern"
+            "type": "Malware"
           },
           "evidence": {
-            "quote": "the code will deliver one of a number of sophisticated Remote Access Tools (RATs)"
+            "quote": "will deliver one of a number of sophisticated Remote Access Tools (RATs)"
           }
         }
       ],
@@ -1447,7 +1790,7 @@
             "type": "Unknown"
           },
           "evidence": {
-            "quote": "using a range of techniques"
+            "quote": "On many occasions, both the dropper and the payload will contain a range of techniques to ensure the sample is not being analyzed on a virtual machine, using a debugger, or located within a sandbox."
           }
         }
       ],
@@ -1463,16 +1806,17 @@
         {
           "subject": {
             "name": "They",
-            "type": "Organization"
+            "type": "Person"
           },
-          "predicate": "has",
+          "predicate": "hasVulnerability",
           "object": {
-            "name": "extensive checks",
-            "type": "AttackPattern_LargeDescription"
+            "name": "extensive checks for security software",
+            "type": "Unknown"
           },
           "evidence": {
-            "quote": "They have extensive checks"
-          }
+            "quote": "They have extensive checks for the various security software that is installed on the system and their specific configurations."
+          },
+          "repaired": true
         }
       ],
       "metadata": {
@@ -1495,7 +1839,7 @@
             "type": "Unknown"
           },
           "evidence": {
-            "quote": "is used for the Command & Control communication."
+            "quote": "uses encrypted payload"
           }
         }
       ],
@@ -1530,36 +1874,12 @@
       }
     },
     {
-      "context": "Their victims have been identified in the United States, Western Europe, Brazil, Canada, China, Georgia, Iran, Japan, Malaysia and South Korea.",
-      "triple": [
-        {
-          "subject": {
-            "name": "Victims",
-            "type": "Person"
-          },
-          "predicate": "targets",
-          "object": {
-            "name": "United States",
-            "type": "Location"
-          },
-          "evidence": {
-            "quote": "Their victims have been identified in the United States"
-          }
-        }
-      ],
-      "metadata": {
-        "page_number": 14,
-        "id": "004",
-        "source": "TEXT"
-      }
-    },
-    {
       "context": "Extensive targeting of defense ministries and other military victims has been observed, the profile of which closely mirrors the strategic interests of the Russian government, and may indicate affiliation with Главное Разведывательное Управление ( Main Intelligence Department) or GRU, Russia's premier military intelligence service.",
       "triple": [
         {
           "subject": {
-            "name": "Russian government",
-            "type": "Organization"
+            "name": "targeting",
+            "type": "AttackPattern"
           },
           "predicate": "targets",
           "object": {
@@ -1567,7 +1887,7 @@
             "type": "Organization"
           },
           "evidence": {
-            "quote": "Extensive targeting of defense ministries and other military victims has been observed,"
+            "quote": "Extensive targeting of defense ministries and other military victims"
           }
         }
       ],
@@ -1582,22 +1902,47 @@
       "triple": [
         {
           "subject": {
-            "name": "This adversary",
+            "name": "Adversary",
             "type": "ThreatActor"
           },
           "predicate": "has",
           "object": {
-            "name": "Sofacy",
-            "type": "MalwareFamily"
+            "name": "Implants",
+            "type": "Malware"
           },
           "evidence": {
-            "quote": "which have been developed over the course of many years and include Sofacy"
+            "quote": "This adversary has a wide range of implants at their disposal"
           }
         }
       ],
       "metadata": {
         "page_number": 14,
         "id": "006",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "Afterwards, they establish phishing sites on these domains that spoof the look and feel of the victim's web-based email services in order to steal their credentials.",
+      "triple": [
+        {
+          "subject": {
+            "name": "they",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "victim's web-based email services",
+            "type": "EmailAddress"
+          },
+          "evidence": {
+            "quote": "Afterwards, they establish phishing sites on these domains that spoof the look and feel of the victim's web-based email services in order to steal their credentials."
+          },
+          "repaired": true
+        }
+      ],
+      "metadata": {
+        "page_number": 14,
+        "id": "008",
         "source": "TEXT"
       }
     },
@@ -1611,11 +1956,11 @@
           },
           "predicate": "hasAlias",
           "object": {
-            "name": "intrusions into the German Bundestag and France's TV5 Monde TV station in April 2015",
-            "type": "Campaign"
+            "name": "unknown",
+            "type": "Unknown"
           },
           "evidence": {
-            "quote": "has also been linked publicly to intrusions into the German Bundestag and France's TV5 Monde TV station in April 2015"
+            "quote": "has also been linked publicly"
           }
         }
       ],
@@ -1633,13 +1978,13 @@
             "name": "COZY BEAR",
             "type": "ThreatActor"
           },
-          "predicate": "targets",
+          "predicate": "has",
           "object": {
-            "name": "DNC",
-            "type": "Organization"
+            "name": "intrusion",
+            "type": "AttackPattern_LargeDescription"
           },
           "evidence": {
-            "quote": "At DNC, COZY BEAR intrusion has been identified"
+            "quote": "COZY BEAR intrusion"
           }
         }
       ],
@@ -1659,12 +2004,13 @@
           },
           "predicate": "targets",
           "object": {
-            "name": "same target",
+            "name": "target",
             "type": "Unknown"
           },
           "evidence": {
             "quote": "going after the same target"
-          }
+          },
+          "repaired": true
         }
       ],
       "metadata": {
@@ -1678,16 +2024,16 @@
       "triple": [
         {
           "subject": {
-            "name": "‘Putin’s Hydra: Inside Russia’s Intelligence Services’",
+            "name": "Putin's Hydra: Inside Russia's Intelligence Services",
             "type": "Report"
           },
-          "predicate": "hasAuthor",
+          "predicate": "indicates",
           "object": {
-            "name": "European Council on Foreign Relations",
-            "type": "Organization"
+            "name": "highly adversarial relationship",
+            "type": "AttackPattern_LargeDescription"
           },
           "evidence": {
-            "quote": "a recent paper from European Council on Foreign Relations"
+            "quote": "does an excellent job outlining the highly adversarial relationship"
           }
         }
       ],
@@ -1698,50 +2044,100 @@
       }
     },
     {
+      "context": "Thus, it is not surprising to see them engage in intrusions against the same victim, even when it may be a waste of resources and lead to the discovery and potential compromise of mutual operations.",
+      "triple": [
+        {
+          "subject": {
+            "name": "them",
+            "type": "ThreatActor"
+          },
+          "predicate": "targets",
+          "object": {
+            "name": "victim",
+            "type": "Person"
+          },
+          "evidence": {
+            "quote": "see them engage in intrusions against the same victim"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 15,
+        "id": "002",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The COZY BEAR intrusion relied primarily on the SeaDaddy implant developed in Python and compiled with py2exe and another Powershell backdoor with persistence accomplished via Windows Management Instrumentation (WMI) system, which allowed the adversary to launch malicious code automatically after a specified period of system uptime or on a specific schedule.",
+      "triple": [
+        {
+          "subject": {
+            "name": "COZY BEAR",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "SeaDaddy implant",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "The COZY BEAR intrusion relied primarily on the SeaDaddy implant"
+          },
+          "repaired": true
+        }
+      ],
+      "metadata": {
+        "page_number": 15,
+        "id": "003",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "The Powershell backdoor is ingenious in its simplicity and power.",
+      "triple": [
+        {
+          "subject": {
+            "name": "Powershell",
+            "type": "Software"
+          },
+          "predicate": "hasAlias",
+          "object": {
+            "name": "backdoor",
+            "type": "Backdoor"
+          },
+          "evidence": {
+            "quote": "The Powershell backdoor"
+          },
+          "repaired": true
+        }
+      ],
+      "metadata": {
+        "page_number": 15,
+        "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
       "context": "Bypass - EncodedCommand ZgB1AG4AYwB0AGkAbwBuACAAcABlAHIAZgBDAHIAKAAkAGM",
       "triple": [
         {
           "subject": {
             "name": "Bypass",
-            "type": "AttackPattern"
-          },
-          "predicate": "uses",
-          "object": {
-            "name": "EncodedCommand",
             "type": "AttackPattern_LargeDescription"
           },
+          "predicate": "hasVulnerability",
+          "object": {
+            "name": "EncodedCommand ZgB1AG4AYwB0AGkAbwBuACAAcABlAHIAZgBDAHIAKAAkAGM",
+            "type": "SHA-256"
+          },
           "evidence": {
-            "quote": "Bypass - EncodedCommand"
+            "quote": "Bypass - EncodedCommand ZgB1AG4AYwB0AGkAbwBuACAAcABlAHIAZgBDAHIAKAAkAGM"
           }
         }
       ],
       "metadata": {
         "page_number": 15,
         "id": "006",
-        "source": "TEXT"
-      }
-    },
-    {
-      "context": "AQAAoACQAbQBzACwAIAAkAGMAcgBUAHIALAAgAFsAUwB5A HMAdABlAG0ALgBTAGUAYwB1AHIAaQB0AHkALgBDAHIAeQBw AHQAbwBnAHIAYQBwAGgAeQAuAEMAcgB5AHAAdABvAFMAdA ByAGUAYQBtAE0AbwBkAGUAXQA6ADoAVwByAGkAdABlACkAD QAKAAkACQAkAGMAcwAuAFcAcgBpAHQAZQAoACQAZABhAH QAYQAsACAAMAAsACAAJABkAGEAdABhAC4ATABlAG4AZwB0 AGgAKQANAAoACQAJACQAYwBzAC4ARgBsAHUAcwBoAEYAa QBuAGEAbABCAGwAbwBjAGsAKAApAA0ACgAJAAkAJAByAGU AdAAgAD0AIAAkAG0AcwAuAFQAbwBBAHIAcgBhAHkAKAApAA 0ACgAJAAkAJABjAHMALgBDAGwAbwBzAGUAKAApAA0ACgAJ AAkAJABtAHMALgBDAGwAbwBzAGUAKAApAA0ACgAJAH0AD QAKAAkAYwBhAHQAYwBoAHsAfQANAAoACQByAGUAdAB1AHI AbgAgACQAcgBlAHQADQAKAH0ADQAKAA0ACgBmAHUAbgBjA",
-      "triple": [
-        {
-          "subject": {
-            "name": "AQAAoACQAbQBzACwAIAAkAGMAcgBUAHIALAAgAFsAUwB5A HMAdABlAG0ALgBTAGUAYwB1AHIAaQB0AHkALgBDAHIAeQBw AHQAbwBnAHIAYQBwAGgAeQAuAEMAcgB5AHAAdABvAFMAdA ByAGUAYQBtAE0AbwBkAGUAXQA6ADoAVwByAGkAdABlACkAD QAKAAkACQAkAGMAcwAuAFcAcgBpAHQAZQAoACQAZABhAH QAYQAsACAAMAAsACAAJABkAGEAdABhAC4ATABlAG4AZwB0 AGgAKQANAAoACQAJACQAYwBzAC4ARgBsAHUAcwBoAEYAa QBuAGEAbABCAGwAbwBjAGsAKAApAA0ACgAJAAkAJAByAGU AdAAgAD0AIAAkAG0AcwAuAFQAbwBBAHIAcgBhAHkAKAApAA 0ACgAJAAkAJABjAHMALgBDAGwAbwBzAGUAKAApAA0ACgAJ AAkAJABtAHMALgBDAGwAbwBzAGUAKAApAA0ACgAJAH0AD QAKAAkAYwBhAHQAYwBoAHsAfQANAAoACQByAGUAdAB1AHI AbgAgACQAcgBlAHQADQAKAH0ADQAKAA0ACgBmAHUAbgBjA",
-            "type": "Hash"
-          },
-          "predicate": "indicates",
-          "object": {
-            "name": "MalwareAnalysis",
-            "type": "AttackPattern_LargeDescription"
-          },
-          "evidence": {
-            "quote": "MalwareAnalysis"
-          }
-        }
-      ],
-      "metadata": {
-        "page_number": 15,
-        "id": "008",
         "source": "TEXT"
       }
     },
@@ -1759,13 +2155,37 @@
             "type": "SHA-256"
           },
           "evidence": {
-            "quote": "AB4ADQAYwAsACAAMAB4ADEAYgAsACAAMAB4AGMAMAAsACAA AB4AGUANwAsACAAMAB4ADUANwAsACAAMAB4AGIAM"
+            "quote": "AB4ADQAYwAsACAAMAB4ADEAYgAsACAAMAB4AGMAMAAsACAA MA B4AGUANwAsACAAMAB4ADUANwAsACAAMAB4AGIAM"
           }
         }
       ],
       "metadata": {
         "page_number": 16,
         "id": "004",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": " This decodes to: function perfCr($crTr, $data){ $ret = $null try{ $ms = New-Object System.IO.MemoryStream",
+      "triple": [
+        {
+          "subject": {
+            "name": "function",
+            "type": "Application"
+          },
+          "predicate": "has",
+          "object": {
+            "name": "perfCr",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": " This decodes to: function perfCr($crTr, $data)"
+          }
+        }
+      ],
+      "metadata": {
+        "page_number": 17,
+        "id": "000",
         "source": "TEXT"
       }
     },
@@ -1780,10 +2200,10 @@
           "predicate": "uses",
           "object": {
             "name": "@($ms, $crTr, ::Write)",
-            "type": "AttackPattern_SmallDescription"
+            "type": "Unknown"
           },
           "evidence": {
-            "quote": " -ArgumentList @($ms, $crTr, ::Write)"
+            "quote": "-ArgumentList @($ms, $crTr, ::Write)"
           }
         }
       ],
@@ -1794,36 +2214,12 @@
       }
     },
     {
-      "context": "Close() $ms.Close() } catch{} return $ret } function decrAes($encData, $key, $iv) { $ret = $null try{ $prov = New-Object System.",
-      "triple": [
-        {
-          "subject": {
-            "name": "$ret",
-            "type": "Unknown"
-          },
-          "predicate": "has",
-          "object": {
-            "name": "$null",
-            "type": "Unknown"
-          },
-          "evidence": {
-            "quote": " $ret = $null try{"
-          }
-        }
-      ],
-      "metadata": {
-        "page_number": 17,
-        "id": "008",
-        "source": "TEXT"
-      }
-    },
-    {
       "context": "sWP 'Wmi' 'Wmi' $aeK $aeI | Out-Null This one-line powershell command, stored only in WMI database, establishes an encrypted connection to C2 and downloads additional powershell modules from it, executing them in memory.",
       "triple": [
         {
           "subject": {
             "name": "powershell command",
-            "type": "AttackPattern"
+            "type": "CommandAndControl"
           },
           "predicate": "uses",
           "object": {
@@ -1831,7 +2227,7 @@
             "type": "System"
           },
           "evidence": {
-            "quote": "stored only in WMI database"
+            "quote": "'sWP 'Wmi' 'Wmi' $aeK $aeI | Out-Null This one-line powershell command, stored only in WMI database, establishes an encrypted connection to C2 and downloads additional powershell modules from it, executing them in memory."
           }
         }
       ],
@@ -1846,8 +2242,8 @@
       "triple": [
         {
           "subject": {
-            "name": "additional modules",
-            "type": "Malware"
+            "name": "modules",
+            "type": "Application"
           },
           "predicate": "targets",
           "object": {
@@ -1855,8 +2251,9 @@
             "type": "System"
           },
           "evidence": {
-            "quote": "the additional modules can do virtually anything on the victim system"
-          }
+            "quote": "In theory, the additional modules can do virtually anything on the victim system."
+          },
+          "repaired": true
         }
       ],
       "metadata": {
@@ -1875,12 +2272,13 @@
           },
           "predicate": "has",
           "object": {
-            "name": "different",
-            "type": "Unknown"
+            "name": "different value on each",
+            "type": "System"
           },
           "evidence": {
-            "quote": "The encryption keys in the script were different on every system."
-          }
+            "quote": "were different on every system"
+          },
+          "repaired": true
         }
       ],
       "metadata": {
@@ -1900,16 +2298,41 @@
           "predicate": "uses",
           "object": {
             "name": "Powershell",
-            "type": "Application"
+            "type": "Software"
           },
           "evidence": {
-            "quote": "Powershell version of credential theft tool MimiKatz"
+            "quote": "Powershell version of credential theft tool MimiKatz was also used"
           }
         }
       ],
       "metadata": {
         "page_number": 17,
         "id": "021",
+        "source": "TEXT"
+      }
+    },
+    {
+      "context": "FANCY BEAR adversary used different tradecraft, deploying X-Agent malware with capabilities to do remote command execution, file transmission and keylogging.",
+      "triple": [
+        {
+          "subject": {
+            "name": "FANCY BEAR",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "X-Agent",
+            "type": "Malware"
+          },
+          "evidence": {
+            "quote": "FANCY BEAR adversary used different tradecraft, deploying X-Agent malware"
+          },
+          "repaired": true
+        }
+      ],
+      "metadata": {
+        "page_number": 17,
+        "id": "022",
         "source": "TEXT"
       }
     },
@@ -1923,11 +2346,11 @@
           },
           "predicate": "uses",
           "object": {
-            "name": "X-Tunnel network tunneling tool",
-            "type": "Software"
+            "name": "X-Tunnel",
+            "type": "Application"
           },
           "evidence": {
-            "quote": "which facilitates connections to NAT-ed environments, was used to also execute remote commands."
+            "quote": "FANCY BEAR's X-Tunnel network tunneling tool"
           }
         }
       ],
@@ -1942,16 +2365,16 @@
       "triple": [
         {
           "subject": {
-            "name": "RemCOM",
-            "type": "Application"
+            "name": "tools",
+            "type": "Unknown"
           },
-          "predicate": "hasAlias",
+          "predicate": "uses",
           "object": {
-            "name": "PsExec",
-            "type": "Application"
+            "name": "RemCOM",
+            "type": "AttackPattern_SmallDescription"
           },
           "evidence": {
-            "quote": "an open-source replacement for PsExec"
+            "quote": "Both tools were deployed via RemCOM"
           }
         }
       ],
@@ -1962,17 +2385,42 @@
       }
     },
     {
+      "context": "They also engaged in a number of anti-forensic analysis measures, such as periodic event log clearing (via wevtutil cl System and wevtutil cl Security commands) and resetting timestamps of files.",
+      "triple": [
+        {
+          "subject": {
+            "name": "They",
+            "type": "ThreatActor"
+          },
+          "predicate": "uses",
+          "object": {
+            "name": "periodic event log clearing",
+            "type": "AttackPattern_SmallDescription"
+          },
+          "evidence": {
+            "quote": "They also engaged in a number of anti-forensic analysis measures, such as periodic event log clearing (via wevtutil cl System and wevtutil cl Security commands)"
+          },
+          "repaired": true
+        }
+      ],
+      "metadata": {
+        "page_number": 17,
+        "id": "025",
+        "source": "TEXT"
+      }
+    },
+    {
       "context": "Intelligence collection directed by nation state actors against US political targets provides invaluable insight into the requirements directed upon those actors.",
       "triple": [
         {
           "subject": {
-            "name": "Intelligence collection",
-            "type": "AttackPattern"
+            "name": "nation state actors",
+            "type": "ThreatActor"
           },
           "predicate": "targets",
           "object": {
             "name": "US political targets",
-            "type": "Organization"
+            "type": "Location"
           },
           "evidence": {
             "quote": "directed by nation state actors against US political targets"
@@ -1982,126 +2430,6 @@
       "metadata": {
         "page_number": 17,
         "id": "026",
-        "source": "TEXT"
-      }
-    },
-    {
-      "context": "Regardless of the agency or unit tasked with this collection, the upcoming US election, and the associated candidates and parties are of critical interest to both hostile and friendly nation states.",
-      "triple": [
-        {
-          "subject": {
-            "name": "US election",
-            "type": "Campaign"
-          },
-          "predicate": "targets",
-          "object": {
-            "name": "hostile and friendly nation states",
-            "type": "Organization"
-          },
-          "evidence": {
-            "quote": "are of critical interest to both hostile and friendly nation states"
-          }
-        }
-      ],
-      "metadata": {
-        "page_number": 17,
-        "id": "027",
-        "source": "TEXT"
-      }
-    },
-    {
-      "context": "Attacks against electoral candidates and the parties they represent are likely to continue up until the election in November.",
-      "triple": [
-        {
-          "subject": {
-            "name": "Attacks",
-            "type": "AttackPattern"
-          },
-          "predicate": "targets",
-          "object": {
-            "name": "electoral candidates",
-            "type": "Person"
-          },
-          "evidence": {
-            "quote": "Attacks against electoral candidates "
-          }
-        }
-      ],
-      "metadata": {
-        "page_number": 17,
-        "id": "029",
-        "source": "TEXT"
-      }
-    },
-    {
-      "context": "Falcon Prevent - Next Generation AV Falcon Insight - Managed Endpoint Detection and Response Falcon Discover - Network Security Monitoring Falcon Overwatch - Threat Hunting CrowdStrike Falcon® Intelligence - Threat Intel  Tweet  Share Related Content",
-      "triple": [
-        {
-          "subject": {
-            "name": "Falcon Prevent",
-            "type": "Software"
-          },
-          "predicate": "hasAlias",
-          "object": {
-            "name": "Next Generation AV",
-            "type": "Unknown"
-          },
-          "evidence": {
-            "quote": "Falcon Prevent - Next Generation AV"
-          }
-        }
-      ],
-      "metadata": {
-        "page_number": 19,
-        "id": "001",
-        "source": "TEXT"
-      }
-    },
-    {
-      "context": "CrowdStrik e Named a Leader with 'Bold Vision' in 2024 Forrester Wave for Cybersecur ity Incident Response Services How to Defend Employees and Data as Social Engineerin g Evolves The Anatomy of an ALPHA SPIDER Ransomwar e Attack AI & Machine Learning 19 Cloud & Application Security 112 Counter Adversary Operations 186 Endpoint Security & XDR 303 Engineering & Tech 78 Executive Viewpoint 164 Exposure Management 87 From The Front Lines 190 Identity Protection 42 Next-Gen SIEM & Log Management 93 Public Sector 37 Small Business 10",
-      "triple": [
-        {
-          "subject": {
-            "name": "CrowdStrik e",
-            "type": "Organization"
-          },
-          "predicate": "hasAlias",
-          "object": {
-            "name": "Leader",
-            "type": "Unknown"
-          },
-          "evidence": {
-            "quote": "'Bold Vision' in 2024 Forrester Wave for Cybersecur ity Incident Response Services"
-          }
-        }
-      ],
-      "metadata": {
-        "page_number": 20,
-        "id": "002",
-        "source": "TEXT"
-      }
-    },
-    {
-      "context": " CROWDSTRIKE Get started with CrowdStrike for free Start Free Trial FEATURED ARTICLES October 01, 2024 CrowdStrike Named a Leader in 2024 Gartner® Magic Quadrant™ for Endpoint Protection Platforms September 25, 2024 Recognizing the Resilience of the CrowdStrike Community September 25, 2024 CrowdStrike Drives Cybersecurity Forward with New Innovations Spanning AI, Cloud, Next-Gen SIEM and Identity Protection September 18, 2024",
-      "triple": [
-        {
-          "subject": {
-            "name": "CrowdStrike",
-            "type": "Organization"
-          },
-          "predicate": "targets",
-          "object": {
-            "name": "Endpoint Protection Platforms",
-            "type": "Unknown"
-          },
-          "evidence": {
-            "quote": "Named a Leader in 2024 Gartner® Magic Quadrant™ for Endpoint Protection Platforms"
-          }
-        }
-      ],
-      "metadata": {
-        "page_number": 21,
-        "id": "000",
         "source": "TEXT"
       }
     }

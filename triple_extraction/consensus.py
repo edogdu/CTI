@@ -1,4 +1,3 @@
-# consensus.py
 import re
 from collections import defaultdict
 from difflib import SequenceMatcher
@@ -9,10 +8,10 @@ def _norm(s: str) -> str:
 def _key(t):
     s = t.get("subject", {}) or {}
     o = t.get("object", {}) or {}
-    p = (t.get("predicate") or "").strip()
-    return (_norm(s.get("name","")), (s.get("type") or "").strip(),
+    p = _norm(t.get("predicate") or "")
+    return (_norm(s.get("name","")), _norm(s.get("type") or ""),
             p,
-            _norm(o.get("name","")), (o.get("type") or "").strip())
+            _norm(o.get("name","")), _norm(o.get("type") or ""))
 
 def _sim(a: str, b: str) -> float:
     return SequenceMatcher(None, _norm(a), _norm(b)).ratio()
@@ -26,17 +25,23 @@ def consensus_filter(candidate_lists,
                      allowed_types, allowed_preds,
                      m=2, tau_name=0.90):
     """Keep only triples that reach quorum m across multiple prompt outputs."""
-    # whitelist + flat
+    # 1) whitelist + flatten with type guards
     all_triples = []
     for triples in (candidate_lists or []):
         for t in (triples or []):
-            s, o, p = t.get("subject") or {}, t.get("object") or {}, t.get("predicate") or ""
-            if s.get("type") in allowed_types and o.get("type") in allowed_types and p in allowed_preds:
+            if not isinstance(t, dict):
+                continue
+            s = t.get("subject") or {}
+            o = t.get("object") or {}
+            p = _norm(t.get("predicate") or "")
+            st = _norm(s.get("type") or ""); ot = _norm(o.get("type") or "")
+            if st in allowed_types and ot in allowed_types and p in allowed_preds:
                 all_triples.append(t)
 
     if not all_triples:
         return []
 
+    # 2) exact buckets
     buckets = defaultdict(list)
     for t in all_triples:
         buckets[_key(t)].append(t)
@@ -45,13 +50,12 @@ def consensus_filter(candidate_lists,
     visited = set()
     accepted = []
 
+    # 3) merge near-dupes within same (types + predicate)
     for i, ki in enumerate(keys):
-        if ki in visited:
-            continue
+        if ki in visited: continue
         group = list(buckets[ki])
-
-        # try to merge near-duplicates with same predicate/types
         si,ti,pi,oi,ui = ki
+
         for j, kj in enumerate(keys):
             if j <= i or kj in visited: 
                 continue
@@ -65,8 +69,9 @@ def consensus_filter(candidate_lists,
                     group += buckets[kj]
                     visited.add(kj)
 
-        if len(group) >= m:
-            rep = max(group, key=lambda t: len((t.get("evidence") or {}).get("quote","")))
+        # 4) quorum
+        if len(group) >= max(2, m):
+            rep = max(group, key=lambda t: len(((t.get("evidence") or {}).get("quote") or "")))
             accepted.append(rep)
 
         visited.add(ki)
