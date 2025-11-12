@@ -1,12 +1,12 @@
 import argparse
-import json
+import yaml
 import subprocess
 from pathlib import Path
 
-CONFIG_PATH = Path("config/run_config.json")
+CONFIG_PATH = Path("config/run_config.yaml")
 
 def update_run_config(args):
-    #Update run_config.json based on command-line arguments.
+    #Update run_config.yaml based on command-line arguments.
     config = {
         "modules": {
             "consensus": args.consensus,
@@ -17,7 +17,7 @@ def update_run_config(args):
     }
 
     with open(CONFIG_PATH, "w") as f:
-        json.dump(config, f, indent=4)
+        yaml.dump(config, f)
 
 def run_pipeline():
     #Execute the main pipeline
