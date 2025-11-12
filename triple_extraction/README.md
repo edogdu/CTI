@@ -22,52 +22,36 @@ Record Valid vs Invalid triples, # of extracted triples, Avg contexts per entity
 
 ##  Triple Validation and Repair
 
-Located in the **`/triple_consensus_and_repair/`** folder, this method refines CTI triple extraction results by filtering, validating, and repairing triples that fail schema or consensus checks.
+Located in the **`/triple_validation_and_repair/`** folder, this method refines CTI triple extraction results by filtering, validating, and repairing triples that fail schema or consensus checks.
 
 ---
 
-### extraction_consensus_plus_invalid.py
-
-Performs automated triple extraction and consensus filtering on CTI reports in PDF format.  
-Uses **Docling** for text conversion, **SpaCy** for segmentation, and a local **`gemma2:9b`** model for multiple prompt-based extractions.  
-Valid triples are saved to:  
-`triple_extraction/extracted_triples/chunk_data_gemma2_9b.json`  
-Invalid or non-consensus triples are stored in:  
-`triple_extraction/extracted_triples/invalid_triples_gemma2_9b.json`  
-for later repair.
-
----
-
-### repair_invalid_triples.py
+### triple_validation_and_repair.py
 
 Loads invalid triples from  
 `triple_extraction/extracted_triples/invalid_triples_gemma2_9b.json`,  
-applies deterministic normalization (`det_fix`), validates against **STIX/UCO schema**, and performs a strict LLM repair pass using **`gemma2:9b`** - followed by a **loose LLM pass only if beneficial**.    
-Repaired triples are saved to `invalid_triples_gemma2_9b_repaired_valid.json`, and remaining invalid ones to `invalid_triples_gemma2_9b_still_invalid.json`, improving overall dataset accuracy and schema compliance.
-
-### repair_invalid_triples_w_Markov_smoothing.py
-
-Loads invalid triples from  
-`triple_extraction/extracted_triples/invalid_triples_gemma2_9b.json`,  
-applies deterministic normalization (`det_fix`), applies Markov Smoothing, validates against **STIX/UCO schema**, and performs a strict LLM repair pass using **`gemma2:9b`** - followed by a **loose LLM pass only if beneficial**.    
+applies deterministic normalization (`det_fix`), applies Markov Smoothing, validates against **STIX/UCO schema**, and performs a strict LLM repair pass using **`gemma2:9b`** - followed by a **loose LLM pass only if beneficial, additionally runs a SZF pass**.    
 Repaired triples are saved to `invalid_triples_gemma2_9b_repaired.json`, and remaining invalid ones to `invalid_triples_gemma2_9b_still_bad.json`, improving overall dataset accuracy and schema compliance.
 
+##  Validation & Repair Results Comparison
 
-##  Extraction & Repair Results Comparison
+| Ontology  | Original Invalid Triples | Processing Pipeline                         | ⏱️ Time (s) | ✅ Repaired | ❌ Invalid | 📝 Notes |
+|------------|--------------------------|---------------------------------------------|-------------|-------------|------------|----------|
+| **STIX 2.1** | 272 | Deterministic + 2 LLM passes              | 203.6 s | 4 | 268 | Conservative validation aligned with STIX 2.1 standards. Low repair rate due to strict schema and relationship constraints—most triples were filtered rather than corrected. |
+| **STIX 2.1** | 272 | Deterministic + Markov + 2 LLM passes    | 814.4 s | 91 | 181 | Markov smoothing improved contextual alignment and reduced repair needs. Lower invalid rate indicates higher validity in the original extraction while maintaining STIX 2.1’s strict relationship standards. |
+| **STIX 2.1** | 278 | Deterministic + Markov + 2 LLM + SZF pass | 860.2 s | 107 | 171 | SZF (Skew Zero Forcing) propagation enhanced graph connectivity but yielded limited new valid edges under strict STIX rules. Most propagated triples were rejected by validation due to type and domain constraints, confirming STIX’s tight ontology boundaries. |
+| **MalOnt**   | 280 | Deterministic + 2 LLM passes              | 60.5 s | 207 | 73 | Lower repair rate demonstrates higher validity in the original extraction phase. More flexible ontology mapping required fewer downstream fixes. |
+| **MalOnt**   | 280 | Deterministic + Markov + 2 LLM passes    | 220 s | 248 | 32 | High valid count achieved through successful LLM and Markov repairs. Although final accuracy is high, many triples were corrected rather than valid from the start. |
 
-| Ontology  | Original Invalid Triples | Processing Pipeline                  | ⏱️ Time (s) | ✅ Repaired | ❌ Invalid | 📝 Notes |
-|------------|--------------------------|--------------------------------------|-------------|----------|------------|----------|
-| **STIX 2.1** | 272 | Deterministic + 2 LLM passes          | 203.6 s     | 4        | 268        | Conservative validation aligned with STIX 2.1 standards. Low repair rate due to strict schema and relationship constraints—most triples were filtered rather than corrected. |
-| **STIX 2.1** | 272 | Deterministic + Markov + 2 LLM passes | 814.4 s     | 91       | 181        | Markov smoothing improved contextual alignment and reduced repair needs. Lower invalid rate indicates higher validity in the original extraction while maintaining STIX 2.1’s strict relationship standards. |
-| **MalOnt**   | 280 | Deterministic + 2 LLM passes          | 60.5 s      | 207      | 73         | Lower repair rate demonstrates higher validity in the original extraction phase. More flexible ontology mapping required fewer downstream fixes. |
-| **MalOnt**   | 280 | Deterministic + Markov + 2 LLM passes | 220 s       | 248      | 32         | High valid count achieved mainly through successful LLM and Markov repairs. Although final accuracy is high, many triples were corrected rather than valid from the start. |
+---
 
+###  Summary Insights
+- **SZF** confirmed the strong structural precision of STIX 2.1; most rejections came from strict domain/type limits.  
+- **Markov + LLM** stages handled nearly all recoverable errors—SZF mainly verified final graph stability.  
+- **Lower invalid rates** reflect higher validity in the original extraction phase.  
+- **STIX 2.1** enforces strict relationship typing for precision, reducing recall flexibility.  
+- **MalOnt** allows broader ontology mappings, enabling faster repair convergence and higher recall efficiency.
 
-**Summary Insights**
--  **Lower invalid (repair) rates** reflect **greater validity in the original extraction**, requiring fewer downstream LLM corrections.  
--  **STIX 2.1** enforces **strict entity typing and relationship standards**, ensuring schema compliance but yielding higher initial invalid counts.  
--  **MalOnt** allows broader ontology mappings, producing faster alignment with fewer restrictions.  
--  **Markov smoothing** enhances contextual continuity and predicate coherence, reducing correction needs across both ontologies.
 
 
 ---
