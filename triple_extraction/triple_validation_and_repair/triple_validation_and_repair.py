@@ -134,12 +134,6 @@ def normalize_entity_label(name: str, typ: str|None=None) -> str:
 
 #GraphPostProcessorSZF: denoiser + mild completion
 class GraphPostProcessorSZF:
-    """
-    Lightweight SZF-inspired propagation:
-    - start with high-confidence entities/relations as 'forced'.
-    - propagate support along incident edges; accept edges/nodes that touch forced items when ontology-compatible.
-    - acts like a denoiser and mild graph completion.
-    """
     def __init__(self, ce=0.80, cr=0.75, max_iters=50):
         self.ce, self.cr, self.max_iters = ce, cr, max_iters
 
@@ -161,10 +155,6 @@ class GraphPostProcessorSZF:
         return normalize_entity_label(name, typ)
 
     def run(self, triples: list[dict]):
-        """
-        input: list of dict triples (subject{name,type,confidence?}, predicate, object{...}, confidence?)
-        output: (ents, rels) — lists of normalized, confidence-adjusted dicts.
-        """
         from collections import defaultdict
         E = {}; R = {}
         adj_e = defaultdict(set); adj_r = defaultdict(set)
@@ -199,13 +189,13 @@ class GraphPostProcessorSZF:
             adj_e[sid].add(rid); adj_e[oid].add(rid)
             adj_r[rid].add(sid); adj_r[rid].add(oid)
 
-        # seed forced sets
+        #seed forced sets
         forced_e = {nid for nid, e in E.items() if float(e.get("confidence",0.0)) >= self.ce}
         forced_r = {rid for rid, r in R.items()
                     if float(r.get("confidence",0.0)) >= self.cr
                     and self._compat(r["subject"]["type"], r["predicate"], r["object"]["type"])}
 
-        # propagate
+        #propagate
         changed, it = True, 0
         while changed and it < self.max_iters:
             changed = False; it += 1
@@ -218,7 +208,7 @@ class GraphPostProcessorSZF:
                 if any(rid in forced_r for rid in adj_e[nid]):
                     forced_e.add(nid); changed = True
 
-        # finalize
+        #finalize
         ents2 = []
         for nid, e in E.items():
             c = float(e.get("confidence", 0.5))
@@ -414,6 +404,18 @@ def should_try_loose(reasons: list[str]) -> bool:
         return False
     return any(r in FIXABLE_BY_LOOSE for r in reasons)
 
+
+#Decide if we should call the LLM at all for this triple
+def should_call_llm(reasons: list[str]) -> bool:
+    #Return True only if:there is at least one 'fixable' reason, and there are no structural/schema-fatal reasons.
+    if not reasons:
+        return False
+    #structural, schema-level problems LLM is unlikely to fix robustly
+    if any(r in FATAL_FOR_LOOSE for r in reasons):
+        return False
+    #only worth trying if there is at least one 'fixable' reason
+    return any(r in FIXABLE_BY_LOOSE for r in reasons)
+
 def ensure_model():
     try:
         r=SESSION.get(f"{BASE}/api/tags",timeout=6) #Uses persistent SESSION now
@@ -439,20 +441,42 @@ def _extract_json_list_loose(text: str):
         return []
 
 def prompt(t, ctx=""):
-    """Builds a concise repair instruction for MODEL."""
-    sub=t.get("subject") or {}; obj=t.get("object") or {}
+    # Single pass prompt now, only use 1 TRiple now, not 1-3 like before
+    sub = t.get("subject") or {}
+    obj = t.get("object") or {}
     return (
-        "You are a CTI triple repair assistant. Return ONLY a JSON array of "
-        "candidate repaired triples (objects with subject, predicate, object). "
-        "Rules:\n"
-        f"- Subject/object 'type' must be from: {sorted(list(TYPES))}\n"
-        f"- Predicate must be from: {sorted(list(PREDS))}\n"
-        f"- Enforce domain/range per SCHEMA where applicable.\n"
-        "- Keep names realistic; avoid UNKNOWN if possible.\n"
-        "- Keep the core meaning consistent with the context.\n"
-        f"Context: {ctx[:800]}\n"
-        f"Current triple:\n{json.dumps(t, ensure_ascii=False)}\n"
-        "Return 1–3 options."
+        "You are a CTI triple repair assistant. "
+    "You may propose multiple alternative repaired triples that are valid under the STIX 2.1 ontology.\n"
+    "\n"
+    "Your task:\n"
+    "- Repair or reinterpret the SUBJECT, PREDICATE, and OBJECT so each candidate triple is valid.\n"
+    "- You may paraphrase entity names, adjust roles, or reinterpret relationships when supported by context.\n"
+    "- You may produce multiple plausible mappings if the context allows more than one interpretation.\n"
+    "- Expand ambiguous or incomplete names when the context implies a clearer entity.\n"
+    "- You are allowed to correct ambiguous types by selecting the most contextually appropriate STIX 2.1 type.\n"
+    "\n"
+    "Strict constraints:\n"
+    f"- Subject/object 'type' MUST come ONLY from: {sorted(list(TYPES))}\n"
+    f"- Predicate MUST come ONLY from: {sorted(list(PREDS))}\n"
+    "- Do NOT invent completely new entities not implied by the context.\n"
+    "- Keep names realistic and aligned with the text.\n"
+    "- Changes must remain grounded in the contextual meaning.\n"
+    "\n"
+    "Output rules:\n"
+    "- Return ONLY a JSON array with **3 to 5 repaired triple candidates**.\n"
+    "- Each element must follow the required schema.\n"
+    "- No explanations, no commentary, no markdown.\n"
+    "\n"
+    "Required schema for each triple:\n"
+    "{\n"
+    '  "subject": {"name": "...", "type": "..."},\n'
+    '  "predicate": "...",\n'
+    '  "object": {"name": "...", "type": "..."},\n'
+    '  "confidence": 0.0\n'
+    "}\n"
+    "\n"
+    f"Context (truncated): {ctx[:800]}\n"
+    f"Original triple:\n{json.dumps(t, ensure_ascii=False)}"
     )
 
 def ask_llm(ptxt):
@@ -530,15 +554,20 @@ def main():
         t=e.get("triple") if isinstance(e,dict) and "triple" in e else e
         ctx=e.get("context") if isinstance(e,dict) else "" #Get the "context" portion of the triple. 
 #Updated repair passes
-        # 1) deterministic fix
+       #1) deterministic fix
         t1 = det_fix(t)
         ok, reasons = validate(t1)
         if ok:
             repaired.append({"triple": t1, "repair": "deterministic"})
-            # (optional) progress print here
+            if i % 50 == 0 or i == total:
+                print(f"[progress] {i}/{total} processed; OK={len(repaired)} BAD={len(bad)}")
             continue
 
-        # 2) Markov smoothing attempt (sentence-level)
+        # Track the current best triple + reasons to feed into later stages
+        current_triple = t1
+        current_reasons = reasons
+
+        #2) Markov smoothing attempt (sentence-level)
         sents, smooth_types = ctx_cache.get(ctx, ([], []))
         if sents:
             t2 = _apply_sentence_smoothing_to_triple(t1, ctx, sents, smooth_types)
@@ -546,12 +575,29 @@ def main():
                 ok2, reasons2 = validate(t2)
                 if ok2:
                     repaired.append({"triple": t2, "repair": "markov_smooth"})
-                    # (optional) progress print here
+                    if i % 50 == 0 or i == total:
+                        print(f"[progress] {i}/{total} processed; OK={len(repaired)} BAD={len(bad)}")
                     continue
+                else:
+                    # use the smoothed triple + its reasons as the basis for any LLM attempt
+                    current_triple = t2
+                    current_reasons = reasons2
 
-        # 3) Strict LLM pass
-        accepted=False
-        ptxt = prompt(t1, ctx)
+        # 3)Early decision: decide if this triple is even worth an LLM call
+        if not should_call_llm(current_reasons):
+            bad.append({
+                "original": t,
+                "deterministic": current_triple,
+                "deterministic_reasons": current_reasons,
+                "context": ctx
+            })
+            if i % 10 == 0 or i == total:
+                print(f"[progress] {i}/{total} processed; OK={len(repaired)} BAD={len(bad)}")
+            continue
+
+        #4) Single LLM repair pass (strict+loose behavior combined)
+        accepted = False
+        ptxt = prompt(current_triple, ctx)
         props = ask_llm(ptxt)
         if props:
             for c in props:
@@ -559,109 +605,85 @@ def main():
                 c = det_fix(c)
                 ok2, _ = validate(c)
                 if ok2:
-                    repaired.append({"triple": c, "repair": f"{MODEL}_strict"})
+                    # label as a single-pass LLM repair
+                    repaired.append({"triple": c, "repair": f"{MODEL}_single"})
                     accepted = True
                     break
-
-        #Only try loose LLM pass if strict failed and reasons are fixable
-        if not accepted and should_try_loose(reasons):
-            ptxt_loose = (
-                prompt(t1, ctx)
-                + "\nIf needed, paraphrase entity names slightly; "
-                "types and predicates MUST remain from the allowed lists."
-            )
-            props = ask_llm(ptxt_loose)
-            if props:
-                for c in props:
-                    c.setdefault("confidence", 0.5)
-                    c = det_fix(c)
-                    ok3, _ = validate(c)
-                    if ok3:
-                        repaired.append({"triple": c, "repair": f"{MODEL}_loose"})
-                        accepted = True
-                        break
-        #Diag to see why the loose was skipped            
-#           if not accepted and not should_try_loose(reasons):
-#               print(f"skip loose {reasons}")
 
         if not accepted:
             bad.append({
                 "original": t,
-                "deterministic": t1,
-                "deterministic_reasons": reasons,
+                "deterministic": current_triple,
+                "deterministic_reasons": current_reasons,
                 "context": ctx
             })
 
         if i % 50 == 0 or i == total:
             print(f"[progress] {i}/{total} processed; OK={len(repaired)} BAD={len(bad)}")
-    #SZF pass (prompted; run only if we have repaired items)
+        
+   #SZF pass
     if repaired:
-        # ask user if they want to run SZF in console
-        try:
-            _ans = input("Run SZF propagation pass? [y/N]: ").strip().lower()
-        except EOFError:
-            _ans = "n"
-        if not (_ans.startswith("y")):
-            print("[szf] skipped by user")
-        else:
-            # build input to SZF: high-conf from repaired; lower-conf from deterministic of still-bad
-            szf_input = []
+        print("[szf] running SZF propagation pass...")
+        #build input to SZF: high-conf from repaired; lower-conf from deterministic of still-bad
+        szf_input = []
 
-            # seed from already accepted items
-            for it in repaired:
-                t = det_fix(it.get("triple", {}))
-                subj = dict(t.get("subject", {})); subj["confidence"] = max(0.85, float(subj.get("confidence", 0.5)))
-                obj  = dict(t.get("object", {}));  obj["confidence"]  = max(0.85, float(obj.get("confidence", 0.5)))
-                szf_input.append({
-                    "subject": subj,
-                    "predicate": t.get("predicate"),
-                    "object": obj,
-                    "confidence": max(0.85, float(t.get("confidence", 0.8))),
-                    "evidence": t.get("evidence")
-                })
+        #seed from already accepted items
+        for it in repaired:
+            t = det_fix(it.get("triple", {}))
+            subj = dict(t.get("subject", {})); subj["confidence"] = float(subj.get("confidence", 0.9)) or 0.9
+            obj  = dict(t.get("object", {}));  obj["confidence"]  = float(obj.get("confidence", 0.9)) or 0.9
+            szf_input.append({
+                "subject": subj,
+                "predicate": t.get("predicate"),
+                "object": obj,
+                "confidence": max(0.85, float(t.get("confidence", 0.8))),
+                "evidence": t.get("evidence")
+            })
 
-            # include best-effort deterministic triples from still-bad set
-            for it in bad:
-                t = det_fix(it.get("deterministic", it.get("original", {})))
-                subj = dict(t.get("subject", {})); subj["confidence"] = float(subj.get("confidence", 0.4)) or 0.4
-                obj  = dict(t.get("object", {}));  obj["confidence"]  = float(obj.get("confidence", 0.4)) or 0.4
-                szf_input.append({
-                    "subject": subj,
-                    "predicate": t.get("predicate"),
-                    "object": obj,
-                    "confidence": float(t.get("confidence", 0.4)) or 0.4,
-                    "evidence": t.get("evidence")
-                })
+        #include best-effort deterministic triples from still-bad set
+        for it in bad:
+            t = det_fix(it.get("deterministic", it.get("original", {})))
+            subj = dict(t.get("subject", {})); subj["confidence"] = float(subj.get("confidence", 0.4)) or 0.4
+            obj  = dict(t.get("object", {}));  obj["confidence"]  = float(obj.get("confidence", 0.4)) or 0.4
+            szf_input.append({
+                "subject": subj,
+                "predicate": t.get("predicate"),
+                "object": obj,
+                "confidence": float(t.get("confidence", 0.4)) or 0.4,
+                "evidence": t.get("evidence")
+            })
 
-            szf = GraphPostProcessorSZF(ce=0.80, cr=0.75, max_iters=50)
-            ents2, rels2 = szf.run(szf_input)
+        szf = GraphPostProcessorSZF(ce=0.80, cr=0.75, max_iters=50)
+        ents2, rels2 = szf.run(szf_input)
 
-            # validate SZF output; only add new edges; print progress
-            seen_key = set()
-            def _key_of(tr):
-                sub = tr.get("subject", {}); obj = tr.get("object", {})
-                return (normalize_entity_label(sub.get("name",""), sub.get("type","")),
-                        canon_pred(tr.get("predicate", "")),
-                        normalize_entity_label(obj.get("name",""), obj.get("type","")))
+        #validate SZF output; only add new edges; print progress
+        seen_key = set()
+        def _key_of(tr):
+            sub = tr.get("subject", {}); obj = tr.get("object", {})
+            return (normalize_entity_label(sub.get("name",""), sub.get("type","")),
+                    canon_pred(tr.get("predicate", "")),
+                    normalize_entity_label(obj.get("name",""), obj.get("type","")))
 
-            for it in repaired:
-                seen_key.add(_key_of(it["triple"]))
+        for rr in repaired:
+            seen_key.add(_key_of(rr.get("triple", {})))
 
-            added_by_szf = 0
-            total_szf = len(rels2); i = 0
-            for r in rels2:
-                i += 1
-                ok, _ = validate(det_fix(r))
-                k = _key_of(r)
-                if ok and k not in seen_key:
-                    repaired.append({"triple": det_fix(r), "repair": "szf_propagation"})
-                    seen_key.add(k); added_by_szf += 1
-                # progress style same as main loop
-                if i % 25 == 0 or i == total_szf:
-                    print(f"[progress] {i}/{total_szf} SZF candidates checked; OK={len(repaired)} BAD={len(bad)}")
+        added_by_szf = 0
+        total_szf = len(rels2)
+        for i, tr in enumerate(rels2, 1):
+            k = _key_of(tr)
+            if k in seen_key:
+                continue
+            ok4, _ = validate(tr)
+            if ok4:
+                repaired.append({"triple": tr, "repair": "szf_propagated"})
+                seen_key.add(k)
+                added_by_szf += 1
 
-            if added_by_szf:
-                print(f"[szf] added {added_by_szf} propagated triples")
+            if i % 25 == 0 or i == total_szf:
+                print(f"[progress] {i}/{total_szf} SZF candidates checked; OK={len(repaired)} BAD={len(bad)}")
+
+        if added_by_szf:
+            print(f"[szf] added {added_by_szf} propagated triples")
 
 
     print("\n[done] Saving results...")
