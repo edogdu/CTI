@@ -35,22 +35,21 @@ Repaired triples are saved to `invalid_triples_gemma2_9b_repaired.json`, and rem
 
 ##  Validation & Repair Results Comparison
 
-| Ontology  | Original Invalid Triples | Processing Pipeline                         | ⏱️ Time (s) | ✅ Repaired | ❌ Invalid | 📝 Notes |
-|------------|--------------------------|---------------------------------------------|-------------|-------------|------------|----------|
-| **STIX 2.1** | 272 | Deterministic + 2 LLM passes              | 203.6 s | 4 | 268 | Conservative validation aligned with STIX 2.1 standards. Low repair rate due to strict schema and relationship constraints—most triples were filtered rather than corrected. |
-| **STIX 2.1** | 272 | Deterministic + Markov + 2 LLM passes    | 814.4 s | 91 | 181 | Markov smoothing improved contextual alignment and reduced repair needs. Lower invalid rate indicates higher validity in the original extraction while maintaining STIX 2.1’s strict relationship standards. |
-| **STIX 2.1** | 278 | Deterministic + Markov + 2 LLM + SZF pass | 860.2 s | 107 | 171 | SZF (Skew Zero Forcing) propagation enhanced graph connectivity but yielded limited new valid edges under strict STIX rules. Most propagated triples were rejected by validation due to type and domain constraints, confirming STIX’s tight ontology boundaries. |
-| **MalOnt**   | 280 | Deterministic + 2 LLM passes              | 60.5 s | 207 | 73 | Lower repair rate demonstrates higher validity in the original extraction phase. More flexible ontology mapping required fewer downstream fixes. |
-| **MalOnt**   | 280 | Deterministic + Markov + 2 LLM passes    | 220 s | 248 | 32 | High valid count achieved through successful LLM and Markov repairs. Although final accuracy is high, many triples were corrected rather than valid from the start. |
+## Extraction & Repair Results – STIX 2.1
+
+| Ontology | Original Invalid | Processing Pipeline                          | Time (s) | Repaired | Invalid | Notes                                                                                                                                                                       |
+|----------|------------------|----------------------------------------------|----------|----------|---------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| STIX 2.1 | 272              | Deterministic + Markov + 2 LLM passes        | 814.4    | 91       | 181     | Markov smoothing improved contextual alignment and reduced repair needs. Lower invalid rate indicates higher validity in the original extraction while maintaining STIX 2.1’s strict relationship standards. |
+| STIX 2.1 | 272              | Deterministic + Markov + 1 Unified LLM pass  | 288.6    | 84       | 194     | Unified prompt and selective LLM usage improved time by more than 150%, with only a minimal reduction in repaired triples.                                                 |
 
 ---
 
-###  Summary Insights
-- **SZF** confirmed the strong structural precision of STIX 2.1; most rejections came from strict domain/type limits.  
-- **Markov + LLM** stages handled nearly all recoverable errors—SZF mainly verified final graph stability.  
-- **Lower invalid rates** reflect higher validity in the original extraction phase.  
-- **STIX 2.1** enforces strict relationship typing for precision, reducing recall flexibility.  
-- **MalOnt** allows broader ontology mappings, enabling faster repair convergence and higher recall efficiency.
+### Summary Insights
+
+- STIX 2.1 enforces strict entity typing and relationship standards, ensuring schema compliance but yielding higher initial invalid counts.
+- Markov smoothing enhances contextual continuity and predicate coherence, reducing correction needs across the pipeline.
+- A unified LLM prompt with selective invalid triple nomination allows for faster processing with minimal drawbacks in repair effectiveness.
+
 
 
 
