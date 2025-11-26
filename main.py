@@ -142,7 +142,29 @@ def process_single_pdf(pdf: Path, group: str, ann_L: Path, ann_S: Path, cfg: dic
         },
         "started": started_ts,
     }
+    
+#Checks run_config.yaml and saves boolean result into variable 
+def test_config():
+    #Testbench Configuration Import
+    run_config_path = Path("config/run_config.yaml")
 
+    if run_config_path.exists():
+        with open(run_config_path, "r") as f:
+            run_config = yaml.safe_load(f)
+        module_config = run_config.get("modules", {})
+        print(f"[Ablation] Loaded module configuration: {module_config}")
+
+        consensus_enabled = module_config.get("consensus", False)
+        semantic_chunking_enabled = module_config.get("semantic_chunking", False)
+        validation_enabled = module_config.get("validation", False)
+        reranking_enabled = module_config.get("reranking", False)
+        semantic_consensus_enabled = module_config.get("semantic_consensus", False)
+        llm_extractor_enabled =  module_config.get("llm_extractor", False)
+        smoothing_enabled = module_config.get("smoothing", False)
+    else:
+        print("[Ablation] No run_config.yaml found — running all modules.")
+        consensus_enabled = semantic_chunking_enabled = validation_enabled = reranking_enabled = True
+    
 def log(msg: str):
     ts = time.strftime("%Y-%m-%d %H:%M:%S")
     print(f"[{ts}] {msg}")
