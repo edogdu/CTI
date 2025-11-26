@@ -13,6 +13,9 @@ def update_run_config(args):
             "semantic_chunking": args.semantic_chunking,
             "validation": args.validation,
             "reranking": args.reranking,
+            "semantic_consensus": args.semantic_consensus,
+            "llm_extractor": args.llm_extractor,
+            "smoothing": args.smoothing,
         }
     }
 
@@ -32,6 +35,9 @@ def parse_args():
     parser.add_argument("--semantic_chunking", action="store_true", help="Enable semantic chunking module")
     parser.add_argument("--validation", action="store_true", help="Enable validation module")
     parser.add_argument("--reranking", action="store_true", help="Enable cross-encoder reranking module")
+    parser.add_argument("--semantic_consensus", action="store_true", help="Enable semantic consensus module")
+    parser.add_argument("--llm_extractor", action="store_true", help="Enable LLM-based extraction module")
+    parser.add_argument("--smoothing", action="store_true", help="Enable entity/predicate smoothing module")
 
     return parser.parse_args()
 
