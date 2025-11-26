@@ -10,6 +10,7 @@ SESSION = requests.Session()
 script_dir = Path(__file__).parent
 input_dir = script_dir / "../extracted_triples"
 INPUT_PATH = input_dir / "invalid_triples_gemma2_9b.json"
+VALID_TRIPLES_PATH = input_dir / "valid_triples.JSON" #CHANGE NAME to specify valid triples JSON to use for adding repaired triples
 
 if not INPUT_PATH.exists():
     print(f"[error] Could not find invalid_triples JSON at: {INPUT_PATH}")
@@ -702,6 +703,74 @@ def main():
         print("[diagnostics] top failure reasons:", ", ".join(f"{k}:{v}" for k,v in top))
 
     print(f"[report] OK={len(repaired)} BAD={len(bad)} | Time={time.time()-start:.1f}s")
+    #---------------------------------------------------------------------------------------
+    # Optional: append repaired triples to valid triples JSON
+    
+    if not repaired:
+        print("[append] No repaired triples to append; skipping append step.")
+        return
+
+    try:
+        choice = input("\nAppend repaired triples into valid_triples_gemma2_9b.json? (y/n): ").strip().lower()
+    except EOFError:
+        choice = "n"
+
+    if not choice.startswith("y"):
+        print("[append] Skipping - repaired triples NOT added to valid triples JSON.")
+        return
+
+    if not VALID_TRIPLES_PATH.exists():
+        print(f"[append] Valid triples file not found at: {VALID_TRIPLES_PATH}")
+        print("[append] Cannot append; please check the path/filename.")
+        return
+
+    #Load existing valid triples
+    with open(VALID_TRIPLES_PATH, "r", encoding="utf-8") as f:
+        valid_data = json.load(f)
+
+    valid_triples = None
+    key_name_used = None
+
+    if isinstance(valid_data, list):
+        valid_triples = valid_data
+    elif isinstance(valid_data, dict):
+        # Try common keys
+        for key_name in ("valid_triples", "items", "results", "triples"):
+            if isinstance(valid_data.get(key_name), list):
+                valid_triples = valid_data[key_name]
+                key_name_used = key_name
+                break
+        if valid_triples is None:
+            print("[append] Could not interpret valid triples JSON structure; skipping append.")
+            return
+    else:
+        print("[append] Valid triples JSON has unsupported structure; skipping append.")
+        return
+
+    #Build lookup to avoid duplicates
+    existing = {json.dumps(t, sort_keys=True) for t in valid_triples}
+    added_count = 0
+
+    for r in repaired:
+        triple = r.get("triple", r)
+        key = json.dumps(triple, sort_keys=True)
+        if key not in existing:
+            valid_triples.append(triple)
+            existing.add(key)
+            added_count += 1
+
+    #Write updated valid triples JSON back
+    if isinstance(valid_data, list):
+        to_write = valid_triples
+    else:
+        valid_data[key_name_used] = valid_triples
+        to_write = valid_data
+
+    with open(VALID_TRIPLES_PATH, "w", encoding="utf-8") as f:
+        json.dump(to_write, f, indent=2, ensure_ascii=False)
+
+    print(f"[append] Added {added_count} repaired triples into {VALID_TRIPLES_PATH}")
+#----------------------------------------------------------------------------------------------
 
 if __name__=="__main__":
     main()
