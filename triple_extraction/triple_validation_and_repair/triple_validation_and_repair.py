@@ -630,29 +630,35 @@ def main():
 
         #seed from already accepted items
         for it in repaired:
-            t = det_fix(it.get("triple", {}))
-            subj = dict(t.get("subject", {})); subj["confidence"] = float(subj.get("confidence", 0.9)) or 0.9
-            obj  = dict(t.get("object", {}));  obj["confidence"]  = float(obj.get("confidence", 0.9)) or 0.9
+            #triples here are already normalized earlier in the pipeline
+            t = it.get("triple", {})
+            subj = dict(t.get("subject", {}) or {})
+            obj  = dict(t.get("object", {}) or {})
+            subj["confidence"] = float(subj.get("confidence", 0.9)) or 0.9
+            obj["confidence"]  = float(obj.get("confidence", 0.9)) or 0.9
             szf_input.append({
                 "subject": subj,
                 "predicate": t.get("predicate"),
                 "object": obj,
-                "confidence": max(0.85, float(t.get("confidence", 0.8))),
+                "confidence": max(0.85, float(t.get("confidence", 0.8))) if isinstance(t.get("confidence", 0.8), (int, float)) else 0.85,
                 "evidence": t.get("evidence")
             })
 
         #include best-effort deterministic triples from still-bad set
         for it in bad:
-            t = det_fix(it.get("deterministic", it.get("original", {})))
-            subj = dict(t.get("subject", {})); subj["confidence"] = float(subj.get("confidence", 0.4)) or 0.4
-            obj  = dict(t.get("object", {}));  obj["confidence"]  = float(obj.get("confidence", 0.4)) or 0.4
+            #'deterministic' was already produced by det_fix / smoothing
+            t = it.get("deterministic", it.get("original", {}))
+            subj = dict(t.get("subject", {}) or {})
+            obj  = dict(t.get("object", {}) or {})
+            subj["confidence"] = float(subj.get("confidence", 0.4)) or 0.4
+            obj["confidence"]  = float(obj.get("confidence", 0.4)) or 0.4
             szf_input.append({
                 "subject": subj,
                 "predicate": t.get("predicate"),
                 "object": obj,
-                "confidence": float(t.get("confidence", 0.4)) or 0.4,
+                "confidence": float(t.get("confidence", 0.4)) or 0.4 if isinstance(t.get("confidence", 0.4), (int, float)) else 0.4,
                 "evidence": t.get("evidence")
-            })
+    })
 
         szf = GraphPostProcessorSZF(ce=0.80, cr=0.75, max_iters=50)
         ents2, rels2 = szf.run(szf_input)
