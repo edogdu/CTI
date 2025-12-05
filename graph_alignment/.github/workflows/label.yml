@@ -1,0 +1,91 @@
+name: metrics-label-final
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+  label-final:
+    runs-on: windows-latest
+    timeout-minutes: 20
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      # 1) Preflight: LABEL mode (names)
+      - name: Preflight (LABEL mode)
+        shell: pwsh
+        run: |
+          py preflight.py --mode label `
+            --top1 ce_top1_final_LABEL_metrics.csv `
+            --gold gold_label_unbalanced_nobom.jsonl `
+            --out-csv top1_eval.csv `
+            --out-gold gold_eval.jsonl
+
+      # 2) Deterministic micro sample (n=200) in pure PowerShell (warn-only)
+      - name: Make deterministic micro sample (n=200)
+        shell: pwsh
+        run: |
+          $goldMap = @{}
+          Get-Content gold_eval.jsonl | ForEach-Object {
+            if ($_ -and $_.Trim()) {
+              $o = $_ | ConvertFrom-Json
+              if ($o.query) { $goldMap[$o.query.Trim()] = 1 }
+            }
+          }
+          $rows = Import-Csv top1_eval.csv
+          $sel = $rows | Where-Object { $goldMap.ContainsKey(($_.query)) } | Select-Object -First 200
+          $sel | Export-Csv -NoTypeInformation sample200_eval.csv
+          Write-Host "Wrote sample200_eval.csv with $($sel.Count) rows"
+
+      - name: Micro-eval (warn-only)
+        shell: pwsh
+        run: |
+          py metrics_top1.py --top1_csv sample200_eval.csv `
+                             --gold_jsonl gold_eval.jsonl `
+                             --out micro_metrics.txt
+          $t = Get-Content micro_metrics.txt -Raw
+          $m = [regex]::Match($t,'P@1 \(overall\):\s*([0-9.]+)')
+          if($m.Success){
+            $p = [double]$m.Groups[1].Value
+            if($p -lt 0.05){ Write-Host "::warning::Micro P@1 $p < 0.05 (threshold 0.05)"; }
+            else { Write-Host "Micro P@1 OK: $p"; }
+          } else {
+            Write-Host "::warning::Could not parse micro metrics"
+          }
+
+      # 3) Full metrics (authoritative)
+      - name: Full metrics (LABEL)
+        shell: pwsh
+        run: |
+          py metrics_top1.py --top1_csv ce_top1_final_LABEL_metrics.csv `
+                             --gold_jsonl gold_eval.jsonl `
+                             --out metrics_unbalanced_p1_label_final.txt
+          Get-Content metrics_unbalanced_p1_label_final.txt
+
+      # 4) Misses Top 40
+      - name: Misses Top 40
+        shell: pwsh
+        run: |
+          py misses_report.py --top1_csv top1_eval.csv `
+                              --gold_jsonl gold_eval.jsonl `
+                              --out_csv debug_misses_top40.csv `
+                              --k 40 `
+                              --p_col p_relevant `
+                              --pirr_col p_irrelevant
+
+      # 5) Artifacts
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: label-final-artifacts
+          path: |
+            sample200_eval.csv
+            top1_eval.csv
+            gold_eval.jsonl
+            micro_metrics.txt
+            metrics_unbalanced_p1_label_final.txt
+            debug_misses_top40.csv
