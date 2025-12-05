@@ -1,0 +1,152 @@
+name: metrics-both-final
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+  both:
+    runs-on: windows-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      # ---------------- ID path (stable) ----------------
+      - name: Preflight (ID) → make top1_eval_id.csv + gold_eval_id.jsonl
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          py preflight.py --mode id `
+            --top1 ce_top1_final_ID.csv `
+            --gold gold_id_unbalanced_nobom.jsonl `
+            --out-csv top1_eval_id.csv `
+            --out-gold gold_eval_id.jsonl
+          if (!(Test-Path top1_eval_id.csv))   { throw "Missing top1_eval_id.csv" }
+          if (!(Test-Path gold_eval_id.jsonl)) { throw "Missing gold_eval_id.jsonl" }
+
+      - name: Full metrics (ID)
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          py metrics_top1.py --top1_csv top1_eval_id.csv `
+            --gold_jsonl gold_eval_id.jsonl `
+            --out metrics_id.txt
+          if (-not (Select-String -Path metrics_id.txt -Pattern 'P@1 \(overall\):')) {
+            Write-Host "==== metrics_id.txt (tail) ===="
+            Get-Content metrics_id.txt | Select-Object -Last 80
+            throw "ID metrics file does not contain P@1 line."
+          }
+          Get-Content metrics_id.txt
+
+      # --------------- LABEL path (robust column detection) --------------
+      - name: Build LABEL top1_eval_label.csv + gold_eval_label.jsonl (BOM-safe)
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+
+          # Load the LABEL CSV
+          $rows = Import-Csv .\ce_top1_final_LABEL_metrics.csv
+          if (-not $rows) { throw "LABEL CSV has no rows." }
+
+          # Detect actual header names (handles BOM/whitespace/case)
+          $keys = $rows[0].PSObject.Properties.Name
+          Write-Host "Detected columns: $($keys -join ', ')"
+
+          function Find-Key { param($patterns)
+            foreach ($p in $patterns) {
+              $hit = $keys | Where-Object { $_ -match $p } | Select-Object -First 1
+              if ($hit) { return $hit }
+            }
+            return $null
+          }
+
+          $kQ   = Find-Key @('(?i)^\ufeff?query$','(?i)^q$','(?i)text_a')      # allow BOM on first col
+          $kD   = Find-Key @('(?i)^candidate$','(?i)^d$','(?i)text_b')
+          $kPR  = Find-Key @('(?i)^p_relevant$','(?i)^p$')
+          $kPI  = Find-Key @('(?i)^p_irrelevant$','(?i)^pirr$')
+
+          Write-Host "Mapped keys → q=[$kQ] d=[$kD] p_rel=[$kPR] p_irrel=[$kPI]"
+          if (-not $kQ -or -not $kD -or -not $kPR -or -not $kPI) {
+            throw "Could not map all required columns (query, candidate, p_relevant, p_irrelevant)."
+          }
+
+          # Project to canonical columns
+          $out = foreach ($r in $rows) {
+            [pscustomobject]@{
+              q            = $r.$kQ
+              d            = $r.$kD
+              p_relevant   = [double]$r.$kPR
+              p_irrelevant = [double]$r.$kPI
+            }
+          }
+
+          # Basic sanity: at least one non-empty query/candidate
+          $nonEmpty = ($out | Where-Object { $_.q -and $_.d } | Select-Object -First 1)
+          if (-not $nonEmpty) {
+            Write-Host "==== Sample rows (first 5) ===="
+            $rows | Select-Object -First 5 | Format-Table | Out-String | Write-Host
+            throw "All q/d appear empty after mapping. Check column mapping and source CSV."
+          }
+
+          $out | Export-Csv -NoTypeInformation .\top1_eval_label.csv
+          if (!(Test-Path top1_eval_label.csv)) { throw "Missing top1_eval_label.csv" }
+          Write-Host "==== Preview top1_eval_label.csv ===="
+          Get-Content top1_eval_label.csv -First 5
+
+          Copy-Item .\gold_label_unbalanced_nobom.jsonl .\gold_eval_label.jsonl -Force
+          if (!(Test-Path gold_eval_label.jsonl)) { throw "Missing gold_eval_label.jsonl" }
+
+      - name: Full metrics (LABEL)
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          py metrics_top1.py --top1_csv top1_eval_label.csv `
+            --gold_jsonl gold_eval_label.jsonl `
+            --out metrics_label.txt
+          if (-not (Test-Path metrics_label.txt)) { throw "metrics_label.txt was not created." }
+          $hasP = Select-String -Path metrics_label.txt -Pattern 'P@1 \(overall\):'
+          if (-not $hasP) {
+            Write-Host "==== metrics_label.txt (tail) ===="
+            Get-Content metrics_label.txt | Select-Object -Last 120
+            Write-Host "==== Sample of top1_eval_label.csv ===="
+            Get-Content top1_eval_label.csv | Select-Object -First 10
+            throw "LABEL metrics file does not contain P@1 line."
+          }
+          Get-Content metrics_label.txt
+
+      # --------------- Summary -----------------
+      - name: Summary (ID vs LABEL) → both_summary.txt
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          function Get-P1([string]$path){
+            $t = Get-Content $path -Raw
+            $m = [regex]::Match($t,'P@1 \(overall\):\s*([0-9.]+)')
+            if(-not $m.Success){ return "NA" }
+            return $m.Groups[1].Value
+          }
+          $p1_id    = Get-P1 "metrics_id.txt"
+          $p1_label = Get-P1 "metrics_label.txt"
+
+          "ID P@1    = $p1_id"    | Out-File both_summary.txt
+          "LABEL P@1 = $p1_label" | Out-File both_summary.txt -Append
+          Get-Content both_summary.txt
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: both-artifacts
+          path: |
+            top1_eval_id.csv
+            gold_eval_id.jsonl
+            metrics_id.txt
+            top1_eval_label.csv
+            gold_eval_label.jsonl
+            metrics_label.txt
+            both_summary.txt
