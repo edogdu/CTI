@@ -95,16 +95,16 @@ def main():
         for q in overlap_keys:
             f.write(json.dumps({"query": q, "gold": gold_map[q]}, ensure_ascii=False) + "\n")
 
-    # micro-sample for Stage 0 (50 overlapped)
-    samp = overlap_keys[:]
-    random.shuffle(samp)
-    samp = set(samp[:min(50, len(samp))])
-    with pathlib.Path(args.sample_out).open("w", newline="", encoding="utf-8") as f:
-        w = csv.DictWriter(f, fieldnames=["query","candidate"])
-        w.writeheader()
-        for r in out_rows:
-            if r["query"] in samp:
-                w.writerow(r)
+    # micro-sample for Stage 0 (deterministic: first up to 100 sorted overlaps)
+samp_list = sorted(set(overlap_keys))[:min(100, len(overlap_keys))]
+samp = set(samp_list)
+with pathlib.Path(args.sample_out).open("w", newline="", encoding="utf-8") as f:
+    w = csv.DictWriter(f, fieldnames=["query","candidate"])
+    w.writeheader()
+    for r in out_rows:
+        if r["query"] in samp:
+            w.writerow(r)
+
 
     # manifest
     manifest = {
