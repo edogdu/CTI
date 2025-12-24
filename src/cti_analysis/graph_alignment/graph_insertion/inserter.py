@@ -1,10 +1,13 @@
 from neo4j import GraphDatabase
 import requests
-from typing import List, Any
+from typing import List, Any, Dict
 import json
 import numpy as np
 import hashlib
 import re
+
+from cti_analysis.models.triples import TripleBatch
+from cti_analysis.models.graph import NodeIR, EdgeIR, GraphInsertBatch
 
 class OllamaEmbedder:
     def __init__(self, model, ollama_url: str = "http://localhost:11434/api/embeddings"):
@@ -39,6 +42,36 @@ def _doc_id_from_metrics(metrics: dict) -> tuple[str, str]:
         return content_hash, file_name or "unknown"
     key = (file_name or "unknown").strip().lower()
     return hashlib.sha256(key.encode("utf-8")).hexdigest(), file_name or "unknown"
+
+
+def run_insertion(cfg, batches: List[TripleBatch]) -> GraphInsertBatch:
+    """
+    Convert TripleBatch objects into a GraphInsertBatch (nodes/edges).
+    Does not write to the database; call store_in_neo4j for legacy flow.
+    """
+    nodes: Dict[str, NodeIR] = {}
+    edges: Dict[str, EdgeIR] = {}
+
+    for batch in batches:
+        for t in batch.triples:
+            subj_id = hashlib.sha256(f"{t.subject}|subj".encode("utf-8")).hexdigest()
+            obj_id = hashlib.sha256(f"{t.object}|obj".encode("utf-8")).hexdigest()
+            nodes.setdefault(subj_id, NodeIR(id=subj_id, labels=["CTIEntity"], properties={"name": t.subject}))
+            nodes.setdefault(obj_id, NodeIR(id=obj_id, labels=["CTIEntity"], properties={"name": t.object}))
+
+            rel_id = hashlib.sha256(f"{subj_id}|{t.predicate}|{obj_id}".encode("utf-8")).hexdigest()
+            edges.setdefault(
+                rel_id,
+                EdgeIR(
+                    id=rel_id,
+                    start_id=subj_id,
+                    end_id=obj_id,
+                    type=t.predicate.upper() or "RELATED_TO",
+                    properties=t.meta,
+                ),
+            )
+
+    return GraphInsertBatch(nodes=list(nodes.values()), edges=list(edges.values()))
 
 def store_in_neo4j(chunk_obj, driver):
     chunk_metrics = chunk_obj.get("metrics", chunk_obj)

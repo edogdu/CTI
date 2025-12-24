@@ -2,7 +2,10 @@ import os, re, json, time, requests, sys
 from pathlib import Path
 import numpy as np
 from collections import Counter, defaultdict
+from typing import List, Dict, Any
+from cti_analysis.models.triples import TripleBatch
 
+SKIP_BOOTSTRAP = bool(os.getenv("CTI_SKIP_REPAIR_BOOTSTRAP")) or bool(os.getenv("PYTEST_CURRENT_TEST"))
 
 #Create one unified Session for requests.get() and requests.post()
 SESSION = requests.Session()
@@ -12,21 +15,30 @@ input_dir = script_dir / "../extracted_triples"
 INPUT_PATH = input_dir / "invalid_triples_gemma2_9b.json"
 VALID_TRIPLES_PATH = input_dir / "valid_triples.JSON" #CHANGE NAME to specify valid triples JSON to use for adding repaired triples
 
-if not INPUT_PATH.exists():
-    print(f"[error] Could not find invalid_triples JSON at: {INPUT_PATH}")
-    print("Tip: make sure you ran extraction_consensus_plus_inva...py first; it saves invalid triples under 'extracted_triples/'.")
-    sys.exit(1)
+# pipeline-facing wrapper
+def run_repair(cfg, triple_batches: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    """Placeholder repair hook; returns triples unchanged until CLI flow is integrated."""
+    return triple_batches
 
-os.environ["OLLAMA_BASE_URL"] = "http://localhost:11434"
-#os.environ["OLLAMA_MODEL"] = "foundation-sec-8b-instruct"
+# IR-friendly signature
+def run_repair_ir(cfg, batches: List[TripleBatch]) -> List[TripleBatch]:
+    return batches
 
-os.environ["OLLAMA_MODEL"] = "gemma2:9b"
-BASE = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
-MODEL = os.getenv("OLLAMA_MODEL", "gemma2:9b")
-OUT_BASE = os.path.splitext(str(INPUT_PATH))[0]
-LIM = 500  # max string length sanity
-print(f"BASE = {BASE}")
-print(f"MODEL = {MODEL}")
+# ---- The below was script-mode; guard to avoid side effects on import ----
+if __name__ == "__main__":
+    if not INPUT_PATH.exists():
+        print(f"[error] Could not find invalid_triples JSON at: {INPUT_PATH}")
+        print("Tip: make sure you ran extraction_consensus_plus_inva...py first; it saves invalid triples under 'extracted_triples/'.")
+        sys.exit(1)
+
+    os.environ["OLLAMA_BASE_URL"] = "http://localhost:11434"
+    os.environ["OLLAMA_MODEL"] = "gemma2:9b"
+    BASE = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
+    MODEL = os.getenv("OLLAMA_MODEL", "gemma2:9b")
+    OUT_BASE = os.path.splitext(str(INPUT_PATH))[0]
+    LIM = 500  # max string length sanity
+    print(f"BASE = {BASE}")
+    print(f"MODEL = {MODEL}")
 #STIX 2.1 Names and
 TYPES = {
     "threat-actor","intrusion-set","campaign","malware","tool","infrastructure","attack-pattern",

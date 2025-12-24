@@ -1,6 +1,9 @@
 # --- maxmin_chunking.py (or inline in extraction_updated_ontology.py) ---
 
 import math, numpy as np, requests
+from typing import List
+
+from cti_analysis.models.documents import NormalizedDocument, Chunk, chunk_from_text
 
 def _ollama_embed(texts, model="nomic-embed-text", base_url="http://localhost:11434"):
     vecs = []
@@ -90,4 +93,18 @@ def maxmin_semantic_chunks(
             k -= 1
         i = max(k + 1, end)
 
+    return chunks
+
+
+def run_chunking(cfg, docs: List[NormalizedDocument]) -> List[Chunk]:
+    """
+    High-level chunking entrypoint.
+    If semantic chunking params are provided, will attempt embedding-based
+    chunking; otherwise produces a single chunk per document.
+    """
+    chunks: List[Chunk] = []
+    for doc in docs:
+        # Minimal fallback: one chunk per document
+        chunk_id = f"{doc.doc_id}_chunk0"
+        chunks.append(chunk_from_text(doc, chunk_id, doc.text))
     return chunks

@@ -1,51 +1,10 @@
+
 paths:
-  output_dir: "./output"
-  datasets_dir: "./datasets"
-  config_dir: "./config"
-  similarity_output_dir: "./scripts/graph/outputs"
-  logs_dir: "./logs"
-
+  output_dir: "C:/CTI/results"
+  datasets_dir: "C:/CTI/datasets"
 dataset:
-  repo: "https://github.com/dessertlab/CTI-HAL.git"
-  name: "CTI-HAL"
-
+  name: "dnrti"
+  file: "C:/CTI/datasets/DNRTI/dnrti_aug_stix2_je.json"
 models:
   extraction_model: "gemma2:9b"
-  #extraction_model: "fdtn-ai/Foundation-Sec-8B-Instruct"
   embedding_model: "nomic-embed-text"
-
-ollama:
-  base_url: "http://localhost:11434"
-  timeout: 60 
-
-neo4j:
-  uri: "bolt://localhost:7687"
-  user: "neo4j"
-  password: "abcd90909090"
-  database: "neo4j"
-  max_connections: 10
-
-embedding:
-  dimensions: 768
-  property: "embedding"
-  ollama_url: "http://localhost:11434"
-  similarity:
-    allowed_labels:
-      - "UcoexMITREATTACK"
-      - "UcoexTACTICS"
-      - "UcoexSOFTWARE"
-    dir: "vec_results"
-    results_by_node: "similarity_results_by_node.json"
-    leaderboard_file: "similarity_leaderboard.json"
-    top_k: 5
-    index:
-      name: "attack_vec"
-      label: "SimilarityTarget"
-      property: "embedding"
-      similarity_function: "cosine"
-
-logging:
-  level: "INFO"
-  file: "./logs/pipeline.log"
-  rotate: true
-  retention_days: 7f
