@@ -1,4 +1,4 @@
-from .canonicalizer import run_canonicalization
+from .canonicalizer import run_canonicalization_ir
 
-__all__ = ["run_canonicalization"]
+__all__ = ["run_canonicalization_ir"]
 

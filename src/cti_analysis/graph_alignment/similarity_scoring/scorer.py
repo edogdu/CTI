@@ -3,7 +3,10 @@ import json
 import argparse
 from typing import List, Dict, Any, Optional
 import numpy as np
-from neo4j import GraphDatabase
+try:
+    from neo4j import GraphDatabase
+except ImportError:
+    GraphDatabase = None
 from pathlib import Path
 
 from cti_analysis.models.triples import TripleBatch

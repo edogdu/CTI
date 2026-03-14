@@ -3,8 +3,13 @@ from __future__ import annotations
 from contextlib import contextmanager
 from typing import Dict, Generator, Optional
 
-from neo4j import GraphDatabase
-from neo4j import Driver, Session
+try:
+    from neo4j import GraphDatabase
+    from neo4j import Driver, Session
+except ImportError:
+    GraphDatabase = None
+    Driver = None
+    Session = None
 
 
 @contextmanager

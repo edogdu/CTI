@@ -69,23 +69,54 @@ def ensure_stage_dir(stage_name: str) -> Path:
     return out
 
 
-def save_stage_outputs(stage_name: str, obj: Any, *, jsonl_threshold: int = 200) -> Path | None:
+def save_run_manifest(run_id: str, cfg) -> Path:
+    """Save a manifest capturing the full config for this run."""
+    from dataclasses import asdict as _asdict
+    manifest = {
+        "run_id": run_id,
+        "model": getattr(cfg.extraction, "model_name", "unknown"),
+        "dataset_file": getattr(cfg, "dataset_file", None),
+        "dataset_mode": getattr(cfg, "dataset_mode", "document"),
+        "ollama_base_url": getattr(cfg.extraction, "ollama_base_url", ""),
+        "temperature": getattr(cfg.extraction, "temperature", 0.1),
+        "max_tokens": getattr(cfg.extraction, "max_tokens", 2048),
+        "stages": {
+            "semantic_chunking": getattr(cfg.semantic_chunking, "enabled", True),
+            "repair": getattr(cfg.repair, "enabled", True),
+            "canonicalization": getattr(cfg.canonicalization, "enabled", True),
+            "graph_insertion": getattr(cfg.graph_insertion, "enabled", True),
+            "similarity_scoring": getattr(cfg.similarity_scoring, "enabled", True),
+            "reranking": getattr(cfg.reranking, "enabled", True),
+        },
+        "started_at": time.strftime("%Y-%m-%d %H:%M:%S"),
+    }
+    out_dir = Path("results")
+    out_dir.mkdir(parents=True, exist_ok=True)
+    out_path = out_dir / f"{run_id}_manifest.json"
+    out_path.write_text(json.dumps(manifest, indent=2, ensure_ascii=False), encoding="utf-8")
+    print(f"[Save] manifest -> {out_path}")
+    return out_path
+
+
+def save_stage_outputs(stage_name: str, obj: Any, *, jsonl_threshold: int = 200, run_id: str | None = None) -> Path | None:
     """
     Save stage outputs under results/<stage_name>/.
     - If obj is a list longer than jsonl_threshold, write JSONL.
     - Otherwise write a JSON array/object.
+    - If run_id is provided, use it as the filename prefix; otherwise generate a timestamp.
     Returns the written path or None on failure (logs to stdout).
     """
     stage_dir = ensure_stage_dir(stage_name)
-    timestamp = time.strftime("%Y%m%d-%H%M%S")
+    if run_id is None:
+        run_id = time.strftime("%Y%m%d-%H%M%S")
     try:
         if isinstance(obj, list) and len(obj) > jsonl_threshold:
-            out_path = stage_dir / f"{timestamp}.jsonl"
+            out_path = stage_dir / f"{run_id}.jsonl"
             with open(out_path, "w", encoding="utf-8") as f:
                 for row in obj:
                     f.write(json.dumps(_serialize(row), ensure_ascii=False) + "\n")
         else:
-            out_path = stage_dir / f"{timestamp}.json"
+            out_path = stage_dir / f"{run_id}.json"
             with open(out_path, "w", encoding="utf-8") as f:
                 json.dump(_serialize(obj), f, ensure_ascii=False, indent=2)
         print(f"[Save] {stage_name} -> {out_path}")
@@ -102,6 +133,7 @@ __all__ = [
     "save_progress",
     "load_manifest",
     "append_manifest_entry",
+    "save_run_manifest",
     "save_stage_outputs",
     "ensure_stage_dir",
 ]

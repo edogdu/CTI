@@ -20,7 +20,7 @@ from cti_analysis.triple_extraction.canonicalization.canonicalizer import run_ca
 from cti_analysis.graph_alignment.graph_insertion.inserter import run_insertion
 from cti_analysis.graph_alignment.similarity_scoring.scorer import run_scoring
 from cti_analysis.graph_alignment.reranking.reranker import run_reranking
-from cti_analysis.utils.io import save_stage_outputs
+from cti_analysis.utils.io import save_stage_outputs, save_run_manifest
 
 __all__ = ["run_pipeline", "main"]
 
@@ -30,7 +30,7 @@ __all__ = ["run_pipeline", "main"]
 # -------------------------------
 def log(msg: str):
     ts = time.strftime("%Y-%m-%d %H:%M:%S")
-    print(f"[{ts}] {msg}")
+    print(f"[{ts}] {msg}", flush=True)
 
 
 def load_raw_documents(cfg) -> List[RawDocument]:
@@ -42,7 +42,7 @@ def load_raw_documents(cfg) -> List[RawDocument]:
     dataset = getattr(cfg, "dataset_name", "").lower()
     datasets_dir = Path(getattr(cfg, "datasets_dir", "datasets"))
     dataset_file = getattr(cfg, "dataset_file", None)
-    dnrti_file = Path(dataset_file) if dataset_file else datasets_dir / "DNRTI" / "dnrti_aug_stix2_je.json"
+    dnrti_file = Path(dataset_file) if dataset_file else datasets_dir / "DNRTI" / "dnrti_aug_stix2_je_subset.json"
 
     if dataset == "dnrti" or dnrti_file.exists():
         if not dnrti_file.exists():
@@ -89,10 +89,51 @@ def load_raw_documents(cfg) -> List[RawDocument]:
 
 
 # -------------------------------
+# Per-unit processing
+# -------------------------------
+def _process_unit(
+    cfg,
+    doc: NormalizedDocument,
+    unit_idx: int,
+    total_units: int,
+) -> tuple[List[Chunk], List[TripleBatch]]:
+    """Process a single unit (sentence or document) through all triple extraction stages.
+
+    Returns (chunks, triple_batches) for this unit.
+    """
+    # 1) Chunk this unit
+    if getattr(cfg.semantic_chunking, "enabled", True):
+        chunks: List[Chunk] = run_chunking(cfg.semantic_chunking, [doc])
+    else:
+        chunks = [chunk_from_text(doc, f"{doc.doc_id}_chunk0", doc.text)]
+
+    # 2) Extract triples from this unit's chunks
+    triple_batches: List[TripleBatch] = run_extraction(cfg.extraction, chunks)
+
+    # 3) Repair this unit's triples
+    if getattr(cfg.repair, "enabled", True):
+        triple_batches = run_repair_ir(cfg.repair, triple_batches)
+
+    # 4) Canonicalize this unit's triples
+    if getattr(cfg.canonicalization, "enabled", True):
+        triple_batches = run_canonicalization_ir(cfg.canonicalization, triple_batches)
+
+    n_triples = sum(len(b.triples) for b in triple_batches)
+    log(f"[Unit {unit_idx + 1}/{total_units}] {doc.doc_id}: {len(chunks)} chunks, {n_triples} triples")
+
+    return chunks, triple_batches
+
+
+# -------------------------------
 # Orchestration
 # -------------------------------
 def run_pipeline() -> int:
     cfg = load_config()
+
+    # Generate run_id for this pipeline execution (shared across all stages)
+    run_id = time.strftime("%Y%m%d-%H%M%S")
+    log(f"[Pipeline] Starting run_id={run_id}")
+    save_run_manifest(run_id, cfg)
 
     # 1) Load raw docs
     raw_docs = load_raw_documents(cfg)
@@ -100,45 +141,36 @@ def run_pipeline() -> int:
     # 2) Normalize
     normalized_docs: List[NormalizedDocument] = run_normalization(cfg, raw_docs)
 
-    # 3) Chunking
-    if getattr(cfg.semantic_chunking, "enabled", True):
-        chunks: List[Chunk] = run_chunking(cfg.semantic_chunking, normalized_docs)
-    else:
-        # Fallback: one chunk per document when chunking is disabled
-        chunks = [chunk_from_text(doc, f"{doc.doc_id}_chunk0", doc.text) for doc in normalized_docs]
-    save_stage_outputs("triple_extraction/semantic_chunking", chunks)
+    # 3) Process each document through extraction stages
+    all_chunks: List[Chunk] = []
+    all_triple_batches: List[TripleBatch] = []
 
-    # 4) Extraction
-    triple_batches: List[TripleBatch] = run_extraction(cfg.extraction, chunks)  # type: ignore
-    log(f"[Stage] Extraction done: batches={len(triple_batches)}")
-    save_stage_outputs("triple_extraction/extraction", triple_batches)
+    for i, doc in enumerate(normalized_docs):
+        chunks, batches = _process_unit(cfg, doc, i, len(normalized_docs))
+        all_chunks.extend(chunks)
+        all_triple_batches.extend(batches)
 
-    # 5) Repair
-    if getattr(cfg.repair, "enabled", True):
-        triple_batches = run_repair_ir(cfg.repair, triple_batches)
-        save_stage_outputs("triple_extraction/triple_repair", triple_batches)
+    # 4) Save extraction stage outputs
+    save_stage_outputs("triple_extraction/semantic_chunking", all_chunks, run_id=run_id)
+    save_stage_outputs("triple_extraction/extraction", all_triple_batches, run_id=run_id)
 
-    # 6) Canonicalization
-    if getattr(cfg.canonicalization, "enabled", True):
-        triple_batches = run_canonicalization_ir(cfg.canonicalization, triple_batches)
-        save_stage_outputs("triple_extraction/canonicalization", triple_batches)
+    total_triples = sum(len(b.triples) for b in all_triple_batches)
+    log(f"[Pipeline] Extraction stages complete: {len(all_triple_batches)} batches, {total_triples} triples")
 
-    # 7) Graph insertion
+    # 5) Graph alignment stages (always operate across all units)
     graph_batch: GraphInsertBatch | None = None
     if getattr(cfg.graph_insertion, "enabled", True):
-        graph_batch = run_insertion(cfg.graph_insertion, triple_batches)
-        save_stage_outputs("graph_alignment/graph_insertion", graph_batch)
+        graph_batch = run_insertion(cfg.graph_insertion, all_triple_batches)
+        save_stage_outputs("graph_alignment/graph_insertion", graph_batch, run_id=run_id)
 
-    # 8) Similarity scoring
     scores: List[SimilarityScore] = []
     if getattr(cfg.similarity_scoring, "enabled", True):
-        scores = run_scoring(cfg.similarity_scoring, triple_batches)
-        save_stage_outputs("graph_alignment/similarity_scoring", scores)
+        scores = run_scoring(cfg.similarity_scoring, all_triple_batches)
+        save_stage_outputs("graph_alignment/similarity_scoring", scores, run_id=run_id)
 
-    # 9) Reranking
     if getattr(cfg.reranking, "enabled", True) and scores:
         reranked: List[RerankResult] = run_reranking(cfg.reranking, scores)
-        save_stage_outputs("graph_alignment/reranking", reranked)
+        save_stage_outputs("graph_alignment/reranking", reranked, run_id=run_id)
 
     log("[Pipeline] completed")
     return 0
@@ -150,4 +182,3 @@ def main(argv: List[str] | None = None) -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

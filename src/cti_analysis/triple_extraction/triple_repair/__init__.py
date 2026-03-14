@@ -1,4 +1,4 @@
-from .repair import run_repair
+from .repair import run_repair_ir
 
-__all__ = ["run_repair"]
+__all__ = ["run_repair_ir"]
 

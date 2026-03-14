@@ -1,4 +1,7 @@
-from neo4j import GraphDatabase
+try:
+    from neo4j import GraphDatabase
+except ImportError:
+    GraphDatabase = None  # neo4j optional; only needed for graph insertion stage
 import requests
 from typing import List, Any, Dict
 import json

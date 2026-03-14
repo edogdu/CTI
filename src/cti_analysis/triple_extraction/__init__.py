@@ -1,12 +1,11 @@
-from .extraction import run_extraction, CyberTripleExtractor
+from .extraction import run_extraction
 from .semantic_chunking import run_chunking
-from .triple_repair import run_repair
-from .canonicalization import run_canonicalization
+from .triple_repair.repair import run_repair_ir
+from .canonicalization.canonicalizer import run_canonicalization_ir
 
 __all__ = [
     "run_extraction",
-    "CyberTripleExtractor",
     "run_chunking",
-    "run_repair",
-    "run_canonicalization",
+    "run_repair_ir",
+    "run_canonicalization_ir",
 ]

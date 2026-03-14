@@ -4,7 +4,11 @@ paths:
   datasets_dir: "C:/CTI/datasets"
 dataset:
   name: "dnrti"
-  file: "C:/CTI/datasets/DNRTI/dnrti_aug_stix2_je.json"
+  file: "C:/CTI/results/finetuning/data/test_dnrti.json"
 models:
-  extraction_model: "gemma2:9b"
+  extraction_model: "gemma3-cti-4b"
   embedding_model: "nomic-embed-text"
+  ollama_url: "http://localhost:11434"
+  ollama_timeout: 300
+  max_tokens: 2048
+  use_two_pass: true

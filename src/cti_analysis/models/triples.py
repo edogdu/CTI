@@ -3,10 +3,24 @@ from typing import Dict, Any, List, Optional
 
 
 @dataclass
+class Entity:
+    name: str
+    type: str
+
+    def __hash__(self):
+        return hash((self.name.lower(), self.type))
+
+    def __eq__(self, other):
+        if not isinstance(other, Entity):
+            return False
+        return self.name.lower() == other.name.lower() and self.type == other.type
+
+
+@dataclass
 class Triple:
-    subject: str
+    subject: Entity
     predicate: str
-    object: str
+    object: Entity
     meta: Dict[str, Any] = field(default_factory=dict)
 
 

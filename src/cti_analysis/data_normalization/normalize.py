@@ -1,8 +1,7 @@
 from __future__ import annotations
 
-import json
 from pathlib import Path
-from typing import Iterable, List, Dict, Any
+from typing import Iterable, List
 
 from cti_analysis.models.documents import (
     RawDocument,
@@ -61,17 +60,6 @@ def run_normalization(cfg, raw_docs: List[RawDocument] | Iterable[Path] | Path) 
     ]
 
 
-def _coerce_single_path(raw_input: Iterable[Path] | Path) -> Path:
-    if isinstance(raw_input, (str, Path)):
-        return Path(raw_input)
-    raw_list = list(raw_input)
-    if not raw_list:
-        raise ValueError("No input provided for normalization.")
-    if len(raw_list) > 1:
-        raise ValueError("Expected a single input path for this dataset.")
-    return Path(raw_list[0])
-
-
 def _normalize_files(raw_docs: Iterable[Path] | Path) -> List[NormalizedDocument]:
     # legacy path-based normalization
     docs_iter = [raw_docs] if isinstance(raw_docs, (str, Path)) else raw_docs
@@ -87,76 +75,3 @@ def _normalize_files(raw_docs: Iterable[Path] | Path) -> List[NormalizedDocument
             )
         )
     return normalized
-
-
-def _normalize_dnrti(json_path: Path) -> List[NormalizedDocument]:
-    """
-    Normalize DNRTI labeled sentences into documents with entity/relation metadata.
-    Input format:
-      {
-        "text": "...",
-        "entities": [ [start_idx, end_idx, surface, label], ...],
-        "relations": [ [predicate, head_idx, tail_idx], ... ]
-      }
-    Relation indices refer into the entities list; we treat tail_idx as subject,
-    head_idx as object (per sample semantics).
-    """
-    data = json.loads(Path(json_path).read_text(encoding="utf-8"))
-
-    docs: List[NormalizedDocument] = []
-    for i, entry in enumerate(data):
-        text = entry.get("text", "")
-        raw_entities = entry.get("entities") or []
-        raw_relations = entry.get("relations") or []
-
-        entities = [
-            {
-                "name": ent[2],
-                "type": ent[3],
-                "span": [ent[0], ent[1]],
-            }
-            for ent in raw_entities
-            if isinstance(ent, list) and len(ent) >= 4
-        ]
-
-        relations: List[Dict[str, Any]] = []
-        prealigned_triples: List[Dict[str, Any]] = []
-        for rel in raw_relations:
-            if not (isinstance(rel, list) and len(rel) >= 3):
-                continue
-            pred, head_idx, tail_idx = rel[0], rel[1], rel[2]
-            subj = entities[tail_idx] if 0 <= tail_idx < len(entities) else None
-            obj = entities[head_idx] if 0 <= head_idx < len(entities) else None
-            if not subj or not obj:
-                continue
-            rel_rec = {
-                "predicate": pred,
-                "subject_idx": tail_idx,
-                "object_idx": head_idx,
-            }
-            relations.append(rel_rec)
-            prealigned_triples.append(
-                {
-                    "subject": {"name": subj["name"], "type": subj["type"]},
-                    "predicate": pred,
-                    "object": {"name": obj["name"], "type": obj["type"]},
-                }
-            )
-
-        doc_id = f"dnrti_{i}"
-        docs.append(
-            NormalizedDocument(
-                doc_id=doc_id,
-                text=text,
-                meta={
-                    "source": "dnrti",
-                    "entities": entities,
-                    "relations": relations,
-                    "prealigned_triples": prealigned_triples,
-                    "index": i,
-                    "path": str(json_path),
-                },
-            )
-        )
-
-    return docs

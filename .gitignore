@@ -16,5 +16,14 @@ cti-analysis/*.pdf
 # Ignore egg
 */*.egg*
 
-# ugh
+# misc
 .DS_Store
+/unsloth_compiled_cache/*
+
+# Large model files (>100MB, blocked by GitHub)
+results/finetuning/adapter/
+results/finetuning/gguf/
+*.gguf
+*.safetensors
+optimizer.pt
+
