@@ -1,0 +1,365 @@
+[
+  {
+    "query": "then invokes a WMI instance in the rootsecuritycenter namespace to identify security products installed on the system",
+    "actor": "apt29",
+    "predicted_id": "T1518.001",
+    "predicted_score": 5.531651496887207,
+    "predicted_text": "T1518.001 \u2014 Security Software Discovery: Adversaries may attempt to get a listin",
+    "gold_ids": [
+      "T1047",
+      "TA0002"
+    ],
+    "best_gold_id": "T1047",
+    "best_gold_score": 5.320679664611816,
+    "best_gold_text": "T1047 \u2014 Windows Management Instrumentation: Adversaries may abuse Windows Manage",
+    "gold_rank": 2,
+    "score_gap": 0.21097183227539062,
+    "error_type": "UNRELATED",
+    "error_detail": "Predicted T1518.001, gold includes T1047, TA0002",
+    "top_5": [
+      [
+        "T1518.001",
+        5.5317,
+        0
+      ],
+      [
+        "T1047",
+        5.3207,
+        1
+      ],
+      [
+        "TA0005",
+        4.8524,
+        0
+      ],
+      [
+        "TA0002",
+        3.2333,
+        1
+      ],
+      [
+        "T1587",
+        -3.7732,
+        0
+      ]
+    ]
+  },
+  {
+    "query": "GeminiDuke primarily collects information on the victim computer's configuration",
+    "actor": "apt29",
+    "predicted_id": "TA0009",
+    "predicted_score": 6.189454078674316,
+    "predicted_text": "TA0009 \u2014 Collection: The adversary is trying to gather data of interest to their",
+    "gold_ids": [
+      "S0049",
+      "T1082",
+      "TA0007"
+    ],
+    "best_gold_id": "S0049",
+    "best_gold_score": 6.09982442855835,
+    "best_gold_text": "S0049 \u2014 GeminiDuke: [GeminiDuke](https://attack.mitre.org/software/S0049) is mal",
+    "gold_rank": 2,
+    "score_gap": 0.0896296501159668,
+    "error_type": "UNRELATED",
+    "error_detail": "Predicted TA0009, gold includes T1082, TA0007, S0049",
+    "top_5": [
+      [
+        "TA0009",
+        6.1895,
+        0
+      ],
+      [
+        "S0049",
+        6.0998,
+        1
+      ],
+      [
+        "T1082",
+        5.46,
+        1
+      ],
+      [
+        "TA0007",
+        5.1768,
+        1
+      ],
+      [
+        "T1083",
+        -0.1421,
+        0
+      ]
+    ]
+  },
+  {
+    "query": "The JScript loader file is highly obfuscated and decodes the More_eggs backdoor in a variety of ways, including RC4 decryption",
+    "actor": "fin6",
+    "predicted_id": "T1027",
+    "predicted_score": 6.997262954711914,
+    "predicted_text": "T1027 \u2014 Obfuscated Files or Information: Adversaries may attempt to make an exec",
+    "gold_ids": [
+      "T1140",
+      "TA0005"
+    ],
+    "best_gold_id": "TA0005",
+    "best_gold_score": 6.419395923614502,
+    "best_gold_text": "TA0005 \u2014 Defense Evasion: The adversary is trying to avoid being detected. Defen",
+    "gold_rank": 2,
+    "score_gap": 0.5778670310974121,
+    "error_type": "UNRELATED",
+    "error_detail": "Predicted T1027, gold includes T1140, TA0005",
+    "top_5": [
+      [
+        "T1027",
+        6.9973,
+        0
+      ],
+      [
+        "TA0005",
+        6.4194,
+        1
+      ],
+      [
+        "T1140",
+        5.8097,
+        1
+      ],
+      [
+        "T1059",
+        2.6172,
+        0
+      ],
+      [
+        "T1204.002",
+        0.5003,
+        0
+      ]
+    ]
+  },
+  {
+    "query": "the actor uses a fraudulent, but legitimately created LinkedIn proWle to initiate contact with individuals at the targeted company by sending invitations with a short message (Figure 1). This appears as a benign email",
+    "actor": "fin6",
+    "predicted_id": "TA0003",
+    "predicted_score": -0.3198387920856476,
+    "predicted_text": "TA0003 \u2014 Persistence: The adversary is trying to maintain their foothold. Persis",
+    "gold_ids": [
+      "T1589",
+      "TA0043"
+    ],
+    "best_gold_id": "T1589",
+    "best_gold_score": -4.642877578735352,
+    "best_gold_text": "T1589 \u2014 Gather Victim Identity Information: Adversaries may gather information a",
+    "gold_rank": 5,
+    "score_gap": 4.323038786649704,
+    "error_type": "UNRELATED",
+    "error_detail": "Predicted TA0003, gold includes T1589, TA0043",
+    "top_5": [
+      [
+        "TA0003",
+        -0.3198,
+        0
+      ],
+      [
+        "T1001.003",
+        -2.0619,
+        0
+      ],
+      [
+        "S0049",
+        -3.4855,
+        0
+      ],
+      [
+        "S0415",
+        -4.5289,
+        0
+      ],
+      [
+        "T1589",
+        -4.6429,
+        1
+      ]
+    ]
+  },
+  {
+    "query": "The malware was delivered via an Excel document",
+    "actor": "oilrig",
+    "predicted_id": "TA0002",
+    "predicted_score": 4.090230464935303,
+    "predicted_text": "TA0002 \u2014 Execution: The adversary is trying to run malicious code. Execution con",
+    "gold_ids": [
+      "T1566",
+      "T1566.001",
+      "TA0001"
+    ],
+    "best_gold_id": "T1566.001",
+    "best_gold_score": 2.8736982345581055,
+    "best_gold_text": "T1566.001 \u2014 Spearphishing Attachment: Adversaries may send spearphishing emails ",
+    "gold_rank": 2,
+    "score_gap": 1.2165322303771973,
+    "error_type": "UNRELATED",
+    "error_detail": "Predicted TA0002, gold includes T1566, TA0001, T1566.001",
+    "top_5": [
+      [
+        "TA0002",
+        4.0902,
+        0
+      ],
+      [
+        "T1566.001",
+        2.8737,
+        1
+      ],
+      [
+        "T1566",
+        2.4425,
+        1
+      ],
+      [
+        "S0139",
+        2.011,
+        0
+      ],
+      [
+        "TA0001",
+        1.3183,
+        1
+      ]
+    ]
+  },
+  {
+    "query": "it uses the following WMI query to get the IP address of the request",
+    "actor": "oilrig",
+    "predicted_id": "T1047",
+    "predicted_score": 5.2652411460876465,
+    "predicted_text": "T1047 \u2014 Windows Management Instrumentation: Adversaries may abuse Windows Manage",
+    "gold_ids": [
+      "T1082",
+      "TA0007"
+    ],
+    "best_gold_id": "TA0007",
+    "best_gold_score": 3.4344120025634766,
+    "best_gold_text": "TA0007 \u2014 Discovery: The adversary is trying to figure out your environment. Disc",
+    "gold_rank": 2,
+    "score_gap": 1.83082914352417,
+    "error_type": "UNRELATED",
+    "error_detail": "Predicted T1047, gold includes T1082, TA0007",
+    "top_5": [
+      [
+        "T1047",
+        5.2652,
+        0
+      ],
+      [
+        "TA0007",
+        3.4344,
+        1
+      ],
+      [
+        "T1056",
+        0.0689,
+        0
+      ],
+      [
+        "T1082",
+        -0.786,
+        1
+      ],
+      [
+        "T1033",
+        -1.2862,
+        0
+      ]
+    ]
+  },
+  {
+    "query": "Microsoft Excel macros",
+    "actor": "oilrig",
+    "predicted_id": "S0139",
+    "predicted_score": 3.713728189468384,
+    "predicted_text": "S0139 \u2014 PowerDuke: [PowerDuke](https://attack.mitre.org/software/S0139) is a bac",
+    "gold_ids": [
+      "T1203",
+      "T1203.002",
+      "TA0002"
+    ],
+    "best_gold_id": "TA0002",
+    "best_gold_score": 2.61197829246521,
+    "best_gold_text": "TA0002 \u2014 Execution: The adversary is trying to run malicious code. Execution con",
+    "gold_rank": 3,
+    "score_gap": 1.1017498970031738,
+    "error_type": "UNRELATED",
+    "error_detail": "Predicted S0139, gold includes TA0002, T1203, T1203.002",
+    "top_5": [
+      [
+        "S0139",
+        3.7137,
+        0
+      ],
+      [
+        "TA0007",
+        2.9464,
+        0
+      ],
+      [
+        "TA0002",
+        2.612,
+        1
+      ],
+      [
+        "T1059",
+        0.8312,
+        0
+      ],
+      [
+        "S0029",
+        -1.1336,
+        0
+      ]
+    ]
+  },
+  {
+    "query": "The group deployed destructive malware to delete Vles from the hard drive, force shutdowns, and impede rebooting and recovery by misconVguring BitLocker, rendering computers inoperable.",
+    "actor": "sandworm",
+    "predicted_id": "T1070.004",
+    "predicted_score": 5.004347801208496,
+    "predicted_text": "T1070.004 \u2014 File Deletion: Adversaries may delete files left behind by the actio",
+    "gold_ids": [
+      "T1490",
+      "TA0040"
+    ],
+    "best_gold_id": "TA0040",
+    "best_gold_score": 3.421842575073242,
+    "best_gold_text": "TA0040 \u2014 Impact: The adversary is trying to manipulate, interrupt, or destroy yo",
+    "gold_rank": 2,
+    "score_gap": 1.582505226135254,
+    "error_type": "UNRELATED",
+    "error_detail": "Predicted T1070.004, gold includes TA0040, T1490",
+    "top_5": [
+      [
+        "T1070.004",
+        5.0043,
+        0
+      ],
+      [
+        "TA0040",
+        3.4218,
+        1
+      ],
+      [
+        "T1490",
+        2.2358,
+        1
+      ],
+      [
+        "T1089",
+        -2.3662,
+        0
+      ],
+      [
+        "T1486",
+        -2.8359,
+        0
+      ]
+    ]
+  }
+]
