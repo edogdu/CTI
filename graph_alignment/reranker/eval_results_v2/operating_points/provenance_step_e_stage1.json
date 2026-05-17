@@ -1,0 +1,23 @@
+{
+  "script": "score_test_pairs.py",
+  "step": "E (operating points and binary classification)",
+  "stage": "1 of 2 (scoring extraction)",
+  "random_seed": 42,
+  "pythonhashseed_env": "42",
+  "args": {
+    "data_path": "C:\\Users\\shane\\Downloads\\CTI\\graph_alignment\\reranker\\data\\reranker_pairs_enriched_v2.jsonl",
+    "model_path": "C:\\Users\\shane\\Downloads\\CTI\\graph_alignment\\reranker\\checkpoints\\best_two_stage_v2",
+    "output_dir": "eval_results_v2/operating_points",
+    "batch_size": 64
+  },
+  "resolved_paths": {
+    "data_path": "C:\\Users\\shane\\Downloads\\CTI\\graph_alignment\\reranker\\data\\reranker_pairs_enriched_v2.jsonl",
+    "model_path": "C:\\Users\\shane\\Downloads\\CTI\\graph_alignment\\reranker\\checkpoints\\best_two_stage_v2",
+    "v2_reeval_source": "C:\\Users\\shane\\Downloads\\CTI\\graph_alignment\\reranker"
+  },
+  "test_set_stats": {
+    "n_test_queries": 146,
+    "n_pairs_scored": 2937
+  },
+  "note_on_p_at_1": "This script scores the cross-encoder layer only. P@1 derived from these scores is the standalone cross-encoder number (94.52% expected). Hierarchical post-processing (which adds 0.69 P@1 points to reach the system-level 95.21%) is intentionally NOT applied here; it does not affect per-pair scores and is reported in the main results section of the paper, not in Step E."
+}

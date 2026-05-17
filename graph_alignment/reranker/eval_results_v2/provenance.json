@@ -1,0 +1,92 @@
+{
+  "accuracy_correct": 138,
+  "accuracy_total": 146,
+  "command": [
+    "explain.py",
+    "--model",
+    "checkpoints/best_two_stage_v2",
+    "--data",
+    "data/reranker_pairs_enriched_v2.jsonl",
+    "--output-dir",
+    "eval_results_v2",
+    "--seed",
+    "42"
+  ],
+  "cuda_available": false,
+  "data_path": "data/reranker_pairs_enriched_v2.jsonl",
+  "data_sha256": "dc62f8c2805d11ce4f7945a35744516fa3d5d02509af43b40a6f27d87d2a0ce5",
+  "env_filtered": {
+    "CUBLAS_WORKSPACE_CONFIG": ":4096:8",
+    "KMP_DETERMINISTIC_REDUCTION": "true",
+    "KMP_DUPLICATE_LIB_OK": "True",
+    "KMP_INIT_AT_FORK": "FALSE",
+    "MKL_CBWR": "AUTO,STRICT",
+    "MKL_DYNAMIC": "FALSE",
+    "MKL_NUM_THREADS": "1",
+    "OMP_DYNAMIC": "FALSE",
+    "OMP_NUM_THREADS": "1",
+    "PYTHONHASHSEED": "42",
+    "TOKENIZERS_PARALLELISM": "false"
+  },
+  "extra": {
+    "no_deterministic_flag": false,
+    "per_actor_counts": {
+      "apt29": 41,
+      "carbanak": 27,
+      "fin6": 21,
+      "fin7": 24,
+      "oilrig": 17,
+      "sandworm": 9,
+      "wizardspider": 7
+    }
+  },
+  "finished_at_utc": "2026-05-09T07:54:58Z",
+  "hash_canary": 2944337262402990785,
+  "machine": "AMD64",
+  "model_file_hashes": {
+    "README.md": "586b83d28ab2bb904993de5fae41e56590db30d30f53b89e75452285d475a51c",
+    "config.json": "9a30582800070d149a5ece707030feebfba89f6788d1db1ec5ec2123349be6f2",
+    "eval\\CrossEncoderRerankingEvaluator_val_results_@10.csv": "e37ebc3f0424695159a71c2169b4a55a807321ac09174e1ed38f9f57dcb26006",
+    "model.safetensors": "e05dfb1843a54ae0aaa6c131f48e65e449370bff6ac22869448fa050d0a164a8",
+    "special_tokens_map.json": "5aa43c2f985a25296d5a5ce621c2f77376ca8091a47993c492fd5460b895b140",
+    "tokenizer.json": "91f1def9b9391fdabe028cd3f3fcc4efd34e5d1f08c3bf2de513ebb5911a1854",
+    "tokenizer_config.json": "682c0f1da0ee348684bffd9d7423efff859b0872e32f3e92a3405f9b2442787c"
+  },
+  "model_path": "checkpoints/best_two_stage_v2",
+  "n_explanations": 146,
+  "numpy_version": "2.3.5",
+  "output_dir": "eval_results_v2",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "processor": "Intel64 Family 6 Model 154 Stepping 4, GenuineIntel",
+  "purpose": "Step C v2 regeneration provenance — ACSAC 2026 deterministic LOO",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "schema_version": "1.0",
+  "seed": 42,
+  "sentence_transformers_version": "5.2.3",
+  "started_at_utc": "2026-05-09T07:47:29Z",
+  "torch_config": [
+    "PyTorch built with:",
+    "  - C++ Version: 201703",
+    "  - MSVC 194234444",
+    "  - Intel(R) oneAPI Math Kernel Library Version 2025.3-Product Build 20251007 for Intel(R) 64 architecture applications",
+    "  - Intel(R) MKL-DNN v3.7.1 (Git Hash 8d263e693366ef8db40acc569cc7d8edf644556d)",
+    "  - OpenMP 2019",
+    "  - LAPACK is enabled (usually provided by MKL)",
+    "  - CPU capability usage: AVX2",
+    "  - Build settings: BLAS_INFO=mkl, BUILD_TYPE=Release, COMMIT_SHA=449b1768410104d3ed79d3bcfe4ba1d65c7f22c0, CXX_COMPILER=C:/actions-runner/_work/pytorch/pytorch/pytorch/.ci/pytorch/windows/tmp_bin/sccache-cl.exe, CXX_FLAGS=/DWIN32 /D_WINDOWS /EHsc /Zc:__cplusplus /bigobj /FS /utf-8 -DUSE_PTHREADPOOL -DNDEBUG -DUSE_KINETO -DLIBKINETO_NOCUPTI -DLIBKINETO_NOROCTRACER -DLIBKINETO_NOXPUPTI=ON -DUSE_XNNPACK -DSYMBOLICATE_MOBILE_DEBUG_HANDLE /wd4624 /wd4068 /wd4067 /wd4267 /wd4661 /wd4717 /wd4244 /wd4804 /wd4273, LAPACK_INFO=mkl, PERF_WITH_AVX=1, PERF_WITH_AVX2=1, TORCH_VERSION=2.10.0, USE_CUDA=0, USE_CUDNN=OFF, USE_CUSPARSELT=OFF, USE_GFLAGS=OFF, USE_GLOG=OFF, USE_GLOO=ON, USE_MKL=ON, USE_MKLDNN=ON, USE_MPI=OFF, USE_NCCL=OFF, USE_NNPACK=OFF, USE_OPENMP=ON, USE_ROCM=OFF, USE_ROCM_KERNEL_ASSERT=OFF, USE_XCCL=OFF, USE_XPU=OFF, "
+  ],
+  "torch_default_dtype": "torch.float32",
+  "torch_deterministic_algorithms": true,
+  "torch_float32_matmul_precision": "highest",
+  "torch_num_interop_threads": 1,
+  "torch_num_threads": 1,
+  "torch_version": "2.10.0+cpu",
+  "transformers_version": "5.2.0",
+  "wall_seconds": 449.2,
+  "win32_ver": [
+    "10",
+    "10.0.26200",
+    "SP0",
+    "Multiprocessor Free"
+  ]
+}
