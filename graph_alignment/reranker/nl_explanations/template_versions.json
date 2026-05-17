@@ -1,0 +1,57 @@
+{
+  "template_version": "v1.0",
+  "schema_version": "1",
+  "sentence_order": [
+    "S1: deployment context + primary prediction + confidence + score gap",
+    "S2: token + lexical evidence (or short-query fallback)",
+    "S3: multi-gold / single-gold / error correctness framing",
+    "S4: next-ranked alternative (when distinct from primary gold) + hierarchy",
+    "S5: analyst-action implication scaled to confidence tier and correctness"
+  ],
+  "vocabulary_translations": {
+    "HIGH": "high",
+    "MEDIUM": "moderate",
+    "LOW": "low"
+  },
+  "actor_display_map": {
+    "apt29": "APT29",
+    "carbanak": "Carbanak",
+    "fin6": "FIN6",
+    "fin7": "FIN7",
+    "oilrig": "OilRig",
+    "sandworm": "Sandworm",
+    "wizardspider": "Wizard Spider"
+  },
+  "forbidden_jargon_tokens": [
+    "logit",
+    "logits",
+    "softmax",
+    "leave-one-out",
+    "leave one out",
+    "top-k",
+    "top k",
+    "top-K",
+    "p@1",
+    "p@k",
+    "argmax",
+    "loss",
+    "embedding",
+    "perturbation",
+    "ablation"
+  ],
+  "design_citations": {
+    "templates_as_contribution": "Kazakova et al., SPLAIN, arXiv:2311.11215, 2023",
+    "templates_as_first_step": "Perrina et al., AGIR, IEEE BigData 2023",
+    "faithfulness_scope_language": "Lyu, Apidianaki & Callison-Burch, Comp. Ling. 50(2), 2024",
+    "analyst_attention_budget": "Rastogi et al., arXiv:2503.02065, 2025",
+    "absence_of_user_study_normative": "Nadeem et al. SoK, EuroS&P 2023, pp. 221-240",
+    "xai_descriptions_vs_narratives": "Cambria et al. (Gemini report ref. 7)",
+    "translated_vocabulary": "Rastogi et al. 2025 + SANS SOC Survey 2024"
+  },
+  "notes": [
+    "Templates are written as deterministic f-strings inside the phrase builders.",
+    "No randomness; same input -> bit-identical output across runs.",
+    "Bold markers (**X**) are markdown for LaTeX-rendered paper figures.",
+    "Em-dash U+2014 is used in alternative text_preview; the resolver handles it."
+  ]
+}
