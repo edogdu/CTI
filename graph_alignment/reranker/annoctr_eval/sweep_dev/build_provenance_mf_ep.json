@@ -1,0 +1,55 @@
+{
+ "candidate_universe": {
+  "by_type": {
+   "attack-pattern": 625,
+   "malware": 563,
+   "tool": 85,
+   "x-mitre-tactic": 14
+  },
+  "total": 1287
+ },
+ "flags": {
+  "context_window": false,
+  "enrich_procedures": true,
+  "frozen_pools": true,
+  "mention_first": true
+ },
+ "params": {
+  "bm25": {
+   "b": 0.75,
+   "k1": 1.5,
+   "top_k": 20
+  },
+  "context_cap_words": 300,
+  "enrich_desc_chars": 600,
+  "max_desc_chars": 1000
+ },
+ "splits": {
+  "dev": {
+   "bm25_gold_in_pool_rate": 0.1728,
+   "categories": {
+    "mixed": 52,
+    "software": 115,
+    "tactic": 66,
+    "technique": 340
+   },
+   "documents": 16,
+   "mention_stats": {
+    "mentions_gold_unresolvable": 1,
+    "mentions_group_excluded": 64,
+    "mentions_kept": 709,
+    "mentions_non_mitre": 116,
+    "mentions_total": 890
+   },
+   "queries": 573,
+   "source": {
+    "path": "C:\\Users\\shane\\Downloads\\annoctr\\AnnoCTR\\linking_mitre_only\\dev.jsonl",
+    "sha256_16": "e09ce2a7d928dd9d"
+   }
+  }
+ },
+ "stix": {
+  "path": "enterprise-attack-v14.json",
+  "sha256_16": "658c1cf6f8f9ed2b"
+ }
+}
