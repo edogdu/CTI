@@ -1,0 +1,31 @@
+name: "ctihal-pipeline"
+description: "Full pipeline evaluation on CTI-HAL dataset (PDF→triples→graph→UCKG alignment)"
+base_model: "unsloth/gemma-2-9b-it"
+base_gguf: "gemma2-9b-it-fp16.gguf"
+ner_lora: "experiments/split-gemma2-9b-r16-dedup/adapters/ner-lora.gguf"
+re_lora: "experiments/split-gemma2-9b-r16-dedup/adapters/re-lora.gguf"
+
+dataset:
+  name: "cti-hal"
+  source: "datasets/CTI-HAL/reports/"
+  annotations: "datasets/CTI-HAL/data/"
+  groups:
+    - apt29
+    - carbanak
+    - fin6
+    - fin7
+    - oilrig
+    - sandworm
+    - wizardspider
+
+pipeline:
+  dataset_mode: document
+  semantic_chunking: true
+  repair: true
+  canonicalization: true
+  graph_insertion: true
+  similarity: true
+
+embedding:
+  model: "nomic-ai/nomic-embed-text-v1"
+  dimensions: 768

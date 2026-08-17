@@ -21,6 +21,9 @@ class LoRAConfig:
         "q_proj", "k_proj", "v_proj", "o_proj",
         "gate_proj", "up_proj", "down_proj",
     ])
+    exclude_modules: List[str] = field(default_factory=lambda: [
+        "vision_tower",
+    ])
 
 
 @dataclass
@@ -50,12 +53,13 @@ class DataConfig:
     include_negatives: bool = True
     negative_ratio: float = 0.15
     task_mix_ratio: float = 0.85  # fraction NER vs RE (0.85 = 85% NER, 15% RE)
+    task: str = "joint"  # "ner", "re", or "joint"
 
 
 @dataclass
 class ExportConfig:
-    quantization: str = "q4_k_m"
-    ollama_model_name: str = "gemma2-cti"
+    quantization: str = "f16"
+    model_name: str = "gemma3-cti"
 
 
 @dataclass
@@ -90,6 +94,7 @@ def load_finetuning_config(
         alpha=int(lora_raw.get("alpha", LoRAConfig.alpha)),
         dropout=float(lora_raw.get("dropout", LoRAConfig.dropout)),
         target_modules=lora_raw.get("target_modules", LoRAConfig().target_modules),
+        exclude_modules=lora_raw.get("exclude_modules", LoRAConfig().exclude_modules),
     )
 
     training_cfg = TrainingConfig(
@@ -122,11 +127,12 @@ def load_finetuning_config(
         include_negatives=bool(data_raw.get("include_negatives", DataConfig.include_negatives)),
         negative_ratio=float(data_raw.get("negative_ratio", DataConfig.negative_ratio)),
         task_mix_ratio=float(data_raw.get("task_mix_ratio", DataConfig.task_mix_ratio)),
+        task=str(data_raw.get("task", DataConfig.task)),
     )
 
     export_cfg = ExportConfig(
         quantization=str(export_raw.get("quantization", ExportConfig.quantization)),
-        ollama_model_name=str(export_raw.get("ollama_model_name", ExportConfig.ollama_model_name)),
+        model_name=str(export_raw.get("model_name", ExportConfig.model_name)),
     )
 
     return FinetuningConfig(

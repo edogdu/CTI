@@ -1,0 +1,22 @@
+name: "baseline-bert-crf-dedup"
+description: "JE_BERT_CRF baseline retrained on deduplicated DNRTI dataset"
+model: "bert-base-cased + CRF (NER) + Attention classifier (RE)"
+notebook: "notebooks/JE_BERT_CRF_DNRTI_TP.ipynb"
+
+dataset:
+  source: "datasets/DNRTI/dnrti_dedup.json"
+  train: 4805
+  val: 507
+  test: 518
+  train_test_text_overlap: 0
+
+training:
+  epochs: 3
+  seed: 42
+  ner_labels: 40  # 19 types x 2 (B/I) + null + O
+  re_labels: 17   # 16 predicates + null
+  loss_weights: "alpha=1.7, beta=0.3"
+
+notes: |
+  Retrained on deduplicated DNRTI for fair comparison with Gemma 2 9B.
+  Previous run used dataset with 32.5% train/test text overlap.

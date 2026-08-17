@@ -13,6 +13,7 @@ from cti_analysis.models.scores import SimilarityScore, RerankResult
 from cti_analysis.models.graph import GraphInsertBatch
 
 from cti_analysis.data_normalization.normalize import run_normalization
+from cti_analysis.triple_extraction.sentencizer import sentencize_document
 from cti_analysis.triple_extraction.semantic_chunking.chunker import run_chunking
 from cti_analysis.triple_extraction.extraction.extractor import run_extraction
 from cti_analysis.triple_extraction.triple_repair.repair import run_repair_ir
@@ -33,15 +34,68 @@ def log(msg: str):
     print(f"[{ts}] {msg}", flush=True)
 
 
+_docling_converter = None
+
+def _get_docling_converter():
+    """Lazy-init a shared DocumentConverter (avoids re-loading weights per PDF)."""
+    global _docling_converter
+    if _docling_converter is None:
+        from docling.document_converter import DocumentConverter
+        _docling_converter = DocumentConverter()
+    return _docling_converter
+
+
+def _convert_pdf(pdf_path: Path):
+    """Convert a PDF and return the docling document object with page structure."""
+    converter = _get_docling_converter()
+    result = converter.convert(str(pdf_path))
+    return result.document
+
+
 def load_raw_documents(cfg) -> List[RawDocument]:
     """
     Load documents based on dataset name.
     - dnrti: read the DNRTI JSON file into RawDocuments (one per entry)
+    - cti-hal: extract text from PDF reports under datasets/CTI-HAL/reports/
     - default: read all .txt under data/raw
     """
     dataset = getattr(cfg, "dataset_name", "").lower()
     datasets_dir = Path(getattr(cfg, "datasets_dir", "datasets"))
     dataset_file = getattr(cfg, "dataset_file", None)
+
+    if dataset == "cti-hal":
+        reports_dir = datasets_dir / "CTI-HAL" / "reports"
+        if not reports_dir.exists():
+            log(f"[Load] CTI-HAL reports dir missing: {reports_dir}")
+            return []
+        pdfs = sorted(reports_dir.rglob("*.pdf"))
+        log(f"[Load] Found {len(pdfs)} PDFs in {reports_dir}")
+        docs: List[RawDocument] = []
+        for pi, pdf_path in enumerate(pdfs):
+            group = pdf_path.relative_to(reports_dir).parts[0]
+            doc_id = f"{group}_{pdf_path.stem}"
+            log(f"[Load] [{pi+1}/{len(pdfs)}] Converting {group}/{pdf_path.name}...")
+            try:
+                docling_doc = _convert_pdf(pdf_path)
+            except Exception as e:
+                log(f"[Load] Failed to convert {pdf_path.name}: {e}")
+                continue
+            # Store full markdown as text, but pass docling doc object for
+            # page-level sentencization in normalize.py
+            text = docling_doc.export_to_markdown()
+            if not text.strip():
+                log(f"[Load] Empty text from {pdf_path.name}, skipping")
+                continue
+            docs.append(RawDocument(
+                doc_id=doc_id,
+                source_path=str(pdf_path),
+                text=text,
+                meta={"group": group, "pdf_name": pdf_path.name,
+                      "docling_doc": docling_doc},
+            ))
+        log(f"[Load] loaded {len(docs)} CTI-HAL docs from {reports_dir}")
+        return docs
+
     dnrti_file = Path(dataset_file) if dataset_file else datasets_dir / "DNRTI" / "dnrti_aug_stix2_je_subset.json"
 
     if dataset == "dnrti" or dnrti_file.exists():
@@ -101,25 +155,46 @@ def _process_unit(
 
     Returns (chunks, triple_batches) for this unit.
     """
-    # 1) Chunk this unit
-    if getattr(cfg.semantic_chunking, "enabled", True):
-        chunks: List[Chunk] = run_chunking(cfg.semantic_chunking, [doc])
+    pfx = f"[{unit_idx + 1}/{total_units} {doc.doc_id}]"
+
+    # 1) Sentencize: split document into sentence-level chunks
+    has_docling = isinstance(doc.meta, dict) and "docling_doc" in doc.meta
+    if has_docling:
+        log(f"{pfx} Sentencizing...")
+        chunks: List[Chunk] = sentencize_document(doc)
+        log(f"{pfx} {len(chunks)} sentences after filtering")
     else:
         chunks = [chunk_from_text(doc, f"{doc.doc_id}_chunk0", doc.text)]
 
-    # 2) Extract triples from this unit's chunks
-    triple_batches: List[TripleBatch] = run_extraction(cfg.extraction, chunks)
+    if not chunks:
+        log(f"{pfx} No relevant sentences, skipping")
+        return [], []
 
-    # 3) Repair this unit's triples
+    # 2) Semantic chunking (optional): merge sentence chunks into groups
+    if getattr(cfg.semantic_chunking, "enabled", False):
+        log(f"{pfx} Semantic chunking ({len(chunks)} sentences -> merging)...")
+        chunks = run_chunking(cfg.semantic_chunking, [doc], sentence_chunks=chunks)
+        log(f"{pfx} {len(chunks)} chunks after merging")
+
+    # 3) Extract triples
+    log(f"{pfx} Extracting triples from {len(chunks)} chunks...")
+    cfg.extraction._backend_cfg = cfg.backend
+    triple_batches: List[TripleBatch] = run_extraction(cfg.extraction, chunks)
+    n_triples = sum(len(b.triples) for b in triple_batches)
+    log(f"{pfx} Extracted {n_triples} triples")
+
+    # 4) Repair
     if getattr(cfg.repair, "enabled", True):
+        log(f"{pfx} Repairing...")
         triple_batches = run_repair_ir(cfg.repair, triple_batches)
 
-    # 4) Canonicalize this unit's triples
+    # 5) Canonicalize
     if getattr(cfg.canonicalization, "enabled", True):
+        log(f"{pfx} Canonicalizing...")
         triple_batches = run_canonicalization_ir(cfg.canonicalization, triple_batches)
 
     n_triples = sum(len(b.triples) for b in triple_batches)
-    log(f"[Unit {unit_idx + 1}/{total_units}] {doc.doc_id}: {len(chunks)} chunks, {n_triples} triples")
+    log(f"{pfx} Done: {len(chunks)} chunks, {n_triples} triples")
 
     return chunks, triple_batches
 
@@ -163,10 +238,43 @@ def run_pipeline() -> int:
         graph_batch = run_insertion(cfg.graph_insertion, all_triple_batches)
         save_stage_outputs("graph_alignment/graph_insertion", graph_batch, run_id=run_id)
 
+        # Write to Neo4j if configured
+        if cfg.neo4j and graph_batch:
+            from cti_analysis.graph_alignment.graph_insertion.inserter import (
+                store_batches_in_neo4j, embed_graph_nodes,
+            )
+            try:
+                from neo4j import GraphDatabase
+                driver = GraphDatabase.driver(cfg.neo4j.uri, auth=(cfg.neo4j.user, cfg.neo4j.password))
+                log("[Pipeline] Inserting triples into Neo4j...")
+                store_batches_in_neo4j(all_triple_batches, driver)
+                log("[Pipeline] Embedding CTIEntity nodes...")
+                embed_graph_nodes(driver, model=cfg.embeddings.model,
+                                  strategy=cfg.embeddings.strategy)
+                driver.close()
+                log("[Pipeline] Neo4j insertion + embedding complete")
+            except ImportError:
+                log("[Pipeline] neo4j package not installed, skipping graph write")
+            except Exception as e:
+                log(f"[Pipeline] Neo4j error: {e}")
+
     scores: List[SimilarityScore] = []
-    if getattr(cfg.similarity_scoring, "enabled", True):
-        scores = run_scoring(cfg.similarity_scoring, all_triple_batches)
-        save_stage_outputs("graph_alignment/similarity_scoring", scores, run_id=run_id)
+    if getattr(cfg.similarity_scoring, "enabled", True) and cfg.neo4j:
+        from cti_analysis.graph_alignment.similarity_scoring.scorer import run_similarity
+        try:
+            from neo4j import GraphDatabase
+            driver = GraphDatabase.driver(cfg.neo4j.uri, auth=(cfg.neo4j.user, cfg.neo4j.password))
+            # Run similarity for each unique document
+            doc_ids = list({b.doc_id for b in all_triple_batches})
+            for doc_id in doc_ids:
+                sim_output_dir = Path(cfg.output_dir) / "graph_alignment" / "similarity_scoring" / run_id / doc_id
+                log(f"[Pipeline] Running similarity search for {doc_id}...")
+                run_similarity(driver, doc_id=doc_id, output_dir=str(sim_output_dir), embed_cfg=cfg)
+            driver.close()
+        except ImportError:
+            log("[Pipeline] neo4j package not installed, skipping similarity")
+        except Exception as e:
+            log(f"[Pipeline] Similarity scoring error: {e}")
 
     if getattr(cfg.reranking, "enabled", True) and scores:
         reranked: List[RerankResult] = run_reranking(cfg.reranking, scores)

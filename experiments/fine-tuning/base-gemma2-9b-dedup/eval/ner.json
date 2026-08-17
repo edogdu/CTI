@@ -1,0 +1,195 @@
+{
+  "model": "gemma2-9b-base",
+  "experiment": "base-gemma2-9b-dedup",
+  "timestamp": "20260324-160308",
+  "task": "NER",
+  "test_docs": 518,
+  "dataset": "dnrti_dedup.json (zero train/test text overlap)",
+  "lora_id": null,
+  "micro": {
+    "precision": 0.571,
+    "recall": 0.4588,
+    "f1": 0.5088,
+    "tp": 840,
+    "fp": 631,
+    "fn": 991
+  },
+  "macro": {
+    "precision": 0.5879,
+    "recall": 0.6451,
+    "f1": 0.5944
+  },
+  "per_type": {
+    "ACT": {
+      "precision": 0.5758,
+      "recall": 0.1588,
+      "f1": 0.2489,
+      "tp": 57,
+      "fp": 42,
+      "fn": 302,
+      "gold": 359
+    },
+    "APT": {
+      "precision": 0.7304,
+      "recall": 0.7412,
+      "f1": 0.7358,
+      "tp": 252,
+      "fp": 93,
+      "fn": 88,
+      "gold": 340
+    },
+    "DOM": {
+      "precision": 0.3871,
+      "recall": 1.0,
+      "f1": 0.5581,
+      "tp": 12,
+      "fp": 19,
+      "fn": 0,
+      "gold": 12
+    },
+    "EMAIL": {
+      "precision": 0.0,
+      "recall": 0,
+      "f1": 0,
+      "tp": 0,
+      "fp": 5,
+      "fn": 0,
+      "gold": 0
+    },
+    "ENCR": {
+      "precision": 0.5,
+      "recall": 0.5,
+      "f1": 0.5,
+      "tp": 1,
+      "fp": 1,
+      "fn": 1,
+      "gold": 2
+    },
+    "FILE": {
+      "precision": 0.2639,
+      "recall": 0.3878,
+      "f1": 0.314,
+      "tp": 19,
+      "fp": 53,
+      "fn": 30,
+      "gold": 49
+    },
+    "HASH": {
+      "precision": 0.9474,
+      "recall": 1.0,
+      "f1": 0.973,
+      "tp": 18,
+      "fp": 1,
+      "fn": 0,
+      "gold": 18
+    },
+    "IDTY": {
+      "precision": 0.3545,
+      "recall": 0.2691,
+      "f1": 0.3059,
+      "tp": 67,
+      "fp": 122,
+      "fn": 182,
+      "gold": 249
+    },
+    "IP": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "tp": 2,
+      "fp": 0,
+      "fn": 0,
+      "gold": 2
+    },
+    "LOC": {
+      "precision": 0.7321,
+      "recall": 0.7736,
+      "f1": 0.7523,
+      "tp": 123,
+      "fp": 45,
+      "fn": 36,
+      "gold": 159
+    },
+    "MAL": {
+      "precision": 0.497,
+      "recall": 0.3689,
+      "f1": 0.4235,
+      "tp": 83,
+      "fp": 84,
+      "fn": 142,
+      "gold": 225
+    },
+    "OS": {
+      "precision": 0.75,
+      "recall": 0.8,
+      "f1": 0.7742,
+      "tp": 12,
+      "fp": 4,
+      "fn": 3,
+      "gold": 15
+    },
+    "PROT": {
+      "precision": 0.6154,
+      "recall": 0.7273,
+      "f1": 0.6667,
+      "tp": 8,
+      "fp": 5,
+      "fn": 3,
+      "gold": 11
+    },
+    "SECTEAM": {
+      "precision": 0.5098,
+      "recall": 0.4262,
+      "f1": 0.4643,
+      "tp": 26,
+      "fp": 25,
+      "fn": 35,
+      "gold": 61
+    },
+    "TIME": {
+      "precision": 0.7692,
+      "recall": 0.8271,
+      "f1": 0.7971,
+      "tp": 110,
+      "fp": 33,
+      "fn": 23,
+      "gold": 133
+    },
+    "TOOL": {
+      "precision": 0.3162,
+      "recall": 0.2312,
+      "f1": 0.2671,
+      "tp": 43,
+      "fp": 93,
+      "fn": 143,
+      "gold": 186
+    },
+    "URL": {
+      "precision": 0.3333,
+      "recall": 0.4,
+      "f1": 0.3636,
+      "tp": 2,
+      "fp": 4,
+      "fn": 3,
+      "gold": 5
+    },
+    "VULID": {
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.8889,
+      "tp": 4,
+      "fp": 1,
+      "fn": 0,
+      "gold": 4
+    },
+    "VULNAME": {
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6667,
+      "tp": 1,
+      "fp": 1,
+      "fn": 0,
+      "gold": 1
+    }
+  }
+}

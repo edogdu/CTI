@@ -14,7 +14,7 @@ def run_normalization(cfg, raw_docs: List[RawDocument] | Iterable[Path] | Path) 
     Normalize input documents into a common in-memory representation.
     Accepts RawDocument list (preferred) or file paths for backward compatibility.
     """
-    dataset = getattr(getattr(cfg, "dataset", None), "name", "").lower()
+    dataset = getattr(cfg, "dataset_name", "").lower()
 
     # Path/iterable path support (legacy)
     if isinstance(raw_docs, (str, Path)) or (

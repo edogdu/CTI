@@ -1,0 +1,1825 @@
+{
+  "doc_id": "fin6_MoreEggsBackdoorProofpoint",
+  "method": "bm25+regex",
+  "n_entities": 73,
+  "n_sentences": 44,
+  "bm25_matched_ids": [
+    "S0050",
+    "S0172",
+    "S0284",
+    "S0403",
+    "S0459",
+    "S0476",
+    "S0504",
+    "S0522",
+    "S0527",
+    "S0553",
+    "S0567",
+    "S0647",
+    "S1171",
+    "T0865",
+    "T1027.005",
+    "T1027.013",
+    "T1036.007",
+    "T1036.008",
+    "T1053.007",
+    "T1090",
+    "T1105",
+    "T1110.003",
+    "T1124",
+    "T1137.001",
+    "T1137.004",
+    "T1197",
+    "T1204.001",
+    "T1204.002",
+    "T1218.003",
+    "T1220",
+    "T1221",
+    "T1420",
+    "T1461",
+    "T1480.001",
+    "T1534",
+    "T1544",
+    "T1546.011",
+    "T1546.013",
+    "T1553.001",
+    "T1562.010",
+    "T1564.004",
+    "T1564.012",
+    "T1566.001",
+    "T1566.002",
+    "T1566.003",
+    "T1568",
+    "T1568.001",
+    "T1570",
+    "T1585.003",
+    "T1588.002",
+    "T1594",
+    "T1598.003",
+    "T1608.002",
+    "T1608.005",
+    "T1630.002",
+    "T1635.001",
+    "T1636.003",
+    "T1637",
+    "T1656",
+    "T1657",
+    "T1674",
+    "TA0007",
+    "TA0102"
+  ],
+  "regex_matched_ids": [],
+  "combined_matched_ids": [
+    "S0050",
+    "S0172",
+    "S0284",
+    "S0403",
+    "S0459",
+    "S0476",
+    "S0504",
+    "S0522",
+    "S0527",
+    "S0553",
+    "S0567",
+    "S0647",
+    "S1171",
+    "T0865",
+    "T1027.005",
+    "T1027.013",
+    "T1036.007",
+    "T1036.008",
+    "T1053.007",
+    "T1090",
+    "T1105",
+    "T1110.003",
+    "T1124",
+    "T1137.001",
+    "T1137.004",
+    "T1197",
+    "T1204.001",
+    "T1204.002",
+    "T1218.003",
+    "T1220",
+    "T1221",
+    "T1420",
+    "T1461",
+    "T1480.001",
+    "T1534",
+    "T1544",
+    "T1546.011",
+    "T1546.013",
+    "T1553.001",
+    "T1562.010",
+    "T1564.004",
+    "T1564.012",
+    "T1566.001",
+    "T1566.002",
+    "T1566.003",
+    "T1568",
+    "T1568.001",
+    "T1570",
+    "T1585.003",
+    "T1588.002",
+    "T1594",
+    "T1598.003",
+    "T1608.002",
+    "T1608.005",
+    "T1630.002",
+    "T1635.001",
+    "T1636.003",
+    "T1637",
+    "T1656",
+    "T1657",
+    "T1674",
+    "TA0007",
+    "TA0102"
+  ],
+  "n_bm25": 63,
+  "n_regex": 0,
+  "n_combined": 63,
+  "per_entity": [
+    {
+      "query": "email (ACT), uses urls (URL), usedby itg08 (APT), uses google drive url (TOOL), targets employees. (IDTY), targets bank's (IDTY), uses office 365 e5 (TOOL), associatedwith pdf (FILE), targetedby urls (URL), associatedwith microsoft word file (FILE), targetedby employees (IDTY), identifies bitdefender's (SECTEAM), uses carbanak (APT), associatedwith files (FILE), associatedwith antivirus solution (TOOL), associatedwith email gateway (TOOL)",
+      "entity_name": "email",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "Lateral Tool Transfer",
+          "clean_id": "T1570",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 19.882583618164062
+        },
+        {
+          "name": "Hide Artifacts: File/Path Exclusions",
+          "clean_id": "T1564.012",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 19.604942321777344
+        },
+        {
+          "name": "Template Injection",
+          "clean_id": "T1221",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 19.418455123901367
+        }
+      ]
+    },
+    {
+      "query": "cnc (TOOL), uses ip (PROT), uses hkey_current_user\\software\\microsoft\\windows\\currentve settings\\proxyenable (FILE), uses foxconn.lnk (FILE), uses 198.100.119.6 (IP), usedby ssl (PROT), uses more_eggs (MAL), uses etpro (SECTEAM), uses et (SECTEAM), usedby jlxx93mkam6grmk39qmjaqiqkzpfrp%3d%3d (ENCR), usedby url (PROT), usedby jlxx93mkam6grmk39qmjaqiqkzpfrp==\" (ENCR), usedby &nbsp;&nbsp;&nbsp; \"aw5mbyvtrvbsjvyybhvarzkzy3pjpq==\" (ENCR), usedby http (PROT), uses exfiltration (ACT), usedby ini (FILE), usedby command/status file (FILE), usedby %homepath%\\intel\\ {bff4...1c90}\\58d2a83f7777b0.3 9039198.vbs (FILE), usedby %homepath%\\intel\\ {bff4...1c90}\\58d2a83f777788.8 6541308.vbs (FILE)",
+      "entity_name": "cnc",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "File Deletion",
+          "clean_id": "T1630.002",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 26.32853126525879
+        },
+        {
+          "name": "Dynamic Resolution",
+          "clean_id": "T1637",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 25.188390731811523
+        },
+        {
+          "name": "Hide Artifacts: File/Path Exclusions",
+          "clean_id": "T1564.012",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 25.121723175048828
+        }
+      ]
+    },
+    {
+      "query": "suricata/snort (TOOL), uses ssl (PROT), usedby more_eggs (MAL), uses etpro (SECTEAM), uses et (SECTEAM)",
+      "entity_name": "suricata/snort",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "More_eggs",
+          "clean_id": "S0284",
+          "labels": [
+            "Resource",
+            "UcoexSOFTWARE",
+            "Vectorized"
+          ],
+          "score": 9.40552806854248
+        },
+        {
+          "name": "MechaFlounder",
+          "clean_id": "S0459",
+          "labels": [
+            "Resource",
+            "UcoexSOFTWARE",
+            "Vectorized"
+          ],
+          "score": 7.675503253936768
+        },
+        {
+          "name": "Dynamic Resolution",
+          "clean_id": "T1637",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 7.4601826667785645
+        }
+      ]
+    },
+    {
+      "query": "attack techniques (TOOL), usedby more_eggs downloader (MAL)",
+      "entity_name": "attack techniques",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "More_eggs",
+          "clean_id": "S0284",
+          "labels": [
+            "Resource",
+            "UcoexSOFTWARE",
+            "Vectorized"
+          ],
+          "score": 9.40552806854248
+        },
+        {
+          "name": "CSPY Downloader",
+          "clean_id": "S0527",
+          "labels": [
+            "Resource",
+            "UcoexSOFTWARE",
+            "Vectorized"
+          ],
+          "score": 7.571406841278076
+        },
+        {
+          "name": "Impair Defenses: Downgrade Attack",
+          "clean_id": "T1562.010",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 4.617287635803223
+        }
+      ]
+    },
+    {
+      "query": "personalized lures (TOOL), usedby more_eggs downloader (MAL)",
+      "entity_name": "personalized lures",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "More_eggs",
+          "clean_id": "S0284",
+          "labels": [
+            "Resource",
+            "UcoexSOFTWARE",
+            "Vectorized"
+          ],
+          "score": 9.40552806854248
+        },
+        {
+          "name": "CSPY Downloader",
+          "clean_id": "S0527",
+          "labels": [
+            "Resource",
+            "UcoexSOFTWARE",
+            "Vectorized"
+          ],
+          "score": 7.571406841278076
+        },
+        {
+          "name": "Ingress Tool Transfer",
+          "clean_id": "T1105",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 4.395354270935059
+        }
+      ]
+    },
+    {
+      "query": "multistep contacts (TOOL), usedby more_eggs downloader (MAL)",
+      "entity_name": "multistep contacts",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "More_eggs",
+          "clean_id": "S0284",
+          "labels": [
+            "Resource",
+            "UcoexSOFTWARE",
+            "Vectorized"
+          ],
+          "score": 9.40552806854248
+        },
+        {
+          "name": "CSPY Downloader",
+          "clean_id": "S0527",
+          "labels": [
+            "Resource",
+            "UcoexSOFTWARE",
+            "Vectorized"
+          ],
+          "score": 7.571406841278076
+        },
+        {
+          "name": "Contact List",
+          "clean_id": "T1636.003",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 4.512515068054199
+        }
+      ]
+    },
+    {
+      "query": "multi-vector (TOOL), usedby more_eggs downloader (MAL)",
+      "entity_name": "multi-vector",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "More_eggs",
+          "clean_id": "S0284",
+          "labels": [
+            "Resource",
+            "UcoexSOFTWARE",
+            "Vectorized"
+          ],
+          "score": 9.40552806854248
+        },
+        {
+          "name": "CSPY Downloader",
+          "clean_id": "S0527",
+          "labels": [
+            "Resource",
+            "UcoexSOFTWARE",
+            "Vectorized"
+          ],
+          "score": 7.571406841278076
+        },
+        {
+          "name": "Valak",
+          "clean_id": "S0476",
+          "labels": [
+            "Resource",
+            "UcoexSOFTWARE",
+            "Vectorized"
+          ],
+          "score": 4.649450778961182
+        }
+      ]
+    },
+    {
+      "query": "linkedin scraping (TOOL), usedby more_eggs downloader (MAL)",
+      "entity_name": "linkedin scraping",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "More_eggs",
+          "clean_id": "S0284",
+          "labels": [
+            "Resource",
+            "UcoexSOFTWARE",
+            "Vectorized"
+          ],
+          "score": 9.40552806854248
+        },
+        {
+          "name": "CSPY Downloader",
+          "clean_id": "S0527",
+          "labels": [
+            "Resource",
+            "UcoexSOFTWARE",
+            "Vectorized"
+          ],
+          "score": 7.571406841278076
+        },
+        {
+          "name": "MoleNet",
+          "clean_id": "S0553",
+          "labels": [
+            "Resource",
+            "UcoexSOFTWARE",
+            "Vectorized"
+          ],
+          "score": 4.011655807495117
+        }
+      ]
+    },
+    {
+      "query": "more_eggs downloader (MAL), usedby attack techniques (TOOL), usedby personalized lures (TOOL), usedby multistep contacts (TOOL), usedby multi-vector (TOOL), usedby linkedin scraping (TOOL)",
+      "entity_name": "more_eggs downloader",
+      "type": "MAL",
+      "hits": [
+        {
+          "name": "Stage Capabilities: Upload Tool",
+          "clean_id": "T1608.002",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 19.690303802490234
+        },
+        {
+          "name": "Ingress Tool Transfer",
+          "clean_id": "T1544",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 19.10774803161621
+        },
+        {
+          "name": "Obtain Capabilities: Tool",
+          "clean_id": "T1588.002",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 19.021020889282227
+        }
+      ]
+    },
+    {
+      "query": "social engineering (ACT), associatedwith stealthy malware (MAL), associatedwith cleverly disguised malware (MAL), targets process card transactions (IDTY), targets card holder data environment (IDTY), uses reconnaissance tools (TOOL), targets user (IDTY), associatedwith cosmicduke samples (MAL), targets exploit (VULNAME), uses bankers (MAL), uses rats (MAL), associatedwith files (FILE), uses cosmicduke (MAL)",
+      "entity_name": "social engineering",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "CosmicDuke",
+          "clean_id": "S0050",
+          "labels": [
+            "Resource",
+            "UcoexSOFTWARE",
+            "Vectorized"
+          ],
+          "score": 19.30294418334961
+        },
+        {
+          "name": "OilCheck",
+          "clean_id": "S1171",
+          "labels": [
+            "Resource",
+            "UcoexSOFTWARE",
+            "Vectorized"
+          ],
+          "score": 15.868157386779785
+        },
+        {
+          "name": "Obfuscated Files or Information: Indicator Removal from Tools",
+          "clean_id": "T1027.005",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 14.993475914001465
+        }
+      ]
+    },
+    {
+      "query": "stealthy malware (MAL), uses campaigns (ACT), associatedwith social engineering (ACT), associatedwith campaigns (ACT)",
+      "entity_name": "stealthy malware",
+      "type": "MAL",
+      "hits": [
+        {
+          "name": "Impersonation",
+          "clean_id": "T1656",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 10.058788299560547
+        },
+        {
+          "name": "Discovery",
+          "clean_id": "TA0102",
+          "labels": [
+            "Resource",
+            "UcoexTACTICS",
+            "Vectorized"
+          ],
+          "score": 8.614566802978516
+        },
+        {
+          "name": "Discovery",
+          "clean_id": "TA0007",
+          "labels": [
+            "Resource",
+            "UcoexTACTICS",
+            "Vectorized"
+          ],
+          "score": 7.5240583419799805
+        }
+      ]
+    },
+    {
+      "query": "bankers (MAL), uses campaigns (ACT), uses social engineering (ACT), associatedwith campaigns (ACT)",
+      "entity_name": "bankers",
+      "type": "MAL",
+      "hits": [
+        {
+          "name": "Impersonation",
+          "clean_id": "T1656",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 10.058788299560547
+        },
+        {
+          "name": "Discovery",
+          "clean_id": "TA0102",
+          "labels": [
+            "Resource",
+            "UcoexTACTICS",
+            "Vectorized"
+          ],
+          "score": 8.614566802978516
+        },
+        {
+          "name": "Dynamic Resolution: Fast Flux DNS",
+          "clean_id": "T1568.001",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 8.217634201049805
+        }
+      ]
+    },
+    {
+      "query": "rats (MAL), uses campaigns (ACT), uses social engineering (ACT), associatedwith campaigns (ACT), usedby remote access tools (TOOL), associatedwith malicious dropper; (ACT), associatedwith spearphishing campaigns (ACT), uses apt29 (APT)",
+      "entity_name": "rats",
+      "type": "MAL",
+      "hits": [
+        {
+          "name": "Impersonation",
+          "clean_id": "T1656",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 16.35487174987793
+        },
+        {
+          "name": "Discovery",
+          "clean_id": "TA0102",
+          "labels": [
+            "Resource",
+            "UcoexTACTICS",
+            "Vectorized"
+          ],
+          "score": 15.330483436584473
+        },
+        {
+          "name": "Proxy",
+          "clean_id": "T1090",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 14.590758323669434
+        }
+      ]
+    },
+    {
+      "query": "follow-up spam campaign (ACT), uses urls (URL), hasattacktime feb 21, 2019 (TIME), targetedby urls (URL), associatedwith pdf (FILE)",
+      "entity_name": "follow-up spam campaign",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "Stage Capabilities: Link Target",
+          "clean_id": "T1608.005",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 9.081113815307617
+        },
+        {
+          "name": "Phishing: Spearphishing Link",
+          "clean_id": "T1566.002",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 8.093713760375977
+        },
+        {
+          "name": "Phishing for Information: Spearphishing Link",
+          "clean_id": "T1598.003",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 7.7329630851745605
+        }
+      ]
+    },
+    {
+      "query": "fake jobs campaigns (ACT), hasattacktime feb 21, 2019 (TIME), uses urls (URL), associatedwith pdf (FILE)",
+      "entity_name": "fake jobs campaigns",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "BITS Jobs",
+          "clean_id": "T1197",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 8.418750762939453
+        },
+        {
+          "name": "System Time Discovery",
+          "clean_id": "T1124",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 5.931756019592285
+        },
+        {
+          "name": "Scheduled Task/Job: Container Orchestration Job",
+          "clean_id": "T1053.007",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 5.8411865234375
+        }
+      ]
+    },
+    {
+      "query": "email attachment (ACT), hasattacktime feb 21, 2019 (TIME), uses urls (URL), associatedwith pdf (FILE)",
+      "entity_name": "email attachment",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "Phishing: Spearphishing Attachment",
+          "clean_id": "T1566.001",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 9.824707984924316
+        },
+        {
+          "name": "Spearphishing Attachment",
+          "clean_id": "T0865",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 9.307818412780762
+        },
+        {
+          "name": "User Execution: Malicious File",
+          "clean_id": "T1204.002",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 7.393611907958984
+        }
+      ]
+    },
+    {
+      "query": "anti-money laundering campaign (ACT), targets financial institutions (IDTY)",
+      "entity_name": "anti-money laundering campaign",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "Financial Theft",
+          "clean_id": "T1657",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 9.883868217468262
+        },
+        {
+          "name": "Dtrack",
+          "clean_id": "S0567",
+          "labels": [
+            "Resource",
+            "UcoexSOFTWARE",
+            "Vectorized"
+          ],
+          "score": 6.82021951675415
+        },
+        {
+          "name": "Exobot",
+          "clean_id": "S0522",
+          "labels": [
+            "Resource",
+            "UcoexSOFTWARE",
+            "Vectorized"
+          ],
+          "score": 6.102993488311768
+        }
+      ]
+    },
+    {
+      "query": "malware (MAL), targets skype login (IDTY), targets vulnerabilities (VULNAME), targets ifobs banking systems. (IDTY), targets victim system (IDTY), targets credit card data (IDTY), targets credentials (IDTY), targets operating system (OS), targets basic system information (IDTY), uses ftp. (PROT), uses collaborate respond (TOOL), uses threat intel management series (TOOL), uses resources lunch & learn (TOOL), uses file transfer utilities (TOOL), uses ftp clients (TOOL), uses web browsers (TOOL), uses email clients (TOOL), uses antivirus engines. (TOOL), uses spear-phishing attacks (ACT), uses pst files (FILE), uses outlook (TOOL), uses email (TOOL), uses termservice service (TOOL), uses remote desktop (TOOL), uses unpacks its main executable (ACT), uses cmduniq (TOOL), uses remote command and control (ACT), uses scraping memory (ACT), uses attack (ACT), uses reconnaissance (ACT), uses steals (ACT), uses md5 (ENCR), uses decrypt (ACT), uses .net) (TOOL), uses json (TOOL), uses network requests. (ACT), uses encrypting (ACT), uses data (FILE), uses persisting (ACT), uses collects (ACT), uses take screenshots (ACT), uses (php, bml, or cgi) (FILE), uses gif, jpg, png, htm, html, php. (FILE), uses bypasses authentication (ACT), uses smb (PROT), uses locate a vulnerable host (ACT), uses c:\\windows\\temp (FILE), identifiedby trend micro (SECTEAM), uses cyberespionage group (APT), uses carbanak (APT), targetedby windows-only (OS), targetedby vulnerabilities (VULNAME), targetedby eastern europe (LOC), targetedby russia (LOC), targetedby google (IDTY), targetedby of (IDTY), identifies symantec (SECTEAM), associatedwith exfiltration (ACT), associatedwith malware installation (ACT), usedby python (TOOL), usedby ecommerce sites (TOOL), usedby (aka frameworkpos) (TOOL), usedby trinity pos (TOOL), usedby outlook items (TOOL), usedby command-and-control (TOOL), contains ini file (FILE), contains bf.exe (FILE)",
+      "entity_name": "malware",
+      "type": "MAL",
+      "hits": [
+        {
+          "name": "MechaFlounder",
+          "clean_id": "S0459",
+          "labels": [
+            "Resource",
+            "UcoexSOFTWARE",
+            "Vectorized"
+          ],
+          "score": 118.40283966064453
+        },
+        {
+          "name": "Dynamic Resolution",
+          "clean_id": "T1637",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 107.75861358642578
+        },
+        {
+          "name": "Lateral Tool Transfer",
+          "clean_id": "T1570",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 107.01110076904297
+        }
+      ]
+    },
+    {
+      "query": "profile (ACT), targets infected machine. (IDTY), uses more_eggs (MAL)",
+      "entity_name": "profile",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "More_eggs",
+          "clean_id": "S0284",
+          "labels": [
+            "Resource",
+            "UcoexSOFTWARE",
+            "Vectorized"
+          ],
+          "score": 9.40552806854248
+        },
+        {
+          "name": "Event Triggered Execution: PowerShell Profile",
+          "clean_id": "T1546.013",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 5.180706977844238
+        },
+        {
+          "name": "Anchor",
+          "clean_id": "S0504",
+          "labels": [
+            "Resource",
+            "UcoexSOFTWARE",
+            "Vectorized"
+          ],
+          "score": 4.754270553588867
+        }
+      ]
+    },
+    {
+      "query": "taurus (MAL), associatedwith cmstp bypass (ACT)",
+      "entity_name": "taurus",
+      "type": "MAL",
+      "hits": [
+        {
+          "name": "System Binary Proxy Execution: CMSTP",
+          "clean_id": "T1218.003",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 10.089568138122559
+        },
+        {
+          "name": "Lockscreen Bypass",
+          "clean_id": "T1461",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 4.92793083190918
+        },
+        {
+          "name": "Subvert Trust Controls: Gatekeeper Bypass",
+          "clean_id": "T1553.001",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 4.265005111694336
+        }
+      ]
+    },
+    {
+      "query": "cmstp bypass (ACT), associatedwith taurus (MAL), uses venomkit (MAL)",
+      "entity_name": "cmstp bypass",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "System Binary Proxy Execution: CMSTP",
+          "clean_id": "T1218.003",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 10.089568138122559
+        },
+        {
+          "name": "Lockscreen Bypass",
+          "clean_id": "T1461",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 4.92793083190918
+        },
+        {
+          "name": "Subvert Trust Controls: Gatekeeper Bypass",
+          "clean_id": "T1553.001",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 4.265005111694336
+        }
+      ]
+    },
+    {
+      "query": "venomkit (MAL), uses cmstp bypass (ACT)",
+      "entity_name": "venomkit",
+      "type": "MAL",
+      "hits": [
+        {
+          "name": "System Binary Proxy Execution: CMSTP",
+          "clean_id": "T1218.003",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 10.089568138122559
+        },
+        {
+          "name": "Lockscreen Bypass",
+          "clean_id": "T1461",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 4.92793083190918
+        },
+        {
+          "name": "Subvert Trust Controls: Gatekeeper Bypass",
+          "clean_id": "T1553.001",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 4.265005111694336
+        }
+      ]
+    },
+    {
+      "query": "emails (TOOL), associatedwith establish rapport (ACT), uses more_eggs (MAL), uses microsoft (IDTY)",
+      "entity_name": "emails",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "More_eggs",
+          "clean_id": "S0284",
+          "labels": [
+            "Resource",
+            "UcoexSOFTWARE",
+            "Vectorized"
+          ],
+          "score": 9.40552806854248
+        },
+        {
+          "name": "Dynamic Resolution",
+          "clean_id": "T1637",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 6.6007490158081055
+        },
+        {
+          "name": "Dynamic Resolution",
+          "clean_id": "T1568",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 5.735455513000488
+        }
+      ]
+    },
+    {
+      "query": "password-protected (TOOL), associatedwith establish rapport (ACT), usedby more_eggs (MAL), uses microsoft (IDTY)",
+      "entity_name": "password-protected",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "More_eggs",
+          "clean_id": "S0284",
+          "labels": [
+            "Resource",
+            "UcoexSOFTWARE",
+            "Vectorized"
+          ],
+          "score": 9.40552806854248
+        },
+        {
+          "name": "Establish Accounts: Cloud Accounts",
+          "clean_id": "T1585.003",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 5.384197235107422
+        },
+        {
+          "name": "Brute Force: Password Spraying",
+          "clean_id": "T1110.003",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 5.347865104675293
+        }
+      ]
+    },
+    {
+      "query": "pdf (TOOL), associatedwith establish rapport (ACT), usedby more_eggs (MAL), usedby micro backdoor (MAL), hasvulnerability 0x29a (VULNAME), usedby micro backdoor. (MAL), usedby spy (MAL), uses securelist (SECTEAM), usedby spy (APT), hasvulnerability 0-day (VULNAME), uses executable (FILE), uses .pdf (FILE), uses microsoft (IDTY), uses attacks vulnerabilities and exploits (ACT), uses data encryption miniduke (MAL), uses miniduke (MAL), usedby 209.200.83.43/ajax/search.php (FILE), usedby 209.200.83.43/ajax/loader.php (FILE), usedby 209.200.83.43/ajax/online.php (FILE), usedby 209.200.83.43/ajax/profile.php (FILE), usedby 209.200.83.43/ajax/error.php (FILE), usedby 209.200.83.43/ajax/index.php (FILE), usedby 209.200.83.43/ajax/api.php (FILE), usedby 209.200.83.43/ajax/links.php (FILE), usedby www.seccionpolitica.com.ar:80/galeria/index.php (FILE)",
+      "entity_name": "pdf",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "File Deletion",
+          "clean_id": "T1630.002",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 42.67961502075195
+        },
+        {
+          "name": "User Execution: Malicious File",
+          "clean_id": "T1204.002",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 41.15351104736328
+        },
+        {
+          "name": "Masquerading: Masquerade File Type",
+          "clean_id": "T1036.008",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 41.057456970214844
+        }
+      ]
+    },
+    {
+      "query": "word (TOOL), associatedwith establish rapport (ACT), usedby more_eggs (MAL), uses microsoft (IDTY)",
+      "entity_name": "word",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "More_eggs",
+          "clean_id": "S0284",
+          "labels": [
+            "Resource",
+            "UcoexSOFTWARE",
+            "Vectorized"
+          ],
+          "score": 9.40552806854248
+        },
+        {
+          "name": "Establish Accounts: Cloud Accounts",
+          "clean_id": "T1585.003",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 5.384197235107422
+        },
+        {
+          "name": "Event Triggered Execution: Application Shimming",
+          "clean_id": "T1546.011",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 4.477409362792969
+        }
+      ]
+    },
+    {
+      "query": "jscript (TOOL), associatedwith establish rapport (ACT), usedby more_eggs (MAL), uses msxsl.exe (FILE), usedby backdoor. (MAL), uses 19 kb (FILE), usedby msxsl.exe (FILE), uses contactlistagregator.com (DOM), uses mail.rediffmail.kz (DOM), associatedwith 204.155.30.109 (IP), uses campaigns (ACT), uses attack (ACT), uses leveraging (ACT), uses more_eggs (MAL), uses terraloader (MAL), uses itg08 (APT)",
+      "entity_name": "jscript",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "Dynamic Resolution",
+          "clean_id": "T1637",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 28.471168518066406
+        },
+        {
+          "name": "Dynamic Resolution",
+          "clean_id": "T1568",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 24.92406463623047
+        },
+        {
+          "name": "Riltok",
+          "clean_id": "S0403",
+          "labels": [
+            "Resource",
+            "UcoexSOFTWARE",
+            "Vectorized"
+          ],
+          "score": 23.77199935913086
+        }
+      ]
+    },
+    {
+      "query": "establish rapport (ACT), associatedwith emails (TOOL), uses more_eggs (MAL), associatedwith password-protected (TOOL), associatedwith pdf (TOOL), associatedwith word (TOOL), targetedby microsoft (IDTY), associatedwith jscript (TOOL), associatedwith url (TOOL)",
+      "entity_name": "establish rapport",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "Ingress Tool Transfer",
+          "clean_id": "T1544",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 22.929298400878906
+        },
+        {
+          "name": "Obtain Capabilities: Tool",
+          "clean_id": "T1588.002",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 22.825225830078125
+        },
+        {
+          "name": "Stage Capabilities: Upload Tool",
+          "clean_id": "T1608.002",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 22.80364418029785
+        }
+      ]
+    },
+    {
+      "query": "url (TOOL), associatedwith establish rapport (ACT), usedby more_eggs (MAL), associatedwith campaigns (ACT), associatedwith spearphishing campaign (ACT), uses more_eggs (MAL), uses microsoft (IDTY), usedby 'swift-fraud[.]com/documents/94563784.doc' (FILE)",
+      "entity_name": "url",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "More_eggs",
+          "clean_id": "S0284",
+          "labels": [
+            "Resource",
+            "UcoexSOFTWARE",
+            "Vectorized"
+          ],
+          "score": 18.81105613708496
+        },
+        {
+          "name": "Phishing: Spearphishing via Service",
+          "clean_id": "T1566.003",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 10.472909927368164
+        },
+        {
+          "name": "Impersonation",
+          "clean_id": "T1656",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 8.912808418273926
+        }
+      ]
+    },
+    {
+      "query": "final more_eggs (ACT), associatedwith payload (MAL)",
+      "entity_name": "final more_eggs",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "More_eggs",
+          "clean_id": "S0284",
+          "labels": [
+            "Resource",
+            "UcoexSOFTWARE",
+            "Vectorized"
+          ],
+          "score": 9.40552806854248
+        },
+        {
+          "name": "Reaver",
+          "clean_id": "S0172",
+          "labels": [
+            "Resource",
+            "UcoexSOFTWARE",
+            "Vectorized"
+          ],
+          "score": 4.710364818572998
+        }
+      ]
+    },
+    {
+      "query": "payload (MAL), associatedwith final more_eggs (ACT), associatedwith deliver (ACT)",
+      "entity_name": "payload",
+      "type": "MAL",
+      "hits": [
+        {
+          "name": "More_eggs",
+          "clean_id": "S0284",
+          "labels": [
+            "Resource",
+            "UcoexSOFTWARE",
+            "Vectorized"
+          ],
+          "score": 9.40552806854248
+        },
+        {
+          "name": "Discovery",
+          "clean_id": "TA0102",
+          "labels": [
+            "Resource",
+            "UcoexTACTICS",
+            "Vectorized"
+          ],
+          "score": 5.743044853210449
+        },
+        {
+          "name": "Discovery",
+          "clean_id": "TA0007",
+          "labels": [
+            "Resource",
+            "UcoexTACTICS",
+            "Vectorized"
+          ],
+          "score": 5.01603889465332
+        }
+      ]
+    },
+    {
+      "query": "deliver (ACT), associatedwith payload (MAL)",
+      "entity_name": "deliver",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "Execution Guardrails: Environmental Keying",
+          "clean_id": "T1480.001",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 3.3273658752441406
+        },
+        {
+          "name": "Internal Spearphishing",
+          "clean_id": "T1534",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 3.0922844409942627
+        }
+      ]
+    },
+    {
+      "query": "link (ACT), associatedwith pdf (FILE)",
+      "entity_name": "link",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "User Execution: Malicious Link",
+          "clean_id": "T1204.001",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 6.244273662567139
+        },
+        {
+          "name": "Stage Capabilities: Link Target",
+          "clean_id": "T1608.005",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 5.830185413360596
+        },
+        {
+          "name": "User Execution: Malicious File",
+          "clean_id": "T1204.002",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 5.750554084777832
+        }
+      ]
+    },
+    {
+      "query": "campaigns (ACT), targets security companies (IDTY), targets anti-money laundering officers (IDTY), targets staffing companies (IDTY), targets pharmacy (IDTY), targets entertainment (IDTY), targets retail (IDTY), targets companies (IDTY), targets financial institutions (IDTY), targets cybersecurity companies (IDTY), targets european central bank (IDTY), targets ibm (IDTY), targets fixed vulnerabilities (VULNAME), targets media (IDTY), targets ministry of defense (IDTY), targets ministries of foreign affairs (IDTY), targets foreign policy think tank (IDTY), targets nato exercise (IDTY), targets think tank (IDTY), targets government institutions (IDTY), targets personnel (IDTY), targets european interceptor site' missile defense base (IDTY), targets information (IDTY), uses samples (TOOL), uses urls (URL), uses fake websites (TOOL), uses jscript (TOOL), associatedwith pinchduke samples (MAL), associatedwith stealthy malware (MAL), associatedwith bankers (MAL), associatedwith rats (MAL), associatedwith backdoor. (MAL), associatedwith more_eggs (MAL), associatedwith toshliph (MAL), associatedwith driftpin (MAL), associatedwith carbanak (MAL), associatedwith cloudduke (MAL), associatedwith cozyduke (MAL), associatedwith spear- phishing emails containing malicious attachments (ACT), associatedwith pinchduke (MAL), usedby dukes group (APT), usedby dukes (APT), hasattacktime november 2008 (TIME), hasattacktime summer of 2015 (TIME), hasattacktime 2014 (TIME), hasattacktime 2009 (TIME), hasattacktime april, 2009 (TIME), hasattacktime april (TIME), hasattacklocation russian (LOC), hasattacklocation netherlands (LOC), hasattacklocation ukrainian (LOC), hasattacklocation ukraine (LOC), hasattacklocation spain (LOC), hasattacklocation luxembourg (LOC), hasattacklocation hungary (LOC), hasattacklocation belgium (LOC), hasattacklocation uzbekistan. (LOC), hasattacklocation kazakhstan, kyrgyzstan, azerbaijan (LOC), hasattacklocation west (LOC), hasattacklocation turkey (LOC), hasattacklocation uganda. (LOC), hasattacklocation us-based (LOC), hasattacklocation europe (LOC), hasattacklocation georgian (LOC), hasattacklocation poland (LOC), hasattacklocation czech republic (LOC), hasattacklocation us (LOC), hasattacklocation georgia-nato (LOC), uses dukes (APT), uses stealthy malware (MAL), uses bankers (MAL), uses rats (MAL), uses more_eggs jscript backdoor (MAL), uses itg08 (APT), uses more_eggs (MAL), uses carbanak (MAL), uses toshliph (MAL), uses orm (MAL), uses sekur (MAL), uses powerduke (MAL), uses apt29 (APT), uses cloudduke (MAL), uses cozyduke (MAL), uses cosmicduke (MAL), targetedby georgia, (LOC), targetedby staffing management company (IDTY), targetedby real talent (IDTY), targetedby urls (URL), targetedby windows (OS), targetedby microsoft (IDTY), targetedby food and beverage (IDTY), targetedby hospitality (IDTY), targetedby technology (IDTY), targetedby media (IDTY), targetedby financial (IDTY), targetedby banking (IDTY), targetedby ukraine-related (LOC), targetedby ukraine (LOC), targetedby political (IDTY), targetedby united states (us) (LOC), targetedby north atlantic treaty organization (nato) (IDTY), targetedby foreign policy think tank (IDTY), targetedby caucasus (LOC), targetedby turkey (LOC), identifies volexity (SECTEAM), identifies fireeye isight intelligence (SECTEAM), identifies falcon epp (SECTEAM), associatedwith decoy documents (FILE), associatedwith microsoft word file (FILE), associatedwith landing page (TOOL), associatedwith josephine manager; human resources (TOOL), associatedwith backdoor samples (TOOL), associatedwith malware-as-a-service provider (TOOL), associatedwith url (TOOL), associatedwith apt tools (TOOL), usedby 36937e5e744873b3646c9d345e8cf50fb969029dc77525acfe63d5a9d28b73f2 (HASH)",
+      "entity_name": "campaigns",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "OilCheck",
+          "clean_id": "S1171",
+          "labels": [
+            "Resource",
+            "UcoexSOFTWARE",
+            "Vectorized"
+          ],
+          "score": 83.30722045898438
+        },
+        {
+          "name": "Turian",
+          "clean_id": "S0647",
+          "labels": [
+            "Resource",
+            "UcoexSOFTWARE",
+            "Vectorized"
+          ],
+          "score": 78.83507537841797
+        },
+        {
+          "name": "Obfuscated Files or Information: Indicator Removal from Tools",
+          "clean_id": "T1027.005",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 64.21737670898438
+        }
+      ]
+    },
+    {
+      "query": "fake websites (TOOL), uses campaigns (ACT)",
+      "entity_name": "fake websites",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "Search Victim-Owned Websites",
+          "clean_id": "T1594",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 4.106925010681152
+        },
+        {
+          "name": "Ingress Tool Transfer",
+          "clean_id": "T1544",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 3.821549415588379
+        },
+        {
+          "name": "Obtain Capabilities: Tool",
+          "clean_id": "T1588.002",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 3.804203987121582
+        }
+      ]
+    },
+    {
+      "query": "josephine manager; human resources (TOOL), associatedwith campaigns (ACT), associatedwith spoofs (ACT), uses urls (URL)",
+      "entity_name": "josephine manager; human resources",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "URI Hijacking",
+          "clean_id": "T1635.001",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 7.494718551635742
+        },
+        {
+          "name": "Discovery",
+          "clean_id": "TA0102",
+          "labels": [
+            "Resource",
+            "UcoexTACTICS",
+            "Vectorized"
+          ],
+          "score": 6.762818813323975
+        },
+        {
+          "name": "Input Injection",
+          "clean_id": "T1674",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 5.070085525512695
+        }
+      ]
+    },
+    {
+      "query": "spoofs (ACT), targets staffing management company (IDTY), targets real talent (IDTY), associatedwith landing page (TOOL), targetedby urls (URL), associatedwith josephine manager; human resources (TOOL)",
+      "entity_name": "spoofs",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "Office Application Startup: Outlook Home Page",
+          "clean_id": "T1137.004",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 8.231914520263672
+        },
+        {
+          "name": "Phishing for Information: Spearphishing Link",
+          "clean_id": "T1598.003",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 7.951956272125244
+        },
+        {
+          "name": "Stage Capabilities: Link Target",
+          "clean_id": "T1608.005",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 7.840814590454102
+        }
+      ]
+    },
+    {
+      "query": "landing page (TOOL), associatedwith campaigns (ACT), associatedwith spoofs (ACT), uses urls (URL)",
+      "entity_name": "landing page",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "Office Application Startup: Outlook Home Page",
+          "clean_id": "T1137.004",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 8.231914520263672
+        },
+        {
+          "name": "URI Hijacking",
+          "clean_id": "T1635.001",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 6.418124198913574
+        },
+        {
+          "name": "Discovery",
+          "clean_id": "TA0102",
+          "labels": [
+            "Resource",
+            "UcoexTACTICS",
+            "Vectorized"
+          ],
+          "score": 5.743044853210449
+        }
+      ]
+    },
+    {
+      "query": "malicious macros (MAL), uses taurus builder (TOOL), contains microsoft word file (FILE), contains documents (FILE), associatedwith attacks (ACT)",
+      "entity_name": "malicious macros",
+      "type": "MAL",
+      "hits": [
+        {
+          "name": "Office Application Startup: Office Template Macros",
+          "clean_id": "T1137.001",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 15.43226432800293
+        },
+        {
+          "name": "Hide Artifacts: NTFS File Attributes",
+          "clean_id": "T1564.004",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 15.280282020568848
+        },
+        {
+          "name": "User Execution: Malicious File",
+          "clean_id": "T1204.002",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 14.797921180725098
+        }
+      ]
+    },
+    {
+      "query": "taurus builder (TOOL), usedby documents (FILE), uses malicious macros (MAL), usedby microsoft word file (FILE)",
+      "entity_name": "taurus builder",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "User Execution: Malicious File",
+          "clean_id": "T1204.002",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 14.797921180725098
+        },
+        {
+          "name": "Office Application Startup: Office Template Macros",
+          "clean_id": "T1137.001",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 13.226097106933594
+        },
+        {
+          "name": "Obfuscated Files or Information: Encrypted/Encoded File",
+          "clean_id": "T1027.013",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 12.153303146362305
+        }
+      ]
+    },
+    {
+      "query": "more_eggs (MAL), targets google (IDTY), targets infected machine. (IDTY), targets post a job resume search pricing manager sales job description (IDTY), targets dr job fyper jobhyper jobs companies (IDTY), uses jscript (TOOL), uses cnc (TOOL), uses ssl (PROT), uses profile (ACT), uses establish rapport (ACT), uses url (TOOL), uses emails (TOOL), uses powershell scripts (TOOL), uses offensive security tools (TOOL), uses tcp (PROT), uses meterpreter (TOOL), uses 8.8.8.8 (IP), uses http (PROT), uses backdoor samples (TOOL), uses a70613ff7f5de98.txt (FILE), uses jscript loader (TOOL), uses 27603.docx (FILE), uses 625222e09b6cd028459.txt (FILE), uses 5795c3ac7f57f.txt (FILE), uses sample file (FILE), uses dll (TOOL), uses dropper (TOOL), uses %programdata%\\microsoft\\ (FILE), uses %appdata%\\microsoft\\ (FILE), uses reverse shell (TOOL), uses signed dll (TOOL), uses campaigns (ACT), uses attack (ACT), uses malware-as-a-service provider (TOOL), uses leveraging (ACT), uses mimikatz (TOOL), uses cmd.exe (FILE), uses scripts (FILE), uses files (FILE), uses execution (ACT), uses download (ACT), uses wsf files (FILE), uses zip file (FILE), uses job description (FILE), uses figure 2: (TOOL), uses backdoor: (TOOL), uses cybercrime (ACT), uses command-and-control (c&c) (TOOL), uses collaboration (TOOL), uses banking (TOOL), uses d9a245f1fb502606c226c364aa1090f25916e68f5ff24ef75be87ad6a2e6dcc9 d39f8aa90d54fd010484d7bb54c18549c3f03b02385020a35589dbe49e979bab (HASH), uses terraloaders (TOOL), uses shellcode (TOOL), uses hxxps://drive.staticcontent[.]kz/drive/info hxxps://metric.onlinefonts[.]kz/metric/inf hxxps://host.moresecurity[.]kz/host/info (URL), uses c&c: (TOOL), uses visa jump server (ACT), uses malicious server (ACT), uses network iocs (TOOL), uses c2 (TOOL), uses iocs (TOOL), uses backdoor (TOOL), uses metasploit (TOOL), uses domain (DOM), uses powertrick (TOOL), uses drive.staticcontent[.]kz (DOM), uses rkey (TOOL), uses commandand-control (c&c) (TOOL), uses c&c (TOOL), uses email (TOOL), uses anchor campaigns (ACT), uses metasploit shellcode loaders (TOOL), associatedwith itg08 (APT), hasattacktime april 18, 2019 (TIME), hasattacktime february 7, 2019 (TIME), identifiedby (sentinelone) (SECTEAM), identifiedby vt (SECTEAM), uses fin6 (APT), uses itg08 (APT), targetedby windows (OS), targetedby microsoft (IDTY), targetedby ibm (IDTY), identifies sentinelone (SECTEAM), identifies etpro (SECTEAM), identifies et (SECTEAM), identifies x-force iris (SECTEAM), associatedwith ecommerce attack flow (ACT), associatedwith 204.155.30.109 (IP), associatedwith campaigns (ACT), associatedwith attack (ACT), associatedwith leveraging (ACT), associatedwith malicious server (ACT), associatedwith anchor campaigns (ACT), usedby terraloader (TOOL), usedby ssl (PROT), usedby suricata/snort (TOOL), usedby password-protected (TOOL), usedby pdf (TOOL), usedby word (TOOL), usedby jscript (TOOL), usedby url (TOOL), usedby jscript loader (TOOL), usedby c&c (TOOL), usedby hex-encoded (ENCR), usedby ioc (TOOL), usedby contactlistagregator.com (DOM), usedby mail.rediffmail.kz (DOM), usedby malware-as-a-service provider (TOOL), usedby wmi (TOOL), usedby powertrick (TOOL), usedby anchor (TOOL), usedby domain registration date (TOOL), usedby domain registration email (TOOL), usedby rkey (TOOL), usedby powershell (TOOL), usedby management instrumentation (wmi) (TOOL), contains malicious documents (FILE), contains xsl stylesheet file (FILE), contains dll file (FILE), contains script file (wsf) (FILE), contains sample (FILE)",
+      "entity_name": "more_eggs",
+      "type": "MAL",
+      "hits": [
+        {
+          "name": "Lateral Tool Transfer",
+          "clean_id": "T1570",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 219.33407592773438
+        },
+        {
+          "name": "MechaFlounder",
+          "clean_id": "S0459",
+          "labels": [
+            "Resource",
+            "UcoexSOFTWARE",
+            "Vectorized"
+          ],
+          "score": 219.03883361816406
+        },
+        {
+          "name": "Stage Capabilities: Upload Tool",
+          "clean_id": "T1608.002",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 213.69154357910156
+        }
+      ]
+    },
+    {
+      "query": "jscript loader (TOOL), usedby more_eggs (MAL), uses more_eggs (MAL), usedby xsl stylesheet file (FILE)",
+      "entity_name": "jscript loader",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "More_eggs",
+          "clean_id": "S0284",
+          "labels": [
+            "Resource",
+            "UcoexSOFTWARE",
+            "Vectorized"
+          ],
+          "score": 21.938982009887695
+        },
+        {
+          "name": "XSL Script Processing",
+          "clean_id": "T1220",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 17.3856201171875
+        },
+        {
+          "name": "Masquerading: Masquerade File Type",
+          "clean_id": "T1036.008",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 7.5789008140563965
+        }
+      ]
+    },
+    {
+      "query": "should start automatically (ACT), associatedwith download (TOOL), associatedwith contact us (TOOL)",
+      "entity_name": "should start automatically",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "Obtain Capabilities: Tool",
+          "clean_id": "T1588.002",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 9.033456802368164
+        },
+        {
+          "name": "Stage Capabilities: Upload Tool",
+          "clean_id": "T1608.002",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 8.777859687805176
+        },
+        {
+          "name": "Lateral Tool Transfer",
+          "clean_id": "T1570",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 8.264692306518555
+        }
+      ]
+    },
+    {
+      "query": "contact us (TOOL), uses bin file (FILE), uses vacancy doc' (FILE), associatedwith should start automatically (ACT)",
+      "entity_name": "contact us",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "Masquerading: Double File Extension",
+          "clean_id": "T1036.007",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 12.113178253173828
+        },
+        {
+          "name": "User Execution: Malicious File",
+          "clean_id": "T1204.002",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 11.901263236999512
+        },
+        {
+          "name": "File and Directory Discovery",
+          "clean_id": "T1420",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 11.437549591064453
+        }
+      ]
+    },
+    {
+      "query": "download (TOOL), uses bin file (FILE), uses vacancy doc' (FILE), associatedwith should start automatically (ACT)",
+      "entity_name": "download",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "Masquerading: Double File Extension",
+          "clean_id": "T1036.007",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 12.113178253173828
+        },
+        {
+          "name": "User Execution: Malicious File",
+          "clean_id": "T1204.002",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 11.901263236999512
+        },
+        {
+          "name": "File and Directory Discovery",
+          "clean_id": "T1420",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 11.437549591064453
+        }
+      ]
+    },
+    {
+      "query": "more_eggs. (MAL), contains microsoft word document (FILE)",
+      "entity_name": "more_eggs.",
+      "type": "MAL",
+      "hits": [
+        {
+          "name": "More_eggs",
+          "clean_id": "S0284",
+          "labels": [
+            "Resource",
+            "UcoexSOFTWARE",
+            "Vectorized"
+          ],
+          "score": 9.40552806854248
+        },
+        {
+          "name": "Office Application Startup: Office Template Macros",
+          "clean_id": "T1137.001",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 7.806687355041504
+        },
+        {
+          "name": "Template Injection",
+          "clean_id": "T1221",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 7.49946928024292
+        }
+      ]
+    }
+  ],
+  "per_sentence": []
+}

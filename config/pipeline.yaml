@@ -1,12 +1,12 @@
 # dataset_mode controls how the pipeline scopes processing:
 #   sentence  - each entry is independent (DNRTI: unrelated sentences)
 #   document  - entries are multi-chunk documents (CTI-HAL: full reports)
-dataset_mode: sentence
+dataset_mode: document
 
 modules:
   repair: true
   canonicalization: true
   semantic_chunking: false
-  graph_insertion: false
-  similarity: false
+  graph_insertion: true
+  similarity: true
   reranking: false

@@ -133,7 +133,6 @@ class GraphPostProcessorSZF:
                             max(t.confidence, 0.9) if j in forced_relations else t.confidence,
                             t.evidence)
             for j, t in R.items()
-            if _is_compatible(t.subject_type, t.predicate, t.object_type)
         ]
 
         return updated_entities, updated_triples

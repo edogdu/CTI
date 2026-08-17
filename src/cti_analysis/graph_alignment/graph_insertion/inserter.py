@@ -12,23 +12,27 @@ import re
 from cti_analysis.models.triples import TripleBatch
 from cti_analysis.models.graph import NodeIR, EdgeIR, GraphInsertBatch
 
-class OllamaEmbedder:
-    def __init__(self, model, ollama_url: str = "http://localhost:11434/api/embeddings"):
-        self.model = model
-        self.ollama_url = ollama_url
+class LocalEmbedder:
+    """Embedding using sentence-transformers (no external server needed)."""
+    _model = None
+
+    def __init__(self, model: str = "all-MiniLM-L6-v2", **kwargs):
+        self.model_name = model
+
+    def _get_model(self):
+        if LocalEmbedder._model is None:
+            from sentence_transformers import SentenceTransformer
+            LocalEmbedder._model = SentenceTransformer(self.model_name, trust_remote_code=True)
+        return LocalEmbedder._model
 
     def embed(self, texts: List[str]) -> List[Any]:
-        embeddings = []
-        for text in texts:
-            payload = {
-                "model": self.model,
-                "prompt": text
-            }
-            response = requests.post(self.ollama_url, json=payload)
-            response.raise_for_status()
-            data = response.json()
-            embeddings.append(data["embedding"])
-        return embeddings
+        if not texts:
+            return []
+        model = self._get_model()
+        embeddings = model.encode(texts, normalize_embeddings=True)
+        return [embeddings[i].tolist() for i in range(len(texts))]
+
+
 
 def make_det_id(name: str, ntype: str, doc_id: str) -> str:
     key = f"{(ntype or '').strip().lower()}|{(name or '').strip().lower()}"
@@ -281,7 +285,7 @@ def embed_cti_entities_from_chunk(chunk_obj,
         node_refs.append({'name': name, 'type': ntype, 'contexts': context_text})
 
     # Compute embeddings
-    embedder = OllamaEmbedder(model=model, ollama_url=ollama_url)
+    embedder = LocalEmbedder(model=model)
     embeddings = embedder.embed(node_texts) if node_texts else []
 
     # Write embeddings back
@@ -313,27 +317,354 @@ def embed_cti_entities_from_chunk(chunk_obj,
         'embedding_len': len(embeddings[i]) if i < len(embeddings) else 0
     } for i, ref in enumerate(node_refs)]
 
-if __name__ == "__main__":
-    
-    with open("./output/CTI-HAL/apt29/AnalysisOfCyberattackOnUS/chunk_data_AnalysisOfCyberattackOnUS_gemma2_9b.json", "r", encoding="utf-8") as f:
-        chunk_json = json.load(f)
-        chunk_data = chunk_json["data"] if "data" in chunk_json else chunk_json
+def _create_sentence(tx, sent_id: str, doc_id: str, text: str, page_no: int, sent_idx: int):
+    tx.run(
+        """
+        MERGE (s:CTISentence {id: $sent_id})
+        ON CREATE SET s.text = $text, s.page_no = $page_no, s.sent_idx = $sent_idx
+        WITH s
+        MATCH (d:CTIDocument {id: $doc_id})
+        MERGE (d)-[:CONTAINS]->(s)
+        """,
+        sent_id=sent_id, doc_id=doc_id, text=text,
+        page_no=page_no, sent_idx=sent_idx,
+    )
 
+
+def _link_entity_to_sentence(tx, entity_id: str, sent_id: str):
+    tx.run(
+        """
+        MATCH (e:CTIEntity {id: $entity_id})
+        MATCH (s:CTISentence {id: $sent_id})
+        MERGE (s)-[:MENTIONS]->(e)
+        """,
+        entity_id=entity_id, sent_id=sent_id,
+    )
+
+
+def store_batches_in_neo4j(batches: List[TripleBatch], driver, doc_id: str = None) -> int:
+    """Insert TripleBatch objects into Neo4j as CTIEntity nodes and relationships.
+
+    Creates the following graph structure:
+        (CTIDocument) -[:CONTAINS]-> (CTISentence) -[:MENTIONS]-> (CTIEntity)
+        (CTIDocument) -[:MENTIONS]-> (CTIEntity)
+
+    Document-level MENTIONS edges enable document-scoped similarity queries.
+    Sentence-level structure enables per-sentence entity provenance.
+
+    Args:
+        doc_id: Override document ID for all batches. If None, uses batch.doc_id.
+                Use this to group per-sentence batches under one CTIDocument.
+
+    Returns the number of triples inserted.
+    """
+    count = 0
+    with driver.session() as session:
+        for batch in batches:
+            effective_doc_id = doc_id or batch.doc_id or "unknown"
+            file_name = ""
+            chunk_text = ""
+            page_no = 0
+            sent_idx = 0
+            # Use chunk_id as sentence ID (unique per sentence), not doc_id
+            chunk_ids = batch.meta.get("chunk_ids", []) if isinstance(batch.meta, dict) else []
+            sent_id = chunk_ids[0] if chunk_ids else (batch.doc_id or effective_doc_id)
+
+            if isinstance(batch.meta, dict):
+                file_name = batch.meta.get("pdf_name", "") or batch.meta.get("file_name", effective_doc_id)
+                chunk_text = batch.meta.get("chunk_text", "") or ""
+                page_no = batch.meta.get("page_no", 0)
+                sent_idx = batch.meta.get("sent_idx", 0)
+
+            session.execute_write(create_document, effective_doc_id, file_name)
+
+            # Create sentence node linked to document
+            if chunk_text:
+                session.execute_write(
+                    _create_sentence, sent_id, effective_doc_id,
+                    chunk_text, page_no, sent_idx,
+                )
+
+            for t in batch.triples:
+                subj_name = t.subject.name if hasattr(t.subject, "name") else str(t.subject)
+                subj_type = t.subject.type if hasattr(t.subject, "type") else ""
+                obj_name = t.object.name if hasattr(t.object, "name") else str(t.object)
+                obj_type = t.object.type if hasattr(t.object, "type") else ""
+                context = chunk_text
+                if not context and isinstance(t.meta, dict):
+                    context = t.meta.get("evidence", "") or ""
+
+                subj_id = make_det_id(subj_name, subj_type, effective_doc_id)
+                obj_id = make_det_id(obj_name, obj_type, effective_doc_id)
+                session.execute_write(
+                    create_triple,
+                    subj_id, subj_name, subj_type,
+                    t.predicate,
+                    obj_id, obj_name, obj_type,
+                    context, effective_doc_id, file_name,
+                )
+
+                # Link entities to their source sentence
+                if chunk_text:
+                    session.execute_write(_link_entity_to_sentence, subj_id, sent_id)
+                    session.execute_write(_link_entity_to_sentence, obj_id, sent_id)
+
+                count += 1
+    return count
+
+
+# CTIEntity types worth embedding for TTP similarity search
+SIMILARITY_ENTITY_TYPES = {"MAL", "TOOL", "ACT", "APT", "VULID", "VULNAME"}
+
+
+def _get_unembedded_nodes(driver) -> List[Dict]:
+    """Fetch CTIEntity nodes that lack embeddings (TTP-relevant types only)."""
+    type_list = list(SIMILARITY_ENTITY_TYPES)
+    with driver.session() as session:
+        result = session.run(
+            """
+            MATCH (n:CTIEntity)
+            WHERE n.embedding IS NULL
+              AND n.type IN $types
+            RETURN elementId(n) AS uid, n.id AS nid, n.name AS name, n.type AS type,
+                   n.contexts AS contexts
+            """,
+            types=type_list,
+        )
+        return [dict(r) for r in result]
+
+
+def _write_embeddings(driver, nodes: List[Dict], embeddings: List) -> None:
+    """Persist embedding vectors back to Neo4j nodes."""
+    with driver.session() as session:
+        for i, n in enumerate(nodes):
+            if i < len(embeddings):
+                emb = np.array(embeddings[i], dtype=float)
+                norm = np.linalg.norm(emb)
+                if norm > 0:
+                    emb = (emb / norm).tolist()
+                else:
+                    emb = emb.tolist()
+                session.run(
+                    "MATCH (n:CTIEntity {id: $nid}) SET n.embedding = $embedding, n:Vectorized",
+                    nid=n["nid"], embedding=emb,
+                )
+
+
+def _split_camel(s: str) -> str:
+    """Split camelCase, PascalCase, UPPER_SNAKE, or ALLCAPS into lowercase words.
+
+    Examples: 'usedBy' -> 'used by', 'affiliatedWith' -> 'affiliated with',
+              'hasAttackLocation' -> 'has attack location',
+              'TARGETED_BY' -> 'targeted by', 'USES' -> 'uses'
+    """
+    import re
+    # Replace underscores with spaces
+    s = s.replace("_", " ")
+    # Insert space before each uppercase letter that follows a lowercase
+    s = re.sub(r'([a-z])([A-Z])', r'\1 \2', s)
+    # Collapse whitespace
+    s = re.sub(r'\s+', ' ', s).strip()
+    return s.lower()
+
+
+# Map DNRTI abbreviations to natural-language labels for embedding clarity
+TYPE_LABELS = {
+    "APT": "threat actor",
+    "MAL": "malware",
+    "TOOL": "tool",
+    "ACT": "attack activity",
+    "IDTY": "identity",
+    "LOC": "location",
+    "TIME": "time",
+    "FILE": "file",
+    "SECTEAM": "security team",
+    "OS": "operating system",
+    "VULID": "vulnerability ID",
+    "VULNAME": "vulnerability",
+    "HASH": "hash",
+    "DOM": "domain",
+    "ENCR": "encryption",
+    "IP": "IP address",
+    "URL": "URL",
+    "PROT": "protocol",
+    "EMAIL": "email",
+}
+
+
+def _readable_type(t: str) -> str:
+    """Convert DNRTI type abbreviation to a readable label for embeddings."""
+    return TYPE_LABELS.get(t.upper(), t.lower()) if t else ""
+
+
+def _build_texts_entity_context(nodes: List[Dict], driver=None) -> List[str]:
+    """Strategy: entity-context. Embed name + type + source sentence contexts."""
+    texts = []
+    for n in nodes:
+        ctx = ""
+        if n.get("contexts"):
+            ctx_list = n["contexts"] if isinstance(n["contexts"], list) else [str(n["contexts"])]
+            ctx = "\n".join(c for c in ctx_list[:5] if c and c != "None")
+        text = f"name: {n['name']}\ntype: {n.get('type', '')}"
+        if ctx:
+            text += f"\ncontexts:\n{ctx}"
+        texts.append(text.strip())
+    return texts
+
+
+def _build_texts_entity_neighbors(nodes: List[Dict], driver=None) -> List[str]:
+    """Strategy: entity-neighbors. Embed name + type + all connected triples from the graph.
+
+    For each entity, fetches all relationships to/from other CTIEntity nodes
+    and builds a text like:
+        APT29 (APT) uses Mimikatz (TOOL), targets US Government (IDTY), ...
+    """
+    if driver is None:
+        return _build_texts_entity_context(nodes, driver)
+
+    texts = []
+    with driver.session() as session:
+        for n in nodes:
+            nid = n["nid"]
+            # Outgoing relationships
+            out_result = session.run(
+                """
+                MATCH (n:CTIEntity {id: $nid})-[r]->(other:CTIEntity)
+                RETURN type(r) AS rel, other.name AS name, other.type AS type
+                """,
+                nid=nid,
+            )
+            out_rels = [dict(r) for r in out_result]
+
+            # Incoming relationships
+            in_result = session.run(
+                """
+                MATCH (n:CTIEntity {id: $nid})<-[r]-(other:CTIEntity)
+                RETURN type(r) AS rel, other.name AS name, other.type AS type
+                """,
+                nid=nid,
+            )
+            in_rels = [dict(r) for r in in_result]
+
+            parts = [f"{n['name']} ({n.get('type', '')})"]
+            for r in out_rels:
+                parts.append(f"{_split_camel(r['rel'])} {r['name']} ({r.get('type', '')})")
+            for r in in_rels:
+                parts.append(f"{_split_camel(r['rel'])} by {r['name']} ({r.get('type', '')})")
+
+            texts.append(", ".join(parts))
+    return texts
+
+
+def _build_texts_triple_concat(nodes: List[Dict], driver=None) -> List[str]:
+    """Strategy: triple-concat. For each entity, concatenate all triples it
+    appears in as full subject-predicate-object sentences."""
+    if driver is None:
+        return _build_texts_entity_context(nodes, driver)
+
+    texts = []
+    with driver.session() as session:
+        for n in nodes:
+            nid = n["nid"]
+            result = session.run(
+                """
+                MATCH (n:CTIEntity {id: $nid})-[r]->(other:CTIEntity)
+                RETURN n.name AS subj, type(r) AS rel, other.name AS obj
+                UNION
+                MATCH (other:CTIEntity)-[r]->(n:CTIEntity {id: $nid})
+                RETURN other.name AS subj, type(r) AS rel, n.name AS obj
+                """,
+                nid=nid,
+            )
+            triples = [f"{r['subj']} {_split_camel(r['rel'])} {r['obj']}" for r in result]
+            if triples:
+                texts.append(". ".join(triples))
+            else:
+                texts.append(f"{n['name']} ({n.get('type', '')})")
+    return texts
+
+
+def _build_texts_sentence_direct(nodes: List[Dict], driver=None) -> List[str]:
+    """Strategy: sentence-direct. Use the raw source sentence as the embedding text,
+    bypassing entity name/type entirely."""
+    if driver is None:
+        return _build_texts_entity_context(nodes, driver)
+
+    texts = []
+    with driver.session() as session:
+        for n in nodes:
+            nid = n["nid"]
+            # Find source sentences via CTISentence -> MENTIONS -> CTIEntity
+            result = session.run(
+                """
+                MATCH (s:CTISentence)-[:MENTIONS]->(n:CTIEntity {id: $nid})
+                RETURN s.text AS text
+                LIMIT 3
+                """,
+                nid=nid,
+            )
+            sentences = [r["text"] for r in result if r.get("text")]
+            if sentences:
+                texts.append(" ".join(sentences))
+            else:
+                # Fallback to contexts
+                ctx = n.get("contexts") or []
+                if isinstance(ctx, list):
+                    ctx = [c for c in ctx if c and c != "None"]
+                texts.append(" ".join(ctx) if ctx else n["name"])
+    return texts
+
+
+EMBEDDING_STRATEGIES = {
+    "entity-context": _build_texts_entity_context,
+    "entity-neighbors": _build_texts_entity_neighbors,
+    "triple-concat": _build_texts_triple_concat,
+    "sentence-direct": _build_texts_sentence_direct,
+}
+
+
+def embed_graph_nodes(
+    driver,
+    model: str = "nomic-ai/nomic-embed-text-v1",
+    strategy: str = "entity-context",
+) -> int:
+    """Generate and persist embeddings for all CTIEntity nodes that lack them.
+
+    Args:
+        driver: Neo4j driver
+        model: sentence-transformers model name
+        strategy: one of entity-context, entity-neighbors, triple-concat, sentence-direct
+
+    Returns the number of nodes embedded.
+    """
+    nodes = _get_unembedded_nodes(driver)
+    if not nodes:
+        return 0
+
+    build_fn = EMBEDDING_STRATEGIES.get(strategy, _build_texts_entity_context)
+    print(f"  [embed] Strategy: {strategy}, {len(nodes)} nodes", flush=True)
+    texts = build_fn(nodes, driver)
+
+    embedder = LocalEmbedder(model=model)
+    embeddings = embedder.embed(texts)
+
+    _write_embeddings(driver, nodes, embeddings)
+    return len(nodes)
+
+
+if __name__ == "__main__":
     import os
     uri = os.getenv("NEO4J_URI", "bolt://localhost:7687")
     user = os.getenv("NEO4J_USERNAME", "neo4j")
     password = os.getenv("NEO4J_PASSWORD", "abcd90909090")
     driver = GraphDatabase.driver(uri, auth=(user, password))
 
+    with open("./output/CTI-HAL/apt29/AnalysisOfCyberattackOnUS/chunk_data_AnalysisOfCyberattackOnUS_gemma2_9b.json", "r", encoding="utf-8") as f:
+        chunk_json = json.load(f)
+
     print("Storing triples in Neo4j...")
     store_in_neo4j(chunk_json, driver)
-    print("Triples stored in Neo4j. Now embedding CTIEntity nodes...")
-
-    results = embed_cti_entities_from_chunk(
-        chunk_json,
-        driver,
-        model="nomic-embed-text",
-        ollama_url="http://localhost:11434/api/embeddings",
-    )
-    print(f"Embedded {len(results)} CTIEntity nodes.")
+    print("Triples stored. Embedding CTIEntity nodes...")
+    n = embed_graph_nodes(driver)
+    print(f"Embedded {n} CTIEntity nodes.")
     driver.close()

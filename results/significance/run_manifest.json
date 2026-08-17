@@ -1,0 +1,129 @@
+{
+  "timestamp": "2026-08-12T19:29:04.962380+00:00",
+  "seed": 20260812,
+  "bootstrap_B": 10000,
+  "permutation_B": 20000,
+  "equiv_delta": 0.05,
+  "scipy": "1.16.2",
+  "numpy": "2.3.5",
+  "python": "3.13.5",
+  "git_sha": "e52d9902be034ee56cd87c1b97a2ea207c1e04c4",
+  "configs": {
+    "raw": "ctihal-pipeline",
+    "raw_canon": "ctihal-markov",
+    "chunked": "ctihal-chunked",
+    "chunked_canon": "ctihal-chunked-markov"
+  },
+  "contrasts": [
+    [
+      "F1_chunking",
+      "raw",
+      "chunked"
+    ],
+    [
+      "F2_canonicalization",
+      "raw",
+      "raw_canon"
+    ],
+    [
+      "F3_combined",
+      "raw",
+      "chunked_canon"
+    ]
+  ],
+  "retrieval": {
+    "methods": [
+      "Entity-neighbors vector",
+      "Hybrid RRF"
+    ],
+    "ranking": "max_score",
+    "k": "100"
+  },
+  "n_graph": 69,
+  "excluded_unannotated": [
+    "fin6_FIN6-SecurityIntelligence_9",
+    "sandworm_CarbonBlack"
+  ],
+  "doc_ids": [
+    "apt29_AnalysisOfCyberattackOnUS",
+    "apt29_CosmicDuke",
+    "apt29_CrowdStrike",
+    "apt29_F-Secure_Dukes_Whitepaper",
+    "apt29_ForkMeIAmFamous",
+    "apt29_GrizzlySteppe",
+    "apt29_NotSoCozy",
+    "apt29_PowerDukeWidespreadSpearPhishingCampaigns",
+    "apt29_Seaduke",
+    "apt29_TheCozyDukeAPT",
+    "apt29_TheMiniDukeMystery",
+    "apt29_WMIPowerShellBackdoors_POSHSPY",
+    "carbanak_Alleged_Mastermind_Behind_Carbanak_Crime_Gang_Arrested_-_Threatpost",
+    "carbanak_Arrests_Put_New_Focus_on_CARBON_SPIDER_Adversary_Group",
+    "carbanak_Behind_the_CARBANAK_Backdoor_-_Mandiant",
+    "carbanak_Bitdefender-WhitePaper-An-APT-Blueprint-Gaining-New-Visibility-into-Financial-Threats-interactive",
+    "carbanak_Carbanak_APT_eng",
+    "carbanak_Carbanak_Continues_To_Evolve_Quietly_Creeping_into_Remote_Hosts",
+    "carbanak_Carbanak_Group_uses_Google_for_Malware_C_C_-_Forcepoint",
+    "carbanak_New_Carbanak_-_Anunak_Attack_Methodology",
+    "carbanak_Operation_Grand_Mars_a_comprehensive_profile_of_Carbanak_activity_in_2016-17",
+    "carbanak_The_Great_Bank_Robbery_the_Carbanak_APT_-_Securelist",
+    "fin6_AnotherVictimOfTheMagecartAssaultEmerges",
+    "fin6_FIN6-Cyware",
+    "fin6_FIN6-Maze",
+    "fin6_FIN6-Morphisec",
+    "fin6_FIN6-Security_Intelligence_8",
+    "fin6_InsideTheBreachOfBritishAirways",
+    "fin6_MagecartCardSkimmersInjectedIntoOnlineShops",
+    "fin6_MoreEggsBackdoorProofpoint",
+    "fin6_Pick-Six_Intercepting_a_FIN6_Intrusion",
+    "fin6_fin6-cybercrime-group-expands-threat-To-ecommerce-merchants",
+    "fin6_rpt-fin6-1",
+    "fin7_Behind_the_CARBANAK_Backdoor_Mandiant_Google_Cloud_Blog",
+    "fin7_Cyberthreats_to_financial_institutions_2020_Overview_and_predictions_Securelist",
+    "fin7_Deep_Insight_into_FIN7_Malware_Chain_From_Office_Macro_Malware_to_Lightweight_JS_Loader_-_SentinelLabs",
+    "fin7_FIN7.5_the_infamous_cybercrime_rig_FIN7_continues_its_activities_Securelist",
+    "fin7_FIN7_Carbanak_threat_actor_unleashes_Bateleur_JScript_backdoor_Proofpoint_US",
+    "fin7_FIN7_Evolution_and_the_Phishing_LNK_Mandiant_Google_Cloud_Blog",
+    "fin7_FIN7_Group_Uses_JavaScript_and_Stealer_DLL_Variant_in_New_Attacks",
+    "fin7_FIN7_Not_Finished_Morphisec_Spots_New_Campaign",
+    "fin7_FIN7_Takes_Another_Bite_at_the_Restaurant_Industry",
+    "fin7_Footprints_of_FIN7_Tracking_Actor_Patterns_Part_2_-_Gigamon_Blog",
+    "fin7_Footprints_of_Fin7_Pushing_New_Techniques_to_Evade_Detection_-_Gigamon_Blog",
+    "fin7_Footprints_of_Fin7_Tracking_Actor_Patterns_Part_1_-_Gigamon_Blog",
+    "fin7_Mahalo_FIN7_Responding_to_the_Criminal_Operators_New_Tools_and_Techniques_Mandiant_Google_Cloud_Blog",
+    "fin7_On_the_Hunt_for_FIN7_Pursuing_an_Enigmatic_and_Evasive_Global_Criminal_Operation_Mandiant_Google_Cloud_Blog",
+    "fin7_Profile_of_an_Adversary_-_FIN7_Deepwatch",
+    "fin7_Tesi_FIN7_Revisited_Inside_Astra_Panel_and_SQLRat_Malware_Flashpoint",
+    "fin7_To_SDB_Or_Not_To_SDB_FIN7_Leveraging_Shim_Databases_for_Persistence_Google_Cloud_Blog",
+    "fin7_fact_sheet_how_fin7_attached_and_stole_data_0",
+    "oilrig_APT34_The_Helix_Kitten_Cybercriminal_Group_Loves_to_Meow_Middle_Eastern_and_International_Organizations",
+    "oilrig_APT34_targets_Jordan_Government_using_new_Saitama_backdoor",
+    "oilrig_Behind_the_Scenes_with_OilRig",
+    "oilrig_Iran_s_APT34_Returns_with_an_Updated_Arsenal_-_Check_Point_Research",
+    "oilrig_Iranian_Campaign_Tailored_to_US_Companies_Uses_Updated_Toolset_-_Intezer",
+    "oilrig_New_Targeted_Attack_in_the_Middle_East_by_APT34_a_Suspected_Iranian_Threat_Group_Using_CVE-2017-11882_Exploit_Google_Cloud_Blog",
+    "oilrig_Please_Confirm_You_Received_Our_APT_FortiGuard_Labs",
+    "oilrig_Threat_Brief_Iranian-Linked_Cyber_Operations",
+    "sandworm_CrashOverride",
+    "sandworm_MappingMITREToSandWormAPT",
+    "sandworm_NotPetya",
+    "sandworm_OlympicDestroyer",
+    "sandworm_SixRussianGRUOfficers",
+    "sandworm_UkrainianCriticalInfrastructure",
+    "sandworm_UkrainianPowerAuthorityAttacks",
+    "wizardspider_Ryuk_wakes_from_hibernation_FBI_DHS_warn_of_healthcare_attacks_-_Cybersecurity_Dive",
+    "wizardspider_Trickbot_Adds_Credential-Grabbing_Capabilities_-_Trend_Micro_US",
+    "wizardspider_What_is_Ryuk_Ransomware_The_Complete_Breakdown"
+  ],
+  "retrieval_n": {
+    "raw__vs__chunked|recall@100:Entity-neighbors vector": 67,
+    "raw__vs__chunked|recall@100:Hybrid RRF": 69,
+    "raw__vs__raw_canon|recall@100:Entity-neighbors vector": 67,
+    "raw__vs__raw_canon|recall@100:Hybrid RRF": 69,
+    "raw__vs__chunked_canon|recall@100:Entity-neighbors vector": 67,
+    "raw__vs__chunked_canon|recall@100:Hybrid RRF": 69
+  },
+  "cli": [
+    "tools/significance_tests.py"
+  ]
+}

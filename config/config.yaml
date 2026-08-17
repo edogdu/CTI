@@ -6,9 +6,42 @@ dataset:
   name: "dnrti"
   file: "C:/CTI/results/finetuning/data/test_dnrti.json"
 models:
-  extraction_model: "gemma3-cti-4b"
-  embedding_model: "nomic-embed-text"
-  ollama_url: "http://localhost:11434"
-  ollama_timeout: 300
   max_tokens: 2048
   use_two_pass: true
+
+backend:
+  url: "http://localhost:8080"
+  timeout: 300
+  ner_lora_id: 0
+  re_lora_id: 1
+  base_model_path: "C:/Users/Bill/models/gemma2-9b-it-fp16.gguf"
+  ner_lora_path: "experiments/split-gemma2-9b-r16-dedup/adapters/ner-lora.gguf"
+  re_lora_path: "experiments/split-gemma2-9b-r16-dedup/adapters/re-lora.gguf"
+
+neo4j:
+  uri: "bolt://localhost:7687"
+  user: "neo4j"
+  password: "abcd90909090"
+
+embeddings:
+  method: "sentence-transformers"
+  model: "nomic-ai/nomic-embed-text-v1"
+  dimensions: 768
+  # Embedding strategy for CTIEntity nodes before similarity search.
+  # Options:
+  #   entity-context   - name + type + source sentence contexts (default)
+  #   entity-neighbors - name + type + all connected triples from the graph
+  #   triple-concat    - embed each triple as a unit, assign best score to entity
+  #   sentence-direct  - embed raw source sentences, bypass entity graph
+  strategy: "entity-neighbors"
+
+similarity:
+  top_k: 10
+  index_name: "attack_vec"
+  index_label: "SimilarityTarget"
+  index_property: "embedding"
+  similarity_function: "cosine"
+  allowed_labels:
+    - "UcoexMITREATTACK"
+    - "UcoexTACTICS"
+    - "UcoexSOFTWARE"

@@ -79,12 +79,14 @@ def _train_unsloth(
         max_seq_length=cfg.training.max_seq_length,
         load_in_4bit=use_4bit,
         dtype=None,  # auto-detect
+        device_map={"": 0},  # force single GPU, avoid auto-split
     )
 
-    # Apply LoRA
+    # Apply LoRA (exclude vision tower to keep adapter text-only)
+    exclude = getattr(cfg.lora, "exclude_modules", ["vision_tower"])
     logger.info(
-        "Applying LoRA: rank=%d, alpha=%d, targets=%s",
-        cfg.lora.rank, cfg.lora.alpha, cfg.lora.target_modules,
+        "Applying LoRA: rank=%d, alpha=%d, targets=%s, exclude=%s",
+        cfg.lora.rank, cfg.lora.alpha, cfg.lora.target_modules, exclude,
     )
     model = FastLanguageModel.get_peft_model(
         model,
@@ -92,9 +94,24 @@ def _train_unsloth(
         lora_alpha=cfg.lora.alpha,
         lora_dropout=cfg.lora.dropout,
         target_modules=cfg.lora.target_modules,
+        exclude_modules=exclude,
         use_gradient_checkpointing="unsloth",
         random_state=cfg.training.seed,
     )
+
+    # Unsloth forces vision_tower.vision_model.embeddings to require gradients
+    # for VLMs (Gemma 3). We explicitly freeze it back since we only need text LoRA.
+    frozen_count = 0
+    for name, param in model.named_parameters():
+        if "vision_tower" in name and param.requires_grad:
+            param.requires_grad = False
+            frozen_count += 1
+    if frozen_count > 0:
+        logger.info("Froze %d vision tower parameters (text-only LoRA)", frozen_count)
+
+    trainable = sum(p.numel() for p in model.parameters() if p.requires_grad)
+    total = sum(p.numel() for p in model.parameters())
+    logger.info("Trainable parameters after vision freeze: %d / %d (%.2f%%)", trainable, total, 100 * trainable / total)
 
     # Format data as full text strings.
     # We use Unsloth's train_on_responses_only() for completion masking instead
@@ -142,22 +159,46 @@ def _train_unsloth(
     )
 
     if cfg.training.completion_only:
-        # Unsloth's native completion masking — works correctly for Gemma 3 (VLM).
-        # Masks all tokens in the user/system turns, only computes loss on model responses.
+        # Detect chat template markers from the base model
         from unsloth.chat_templates import train_on_responses_only
+
+        # Map known model families to their chat template markers
+        base = cfg.base_model.lower()
+        if "phi" in base:
+            inst_part = "<|user|>"
+            resp_part = "<|assistant|>"
+        elif "llama" in base or "mistral" in base:
+            inst_part = "[INST]"
+            resp_part = "[/INST]"
+        elif "qwen" in base:
+            inst_part = "<|im_start|>user\n"
+            resp_part = "<|im_start|>assistant\n"
+        else:
+            # Default: Gemma-style
+            inst_part = "<start_of_turn>user\n"
+            resp_part = "<start_of_turn>model\n"
+
+        logger.info("Completion masking: instruction=%r, response=%r", inst_part, resp_part)
         trainer = train_on_responses_only(
             trainer,
-            instruction_part="<start_of_turn>user\n",
-            response_part="<start_of_turn>model\n",
+            instruction_part=inst_part,
+            response_part=resp_part,
         )
         logger.info("Completion masking applied via train_on_responses_only")
 
     trainer.add_callback(_make_loss_file_callback(output_dir))
 
-    # Train
-    logger.info("Starting training...")
+    # Train (resume from checkpoint if available)
+    checkpoint = None
+    checkpoints = sorted(output_dir.glob("checkpoint-*"), key=lambda p: int(p.name.split("-")[-1]))
+    if checkpoints:
+        checkpoint = str(checkpoints[-1])
+        logger.info("Resuming from checkpoint: %s", checkpoint)
+    else:
+        logger.info("Starting training from scratch...")
+
     start = time.time()
-    result = trainer.train()
+    result = trainer.train(resume_from_checkpoint=checkpoint)
     elapsed = time.time() - start
     logger.info("Training complete in %.1f minutes", elapsed / 60)
 

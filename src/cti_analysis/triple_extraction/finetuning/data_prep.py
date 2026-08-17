@@ -403,7 +403,8 @@ def prepare_dataset(
     train_recs, val_recs, test_recs = splits
 
     # ---- Pass 3: generate conversations from split docs ----
-    mix = data_cfg.task_mix_ratio  # 0.85 = 85% NER
+    task = getattr(data_cfg, "task", "joint")
+    mix = data_cfg.task_mix_ratio  # 0.85 = 85% NER (only used for "joint")
 
     def _generate_conversations(
         split_items: List[Tuple[Dict, int]],
@@ -416,15 +417,19 @@ def prepare_dataset(
             triples = rec["triples"]
             entities = rec["entities"]
 
-            # Decide which task(s) this doc contributes
-            # Both NER and RE are generated; mix ratio controls which survive
-            r = rng.random()
-            if r < mix:
-                # NER example
+            if task == "ner":
+                # NER-only: every doc becomes a NER example
                 conversations.append(_build_ner_conversation(text, entities))
-            else:
-                # RE example
+            elif task == "re":
+                # RE-only: every doc becomes a RE example
                 conversations.append(_build_re_conversation(text, entities, triples))
+            else:
+                # Joint: probabilistic mix based on task_mix_ratio
+                r = rng.random()
+                if r < mix:
+                    conversations.append(_build_ner_conversation(text, entities))
+                else:
+                    conversations.append(_build_re_conversation(text, entities, triples))
 
             doc_indices.append(doc_idx)
 
@@ -438,7 +443,8 @@ def prepare_dataset(
     stats["train_size"] = len(train_convos)
     stats["val_size"] = len(val_convos)
     stats["test_size"] = len(test_indices)
-    stats["task_mix_ratio"] = mix
+    stats["task"] = task
+    stats["task_mix_ratio"] = mix if task == "joint" else (1.0 if task == "ner" else 0.0)
     stats["predicate_counts"] = dict(stats["predicate_counts"])
     stats["entity_type_counts"] = dict(stats["entity_type_counts"])
     stats["train_indices"] = train_indices
@@ -446,12 +452,17 @@ def prepare_dataset(
     stats["test_indices"] = test_indices
 
     # Count task types in train set for logging
-    ner_count = int(len(train_convos) * mix)
-    re_count = len(train_convos) - ner_count
+    if task == "ner":
+        ner_count, re_count = len(train_convos), 0
+    elif task == "re":
+        ner_count, re_count = 0, len(train_convos)
+    else:
+        ner_count = int(len(train_convos) * mix)
+        re_count = len(train_convos) - ner_count
     logger.info(
-        "Prepared %d train (~%d NER, ~%d RE), %d val, %d test "
+        "Prepared %d train (%d NER, %d RE) [task=%s], %d val, %d test "
         "(%d triples, %d entities, %d docs skipped)",
-        len(train_convos), ner_count, re_count,
+        len(train_convos), ner_count, re_count, task,
         len(val_convos), len(test_indices),
         stats["total_triples"], stats["total_entities"],
         stats["skipped_docs"],
@@ -463,6 +474,96 @@ def prepare_dataset(
 # =============================================================================
 # UTILITIES
 # =============================================================================
+
+def regenerate_from_manifest(
+    dataset_path: str | Path,
+    manifest_path: str | Path,
+    data_cfg: DataConfig,
+    seed: int = 42,
+) -> Tuple[List[List[Dict[str, str]]], List[List[Dict[str, str]]], List[int], Dict[str, Any]]:
+    """Regenerate conversations from an existing split manifest.
+
+    Reuses the exact same train/val/test doc indices from a previous run,
+    but rebuilds conversations with the current task setting (ner/re/joint).
+    This ensures the split is identical across task-specific training runs.
+
+    Returns:
+        (train_conversations, val_conversations, test_doc_indices, stats)
+    """
+    path = Path(dataset_path)
+    logger.info("Loading DNRTI dataset from %s", path)
+    with open(path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    logger.info("Loading split manifest from %s", manifest_path)
+    with open(manifest_path, "r", encoding="utf-8") as f:
+        manifest = json.load(f)
+
+    train_indices = manifest["train_indices"]
+    val_indices = manifest["val_indices"]
+    test_indices = manifest["test_indices"]
+    logger.info(
+        "Reusing split: %d train, %d val, %d test",
+        len(train_indices), len(val_indices), len(test_indices),
+    )
+
+    rng = random.Random(seed)
+    task = getattr(data_cfg, "task", "joint")
+    mix = data_cfg.task_mix_ratio
+
+    def _build_conversations_from_indices(
+        indices: List[int],
+    ) -> List[List[Dict[str, str]]]:
+        conversations = []
+        for doc_idx in indices:
+            entry = data[doc_idx]
+            text = entry.get("text", "").strip()
+            if not text:
+                continue
+            triples = _build_gold_triples(entry)
+            entities = _build_gold_entities(entry)
+
+            if task == "ner":
+                conversations.append(_build_ner_conversation(text, entities))
+            elif task == "re":
+                conversations.append(_build_re_conversation(text, entities, triples))
+            else:
+                r = rng.random()
+                if r < mix:
+                    conversations.append(_build_ner_conversation(text, entities))
+                else:
+                    conversations.append(_build_re_conversation(text, entities, triples))
+        return conversations
+
+    train_convos = _build_conversations_from_indices(train_indices)
+    val_convos = _build_conversations_from_indices(val_indices)
+
+    # Count task types
+    if task == "ner":
+        ner_count, re_count = len(train_convos), 0
+    elif task == "re":
+        ner_count, re_count = 0, len(train_convos)
+    else:
+        ner_count = int(len(train_convos) * mix)
+        re_count = len(train_convos) - ner_count
+
+    stats = {
+        "train_size": len(train_convos),
+        "val_size": len(val_convos),
+        "test_size": len(test_indices),
+        "task": task,
+        "task_mix_ratio": mix if task == "joint" else (1.0 if task == "ner" else 0.0),
+        "reused_manifest": str(manifest_path),
+    }
+
+    logger.info(
+        "Regenerated %d train (%d NER, %d RE) [task=%s], %d val, %d test",
+        len(train_convos), ner_count, re_count, task,
+        len(val_convos), len(test_indices),
+    )
+
+    return train_convos, val_convos, test_indices, stats
+
 
 def export_test_set_dnrti(
     dataset_path: str | Path,

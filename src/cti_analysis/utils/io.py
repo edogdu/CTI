@@ -77,7 +77,7 @@ def save_run_manifest(run_id: str, cfg) -> Path:
         "model": getattr(cfg.extraction, "model_name", "unknown"),
         "dataset_file": getattr(cfg, "dataset_file", None),
         "dataset_mode": getattr(cfg, "dataset_mode", "document"),
-        "ollama_base_url": getattr(cfg.extraction, "ollama_base_url", ""),
+        "backend_url": getattr(cfg.backend, "url", ""),
         "temperature": getattr(cfg.extraction, "temperature", 0.1),
         "max_tokens": getattr(cfg.extraction, "max_tokens", 2048),
         "stages": {

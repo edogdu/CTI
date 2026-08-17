@@ -1,20 +1,40 @@
 # --- maxmin_chunking.py (or inline in extraction_updated_ontology.py) ---
 
-import math, numpy as np, requests
-from typing import List
+import logging
+import math
+import numpy as np
+from typing import List, Optional
 
 from cti_analysis.models.documents import NormalizedDocument, Chunk, chunk_from_text
 
-def _ollama_embed(texts, model="nomic-embed-text", base_url="http://localhost:11434"):
-    vecs = []
-    for t in texts:
-        r = requests.post(f"{base_url.rstrip('/')}/api/embeddings",
-                          json={"model": model, "prompt": t}, timeout=30)
-        r.raise_for_status()
-        v = np.array(r.json()["embedding"], dtype=float)
-        n = np.linalg.norm(v) or 1.0
-        vecs.append(v / n)
-    return vecs
+logger = logging.getLogger(__name__)
+
+# Lazy-loaded sentence-transformers model
+_st_model = None
+
+
+def _get_st_model(model_name: str = "all-MiniLM-L6-v2"):
+    """Lazy-load sentence-transformers model."""
+    global _st_model
+    if _st_model is None:
+        try:
+            from sentence_transformers import SentenceTransformer
+            logger.info("Loading sentence-transformers model: %s", model_name)
+            _st_model = SentenceTransformer(model_name)
+        except ImportError:
+            raise ImportError(
+                "sentence-transformers is required for semantic chunking. "
+                "Install with: pip install sentence-transformers"
+            )
+    return _st_model
+
+
+def _embed(texts: List[str], model_name: str = "all-MiniLM-L6-v2") -> List[np.ndarray]:
+    """Embed texts using sentence-transformers (local, no server needed)."""
+    model = _get_st_model(model_name)
+    embeddings = model.encode(texts, normalize_embeddings=True)
+    return [embeddings[i] for i in range(len(texts))]
+
 
 def _min_pairwise_cos(embs):
     """Return the minimum pairwise cosine similarity in a set (fast enough for small windows)."""
@@ -32,79 +52,103 @@ def _min_pairwise_cos(embs):
 def maxmin_semantic_chunks(
     sentences: list[str],
     *,
-    base_url="http://localhost:11434",
-    embed_model="nomic-embed-text",
-    lookahead: int = 6,          # examine up to this many future sentences when placing a boundary
-    min_sim_threshold: float = 0.35,  # if even the best split has min-sim below this, force split
-    max_words: int = 260,         # soft size cap
-    overlap_words: int = 50
-):
+    embed_model: str = "all-MiniLM-L6-v2",
+    split_threshold: float = 0.35,  # split when adjacent cosine drops below this
+    max_words: int = 300,           # hard size cap per chunk
+) -> list[str]:
     """
-    Return contiguous chunks chosen so that each chunk maximizes the minimum
-    internal cosine similarity (Max–Min) with a small look-ahead search.
+    Adjacent-cosine semantic chunking.
+
+    Computes cosine similarity between each consecutive sentence pair.
+    Merges consecutive sentences into a chunk as long as:
+      - the adjacent cosine stays above split_threshold
+      - the cumulative word count stays below max_words
+
+    When either condition fails, a boundary is placed and a new chunk starts.
+    No overlap — each sentence appears in exactly one chunk.
     """
     if not sentences:
         return []
+    if len(sentences) == 1:
+        return list(sentences)
 
-    embs = _ollama_embed(sentences, model=embed_model, base_url=base_url)
-    word_counts = [max(1, len(s.split())) for s in sentences]
+    # Embed all sentences once
+    embs = _embed(sentences, model_name=embed_model)
 
-    chunks = []
-    i = 0
-    while i < len(sentences):
-        # greedy growth + Max–Min split within a look-ahead band
-        best_end = i + 1
-        best_score = -1.0
-        acc_words = 0
+    # Compute adjacent cosine similarities
+    M = np.vstack(embs)
+    adj_cos = []
+    for i in range(len(sentences) - 1):
+        adj_cos.append(float(M[i] @ M[i + 1]))
 
-        # progressively consider end candidates j ∈ [i+1, i+lookahead] while size allows
-        for j in range(i + 1, min(len(sentences), i + lookahead + 1)):
-            acc_words += sum(word_counts[i:j])
-            if acc_words > max_words and best_end > i + 1:
-                break
+    # Greedy chunking: merge while adjacent similarity is high enough
+    chunks: list[str] = []
+    current = [sentences[0]]
+    current_words = len(sentences[0].split())
 
-            # compute min pairwise similarity in the candidate chunk
-            cand_embs = embs[i:j]
-            min_sim = _min_pairwise_cos(cand_embs)
+    for i in range(1, len(sentences)):
+        next_words = len(sentences[i].split())
+        sim = adj_cos[i - 1]
 
-            # choose the j that maximizes this minimum similarity
-            if min_sim > best_score:
-                best_score, best_end = min_sim, j
+        if sim >= split_threshold and (current_words + next_words) <= max_words:
+            # Continue current chunk
+            current.append(sentences[i])
+            current_words += next_words
+        else:
+            # Boundary: save current chunk, start new one
+            chunks.append(" ".join(current))
+            current = [sentences[i]]
+            current_words = next_words
 
-        # guard: if coherence is below threshold, still cut at best_end to avoid topic bleed
-        end = best_end
-        if best_score < min_sim_threshold and end == i + 1 and (i + 2) <= len(sentences):
-            end = i + 2  # ensure progress even on choppy texts
-
-        text = " ".join(sentences[i:end])
-        centroid = np.mean(np.vstack(embs[i:end]), axis=0)
-        centroid = centroid / (np.linalg.norm(centroid) or 1.0)
-
-        chunks.append({
-            "start": i, "end": end, "text": text, "centroid": centroid,
-            "min_pair_sim": best_score, "size_words": sum(word_counts[i:end])
-        })
-
-        # advance with overlap
-        words_kept = 0
-        k = end - 1
-        while k > i and words_kept < overlap_words:
-            words_kept += word_counts[k]
-            k -= 1
-        i = max(k + 1, end)
+    # Don't forget the last chunk
+    if current:
+        chunks.append(" ".join(current))
 
     return chunks
 
 
-def run_chunking(cfg, docs: List[NormalizedDocument]) -> List[Chunk]:
+def run_chunking(cfg, docs: List[NormalizedDocument], sentence_chunks: Optional[List[Chunk]] = None) -> List[Chunk]:
+    """Run semantic chunking: merge pre-sentencized chunks into semantic groups.
+
+    If sentence_chunks are provided, merges them based on semantic similarity.
+    Otherwise, falls back to splitting the document text on periods.
     """
-    High-level chunking entrypoint.
-    If semantic chunking params are provided, will attempt embedding-based
-    chunking; otherwise produces a single chunk per document.
-    """
-    chunks: List[Chunk] = []
+    embed_model = getattr(cfg, "embed_model", "all-MiniLM-L6-v2")
+
+    if sentence_chunks and len(sentence_chunks) > 1:
+        # Use existing sentence-level chunks — merge adjacent similar ones
+        sentences = [c.text for c in sentence_chunks]
+        doc = sentence_chunks[0].source_doc if hasattr(sentence_chunks[0], "source_doc") else docs[0] if docs else None
+
+        chunk_texts = maxmin_semantic_chunks(
+            sentences,
+            embed_model=embed_model,
+        )
+
+        merged_chunks: List[Chunk] = []
+        for i, ct in enumerate(chunk_texts):
+            doc_id = sentence_chunks[0].chunk_id.rsplit("_", 2)[0] if sentence_chunks else "unknown"
+            merged_chunks.append(chunk_from_text(
+                doc if doc else docs[0],
+                f"{doc_id}_schunk{i}",
+                ct,
+            ))
+        return merged_chunks
+
+    # Fallback: split document text on periods
+    all_chunks: List[Chunk] = []
     for doc in docs:
-        # Minimal fallback: one chunk per document
-        chunk_id = f"{doc.doc_id}_chunk0"
-        chunks.append(chunk_from_text(doc, chunk_id, doc.text))
-    return chunks
+        sentences = [s.strip() for s in doc.text.split(".") if s.strip()]
+        if len(sentences) <= 1:
+            all_chunks.append(chunk_from_text(doc, f"{doc.doc_id}_chunk0", doc.text))
+            continue
+
+        chunk_texts = maxmin_semantic_chunks(
+            sentences,
+            embed_model=embed_model,
+        )
+
+        for i, ct in enumerate(chunk_texts):
+            all_chunks.append(chunk_from_text(doc, f"{doc.doc_id}_chunk{i}", ct))
+
+    return all_chunks

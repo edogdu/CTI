@@ -1,22 +1,20 @@
-import os
 import re
 import json
 import logging
-import requests
 
 import numpy as np
 from collections import Counter, defaultdict
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Optional
 
 from cti_analysis.models.triples import Entity, Triple, TripleBatch
+from cti_analysis.llm_backend import LlamaCppBackend
 from cti_analysis.ontology import TYPES, PREDS, SCHEMA, canon_type, canon_pred
 
 repair_logger = logging.getLogger(__name__)
 
-# Module-level defaults (overridden by run_repair_ir from pipeline config)
-SESSION = requests.Session()
-BASE = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
-MODEL = os.getenv("OLLAMA_MODEL", "gemma2:9b")
+# Module-level backend (set by run_repair_ir from pipeline config)
+_BACKEND: Optional[LlamaCppBackend] = None
+_RE_LORA_ID: Optional[int] = None
 LIM = 500
 
 
@@ -29,15 +27,19 @@ def _is_valid_name(x):
 # PIPELINE ENTRY POINT
 # =============================================================================
 
-def run_repair_ir(cfg, batches: List[TripleBatch]) -> List[TripleBatch]:
+def run_repair_ir(cfg, batches: List[TripleBatch], backend: Optional[LlamaCppBackend] = None) -> List[TripleBatch]:
     """Run repair logic on invalid triples from extraction.
 
     Reads batch.meta["invalid_triples"], runs det_fix -> validate -> Markov ->
     (optionally LLM) -> adds repaired triples back into the batch.
     """
-    global BASE, MODEL
-    BASE = getattr(cfg, "ollama_base_url", BASE)
-    MODEL = getattr(cfg, "model_name", MODEL)
+    global _BACKEND, _RE_LORA_ID
+    if backend is not None:
+        _BACKEND = backend
+    backend_cfg = getattr(cfg, "_backend_cfg", None)
+    if _BACKEND is None and backend_cfg:
+        _BACKEND = LlamaCppBackend(url=backend_cfg.url, timeout=backend_cfg.timeout)
+    _RE_LORA_ID = backend_cfg.re_lora_id if backend_cfg else 1
     use_llm = getattr(cfg, "use_llm_repair", False)
 
     processed = []
@@ -293,16 +295,12 @@ def prompt(t, ctx=""):
 
 
 def ask_llm(ptxt):
-    """Call Ollama generate endpoint; return list of triple dicts or []."""
+    """Call llama-server for repair; return list of triple dicts or []."""
+    if _BACKEND is None:
+        repair_logger.warning("No backend configured for LLM repair")
+        return []
     try:
-        r = SESSION.post(
-            f"{BASE}/api/generate",
-            json={"model": MODEL, "prompt": ptxt, "stream": False},
-            timeout=120,
-        )
-        r.raise_for_status()
-        payload = r.json()
-        txt = payload.get("response", "")
+        txt = _BACKEND.generate(ptxt, lora_id=_RE_LORA_ID)
         arr = _extract_json_list_loose(txt)
         return arr if isinstance(arr, list) else []
     except Exception as e:

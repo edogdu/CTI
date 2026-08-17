@@ -1,0 +1,1663 @@
+{
+  "doc_id": "sandworm_UkrainianCriticalInfrastructure",
+  "method": "bm25+regex",
+  "n_entities": 69,
+  "n_sentences": 25,
+  "bm25_matched_ids": [
+    "S0038",
+    "S0089",
+    "S0177",
+    "S0267",
+    "S0314",
+    "S0342",
+    "S0431",
+    "S0539",
+    "S0607",
+    "S0617",
+    "S0690",
+    "S0692",
+    "S1171",
+    "T0817",
+    "T0855",
+    "T0864",
+    "T0884",
+    "T1036.001",
+    "T1090",
+    "T1210",
+    "T1212",
+    "T1219",
+    "T1219.003",
+    "T1542.003",
+    "T1544",
+    "T1546.011",
+    "T1555.003",
+    "T1555.005",
+    "T1568.001",
+    "T1570",
+    "T1587.001",
+    "T1588.001",
+    "T1588.002",
+    "T1608.002",
+    "T1629.001",
+    "T1635.001",
+    "T1637",
+    "T1663",
+    "T1664",
+    "TA0007",
+    "TA0031",
+    "TA0101",
+    "TA0102"
+  ],
+  "regex_matched_ids": [],
+  "combined_matched_ids": [
+    "S0038",
+    "S0089",
+    "S0177",
+    "S0267",
+    "S0314",
+    "S0342",
+    "S0431",
+    "S0539",
+    "S0607",
+    "S0617",
+    "S0690",
+    "S0692",
+    "S1171",
+    "T0817",
+    "T0855",
+    "T0864",
+    "T0884",
+    "T1036.001",
+    "T1090",
+    "T1210",
+    "T1212",
+    "T1219",
+    "T1219.003",
+    "T1542.003",
+    "T1544",
+    "T1546.011",
+    "T1555.003",
+    "T1555.005",
+    "T1568.001",
+    "T1570",
+    "T1587.001",
+    "T1588.001",
+    "T1588.002",
+    "T1608.002",
+    "T1629.001",
+    "T1635.001",
+    "T1637",
+    "T1663",
+    "T1664",
+    "TA0007",
+    "TA0031",
+    "TA0101",
+    "TA0102"
+  ],
+  "n_bm25": 43,
+  "n_regex": 0,
+  "n_combined": 43,
+  "per_entity": [
+    {
+      "query": "erases selected files (ACT), uses killdisk malware (ACT)",
+      "entity_name": "erases selected files",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "KillDisk",
+          "clean_id": "S0607",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexSOFTWARE"
+          ],
+          "score": 11.711155891418457
+        },
+        {
+          "name": "Discovery",
+          "clean_id": "TA0102",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexTACTICS"
+          ],
+          "score": 5.743044853210449
+        },
+        {
+          "name": "Dynamic Resolution: Fast Flux DNS",
+          "clean_id": "T1568.001",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 5.0335693359375
+        }
+      ]
+    },
+    {
+      "query": "corrupts the master boot record (ACT), uses killdisk malware (ACT)",
+      "entity_name": "corrupts the master boot record",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "Pre-OS Boot: Bootkit",
+          "clean_id": "T1542.003",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 12.243246078491211
+        },
+        {
+          "name": "KillDisk",
+          "clean_id": "S0607",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexSOFTWARE"
+          ],
+          "score": 10.93802261352539
+        },
+        {
+          "name": "Dynamic Resolution: Fast Flux DNS",
+          "clean_id": "T1568.001",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 8.479686737060547
+        }
+      ]
+    },
+    {
+      "query": "rendering systems inoperable (ACT), uses killdisk malware (ACT)",
+      "entity_name": "rendering systems inoperable",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "KillDisk",
+          "clean_id": "S0607",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexSOFTWARE"
+          ],
+          "score": 10.766698837280273
+        },
+        {
+          "name": "Discovery",
+          "clean_id": "TA0102",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexTACTICS"
+          ],
+          "score": 5.743044853210449
+        },
+        {
+          "name": "Connection Proxy",
+          "clean_id": "T0884",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 5.3805742263793945
+        }
+      ]
+    },
+    {
+      "query": "killdisk malware (ACT), uses erases selected files (ACT), uses corrupts the master boot record (ACT), uses rendering systems inoperable (ACT)",
+      "entity_name": "killdisk malware",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "Pre-OS Boot: Bootkit",
+          "clean_id": "T1542.003",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 17.15766143798828
+        },
+        {
+          "name": "Dynamic Resolution: Fast Flux DNS",
+          "clean_id": "T1568.001",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 14.847814559936523
+        },
+        {
+          "name": "KillDisk",
+          "clean_id": "S0607",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexSOFTWARE"
+          ],
+          "score": 11.882479667663574
+        }
+      ]
+    },
+    {
+      "query": "cyber-attack (MAL), uses killdisk malware (MAL)",
+      "entity_name": "cyber-attack",
+      "type": "MAL",
+      "hits": [
+        {
+          "name": "KillDisk",
+          "clean_id": "S0607",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexSOFTWARE"
+          ],
+          "score": 12.732292175292969
+        },
+        {
+          "name": "Transient Cyber Asset",
+          "clean_id": "T0864",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 5.044434547424316
+        },
+        {
+          "name": "Drive-by Compromise",
+          "clean_id": "T0817",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 4.031655311584473
+        }
+      ]
+    },
+    {
+      "query": "killdisk malware (MAL), hasattacklocation ukrainian (MAL), targets elections (MAL), uses cyber-attack (MAL), targetedby ukrainian (MAL)",
+      "entity_name": "killdisk malware",
+      "type": "MAL",
+      "hits": [
+        {
+          "name": "KillDisk",
+          "clean_id": "S0607",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexSOFTWARE"
+          ],
+          "score": 14.289019584655762
+        },
+        {
+          "name": "X-Agent for Android",
+          "clean_id": "S0314",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexSOFTWARE"
+          ],
+          "score": 8.727242469787598
+        },
+        {
+          "name": "FELIXROOT",
+          "clean_id": "S0267",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexSOFTWARE"
+          ],
+          "score": 7.318866729736328
+        }
+      ]
+    },
+    {
+      "query": "remote administration tools (TOOL), usedby operating system level (TOOL), uses cyberattacks (TOOL), uses breakers (TOOL)",
+      "entity_name": "remote administration tools",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "Ingress Tool Transfer",
+          "clean_id": "T1544",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 17.598785400390625
+        },
+        {
+          "name": "Stage Capabilities: Upload Tool",
+          "clean_id": "T1608.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 16.954387664794922
+        },
+        {
+          "name": "Obtain Capabilities: Tool",
+          "clean_id": "T1588.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 16.92929458618164
+        }
+      ]
+    },
+    {
+      "query": "remote industrial control system (ics) (TOOL), uses cyberattacks (TOOL), uses breakers (TOOL), uses operating system level (TOOL)",
+      "entity_name": "remote industrial control system (ics)",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "Ingress Tool Transfer",
+          "clean_id": "T1544",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 18.254474639892578
+        },
+        {
+          "name": "Lateral Tool Transfer",
+          "clean_id": "T1570",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 15.594135284423828
+        },
+        {
+          "name": "Obtain Capabilities: Tool",
+          "clean_id": "T1588.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 15.216815948486328
+        }
+      ]
+    },
+    {
+      "query": "cyberattacks (TOOL), usedby breakers (TOOL), uses remote administration tools (TOOL), associatedwith operating system level (TOOL), uses remote industrial control system (ics) (TOOL), uses virtual private network (vpn) (TOOL)",
+      "entity_name": "cyberattacks",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "Ingress Tool Transfer",
+          "clean_id": "T1544",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 27.281217575073242
+        },
+        {
+          "name": "Lateral Tool Transfer",
+          "clean_id": "T1570",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 25.263120651245117
+        },
+        {
+          "name": "Stage Capabilities: Upload Tool",
+          "clean_id": "T1608.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 25.150054931640625
+        }
+      ]
+    },
+    {
+      "query": "breakers (TOOL), uses remote administration tools (TOOL), uses remote industrial control system (ics) (TOOL), uses virtual private network (vpn) (TOOL), usedby cyberattacks (TOOL)",
+      "entity_name": "breakers",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "Ingress Tool Transfer",
+          "clean_id": "T1544",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 22.530723571777344
+        },
+        {
+          "name": "Stage Capabilities: Upload Tool",
+          "clean_id": "T1608.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 21.34944725036621
+        },
+        {
+          "name": "Lateral Tool Transfer",
+          "clean_id": "T1570",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 21.19099235534668
+        }
+      ]
+    },
+    {
+      "query": "virtual private network (vpn) (TOOL), uses cyberattacks (TOOL), uses breakers (TOOL), uses operating system level (TOOL)",
+      "entity_name": "virtual private network (vpn)",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "Ingress Tool Transfer",
+          "clean_id": "T1544",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 16.21514129638672
+        },
+        {
+          "name": "Stage Capabilities: Upload Tool",
+          "clean_id": "T1608.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 15.796879768371582
+        },
+        {
+          "name": "Obtain Capabilities: Tool",
+          "clean_id": "T1588.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 15.216815948486328
+        }
+      ]
+    },
+    {
+      "query": "operating system level (TOOL), uses remote industrial control system (ics) (TOOL), uses virtual private network (vpn) (TOOL), associatedwith cyberattacks (TOOL), usedby remote administration tools (TOOL)",
+      "entity_name": "operating system level",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "Ingress Tool Transfer",
+          "clean_id": "T1544",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 23.459667205810547
+        },
+        {
+          "name": "Lateral Tool Transfer",
+          "clean_id": "T1570",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 21.900012969970703
+        },
+        {
+          "name": "Stage Capabilities: Upload Tool",
+          "clean_id": "T1608.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 21.34944725036621
+        }
+      ]
+    },
+    {
+      "query": "cyber intrusions (ACT), targets electric power distribution companies (oblenergos) (ACT)",
+      "entity_name": "cyber intrusions",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "HELLOKITTY",
+          "clean_id": "S0617",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexSOFTWARE"
+          ],
+          "score": 7.72955322265625
+        },
+        {
+          "name": "Discovery",
+          "clean_id": "TA0102",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexTACTICS"
+          ],
+          "score": 7.135450839996338
+        },
+        {
+          "name": "Power Loader",
+          "clean_id": "S0177",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexSOFTWARE"
+          ],
+          "score": 7.0885419845581055
+        }
+      ]
+    },
+    {
+      "query": "electric power distribution companies (oblenergos) (ACT), targets cyber intrusions (ACT)",
+      "entity_name": "electric power distribution companies (oblenergos)",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "HELLOKITTY",
+          "clean_id": "S0617",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexSOFTWARE"
+          ],
+          "score": 7.72955322265625
+        },
+        {
+          "name": "Discovery",
+          "clean_id": "TA0102",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexTACTICS"
+          ],
+          "score": 7.135450839996338
+        },
+        {
+          "name": "Power Loader",
+          "clean_id": "S0177",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexSOFTWARE"
+          ],
+          "score": 7.0885419845581055
+        }
+      ]
+    },
+    {
+      "query": "cyber-attacks (ACT), targets critical infrastructure networks (ACT), targetedby ukrainian government (LOC), targetedby u.s. (LOC), targetedby united states (ACT), targetedby north american (ACT), targetedby grid operators (ACT), uses ris actors (ACT)",
+      "entity_name": "cyber-attacks",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "Discovery",
+          "clean_id": "TA0102",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexTACTICS"
+          ],
+          "score": 18.621540069580078
+        },
+        {
+          "name": "Proxy",
+          "clean_id": "T1090",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 15.186347007751465
+        },
+        {
+          "name": "Discovery",
+          "clean_id": "TA0007",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexTACTICS"
+          ],
+          "score": 15.048116683959961
+        }
+      ]
+    },
+    {
+      "query": "russian (ACT), targetedby attacks (ACT), targetedby cyber actors (ACT), targetedby cyber campaign (ACT), targetedby computer attacks (ACT), targetedby notpetya (ACT), targetedby sandworm (ACT), targetedby cyberespionage (ACT), targetedby leverages apt28 (ACT), targetedby x-agent (ACT), targetedby installs (ACT), targetedby deploys (ACT), targetedby silently exfiltrates data (ACT), targetedby leverages apt29 (ACT), targetedby unique encryption keys (ACT), targetedby scheduled execution (ACT), targetedby tradecraft (ACT), targetedby apt29 (ACT), targetedby pushes establishes (ACT), targetedby espionage groups (ACT), targetedby malicious cyber activity (ACT), targetedby grizzly steppe (ACT), targetedby malicious activity (ACT), monitoredby f-secure (ACT), monitoredby fbi (ACT), hasattacklocation cyberattacks (ACT), hasattacklocation activity (ACT), hasattacklocation cyber actors (ACT), hasattacklocation sandworm (ACT), hasattacklocation different types of attacks (ACT), hasattacklocation attacks (ACT), hasattacklocation dos attacks (ACT), hasattacklocation targeted attack (ACT), hasattacklocation steals (ACT), hasattacklocation cosmicduke campaign (ACT), hasattacklocation cosmicduke's (ACT), hasattacklocation denial of service (dos) attacks (ACT), hasattacklocation information gathering (ACT), hasattacklocation password stealing (ACT), hasattacklocation onionduke (ACT), hasattacklocation dukes (ACT), hasattacklocation campaigns (ACT), hasattacklocation (carberp family) (ACT), hasattacklocation carbanak malware (ACT), haslocation passwords (ACT), haslocation u.s. government (IDTY), haslocation 2018 winter olympics (ACT), haslocation victim's usernames (ACT), haslocation fbi (ACT), haslocation homeland security (ACT)",
+      "entity_name": "russian",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "Discovery",
+          "clean_id": "TA0102",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexTACTICS"
+          ],
+          "score": 123.77001190185547
+        },
+        {
+          "name": "Discovery",
+          "clean_id": "TA0007",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexTACTICS"
+          ],
+          "score": 108.55809783935547
+        },
+        {
+          "name": "Proxy",
+          "clean_id": "T1090",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 93.4729232788086
+        }
+      ]
+    },
+    {
+      "query": "activity (ACT), associatedwith window (ACT), associatedwith duke-ish (ACT), associatedwith sekur (ACT), associatedwith maze ransomware (ACT), hasattacktime november 2008 (ACT), hasattacktime last decade (ACT), hasattacktime 2014 (ACT), hasattacktime 2019 (ACT), targets citizens (IDTY), targets credentials (ACT), targets u.s. government (IDTY), targets bank (ACT), targets banks' (ACT), uses atms (ACT), uses custom tools (ACT), uses iocs (ACT), uses pos environment (ACT), uses powershell empire (ACT), uses powershell commands (ACT), uses rig exploit kit (ACT), usedby dukes (ACT), usedby cyber actors (ACT), usedby group (ACT), usedby actors (ACT), usedby ris (ACT), usedby apt29 (ACT), usedby maze (ACT), hasattacklocation eastern european (ACT), hasattacklocation russian (ACT), hasattacklocation russia.' (ACT), hasattacklocation iranian (ACT), hasattacklocation ukraine (ACT), hasattacklocation ukrainian (ACT), associatedwith mitre att&ck (ACT), targetedby u.s. government (IDTY), targetedby middle east (LOC), targetedby iranian (ACT), targetedby bank (ACT), targetedby eastern european (ACT), uses dukes (ACT), uses muddying the water (APT), uses muddywater (ACT), uses apt29 (ACT), uses driftpin (ACT), usedby dns (ACT), identifies cypho % labs (ACT), identifies united kingdom's secret intelligence service (sis) (ACT), identifies mandiant (ACT)",
+      "entity_name": "activity",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "Discovery",
+          "clean_id": "TA0102",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexTACTICS"
+          ],
+          "score": 126.19247436523438
+        },
+        {
+          "name": "Discovery",
+          "clean_id": "TA0007",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexTACTICS"
+          ],
+          "score": 103.39511108398438
+        },
+        {
+          "name": "Connection Proxy",
+          "clean_id": "T0884",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 90.80962371826172
+        }
+      ]
+    },
+    {
+      "query": "cyber actors (ACT), hasattacklocation russian (ACT), uses cyber campaign (ACT), hasattacklocation ukrainian (ACT), targetedby u.s. government (IDTY), usedby activity (ACT), targetedby russian (ACT)",
+      "entity_name": "cyber actors",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "Discovery",
+          "clean_id": "TA0102",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexTACTICS"
+          ],
+          "score": 17.22913360595703
+        },
+        {
+          "name": "Discovery",
+          "clean_id": "TA0007",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexTACTICS"
+          ],
+          "score": 15.048116683959961
+        },
+        {
+          "name": "Connection Proxy",
+          "clean_id": "T0884",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 12.951964378356934
+        }
+      ]
+    },
+    {
+      "query": "cyber campaign (ACT), hasattacklocation ukrainian (ACT), targetedby u.s. government (IDTY), targetedby russian (ACT), uses cyber actors (ACT)",
+      "entity_name": "cyber campaign",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "Discovery",
+          "clean_id": "TA0102",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexTACTICS"
+          ],
+          "score": 11.486089706420898
+        },
+        {
+          "name": "HotCroissant",
+          "clean_id": "S0431",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexSOFTWARE"
+          ],
+          "score": 10.674140930175781
+        },
+        {
+          "name": "SILENTTRINITY",
+          "clean_id": "S0692",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexSOFTWARE"
+          ],
+          "score": 10.639054298400879
+        }
+      ]
+    },
+    {
+      "query": "ukrainian (ACT), haslocation u.s. government (IDTY), hasattacklocation cyber actors (ACT), hasattacklocation cyber campaign (ACT), haslocation cypho % labs (ACT), hasattacklocation driftpin (ACT), hasattacklocation activity (ACT)",
+      "entity_name": "ukrainian",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "Discovery",
+          "clean_id": "TA0102",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexTACTICS"
+          ],
+          "score": 17.22913360595703
+        },
+        {
+          "name": "Discovery",
+          "clean_id": "TA0007",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexTACTICS"
+          ],
+          "score": 15.048116683959961
+        },
+        {
+          "name": "Connection Proxy",
+          "clean_id": "T0884",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 12.951964378356934
+        }
+      ]
+    },
+    {
+      "query": "windows-based human-machine interfaces (hmis) (TOOL), usedby killdisk. (TOOL)",
+      "entity_name": "windows-based human-machine interfaces (hmis)",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "KillDisk",
+          "clean_id": "S0607",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexSOFTWARE"
+          ],
+          "score": 12.060206413269043
+        },
+        {
+          "name": "Lateral Tool Transfer",
+          "clean_id": "T1570",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 8.86787223815918
+        },
+        {
+          "name": "Command and Control",
+          "clean_id": "TA0101",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexTACTICS"
+          ],
+          "score": 8.4139404296875
+        }
+      ]
+    },
+    {
+      "query": "killdisk. (TOOL), usedby windows-based human-machine interfaces (hmis) (TOOL)",
+      "entity_name": "killdisk.",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "KillDisk",
+          "clean_id": "S0607",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexSOFTWARE"
+          ],
+          "score": 12.060206413269043
+        },
+        {
+          "name": "Lateral Tool Transfer",
+          "clean_id": "T1570",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 8.86787223815918
+        },
+        {
+          "name": "Command and Control",
+          "clean_id": "TA0101",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexTACTICS"
+          ],
+          "score": 8.4139404296875
+        }
+      ]
+    },
+    {
+      "query": "blackenergy (MAL), associatedwith be (MAL), uses acquire legitimate credentials (MAL)",
+      "entity_name": "blackenergy",
+      "type": "MAL",
+      "hits": [
+        {
+          "name": "BlackEnergy",
+          "clean_id": "S0089",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexSOFTWARE"
+          ],
+          "score": 9.145225524902344
+        },
+        {
+          "name": "Credentials from Password Stores: Credentials from Web Browsers",
+          "clean_id": "T1555.003",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 6.889843463897705
+        },
+        {
+          "name": "Credentials from Password Stores: Password Managers",
+          "clean_id": "T1555.005",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 5.875813961029053
+        }
+      ]
+    },
+    {
+      "query": "acquire legitimate credentials (MAL), uses blackenergy (MAL)",
+      "entity_name": "acquire legitimate credentials",
+      "type": "MAL",
+      "hits": [
+        {
+          "name": "BlackEnergy",
+          "clean_id": "S0089",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexSOFTWARE"
+          ],
+          "score": 9.145225524902344
+        },
+        {
+          "name": "Credentials from Password Stores: Credentials from Web Browsers",
+          "clean_id": "T1555.003",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 6.4430036544799805
+        },
+        {
+          "name": "Credentials from Password Stores: Password Managers",
+          "clean_id": "T1555.005",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 5.409523010253906
+        }
+      ]
+    },
+    {
+      "query": "remote access trojan (MAL), associatedwith blackenergy's (MAL)",
+      "entity_name": "remote access trojan",
+      "type": "MAL",
+      "hits": [
+        {
+          "name": "Remote Access Tools: Remote Access Hardware",
+          "clean_id": "T1219.003",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 6.110106945037842
+        },
+        {
+          "name": "Remote Access Tools",
+          "clean_id": "T1219",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 6.055728435516357
+        },
+        {
+          "name": "Remote Access Software",
+          "clean_id": "T1663",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 6.00252628326416
+        }
+      ]
+    },
+    {
+      "query": "blackenergy's (MAL), associatedwith remote access trojan (MAL)",
+      "entity_name": "blackenergy's",
+      "type": "MAL",
+      "hits": [
+        {
+          "name": "Remote Access Tools: Remote Access Hardware",
+          "clean_id": "T1219.003",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 6.110106945037842
+        },
+        {
+          "name": "Remote Access Tools",
+          "clean_id": "T1219",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 6.055728435516357
+        },
+        {
+          "name": "Remote Access Software",
+          "clean_id": "T1663",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 6.00252628326416
+        }
+      ]
+    },
+    {
+      "query": "(ir-alert-h-16-043-01p (TOOL), uses tlp green (TOOL)",
+      "entity_name": "(ir-alert-h-16-043-01p",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "Green Lambert",
+          "clean_id": "S0690",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexSOFTWARE"
+          ],
+          "score": 9.066659927368164
+        },
+        {
+          "name": "Red Alert 2.0",
+          "clean_id": "S0539",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexSOFTWARE"
+          ],
+          "score": 7.926594257354736
+        },
+        {
+          "name": "Ingress Tool Transfer",
+          "clean_id": "T1544",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 7.643098831176758
+        }
+      ]
+    },
+    {
+      "query": "tlp green (TOOL), uses (ir-alert-h-16-043-01p (TOOL)",
+      "entity_name": "tlp green",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "Green Lambert",
+          "clean_id": "S0690",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexSOFTWARE"
+          ],
+          "score": 9.066659927368164
+        },
+        {
+          "name": "Red Alert 2.0",
+          "clean_id": "S0539",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexSOFTWARE"
+          ],
+          "score": 7.926594257354736
+        },
+        {
+          "name": "Ingress Tool Transfer",
+          "clean_id": "T1544",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 7.643098831176758
+        }
+      ]
+    },
+    {
+      "query": "yara signature (MAL), uses blackenergy malware (MAL)",
+      "entity_name": "yara signature",
+      "type": "MAL",
+      "hits": [
+        {
+          "name": "BlackEnergy",
+          "clean_id": "S0089",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexSOFTWARE"
+          ],
+          "score": 9.831923484802246
+        },
+        {
+          "name": "Masquerading: Invalid Code Signature",
+          "clean_id": "T1036.001",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 5.552626609802246
+        },
+        {
+          "name": "GreyEnergy",
+          "clean_id": "S0342",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexSOFTWARE"
+          ],
+          "score": 4.477903366088867
+        }
+      ]
+    },
+    {
+      "query": "blackenergy malware (MAL), uses yara signature (MAL)",
+      "entity_name": "blackenergy malware",
+      "type": "MAL",
+      "hits": [
+        {
+          "name": "BlackEnergy",
+          "clean_id": "S0089",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexSOFTWARE"
+          ],
+          "score": 9.831923484802246
+        },
+        {
+          "name": "Masquerading: Invalid Code Signature",
+          "clean_id": "T1036.001",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 5.552626609802246
+        },
+        {
+          "name": "GreyEnergy",
+          "clean_id": "S0342",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexSOFTWARE"
+          ],
+          "score": 4.477903366088867
+        }
+      ]
+    },
+    {
+      "query": "unauthorized access (VULNAME), associatedwith control system domains (VULNAME), targetedby vulnerabilities (VULNAME)",
+      "entity_name": "unauthorized access",
+      "type": "VULNAME",
+      "hits": [
+        {
+          "name": "Unauthorized Command Message",
+          "clean_id": "T0855",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 7.910160541534424
+        },
+        {
+          "name": "Exploitation for Credential Access",
+          "clean_id": "T1212",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 7.19062614440918
+        },
+        {
+          "name": "Credential Access",
+          "clean_id": "TA0031",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexTACTICS"
+          ],
+          "score": 6.76149845123291
+        }
+      ]
+    },
+    {
+      "query": "vulnerabilities (VULNAME), targetedby unauthorized access (VULNAME), targetedby malware (VULNAME), targetedby dukes (VULNAME), hasvulnerability control system domains (VULNAME), hasvulnerability ecommerce sites (VULNAME), targets malware (VULNAME), targets exploitation (VULNAME)",
+      "entity_name": "vulnerabilities",
+      "type": "VULNAME",
+      "hits": [
+        {
+          "name": "Exploitation for Credential Access",
+          "clean_id": "T1212",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 13.52893352508545
+        },
+        {
+          "name": "Exploitation of Remote Services",
+          "clean_id": "T1210",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 9.42422103881836
+        },
+        {
+          "name": "Exploitation for Initial Access",
+          "clean_id": "T1664",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 9.152289390563965
+        }
+      ]
+    },
+    {
+      "query": "control system domains (VULNAME), hasvulnerability vulnerabilities (VULNAME), associatedwith unauthorized access (VULNAME)",
+      "entity_name": "control system domains",
+      "type": "VULNAME",
+      "hits": [
+        {
+          "name": "Unauthorized Command Message",
+          "clean_id": "T0855",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 7.910160541534424
+        },
+        {
+          "name": "Exploitation for Credential Access",
+          "clean_id": "T1212",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 7.19062614440918
+        },
+        {
+          "name": "Credential Access",
+          "clean_id": "TA0031",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexTACTICS"
+          ],
+          "score": 6.76149845123291
+        }
+      ]
+    },
+    {
+      "query": "prevent (ACT), usedby malicious actors. (ACT), associatedwith application whitelisting (awl) (ACT)",
+      "entity_name": "prevent",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "Prevent Application Removal",
+          "clean_id": "T1629.001",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 9.871014595031738
+        },
+        {
+          "name": "Discovery",
+          "clean_id": "TA0102",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexTACTICS"
+          ],
+          "score": 8.614566802978516
+        },
+        {
+          "name": "URI Hijacking",
+          "clean_id": "T1635.001",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 8.087369918823242
+        }
+      ]
+    },
+    {
+      "query": "malicious actors. (ACT), usedby application whitelisting (awl) (ACT), usedby detect (ACT), usedby prevent (ACT)",
+      "entity_name": "malicious actors.",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "Discovery",
+          "clean_id": "TA0102",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexTACTICS"
+          ],
+          "score": 11.486089706420898
+        },
+        {
+          "name": "URI Hijacking",
+          "clean_id": "T1635.001",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 10.246030807495117
+        },
+        {
+          "name": "Discovery",
+          "clean_id": "TA0007",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexTACTICS"
+          ],
+          "score": 10.03207778930664
+        }
+      ]
+    },
+    {
+      "query": "detect (ACT), usedby malicious actors. (ACT), associatedwith application whitelisting (awl) (ACT), associatedwith framework core (ACT), associatedwith framework profile (ACT), associatedwith framework implementation tiers- (ACT)",
+      "entity_name": "detect",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "Discovery",
+          "clean_id": "TA0102",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexTACTICS"
+          ],
+          "score": 17.22913360595703
+        },
+        {
+          "name": "Event Triggered Execution: Application Shimming",
+          "clean_id": "T1546.011",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 15.53139877319336
+        },
+        {
+          "name": "Discovery",
+          "clean_id": "TA0007",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexTACTICS"
+          ],
+          "score": 15.048116683959961
+        }
+      ]
+    },
+    {
+      "query": "application whitelisting (awl) (ACT), associatedwith detect (ACT), associatedwith prevent (ACT), usedby malicious actors. (ACT)",
+      "entity_name": "application whitelisting (awl)",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "Discovery",
+          "clean_id": "TA0102",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexTACTICS"
+          ],
+          "score": 11.486089706420898
+        },
+        {
+          "name": "URI Hijacking",
+          "clean_id": "T1635.001",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 10.246030807495117
+        },
+        {
+          "name": "Discovery",
+          "clean_id": "TA0007",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexTACTICS"
+          ],
+          "score": 10.03207778930664
+        }
+      ]
+    },
+    {
+      "query": "malware (MAL), targets operating system (MAL), targets industrial processes (MAL), targets sedebugprivilege permission (MAL), uses finished obtaining privileges (MAL), uses cyber- mitigation (MAL), uses malicious destruction (MAL), uses sqlite gle (MAL), uses password stealers. (MAL), uses ics (MAL), uses opc (MAL), uses contact (MAL), uses cobalt strike (TOOL), uses ftp. (MAL), uses .net) (MAL), uses json (MAL), uses network requests. (MAL), uses antivirus engines. (MAL), uses cmduniq (MAL), uses xor (MAL), uses creates mutexes (MAL), uses c2s (MAL), uses attack (MAL), uses c2 (MAL), uses gain any/all (MAL), uses sysinternals psexec.exe (MAL), uses extract (MAL), identifiedby trend micro (MAL), associatedwith attack (MAL), targetedby windows-only (MAL), targetedby of (MAL), uses cyberespionage group (MAL), usedby d4088f8202e0eb27f9 dc8b30c5253f02a790 e020668055eb1d2271 c517f48bf95a4f3ecba d7ca38e21327541787a (MAL), usedby ics (MAL), identifies symantec (MAL)",
+      "entity_name": "malware",
+      "type": "MAL",
+      "hits": [
+        {
+          "name": "Dynamic Resolution",
+          "clean_id": "T1637",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 60.65558624267578
+        },
+        {
+          "name": "Duqu",
+          "clean_id": "S0038",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexSOFTWARE"
+          ],
+          "score": 59.54134750366211
+        },
+        {
+          "name": "OilCheck",
+          "clean_id": "S1171",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexSOFTWARE"
+          ],
+          "score": 58.47700881958008
+        }
+      ]
+    },
+    {
+      "query": "cyber- mitigation (MAL), uses malware (MAL)",
+      "entity_name": "cyber- mitigation",
+      "type": "MAL",
+      "hits": [
+        {
+          "name": "Transient Cyber Asset",
+          "clean_id": "T0864",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 3.8082711696624756
+        },
+        {
+          "name": "Obtain Capabilities: Malware",
+          "clean_id": "T1588.001",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 3.7772011756896973
+        },
+        {
+          "name": "Develop Capabilities: Malware",
+          "clean_id": "T1587.001",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 3.7356491088867188
+        }
+      ]
+    }
+  ],
+  "per_sentence": []
+}

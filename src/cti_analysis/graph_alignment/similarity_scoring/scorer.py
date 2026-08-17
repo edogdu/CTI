@@ -81,11 +81,16 @@ def ensure_vector_index(session, dim: int, index_name: str, index_label: str, in
     )
 
 
+# CTIEntity types worth querying for TTP similarity search
+SIMILARITY_ENTITY_TYPES = ["MAL", "TOOL", "ACT", "APT", "VULID", "VULNAME"]
+
+
 def fetch_sources(session, doc_id: str, index_property: str) -> List[Dict[str, Any]]:
     res = session.run(
         f"""
         MATCH (d:CTIDocument {{id: $doc_id}})-[:MENTIONS]->(n:CTIEntity)
         WHERE n.{index_property} IS NOT NULL
+          AND n.type IN $types
         RETURN elementId(n) AS uid,
                n.name AS name,
                n.type AS type,
@@ -94,6 +99,7 @@ def fetch_sources(session, doc_id: str, index_property: str) -> List[Dict[str, A
                n.{index_property} AS embedding
         """,
         doc_id=doc_id,
+        types=SIMILARITY_ENTITY_TYPES,
     )
     return [dict(r) for r in res]
 
@@ -117,18 +123,35 @@ def topk_from_db(session, embedding: List[float], src: Dict[str, Any], k: int, d
     kplus = max(k + 1, 20 * k)
     return [dict(r) for r in session.run(query, kplus=kplus, embedding=embedding, src_uid=src.get("uid"), doc_id=doc_id, k=k, allowed_labels=allowed_labels)]
 
-def run_similarity(driver, doc_id, output_dir, embed_cfg: Dict) -> None:
-    # embed_cfg mirrors cfg.embedding from config.yaml
-    k = int(embed_cfg.similarity.top_k)
-    dim = int(embed_cfg.dimensions)
-    index_name = str(embed_cfg.similarity.index.name)
-    index_label = str(embed_cfg.similarity.index.label)
-    index_property = str(embed_cfg.property)
-    sim_func = str(embed_cfg.similarity.index.similarity_function)
-    
-    allowed_labels = list(getattr(embed_cfg.similarity, 'allowed_labels', [
-        "UcoexMITREATTACK", "UcoexTACTICS", "UcoexSOFTWARE"
-    ]))
+def run_similarity(driver, doc_id, output_dir, embed_cfg) -> None:
+    """Run similarity scoring for a document's CTIEntity nodes against UCKG.
+
+    embed_cfg can be a PipelineConfig (with .similarity and .embeddings attrs)
+    or a legacy dict-like object with nested dotted access.
+    """
+    # Support both new PipelineConfig and legacy dotted-dict config
+    sim = getattr(embed_cfg, "similarity", None)
+    emb = getattr(embed_cfg, "embeddings", None)
+    if sim is not None and hasattr(sim, "top_k"):
+        # New config style (PipelineConfig)
+        k = int(sim.top_k)
+        dim = int(getattr(emb, "dimensions", 768)) if emb else 768
+        index_name = str(sim.index_name)
+        index_label = str(sim.index_label)
+        index_property = str(sim.index_property)
+        sim_func = str(sim.similarity_function)
+        allowed_labels = list(sim.allowed_labels)
+    else:
+        # Legacy dotted-dict config
+        k = int(embed_cfg.similarity.top_k)
+        dim = int(embed_cfg.dimensions)
+        index_name = str(embed_cfg.similarity.index.name)
+        index_label = str(embed_cfg.similarity.index.label)
+        index_property = str(embed_cfg.property)
+        sim_func = str(embed_cfg.similarity.index.similarity_function)
+        allowed_labels = list(getattr(embed_cfg.similarity, 'allowed_labels', [
+            "UcoexMITREATTACK", "UcoexTACTICS", "UcoexSOFTWARE"
+        ]))
     
     ensure_output_dir(output_dir)
 

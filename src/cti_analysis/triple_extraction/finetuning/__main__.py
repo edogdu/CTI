@@ -2,6 +2,8 @@
 
 Usage:
     python -m cti_analysis.triple_extraction.finetuning --stage all
+    python -m cti_analysis.triple_extraction.finetuning --stage all --task ner
+    python -m cti_analysis.triple_extraction.finetuning --stage all --task re
     python -m cti_analysis.triple_extraction.finetuning --stage prep
     python -m cti_analysis.triple_extraction.finetuning --stage train
     python -m cti_analysis.triple_extraction.finetuning --stage export
@@ -17,9 +19,9 @@ import sys
 from pathlib import Path
 
 from .config import load_finetuning_config
-from .data_prep import prepare_dataset, save_dataset, export_test_set_dnrti
+from .data_prep import prepare_dataset, regenerate_from_manifest, save_dataset, export_test_set_dnrti
 from .trainer import run_training
-from .export_gguf import export_to_gguf, register_with_ollama
+from .export_gguf import export_to_gguf
 
 logging.basicConfig(
     level=logging.INFO,
@@ -41,10 +43,19 @@ def _run_prep(cfg):
         seed=cfg.training.seed,
     )
 
-    # Save to output dir
-    data_dir = Path(cfg.output_dir) / "data"
-    save_dataset(train, data_dir / "train.jsonl")
-    save_dataset(val, data_dir / "val.jsonl")
+    # Save to shared data dir — task-specific filenames
+    # Data always goes in the base output dir (not task subdirs)
+    task = cfg.data.task
+    base_output = Path(cfg.output_dir)
+    if task != "joint":
+        # cfg.output_dir may be .../finetuning/ner — go up one level for data
+        data_dir = base_output.parent / "data"
+    else:
+        data_dir = base_output / "data"
+    train_filename = f"train_{task}.jsonl" if task != "joint" else "train.jsonl"
+    val_filename = f"val_{task}.jsonl" if task != "joint" else "val.jsonl"
+    save_dataset(train, data_dir / train_filename)
+    save_dataset(val, data_dir / val_filename)
 
     # Export test set as DNRTI-format JSON for pipeline evaluation
     test_dnrti_path = data_dir / "test_dnrti.json"
@@ -91,9 +102,16 @@ def _run_prep(cfg):
 
 def _load_cached_data(cfg):
     """Load previously prepared data from JSONL cache."""
-    data_dir = Path(cfg.output_dir) / "data"
-    train_path = data_dir / "train.jsonl"
-    val_path = data_dir / "val.jsonl"
+    task = cfg.data.task
+    base_output = Path(cfg.output_dir)
+    if task != "joint":
+        data_dir = base_output.parent / "data"
+    else:
+        data_dir = base_output / "data"
+    train_filename = f"train_{task}.jsonl" if task != "joint" else "train.jsonl"
+    val_filename = f"val_{task}.jsonl" if task != "joint" else "val.jsonl"
+    train_path = data_dir / train_filename
+    val_path = data_dir / val_filename
 
     if not train_path.exists():
         logger.error("Cached training data not found at %s. Run --stage prep first.", train_path)
@@ -126,20 +144,14 @@ def _run_train(cfg, train=None, val=None):
 
 def _run_export(cfg, adapter_dir=None):
     """Run export stage."""
-    gguf_path = export_to_gguf(cfg, adapter_dir)
-    logger.info("GGUF exported to %s", gguf_path)
+    task = cfg.data.task
+    gguf_path = export_to_gguf(cfg, adapter_dir, task=task)
+    logger.info("GGUF LoRA adapter exported to %s", gguf_path)
 
     if gguf_path.exists():
-        success = register_with_ollama(
-            gguf_path,
-            cfg.export.ollama_model_name,
-            base_model=cfg.base_model,
+        logger.info(
+            "Use with llama-server: --lora %s", gguf_path,
         )
-        if success:
-            logger.info(
-                "Model registered! Update config.yaml: extraction_model: \"%s\"",
-                cfg.export.ollama_model_name,
-            )
     else:
         logger.warning(
             "GGUF file not yet created (manual conversion needed). "
@@ -177,6 +189,12 @@ def main():
         default=None,
         help="Override base model name",
     )
+    parser.add_argument(
+        "--task",
+        choices=["ner", "re", "joint"],
+        default=None,
+        help="Task to train: ner, re, or joint (default: from config)",
+    )
     args = parser.parse_args()
 
     # Load config
@@ -187,9 +205,18 @@ def main():
         cfg.data.dataset_path = args.dataset
     if args.base_model:
         cfg.base_model = args.base_model
+    if args.task:
+        cfg.data.task = args.task
+
+    # For task-specific runs, use a subdirectory for adapter output
+    task = cfg.data.task
+    if task != "joint":
+        base_output = Path(cfg.output_dir)
+        cfg.output_dir = str(base_output / task)
 
     logger.info("Fine-tuning config:")
     logger.info("  Base model: %s", cfg.base_model)
+    logger.info("  Task: %s", task)
     logger.info("  Dataset: %s", cfg.data.dataset_path)
     logger.info("  Output dir: %s", cfg.output_dir)
     logger.info("  LoRA rank: %d, alpha: %d", cfg.lora.rank, cfg.lora.alpha)

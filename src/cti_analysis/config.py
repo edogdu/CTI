@@ -32,14 +32,30 @@ PIPELINE_PATH = _locate_config(_DEFAULT_PIPELINE, "pipeline.yaml")
 
 
 @dataclass
+class BackendConfig:
+    url: str = "http://localhost:8080"
+    timeout: int = 300
+    ner_lora_id: int = 0
+    re_lora_id: int = 1
+    base_model_path: str = ""
+    ner_lora_path: str = ""
+    re_lora_path: str = ""
+
+
+@dataclass
+class EmbeddingsConfig:
+    method: str = "sentence-transformers"
+    model: str = "all-MiniLM-L6-v2"
+    dimensions: int = 768
+    strategy: str = "entity-context"
+
+
+@dataclass
 class ExtractionConfig:
-    model_name: str = "gemma2:9b"
-    max_tokens: int = 1200
+    max_tokens: int = 2048
     temperature: float = 0.1
-    ollama_base_url: str = "http://localhost:11434"
     use_consensus: bool = True
-    ollama_timeout: int = 120
-    use_two_pass: bool = False  # two-pass: NER then RE with entity hints
+    use_two_pass: bool = True
 
 
 @dataclass
@@ -65,8 +81,25 @@ class CanonicalizationConfig:
 
 
 @dataclass
+class Neo4jConfig:
+    uri: str = "bolt://localhost:7687"
+    user: str = "neo4j"
+    password: str = "abcd90909090"
+
+
+@dataclass
 class GraphInsertionConfig:
     enabled: bool = True
+
+
+@dataclass
+class SimilarityConfig:
+    top_k: int = 10
+    index_name: str = "cti_entity_similarity"
+    index_label: str = "SimilarityTarget"
+    index_property: str = "embedding"
+    similarity_function: str = "cosine"
+    allowed_labels: tuple = ("UcoexMITREATTACK", "UcoexTACTICS", "UcoexSOFTWARE")
 
 
 @dataclass
@@ -82,12 +115,16 @@ class RerankingConfig:
 @dataclass
 class PipelineConfig:
     extraction: ExtractionConfig
+    backend: BackendConfig
+    embeddings: EmbeddingsConfig
     semantic_chunking: SemanticChunkingConfig
     repair: RepairConfig
     canonicalization: CanonicalizationConfig
     graph_insertion: GraphInsertionConfig
     similarity_scoring: SimilarityScoringConfig
     reranking: RerankingConfig
+    neo4j: Neo4jConfig = None
+    similarity: SimilarityConfig = None
     dataset_name: str = ""
     dataset_file: Optional[str] = None
     output_dir: Path | str = "results"
@@ -126,15 +163,33 @@ def load_config(
         val = module_flags.get(name, default)
         return bool(val) if val is not None else default
 
+    # Backend (llama.cpp server)
+    backend_raw = base.get("backend", {}) if isinstance(base, dict) else {}
+    backend_cfg = BackendConfig(
+        url=str(backend_raw.get("url", BackendConfig.url)),
+        timeout=int(backend_raw.get("timeout", BackendConfig.timeout)),
+        ner_lora_id=int(backend_raw.get("ner_lora_id", BackendConfig.ner_lora_id)),
+        re_lora_id=int(backend_raw.get("re_lora_id", BackendConfig.re_lora_id)),
+        base_model_path=str(backend_raw.get("base_model_path", "")),
+        ner_lora_path=str(backend_raw.get("ner_lora_path", "")),
+        re_lora_path=str(backend_raw.get("re_lora_path", "")),
+    )
+
+    # Embeddings
+    embed_raw = base.get("embeddings", {}) if isinstance(base, dict) else {}
+    embeddings_cfg = EmbeddingsConfig(
+        method=str(embed_raw.get("method", EmbeddingsConfig.method)),
+        model=str(embed_raw.get("model", EmbeddingsConfig.model)),
+        dimensions=int(embed_raw.get("dimensions", EmbeddingsConfig.dimensions)),
+        strategy=str(embed_raw.get("strategy", EmbeddingsConfig.strategy)),
+    )
+
     # Extraction
     models = base.get("models", {}) if isinstance(base, dict) else {}
     extraction_cfg = ExtractionConfig(
-        model_name=models.get("extraction_model", models.get("model_name", ExtractionConfig.model_name)),
         max_tokens=int(models.get("max_tokens", ExtractionConfig.max_tokens)),
         temperature=float(models.get("temperature", ExtractionConfig.temperature)),
-        ollama_base_url=models.get("ollama_url", ExtractionConfig.ollama_base_url),
         use_consensus=flag("consensus", True),
-        ollama_timeout=int(models.get("ollama_timeout", ExtractionConfig.ollama_timeout)),
         use_two_pass=bool(models.get("use_two_pass", ExtractionConfig.use_two_pass)),
     )
 
@@ -157,6 +212,24 @@ def load_config(
     similarity_scoring_cfg = SimilarityScoringConfig(enabled=flag("similarity", True))
     reranking_cfg = RerankingConfig(enabled=flag("reranking", True))
 
+    # Neo4j
+    neo4j_raw = base.get("neo4j", {}) if isinstance(base, dict) else {}
+    neo4j_cfg = Neo4jConfig(
+        uri=str(neo4j_raw.get("uri", Neo4jConfig.uri)),
+        user=str(neo4j_raw.get("user", Neo4jConfig.user)),
+        password=str(neo4j_raw.get("password", Neo4jConfig.password)),
+    )
+
+    # Similarity search config
+    sim_raw = base.get("similarity", {}) if isinstance(base, dict) else {}
+    similarity_cfg = SimilarityConfig(
+        top_k=int(sim_raw.get("top_k", 10)),
+        index_name=str(sim_raw.get("index_name", "cti_entity_similarity")),
+        index_label=str(sim_raw.get("index_label", "SimilarityTarget")),
+        index_property=str(sim_raw.get("index_property", "embedding")),
+        similarity_function=str(sim_raw.get("similarity_function", "cosine")),
+        allowed_labels=tuple(sim_raw.get("allowed_labels", ["UcoexMITREATTACK", "UcoexTACTICS", "UcoexSOFTWARE"])),
+    )
 
     paths_cfg = base.get("paths", {}) if isinstance(base, dict) else {}
     dataset_cfg = base.get("dataset", {}) if isinstance(base, dict) else {}
@@ -166,12 +239,16 @@ def load_config(
 
     return PipelineConfig(
         extraction=extraction_cfg,
+        backend=backend_cfg,
+        embeddings=embeddings_cfg,
         semantic_chunking=semantic_chunking_cfg,
         repair=repair_cfg,
         canonicalization=canonicalization_cfg,
         graph_insertion=graph_insertion_cfg,
         similarity_scoring=similarity_scoring_cfg,
         reranking=reranking_cfg,
+        neo4j=neo4j_cfg,
+        similarity=similarity_cfg,
         dataset_name=str(dataset_cfg.get("name", "")),
         dataset_file=dataset_cfg.get("file"),
         output_dir=paths_cfg.get("output_dir", "results"),
@@ -181,11 +258,15 @@ def load_config(
 
 
 __all__ = [
+    "BackendConfig",
+    "EmbeddingsConfig",
     "ExtractionConfig",
     "SemanticChunkingConfig",
     "RepairConfig",
     "CanonicalizationConfig",
+    "Neo4jConfig",
     "GraphInsertionConfig",
+    "SimilarityConfig",
     "SimilarityScoringConfig",
     "RerankingConfig",
     "PipelineConfig",

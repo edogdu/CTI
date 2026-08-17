@@ -3,12 +3,11 @@ from __future__ import annotations
 import json
 import logging
 import re
-import time
-import requests
 from typing import Any, Dict, List, Optional, Tuple
 
 from cti_analysis.models.documents import Chunk
 from cti_analysis.models.triples import Entity, Triple, TripleBatch, triple_batch_for_doc
+from cti_analysis.llm_backend import LlamaCppBackend
 from cti_analysis.ontology import (
     TYPES, PREDS, EXTRACTION_PROMPT,
     ENTITY_EXTRACTION_PROMPT, RELATION_EXTRACTION_PROMPT,
@@ -16,49 +15,6 @@ from cti_analysis.ontology import (
 )
 
 logger = logging.getLogger(__name__)
-
-
-# =============================================================================
-# OLLAMA API
-# =============================================================================
-
-def _call_ollama(
-    prompt: str,
-    model: str = "gemma2:9b",
-    base_url: str = "http://localhost:11434",
-    temperature: float = 0.1,
-    max_tokens: int = 2048,
-    timeout: int = 120,
-) -> str:
-    """Call Ollama generate API with retry logic. Returns raw response text."""
-    url = f"{base_url.rstrip('/')}/api/generate"
-    payload = {
-        "model": model,
-        "prompt": prompt,
-        "stream": False,
-        "options": {
-            "temperature": temperature,
-            "num_predict": max_tokens,
-        },
-    }
-
-    for attempt in range(3):
-        try:
-            resp = requests.post(url, json=payload, timeout=timeout)
-            resp.raise_for_status()
-            return resp.json().get("response", "")
-        except requests.exceptions.Timeout:
-            logger.warning("Ollama timeout (attempt %d/3)", attempt + 1)
-            time.sleep(3)
-        except requests.exceptions.ConnectionError:
-            logger.warning("Ollama connection error (attempt %d/3)", attempt + 1)
-            time.sleep(5)
-        except Exception as e:
-            logger.warning("Ollama error (attempt %d/3): %s", attempt + 1, e)
-            time.sleep(3)
-
-    logger.error("Ollama failed after 3 attempts")
-    return ""
 
 
 # =============================================================================
@@ -271,11 +227,10 @@ def _triple_key(t: Dict) -> Tuple[str, str, str]:
 
 def _extract_entities_from_chunk(
     text: str,
-    model: str,
-    base_url: str,
+    backend: LlamaCppBackend,
     temperature: float,
     max_tokens: int,
-    timeout: int,
+    lora_id: Optional[int] = None,
 ) -> List[Dict[str, str]]:
     """Extract entities from text using ENTITY_EXTRACTION_PROMPT.
 
@@ -286,9 +241,9 @@ def _extract_entities_from_chunk(
         return []
 
     prompt = ENTITY_EXTRACTION_PROMPT.format(text=text)
-    response = _call_ollama(
-        prompt, model=model, base_url=base_url,
-        temperature=temperature, max_tokens=max_tokens, timeout=timeout,
+    response = backend.generate(
+        prompt, temperature=temperature, max_tokens=max_tokens,
+        lora_id=lora_id,
     )
 
     # Try pipe-delimited first, then JSON fallback
@@ -321,11 +276,10 @@ def _extract_entities_from_chunk(
 
 def _extract_from_chunk(
     text: str,
-    model: str,
-    base_url: str,
+    backend: LlamaCppBackend,
     temperature: float,
     max_tokens: int,
-    timeout: int,
+    lora_id: Optional[int] = None,
     entity_hints: Optional[List[Dict[str, str]]] = None,
 ) -> Tuple[List[Dict], List[Dict], int]:
     """Extract triples from a single chunk of text.
@@ -346,9 +300,9 @@ def _extract_from_chunk(
     else:
         prompt = EXTRACTION_PROMPT.format(text=text)
 
-    response = _call_ollama(
-        prompt, model=model, base_url=base_url,
-        temperature=temperature, max_tokens=max_tokens, timeout=timeout,
+    response = backend.generate(
+        prompt, temperature=temperature, max_tokens=max_tokens,
+        lora_id=lora_id,
     )
 
     raw_triples = _parse_response(response)
@@ -385,52 +339,62 @@ def _extract_from_chunk(
 # PIPELINE INTERFACE
 # =============================================================================
 
-def run_extraction(cfg, chunks: List[Chunk]) -> List[TripleBatch]:
-    """Extract triples from chunks using Ollama.
+def run_extraction(cfg, chunks: List[Chunk], backend: Optional[LlamaCppBackend] = None) -> List[TripleBatch]:
+    """Extract triples from chunks using llama.cpp server.
 
     Supports two modes:
     - Single-pass (default): EXTRACTION_PROMPT does NER + RE in one call
-    - Two-pass (cfg.use_two_pass=True): Pass 1 extracts entities,
-      Pass 2 classifies relations with entity hints
+    - Two-pass (cfg.use_two_pass=True): Pass 1 extracts entities (NER LoRA),
+      Pass 2 classifies relations with entity hints (RE LoRA)
 
     Each TripleBatch contains:
     - triples: valid triples (pass TYPES/PREDS validation)
     - meta["invalid_triples"]: invalid triples with error reasons (for repair)
     - meta["parse_failures"]: count of unparseable response fragments
     """
-    model = getattr(cfg, "model_name", "gemma2:9b")
     temperature = getattr(cfg, "temperature", 0.1)
     max_tokens = getattr(cfg, "max_tokens", 2048)
-    base_url = getattr(cfg, "ollama_base_url", "http://localhost:11434")
-    timeout = getattr(cfg, "ollama_timeout", 120)
-    two_pass = getattr(cfg, "use_two_pass", False)
+    two_pass = getattr(cfg, "use_two_pass", True)
+
+    # Backend and LoRA IDs from config
+    backend_cfg = getattr(cfg, "_backend_cfg", None)
+    if backend is None:
+        url = backend_cfg.url if backend_cfg else "http://localhost:8080"
+        timeout = backend_cfg.timeout if backend_cfg else 300
+        backend = LlamaCppBackend(url=url, timeout=timeout)
+
+    ner_lora_id = backend_cfg.ner_lora_id if backend_cfg else 0
+    re_lora_id = backend_cfg.re_lora_id if backend_cfg else 1
 
     mode_str = "two-pass (NER→RE)" if two_pass else "single-pass"
     logger.info(
-        "[extractor] Extracting from %d chunks (model=%s, mode=%s, timeout=%ds)",
-        len(chunks), model, mode_str, timeout,
+        "[extractor] Extracting from %d chunks (mode=%s, ner_lora=%s, re_lora=%s)",
+        len(chunks), mode_str, ner_lora_id, re_lora_id,
     )
 
     batches: List[TripleBatch] = []
-    for ch in chunks:
+    for ci, ch in enumerate(chunks):
         entity_hints = None
         if two_pass:
-            # Pass 1: extract entities
+            # Pass 1: extract entities using NER adapter
             entity_hints = _extract_entities_from_chunk(
-                ch.text, model=model, base_url=base_url,
-                temperature=temperature, max_tokens=max_tokens, timeout=timeout,
+                ch.text, backend=backend,
+                temperature=temperature, max_tokens=max_tokens,
+                lora_id=ner_lora_id,
             )
-            logger.info(
-                "[extractor] %s pass1: %d entities found",
-                ch.chunk_id, len(entity_hints),
-            )
+            print(f"  [extract {ci+1}/{len(chunks)}] NER: {len(entity_hints)} entities | {ch.chunk_id}",
+                  flush=True)
 
-        # Pass 2 (or single-pass): extract triples
+        # Pass 2 (or single-pass): extract triples using RE adapter
         valid_triples, invalid_triples, parse_failures = _extract_from_chunk(
-            ch.text, model=model, base_url=base_url,
-            temperature=temperature, max_tokens=max_tokens, timeout=timeout,
+            ch.text, backend=backend,
+            temperature=temperature, max_tokens=max_tokens,
+            lora_id=re_lora_id if two_pass else None,
             entity_hints=entity_hints,
         )
+
+        print(f"  [extract {ci+1}/{len(chunks)}] RE: {len(valid_triples)} valid, {len(invalid_triples)} invalid",
+              flush=True)
 
         # Convert valid triples to Triple objects
         triples: List[Triple] = []
