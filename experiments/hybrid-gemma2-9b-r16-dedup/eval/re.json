@@ -1,0 +1,141 @@
+{
+  "model": "gemma2-9b-joint-lora-r16",
+  "experiment": "hybrid-gemma2-9b-r16-dedup",
+  "timestamp": "20260406-205334",
+  "task": "RE",
+  "test_docs": 518,
+  "dataset": "DNRTI dedup test (518 docs)",
+  "lora_id": 0,
+  "micro": {
+    "precision": 0.9379,
+    "recall": 0.9701,
+    "f1": 0.9537,
+    "tp": 1782,
+    "fp": 118,
+    "fn": 55
+  },
+  "macro": {
+    "precision": 0.9367,
+    "recall": 0.9705,
+    "f1": 0.9515
+  },
+  "per_pred": {
+    "affiliatedwith": {
+      "precision": 1.0,
+      "recall": 0.96,
+      "f1": 0.9796,
+      "tp": 24,
+      "fp": 0,
+      "fn": 1,
+      "gold": 25
+    },
+    "associatedwith": {
+      "precision": 0.7874,
+      "recall": 0.9314,
+      "f1": 0.8534,
+      "tp": 163,
+      "fp": 44,
+      "fn": 12,
+      "gold": 175
+    },
+    "deploys": {
+      "precision": 0.0,
+      "recall": 0,
+      "f1": 0,
+      "tp": 0,
+      "fp": 2,
+      "fn": 0,
+      "gold": 0
+    },
+    "hasattacklocation": {
+      "precision": 0.9939,
+      "recall": 1.0,
+      "f1": 0.9969,
+      "tp": 162,
+      "fp": 1,
+      "fn": 0,
+      "gold": 162
+    },
+    "hasattacktime": {
+      "precision": 0.9265,
+      "recall": 0.913,
+      "f1": 0.9197,
+      "tp": 63,
+      "fp": 5,
+      "fn": 6,
+      "gold": 69
+    },
+    "haslocation": {
+      "precision": 0.9839,
+      "recall": 0.9839,
+      "f1": 0.9839,
+      "tp": 61,
+      "fp": 1,
+      "fn": 1,
+      "gold": 62
+    },
+    "identifiedby": {
+      "precision": 0.75,
+      "recall": 1.0,
+      "f1": 0.8571,
+      "tp": 3,
+      "fp": 1,
+      "fn": 0,
+      "gold": 3
+    },
+    "identifies": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "tp": 68,
+      "fp": 0,
+      "fn": 0,
+      "gold": 68
+    },
+    "monitors": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "tp": 9,
+      "fp": 0,
+      "fn": 0,
+      "gold": 9
+    },
+    "targetedby": {
+      "precision": 1.0,
+      "recall": 0.9836,
+      "f1": 0.9917,
+      "tp": 120,
+      "fp": 0,
+      "fn": 2,
+      "gold": 122
+    },
+    "targets": {
+      "precision": 0.9786,
+      "recall": 0.9838,
+      "f1": 0.9812,
+      "tp": 365,
+      "fp": 8,
+      "fn": 6,
+      "gold": 371
+    },
+    "usedby": {
+      "precision": 0.8773,
+      "recall": 0.9108,
+      "f1": 0.8938,
+      "tp": 143,
+      "fp": 20,
+      "fn": 14,
+      "gold": 157
+    },
+    "uses": {
+      "precision": 0.9435,
+      "recall": 0.9788,
+      "f1": 0.9608,
+      "tp": 601,
+      "fp": 36,
+      "fn": 13,
+      "gold": 614
+    }
+  }
+}

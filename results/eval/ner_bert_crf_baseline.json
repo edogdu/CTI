@@ -1,0 +1,36 @@
+{
+  "model": "JE_BERT_CRF",
+  "task": "NER",
+  "test_docs": 707,
+  "micro": {
+    "precision": 0.73,
+    "recall": 0.71,
+    "f1": 0.72
+  },
+  "macro": {
+    "precision": 0.66,
+    "recall": 0.65,
+    "f1": 0.63
+  },
+  "per_type": {
+    "ACT":     {"precision": 0.70, "recall": 0.65, "f1": 0.68, "gold": 5582},
+    "APT":     {"precision": 0.78, "recall": 0.84, "f1": 0.80, "gold": 3260},
+    "DOM":     {"precision": 0.51, "recall": 0.41, "f1": 0.45, "gold": 49},
+    "EMAIL":   {"precision": 0.87, "recall": 1.00, "f1": 0.93, "gold": 20},
+    "ENCR":    {"precision": 0.84, "recall": 0.17, "f1": 0.29, "gold": 121},
+    "FILE":    {"precision": 0.74, "recall": 0.70, "f1": 0.72, "gold": 1109},
+    "HASH":    {"precision": 0.36, "recall": 0.38, "f1": 0.37, "gold": 86},
+    "IDTY":    {"precision": 0.68, "recall": 0.67, "f1": 0.67, "gold": 9102},
+    "IP":      {"precision": 0.42, "recall": 0.50, "f1": 0.46, "gold": 36},
+    "LOC":     {"precision": 0.86, "recall": 0.91, "f1": 0.88, "gold": 4448},
+    "MAL":     {"precision": 0.68, "recall": 0.73, "f1": 0.70, "gold": 2932},
+    "OS":      {"precision": 0.77, "recall": 0.67, "f1": 0.72, "gold": 343},
+    "PROT":    {"precision": 0.03, "recall": 0.50, "f1": 0.05, "gold": 4},
+    "SECTEAM": {"precision": 0.77, "recall": 0.83, "f1": 0.80, "gold": 355},
+    "TIME":    {"precision": 0.91, "recall": 0.83, "f1": 0.87, "gold": 1586},
+    "TOOL":    {"precision": 0.49, "recall": 0.37, "f1": 0.43, "gold": 2053},
+    "URL":     {"precision": 0.25, "recall": 0.22, "f1": 0.24, "gold": 9},
+    "VULID":   {"precision": 1.00, "recall": 0.97, "f1": 0.98, "gold": 215},
+    "VULNAME": {"precision": 0.86, "recall": 0.92, "f1": 0.89, "gold": 181}
+  }
+}

@@ -1,0 +1,16 @@
+name: "baseline-securebert"
+description: "JE_SecureBERT on original DNRTI dataset (with duplicates)"
+model: "ehsanaghaei/SecureBERT + CRF (NER) + Attention classifier (RE)"
+notebook: "JE_SecureBERT_DNRTI.ipynb"
+
+dataset:
+  source: "datasets/DNRTI/dnrti_aug_stix2_je.json"
+  split_dir: "datasets/DNRTI/splits"
+  train: 6429
+  val: 722
+  test: 707
+  train_test_text_overlap: 205
+
+training:
+  epochs: 3
+  seed: 42

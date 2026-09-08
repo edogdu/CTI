@@ -1,0 +1,15 @@
+name: "baseline-securebert-dedup"
+description: "JE_SecureBERT on deduplicated DNRTI dataset"
+model: "ehsanaghaei/SecureBERT + CRF (NER) + Attention classifier (RE)"
+notebook: "JE_SecureBERT_DNRTI.ipynb"
+
+dataset:
+  source: "datasets/DNRTI/dnrti_dedup.json"
+  train: 4805
+  val: 507
+  test: 518
+  train_test_text_overlap: 0
+
+training:
+  epochs: 3
+  seed: 42

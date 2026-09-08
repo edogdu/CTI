@@ -1,0 +1,25 @@
+name: "split-gemma2-9b-r16"
+description: "Gemma 2 9B with separate NER and RE LoRA adapters"
+base_model: "unsloth/gemma-2-9b-it"
+base_gguf: "gemma2-9b-it-fp16.gguf"
+
+ner_lora: "adapters/ner-lora.gguf"
+re_lora: "adapters/re-lora.gguf"
+
+training:
+  ner_data: "train_ner.jsonl"
+  re_data: "train_re.jsonl"
+  epochs: 3
+  lora_rank: 16
+  lora_alpha: 32
+  batch_size: 16
+  learning_rate: 2e-4
+  seed: 42
+  ner_final_loss: 0.029
+  re_final_loss: null  # pending
+
+dataset_split: "split_manifest.json"
+notes: |
+  Text-only model - no vision tower issues.
+  Clean LoRA conversion with no tensor stripping.
+  NER training: ~10h on GB10, 1206 steps.
