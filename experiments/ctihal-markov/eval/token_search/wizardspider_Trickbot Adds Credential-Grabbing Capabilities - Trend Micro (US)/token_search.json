@@ -1,0 +1,1639 @@
+{
+  "doc_id": "wizardspider_Trickbot Adds Credential-Grabbing Capabilities - Trend Micro (US)",
+  "method": "bm25+regex",
+  "n_entities": 74,
+  "n_sentences": 16,
+  "bm25_matched_ids": [
+    "S0052",
+    "S0177",
+    "S0266",
+    "S0308",
+    "S0373",
+    "S0403",
+    "S0484",
+    "S0504",
+    "S0531",
+    "S0552",
+    "S1147",
+    "T1003.002",
+    "T1021.001",
+    "T1021.005",
+    "T1090",
+    "T1137.001",
+    "T1217",
+    "T1418.001",
+    "T1521.002",
+    "T1544",
+    "T1552.004",
+    "T1563.002",
+    "T1568.001",
+    "T1570",
+    "T1573.002",
+    "T1588.002",
+    "T1608.002",
+    "T1635.001",
+    "T1637",
+    "TA0007",
+    "TA0102"
+  ],
+  "regex_matched_ids": [],
+  "combined_matched_ids": [
+    "S0052",
+    "S0177",
+    "S0266",
+    "S0308",
+    "S0373",
+    "S0403",
+    "S0484",
+    "S0504",
+    "S0531",
+    "S0552",
+    "S1147",
+    "T1003.002",
+    "T1021.001",
+    "T1021.005",
+    "T1090",
+    "T1137.001",
+    "T1217",
+    "T1418.001",
+    "T1521.002",
+    "T1544",
+    "T1552.004",
+    "T1563.002",
+    "T1568.001",
+    "T1570",
+    "T1573.002",
+    "T1588.002",
+    "T1608.002",
+    "T1635.001",
+    "T1637",
+    "TA0007",
+    "TA0102"
+  ],
+  "n_bm25": 31,
+  "n_regex": 0,
+  "n_combined": 31,
+  "per_entity": [
+    {
+      "query": ".0 msie 7 .o; (TOOL), usedby windows (TOOL)",
+      "entity_name": ".0 msie 7 .o;",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "Ingress Tool Transfer",
+          "clean_id": "T1544",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 7.643098831176758
+        },
+        {
+          "name": "Obtain Capabilities: Tool",
+          "clean_id": "T1588.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 7.608407974243164
+        },
+        {
+          "name": "Stage Capabilities: Upload Tool",
+          "clean_id": "T1608.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 7.601214408874512
+        }
+      ]
+    },
+    {
+      "query": "windows (TOOL), targetedby cozyduke (TOOL), targetedby 'client update.exe' (TOOL), targetedby fin6's (TOOL), targetedby more_eggs (TOOL), targetedby cobalt strike beacon. (TOOL), targetedby phishing email (LOC), targetedby campaigns (TOOL), targetedby sekur (TOOL), targetedby orm (TOOL), targetedby suspicious activity (TOOL), targetedby enable network, account, and host reconnaissance (TOOL), uses 36937e5e744873b3646c9d345e8cf50fb969029dc77525acfe63d5a9d28b73f2 (TOOL), uses cmd (TOOL), uses base64 (TOOL), uses ioas: (TOOL), associatedwith stealing (TOOL), associatedwith backdoor commands (TOOL), associatedwith exploit (TOOL), associatedwith phishing email (LOC), targets seadaddy (TOOL), targets cozyduke (TOOL), targets poshspy backdoor (TOOL), targets poshspy (TOOL), uses microsoft (TOOL), usedby files (TOOL), usedby .0 msie 7 .o; (TOOL), usedby cmd.exe (TOOL), usedby bcdedit (TOOL), usedby mozilla/4.0 (TOOL), usedby msie 7.0; (TOOL), usedby yara rules (TOOL), usedby iocs (TOOL), usedby pc network program (TOOL), usedby lanman1.0 (TOOL), usedby employee satisfaction survey.xls (TOOL), usedby metadata exif tool (TOOL), usedby file metadata (TOOL), usedby valuevault (TOOL), usedby powersploit (TOOL), usedby cobalt strike's (TOOL), usedby psexec (TOOL), usedby wlan (TOOL), usedby email clients (TOOL), usedby pki certificates (TOOL), usedby powershell (TOOL), usedby py2exe (TOOL), usedby python (TOOL), usedby msie 6.0; (TOOL), usedby 'user-agent: mozilla/4.0 (TOOL), usedby wmi (TOOL), usedby os (TOOL), usedby service pack: 0.0 (TOOL), usedby vbscript (vbe) (TOOL)",
+      "entity_name": "windows",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "Obtain Capabilities: Tool",
+          "clean_id": "T1588.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 172.7279815673828
+        },
+        {
+          "name": "Stage Capabilities: Upload Tool",
+          "clean_id": "T1608.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 166.14938354492188
+        },
+        {
+          "name": "Ingress Tool Transfer",
+          "clean_id": "T1544",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 162.20472717285156
+        }
+      ]
+    },
+    {
+      "query": "virtual network computing (vnc) (TOOL), uses remote desktop protocol (rdp) (TOOL)",
+      "entity_name": "virtual network computing (vnc)",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "Remote Services: VNC",
+          "clean_id": "T1021.005",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 20.780471801757812
+        },
+        {
+          "name": "Remote Services: Remote Desktop Protocol",
+          "clean_id": "T1021.001",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 15.84600830078125
+        },
+        {
+          "name": "Remote Service Session Hijacking: RDP Hijacking",
+          "clean_id": "T1563.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 12.166004180908203
+        }
+      ]
+    },
+    {
+      "query": "putty (TOOL), uses remote desktop protocol (rdp) (TOOL)",
+      "entity_name": "putty",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "Remote Services: Remote Desktop Protocol",
+          "clean_id": "T1021.001",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 15.84600830078125
+        },
+        {
+          "name": "Remote Service Session Hijacking: RDP Hijacking",
+          "clean_id": "T1563.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 12.166004180908203
+        },
+        {
+          "name": "Lateral Tool Transfer",
+          "clean_id": "T1570",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 10.302655220031738
+        }
+      ]
+    },
+    {
+      "query": "remote desktop protocol (rdp) (TOOL), uses virtual network computing (vnc) (TOOL), uses putty (TOOL)",
+      "entity_name": "remote desktop protocol (rdp)",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "Remote Services: VNC",
+          "clean_id": "T1021.005",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 22.584997177124023
+        },
+        {
+          "name": "Remote Services: Remote Desktop Protocol",
+          "clean_id": "T1021.001",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 15.84600830078125
+        },
+        {
+          "name": "Lateral Tool Transfer",
+          "clean_id": "T1570",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 14.349617958068848
+        }
+      ]
+    },
+    {
+      "query": "spreadsheet document (MAL), usedby security warning macros (MAL), contains trickbot (MAL)",
+      "entity_name": "spreadsheet document",
+      "type": "MAL",
+      "hits": [
+        {
+          "name": "TrickBot",
+          "clean_id": "S0266",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexSOFTWARE"
+          ],
+          "score": 8.590791702270508
+        },
+        {
+          "name": "Office Application Startup: Office Template Macros",
+          "clean_id": "T1137.001",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 7.9868855476379395
+        },
+        {
+          "name": "OS Credential Dumping: Security Account Manager",
+          "clean_id": "T1003.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 4.213338375091553
+        }
+      ]
+    },
+    {
+      "query": "deloitte (MAL), targetedby trickbot (MAL), usedby security warning macros (MAL)",
+      "entity_name": "deloitte",
+      "type": "MAL",
+      "hits": [
+        {
+          "name": "TrickBot",
+          "clean_id": "S0266",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexSOFTWARE"
+          ],
+          "score": 8.590791702270508
+        },
+        {
+          "name": "Office Application Startup: Office Template Macros",
+          "clean_id": "T1137.001",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 5.669628143310547
+        },
+        {
+          "name": "Security Software Discovery",
+          "clean_id": "T1418.001",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 4.135051727294922
+        }
+      ]
+    },
+    {
+      "query": "security warning macros (MAL), usedby trickbot (MAL), usedby deloitte (MAL), usedby spreadsheet document (MAL)",
+      "entity_name": "security warning macros",
+      "type": "MAL",
+      "hits": [
+        {
+          "name": "TrickBot",
+          "clean_id": "S0266",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexSOFTWARE"
+          ],
+          "score": 8.590791702270508
+        },
+        {
+          "name": "Office Application Startup: Office Template Macros",
+          "clean_id": "T1137.001",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 6.88380241394043
+        },
+        {
+          "name": "Security Software Discovery",
+          "clean_id": "T1418.001",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 4.135051727294922
+        }
+      ]
+    },
+    {
+      "query": "november. (MAL), hasattacktime trickbot (MAL)",
+      "entity_name": "november.",
+      "type": "MAL",
+      "hits": [
+        {
+          "name": "TrickBot",
+          "clean_id": "S0266",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexSOFTWARE"
+          ],
+          "score": 8.590791702270508
+        },
+        {
+          "name": "AdFind",
+          "clean_id": "S0552",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexSOFTWARE"
+          ],
+          "score": 3.162109851837158
+        },
+        {
+          "name": "Anchor",
+          "clean_id": "S0504",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexSOFTWARE"
+          ],
+          "score": 3.13215970993042
+        }
+      ]
+    },
+    {
+      "query": "trickbot (MAL), uses spam email (MAL), associatedwith mummy spider) (MAL), hasattacktime november. (MAL), uses cobalt strike (MAL), uses banking (MAL), hasattacktime 2016 (MAL), hasattacklocation russia. (MAL), associatedwith itg08 (MAL), identifiedby x-force ole villadsen cyber threat hunt analyst (MAL), identifiedby ibm security (MAL), hasattacktime june 7, 2024 (MAL), identifies crowdstrike intelligence (MAL), uses wizard spider (MAL), identifies crowdstrike¤ (MAL), identifies crowdstrike falcon¤ intelligence'¤ (MAL), contains spreadsheet document (MAL), usedby security warning macros (MAL), targetedby deloitte (MAL), uses unc1878's (MAL), targetedby microsoft (MAL), usedby command-and-control servers (TOOL), uses unc1878 (MAL), targetedby evolve (MAL), uses itg08's (MAL), uses itg08 (MAL), uses cybercriminals (MAL), targetedby e-commerce (MAL), usedby malware analysis (MAL), uses organized crime (MAL), usedby point-of-sale (pos) systems (MAL)",
+      "entity_name": "trickbot",
+      "type": "MAL",
+      "hits": [
+        {
+          "name": "TrickBot",
+          "clean_id": "S0266",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexSOFTWARE"
+          ],
+          "score": 33.18750762939453
+        },
+        {
+          "name": "Riltok",
+          "clean_id": "S0403",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexSOFTWARE"
+          ],
+          "score": 29.267168045043945
+        },
+        {
+          "name": "Dynamic Resolution",
+          "clean_id": "T1637",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 28.76168441772461
+        }
+      ]
+    },
+    {
+      "query": "water (TOOL), usedby attachments (TOOL), uses trojan (TOOL)",
+      "entity_name": "water",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "Ingress Tool Transfer",
+          "clean_id": "T1544",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 11.464649200439453
+        },
+        {
+          "name": "Obtain Capabilities: Tool",
+          "clean_id": "T1588.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 11.412612915039062
+        },
+        {
+          "name": "Stage Capabilities: Upload Tool",
+          "clean_id": "T1608.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 11.401822090148926
+        }
+      ]
+    },
+    {
+      "query": "sigbin's (TOOL), usedby attachments (TOOL), uses trojan (TOOL)",
+      "entity_name": "sigbin's",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "Ingress Tool Transfer",
+          "clean_id": "T1544",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 11.464649200439453
+        },
+        {
+          "name": "Obtain Capabilities: Tool",
+          "clean_id": "T1588.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 11.412612915039062
+        },
+        {
+          "name": "Stage Capabilities: Upload Tool",
+          "clean_id": "T1608.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 11.401822090148926
+        }
+      ]
+    },
+    {
+      "query": "xmrig (TOOL), usedby attachments (TOOL), uses trojan (TOOL)",
+      "entity_name": "xmrig",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "Ingress Tool Transfer",
+          "clean_id": "T1544",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 11.464649200439453
+        },
+        {
+          "name": "Obtain Capabilities: Tool",
+          "clean_id": "T1588.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 11.412612915039062
+        },
+        {
+          "name": "Stage Capabilities: Upload Tool",
+          "clean_id": "T1608.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 11.401822090148926
+        }
+      ]
+    },
+    {
+      "query": "cryptominer (TOOL), usedby attachments (TOOL), uses trojan (TOOL)",
+      "entity_name": "cryptominer",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "Ingress Tool Transfer",
+          "clean_id": "T1544",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 11.464649200439453
+        },
+        {
+          "name": "Obtain Capabilities: Tool",
+          "clean_id": "T1588.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 11.412612915039062
+        },
+        {
+          "name": "Stage Capabilities: Upload Tool",
+          "clean_id": "T1608.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 11.401822090148926
+        }
+      ]
+    },
+    {
+      "query": "attachments (TOOL), usedby macro (TOOL), usedby mekotio banking (TOOL), contains trojan (TOOL), usedby water (TOOL), usedby sigbin's (TOOL), usedby xmrig (TOOL), usedby cryptominer (TOOL), usedby ico scams (TOOL)",
+      "entity_name": "attachments",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "Ingress Tool Transfer",
+          "clean_id": "T1544",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 34.393943786621094
+        },
+        {
+          "name": "Obtain Capabilities: Tool",
+          "clean_id": "T1588.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 34.23783874511719
+        },
+        {
+          "name": "Stage Capabilities: Upload Tool",
+          "clean_id": "T1608.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 34.205467224121094
+        }
+      ]
+    },
+    {
+      "query": "ico scams (TOOL), usedby attachments (TOOL), uses trojan (TOOL)",
+      "entity_name": "ico scams",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "Ingress Tool Transfer",
+          "clean_id": "T1544",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 11.464649200439453
+        },
+        {
+          "name": "Obtain Capabilities: Tool",
+          "clean_id": "T1588.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 11.412612915039062
+        },
+        {
+          "name": "Stage Capabilities: Upload Tool",
+          "clean_id": "T1608.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 11.401822090148926
+        }
+      ]
+    },
+    {
+      "query": "macro (TOOL), usedby trojan (TOOL), usedby olympics (TOOL), uses userform1.label1.caption (TOOL), associatedwith fin7 (TOOL), usedby javascript (TOOL), usedby vbscript (TOOL), usedby attachments (TOOL), uses deobfuscation (TOOL)",
+      "entity_name": "macro",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "Ingress Tool Transfer",
+          "clean_id": "T1544",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 34.393943786621094
+        },
+        {
+          "name": "Obtain Capabilities: Tool",
+          "clean_id": "T1588.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 34.23783874511719
+        },
+        {
+          "name": "Stage Capabilities: Upload Tool",
+          "clean_id": "T1608.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 34.205467224121094
+        }
+      ]
+    },
+    {
+      "query": "mekotio banking (TOOL), usedby trojan (TOOL), usedby olympics (TOOL), usedby attachments (TOOL)",
+      "entity_name": "mekotio banking",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "Ingress Tool Transfer",
+          "clean_id": "T1544",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 15.286197662353516
+        },
+        {
+          "name": "Obtain Capabilities: Tool",
+          "clean_id": "T1588.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 15.216815948486328
+        },
+        {
+          "name": "Stage Capabilities: Upload Tool",
+          "clean_id": "T1608.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 15.202428817749023
+        }
+      ]
+    },
+    {
+      "query": "olympics (TOOL), usedby macro (TOOL), usedby mekotio banking (TOOL), targets trojan (TOOL)",
+      "entity_name": "olympics",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "Ingress Tool Transfer",
+          "clean_id": "T1544",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 15.286197662353516
+        },
+        {
+          "name": "Obtain Capabilities: Tool",
+          "clean_id": "T1588.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 15.216815948486328
+        },
+        {
+          "name": "Stage Capabilities: Upload Tool",
+          "clean_id": "T1608.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 15.202428817749023
+        }
+      ]
+    },
+    {
+      "query": "latin america (TOOL), hasattacklocation trojan (TOOL)",
+      "entity_name": "latin america",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "Astaroth",
+          "clean_id": "S0373",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexSOFTWARE"
+          ],
+          "score": 8.050649642944336
+        },
+        {
+          "name": "Ingress Tool Transfer",
+          "clean_id": "T1544",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 7.643098831176758
+        },
+        {
+          "name": "Obtain Capabilities: Tool",
+          "clean_id": "T1588.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 7.608407974243164
+        }
+      ]
+    },
+    {
+      "query": "trojan (TOOL), uses water (TOOL), uses sigbin's (TOOL), uses xmrig (TOOL), uses cryptominer (TOOL), uses ico scams (TOOL), targets olympics (TOOL), hasattacklocation latin america (TOOL), contains attachments (TOOL), usedby macro (TOOL), usedby mekotio banking (TOOL), usedby oopsie (TOOL), usedby c&c: (TOOL), usedby banking (TOOL)",
+      "entity_name": "trojan",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "Ingress Tool Transfer",
+          "clean_id": "T1544",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 53.50169372558594
+        },
+        {
+          "name": "Obtain Capabilities: Tool",
+          "clean_id": "T1588.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 53.25885772705078
+        },
+        {
+          "name": "Stage Capabilities: Upload Tool",
+          "clean_id": "T1608.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 53.20850372314453
+        }
+      ]
+    },
+    {
+      "query": "saved credentials (ACT), targets steal (ACT), targets steals (ACT)",
+      "entity_name": "saved credentials",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "Discovery",
+          "clean_id": "TA0102",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexTACTICS"
+          ],
+          "score": 11.399378776550293
+        },
+        {
+          "name": "Discovery",
+          "clean_id": "TA0007",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexTACTICS"
+          ],
+          "score": 7.5240583419799805
+        },
+        {
+          "name": "Browser Information Discovery",
+          "clean_id": "T1217",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 6.700679779052734
+        }
+      ]
+    },
+    {
+      "query": "steal (ACT), targets saved credentials (ACT), targets credentials (ACT), targets network information (ACT), targets financial information (ACT), targets research results (ACT), targets passwords (ACT), targets user's email (ACT), targets ifobs banking (ACT), targets content (ACT), targets information (ACT), usedby rdp (ACT), associatedwith credenumeratea api (ACT), uses fin7's (ACT), uses malware (ACT), targetedby employees (ACT), uses backdoor (ACT), uses spyware (ACT), uses lazarus apt group (ACT), uses apt28 (ACT)",
+      "entity_name": "steal",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "Discovery",
+          "clean_id": "TA0102",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexTACTICS"
+          ],
+          "score": 75.0074462890625
+        },
+        {
+          "name": "Discovery",
+          "clean_id": "TA0007",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexTACTICS"
+          ],
+          "score": 53.605167388916016
+        },
+        {
+          "name": "Proxy",
+          "clean_id": "T1090",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 46.452491760253906
+        }
+      ]
+    },
+    {
+      "query": "credenumeratea api (ACT), associatedwith steal (ACT), usedby rdp (ACT)",
+      "entity_name": "credenumeratea api",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "Discovery",
+          "clean_id": "TA0102",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexTACTICS"
+          ],
+          "score": 8.614566802978516
+        },
+        {
+          "name": "Discovery",
+          "clean_id": "TA0007",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexTACTICS"
+          ],
+          "score": 7.5240583419799805
+        },
+        {
+          "name": "URI Hijacking",
+          "clean_id": "T1635.001",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 6.475982189178467
+        }
+      ]
+    },
+    {
+      "query": "rdp (ACT), usedby credenumeratea api (ACT), usedby steal (ACT)",
+      "entity_name": "rdp",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "Discovery",
+          "clean_id": "TA0102",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexTACTICS"
+          ],
+          "score": 8.614566802978516
+        },
+        {
+          "name": "Discovery",
+          "clean_id": "TA0007",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexTACTICS"
+          ],
+          "score": 7.5240583419799805
+        },
+        {
+          "name": "URI Hijacking",
+          "clean_id": "T1635.001",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 6.475982189178467
+        }
+      ]
+    },
+    {
+      "query": "putty (ACT), associatedwith data exfiltration (ACT), uses private key files (ACT), uses registry traversal (ACT)",
+      "entity_name": "putty",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "Discovery",
+          "clean_id": "TA0102",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexTACTICS"
+          ],
+          "score": 11.486089706420898
+        },
+        {
+          "name": "Dynamic Resolution: Fast Flux DNS",
+          "clean_id": "T1568.001",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 10.067138671875
+        },
+        {
+          "name": "Discovery",
+          "clean_id": "TA0007",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexTACTICS"
+          ],
+          "score": 10.03207778930664
+        }
+      ]
+    },
+    {
+      "query": "private key files (ACT), uses putty (ACT)",
+      "entity_name": "private key files",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "Unsecured Credentials: Private Keys",
+          "clean_id": "T1552.004",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 8.150800704956055
+        },
+        {
+          "name": "Encrypted Channel: Asymmetric Cryptography",
+          "clean_id": "T1573.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 6.159398555755615
+        },
+        {
+          "name": "Asymmetric Cryptography",
+          "clean_id": "T1521.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 6.054677486419678
+        }
+      ]
+    },
+    {
+      "query": "data exfiltration (ACT), targets hostname (ACT), targets username (ACT), usedby fin7's (ACT), uses (https://www.fireeye.com/blog/threatresearch/2017/04/fin7-phishing-lnk.html) (ACT), targets of (ACT), targets dnc network (ACT), associatedwith putty (ACT), identifies it (ACT), identifies security teams (ACT), uses itg08 (ACT), identifies crowdstrike (ACT)",
+      "entity_name": "data exfiltration",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "Discovery",
+          "clean_id": "TA0102",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexTACTICS"
+          ],
+          "score": 41.08430862426758
+        },
+        {
+          "name": "Discovery",
+          "clean_id": "TA0007",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexTACTICS"
+          ],
+          "score": 32.013824462890625
+        },
+        {
+          "name": "URI Hijacking",
+          "clean_id": "T1635.001",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 28.43574333190918
+        }
+      ]
+    },
+    {
+      "query": "username (ACT), targets registry traversal (ACT), targets data exfiltration (ACT)",
+      "entity_name": "username",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "Discovery",
+          "clean_id": "TA0102",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexTACTICS"
+          ],
+          "score": 11.399378776550293
+        },
+        {
+          "name": "URI Hijacking",
+          "clean_id": "T1635.001",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 7.678893566131592
+        },
+        {
+          "name": "Discovery",
+          "clean_id": "TA0007",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexTACTICS"
+          ],
+          "score": 7.5240583419799805
+        }
+      ]
+    },
+    {
+      "query": "registry traversal (ACT), uses putty (ACT), targets hostname (ACT), targets username (ACT)",
+      "entity_name": "registry traversal",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "Discovery",
+          "clean_id": "TA0102",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexTACTICS"
+          ],
+          "score": 14.270901679992676
+        },
+        {
+          "name": "Discovery",
+          "clean_id": "TA0007",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexTACTICS"
+          ],
+          "score": 10.03207778930664
+        },
+        {
+          "name": "Dynamic Resolution: Fast Flux DNS",
+          "clean_id": "T1568.001",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 8.732579231262207
+        }
+      ]
+    },
+    {
+      "query": "hostname (ACT), targets registry traversal (ACT), targets data exfiltration (ACT)",
+      "entity_name": "hostname",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "Discovery",
+          "clean_id": "TA0102",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexTACTICS"
+          ],
+          "score": 11.399378776550293
+        },
+        {
+          "name": "URI Hijacking",
+          "clean_id": "T1635.001",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 7.678893566131592
+        },
+        {
+          "name": "Discovery",
+          "clean_id": "TA0007",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexTACTICS"
+          ],
+          "score": 7.5240583419799805
+        }
+      ]
+    },
+    {
+      "query": "pwgrab module (TOOL), associatedwith grab remote application credentials (TOOL), uses *.vnc.lnk (TOOL), uses trickbot (TOOL)",
+      "entity_name": "pwgrab module",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "Ingress Tool Transfer",
+          "clean_id": "T1544",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 15.286197662353516
+        },
+        {
+          "name": "Obtain Capabilities: Tool",
+          "clean_id": "T1588.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 15.216815948486328
+        },
+        {
+          "name": "Stage Capabilities: Upload Tool",
+          "clean_id": "T1608.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 15.202428817749023
+        }
+      ]
+    },
+    {
+      "query": "*.vnc.lnk (TOOL), uses vnc (TOOL), uses pwgrab module (TOOL)",
+      "entity_name": "*.vnc.lnk",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "Ingress Tool Transfer",
+          "clean_id": "T1544",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 11.464649200439453
+        },
+        {
+          "name": "Obtain Capabilities: Tool",
+          "clean_id": "T1588.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 11.412612915039062
+        },
+        {
+          "name": "Stage Capabilities: Upload Tool",
+          "clean_id": "T1608.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 11.401822090148926
+        }
+      ]
+    },
+    {
+      "query": "vnc (TOOL), uses *.vnc.lnk (TOOL), uses http (TOOL), uses tcp (TOOL), associatedwith tunneling (TOOL), associatedwith os destruction (TOOL), uses key logging (TOOL), uses desktop video capture (TOOL), uses backdoor (TOOL), uses carbanak (TOOL), uses banking attacks (TOOL), uses steal (TOOL), uses credit card data (TOOL), uses keylogger (TOOL), uses information (TOOL), uses screen captures (TOOL), usedby pst file (TOOL), usedby rdp (TOOL)",
+      "entity_name": "vnc",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "Obtain Capabilities: Tool",
+          "clean_id": "T1588.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 70.41371154785156
+        },
+        {
+          "name": "Ingress Tool Transfer",
+          "clean_id": "T1544",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 68.78788757324219
+        },
+        {
+          "name": "Stage Capabilities: Upload Tool",
+          "clean_id": "T1608.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 68.41093444824219
+        }
+      ]
+    },
+    {
+      "query": "2013 (MAL), hasattacktime carberp (MAL), hasattacktime grabnew (MAL), hasattacktime neverquest (MAL), hasattacktime vawtrak (MAL), hasattacktime duke malware (MAL), hasattacktime onionduke (MAL)",
+      "entity_name": "2013",
+      "type": "MAL",
+      "hits": [
+        {
+          "name": "OnionDuke",
+          "clean_id": "S0052",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexSOFTWARE"
+          ],
+          "score": 12.515522956848145
+        },
+        {
+          "name": "Carberp",
+          "clean_id": "S0484",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexSOFTWARE"
+          ],
+          "score": 12.21417236328125
+        },
+        {
+          "name": "Power Loader",
+          "clean_id": "S0177",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexSOFTWARE"
+          ],
+          "score": 7.6075053215026855
+        }
+      ]
+    },
+    {
+      "query": "carberp (MAL), uses trojan (MAL), hasattacktime 2013 (MAL)",
+      "entity_name": "carberp",
+      "type": "MAL",
+      "hits": [
+        {
+          "name": "Carberp",
+          "clean_id": "S0484",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexSOFTWARE"
+          ],
+          "score": 11.442830085754395
+        },
+        {
+          "name": "Power Loader",
+          "clean_id": "S0177",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexSOFTWARE"
+          ],
+          "score": 6.761693954467773
+        },
+        {
+          "name": "Trojan-SMS.AndroidOS.OpFake.a",
+          "clean_id": "S0308",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexSOFTWARE"
+          ],
+          "score": 5.116509914398193
+        }
+      ]
+    },
+    {
+      "query": "trojan (MAL), uses cnc (MAL), uses cobalt strike (TOOL), hasattacktime 2016 (MAL), hasattacklocation russia. (MAL), identifiedby x-force ole villadsen cyber threat hunt analyst (MAL), identifiedby ibm security (MAL), hasattacktime june 7, 2024 (MAL), uses stealing paypal credentia (MAL), associatedwith cyberespionage group (MAL), targets of (MAL), uses carberp (MAL), usedby 2826674,etpro (MAL), uses itg08 (MAL), associatedwith attacks (MAL), associatedwith deploy ransomware (MAL), usedby banking (MAL), uses cybercriminals (MAL), targetedby e-commerce (MAL), usedby malware analysis (MAL), uses organized crime (MAL), usedby point-of-sale (pos) systems (MAL), identifies symantec (MAL), associatedwith information-stealing (MAL)",
+      "entity_name": "trojan",
+      "type": "MAL",
+      "hits": [
+        {
+          "name": "Riltok",
+          "clean_id": "S0403",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexSOFTWARE"
+          ],
+          "score": 22.135568618774414
+        },
+        {
+          "name": "Grandoreiro",
+          "clean_id": "S0531",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexSOFTWARE"
+          ],
+          "score": 21.082916259765625
+        },
+        {
+          "name": "Nightdoor",
+          "clean_id": "S1147",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexSOFTWARE"
+          ],
+          "score": 19.46324348449707
+        }
+      ]
+    },
+    {
+      "query": "grab remote application credentials (TOOL), uses trickbot (TOOL), associatedwith pwgrab module (TOOL)",
+      "entity_name": "grab remote application credentials",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "Ingress Tool Transfer",
+          "clean_id": "T1544",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 11.464649200439453
+        },
+        {
+          "name": "Obtain Capabilities: Tool",
+          "clean_id": "T1588.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 11.412612915039062
+        },
+        {
+          "name": "Stage Capabilities: Upload Tool",
+          "clean_id": "T1608.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 11.401822090148926
+        }
+      ]
+    },
+    {
+      "query": "trickbot (TOOL), uses pwgrab module (TOOL), uses grab remote application credentials (TOOL)",
+      "entity_name": "trickbot",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "Ingress Tool Transfer",
+          "clean_id": "T1544",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 11.464649200439453
+        },
+        {
+          "name": "Obtain Capabilities: Tool",
+          "clean_id": "T1588.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 11.412612915039062
+        },
+        {
+          "name": "Stage Capabilities: Upload Tool",
+          "clean_id": "T1608.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 11.401822090148926
+        }
+      ]
+    }
+  ],
+  "per_sentence": []
+}

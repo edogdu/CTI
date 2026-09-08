@@ -1,0 +1,1175 @@
+{
+  "doc_id": "fin7_FIN7_Evolution_and_the_Phishing_LNK_Mandiant_Google_Cloud_Blog",
+  "method": "bm25+regex",
+  "n_entities": 81,
+  "n_sentences": 17,
+  "bm25_matched_ids": [
+    "S0015",
+    "S0030",
+    "S0114",
+    "S0145",
+    "S0151",
+    "S0310",
+    "S0312",
+    "S0403",
+    "S0415",
+    "S0459",
+    "S0681",
+    "S1171",
+    "T0817",
+    "T1027.005",
+    "T1027.012",
+    "T1036.007",
+    "T1036.008",
+    "T1080",
+    "T1105",
+    "T1137",
+    "T1137.001",
+    "T1137.002",
+    "T1204.002",
+    "T1218.005",
+    "T1544",
+    "T1546.001",
+    "T1546.003",
+    "T1564.004",
+    "T1564.005",
+    "T1566",
+    "T1568",
+    "T1568.001",
+    "T1570",
+    "T1588.002",
+    "T1608.002",
+    "T1630.002",
+    "T1637",
+    "T1647",
+    "T1660"
+  ],
+  "regex_matched_ids": [],
+  "combined_matched_ids": [
+    "S0015",
+    "S0030",
+    "S0114",
+    "S0145",
+    "S0151",
+    "S0310",
+    "S0312",
+    "S0403",
+    "S0415",
+    "S0459",
+    "S0681",
+    "S1171",
+    "T0817",
+    "T1027.005",
+    "T1027.012",
+    "T1036.007",
+    "T1036.008",
+    "T1080",
+    "T1105",
+    "T1137",
+    "T1137.001",
+    "T1137.002",
+    "T1204.002",
+    "T1218.005",
+    "T1544",
+    "T1546.001",
+    "T1546.003",
+    "T1564.004",
+    "T1564.005",
+    "T1566",
+    "T1568",
+    "T1568.001",
+    "T1570",
+    "T1588.002",
+    "T1608.002",
+    "T1630.002",
+    "T1637",
+    "T1647",
+    "T1660"
+  ],
+  "n_bm25": 39,
+  "n_regex": 0,
+  "n_combined": 39,
+  "per_entity": [
+    {
+      "query": "HALFBAKED (MAL), uses Microsoft Outlook email client (TOOL), uses 'getNK2' (ACT), uses Backdoor (TOOL), hasattacktime May 2017 (TIME), hasattacktime September 2015 (TIME), usedby Backdoor (TOOL), contains \\Intel\\{BFF4219E-C7D1-2880-AE589C9CD9701C90}\\58d2a83f7776e0.72726761.v bs (FILE), contains \\Intel\\{BFF4219E-C7D1-2880-AE589C9CD9701C90}\\58d2a83f7776b5.64953395.t xt (FILE), contains \\Intel\\{BFF4219E-C7D1-2880-AE589C9CD9701C90}\\58d2a83f777688.78384945. ps1 (FILE), contains '58d2a83f777638.60220156.i ni' (FILE), contains \\Intel\\ (FILE), usedby GUID (TOOL), contains '58d2a83f777908.23270411.vbs' (FILE), usedby VBScript (TOOL), contains 'mshta.exe' (FILE), usedby JavaScript (TOOL), usedby JS Flash Name JS Flash (TOOL), usedby VB Flash Aliases (TOOL), usedby Name (TOOL), usedby VB Flash (TOOL)",
+      "entity_name": "HALFBAKED",
+      "type": "MAL",
+      "hits": [
+        {
+          "name": "Lateral Tool Transfer",
+          "clean_id": "T1570",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 42.51838302612305
+        },
+        {
+          "name": "Ingress Tool Transfer",
+          "clean_id": "T1105",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 39.95594024658203
+        },
+        {
+          "name": "Hide Artifacts: NTFS File Attributes",
+          "clean_id": "T1564.004",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 39.06341552734375
+        }
+      ]
+    },
+    {
+      "query": "campaign (ACT), targets public sector institutions (IDTY), targets individuals (IDTY), targets # nancial institution (IDTY), targets financial information (IDTY), targets credit card business (IDTY), targets law enforcement agencies (LEAs) (IDTY), targets restaurant industries (IDTY), targets hospitality (IDTY), targets finance industry (IDTY), targets employees (IDTY), targets nancial entities (IDTY), targets banks (IDTY), targets Italian bank (IDTY), targets non-governmental organizations (IDTY), targets educational institutions (IDTY), targets private-sector corporations (IDTY), targets oil and gas (IDTY), targets chemical (IDTY), targets hospitality industries (IDTY), targets Microsoft (IDTY), targets Ministry of Defense (IDTY), uses malware toolsets (TOOL), uses MouseAvailable function (TOOL), uses VirusTotal (TOOL), uses LinkedIn messages (TOOL), uses tools (TOOL), uses DNS (PROT), uses shellcode (TOOL), uses IOCs (TOOL), uses Cobalt Strike (TOOL), associatedwith PinchDuke sample (MAL), associatedwith Umbrella (SECTEAM), associatedwith Network Security appliances suchNGFW,NGIPS, andMeraki MX (SECTEAM), associatedwith malicious macros (MAL), associatedwith SideTwist (MAL), associatedwith Toshliph (MAL), associatedwith DRIFTPIN (MAL), associatedwith backdoors (MAL), associatedwith backdoor (MAL), associatedwith CARBANAK malware (MAL), associatedwith NetWire (MAL), associatedwith LAZIOK (MAL), associatedwith Agent ORM (MAL), associatedwith Windows (OS), associatedwith PinchDuke samples (MAL), associatedwith SeaDuke (MAL), associatedwith HammerDuke (MAL), associatedwith CozyDuke (MAL), associatedwith Trojan. (MAL), usedby APT29 (APT), usedby CHATGPT (SECTEAM), usedby ARTIFICIAL INTELLIGENCE (SECTEAM), usedby Cybercriminals (APT), usedby APT34 (APT), usedby APT34's (APT), usedby group APT34 (APT), usedby FIN7 (APT), usedby Maggler (APT), usedby Carbanak Group' (APT), usedby Carbanak group (APT), usedby CARBON SPIDER (APT), usedby COBALT SPIDER (APT), usedby Cobalt (APT), usedby CozyBear (APT), usedby YTTRIUM (APT), usedby Dukes (APT), hasattacktime Wednesday, November 14 (TIME), hasattacktime January (TIME), hasattacktime 2018 (TIME), hasattacktime 2019 (TIME), hasattacktime January 2018 (TIME), hasattacktime July 2018 (TIME), hasattacktime May (TIME), hasattacktime September 2017 (TIME), hasattacktime 2016 (TIME), hasattacktime 2016. (TIME), hasattacktime 8/1/14 (TIME), hasattacktime June 2009 (TIME), hasattacktime February 2015 (TIME), hasattacktime March 2014 (TIME), hasattacklocation Ukraine (LOC), hasattacklocation Lebanon (LOC), hasattacklocation Iranian (LOC), hasattacklocation Central Asia (LOC), hasattacklocation Eastern Europe (LOC), hasattacklocation Middle East (LOC), hasattacklocation U.S. (LOC), hasattacklocation Malaysia (LOC), hasattacklocation Taiwan (LOC), hasattacklocation Armenia (LOC), hasattacklocation Kyrgyzstan (LOC), hasattacklocation Moldova (LOC), hasattacklocation Georgia (LOC), hasattacklocation Bulgaria (LOC), hasattacklocation Estonia (LOC), hasattacklocation Poland (LOC), hasattacklocation Belarus (LOC), hasattacklocation Romania (LOC), hasattacklocation Spain (LOC), hasattacklocation Netherlands (LOC), hasattacklocation United Kingdom (LOC), hasattacklocation Russia (LOC), hasattacklocation Russian (LOC), targetedby Reuters (IDTY), targetedby Jordan. (LOC), targetedby diplomat (IDTY), targetedby Iran's (LOC), targetedby Hin D Golan(D Heishts (LOC), targetedby Jordan (LOC), targetedby government (IDTY), targetedby US (LOC), targetedby restaurants (IDTY), targetedby Middle East (LOC), targetedby U.S. (LOC), targetedby bank (IDTY), targetedby retail (IDTY), targetedby e-commerce (IDTY), targetedby CHINA (LOC), targetedby exploits (VULNAME), targetedby Chinese origin (LOC), targetedby Europe (LOC), targetedby Africa (LOC), targetedby Middle-East (LOC), targetedby Asia (LOC), targetedby Eastern Europe (LOC), targetedby Ukraine (LOC), targetedby Financial Institutions (IDTY), targetedby Eastern European (LOC), targetedby Microsoft (IDTY), targetedby Microsoft customers (IDTY), targetedby Caucasus (LOC), targetedby spring of 2010 (TIME), targetedby governmental (IDTY), targetedby diplomatic organizations (IDTY), targetedby U.S. elections. (IDTY), identifies Microsoft Threat Protection (SECTEAM), identifies Email Security (SECTEAM), identifies Check Point Research (SECTEAM), identifies Morphisec Lab (SECTEAM), identifies Cybersecurity Blog Cybersecurity News, Threat Research (SECTEAM), identifies FireEye iSIGHT Intelligence (SECTEAM), identifies FireEye (SECTEAM), identifies LEAs (SECTEAM), identifies Mandiant (SECTEAM), identifies Symantec (SECTEAM), uses APT29 (APT), uses (APTs). (APT), uses APT34 (APT), uses BIRDDOG backdoor (MAL), uses HydraPOS (MAL), uses ShieldPOS (MAL), uses CARBANAK malware (MAL), uses Carbanak. (MAL), uses Carbanak (APT), uses Carbanak (MAL), uses FIN7 threat group (APT), uses CARBANAK backdoor (MAL), uses FIN7 (APT), uses Sekur (MAL), uses Odinaff (MAL), uses Eastern European banking cluster (APT), uses CARBON SPIDER (APT), uses CozyBear (APT), uses YTTRIUM (APT), uses COSMICDUKE (MAL), associatedwith malware toolsets (TOOL), associatedwith malicious attachment. (FILE), associatedwith document (FILE), associatedwith documents (FILE), associatedwith ZIP archives (FILE), associatedwith shellcode (TOOL), associatedwith Yara-rules (TOOL), associatedwith Yara Rules (TOOL), associatedwith sample (TOOL), associatedwith C&C (TOOL), associatedwith ATMs (TOOL), associatedwith PIN KVC (TOOL), associatedwith attachments (FILE), associatedwith C2 (TOOL), usedby IP (PROT), usedby 1a9e113b2f3caa7a141a94c8bc187ea7 (HASH), usedby MD5 (ENCR), usedby Command and Control (C2) (TOOL), usedby DNS (PROT)",
+      "entity_name": "campaign",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "OilCheck",
+          "clean_id": "S1171",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexSOFTWARE"
+          ],
+          "score": 60.733985900878906
+        },
+        {
+          "name": "Drive-by Compromise",
+          "clean_id": "T0817",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 52.643707275390625
+        },
+        {
+          "name": "Obfuscated Files or Information: Indicator Removal from Tools",
+          "clean_id": "T1027.005",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 52.35622024536133
+        }
+      ]
+    },
+    {
+      "query": "Community Protection Event (ACT), usedby FireEye iSIGHT Intelligence (SECTEAM), usedby Mandiant (SECTEAM), usedby FireEye (SECTEAM), usedby FIN7 (APT), hasattacktime April 12 (TIME), identifies FireEye (SECTEAM), uses FIN7 (APT), usedby 1a9e113b2f3caa7a141a94c8bc187ea7 (HASH), usedby MD5 (ENCR)",
+      "entity_name": "Community Protection Event",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "HALFBAKED",
+          "clean_id": "S0151",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexSOFTWARE"
+          ],
+          "score": 13.799118041992188
+        },
+        {
+          "name": "BOOSTWRITE",
+          "clean_id": "S0415",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexSOFTWARE"
+          ],
+          "score": 12.681217193603516
+        },
+        {
+          "name": "Event Triggered Execution: Windows Management Instrumentation Event Subscription",
+          "clean_id": "T1546.003",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 11.807418823242188
+        }
+      ]
+    },
+    {
+      "query": "MAC (TOOL), uses NetBIOS (PROT), usedby FIN7 (APT), usedby NetBIOS (PROT), uses Mandiant (SECTEAM), usedby LNK (FILE), usedby acker Shortcut Files (FILE), usedby ID (FILE), usedby % s (FILE)",
+      "entity_name": "MAC",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "Obfuscated Files or Information: LNK Icon Smuggling",
+          "clean_id": "T1027.012",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 18.722396850585938
+        },
+        {
+          "name": "File Deletion",
+          "clean_id": "T1630.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 16.675048828125
+        },
+        {
+          "name": "Masquerading: Double File Extension",
+          "clean_id": "T1036.007",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 16.519189834594727
+        }
+      ]
+    },
+    {
+      "query": "% registry entry (ACT), associatedwith custom_function_to_generate_random_string (FILE), associatedwith random_string (FILE), associatedwith send_data(data) (FILE)",
+      "entity_name": "% registry entry",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "File Deletion",
+          "clean_id": "T1630.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 12.375652313232422
+        },
+        {
+          "name": "Hide Artifacts: NTFS File Attributes",
+          "clean_id": "T1564.004",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 11.107813835144043
+        },
+        {
+          "name": "Event Triggered Execution: Change Default File Association",
+          "clean_id": "T1546.001",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 10.682942390441895
+        }
+      ]
+    },
+    {
+      "query": "creates one auto-sta (ACT), associatedwith custom_function_to_generate_random_string (FILE), associatedwith random_string (FILE), associatedwith send_data(data) (FILE)",
+      "entity_name": "creates one auto-sta",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "File Deletion",
+          "clean_id": "T1630.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 12.375652313232422
+        },
+        {
+          "name": "Hide Artifacts: NTFS File Attributes",
+          "clean_id": "T1564.004",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 12.196937561035156
+        },
+        {
+          "name": "Hide Artifacts: Hidden File System",
+          "clean_id": "T1564.005",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 11.514984130859375
+        }
+      ]
+    },
+    {
+      "query": "scheduled tasks (ACT), associatedwith custom_function_to_generate_random_string (FILE), associatedwith random_string (FILE), associatedwith send_data(data) (FILE)",
+      "entity_name": "scheduled tasks",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "File Deletion",
+          "clean_id": "T1630.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 12.375652313232422
+        },
+        {
+          "name": "Hide Artifacts: NTFS File Attributes",
+          "clean_id": "T1564.004",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 11.107813835144043
+        },
+        {
+          "name": "Hide Artifacts: Hidden File System",
+          "clean_id": "T1564.005",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 10.607780456542969
+        }
+      ]
+    },
+    {
+      "query": "Persistence Mechanism (ACT), associatedwith custom_function_to_generate_random_string (FILE), associatedwith random_string (FILE), associatedwith send_data(data) (FILE)",
+      "entity_name": "Persistence Mechanism",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "File Deletion",
+          "clean_id": "T1630.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 12.375652313232422
+        },
+        {
+          "name": "Plist File Modification",
+          "clean_id": "T1647",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 11.434654235839844
+        },
+        {
+          "name": "Hide Artifacts: NTFS File Attributes",
+          "clean_id": "T1564.004",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 11.107813835144043
+        }
+      ]
+    },
+    {
+      "query": "FIN7 (APT), targets personnel (IDTY), targets Combi Security (IDTY), targets customer payment card information (IDTY), targets businesses (IDTY), targets CVE's (VULID), targets fake credit card number (IDTY), targets database (IDTY), targets user credentials (IDTY), targets account information (IDTY), targets financial data (IDTY), targets Spider Media (IDTY), targets combi security.com (DOM), targets # nancial institution (IDTY), targets Securities and Exchange Commission (IDTY), targets security company (IDTY), targets NCR Aloha Command Center (IDTY), targets NCR Corporation's 'Aloha Command Center' client. (IDTY), targets retail companies (IDTY), targets retail sector. (IDTY), targets Digicert (IDTY), targets Digitcert (IDTY), targets companies (IDTY), targets nancial entities (IDTY), targets FINTECH (IDTY), targets hospitality organizations (IDTY), targets restaurant chains (IDTY), targets SEC personnel (IDTY), targets banks (IDTY), targets Microsoft (IDTY), targets medical industries (IDTY), targets hospitality (IDTY), targets Knancial (IDTY), targets network information (IDTY), targets credentials (IDTY), targets employees (IDTY), targets banking industry (IDTY), targets SEC Filings (IDTY), targets bank (IDTY), targets restaurant (IDTY), targets hospitality industries (IDTY), uses CARBANAK backdoor (MAL), uses sdbinst.exe (FILE), uses PHP code (FILE), uses Astra panel's (TOOL), uses SQLRat Malware (MAL), uses Astra Panel (TOOL), uses 194.165.17.159 (IP), uses -4c76e44d25c34620dc8cc019b96fd4da34d01fb4ac1e3b9f459c1ed6f80f05c4 (HASH), uses 5.10.40.54 (IP), uses DNSRat (MAL), uses -860a5e83c509ec6615a722cd62ba47a506f115743eeb03cc94b3d2b03cc0ecc0 (HASH), uses 185.66.68.9 (IP), uses -5236ec183f819c5e5cbe3d7a1f8e5b3478b23cebacc5daa501f563e1971bace5 (HASH), uses 185.15.25.79 (IP), uses d9ac4ef250a05ef8bd22c3227fd11df420cd663d5009b89a95466c1e0c301c1d (HASH), uses 185.117.89.134 (IP), uses -fe8f6d366546c2e935cf01aae7233e12445f10b815b28702e739e6951475f687 (HASH), uses 31.18.219.133 (IP), uses Network activity (ACT), uses SQLRat (MAL), uses af60d8dfe30776b24823435b6e160d526ae500ce5583aee1ebbc909721d65120 (HASH), uses sha256 (ENCR), uses detect (ACT), uses string searches (ACT), uses Point Of Sale (POS) systems (TOOL), uses scrape consumer credit card information (ACT), uses spear phishing email (ACT), uses t.txt (FILE), uses Activ (TOOL), uses //b (TOOL), uses >%HOMEPATH%\\t.txt (FILE), uses (c);}catch(e){} (TOOL), uses /e: (TOOL), uses /b (TOOL), uses w=wsc@ript (TOOL), uses # nancially-motivated (ACT), uses SEC campaigns (ACT), uses BATELEUR campaigns (ACT), uses spoofed (ACT), uses video recording capability (TOOL), uses intrusions (ACT), uses phishing campaign (ACT), uses spear phishing emails (ACT), uses criminal ventures (ACT), uses FIN7's (APT), uses MITRE ATT&CK (TOOL), uses BOOSTWRITE (TOOL), uses VirusTotal (TOOL), uses sample (FILE), uses RDFSNIFFER (MAL), uses BOOSTWRITE (MAL), uses (https://blog.gigamon.com/2017/07/26/footprintsof-fin7-tracking-actor-patterns-part-1/) (URL), uses (https://www.fireeye.com/blog/threat-research/2017/05/fin7-shimdatabases-persistence.html) (URL), uses API (TOOL), uses DLL (FILE), uses script (FILE), uses PowerShell (TOOL), uses PsExec (TOOL), uses (https://blog.gigamon.com/2017/07/26/footprintsof-fin7-tracking-actor-patterns-part-2/) (URL), uses PowerShell command. (TOOL), uses psexec_psh (TOOL), uses domain administrator accounts (TOOL), uses compromised credentials (TOOL), uses Cobalt Strike malware (MAL), uses Cobalt Strike (TOOL), uses C2 (TOOL), uses Cobalt Strike's (TOOL), uses Command and Control (C2) (TOOL), uses rotating their infrastructure (ACT), uses foothold (ACT), uses maintain (ACT), uses communications (ACT), uses commercially available tools (TOOL), uses open source (TOOL), uses custom tools (TOOL), uses FIN7 Network (TOOL), uses Network Command and Control (C2) (TOOL), uses Group (APT), uses (h tps://www.facebo (URL), uses (https://www.youtube.com/c (URL), uses (https://www.twitter.com/gigamon) (URL), uses (https://blog.gigamon.com/2017/10/08/securitymust-adapt-the-message-of-gartner-securityand-risk-summit-2017/) (URL), uses (https://blog.gigamon.com/2017/10/06/kaspersky- department-homeland-security-binding- operational-directive-supply-chain-controltechnically-legally-existentially/) (URL), uses JScript's 'eval' function. (TOOL), uses OLE embedded CMD files (FILE), uses OLE embedded LNK files (FILE), uses campaigns (ACT), uses HALFBAKED (TOOL), uses phishing techniques (ACT), uses FIN7 activity (ACT), uses toolkit. (TOOL), uses Bateleur (MAL), uses JScript (TOOL), uses CopyPaste (APT), uses Cobalt (APT), uses GRIFFON C2s (TOOL), uses tax websites (TOOL), uses decoy (ACT), uses Empire C2s (TOOL), uses PowerShell scripts (TOOL), uses powershell.exe (FILE), uses Microsoft PowerShell (TOOL), uses Errors.bat (FILE), uses EmpireMonkey (MAL), uses msutil.exe (FILE), uses Powershell Empire (TOOL), uses CobaltStrike (TOOL), uses GRIFFON (MAL), uses Meterpreter (TOOL), uses XOR-encrypted (ENCR), uses ice document (FILE), uses malicious O (TOOL), uses malicious documents (FILE), uses spear phishing campaigns (ACT), uses FIN7 campaigns (ACT), uses activities (ACT), uses DNS (PROT), uses shellcode (TOOL), uses financiallymotivated (ACT), uses VB (TOOL), uses mses.exe (FILE), uses JavaScript (TOOL), uses identify documents (ACT), uses identify FIN7 documents (ACT), uses Community Protection Event (ACT), uses NetBIOS (PROT), uses HKEY CURRENT_USERISoftwarelMicrosoftl WindowslCurrentVersionlRun (FILE), uses {BFF4219E-C7DI-2880-AE58 - 9C9CD9701C90}158d2a83f777788.86541308.vbs\" (FILE), uses [user_name]Untell (FILE), uses ZSUUvsCJNF\" (FILE), uses //B\" (FILE), uses [user_name]Untell58d2a83f7778d5.36783181.vbs\" (FILE), uses IUsers (FILE), uses lWindowslSystem32lWScript.exe\" (FILE), uses Intel\" (FILE), uses Icreate (FILE), uses lWindowslsystem32lschtasks (FILE), uses lWindowslsystem32lschtasks.exe; (FILE), uses VBE (FILE), uses email (ACT), uses LNK (FILE), uses RTF (FILE), uses DOCX (FILE), uses mshta.exe (FILE), uses VBScript (TOOL), uses spear phishing (ACT), uses Backdoor (TOOL), uses Hacking (ACT), uses steal (ACT), uses conduct surveillance (ACT), uses FIN7's malware (MAL), uses transnational attack (ACT), uses CARBANAK malware (MAL), uses move (ACT), uses receive data (ACT), uses send commands (ACT), uses additional malware (MAL), uses attached file (FILE), uses phishing email (ACT), uses telephone call (ACT), uses phishing emails (ACT), uses 'phishing' email (ACT), uses cyberattacks (ACT), uses Phishing & Calling (ACT), uses Social Engineering: (ACT), uses XOR (ENCR), uses Lo a der/B a ckdoor (MAL), uses backdoor (MAL), uses JS (TOOL), uses %TEMP% (FILE), uses 'errors.txt' (FILE), uses UserForm object, (TOOL), uses J a v a script b a ckdoor (TOOL), uses GetDrive. (TOOL), uses a ntia n a lysis routine (TOOL), uses %LOCALAPPDATA% (FILE), uses wscript.exe (FILE), uses wscript (TOOL), uses m a cros. (TOOL), uses 'En a ble Content' (ACT), uses (https://www.sentinelone.com/blog/phishing-reve a lingvulner a ble-t a rgets/) (URL), uses social engineering (ACT), uses FIN7 Microsoft document lo a ders (TOOL), uses JS Lo a der (TOOL), uses Microsoft O \" ce VBA M a cro Lo a der (TOOL), uses 15M+ LOCATIONS CARDS STOLEN (ACT), uses 3600+ (ACT), uses Nationwide Impact Cards Stolen (ACT), uses attacks (ACT), uses activity (ACT), uses Carbanak (MAL), uses post-exploitation (ACT), uses legally purchased code signing ce % i # cates (TOOL), uses Spear Phishing Campaign (ACT), uses Phishing (ACT), uses LNK (TOOL), uses SDB (TOOL), uses campaign (ACT), uses Power Admin PAExec (TOOL), uses cement their foothold (ACT), uses maintain access (ACT), uses monitor users (ACT), uses learn about the victim network (ACT), uses tunnel command (ACT), uses proxy connections (ACT), affiliatedwith FIN7 threat group (APT), affiliatedwith Carbon (APT), affiliatedwith FIN7's (APT), affiliatedwith Carbanak Group,' (APT), affiliatedwith actor groups (APT), affiliatedwith Carbanak Group) (APT), affiliatedwith Carbanak (APT), affiliatedwith CopyPaste (APT), affiliatedwith AveMaria. (APT), affiliatedwith EmpireMonkey). (APT), affiliatedwith cluster (APT), affiliatedwith Cobalt/EmpireMonkey (APT), affiliatedwith operators (APT), affiliatedwith FIN7 intrusion set (APT), affiliatedwith actor (APT), affiliatedwith FIN7 cybercrime rig (APT), affiliatedwith APT (APT), affiliatedwith Carbanak gang (APT), affiliatedwith Knancially-motivated (APT), affiliatedwith Carbanak gang) (APT), affiliatedwith Carbanak Group', (APT), affiliatedwith Group (APT), affiliatedwith Cobalt Goblin Group (APT), affiliatedwith CobaltGoblin (APT), affiliatedwith Carbanak/CobaltGoblin (APT), affiliatedwith Evolution (APT), hasattacktime mid-2015 (TIME), hasattacktime May 3, 2017 (TIME), hasattacktime June (TIME), hasattacktime January (TIME), hasattacktime January 2018 (TIME), hasattacktime mid-2017 (TIME), hasattacktime September 2017 (TIME), hasattacktime 2017 (TIME), hasattacktime August 1, 2018 (TIME), hasattacktime October 3 (TIME), hasattacktime early 2017 (TIME), hasattacktime 2016/17/). (TIME), hasattacktime end of 2018 (TIME), hasattacktime 2018. (TIME), hasattacktime last year (TIME), hasattacktime 2015 (TIME), hasattacktime 08 MAY 2019 (TIME), hasattacktime April 12 (TIME), hasattacktime April 2017 (TIME), hasattacktime April 24, 2017 (TIME), hasattacktime J a nu a ry 2018 (TIME), hasattacktime 2018 (TIME), hasattacktime 2016 (TIME), hasattacklocation U.S. (LOC), hasattacklocation Spain (LOC), hasattacklocation Poland (LOC), hasattacklocation Germany (LOC), hasattacklocation U.S.-based (LOC), hasattacklocation Central Asia (LOC), hasattacklocation African (LOC), hasattacklocation United States (LOC), hasattacklocation Eastern Europe (LOC), hasattacklocation US (LOC), hasattacklocation Middle East (LOC), hasattacklocation Asia (LOC), identifiedby Mandiant (SECTEAM), identifiedby Flashpoint (SECTEAM), identifiedby Flashpoint Intel Team (SECTEAM), identifiedby CrowdStrike (SECTEAM), identifiedby We (SECTEAM), identifiedby PwC (SECTEAM), identifiedby Gigamon Applied Threat Research (ATR) (SECTEAM), identifiedby Gigamon ATR (SECTEAM), identifiedby Trustwave (SECTEAM), identifiedby YURY NAMESTNIKOV FÉLIX AIME (SECTEAM), identifiedby REPORTS (SECTEAM), identifiedby Threat Grid (SECTEAM), identifiedby AMP for Endpoints (SECTEAM), identifiedby FireEye iSIGHT Intelligence (SECTEAM), identifiedby M-Trends (SECTEAM), identifiedby Nick Carr, Saravanan Mohankumar, Yogesh Londhe, Barry Vengerik, Dominik Weber (SECTEAM), identifiedby Department of Justice (SECTEAM), identifiedby Europol (SECTEAM), identifiedby FireEye iSIGHT (SECTEAM), identifiedby MySIGHT (SECTEAM), identifiedby Proofpoint (SECTEAM), identifiedby FireEye (SECTEAM), targetedby U.S. (LOC), targetedby energy sector (IDTY), targetedby Combi Security (IDTY), targetedby Ukrainian (LOC), targetedby gaming industries (IDTY), targetedby hospitality (IDTY), targetedby CVE-2017-0199 (VULID), targetedby CVE-2015-1701 (VULID), targetedby CVE-2015-2545 (VULID), targetedby Combi Security company (IDTY), targetedby US DOJ; (IDTY), targetedby law enforcement (IDTY), targetedby combi security.com (DOM), targetedby Central Asia (LOC), targetedby Eastern Europe (LOC), targetedby # nancial institution (IDTY), targetedby FDA (IDTY), targetedby retail (IDTY), targetedby Energy (IDTY), targetedby Construction (IDTY), targetedby Casinos and Gaming (IDTY), targetedby Education (IDTY), targetedby Travel Hospitality (IDTY), targetedby restaurants (IDTY), targetedby Securities and Exchange Commission (IDTY), targetedby United States (LOC), targetedby nancial (IDTY), targetedby security company (IDTY), targetedby (https://www.fireeye.com/blog/threat-research/2017/04/fin7phishing-lnk.html) (IDTY), targetedby (https://www.fireeye.com/blog/threatresearch/2017/03/fin7_spear_phishing.html)and financial (IDTY), targetedby different industries (IDTY), targetedby of (IDTY), targetedby retail companies (IDTY), targetedby retail industry. (IDTY), targetedby training center (IDTY), targetedby African country (LOC), targetedby companies (IDTY), targetedby nancial entities (IDTY), targetedby Europe (LOC), targetedby Windows (OS), targetedby FINTECH (IDTY), targetedby hospitality organizations (IDTY), targetedby restaurant chains (IDTY), targetedby SEC personnel (IDTY), targetedby banks (IDTY), targetedby hotel chain (IDTY), targetedby Isr a el) (LOC), targetedby Russi a (LOC), targetedby US (LOC), targetedby restaurant (IDTY), targetedby hospitality industries (IDTY), monitoredby US (LOC), monitoredby %TEMP%\\AdobeUpdateMana (FILE), identifies Mandiant (SECTEAM), identifies Flashpoint (SECTEAM), identifies We (SECTEAM), identifies Advanced Practices (SECTEAM), identifies Jeremy Koppen (SECTEAM), identifies Steve Elovitz (SECTEAM), identifies FireEye Mandiant (SECTEAM), identifies Gigamon Applied Threat Research's (SECTEAM), identifies Stephen Hinck (SECTEAM), identifies Justin Warner (SECTEAM), identifies ATR (SECTEAM), identifies SECURITY (SECTEAM), identifies PwC (SECTEAM), identifies Gigamon Applied Threat Research (ATR) (SECTEAM), identifies Gigamon ATR (SECTEAM), identifies Trustwave (SECTEAM), identifies Attribution Proofpoint (SECTEAM), identifies Proofpoint (SECTEAM), identifies MATTHEW MESA, DARIEN HUSS (SECTEAM), identifies DoJ (SECTEAM), identifies YURY NAMESTNIKOV FÉLIX AIME (SECTEAM), identifies REPORTS (SECTEAM), identifies Morphisec's (SECTEAM), identifies M-Trends (SECTEAM), identifies FireEye (SECTEAM), identifies Nick Carr, Saravanan Mohankumar, Yogesh Londhe, Barry Vengerik, Dominik Weber (SECTEAM), identifies Department of Justice (SECTEAM), identifies Europol (SECTEAM), monitors FireEye (SECTEAM), uses embedded malware (MAL), uses Carbanak Group) (APT), associatedwith CARBANAK backdoor (MAL), associatedwith Shamoon (MAL), associatedwith sdbinst.exe (FILE), associatedwith PHP code (FILE), associatedwith attack scripts (ACT), associatedwith SQLRat Malware (MAL), associatedwith CARBANAK malware (MAL), associatedwith Carbanak family (MAL), associatedwith %TEMP%\\AdobeUpdateMana (FILE), associatedwith %TEMP%\\debug.txt (FILE), associatedwith malicious documents (FILE), associatedwith BIRDDOG backdoor (MAL), associatedwith ZIP archives (FILE), associatedwith phishing documents (FILE), associatedwith documents (FILE), associatedwith malware (MAL), associatedwith RDFSNIFFER's Backdoor (MAL), associatedwith RDFSNIFFER (MAL), associatedwith BOOSTWRITE (MAL), associatedwith GGLDR (MAL), associatedwith Tinymet (MAL), associatedwith (Errors.txt (FILE), associatedwith %TEMP% (FILE), associatedwith mses.exe (FILE), associatedwith wscript.exe (FILE), associatedwith GRIFFON (MAL), associatedwith script (FILE), associatedwith Gceko/20100101 (MAL), associatedwith JavaScript (FILE), associatedwith RTF document (FILE), associatedwith acker Shortcut Files (FILE), associatedwith LNK (FILE), associatedwith RTF (FILE), associatedwith DOCX (FILE), associatedwith mshta.exe (FILE), associatedwith embedded malware (MAL), associatedwith Documents: (FILE), associatedwith '.xlsb' (FILE), associatedwith backdoor (MAL), associatedwith Carbanak (MAL), usedby activity (ACT), usedby https://securelist.com/shamoon-the-wiper-copycats-at-work/57854/ https://unit42.paloaltonetworks.com/unit42-shamoon-2-return-disttrack-wiper/ https://unit42.paloaltonetworks.com/unit42-second-wave-shamoon-2-attacks-identi fi ed/ https://unit42.paloaltonetworks.com/unit42-shamoon-2-delivering-disttrack/ https://unit42.paloaltonetworks.com/shamoon-3-targets-oil-gas-organization/ https://unit42.paloaltonetworks.com/shamoon-3-modi fi ed-open-source-wiper-contains-verse-from-the-quran/ (URL), usedby 2012 attack (ACT), usedby 2012 incident (ACT), usedby Shamoon attack (ACT), usedby https://unit42.paloaltonetworks.com/unit42-new-threat-actor-group-darkhydrus-targets-middle-east-government/ https://unit42.paloaltonetworks.com/unit42-darkhydrus-uses-phishery-harvest-credentials-middle-east/ https://unit42.paloaltonetworks.com/darkhydrus-delivers-new-trojan-that-can-use-google-drive-for-c2-communications/ (URL), usedby Google Drive (TOOL), usedby Astra panel's (TOOL), usedby attack scripts (ACT), usedby PHP (TOOL), usedby Astra Panel (TOOL), usedby Astra IOC (TOOL), usedby https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20170199> (URL), usedby https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20151701> (URL), usedby https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-20152545> (URL), usedby https://www.justice.gov/opa/pr/three-members-notorious-internationalcybercrime-group-fin7-custody-role-attacking-over-100> (URL), usedby JScript (TOOL), usedby LNK (TOOL), usedby cyber crime operations (ACT), usedby BATELEUR campaigns (ACT), usedby spoofed (ACT), usedby video recording capability (TOOL), usedby phishing campaign (ACT), usedby BATLEUR backdoor activity (ACT), usedby postexploitation (ACT), usedby spear phishing emails (ACT), usedby card (ACT), usedby social engineering (ACT), usedby criminal ventures (ACT), usedby BOOSTWRITE (TOOL), usedby backdoors (TOOL), usedby sample (TOOL), usedby altering (ACT), usedby sample (FILE), usedby (https://blog.gigamon.com/2017/07/25/effectively-securing-cloud-workloads-learn-gigamon-rsacan-help/) (URL), usedby RSA (TOOL), usedby Gigamon (TOOL), usedby HTTPS://BLOG.GIGAMON.COM/CATEGORY/SECURITY/ (URL), usedby (https://blog.gigamon.com/2017/07/26/footprintsof-fin7-tracking-actor-patterns-part-2/) (URL), usedby (https://www.cobaltstrike.com/help-malleable-c2) (URL), usedby DNS (PROT), usedby (https://www.cobaltstrike.com/) (URL), usedby Cobalt Strike (TOOL), usedby C2 (TOOL), usedby commercially available tools (TOOL), usedby open source (TOOL), usedby custom tools (TOOL), usedby FIN7 Network (TOOL), usedby Network Command and Control (C2) (TOOL), usedby attacker activity. (ACT), usedby campaigns (ACT), usedby IOCs (TOOL), usedby FIN7 activity (ACT), usedby number (ACT), usedby span (ACT), usedby financially motivated (ACT), usedby VirusTotal (TOOL), usedby (https://blog.gigamon.com/author/atrteam/) (URL), usedby (https://blog.gigamon.com/category/security/) (URL), usedby (https://blog.gigamon.com/) (URL), usedby Empire C2s (TOOL), usedby C2s (TOOL), usedby HTTP (PROT), usedby decoy (ACT), usedby powershell.exe (FILE), usedby Microsoft PowerShell (TOOL), usedby PowerLinks-style (TOOL), usedby PowerShell (TOOL), usedby Meterpreter (TOOL), usedby WMI (TOOL), usedby activities (ACT), usedby campaign (ACT), usedby shellcode (TOOL), usedby financiallymotivated (ACT), usedby secoocron (TOOL), usedby deobfuscation (ACT), usedby 'enable macro' button (TOOL), usedby attack (ACT), usedby Stealer DLL (TOOL), usedby Community Protection Event (ACT), usedby 1a9e113b2f3caa7a141a94c8bc187ea7 (HASH), usedby MD5 (ENCR), usedby MAC (TOOL), usedby NetBIOS (PROT), usedby LNK (FILE), usedby RTF (FILE), usedby DOCX (FILE), usedby mshta.exe (FILE), usedby VBScript (TOOL), usedby Backdoor (TOOL), usedby Phishing (ACT), usedby attacks (ACT), usedby telephone call (ACT), usedby phishing emails (ACT), usedby phishing email (ACT), usedby Microsoft Word document (FILE), usedby attached file (FILE), usedby email (ACT), usedby Internet Explorer debugger (TOOL), usedby run script (ACT), usedby Modify JS code (ACT), usedby userform object; (TOOL), usedby JavaScript (TOOL), usedby prettify obfuscated (ACT), usedby extract (ACT), usedby retrieve decoded script; (ACT), usedby Office VBA (TOOL), usedby https://github.com/decalage2/oletools/wiki/olevb (URL), usedby olevb (TOOL), usedby macro (TOOL), usedby VBA (TOOL), usedby spear phishing (ACT), affiliatedwith criminal organization (APT), affiliatedwith FIN7: (APT), affiliatedwith Cobalt (APT), affiliatedwith CobaltGoblin/EmpireMonkey (APT), affiliatedwith FIN7.5 (APT), affiliatedwith FIN7 Group (APT), affiliatedwith CopyPaste group (APT)",
+      "entity_name": "FIN7",
+      "type": "APT",
+      "hits": [
+        {
+          "name": "Drive-by Compromise",
+          "clean_id": "T0817",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 90.32154846191406
+        },
+        {
+          "name": "WireLurker",
+          "clean_id": "S0312",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexSOFTWARE"
+          ],
+          "score": 89.7373046875
+        },
+        {
+          "name": "Ixeshe",
+          "clean_id": "S0015",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexSOFTWARE"
+          ],
+          "score": 87.86930847167969
+        }
+      ]
+    },
+    {
+      "query": "Phishing (ACT), targets recipients' machines. (IDTY), targets T1326 (VULNAME), targets T1071 (VULNAME), targets T1214 (VULNAME), targets T1081 (VULNAME), targets T1503 (VULNAME), targets T1003 (VULNAME), targets T1078 (VULNAME), targets T1192 (VULNAME), targets T1193 (VULNAME), targets users (IDTY), targets business (IDTY), targets retail sector. (IDTY), targets Microsoft (IDTY), uses PowerShell (TOOL), uses nextgeneration attack tools (TOOL), uses BOOSTWRITE (TOOL), uses backdoors (TOOL), uses VirusTotal (TOOL), uses RSA (ENCR), uses Symartcc (TOOL), uses McAfce (TOOL), uses Outlook (TOOL), uses JScript (TOOL), uses VBScript (TOOL), uses Backdoor (TOOL), uses base64-encoded (ENCR), uses URLs (URL), uses Sender Policy Framework (SPF) (TOOL), uses Domain Name System (DNS) (PROT), uses (http://www.antiphishing.org) (URL), uses anti-phishing (TOOL), uses email (TOOL), associatedwith DLL backdoor (MAL), associatedwith Emotet (MAL), associatedwith TrickBot (MAL), associatedwith Carbanak (MAL), associatedwith (Behavior:Win32/Atosev.gen!A) (VULNAME), associatedwith malware (MAL), associatedwith Office 365 E5 (SECTEAM), associatedwith Safe Links protection (SECTEAM), associatedwith Office 365 ATP (SECTEAM), usedby FIN7 (APT), usedby Carbanak Group', (APT), hasattacktime April 24, 2017 (TIME), hasattacktime Thu 6/29/2017 (TIME), hasattacklocation United States (LOC), targetedby United States (LOC), targetedby government organizations (IDTY), targetedby critical infrastructure (IDTY), targetedby Winter Olympics (IDTY), targetedby Russian (LOC), targetedby France (LOC), targetedby campaigns (IDTY), targetedby political parties (IDTY), targetedby local government entities (IDTY), targetedby Iranian (LOC), targetedby Iran (LOC), targetedby retail industry. (IDTY), targetedby Outlook.com (DOM), targetedby hospitality industries (IDTY), targetedby restaurant (IDTY), targetedby U.S. (LOC), targetedby Washington, D.C. (LOC), targetedby Europe (LOC), targetedby Hong Kong (LOC), targetedby India (LOC), targetedby Canada (LOC), targetedby employees (IDTY), identifies Microsoft Threat Protection (SECTEAM), identifies Mimecast (SECTEAM), identifies FireEye (SECTEAM), identifies Office 365 Advanced Threat Protection (SECTEAM), identifies Windows Defender Advanced Threat Protection (SECTEAM), identifies Office 365 ATP (SECTEAM), identifies Mandiant (SECTEAM), uses APT29 (APT), uses Emotet (MAL), uses Ó Ryuk (MAL), uses Sandworm (APT), uses FIN7's (APT), uses FIN7: (APT), uses FIN7/Cobalt (APT), uses FIN7 (APT), uses CARBANAK backdoor (MAL), uses FIN7 threat group (APT), uses Carbanak (MAL), uses malware (MAL), associatedwith internalname: Soulfulness (FILE), associatedwith TTPs (TOOL), associatedwith LNK (TOOL), associatedwith phishing documents (FILE), associatedwith Gmail (TOOL), associatedwith originalfilename: Adoptable Nightjars (FILE), associatedwith filedescription: Sanger (FILE), associatedwith legaltrademarks: Bobcats Kinsman (FILE), associatedwith companyname: Maidish (FILE), associatedwith RTF document (FILE), associatedwith Compiler/Artifacts (FILE), associatedwith Version Info (TOOL), associatedwith legalcopyright: Blattering (FILE), usedby email (TOOL)",
+      "entity_name": "Phishing",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "OilCheck",
+          "clean_id": "S1171",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexSOFTWARE"
+          ],
+          "score": 67.6587905883789
+        },
+        {
+          "name": "Stage Capabilities: Upload Tool",
+          "clean_id": "T1608.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 59.60733413696289
+        },
+        {
+          "name": "MechaFlounder",
+          "clean_id": "S0459",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexSOFTWARE"
+          ],
+          "score": 59.31028747558594
+        }
+      ]
+    },
+    {
+      "query": "Carbanak Group', (APT), hasattacklocation United States (LOC), uses spear phishing (ACT), affiliatedwith FIN7 (APT), identifiedby FireEye (SECTEAM), uses Backdoor (TOOL), uses Carbanak (MAL), identifies Nick Carr, Saravanan Mohankumar, Yogesh Londhe, Barry Vengerik, Dominik Weber (SECTEAM), identifies Mandiant (SECTEAM), usedby Phishing (ACT)",
+      "entity_name": "Carbanak Group',",
+      "type": "APT",
+      "hits": [
+        {
+          "name": "Carbanak",
+          "clean_id": "S0030",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexSOFTWARE"
+          ],
+          "score": 23.819963455200195
+        },
+        {
+          "name": "Lizar",
+          "clean_id": "S0681",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexSOFTWARE"
+          ],
+          "score": 12.08884048461914
+        },
+        {
+          "name": "POWERSOURCE",
+          "clean_id": "S0145",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexSOFTWARE"
+          ],
+          "score": 11.604246139526367
+        }
+      ]
+    },
+    {
+      "query": "Carbanak (MAL), targets OS (OS), targets win32 (OS), targets IT (IDTY), targets Financial Institutions (IDTY), targets MAC (OS), targets IFOBS banking systems (IDTY), targets target (IDTY), targets user's email (IDTY), targets local passwords (IDTY), targets antivirus firms (IDTY), targets Microsoft Security (IDTY), targets financial industry (IDTY), targets account holders (IDTY), targets Linux (OS), targets banking (IDTY), targets of (IDTY), targets victim systems (IDTY), targets infected machines. (IDTY), targets Forcepoint (IDTY), targets Google (IDTY), targets User name (IDTY), targets Domain (IDTY), targets Computer name (IDTY), targets Microsoft Office Apps (IDTY), targets BIOS Version (IDTY), targets System Type (IDTY), targets Processor (IDTY), targets Total Physical Memory (IDTY), targets Time Zone (IDTY), targets System Model (IDTY), targets System Manufacturer (IDTY), targets System Name (IDTY), targets Available Virtual Memory (IDTY), targets Total Virtual Memory (IDTY), targets Available Physical Memory (IDTY), targets Locale (IDTY), targets Windows Directory (IDTY), targets OS Manufacturer (IDTY), targets Service Pack (IDTY), targets Version (IDTY), targets OS Name (IDTY), targets Windows (OS), targets banks (IDTY), targets bank (IDTY), targets SEC Filings (IDTY), targets personnel (IDTY), targets data (IDTY), uses hacks (ACT), uses 'sdbinst.exe' (FILE), uses 'HKLM\\SOFTWARE\\Microso $ \\Windows NT\\CurrentVersion\\AppCompatFlags\\Insta lledSDB' (FILE), uses 'HKLM\\SOFTWARE\\Microso $ \\Windows NT\\CurrentVersion\\AppCompatFlags\\Cust om' (FILE), uses modification events (ACT), uses registry key creation (ACT), uses Monitor (TOOL), uses 'C:\\Windows\\AppPatch\\Custom\\Custom64 ' (FILE), uses 'C:\\Windows\\AppPatch\\Custom' (FILE), uses 'svchost.exe' (FILE), uses DLL (FILE), uses 'svchost.exe') (FILE), uses DLL (TOOL), uses API (TOOL), uses NCR Aloha Command Center Client (TOOL), uses hijack (ACT), uses backdoor; (TOOL), uses Backdoor (TOOL), uses legally purchased code signing ce % i # cates (TOOL), uses proxy connections (ACT), uses tunnel command (ACT), uses learn about the victim network (ACT), uses monitor users (ACT), uses maintain access (ACT), uses cement their foothold (ACT), uses sample (TOOL), uses CARBANAK (TOOL), uses reverse shell. (ACT), uses Outlook data (ACT), uses POS (ACT), uses OS destruction (ACT), uses TCP tunneling (ACT), uses Backdoor.Win32.Carbanak (FILE), uses APT-style campaign (ACT), uses c7b224d95fc96094afd2678cae753dcb (HASH), uses MD5 (HASH), uses Sha1 (HASH), uses AMMYY. (TOOL), uses install (ACT), uses banking attacks (ACT), uses search (ACT), uses enable remote desktop (ACT), uses intrusions (ACT), uses base64 (ENCR), uses svchost.exe (FILE), uses 3d00602c98776e2ea5d64a78fc622c4ff08708e3 (HASH), uses SHA1: (ENCR), uses bf.exe (FILE), uses Anunak Attack (ACT), uses APT techniques (ACT), uses cybercrime (ACT), uses Carbanak campaign (ACT), uses ATM network (ACT), uses disbursement mechanisms (ACT), uses updating balances (ACT), uses SWIFT network (ACT), uses funds transfer (ACT), uses RDP (PROT), uses 2014001010340 (HASH), uses Carbanak IOC (TOOL), uses VirusTotal (TOOL), uses Email: (TOOL), uses Name: (TOOL), uses Signer information (TOOL), uses Advanced Digital Signature Information (TOOL), uses [Digital Signature Details (TOOL), uses Previous Versions (TOOL), uses Details (TOOL), uses Secunty (TOOL), uses Digttal Signatures (TOOL), uses General (TOOL), uses Properties (TOOL), uses footprintcrsgn dll (FILE), uses 08F83D98B18D3DFF16C35A20E24ED49A (HASH), uses MD5 (ENCR), uses footprintcrsgn.dll (FILE), uses Base64. (ENCR), uses RC2+Base64 (ENCR), uses Remote Desktop Protocol (RDP) (PROT), uses kldconfig.plug (FILE), uses %COMMON_APPDATA%\\Mozilla (FILE), uses file (FILE), uses creates (ACT), uses Remote Code Execution (ACT), uses (.rar) (FILE), uses Roshal Archive (TOOL), uses CPL file (FILE), uses days (TOOL), uses mail.ru (EMAIL), uses (953) 3413178 (TOOL), uses Sergey Kuznetsov; (TOOL), uses sincerely, (TOOL), uses yearend contribution term (TOOL), uses 366 (TOOL), uses for period (TOOL), uses 00 kopecks, (TOOL), uses 32 million rubles (TOOL), uses deposit (TOOL), uses The amount (TOOL), uses send contact details (TOOL), uses Translated: Good Day! (TOOL), uses Cymma (TOOL), uses Cepreii (TOOL), uses Bulcunalo Bax (TOOL), uses spear phishing (ACT), uses take control (ACT), uses espionage (ACT), uses remote access (ACT), uses data exfiltration (ACT), uses aaa.stage.4710846.ns3.kiposerd[.]com (DOM), uses aaa.stage.15594901.en.onokder[.]com (DOM), uses DNS (PROT), uses Meterpreter (TOOL), uses Cobalt Strike (TOOL), uses hxxp://138[.]201[.]44[.]4/informs.jsp (URL), uses hxxp://atlantis-bahamas[.]com/css/informs.jsp (URL), uses Carbanak C&Cs (TOOL), uses hxxps://docs.google[.]com/forms/d/e/1FAIpQLSdcdE7lTEiqV5MW3Up8Hgcy5NGkIKnLKoe0YPFriD4_9qYq9A/for (URL), uses hxxps://docs.google[.]com/forms/d/e/1FAIpQLSfE9kshYBFSDAfRclW8m9rAdajqoYhzhEYmEAgZexE3LQ-17A/form (URL), uses hxxps://docs.google[.]com/forms/d/e/1FAIpQLScx9gwNadC7Vjo11mXLbU3aBQRrqVpoWjmNJ1ZneqpjaYLE3g/for (URL), uses Google Forms (TOOL), uses hxxps://script.google[.]com/macros/s/AKfycbwZHCgg5EsCiPup_mNxDbSX7k7yBMeXWenOVN1BWXHmyBpb8ng (URL), uses hxxps://script.google[.]com/macros/s/AKfycbxxx5DHr0F8AYhLuDjnp7kGNELq6g27J4c_JWWx1p1nDfZh6InO/exec (URL), uses hxxps://script.google[.]com/macros/s/AKfycbzuykcvX7j3TlBNyQfxtB1mqii31b4VTON640yiRJT0t6rS4s4/exec (URL), uses C&Cs (TOOL), uses Apps Script (TOOL), uses (claim.rtf) (FILE), uses 88f9bf3d6e767f1d324632b998051f4730f011c3 (HASH), uses (order.docx) (FILE), uses 400f02249ba29a19ad261373e6ff3488646e95fb (HASH), uses (3-ThompsonDan.rtf) (FILE), uses 1ec48e5c0b88f4f850facc718bbdec9200e4bd2d (HASH), uses documents (FILE), uses INI processing script (TOOL), uses reflect the status (ACT), uses issue commands (ACT), uses INI file (FILE), uses attacks (ACT), uses VBS (FILE), uses PS1 (FILE), uses spear-phishing (ACT), uses RIG exploit kit (TOOL), uses campaigns (ACT), uses campaign (ACT), uses SDB (TOOL), uses LNK (TOOL), uses Phishing (ACT), uses Spear Phishing Campaign (ACT), uses activity (ACT), uses post-exploitation (ACT), uses datastealing (ACT), uses data-stealing (ACT), uses pseudo-HTTP (PROT), uses C2 (TOOL), uses steal (ACT), uses Key logging (ACT), uses desktop video capture (ACT), uses VNC (TOOL), uses HTTP (PROT), uses form grabbing (ACT), uses # le system management (ACT), uses # le transfer (ACT), uses TCP (PROT), uses HTTP proxy (ACT), uses Outlook (TOOL), uses the $ (ACT), uses reverse shell (ACT), associatedwith FIN7 (APT), associatedwith FIN7's (APT), associatedwith Evolution (APT), associatedwith datastealing backdoor (MAL), associatedwith data-stealing backdoor (MAL), associatedwith APT (APT), associatedwith criminals (APT), associatedwith espionage (APT), hasattacktime 2015 (TIME), hasattacktime 16 FEB 2015 (TIME), hasattacktime 2016-03-01 08:50:54 (TIME), hasattacktime Wednesday, September   03, 2014 12:58:30 (TIME), hasattacktime February 2015 (TIME), hasattacklocation U.S. (LOC), hasattacklocation United States (LOC), hasattacklocation China. (LOC), hasattacklocation Germany (LOC), hasattacklocation USA (LOC), hasattacklocation Ukraine (LOC), hasattacklocation Africa (LOC), hasattacklocation Central Europe (LOC), hasattacklocation Baltic (LOC), hasattacklocation Russia. (LOC), hasattacklocation CN (LOC), hasattacklocation UA (LOC), hasattacklocation FR (LOC), hasattacklocation BE (LOC), hasattacklocation JP (LOC), hasattacklocation US (LOC), hasattacklocation DE (LOC), hasattacklocation ru (LOC), hasattacklocation European (LOC), hasattacklocation Ukrainian (LOC), hasattacklocation Eastern European (LOC), hasattacklocation Russian (LOC), hasattacklocation Asia (LOC), hasattacklocation Middle East (LOC), identifiedby Kaspersky (SECTEAM), identifiedby FireEye (SECTEAM), identifiedby Trustwave (SECTEAM), identifiedby Kaspersky Lab (SECTEAM), identifiedby Kaspers yLab (SECTEAM), identifiedby Cypho % Labs (SECTEAM), identifiedby Proofpoint (SECTEAM), identifiedby MySIGHT (SECTEAM), identifiedby FireEye iSIGHT (SECTEAM), identifiedby Group-IB (SECTEAM), identifiedby Fox-It (SECTEAM), contains RTF (FILE), contains 'svchost.exe' (FILE), contains 'ScRegisterTCPEndpoint' (FILE), contains KB2832077 (FILE), contains DWrite.dll (FILE), contains log.txt (FILE), contains kldconfig.plug (FILE), contains (.rar) (FILE), contains CPL file (FILE), contains PS1 (FILE), contains VBS (FILE), targetedby European Union Agency (IDTY), targetedby hospitality industries (IDTY), targetedby restaurant (IDTY), targetedby Eastern Europe. (LOC), targetedby financial entities (IDTY), targetedby bank (IDTY), targetedby nancial (IDTY), targetedby antivirus firms (IDTY), targetedby France (LOC), targetedby Ukraine (LOC), targetedby Windows (OS), targetedby Microsoft (IDTY), targetedby CN (LOC), targetedby UA (LOC), targetedby FR (LOC), targetedby BE (LOC), targetedby JP (LOC), targetedby US (LOC), targetedby DE (LOC), targetedby banking (IDTY), targetedby Null (VULNAME), targetedby of (IDTY), targetedby ru (LOC), targetedby February 2015 (TIME), targetedby European (LOC), targetedby U.S. (LOC), targetedby Eastern European (LOC), targetedby banks (IDTY), targetedby e-payment systems (IDTY), targetedby fi nancial institutions (IDTY), targetedby credentials (IDTY), targetedby OS (OS), identifies Kaspersky (SECTEAM), identifies FireEye (SECTEAM), identifies Nick Carr, Saravanan Mohankumar, Yogesh Londhe, Barry Vengerik, Dominik Weber (SECTEAM), identifies Fox-It. (SECTEAM), identifies SPIDERLABS BLOG (SECTEAM), identifies Kaspers yLab (SECTEAM), identifies Bitdefender's (SECTEAM), identifies ESET (SECTEAM), identifies Mandiant (SECTEAM), identifies Group-IB (SECTEAM), identifies Fox-It (SECTEAM), uses Carbanak group (APT), uses criminal organization (APT), uses FIN7's (APT), uses Carbanak Group', (APT), uses criminal actors (APT), uses APT (APT), uses FIN7 threat group (APT), uses FIN7 (APT), associatedwith send system information (ACT), associatedwith SEC campaigns (ACT), associatedwith campaigns (ACT), associatedwith postexploitation (ACT), associatedwith Phishing (ACT), associatedwith campaign codes (ACT), associatedwith data-stealing (ACT), associatedwith #TheSAS2015 (ACT), associatedwith Tweet Losses (ACT), associatedwith criminal cyber campaign (ACT), associatedwith spear phishing (ACT), associatedwith socially-engineered (ACT), associatedwith attack (ACT), associatedwith CARBANAK Activity (ACT), associatedwith execute malicious code (ACT), associatedwith uploads data (ACT), associatedwith steals (ACT), associatedwith Key logging (ACT), associatedwith desktop video capture (ACT), associatedwith form grabbing (ACT), associatedwith # le system management (ACT), associatedwith # le transfer (ACT), associatedwith HTTP proxy (ACT), usedby Backdoor (TOOL), usedby DLL (TOOL), usedby Uninstall (TOOL), usedby Features (TOOL), usedby Programs (TOOL), usedby Control Panel (TOOL), usedby DWriteCreateFactory (TOOL), usedby KSN (TOOL), usedby http://148.251.18.75 http://95.215.46.221 http://95.215.46.229 http://95.215.46.234 http://81.17.28.124 (URL), usedby base64 (ENCR), usedby 3d00602c98776e2ea5d64a78fc622c4ff08708e3 (HASH), usedby SHA1: (ENCR), usedby bf.exe (FILE), usedby log.txt (FILE), usedby 2014001010340 (HASH), usedby MimiKatz (TOOL), usedby PsExec (TOOL), usedby metasploit (TOOL), usedby SSH (PROT), usedby Telnet/SSH (PROT), usedby (operatemesscont.net). (DOM), usedby 190.97.165.126 (IP), usedby Secure Shell (SSH) (PROT), usedby svchost.exe (FILE), usedby (f8cd52b70a11a1fb3f29c6f89ff971ec) (HASH), usedby Ammyy Admin (TOOL), usedby VirusTotal (TOOL), usedby Remote Desktop Protocol (RDP) (PROT), usedby Roshal Archive (TOOL), usedby days (TOOL), usedby mail.ru (EMAIL), usedby (953) 3413178 (TOOL), usedby Sergey Kuznetsov; (TOOL), usedby sincerely, (TOOL), usedby yearend contribution term (TOOL), usedby 366 (TOOL), usedby for period (TOOL), usedby 00 kopecks, (TOOL), usedby 32 million rubles (TOOL), usedby deposit (TOOL), usedby The amount (TOOL), usedby send contact details (TOOL), usedby Translated: Good Day! (TOOL), usedby Cymma (TOOL), usedby Cepreii (TOOL), usedby Bulcunalo Bax (TOOL), usedby 1ec48e5c0b88f4f850facc718bbdec9200e4bd2d (HASH), usedby documents (FILE), usedby MD5 (ENCR), usedby VNC (TOOL), usedby HTTP (PROT), usedby TCP (PROT), usedby C2 (TOOL)",
+      "entity_name": "Carbanak",
+      "type": "MAL",
+      "hits": [
+        {
+          "name": "Drive-by Compromise",
+          "clean_id": "T0817",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 94.06453704833984
+        },
+        {
+          "name": "BOOTRASH",
+          "clean_id": "S0114",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexSOFTWARE"
+          ],
+          "score": 92.9869384765625
+        },
+        {
+          "name": "WireLurker",
+          "clean_id": "S0312",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexSOFTWARE"
+          ],
+          "score": 92.31473541259766
+        }
+      ]
+    },
+    {
+      "query": "Backdoor (TOOL), uses Tiny Encryption Algorithm (ENCR), uses FireEye (SECTEAM), uses (TEA) (ENCR), uses (rundll32.exe (FILE), uses fywhx.dll (FILE), uses Tiny Encryption Algorithm (TEA). (ENCR), uses Tiny Encryption Algorithm (TEA) (ENCR), uses \"Communicator\" (FILE), uses %APPDATA\\Roaming\\Dell\\impku.idat, (FILE), associatedwith send system information (ACT), associatedwith access (ACT), associatedwith 'getNK2' (ACT), associatedwith spear phishing (ACT), associatedwith steals (ACT), associatedwith uploads data (ACT), associatedwith execute malicious code (ACT), usedby Carbanak (MAL), usedby BONDUPDATER (MAL), usedby OilRig (APT), usedby HALFBAKED (MAL), usedby FIN7 (APT), uses CosmicDuke samples (MAL), uses CRASHOVERRIDE malware (MAL), uses CRASHOVERRIDE (MAL), uses OilRig's (APT), uses Longwatch (MAL), uses ValueVault (MAL), uses Pickpocket (MAL), uses HALFBAKED (MAL), uses GGLDR/HALFBAKED (MAL), uses Carbanak (MAL), uses Carbanak Group', (APT), uses Nick Carr, Saravanan Mohankumar, Yogesh Londhe, Barry Vengerik, Dominik Weber (SECTEAM), uses Mandiant (SECTEAM), uses Phishing (ACT), uses FIN7 (APT), uses COSMICDUKE (MAL), uses PinchDuke (MAL), uses CosmicDuke: Cosmu (MAL), uses e-mail (EMAIL), uses industry.faxsolution@gmail.com (EMAIL), uses hxxp://efax.pfdweek[.]com/eFax/message0236.ZIP (URL), uses Microsoft (IDTY), uses PowerDuke (MAL), uses Oven (MAL), uses attack (ACT), associatedwith CVE-2010- 0232 (VULID), usedby f713d5df826c6051e65f995e57d6817d (HASH), usedby 68ce4c0324f03976247 ! 48803a7d988f9f9f43f (HASH), usedby kxwn.lock:schemas (FILE), usedby 4e1dec16d58ba5f4196f6a76a0bca75c (HASH), usedby a7c43d7895ecef2b6306fb00972c321060753361 (HASH), usedby the clection-headlines-FTE2016 filein (FILE), usedby fywhx.dll (FILE), usedby MD5 (ENCR), usedby ad6723f61e10aefd9688b29b474a9323 (HASH), usedby SHA1 (ENCR), usedby dd766876b3be5022bfb062f454f878abfbc670b8 (HASH), usedby ab32c09c46e0c9dbc576fefee68e5a2f57e0482e (HASH), usedby Alternate data stream (ADS) PNG file (FILE), usedby ea095 (HASH), usedby harvard-iop-fall-2016-poll.doc (FILE), usedby ead48f15ebc088384a4bd6190c2343fa (HASH), usedby 0b9dccfcb2cc8bced343b9d930e475f1d0e5d966 (HASH), usedby 39c2a7266132e0af016a48b97d565463d90 (HASH), usedby 37486.ZIP (FILE), usedby f79caf27a99c091e6c1775b306993341 (HASH), usedby a76c02c067eae26d78f4b494274dfa6aedc6fa7a (HASH)",
+      "entity_name": "Backdoor",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "Dynamic Resolution",
+          "clean_id": "T1637",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 83.1508560180664
+        },
+        {
+          "name": "Riltok",
+          "clean_id": "S0403",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexSOFTWARE"
+          ],
+          "score": 73.92625427246094
+        },
+        {
+          "name": "Dynamic Resolution",
+          "clean_id": "T1568",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 72.29013061523438
+        }
+      ]
+    },
+    {
+      "query": "spear phishing (ACT), targets nancial institutions (IDTY), targets recipients (IDTY), targets employees (IDTY), targets victimized organization's networks. (IDTY), targets companies (IDTY), targets high-profile organizations (IDTY), targets IBM (IDTY), targets European Central Bank (IDTY), targets cybersecurity companies (IDTY), targets of (IDTY), uses 366 (TOOL), uses macros (TOOL), uses VBA (TOOL), uses PowerShell (TOOL), uses MSFT O (TOOL), uses t.txt (FILE), uses Activ (TOOL), uses //b (TOOL), uses wscript (TOOL), uses (c);}catch(e){} (TOOL), uses /e: (TOOL), uses /b (TOOL), uses w=wsc@ript (TOOL), uses VBE (FILE), uses VBScript (TOOL), uses Google Drive URL (URL), uses days (TOOL), uses mail.ru (EMAIL), uses (953) 3413178 (TOOL), uses Sergey Kuznetsov; (TOOL), uses sincerely, (TOOL), uses yearend contribution term (TOOL), uses Cobalt Strike hacking tools (TOOL), uses emails (TOOL), uses Bulcunalo Bax (TOOL), uses Cepreii (TOOL), uses Cymma (TOOL), uses Translated: Good Day! (TOOL), uses send contact details (TOOL), uses The amount (TOOL), uses deposit (TOOL), uses 32 million rubles (TOOL), uses 00 kopecks, (TOOL), uses for period (TOOL), associatedwith Carbanak (MAL), associatedwith Bateleur JavaScript (MAL), associatedwith Spy. Sekur (MAL), associatedwith DNSBot (MAL), associatedwith SQLRat (MAL), associatedwith Gri (MAL), associatedwith More_eggs backdoor. (MAL), usedby FIN7 (APT), usedby Intrusion (APT), usedby FIN6 (APT), usedby Carbanak (APT), hasattacktime 2016 (TIME), hasattacktime 2019 (TIME), hasattacktime 2018 (TIME), hasattacktime March (TIME), hasattacktime May 2018 (TIME), hasattacktime 2018. (TIME), hasattacklocation U.S. (LOC), hasattacklocation United States (LOC), hasattacklocation ru (LOC), targetedby think tanks (IDTY), targetedby FDA (IDTY), targetedby victimized organization's networks. (IDTY), targetedby Null (VULNAME), targetedby NGOs (IDTY), targetedby Elections (IDTY), targetedby Financial Institutions (IDTY), targetedby Eastern Europe (LOC), identifies Volexity (SECTEAM), identifies FireEye (SECTEAM), identifies Nick Carr, Saravanan Mohankumar, Yogesh Londhe, Barry Vengerik, Dominik Weber (SECTEAM), identifies Mandiant (SECTEAM), identifies Proofpoint (SECTEAM), identifies Visa (SECTEAM), identifies APT (SECTEAM), identifies FireEye iSIGHT (SECTEAM), identifies Bitdefender's (SECTEAM), uses Dukes (APT), uses FIN7's (APT), uses Group (APT), uses Carbanak Group', (APT), uses FIN7 (APT), uses Intrusion (APT), uses FIN6 (APT), uses More_eggs backdoor. (MAL), uses ITG08's (APT), uses criminal group (APT), uses Carbanak (MAL), associatedwith Twitter: (TOOL), associatedwith %TEMP%\\AdobeUpdateMana (FILE), associatedwith %TEMP%\\debug.txt (FILE), associatedwith JScript (TOOL), associatedwith LNK (TOOL), associatedwith mshta.exe (FILE), associatedwith VBScript (TOOL), associatedwith Backdoor (TOOL), associatedwith @Volexity, @stevenadair, @5ck, @imhlv2, @attrc (TOOL), usedby attacks (ACT), usedby persist (ACT), usedby gain an initial foothold (ACT), usedby activity (ACT)",
+      "entity_name": "spear phishing",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "Obtain Capabilities: Tool",
+          "clean_id": "T1588.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 112.83094787597656
+        },
+        {
+          "name": "Stage Capabilities: Upload Tool",
+          "clean_id": "T1608.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 109.64298248291016
+        },
+        {
+          "name": "Ingress Tool Transfer",
+          "clean_id": "T1544",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 108.60497283935547
+        }
+      ]
+    },
+    {
+      "query": "VBScript (TOOL), uses a7a927bd44040817ae39e15aeb3f0b69ca943d4ce5b00d12eed6fae5b1c325d0 (HASH), uses mses.exe (FILE), uses wscript.exe (FILE), uses backdoor. (FILE), uses '58d2a83f777908.23270411.vbs' (FILE), uses DNS: (PROT), uses '58d2a83f777942.26535794.ps1' (FILE), uses VBE (FILE), uses M-Trends (SECTEAM), uses LNK (FILE), uses RTF (FILE), uses DOCX (FILE), uses mshta.exe (FILE), uses Falcon EPP (SECTEAM), uses OLE compound file. (FILE), uses VBE file (FILE), uses base64 (ENCR), uses EXE files (FILE), uses Powershell script files (FILE), uses HTTP (PROT), uses AdobeUpdateManagementTool.vbs (FILE), uses ps1__.ps1 (FILE), uses insatller.vbs (FILE), uses Script File (FILE), uses starter.vbs (FILE), associatedwith spear phishing (ACT), associatedwith email (ACT), usedby Windows (OS), usedby HALFBAKED (MAL), usedby FIN7's (APT), usedby FIN7 (APT), uses Loader's (APT), uses retail (IDTY), uses Energy (IDTY), uses Construction (IDTY), uses Casinos and Gaming (IDTY), uses Education (IDTY), uses Travel Hospitality (IDTY), uses restaurants (IDTY), uses Securities and Exchange Commission (IDTY), uses FireEye (SECTEAM), uses deobfuscation (ACT), uses spear phishing (ACT), uses Phishing (ACT), uses Computer (IDTY), uses FIN7 (APT), usedby OLE compound file. (FILE), usedby '58d2a83f777908.23270411.vbs' (FILE), usedby 'mshta.exe' (FILE), usedby '58d2a83f7778d5.36783181.vbs' (FILE), usedby \\Users\\ [user_name]\\Intel\\58d2a83f777908.23270411.v (FILE), usedby [user_name]\\Intel\\58d2a83f777942.26535794. ps1 (FILE), usedby LNK (FILE), usedby RTF (FILE), usedby DOCX (FILE), usedby mshta.exe (FILE), usedby VBE file (FILE), usedby VBS (FILE), usedby EXE files (FILE), usedby %md_id% (FILE), usedby XORed (ENCR), usedby name (FILE), usedby %l_ver% (FILE), usedby Dim HH5hjs54j69a: (FILE), usedby HH5hjs54j69a (FILE), usedby %ptrtr% (FILE), usedby Dim HI0cvexizqw: (FILE), usedby HI0cvexizqw (FILE), usedby %compCount% (FILE), usedby HKEY_CURRENT_USER\\System\\CurrentControlSet\\Control\\Network\\C (FILE), usedby C:\\ProgramData\\DropeboxJoePC (FILE), usedby screenshot__.png (FILE), usedby exe__.exe (FILE), usedby vb__.vbs (FILE), usedby KB LanCradDriver;vbs (FILE), usedby HTA files (FILE), usedby PowerShell scripts (FILE)",
+      "entity_name": "VBScript",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "Riltok",
+          "clean_id": "S0403",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexSOFTWARE"
+          ],
+          "score": 98.79515075683594
+        },
+        {
+          "name": "Dynamic Resolution",
+          "clean_id": "T1637",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 97.50843811035156
+        },
+        {
+          "name": "ANDROIDOS_ANSERVER.A",
+          "clean_id": "S0310",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexSOFTWARE"
+          ],
+          "score": 90.28681182861328
+        }
+      ]
+    },
+    {
+      "query": "email (ACT), targets credentials (IDTY), targets Microsoft (IDTY), targets network information (IDTY), targets exploits (VULNAME), targets system information (IDTY), targets desktop screenshots (IDTY), targets hotel chain (IDTY), targets restaurant (IDTY), targets banking industry (IDTY), targets employees (IDTY), uses URLs (URL), uses Meterpreter (TOOL), uses VBE (FILE), uses PDF file (FILE), uses documents (TOOL), uses macros (TOOL), uses Microsoft Word (TOOL), uses http://95.215.47.105 (URL), uses AdobeUpdateManagementTool.vbs (FILE), uses SHA-1 (ENCR), uses 8d7c90a699b4055e9c7db4571588c765c1cf2358 (HASH), uses a91416185d2565ce991fc2c0dd9591c71fd1f627 (HASH), uses %temp%\\WindowsUpdate (FILE), uses %temp%\\WindowsUpdate_\\Dropebox<username> (FILE), uses VBS (FILE), uses WindowsUpdate (FILE), uses AdobeUpdateManagementTool. (FILE), uses SysChecks (FILE), associatedwith Office 365 E5 (SECTEAM), associatedwith Windows (OS), associatedwith Saitama (MAL), associatedwith backdoor (MAL), associatedwith Safe Links protection (SECTEAM), associatedwith Office 365 ATP (SECTEAM), associatedwith CosmicDuke malware samples (MAL), associatedwith CosmicDuke samples (MAL), associatedwith embedded malware (MAL), associatedwith FIN7's malware (MAL), usedby FIN7 (APT), hasattacktime May 16, 2022 (TIME), targetedby (Behavior:Win32/Atosev.gen!A) (VULNAME), targetedby Jordan. (LOC), targetedby diplomat (IDTY), targetedby foreign ministry (IDTY), targetedby Jordan's (LOC), targetedby government oFcial (IDTY), targetedby Jordan Government (IDTY), identifies Microsoft Threat Protection (SECTEAM), identifies Threat Intelligence Team (SECTEAM), identifies M-Trends (SECTEAM), identifies Office 365 Advanced Threat Protection (SECTEAM), identifies Windows Defender Advanced Threat Protection (SECTEAM), identifies Office 365 ATP (SECTEAM), identifies Windows Defender ATP (SECTEAM), uses malware (MAL), uses (APTs). (APT), uses Saitama backdoor (MAL), uses APT34 (APT), uses FIN7 (APT), uses MiniDuke (MAL), uses COSMICDUKE (MAL), associatedwith PDF (FILE), associatedwith malicious attachment. (FILE), associatedwith LNK (FILE), associatedwith RTF (FILE), associatedwith DOCX (FILE), associatedwith mshta.exe (FILE), associatedwith VBScript (TOOL), associatedwith Microsoft Word document (FILE), associatedwith attached file (FILE), associatedwith documents (TOOL), usedby DNS (PROT)",
+      "entity_name": "email",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "OilCheck",
+          "clean_id": "S1171",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexSOFTWARE"
+          ],
+          "score": 59.39706039428711
+        },
+        {
+          "name": "Riltok",
+          "clean_id": "S0403",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexSOFTWARE"
+          ],
+          "score": 49.78599548339844
+        },
+        {
+          "name": "Dynamic Resolution",
+          "clean_id": "T1637",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 48.19026565551758
+        }
+      ]
+    },
+    {
+      "query": "phishing lure (ACT), associatedwith LNK (FILE)",
+      "entity_name": "phishing lure",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "Obfuscated Files or Information: LNK Icon Smuggling",
+          "clean_id": "T1027.012",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 9.01913833618164
+        },
+        {
+          "name": "Phishing",
+          "clean_id": "T1660",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 5.427229404449463
+        },
+        {
+          "name": "Phishing",
+          "clean_id": "T1566",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 5.384521961212158
+        }
+      ]
+    },
+    {
+      "query": "Microsoft Office (TOOL), associatedwith Unlock Contents (ACT), associatedwith Double Click (ACT), usedby document (FILE)",
+      "entity_name": "Microsoft Office",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "Office Application Startup: Office Template Macros",
+          "clean_id": "T1137.001",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 9.019087791442871
+        },
+        {
+          "name": "Masquerading: Double File Extension",
+          "clean_id": "T1036.007",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 8.412789344787598
+        },
+        {
+          "name": "Office Application Startup: Office Test",
+          "clean_id": "T1137.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 7.577517509460449
+        }
+      ]
+    },
+    {
+      "query": "Double Click (ACT), associatedwith Microsoft Office (TOOL)",
+      "entity_name": "Double Click",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "Office Application Startup: Office Test",
+          "clean_id": "T1137.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 7.577517509460449
+        },
+        {
+          "name": "Office Application Startup",
+          "clean_id": "T1137",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 6.824210166931152
+        },
+        {
+          "name": "Office Application Startup: Office Template Macros",
+          "clean_id": "T1137.001",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 6.702854156494141
+        }
+      ]
+    },
+    {
+      "query": "Unlock Contents (ACT), associatedwith Microsoft Office (TOOL)",
+      "entity_name": "Unlock Contents",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "Office Application Startup: Office Test",
+          "clean_id": "T1137.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 7.577517509460449
+        },
+        {
+          "name": "Office Application Startup",
+          "clean_id": "T1137",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 6.824210166931152
+        },
+        {
+          "name": "Office Application Startup: Office Template Macros",
+          "clean_id": "T1137.001",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 6.702854156494141
+        }
+      ]
+    },
+    {
+      "query": "vbscript:Execute(\"On Error Resume (ACT), associatedwith 'mshta.exe' (FILE), associatedwith LNK (FILE)",
+      "entity_name": "vbscript:Execute(\"On Error Resume",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "User Execution: Malicious File",
+          "clean_id": "T1204.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 10.148015022277832
+        },
+        {
+          "name": "Obfuscated Files or Information: LNK Icon Smuggling",
+          "clean_id": "T1027.012",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 9.592646598815918
+        },
+        {
+          "name": "System Binary Proxy Execution: Mshta",
+          "clean_id": "T1218.005",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 8.853623390197754
+        }
+      ]
+    },
+    {
+      "query": "Word (TOOL), uses #text (FILE), associatedwith establish rapport (ACT), usedby More_eggs (MAL), usedby #text (FILE), usedby DOC (FILE), uses Microsoft (IDTY), uses URL (URL)",
+      "entity_name": "Word",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "Masquerading: Double File Extension",
+          "clean_id": "T1036.007",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 15.576680183410645
+        },
+        {
+          "name": "User Execution: Malicious File",
+          "clean_id": "T1204.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 13.702610969543457
+        },
+        {
+          "name": "Masquerading: Masquerade File Type",
+          "clean_id": "T1036.008",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 13.348844528198242
+        }
+      ]
+    },
+    {
+      "query": "PowerShell (TOOL), uses cyzfc.dat (FILE), uses scripts (FILE), uses v.vbs (FILE), uses v.txt (FILE), uses sdbinst.exe (FILE), uses documents (FILE), uses (https://www.fireeye.com/blog/threat-research/2017/05/fin7-shimdatabases-persistence.html) (URL), uses Gigamon ATR (SECTEAM), uses (stealer_component_reu.dll (FILE), uses XOR-encrypted (ENCR), uses XOR (ENCR), uses DLL (FILE), uses DNS: (PROT), uses '58d2a83f777942.26535794.ps1' (FILE), uses reflection (ENCR), uses shellcode (FILE), uses GZip (ENCR), uses TCP (PROT), uses JABzADOAIgBlAHcALQBPAGIAagBlAGMAdAAgAEkATwAuAEOAZQBtAGSAcgBSAFMA AYQBtACgALABbAEMAbwBuAHYAZQBYAHQAXQA6ADoARgByAG8AbQBCAGEAcwBlADY QAcgBpAG4AZwAoACIASAAOAHMASQBBAEEAQQBBAEEAQQBBAEEAQQBLADEAVwBXA EBAQGBSACsATABYACSAQwBEADUAVwBTAGEAQwBpAFgAdwBuAFoAbwBwAFUAcgBq4 @shift /0 powershell ~nop =W hidden encodedcommand JABzADOATgBIAHcALQBPAGIAagBlAGMAdAAgAEkATwAuAEOAZQBtAG AYQBtACgALABbAEMAbwBuAHYAZQBYAHQAXQA6ADoARgByAG8AbQBCA QAcgBpAG4AZwAoACIASAAOAHMASQBBAEEAQQBBAEEAQQBBAEEAQQBM FMAQgBMACsAZQBmAHcAcgBtAEEANABZAFIAbgBkAGEAQgBSAC8AOQB AFUAVwBsAEYAZQBwAGEAMwBYAGQANABGAFEASQBtADEASgBNAFkAQw 77 7,D 5~ (FILE), uses =w hidden encodedcommand (FILE), uses Ib Imin powershell exe (FILE), uses powershell exe (FILE), uses <script> (FILE), uses powershell .exe (FILE), uses FTP (PROT), uses script (FILE), uses HTTP (PROT), uses insatller.vbs (FILE), uses DNS (PROT), uses EXE (FILE), uses base64-encoded (ENCR), uses .lnk file (FILE), uses rundll32.exe (FILE), uses 95.216.59.92 (IP), uses ProcessCreationEvents (FILE), uses cd92f19d3ad4ec50f6d19652af010fe07dca55e1\"; (HASH), uses base64 (ENCR), uses ds7002.lnk (FILE), uses PDF (FILE), uses LNK (FILE), associatedwith reconnaissance (ACT), associatedwith tunneling (ACT), associatedwith phishing attacks (ACT), associatedwith executed (ACT), associatedwith credential stealing (ACT), associatedwith DLL injection: (ACT), associatedwith inject (ACT), associatedwith ITG08 activity (ACT), associatedwith stolen credentials; (ACT), associatedwith malicious activity (ACT), associatedwith DLL injection (ACT), associatedwith install (ACT), associatedwith move (ACT), associatedwith network reconnaissance (ACT), associatedwith privilege escalation), (ACT), associatedwith Lateral Movement (ACT), associatedwith data exfiltration (ACT), associatedwith communicating with C&C servers (ACT), associatedwith remote command execution (ACT), associatedwith file transmission (ACT), associatedwith keylogging (ACT), usedby Windows (OS), usedby OilRig (APT), usedby Powruner (MAL), usedby Glimpse (MAL), usedby OilRig group (APT), usedby TiniMet: (MAL), usedby Bateleur (APT), usedby FIN7 (APT), usedby information stealing malware (MAL), usedby ITG08 (APT), usedby ITG08's (APT), usedby EmpireMonkey (APT), usedby FIN6 (APT), usedby signed malware (MAL), usedby Anunak (MAL), usedby backdoor (MAL), usedby POSHSPY (MAL), usedby APT29 (APT), usedby malware (MAL), usedby FANCY BEAR (APT), usedby X-Agent (MAL), usedby $ENV:PROCESSOR_ARCHITECTURE (OS), usedby SPIKERUSH backdoor (MAL), identifies Mandiant (SECTEAM), identifies FireEye (SECTEAM), uses industry.faxsolution@gmail.com (EMAIL), uses WIZARD SPIDER (APT), uses CrowdStrike IR (SECTEAM), uses reconnaissance (ACT), uses TrickBot's (MAL), uses OilRig (APT), uses spear-phishing attacks (ACT), uses create an arbitrary file (ACT), uses Powruner (MAL), uses hxxp://dns-update[.]club/v.txt (URL), uses command whoami (ACT), uses download (ACT), uses upload (ACT), uses Glimpse (MAL), uses executed (ACT), uses spear phishing (ACT), uses FIN7's (APT), uses FIN7 (APT), uses lateral spread attack (ACT), uses attack (ACT), uses GGLDR (MAL), uses Tinymet (MAL), uses JavaScript bot (MAL), uses inject shipped portable executables (ACT), uses ship entire malware platforms (ACT), uses H1N1 (MAL), uses DLL injection (ACT), uses FIN6. (APT), uses FireEye (SECTEAM), uses LockerGoga ransomware (MAL), uses Ryuk (MAL), uses intrusions (ACT), uses FIN6 (APT), uses FireEye Endpoint Security (SECTEAM), uses ITG08's (APT), uses More_eggs malware (MAL), uses Privilege Escalation (ACT), uses Lateral Movement (ACT), uses Recononnaissance (ACT), uses More_eggs backdoor (MAL), uses ITG08 (APT), uses More_eggs (MAL), uses shellcode backdoor beacon (MAL), uses Reflectivcloader@4 (MAL), uses Cobalt-Strike beacon (MAL), uses PowerShell/WMI (MAL), uses FrameworkPOS scraping malware (MAL), uses attacks (ACT), uses MAZE Ransomware (MAL), uses BEACON (MAL), uses Replication Through Removable Media (ACT), uses MAZE, Desktop Wallpaper Ransomware (MAL), uses PowerShell FTP Upload (ACT), uses Computer (IDTY), uses backdoor (MAL), uses Mandiant (SECTEAM), uses POSHSPY (MAL), uses APT29 (APT), uses Dunwoody Mandiant (SECTEAM), uses malware (MAL), uses hxxp://efax.pfdweek[.]com/eFax/message0236.ZIP (URL), uses Phishing (ACT), uses pandorasong.com\" (DOM), uses COZY BEAR (APT), uses SeaDaddy (MAL), uses SPIKERUSH backdoor (MAL), uses e-mail (EMAIL), usedby \\\\.\\pipe\\MSSE-<number>-server (FILE), usedby portable executables (PE) (FILE), usedby Microsoft O ffi ce (Word and Excel) documents (FILE), usedby scripts (FILE), usedby hUpdateCheckers.ps1 (FILE), usedby dUpdateCheckers.ps1 (FILE), usedby v.vbs (FILE), usedby GoogleUpdateschecker.vbs (FILE), usedby cUpdateCheckers.bat (FILE), usedby b.txt (FILE), usedby fi les (FILE), usedby me.txt (FILE), usedby sdbinst.exe (FILE), usedby ~bxor (ENCR), usedby # ce documents (FILE), usedby 59301fecd6ac77.84215450.psl (FILE), usedby 6bc8770206c5f2bb4079f7583615adeb4076f2e2d0c655fbafedd9669dc3a213 df22408833b2ae58f0d3e2fe87581be31972ef56e0ebf5efafc4e6e0341b5521 2b4991b2a2792436b50404dcf6310ef2af2573505810ebac08e32f17aee3fbbe ebca565e21a42300e19f250f84b927fa3b32debf3fe13003a4aa5b71ed5cbee9 6604d806eb68fdf914dfb6bbf907a4f2bd9b8757fc4da4e7c5e4de141b8d4e2c (HASH), usedby documents (FILE), usedby Microsoft Word documents (FILE), usedby DLL (FILE), usedby Stealer DLL (FILE), usedby XML task =les. (FILE), usedby DLLs (FILE), usedby PowerShell DLL documents (FILE), usedby DNS: (PROT), usedby '58d2a83f777942.26535794.ps1' (FILE), usedby '58d2a83f7778d5.36783181.vbs' (FILE), usedby \\Users\\ [user_name]\\Intel\\58d2a83f777908.23270411.v (FILE), usedby [user_name]\\Intel\\58d2a83f777942.26535794. ps1 (FILE), usedby TCP (PROT), usedby Ad % nd.exe (FILE), usedby script (FILE), usedby FTP (PROT), usedby executables (FILE), usedby ps1__.ps1 (FILE), usedby vb__.vbs (FILE), usedby exe__.exe (FILE), usedby screenshot__.png (FILE), usedby C:\\ProgramData\\DropeboxJoePC (FILE), usedby HKEY_CURRENT_USER\\System\\CurrentControlSet\\Control\\Network\\C (FILE), usedby %compCount% (FILE), usedby HI0cvexizqw (FILE), usedby Dim HI0cvexizqw: (FILE), usedby %ptrtr% (FILE), usedby HH5hjs54j69a (FILE), usedby Dim HH5hjs54j69a: (FILE), usedby %l_ver% (FILE), usedby name (FILE), usedby XORed (ENCR), usedby %md_id% (FILE), usedby el64.exe (FILE), usedby el32.exe (FILE), usedby DNS (PROT), usedby SMB (PROT), usedby base64-encoded (ENCR), usedby BfeOnServiceSta % TypeChange (FILE), usedby 68ce4c0324f03976247 ! 48803a7d988f9f9f43f (HASH), usedby f713d5df826c6051e65f995e57d6817d (HASH), usedby a76c02c067eae26d78f4b494274dfa6aedc6fa7a (HASH), usedby f79caf27a99c091e6c1775b306993341 (HASH), usedby 37486.ZIP (FILE), usedby DeXOR (ENCR), usedby XOR (ENCR), usedby 9858d5cb2a6614be3c48e33911bf9f7978b441bf\"; (HASH), usedby SHA1 (ENCR), usedby NetworkCommunicationEvents (FILE), usedby ProcessCreationEvents (FILE), usedby ds7002.lnk (FILE), usedby 6ed0020b0851 ' 71d5b0076f4ee95f3c) (HASH), usedby base64 (ENCR)",
+      "entity_name": "PowerShell",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "Taint Shared Content",
+          "clean_id": "T1080",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 106.279052734375
+        },
+        {
+          "name": "Masquerading: Double File Extension",
+          "clean_id": "T1036.007",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 101.80160522460938
+        },
+        {
+          "name": "Dynamic Resolution",
+          "clean_id": "T1637",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 101.4457015991211
+        }
+      ]
+    },
+    {
+      "query": "WMI (TOOL), uses base64-encoded (ENCR), uses VBScript. (FILE), uses Admin$ (FILE), uses DNS (PROT), uses Win32_PingStatus (FILE), uses XOR-encrypted (ENCR), uses script (FILE), uses Mandiant (SECTEAM), uses FireEye FLARE (SECTEAM), uses TCP (PROT), associatedwith reconnaissance (ACT), associatedwith communicating with C&C servers (ACT), associatedwith anti-AV functionality. (ACT), associatedwith network reconnaissance (ACT), associatedwith move (ACT), associatedwith install (ACT), associatedwith DLL injection (ACT), usedby APT29 (APT), usedby ransomware (MAL), usedby FIN7 (APT), usedby POSHSPY (MAL), usedby Windows (OS), usedby backdoor (MAL), uses Dunwoody Mandiant (SECTEAM), uses APT29 (APT), uses POSHSPY (MAL), uses backdoor (MAL), uses Recononnaissance (ACT), uses Lateral Movement (ACT), uses Privilege Escalation (ACT), uses More_eggs malware (MAL), uses More_eggs backdoor (MAL), uses ITG08 (APT), associatedwith EternalBlue (VULNAME), usedby '58d2a83f777942.26535794.ps1' (FILE), usedby psexec.exe (FILE), usedby WriteFile() (FILE), usedby CreateFile() (FILE), usedby SMB (PROT), usedby sample (FILE), usedby DNS (PROT), usedby 'eNotif' (FILE), usedby \\Intel\\{BFF4219E-C7D1-2880-AE589C9CD9701C90}\\58d2a83f7776e0.72726761.v bs (FILE), usedby \\Intel\\{BFF4219E-C7D1-2880-AE589C9CD9701C90}\\58d2a83f7776b5.64953395.t xt (FILE), usedby \\Intel\\{BFF4219E-C7D1-2880-AE589C9CD9701C90}\\58d2a83f777688.78384945. ps1 (FILE), usedby '58d2a83f777638.60220156.i ni' (FILE), usedby \\Intel\\ (FILE), usedby '58d2a83f777908.23270411.vbs' (FILE), usedby 'mshta.exe' (FILE), usedby \\\\.\\pipe\\MSSE-<number>-server (FILE), usedby DeXOR (ENCR), usedby XOR (ENCR), usedby base64-encoded (ENCR), usedby msxsl.exe (FILE), usedby [user_name]\\Intel\\58d2a83f777942.26535794. ps1 (FILE), usedby \\Users\\ [user_name]\\Intel\\58d2a83f777908.23270411.v (FILE), usedby '58d2a83f7778d5.36783181.vbs' (FILE)",
+      "entity_name": "WMI",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "Dynamic Resolution: Fast Flux DNS",
+          "clean_id": "T1568.001",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 55.6015739440918
+        },
+        {
+          "name": "Dynamic Resolution",
+          "clean_id": "T1568",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 52.413822174072266
+        },
+        {
+          "name": "Dynamic Resolution",
+          "clean_id": "T1637",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 51.23971939086914
+        }
+      ]
+    },
+    {
+      "query": "Cobalt Strike (TOOL), uses \\\\.\\pipe\\MSSE-<number>-server (FILE), uses TLS (PROT), uses Mandiant (SECTEAM), uses RPC Service Controller protocol (PROT), uses Gigamon ATR (SECTEAM), uses (https://www.cobaltstrike.com/help-malleable-c2) (URL), uses DNS (PROT), uses DNS: (PROT), uses DeXOR (ENCR), uses XOR (ENCR), associatedwith reconnaissance (ACT), associatedwith attack (ACT), associatedwith communicating with C&C servers (ACT), associatedwith post-exploitation (ACT), associatedwith infiltrate (ACT), associatedwith move laterally (ACT), associatedwith exfiltrate data (ACT), associatedwith deploy anti-forensic and evasion tools (ACT), usedby espionage actors (APT), usedby Kegtap (MAL), usedby TrickBot (MAL), usedby Ryuk (MAL), usedby FIN7 (APT), usedby Windows (OS), identifies Mandiant (SECTEAM), identifies FireEye (SECTEAM), uses reconnaissance activity (ACT), uses UNC1878 (APT), uses TrickBot (MAL), uses UNC1878's (APT), uses malicious macro (MAL), uses QBot (MAL), uses Emotet (MAL), uses VBA ]Visual Basic Application) macro (MAL), uses Emerging Threats Pro (SECTEAM), uses caa.stage.[encryptedstage].MaliciousDomain.com (DOM), uses baa.stage.[encryptedstage].MaliciousDomain.com (DOM), uses aaa.stage.[encryptedstage].MaliciousDomain.com (DOM), uses lateral spread attack (ACT), uses attack (ACT), uses FIN7 (APT), uses C2 (TOOL), uses (https://www.cobaltstrike.com/) (URL), uses LockerGoga ransomware (MAL), uses Ryuk (MAL), uses FIN6 (APT), uses FireEye Endpoint Security (SECTEAM), uses ITG08 (APT), uses hijack (ACT), uses move (ACT), uses 2016 campaign (ACT), uses phishing email (ACT), uses FireEye (SECTEAM), uses Odinaff (MAL), uses Sekur (MAL), uses CARBON SPIDER (APT), uses campaign (ACT), uses Cobalt (APT), uses CrowdStrike intelligence (SECTEAM), uses COBALT SPIDER (APT), uses banks (IDTY), uses activity (ACT), uses Carbanak (APT), uses Carbanak (MAL), uses Reconocimiento Mandiant (SECTEAM), uses MAZE (APT), uses intrusions (ACT), associatedwith 94.140.116.176 (IP), usedby IP (PROT), usedby Excel file (FILE), usedby DNS (PROT), usedby DNS: (PROT), usedby '58d2a83f777942.26535794.ps1' (FILE), usedby '58d2a83f7778d5.36783181.vbs' (FILE), usedby \\Users\\ [user_name]\\Intel\\58d2a83f777908.23270411.v (FILE), usedby [user_name]\\Intel\\58d2a83f777942.26535794. ps1 (FILE), usedby RDP (PROT), usedby psexesvc.exe (FILE), usedby 87dfac39f577e5f52f0724455e8832a8 (HASH), usedby smrs.exe (FILE), usedby (d68351f754a508a386c06946c8e79088) (HASH), usedby documents (FILE), usedby 1ec48e5c0b88f4f850facc718bbdec9200e4bd2d (HASH)",
+      "entity_name": "Cobalt Strike",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "Dynamic Resolution: Fast Flux DNS",
+          "clean_id": "T1568.001",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 62.56828689575195
+        },
+        {
+          "name": "Dynamic Resolution",
+          "clean_id": "T1637",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 59.875823974609375
+        },
+        {
+          "name": "Dynamic Resolution",
+          "clean_id": "T1568",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 56.73295211791992
+        }
+      ]
+    },
+    {
+      "query": "GUID (TOOL), uses HTTP (PROT), uses backdoor. (FILE), usedby HALFBAKED (MAL), usedby FIN7's (APT), uses \\Intel\\ (FILE), usedby HTTP (PROT), usedby folse); (FILE), uses Akiax) (MAL), usedby '58d2a83f777908.23270411.vbs' (FILE), usedby 'mshta.exe' (FILE)",
+      "entity_name": "GUID",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "File Deletion",
+          "clean_id": "T1630.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 18.806093215942383
+        },
+        {
+          "name": "Masquerading: Masquerade File Type",
+          "clean_id": "T1036.008",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 18.49979019165039
+        },
+        {
+          "name": "Masquerading: Double File Extension",
+          "clean_id": "T1036.007",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 17.210886001586914
+        }
+      ]
+    },
+    {
+      "query": "FIN7's (APT), targets restaurant industry (IDTY), targets business (IDTY), targets nancial (IDTY), targets security company (IDTY), targets restaurants (IDTY), targets banks (IDTY), targets VPS provider (IDTY), uses FIN7 campaign (ACT), uses phishing attacks (ACT), uses documents (FILE), uses macros (TOOL), uses executed (ACT), uses VBA (TOOL), uses PowerShell (TOOL), uses # ce documents (FILE), uses MSFT O (TOOL), uses spear phishing (ACT), uses cyber crime activity (ACT), uses threat activity (ACT), uses FIN7 phishing emails (ACT), uses exploited (ACT), uses Phishing (ACT), uses phishing documents (FILE), uses postexploitation (ACT), uses CARBANAK backdoor (MAL), uses card (ACT), uses campaigns (ACT), uses social engineering (ACT), uses criminal ventures (ACT), uses BABYMETAL (MAL), uses Carbanak (MAL), uses RDFSNIFFER (MAL), uses BOOSTWRITE (MAL), uses Gigamon ATR (TOOL), uses DNS (PROT), uses C2 (TOOL), affiliatedwith Carbanak (APT), affiliatedwith Malicious actors (APT), affiliatedwith FIN7 (APT), affiliatedwith groups (APT), hasattacktime August (TIME), hasattacktime 2018 (TIME), hasattacktime 2013 (TIME), hasattacklocation Europe (LOC), hasattacklocation Central America. (LOC), identifiedby Morphisec (SECTEAM), identifiedby FireEye iSIGHT Intelligence (SECTEAM), identifiedby FireEye (SECTEAM), identifiedby FBI (SECTEAM), identifies SECURITY (SECTEAM), identifies FLARE (SECTEAM), identifies FireEye (SECTEAM), identifies We (SECTEAM), identifies FireEye Mandiant (SECTEAM), identifies Gigamon Applied Threat Research's (SECTEAM), identifies ATR (SECTEAM), identifies Justin Warner (SECTEAM), identifies Stephen Hinck (SECTEAM), uses FIN7 (APT), uses Carbanak Group,' (APT), associatedwith 'mshta.exe' (FILE), associatedwith Carbanak (MAL), associatedwith CARBANAK backdoor (MAL), associatedwith RDFSNIFFER (MAL), associatedwith BOOSTWRITE (MAL), associatedwith '58d2a83f777908.23270411.vbs' (FILE), associatedwith \\Intel\\ (FILE), associatedwith '58d2a83f777638.60220156.i ni' (FILE), associatedwith \\Intel\\{BFF4219E-C7D1-2880-AE589C9CD9701C90}\\58d2a83f777688.78384945. ps1 (FILE), associatedwith \\Intel\\{BFF4219E-C7D1-2880-AE589C9CD9701C90}\\58d2a83f7776b5.64953395.t xt (FILE), associatedwith \\Intel\\{BFF4219E-C7D1-2880-AE589C9CD9701C90}\\58d2a83f7776e0.72726761.v bs (FILE), associatedwith \\Intel\\{BFF4219E-C7D1-2880-AE589C9CD9701C90}\\58d2a83f777716.48248237.v bs (FILE), usedby https://blog.gigamon.com/author/stephenhinck/ (URL), usedby campaigns (ACT), usedby postexploitation (ACT), usedby VBScript (TOOL), usedby GUID (TOOL), usedby FIN7 ATTACK (ACT), usedby phishing email (ACT), usedby DNS (PROT), usedby Gigamon ATR (TOOL), usedby HTTPS://BLOG.GIGAMON.COM/CATEGORY/SECURITY/ (URL), usedby https://blog.gigamon.com/author/atrteam/ (URL), usedby https://blog.gigamon.com/author/justinwarner/ (URL), affiliatedwith FIN7: (APT)",
+      "entity_name": "FIN7's",
+      "type": "APT",
+      "hits": [
+        {
+          "name": "Riltok",
+          "clean_id": "S0403",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexSOFTWARE"
+          ],
+          "score": 79.0793685913086
+        },
+        {
+          "name": "OilCheck",
+          "clean_id": "S1171",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "SimilarityTarget",
+            "UcoexSOFTWARE"
+          ],
+          "score": 75.31912994384766
+        },
+        {
+          "name": "Dynamic Resolution: Fast Flux DNS",
+          "clean_id": "T1568.001",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK",
+            "SimilarityTarget"
+          ],
+          "score": 74.66175842285156
+        }
+      ]
+    }
+  ],
+  "per_sentence": []
+}

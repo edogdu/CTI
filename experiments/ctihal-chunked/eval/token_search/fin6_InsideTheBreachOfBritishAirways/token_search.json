@@ -1,0 +1,1104 @@
+{
+  "doc_id": "fin6_InsideTheBreachOfBritishAirways",
+  "method": "bm25+regex",
+  "n_entities": 62,
+  "n_sentences": 23,
+  "bm25_matched_ids": [
+    "S0085",
+    "S0089",
+    "S0117",
+    "S0182",
+    "S0198",
+    "S0310",
+    "S0332",
+    "S0403",
+    "S0445",
+    "S0459",
+    "S0505",
+    "S0673",
+    "S1075",
+    "S1171",
+    "T0817",
+    "T0819",
+    "T0865",
+    "T1036.007",
+    "T1036.008",
+    "T1056.003",
+    "T1059.007",
+    "T1090",
+    "T1105",
+    "T1124",
+    "T1137.004",
+    "T1218.015",
+    "T1222",
+    "T1406",
+    "T1437.001",
+    "T1546.001",
+    "T1562.010",
+    "T1564.004",
+    "T1564.005",
+    "T1568",
+    "T1570",
+    "T1584.006",
+    "T1608.002",
+    "T1624.001",
+    "T1630.002",
+    "T1635.001",
+    "T1637",
+    "T1647",
+    "T1673",
+    "TA0102"
+  ],
+  "regex_matched_ids": [],
+  "combined_matched_ids": [
+    "S0085",
+    "S0089",
+    "S0117",
+    "S0182",
+    "S0198",
+    "S0310",
+    "S0332",
+    "S0403",
+    "S0445",
+    "S0459",
+    "S0505",
+    "S0673",
+    "S1075",
+    "S1171",
+    "T0817",
+    "T0819",
+    "T0865",
+    "T1036.007",
+    "T1036.008",
+    "T1056.003",
+    "T1059.007",
+    "T1090",
+    "T1105",
+    "T1124",
+    "T1137.004",
+    "T1218.015",
+    "T1222",
+    "T1406",
+    "T1437.001",
+    "T1546.001",
+    "T1562.010",
+    "T1564.004",
+    "T1564.005",
+    "T1568",
+    "T1570",
+    "T1584.006",
+    "T1608.002",
+    "T1624.001",
+    "T1630.002",
+    "T1635.001",
+    "T1637",
+    "T1647",
+    "T1673",
+    "TA0102"
+  ],
+  "n_bm25": 44,
+  "n_regex": 0,
+  "n_combined": 44,
+  "per_entity": [
+    {
+      "query": "Magecart-compromised (ACT), associatedwith Fig-8 (FILE)",
+      "entity_name": "Magecart-compromised",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "File Deletion",
+          "clean_id": "T1630.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 3.761218547821045
+        },
+        {
+          "name": "Masquerading: Double File Extension",
+          "clean_id": "T1036.007",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 3.4421770572662354
+        },
+        {
+          "name": "Masquerading: Masquerade File Type",
+          "clean_id": "T1036.008",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 3.4350943565368652
+        }
+      ]
+    },
+    {
+      "query": "criminal activity (ACT), uses Magecart actors (APT)",
+      "entity_name": "criminal activity",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "BlackEnergy",
+          "clean_id": "S0089",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 6.65034818649292
+        },
+        {
+          "name": "NETWIRE",
+          "clean_id": "S0198",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 6.037547588348389
+        },
+        {
+          "name": "FinFisher",
+          "clean_id": "S0182",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 4.769295692443848
+        }
+      ]
+    },
+    {
+      "query": "Magecart actors (APT), uses criminal activity (ACT), hasattacktime 2015 (TIME)",
+      "entity_name": "Magecart actors",
+      "type": "APT",
+      "hits": [
+        {
+          "name": "NETWIRE",
+          "clean_id": "S0198",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 7.970803260803223
+        },
+        {
+          "name": "BlackEnergy",
+          "clean_id": "S0089",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 6.65034818649292
+        },
+        {
+          "name": "System Time Discovery",
+          "clean_id": "T1124",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 5.402583599090576
+        }
+      ]
+    },
+    {
+      "query": "Magecart attacks (ACT), associatedwith Fig-8 (FILE)",
+      "entity_name": "Magecart attacks",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "File Deletion",
+          "clean_id": "T1630.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 3.761218547821045
+        },
+        {
+          "name": "Masquerading: Double File Extension",
+          "clean_id": "T1036.007",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 3.4421770572662354
+        },
+        {
+          "name": "Masquerading: Masquerade File Type",
+          "clean_id": "T1036.008",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 3.4350943565368652
+        }
+      ]
+    },
+    {
+      "query": "web-facing assets (TOOL), usedby Fig-8 (FILE)",
+      "entity_name": "web-facing assets",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "Exploit Public-Facing Application",
+          "clean_id": "T0819",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 7.698184490203857
+        },
+        {
+          "name": "Lateral Tool Transfer",
+          "clean_id": "T1570",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 5.613212585449219
+        },
+        {
+          "name": "Ingress Tool Transfer",
+          "clean_id": "T1105",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 5.5215044021606445
+        }
+      ]
+    },
+    {
+      "query": "modify (ACT), associatedwith Fig-8 (FILE)",
+      "entity_name": "modify",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "Plist File Modification",
+          "clean_id": "T1647",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 4.923044681549072
+        },
+        {
+          "name": "File and Directory Permissions Modification",
+          "clean_id": "T1222",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 4.460040092468262
+        },
+        {
+          "name": "Event Triggered Execution: Change Default File Association",
+          "clean_id": "T1546.001",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 4.392873287200928
+        }
+      ]
+    },
+    {
+      "query": "avoid detection (ACT), associatedwith Fig-8 (FILE)",
+      "entity_name": "avoid detection",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "File Deletion",
+          "clean_id": "T1630.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 5.043137550354004
+        },
+        {
+          "name": "Hide Artifacts: NTFS File Attributes",
+          "clean_id": "T1564.004",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 4.338003635406494
+        },
+        {
+          "name": "Obfuscated Files or Information",
+          "clean_id": "T1406",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 4.227897644042969
+        }
+      ]
+    },
+    {
+      "query": "blend in (ACT), associatedwith Fig-8 (FILE)",
+      "entity_name": "blend in",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "File Deletion",
+          "clean_id": "T1630.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 3.9678735733032227
+        },
+        {
+          "name": "Masquerading: Double File Extension",
+          "clean_id": "T1036.007",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 3.7165591716766357
+        },
+        {
+          "name": "Hide Artifacts: Hidden File System",
+          "clean_id": "T1564.005",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 3.658233642578125
+        }
+      ]
+    },
+    {
+      "query": "skimmer (TOOL), associatedwith British Airways attack (ACT), usedby Fig-8 (FILE), uses British Airways attack (ACT), uses Newegg (IDTY)",
+      "entity_name": "skimmer",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "Impair Defenses: Downgrade Attack",
+          "clean_id": "T1562.010",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 7.640954971313477
+        },
+        {
+          "name": "URI Hijacking",
+          "clean_id": "T1635.001",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 7.340666770935059
+        },
+        {
+          "name": "Proxy",
+          "clean_id": "T1090",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 7.1417036056518555
+        }
+      ]
+    },
+    {
+      "query": "magecart actor(s) (APT), associatedwith Fig-8 (FILE)",
+      "entity_name": "magecart actor(s)",
+      "type": "APT",
+      "hits": [
+        {
+          "name": "S-Type",
+          "clean_id": "S0085",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 5.773451328277588
+        },
+        {
+          "name": "Desert Scorpion",
+          "clean_id": "S0505",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 4.45151424407959
+        },
+        {
+          "name": "File Deletion",
+          "clean_id": "T1630.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 3.761218547821045
+        }
+      ]
+    },
+    {
+      "query": "Modernizr JavaScript library! (TOOL), usedby Fig-8 (FILE)",
+      "entity_name": "Modernizr JavaScript library!",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "DarkWatchman",
+          "clean_id": "S0673",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 5.573427677154541
+        },
+        {
+          "name": "Command and Scripting Interpreter: JavaScript",
+          "clean_id": "T1059.007",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 5.133738040924072
+        },
+        {
+          "name": "Plist File Modification",
+          "clean_id": "T1647",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 4.666743755340576
+        }
+      ]
+    },
+    {
+      "query": "mobile app: (TOOL), usedby Fig-8 (FILE)",
+      "entity_name": "mobile app:",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "Broadcast Receivers",
+          "clean_id": "T1624.001",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 5.7409467697143555
+        },
+        {
+          "name": "Stage Capabilities: Upload Tool",
+          "clean_id": "T1608.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 5.185349941253662
+        },
+        {
+          "name": "Plist File Modification",
+          "clean_id": "T1647",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 4.636214733123779
+        }
+      ]
+    },
+    {
+      "query": "web app (TOOL), usedby Fig-8 (FILE)",
+      "entity_name": "web app",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "Stage Capabilities: Upload Tool",
+          "clean_id": "T1608.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 6.526844501495361
+        },
+        {
+          "name": "Lateral Tool Transfer",
+          "clean_id": "T1570",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 5.613212585449219
+        },
+        {
+          "name": "Ingress Tool Transfer",
+          "clean_id": "T1105",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 5.5215044021606445
+        }
+      ]
+    },
+    {
+      "query": "JavaScript components (TOOL), usedby Fig-8 (FILE)",
+      "entity_name": "JavaScript components",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "Command and Scripting Interpreter: JavaScript",
+          "clean_id": "T1059.007",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 6.061186790466309
+        },
+        {
+          "name": "System Binary Proxy Execution: Electron Applications",
+          "clean_id": "T1218.015",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 5.815289497375488
+        },
+        {
+          "name": "DarkWatchman",
+          "clean_id": "S0673",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 5.573427677154541
+        }
+      ]
+    },
+    {
+      "query": "CSS (TOOL), usedby Fig-8 (FILE)",
+      "entity_name": "CSS",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "System Binary Proxy Execution: Electron Applications",
+          "clean_id": "T1218.015",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 5.01828145980835
+        },
+        {
+          "name": "Lateral Tool Transfer",
+          "clean_id": "T1570",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 4.571356296539307
+        },
+        {
+          "name": "Ingress Tool Transfer",
+          "clean_id": "T1105",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 4.223158836364746
+        }
+      ]
+    },
+    {
+      "query": "mobile web page (TOOL), usedby Fig-8 (FILE)",
+      "entity_name": "mobile web page",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "Web Protocols",
+          "clean_id": "T1437.001",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 6.402015686035156
+        },
+        {
+          "name": "Office Application Startup: Outlook Home Page",
+          "clean_id": "T1137.004",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 6.0071516036987305
+        },
+        {
+          "name": "Input Capture: Web Portal Capture",
+          "clean_id": "T1056.003",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 5.630378723144531
+        }
+      ]
+    },
+    {
+      "query": "Magecart (APT), targets Target. (IDTY), targets Home Depot (IDTY), targets api4.baplc.com (DOM), targets api4-prl.baplc.com (DOM), uses www.britishairways.com (DOM), uses mobile app (TOOL), hasattacktime August 21st (TIME), uses attack (ACT), hasattacktime August 15th (TIME), uses skimmer-code (TOOL), hasattacklocation UK (LOC), targets Ticketmaster (IDTY), uses digital credit card skimming campaigns (ACT), affiliatedwith Magecart groups (APT), uses Magecart activities (ACT), targets British Airways (IDTY), targets Newegg (IDTY), affiliatedwith Magecart actor (APT), targets British Airways compromise (IDTY), associatedwith Fig-8 (FILE), usedby https://community.riskiq.com/search/certificate/sha1/e1a181db8f8366660 (URL), associatedwith Fig-6 (FILE), targetedby LetsEncrypt (IDTY), targetedby Comodo (IDTY), usedby SSL (PROT), targetedby UK (LOC), usedby web-based card skimmers (TOOL), usedby Machine Learning (TOOL), usedby skimming (ACT), usedby British Airways attack (ACT), targetedby British Airways (IDTY), targetedby Newegg (IDTY), targetedby British Airways compromise (IDTY), identifies Volexity (SECTEAM), identifies RiskIQ (SECTEAM), associatedwith Newegg MalBot (MAL), usedby Magecart Assault (ACT)",
+      "entity_name": "Magecart",
+      "type": "APT",
+      "hits": [
+        {
+          "name": "Discovery",
+          "clean_id": "TA0102",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexTACTICS"
+          ],
+          "score": 31.25481414794922
+        },
+        {
+          "name": "Drive-by Compromise",
+          "clean_id": "T0817",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 29.59606170654297
+        },
+        {
+          "name": "OilCheck",
+          "clean_id": "S1171",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 28.67818832397461
+        }
+      ]
+    },
+    {
+      "query": "Machine Learning (TOOL), usedby Magecart (APT)",
+      "entity_name": "Machine Learning",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "Lateral Tool Transfer",
+          "clean_id": "T1570",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 4.764571189880371
+        },
+        {
+          "name": "Virtual Machine Discovery",
+          "clean_id": "T1673",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 4.553238868713379
+        },
+        {
+          "name": "NETWIRE",
+          "clean_id": "S0198",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 4.220636367797852
+        }
+      ]
+    },
+    {
+      "query": "theft (ACT), targets British Airways. (IDTY), targets Ticketmaster customer data (IDTY), targets British Airways (IDTY), targets personal and payment information (IDTY), targets customers (IDTY), targets BBC (IDTY), targets customer data (IDTY), targets critical infrastructure networks (IDTY), usedby RIS actors (APT), targets information (IDTY), hasattacklocation Russia (LOC), targets intelligence agencies (IDTY), hasattacklocation Western (LOC), uses emails (EMAIL), targets federal elections. (IDTY), hasattacklocation U.S. (LOC), hasattacktime 2016 (TIME), hasattacklocation DCCC (LOC), targets DNC (IDTY), targetedby Inbenta (IDTY), targetedby British Airways (IDTY), targetedby corporations (IDTY), targetedby political organizations (IDTY), targetedby universities (IDTY), targetedby think tanks (IDTY), targetedby critical infrastructure entities (IDTY), targetedby government organizations (IDTY), targetedby citizens (IDTY), targetedby government (IDTY), targetedby U.S. (LOC), uses RIS (APT), uses espionage groups (APT), targetedby Russian (LOC)",
+      "entity_name": "theft",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "Drive-by Compromise",
+          "clean_id": "T0817",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 44.2549934387207
+        },
+        {
+          "name": "ShimRatReporter",
+          "clean_id": "S0445",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 34.28546142578125
+        },
+        {
+          "name": "OilCheck",
+          "clean_id": "S1171",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 31.870874404907227
+        }
+      ]
+    },
+    {
+      "query": "cyber attack (ACT), targets engineering industry (IDTY), targets DNC (IDTY), hasattacklocation Russia (LOC), hasattacklocation Russian (LOC), hasattacktime September 2015 (TIME), targetedby Payments (IDTY), identifies FireEye (SECTEAM), identifies CrowdStrike (SECTEAM), targetedby DNC (IDTY)",
+      "entity_name": "cyber attack",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "Drive-by Compromise",
+          "clean_id": "T0817",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 11.683639526367188
+        },
+        {
+          "name": "XTunnel",
+          "clean_id": "S0117",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 10.31464958190918
+        },
+        {
+          "name": "Spearphishing Attachment",
+          "clean_id": "T0865",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 7.845553398132324
+        }
+      ]
+    },
+    {
+      "query": "web-based card skimmers (TOOL), usedby Magecart (APT), uses RiskIQ (SECTEAM)",
+      "entity_name": "web-based card skimmers",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "Stage Capabilities: Upload Tool",
+          "clean_id": "T1608.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 7.44603157043457
+        },
+        {
+          "name": "Remcos",
+          "clean_id": "S0332",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 5.604343414306641
+        },
+        {
+          "name": "Compromise Infrastructure: Web Services",
+          "clean_id": "T1584.006",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 4.985505104064941
+        }
+      ]
+    },
+    {
+      "query": "skimmer-code (TOOL), uses British Airways (IDTY), uses Magecart (APT)",
+      "entity_name": "skimmer-code",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "MechaFlounder",
+          "clean_id": "S0459",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 6.744172096252441
+        },
+        {
+          "name": "Dynamic Resolution",
+          "clean_id": "T1637",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 4.973455429077148
+        },
+        {
+          "name": "Riltok",
+          "clean_id": "S0403",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 4.754400253295898
+        }
+      ]
+    },
+    {
+      "query": "Modernizr JavaScript library (TOOL), uses British Airways (IDTY)",
+      "entity_name": "Modernizr JavaScript library",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "Command and Scripting Interpreter: JavaScript",
+          "clean_id": "T1059.007",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 6.134028434753418
+        },
+        {
+          "name": "DarkWatchman",
+          "clean_id": "S0673",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 4.1944804191589355
+        },
+        {
+          "name": "KOPILUWAK",
+          "clean_id": "S1075",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 4.1521453857421875
+        }
+      ]
+    },
+    {
+      "query": "attack (ACT), targets of (IDTY), targets api4.baplc.com (DOM), targets api4-prl.baplc.com (DOM), targets British Airways (IDTY), targets British Airway's (IDTY), targets cybercrime market (IDTY), targets Financial Institutions (IDTY), targets ATMs (IDTY), targets banking systems (IDTY), targets bank's (IDTY), targets financial (IDTY), targets financial institution (IDTY), targets Harvard's (IDTY), targets American Elections (IDTY), targets Elections (IDTY), targets Microsoft (IDTY), targets targets (IDTY), targets data (IDTY), targets victims (IDTY), uses URLs (URL), uses www.britishairways.com (DOM), uses mobile app (TOOL), uses Magecart (TOOL), uses Magecart skimmer (TOOL), uses Cobalt Strike beacon (TOOL), uses pfdregistry[.]net (DOM), uses ZIP (TOOL), uses URL: hxxp://efax.pfdregistry[.]net/eFax/37486.ZIP (URL), uses Run (TOOL), uses HKCU (TOOL), uses 0b9dccfcb2cc8bced343b9d930e475f1d0e5d966 (HASH), uses ead48f15ebc088384a4bd6190c2343fa (HASH), uses e-mail (EMAIL), uses Backdoor (TOOL), uses dd766876b3be5022bfb062f454f878abfbc670b8 (HASH), uses SHA1 (ENCR), uses ad6723f61e10aefd9688b29b474a9323 (HASH), uses MD5 (ENCR), uses eFax (TOOL), uses loaders (TOOL), uses Cosmu (TOOL), uses info-stealers (TOOL), associatedwith (Behavior:Win32/Atosev.gen!A) (VULNAME), associatedwith Ryuk ransomware (MAL), associatedwith LockerGoga (MAL), associatedwith Carbanak (MAL), associatedwith fywhx.dll (FILE), associatedwith (rundll32.exe (FILE), associatedwith PowerDuke (MAL), associatedwith malicious embedded macro (MAL), associatedwith malware (MAL), associatedwith Office 365 E5 (SECTEAM), associatedwith Safe Links protection (SECTEAM), associatedwith Office 365 ATP (SECTEAM), associatedwith malicious emails (ACT), associatedwith network artifacts (ACT), associatedwith MiniDuke (MAL), usedby APT29 (APT), usedby FIN6 (APT), usedby RDP (PROT), usedby Windows' (OS), usedby cyber-espionage APTs (APT), usedby cybercriminal organization (APT), usedby cybercriminal group (APT), usedby Carbanak (APT), usedby Sophisticated operators (APT), usedby CozyBear (APT), usedby YTTRIUM (APT), hasattacktime Wednesday, November 14 (TIME), hasattacktime August 21st (TIME), hasattacktime August 13th (TIME), hasattacktime May 2018 (TIME), hasattacktime 2006 (TIME), hasattacklocation Eastern European (LOC), targetedby Microsoft customers (IDTY), targetedby https://community.riskiq.com/search/certificate/sha1/e1a181db8f8366660 (URL), targetedby LetsEncrypt (IDTY), targetedby name (IDTY), targetedby British Airways (IDTY), targetedby Comodo (IDTY), targetedby users (IDTY), targetedby nancial entities (IDTY), targetedby Africa (LOC), targetedby Middle-East (LOC), targetedby Asia (LOC), targetedby employees (IDTY), targetedby financial (IDTY), targetedby pfdregistry[.]net (DOM), targetedby Clinton Foundation (IDTY), targetedby critical infrastructure networks (IDTY), targetedby corporations (IDTY), targetedby political organizations (IDTY), targetedby universities (IDTY), targetedby think tanks (IDTY), targetedby critical infrastructure entities (IDTY), targetedby government organizations (IDTY), targetedby citizens (IDTY), targetedby government (IDTY), targetedby U.S. (LOC), targetedby United States (LOC), targetedby Washington, D.C. (LOC), targetedby Europe (LOC), targetedby Hong Kong (LOC), targetedby India (LOC), targetedby Canada (LOC), targetedby information (IDTY), identifies Microsoft Threat Protection (SECTEAM), identifies Morphisec (SECTEAM), identifies security team (SECTEAM), identifies Bitdefender's (SECTEAM), identifies BitDefender (SECTEAM), identifies Windows Defender ATP (SECTEAM), identifies Office 365 ATP (SECTEAM), identifies Windows Defender Security Center (SECTEAM), uses COSMICDUKE (MAL), uses Magecart (APT), uses ransomware (MAL), uses FIN6 (APT), uses malware (MAL), uses attackers' (APT), uses Carbanak (APT), uses Oven (MAL), uses RIS actors (APT), uses RIS (APT), uses Cosmu (MAL), uses MiniDuke (MAL), uses other malware (MAL), associatedwith Fig-8 (FILE), associatedwith Fig-6 (FILE), associatedwith originalfilename: Adoptable Nightjars (FILE), associatedwith filedescription: Sanger (FILE), associatedwith legaltrademarks: Bobcats Kinsman (FILE), associatedwith companyname: Maidish (FILE), associatedwith internalname: Soulfulness (FILE), associatedwith legalcopyright: Blattering (FILE), associatedwith Version Info (TOOL), associatedwith Compiler/Artifacts (FILE), associatedwith network traffic (ACT), associatedwith log-and-event aggregation system (TOOL), associatedwith SIEM (TOOL), associatedwith RTF document (FILE), associatedwith 37486-the-shocking-truth-about-election-rigging-in-america.rtf.lnk (FILE), associatedwith Microsoft Shortcut file (FILE), associatedwith ZIP (TOOL), associatedwith e-mail message (FILE), associatedwith secure email hles (TOOL), associatedwith the clection-headlines-FTE2016 filein (FILE), associatedwith filesystem (FILE), usedby e-mail (EMAIL), usedby SSL (PROT), usedby URL: hxxp://efax.pfdregistry[.]net/eFax/37486.ZIP (URL)",
+      "entity_name": "attack",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "OilCheck",
+          "clean_id": "S1171",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 125.62876892089844
+        },
+        {
+          "name": "MechaFlounder",
+          "clean_id": "S0459",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 100.49508666992188
+        },
+        {
+          "name": "Dynamic Resolution",
+          "clean_id": "T1637",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 99.50733947753906
+        }
+      ]
+    },
+    {
+      "query": "Magecart skimmer (TOOL), uses British Airway's (IDTY), uses attack (ACT), uses name (IDTY), uses information (IDTY), uses British Airways (IDTY)",
+      "entity_name": "Magecart skimmer",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "Dynamic Resolution",
+          "clean_id": "T1637",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 14.190122604370117
+        },
+        {
+          "name": "Dynamic Resolution",
+          "clean_id": "T1568",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 12.424386978149414
+        },
+        {
+          "name": "Riltok",
+          "clean_id": "S0403",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 11.88599967956543
+        }
+      ]
+    },
+    {
+      "query": "Magecart (TOOL), uses British Airway's (IDTY), uses attack (ACT), uses name (IDTY), uses information (IDTY), uses British Airways (IDTY)",
+      "entity_name": "Magecart",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "Dynamic Resolution",
+          "clean_id": "T1637",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 14.190122604370117
+        },
+        {
+          "name": "Dynamic Resolution",
+          "clean_id": "T1568",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 12.424386978149414
+        },
+        {
+          "name": "Riltok",
+          "clean_id": "S0403",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 11.88599967956543
+        }
+      ]
+    },
+    {
+      "query": "mobile app (TOOL), uses api4.baplc.com (DOM), uses api4-prl.baplc.com (DOM), uses www.britishairways.com (DOM), usedby British Airways (IDTY), usedby Android (OS), uses attack (ACT), uses British Airways (IDTY), uses Magecart (APT), associatedwith https://community.riskiq.com/search/certificate/sha1/e1a181db8f8366660 (URL), usedby Fig-6 (FILE), uses LetsEncrypt (IDTY), uses Comodo (IDTY), usedby SSL (PROT)",
+      "entity_name": "mobile app",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "ANDROIDOS_ANSERVER.A",
+          "clean_id": "S0310",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 20.307872772216797
+        },
+        {
+          "name": "Dynamic Resolution",
+          "clean_id": "T1637",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 19.893821716308594
+        },
+        {
+          "name": "Riltok",
+          "clean_id": "S0403",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 19.178068161010742
+        }
+      ]
+    }
+  ],
+  "per_sentence": []
+}

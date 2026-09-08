@@ -1,0 +1,618 @@
+{
+  "doc_id": "sandworm_UkrainianPowerAuthorityAttacks",
+  "method": "bm25+regex",
+  "n_entities": 46,
+  "n_sentences": 12,
+  "bm25_matched_ids": [
+    "S0021",
+    "S0089",
+    "S0177",
+    "S0198",
+    "S0310",
+    "S0403",
+    "S0604",
+    "S0607",
+    "S1058",
+    "S1125",
+    "S1151",
+    "S1171",
+    "S1173",
+    "S1184",
+    "T0817",
+    "T0847",
+    "T1090",
+    "T1090.002",
+    "T1124",
+    "T1190",
+    "T1637",
+    "T1653",
+    "TA0102"
+  ],
+  "regex_matched_ids": [],
+  "combined_matched_ids": [
+    "S0021",
+    "S0089",
+    "S0177",
+    "S0198",
+    "S0310",
+    "S0403",
+    "S0604",
+    "S0607",
+    "S1058",
+    "S1125",
+    "S1151",
+    "S1171",
+    "S1173",
+    "S1184",
+    "T0817",
+    "T0847",
+    "T1090",
+    "T1090.002",
+    "T1124",
+    "T1190",
+    "T1637",
+    "T1653",
+    "TA0102"
+  ],
+  "n_bm25": 23,
+  "n_regex": 0,
+  "n_combined": 23,
+  "per_entity": [
+    {
+      "query": "sandworm team (APT), identifiedby google threat intelligence group (SECTEAM), uses cyber (ACT), hasattacklocation united states (LOC), hasattacklocation europe (LOC), uses activity (ACT), uses killdisk malware (MAL), uses intrusion activity (ACT), hasattacktime 2015 (TIME), hasattacktime october of 2014 (TIME), targets cve-20144114 (VULID), targets zero-day exploit (VULNAME), hasattacktime october 2014 (TIME), identifiedby pa % ners (SECTEAM), uses blackenergy 3 (APT), identifiedby isight pa % ners (SECTEAM), uses scada systems (IDTY), hasattacklocation ukraine (LOC), identifiedby mandiant (SECTEAM), hasattacktime january 7, 2016 (TIME), uses power authority attacks (ACT), hasattacklocation ukrainian (LOC), affiliatedwith iron viking (APT), affiliatedwith voodoo bear (APT), affiliatedwith telebots (APT), affiliatedwith blackenergy 3 (APT), identifies dragos security (SECTEAM), identifies sans (SECTEAM), associatedwith killdisk malware (MAL), identifies isight's (SECTEAM), targetedby power authority (IDTY), targetedby ukrainian (LOC), identifies eset (SECTEAM), targetedby ukraine (LOC), usedby sandworm team activity (ACT), associatedwith blackenergy 3 (APT), identifies pa % ners (SECTEAM), usedby malicious activity (ACT), affiliatedwith conspirators (APT), identifies cybersecurity (SECTEAM)",
+      "entity_name": "sandworm team",
+      "type": "APT",
+      "hits": [
+        {
+          "name": "BlackEnergy",
+          "clean_id": "S0089",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 64.22964477539062
+        },
+        {
+          "name": "KillDisk",
+          "clean_id": "S0607",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 48.384376525878906
+        },
+        {
+          "name": "Proxy",
+          "clean_id": "T1090",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 30.39398765563965
+        }
+      ]
+    },
+    {
+      "query": "cyber (ACT), hasattacktime 2015 (TIME), hasattacklocation ukraine (LOC), targetedby united states (LOC), targetedby europe (LOC), uses sandworm team (APT)",
+      "entity_name": "cyber",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "Prestige",
+          "clean_id": "S1058",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 9.054415702819824
+        },
+        {
+          "name": "AcidRain",
+          "clean_id": "S1125",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 8.35515022277832
+        },
+        {
+          "name": "KillDisk",
+          "clean_id": "S0607",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 8.010087013244629
+        }
+      ]
+    },
+    {
+      "query": "activity (ACT), targets security vendors (IDTY), targets educational institutions (IDTY), targets government entities (IDTY), targets pos systems (IDTY), targets system (IDTY), targets companies (IDTY), targets nancial entities (IDTY), targets recipients (IDTY), targets employees (IDTY), targets victimized organization's networks (IDTY), targets banks (IDTY), targets sec filings (IDTY), targets personnel (IDTY), targets bank (IDTY), targets banking (IDTY), targets washington post (IDTY), targets state department (IDTY), targets white house (IDTY), targets wall street journal (IDTY), targets bbc news (IDTY), targets state dept (IDTY), targets cnn news (IDTY), targets governments (IDTY), targets government (IDTY), targets citizens (IDTY), targets government organizations (IDTY), targets critical infrastructure entities (IDTY), targets think tanks (IDTY), targets universities (IDTY), targets political organizations (IDTY), targets corporations (IDTY), targets information (IDTY), targets critical infrastructure networks (IDTY), uses xor (ENCR), uses phishery (TOOL), uses publicly available red-teaming tools (TOOL), uses linkedin messages (TOOL), uses custom tools (TOOL), uses iocs (TOOL), uses dns (PROT), uses powershell empire (TOOL), uses google drive url (URL), uses banking (TOOL), uses power admin paexec (TOOL), uses atms (TOOL), uses rig exploit kit (TOOL), uses sdb (TOOL), uses lnk (TOOL), uses cobalt strike (TOOL), uses e-mail (EMAIL), uses copyfilepa (TOOL), associatedwith windows (OS), associatedwith ransomware (MAL), associatedwith megacortex (MAL), associatedwith lockergoga (MAL), associatedwith ryuk (MAL), associatedwith maze ransomware (MAL), associatedwith duke-ish (MAL), hasattacktime march 2015 (TIME), hasattacktime last decade (TIME), hasattacktime january 2018 (TIME), hasattacktime july 2018 (TIME), hasattacktime may (TIME), hasattacktime 2015 (TIME), hasattacktime 2019 (TIME), hasattacktime 2014 (TIME), hasattacktime late 2014 (TIME), hasattacktime 2016 (TIME), hasattacktime mid-2015 (TIME), hasattacktime january 2017 (TIME), hasattacktime may 2015 (TIME), hasattacktime early 2016 (TIME), hasattacktime november 2014 (TIME), hasattacktime february 2015 (TIME), hasattacktime october 2014 (TIME), usedby dukes (APT), usedby actors (APT), usedby darkhydrus (APT), usedby custom powershell backdoor (MAL), usedby apt34 (APT), usedby copypaste (APT), usedby fireeye (SECTEAM), usedby evolution (APT), usedby fin6 (APT), usedby spear phishing (ACT), usedby intrusion (APT), usedby threat group (APT), usedby group (APT), usedby itg08 (APT), usedby maze (MAL), usedby proofpoint (SECTEAM), usedby fin7 (APT), usedby fin7 threat group (APT), usedby ris (APT), usedby ris actors (APT), usedby apt29 (APT), hasattacklocation u.s (LOC), hasattacklocation united states (LOC), hasattacklocation europe (LOC), hasattacklocation iranian (LOC), hasattacklocation african (LOC), hasattacklocation asian (LOC), hasattacklocation africa (LOC), hasattacklocation ukraine (LOC), hasattacklocation ukrainian (LOC), hasattacklocation asia (LOC), hasattacklocation middle east (LOC), hasattacklocation eastern europe (LOC), hasattacklocation russian (LOC), targetedby dnc (IDTY), targetedby u.s. government (IDTY), targetedby united kingdom's (LOC), targetedby political party members' accounts (IDTY), targetedby french (LOC), targetedby vpn providers (IDTY), targetedby government organization (IDTY), targetedby microso \" o # ce vulnerability (VULNAME), targetedby cve-2017-11882 (VULID), targetedby microso (IDTY), targetedby iranian (LOC), targetedby iran's (LOC), targetedby hin d golan(d heishts (LOC), targetedby legitimate credentials (IDTY), targetedby pos systems (IDTY), targetedby network communications (IDTY), targetedby https://www.gigamon.com/content/gigamon/e webinars metadata.html (URL), targetedby https://community.gigamon.com/gigamoncp/s (URL), targetedby https://www.gigamon.com/content/gigamon/e (URL), targetedby https://www.gigamon.com/content/gigamon/e center.html (URL), targetedby hospitality industries (IDTY), targetedby restaurant (IDTY), targetedby u.s (LOC), targetedby eastern european (LOC), targetedby bank (IDTY), targetedby eastern europe (LOC), targetedby news and media organizations (IDTY), targetedby ukraine (LOC), targetedby south asia (LOC), targetedby middle east (LOC), targetedby middle eastern (LOC), targetedby financial institutions (IDTY), targetedby banks (IDTY), targetedby amd (IDTY), targetedby intel (IDTY), targetedby russian (LOC), targetedby state-sponsored (IDTY), targetedby of (IDTY), targetedby intelligence (IDTY), targetedby government agency (IDTY), targetedby security companies (IDTY), targetedby media (IDTY), uses dukes (APT), uses sandworm team (APT), uses state-associated groups (APT), uses actor (APT), uses muddywater's (APT), uses apt34's (APT), uses sidetwist (MAL), uses group apt34 (APT), uses apt34 (APT), uses insider threat (APT), uses espionage-motivated (APT), uses oilrig group (APT), uses criminal organization (APT), uses threats (APT), uses copypaste (APT), uses more_eggs backdoor (MAL), uses itg08's (APT), uses fin6 (APT), uses itg08 (APT), uses driftpin (MAL), uses carbanak (MAL), uses fin7 threat group (APT), uses carbanak backdoor (MAL), uses fin7 (APT), uses carbanak group (APT), uses cobalt spider (APT), uses cobalt (APT), uses carbon spider (APT), uses sekur (MAL), uses odinaff (MAL), uses pinchduke (MAL), uses dukes group (APT), uses cozyduke (MAL), uses apt29 (APT), associatedwith loader (TOOL), associatedwith tools (TOOL), associatedwith gigamon atr (SECTEAM), associatedwith cobalt strike (TOOL), associatedwith knowledge articles (TOOL), associatedwith more_eggs backdoor (MAL), associatedwith more_eggs malware (MAL), associatedwith mimikatz (TOOL), associatedwith meterpreter (TOOL), associatedwith mitre att&ck (TOOL), associatedwith c2 (TOOL), associatedwith information-stealer trojan (TOOL), associatedwith pinchduke trojan samples (FILE), associatedwith f.lnk (FILE), identifies fireeye (SECTEAM), identifies secret intelligence service (sis (SECTEAM), identifies government communications headquarters (gchq (SECTEAM), identifies check point research (SECTEAM), identifies fireeye endpoint security (SECTEAM), identifies visa (SECTEAM), identifies x-force iris (SECTEAM), identifies cypho % labs (SECTEAM), identifies eset (SECTEAM), identifies mandiant (SECTEAM), identifies crowdstrike intelligence (SECTEAM), usedby md5 (ENCR), usedby dns (PROT), usedby ip (PROT), usedby f713d5df826c6051e65f995e57d6817d (HASH)",
+      "entity_name": "activity",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "Drive-by Compromise",
+          "clean_id": "T0817",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 91.88603973388672
+        },
+        {
+          "name": "OilCheck",
+          "clean_id": "S1171",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 83.8471450805664
+        },
+        {
+          "name": "PowerExchange",
+          "clean_id": "S1173",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 77.26569366455078
+        }
+      ]
+    },
+    {
+      "query": "power authority attacks (ACT), hasattacklocation ukraine (LOC), hasattacktime january 7, 2016 (TIME), targetedby ukrainian (LOC), uses sandworm team (APT)",
+      "entity_name": "power authority attacks",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "AcidRain",
+          "clean_id": "S1125",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 10.821676254272461
+        },
+        {
+          "name": "Prestige",
+          "clean_id": "S1058",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 9.054415702819824
+        },
+        {
+          "name": "Industroyer",
+          "clean_id": "S0604",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 8.428044319152832
+        }
+      ]
+    },
+    {
+      "query": "blackenergy 3 (APT), affiliatedwith sandworm team (APT), identifiedby isight pa % ners (SECTEAM), uses killdisk (MAL), targets power systems (IDTY), uses blackenergy 3 malware (MAL), identifiedby isight's (SECTEAM), hasattacklocation ukrainian (LOC), uses killdisk malware (MAL), uses intrusion activity (ACT), hasattacktime 2015 (TIME), hasattacklocation ukraine (LOC), associatedwith sandworm team (APT), targets cve-20144114 (VULID), targets zero-day exploit (VULNAME), hasattacktime october 2014 (TIME), identifiedby pa % ners (SECTEAM), identifies eset (SECTEAM), identifies dragos security (SECTEAM), identifies sans (SECTEAM), targetedby power authority (IDTY), identifies cert-ua (SECTEAM), associatedwith killdisk malware (MAL), identifies isight's (SECTEAM), targetedby ukrainian (LOC), associatedwith intrusion activity (ACT), targetedby ukraine (LOC), associatedwith sandworm team activity (ACT), identifies pa % ners (SECTEAM), uses sandworm team (APT)",
+      "entity_name": "blackenergy 3",
+      "type": "APT",
+      "hits": [
+        {
+          "name": "KillDisk",
+          "clean_id": "S0607",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 48.8560905456543
+        },
+        {
+          "name": "BlackEnergy",
+          "clean_id": "S0089",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 40.98127746582031
+        },
+        {
+          "name": "AcidRain",
+          "clean_id": "S1125",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 35.65885925292969
+        }
+      ]
+    },
+    {
+      "query": "zero-day exploit (VULNAME), associatedwith cve-20144114 (VULID), identifies pa % ners (SECTEAM), targets blackenergy 3 (APT), targets sandworm team (APT)",
+      "entity_name": "zero-day exploit",
+      "type": "VULNAME",
+      "hits": [
+        {
+          "name": "BlackEnergy",
+          "clean_id": "S0089",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 15.966429710388184
+        },
+        {
+          "name": "Exploit Public-Facing Application",
+          "clean_id": "T1190",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 9.756282806396484
+        },
+        {
+          "name": "BOLDMOVE",
+          "clean_id": "S1184",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 7.322132110595703
+        }
+      ]
+    },
+    {
+      "query": "cve-20144114 (VULID), associatedwith zero-day exploit (VULNAME), identifies pa % ners (SECTEAM), targets blackenergy 3 (APT), targets sandworm team (APT)",
+      "entity_name": "cve-20144114",
+      "type": "VULID",
+      "hits": [
+        {
+          "name": "BlackEnergy",
+          "clean_id": "S0089",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 15.966429710388184
+        },
+        {
+          "name": "Exploit Public-Facing Application",
+          "clean_id": "T1190",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 9.756282806396484
+        },
+        {
+          "name": "BOLDMOVE",
+          "clean_id": "S1184",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 7.322132110595703
+        }
+      ]
+    },
+    {
+      "query": "operators (APT), targets scada systems (IDTY), uses espionage (ACT), affiliatedwith fin7 (APT), uses virustotal (TOOL), uses sample (FILE), uses boostwrite (MAL), uses malware (MAL), uses altering (ACT), uses spear phishing campaigns (ACT), uses malicious documents (FILE), uses backdoor (MAL), identifies trendmicro (SECTEAM), identifies sho % ly (SECTEAM), usedby social engineering (ACT), usedby spear phishing campaigns (ACT), affiliatedwith fin7 intrusion set (APT), usedby fin7 campaigns (ACT), affiliatedwith actor (APT)",
+      "entity_name": "operators",
+      "type": "APT",
+      "hits": [
+        {
+          "name": "Riltok",
+          "clean_id": "S0403",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 26.38224983215332
+        },
+        {
+          "name": "ANDROIDOS_ANSERVER.A",
+          "clean_id": "S0310",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 24.071393966674805
+        },
+        {
+          "name": "Dynamic Resolution",
+          "clean_id": "T1637",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 23.35467529296875
+        }
+      ]
+    },
+    {
+      "query": "espionage (ACT), targets government (IDTY), targets scada systems (IDTY), targets ics (TOOL), targets electric (IDTY), targets t1326 (VULNAME), targets t1071 (VULNAME), targets t1214 (VULNAME), targets t1081 (VULNAME), targets t1503 (VULNAME), targets t1003 (VULNAME), targets t1078 (VULNAME), targets t1192 (VULNAME), targets t1193 (VULNAME), targets diplomatic entities (IDTY), targets infected machines (IDTY), targets victim systems (IDTY), uses python (TOOL), uses ttps (TOOL), uses data exfiltration (ACT), uses remote access (ACT), associatedwith miniduke (MAL), associatedwith cozyduke (MAL), associatedwith seaduke (MAL), usedby custom powershell backdoor (MAL), usedby sandworm (APT), usedby electrum (APT), usedby nemesis gemina (APT), usedby tinybaron (ACT), usedby aka cosmicduke (APT), usedby duke group (APT), usedby group (APT), usedby apt34 (APT), hasattacklocation eastern europe (LOC), hasattacklocation iran (LOC), hasattacklocation iranian (LOC), hasattacklocation ex-soviet (LOC), targetedby cozyduke-infected computers (IDTY), targetedby ics (TOOL), targetedby devices (IDTY), targetedby industrial equipment (IDTY), targetedby u.s. government (IDTY), targetedby political party (IDTY), targetedby banks (IDTY), targetedby financial institutions (IDTY), targetedby microso (IDTY), targetedby cve-2017-11882 (VULID), targetedby microso \" o # ce vulnerability (VULNAME), targetedby government organization (IDTY), targetedby middle east (LOC), targetedby iranian (LOC), uses miniduke (MAL), uses operators (APT), uses blackenergy 2 (MAL), uses crashoverride (MAL), uses malware (MAL), uses custom powershell backdoor (MAL), uses apt34 (APT), uses group (APT), uses advanced persistent threat (apt) 29 (APT), uses apt28 (APT), uses carbanak apt (APT), uses cybercriminals (APT), uses carbanak (MAL), associatedwith carbanak (MAL), associatedwith hmis (TOOL), associatedwith advantech webaccess (TOOL), associatedwith ge cimplicity (TOOL), associatedwith siemens simatic (TOOL), associatedwith havex malware (MAL), associatedwith carberp (MAL), identifies kaspersky (SECTEAM), identifies trendmicro (SECTEAM), identifies sho % ly (SECTEAM), identifies dragos (SECTEAM), identifies report (SECTEAM), identifies fireeye (SECTEAM), usedby ics (TOOL), usedby internet (TOOL), usedby command and control (ACT), usedby dragonfly campaign (ACT), usedby ics network (TOOL), usedby opc server (TOOL), usedby hmi (TOOL), usedby opc protocol (PROT)",
+      "entity_name": "espionage",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "ZeroCleare",
+          "clean_id": "S1151",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 41.742069244384766
+        },
+        {
+          "name": "Drive-by Compromise",
+          "clean_id": "T0817",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 41.15660858154297
+        },
+        {
+          "name": "PowerExchange",
+          "clean_id": "S1173",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 40.97636032104492
+        }
+      ]
+    },
+    {
+      "query": "sandworm team activity (ACT), hasattacktime 2015 (TIME), hasattacklocation ukraine (LOC), associatedwith blackenergy 3 (APT), hasattacktime october of 2014 (TIME), usedby sandworm team (APT), hasattacktime late 2014 (TIME)",
+      "entity_name": "sandworm team activity",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "BlackEnergy",
+          "clean_id": "S0089",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 19.395265579223633
+        },
+        {
+          "name": "Prestige",
+          "clean_id": "S1058",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 17.85809898376465
+        },
+        {
+          "name": "System Time Discovery",
+          "clean_id": "T1124",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 16.4531307220459
+        }
+      ]
+    },
+    {
+      "query": "intrusion activity (ACT), associatedwith blackenergy 3 (APT), targetedby ukraine (LOC), uses blackenergy 3 (APT), uses sandworm team (APT), identifies senate intelligence committee (SECTEAM), targetedby dnc (IDTY), uses fancy bear (APT), uses cozy bear (APT)",
+      "entity_name": "intrusion activity",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "BlackEnergy",
+          "clean_id": "S0089",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 34.23947525024414
+        },
+        {
+          "name": "Derusbi",
+          "clean_id": "S0021",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 14.925895690917969
+        },
+        {
+          "name": "NETWIRE",
+          "clean_id": "S0198",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 14.069550514221191
+        }
+      ]
+    },
+    {
+      "query": "cyber a ! acks (ACT), targetedby ukraine (LOC), targetedby regional power authorities (IDTY), targetedby media (IDTY)",
+      "entity_name": "cyber a ! acks",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "Power Loader",
+          "clean_id": "S0177",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 7.18442440032959
+        },
+        {
+          "name": "Replication Through Removable Media",
+          "clean_id": "T0847",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 5.71444034576416
+        },
+        {
+          "name": "Power Settings",
+          "clean_id": "T1653",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 5.252501487731934
+        }
+      ]
+    },
+    {
+      "query": "killdisk malware (MAL), hasattacktime october (TIME), targets ukrainian elections (IDTY), associatedwith sandworm team (APT), identifiedby eset (SECTEAM), identifiedby dragos security (SECTEAM), identifiedby sans (SECTEAM), identifiedby isight pa % ners (SECTEAM), associatedwith blackenergy 3 (APT), uses remote terminal units (TOOL), uses human-machine interfaces (hmis (TOOL), targets windows-based (OS), uses rendering systems inoperable (ACT), uses corrupts the master boot record (ACT), uses erases selected files (ACT), uses scada networks (TOOL), targets grid operators (IDTY), hasattacklocation ukrainian (LOC), targetedby ukrainian elections (IDTY), uses sandworm team (APT), identifies eset (SECTEAM), identifies dragos security (SECTEAM), identifies sans (SECTEAM), targetedby power authority (IDTY), targetedby power systems (IDTY), identifies cert-ua (SECTEAM), uses blackenergy 3 (APT), identifies isight's (SECTEAM), targetedby ukrainian (LOC), usedby virtual private network (vpn (TOOL), usedby client so \" ware (TOOL), usedby industrial control system (ics (TOOL), usedby breakers (TOOL), associatedwith malicious remote operation (ACT), associatedwith reconnaissance (ACT), targetedby electric power distribution companies (IDTY), associatedwith intrusions (ACT), associatedwith cyber-attack (ACT), uses cyber-attackers (APT), targetedby windows (OS), usedby scada networks (TOOL), targetedby power companies (IDTY), associatedwith attack (ACT), uses sandworm (APT)",
+      "entity_name": "killdisk malware",
+      "type": "MAL",
+      "hits": [
+        {
+          "name": "BlackEnergy",
+          "clean_id": "S0089",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 45.902347564697266
+        },
+        {
+          "name": "Industroyer",
+          "clean_id": "S0604",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 44.852073669433594
+        },
+        {
+          "name": "KillDisk",
+          "clean_id": "S0607",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 35.339447021484375
+        }
+      ]
+    },
+    {
+      "query": "blackenergy 3 malware (MAL), identifiedby isight pa % ners (SECTEAM), targets power systems (IDTY), targets grid operators (IDTY), hasattacklocation ukrainian (LOC), targets windows (OS), uses scada networks (TOOL), targets power companies (IDTY), identifies isight's (SECTEAM), uses blackenergy 3 (APT), identifies cert-ua (SECTEAM), associatedwith attack (ACT), uses sandworm (APT)",
+      "entity_name": "blackenergy 3 malware",
+      "type": "MAL",
+      "hits": [
+        {
+          "name": "BlackEnergy",
+          "clean_id": "S0089",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 30.704853057861328
+        },
+        {
+          "name": "KillDisk",
+          "clean_id": "S0607",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 15.448688507080078
+        },
+        {
+          "name": "Power Loader",
+          "clean_id": "S0177",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 15.022894859313965
+        }
+      ]
+    },
+    {
+      "query": "killdisk (MAL), identifiedby isight pa % ners (SECTEAM), uses remote terminal units (TOOL), uses human-machine interfaces (hmis (TOOL), targets windows-based (OS), uses rendering systems inoperable (ACT), uses corrupts the master boot record (ACT), uses erases selected files (ACT), targetedby power systems (IDTY), targetedby ukrainian (LOC), identifies isight's (SECTEAM), uses blackenergy 3 (APT), identifies cert-ua (SECTEAM), usedby virtual private network (vpn (TOOL), usedby client so \" ware (TOOL), usedby industrial control system (ics (TOOL), usedby breakers (TOOL), associatedwith malicious remote operation (ACT), associatedwith reconnaissance (ACT), targetedby electric power distribution companies (IDTY), associatedwith intrusions (ACT), associatedwith cyber-attack (ACT), uses cyber-attackers (APT), targetedby ukraine's (LOC), associatedwith destructive malware attacks (ACT), targetedby ukrainian government & critical infrastructure (IDTY), associatedwith attacks (ACT), associatedwith computer intrusions (ACT), targetedby russian (LOC), uses computer hackers (APT), targetedby 2018 winter olympic games (IDTY), targetedby french elections (IDTY), associatedwith malware attacks (ACT), uses cers (APT)",
+      "entity_name": "killdisk",
+      "type": "MAL",
+      "hits": [
+        {
+          "name": "Proxy",
+          "clean_id": "T1090",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 38.665809631347656
+        },
+        {
+          "name": "Proxy: External Proxy",
+          "clean_id": "T1090.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 38.3183479309082
+        },
+        {
+          "name": "Discovery",
+          "clean_id": "TA0102",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexTACTICS"
+          ],
+          "score": 37.638946533203125
+        }
+      ]
+    }
+  ],
+  "per_sentence": []
+}

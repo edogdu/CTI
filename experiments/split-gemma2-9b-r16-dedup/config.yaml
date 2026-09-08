@@ -1,0 +1,36 @@
+name: "split-gemma2-9b-r16-dedup"
+description: "Gemma 2 9B with separate NER and RE LoRA adapters, deduplicated DNRTI dataset"
+base_model: "unsloth/gemma-2-9b-it"
+base_gguf: "gemma2-9b-it-fp16.gguf"
+
+ner_lora: "adapters/ner-lora.gguf"
+re_lora: "adapters/re-lora.gguf"
+
+dataset:
+  source: "datasets/DNRTI/dnrti_dedup.json"
+  original: "datasets/DNRTI/dnrti_aug_stix2_je.json"
+  dedup_report: "results/finetuning/data/dedup_report.json"
+  original_docs: 7947
+  dedup_docs: 5863
+  duplicates_removed: 2084
+  train: 4805
+  val: 507
+  test: 518
+  train_test_text_overlap: 0
+
+training:
+  ner_data: "train_ner.jsonl"
+  re_data: "train_re.jsonl"
+  epochs: 3
+  lora_rank: 16
+  lora_alpha: 32
+  batch_size: 16
+  learning_rate: 2e-4
+  seed: 42
+  ner_final_loss: 0.025
+  re_final_loss: null  # pending
+
+notes: |
+  Deduplicated dataset eliminates 2,084 duplicate texts (including 162 exact
+  train/test leaks in prior split). Zero text overlap between train and test.
+  Text-only model - no vision tower issues. Clean LoRA conversion.

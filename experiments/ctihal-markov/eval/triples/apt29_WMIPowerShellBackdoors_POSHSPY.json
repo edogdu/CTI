@@ -1,0 +1,777 @@
+{
+  "doc_id": "apt29_WMIPowerShellBackdoors_POSHSPY",
+  "group": "apt29",
+  "pdf_name": "WMIPowerShellBackdoors_POSHSPY.pdf",
+  "n_chunks": 52,
+  "n_triples": 64,
+  "triples": [
+    {
+      "subject": {
+        "name": "dunwoody mandiant",
+        "type": "SECTEAM"
+      },
+      "predicate": "identifies",
+      "object": {
+        "name": "apt29",
+        "type": "APT"
+      },
+      "sourceSentence": "Dunwoody Mandiant has observed APT29 using a stealthy backdoor that we call POSHSPY."
+    },
+    {
+      "subject": {
+        "name": "dunwoody mandiant",
+        "type": "SECTEAM"
+      },
+      "predicate": "identifies",
+      "object": {
+        "name": "poshspy",
+        "type": "MAL"
+      },
+      "sourceSentence": "Dunwoody Mandiant has observed APT29 using a stealthy backdoor that we call POSHSPY."
+    },
+    {
+      "subject": {
+        "name": "apt29",
+        "type": "APT"
+      },
+      "predicate": "uses",
+      "object": {
+        "name": "poshspy",
+        "type": "MAL"
+      },
+      "sourceSentence": "In the investigations Mandiant has conducted, it appeared that APT29 deployed POSHSPY as a secondary backdoor for use if they lost access to their primary backdoors."
+    },
+    {
+      "subject": {
+        "name": "poshspy",
+        "type": "MAL"
+      },
+      "predicate": "uses",
+      "object": {
+        "name": "powershell",
+        "type": "TOOL"
+      },
+      "sourceSentence": "POSHSPY leverages two of the tools the group frequently uses: PowerShell and Windows Management Instrumentation (WMI)."
+    },
+    {
+      "subject": {
+        "name": "poshspy",
+        "type": "MAL"
+      },
+      "predicate": "targets",
+      "object": {
+        "name": "windows",
+        "type": "OS"
+      },
+      "sourceSentence": "POSHSPY makes the most of using built-in Windows features - so-called 'living o \" the land' - to make an especially stealthy backdoor."
+    },
+    {
+      "subject": {
+        "name": "powershell",
+        "type": "TOOL"
+      },
+      "predicate": "usedby",
+      "object": {
+        "name": "windows",
+        "type": "OS"
+      },
+      "sourceSentence": "POSHSPY leverages two of the tools the group frequently uses: PowerShell and Windows Management Instrumentation (WMI)."
+    },
+    {
+      "subject": {
+        "name": "mandiant",
+        "type": "SECTEAM"
+      },
+      "predicate": "identifies",
+      "object": {
+        "name": "apt29",
+        "type": "APT"
+      },
+      "sourceSentence": "In the investigations Mandiant has conducted, it appeared that APT29 deployed POSHSPY as a secondary backdoor for use if they lost access to their primary backdoors."
+    },
+    {
+      "subject": {
+        "name": "mandiant",
+        "type": "SECTEAM"
+      },
+      "predicate": "identifies",
+      "object": {
+        "name": "poshspy",
+        "type": "MAL"
+      },
+      "sourceSentence": "In the investigations Mandiant has conducted, it appeared that APT29 deployed POSHSPY as a secondary backdoor for use if they lost access to their primary backdoors."
+    },
+    {
+      "subject": {
+        "name": "poshspy's",
+        "type": "MAL"
+      },
+      "predicate": "uses",
+      "object": {
+        "name": "wmi",
+        "type": "TOOL"
+      },
+      "sourceSentence": "POSHSPY's use of WMI to both store and persist the backdoor code makes it nearly invisible to anyone not familiar with the intricacies of WMI."
+    },
+    {
+      "subject": {
+        "name": "mandiant",
+        "type": "SECTEAM"
+      },
+      "predicate": "identifies",
+      "object": {
+        "name": "poshspy backdoor",
+        "type": "MAL"
+      },
+      "sourceSentence": "Mandiant initially identi # ed an early variant of the POSHSPY backdoor deployed as PowerShell scripts during an incident response engagement in 2015."
+    },
+    {
+      "subject": {
+        "name": "mandiant",
+        "type": "SECTEAM"
+      },
+      "predicate": "uses",
+      "object": {
+        "name": "powershell scripts",
+        "type": "TOOL"
+      },
+      "sourceSentence": "Mandiant initially identi # ed an early variant of the POSHSPY backdoor deployed as PowerShell scripts during an incident response engagement in 2015."
+    },
+    {
+      "subject": {
+        "name": "poshspy backdoor",
+        "type": "MAL"
+      },
+      "predicate": "uses",
+      "object": {
+        "name": "powershell scripts",
+        "type": "TOOL"
+      },
+      "sourceSentence": "Mandiant initially identi # ed an early variant of the POSHSPY backdoor deployed as PowerShell scripts during an incident response engagement in 2015."
+    },
+    {
+      "subject": {
+        "name": "poshspy backdoor",
+        "type": "MAL"
+      },
+      "predicate": "hasattacktime",
+      "object": {
+        "name": "2015",
+        "type": "TIME"
+      },
+      "sourceSentence": "Mandiant initially identi # ed an early variant of the POSHSPY backdoor deployed as PowerShell scripts during an incident response engagement in 2015."
+    },
+    {
+      "subject": {
+        "name": "poshspy",
+        "type": "MAL"
+      },
+      "predicate": "associatedwith",
+      "object": {
+        "name": "apt29",
+        "type": "APT"
+      },
+      "sourceSentence": "In the investigations Mandiant has conducted, it appeared that APT29 deployed POSHSPY as a secondary backdoor for use if they lost access to their primary backdoors."
+    },
+    {
+      "subject": {
+        "name": "apt29's",
+        "type": "APT"
+      },
+      "predicate": "uses",
+      "object": {
+        "name": "backdoor",
+        "type": "MAL"
+      },
+      "sourceSentence": "We # rst discussed APT29's use of this backdoor as pa % of our 'No Easy Breach' talk."
+    },
+    {
+      "subject": {
+        "name": "apt29's",
+        "type": "APT"
+      },
+      "predicate": "uses",
+      "object": {
+        "name": "fileless wmi",
+        "type": "TOOL"
+      },
+      "sourceSentence": "Threat Intelligence Dissecting One of APT29's Fileless WMI and PowerShell Backdoors (POSHSPY)"
+    },
+    {
+      "subject": {
+        "name": "apt29's",
+        "type": "APT"
+      },
+      "predicate": "uses",
+      "object": {
+        "name": "powershell backdoors",
+        "type": "TOOL"
+      },
+      "sourceSentence": "Threat Intelligence Dissecting One of APT29's Fileless WMI and PowerShell Backdoors (POSHSPY)"
+    },
+    {
+      "subject": {
+        "name": "apt29's",
+        "type": "APT"
+      },
+      "predicate": "uses",
+      "object": {
+        "name": "poshspy",
+        "type": "MAL"
+      },
+      "sourceSentence": "Threat Intelligence Dissecting One of APT29's Fileless WMI and PowerShell Backdoors (POSHSPY)"
+    },
+    {
+      "subject": {
+        "name": "fileless wmi",
+        "type": "TOOL"
+      },
+      "predicate": "usedby",
+      "object": {
+        "name": "poshspy",
+        "type": "MAL"
+      },
+      "sourceSentence": "Threat Intelligence Dissecting One of APT29's Fileless WMI and PowerShell Backdoors (POSHSPY)"
+    },
+    {
+      "subject": {
+        "name": "powershell backdoors",
+        "type": "TOOL"
+      },
+      "predicate": "usedby",
+      "object": {
+        "name": "poshspy",
+        "type": "MAL"
+      },
+      "sourceSentence": "Threat Intelligence Dissecting One of APT29's Fileless WMI and PowerShell Backdoors (POSHSPY)"
+    },
+    {
+      "subject": {
+        "name": "wmi",
+        "type": "TOOL"
+      },
+      "predicate": "usedby",
+      "object": {
+        "name": "windows",
+        "type": "OS"
+      },
+      "sourceSentence": "WMI can be accessed using a variety of tools, including the Windows WMI Command-line (wmic.exe), or through APIs accessible to programming and scripting languages such as PowerShell."
+    },
+    {
+      "subject": {
+        "name": "ackers",
+        "type": "APT"
+      },
+      "predicate": "uses",
+      "object": {
+        "name": "backdoor",
+        "type": "MAL"
+      },
+      "sourceSentence": "ackers o & en use this functionality to persist the execution of backdoors at system sta % up."
+    },
+    {
+      "subject": {
+        "name": "wmi",
+        "type": "TOOL"
+      },
+      "predicate": "usedby",
+      "object": {
+        "name": "consumers",
+        "type": "APT"
+      },
+      "sourceSentence": "WMI Consumers specify an action to be pe ' ormed, including executing a command, running a script, adding an entry to a log, or sending an email."
+    },
+    {
+      "subject": {
+        "name": "wmi",
+        "type": "TOOL"
+      },
+      "predicate": "associatedwith",
+      "object": {
+        "name": "executing a command",
+        "type": "ACT"
+      },
+      "sourceSentence": "WMI Consumers specify an action to be pe ' ormed, including executing a command, running a script, adding an entry to a log, or sending an email."
+    },
+    {
+      "subject": {
+        "name": "wmi",
+        "type": "TOOL"
+      },
+      "predicate": "associatedwith",
+      "object": {
+        "name": "running a script",
+        "type": "ACT"
+      },
+      "sourceSentence": "WMI Consumers specify an action to be pe ' ormed, including executing a command, running a script, adding an entry to a log, or sending an email."
+    },
+    {
+      "subject": {
+        "name": "wmi",
+        "type": "TOOL"
+      },
+      "predicate": "associatedwith",
+      "object": {
+        "name": "adding an entry",
+        "type": "ACT"
+      },
+      "sourceSentence": "WMI Consumers specify an action to be pe ' ormed, including executing a command, running a script, adding an entry to a log, or sending an email."
+    },
+    {
+      "subject": {
+        "name": "wmi",
+        "type": "TOOL"
+      },
+      "predicate": "associatedwith",
+      "object": {
+        "name": "sending an email",
+        "type": "ACT"
+      },
+      "sourceSentence": "WMI Consumers specify an action to be pe ' ormed, including executing a command, running a script, adding an entry to a log, or sending an email."
+    },
+    {
+      "subject": {
+        "name": "consumers",
+        "type": "APT"
+      },
+      "predicate": "uses",
+      "object": {
+        "name": "executing a command",
+        "type": "ACT"
+      },
+      "sourceSentence": "WMI Consumers specify an action to be pe ' ormed, including executing a command, running a script, adding an entry to a log, or sending an email."
+    },
+    {
+      "subject": {
+        "name": "consumers",
+        "type": "APT"
+      },
+      "predicate": "uses",
+      "object": {
+        "name": "running a script",
+        "type": "ACT"
+      },
+      "sourceSentence": "WMI Consumers specify an action to be pe ' ormed, including executing a command, running a script, adding an entry to a log, or sending an email."
+    },
+    {
+      "subject": {
+        "name": "consumers",
+        "type": "APT"
+      },
+      "predicate": "uses",
+      "object": {
+        "name": "adding an entry",
+        "type": "ACT"
+      },
+      "sourceSentence": "WMI Consumers specify an action to be pe ' ormed, including executing a command, running a script, adding an entry to a log, or sending an email."
+    },
+    {
+      "subject": {
+        "name": "consumers",
+        "type": "APT"
+      },
+      "predicate": "uses",
+      "object": {
+        "name": "sending an email",
+        "type": "ACT"
+      },
+      "sourceSentence": "WMI Consumers specify an action to be pe ' ormed, including executing a command, running a script, adding an entry to a log, or sending an email."
+    },
+    {
+      "subject": {
+        "name": "apt29",
+        "type": "APT"
+      },
+      "predicate": "uses",
+      "object": {
+        "name": "wmi",
+        "type": "TOOL"
+      },
+      "sourceSentence": "APT29 wrote the encrypted and base64-encoded PowerShell backdoor code into that prope % y. APT29 then created a WMI event subscription in order to execute the backdoor."
+    },
+    {
+      "subject": {
+        "name": "apt29",
+        "type": "APT"
+      },
+      "predicate": "uses",
+      "object": {
+        "name": "powershell backdoors",
+        "type": "TOOL"
+      },
+      "sourceSentence": "We have observed APT29 use WMI to persist a backdoor and also store the PowerShell backdoor code."
+    },
+    {
+      "subject": {
+        "name": "apt29",
+        "type": "APT"
+      },
+      "predicate": "uses",
+      "object": {
+        "name": "base64-encoded",
+        "type": "ENCR"
+      },
+      "sourceSentence": "APT29 wrote the encrypted and base64-encoded PowerShell backdoor code into that prope % y. APT29 then created a WMI event subscription in order to execute the backdoor."
+    },
+    {
+      "subject": {
+        "name": "apt29",
+        "type": "APT"
+      },
+      "predicate": "uses",
+      "object": {
+        "name": "powershell",
+        "type": "TOOL"
+      },
+      "sourceSentence": "APT29 wrote the encrypted and base64-encoded PowerShell backdoor code into that prope % y. APT29 then created a WMI event subscription in order to execute the backdoor."
+    },
+    {
+      "subject": {
+        "name": "apt29",
+        "type": "APT"
+      },
+      "predicate": "uses",
+      "object": {
+        "name": "backdoor",
+        "type": "MAL"
+      },
+      "sourceSentence": "APT29 wrote the encrypted and base64-encoded PowerShell backdoor code into that prope % y. APT29 then created a WMI event subscription in order to execute the backdoor."
+    },
+    {
+      "subject": {
+        "name": "base64-encoded",
+        "type": "ENCR"
+      },
+      "predicate": "usedby",
+      "object": {
+        "name": "powershell",
+        "type": "TOOL"
+      },
+      "sourceSentence": "APT29 wrote the encrypted and base64-encoded PowerShell backdoor code into that prope % y. APT29 then created a WMI event subscription in order to execute the backdoor."
+    },
+    {
+      "subject": {
+        "name": "base64-encoded",
+        "type": "ENCR"
+      },
+      "predicate": "usedby",
+      "object": {
+        "name": "backdoor",
+        "type": "MAL"
+      },
+      "sourceSentence": "APT29 wrote the encrypted and base64-encoded PowerShell backdoor code into that prope % y. APT29 then created a WMI event subscription in order to execute the backdoor."
+    },
+    {
+      "subject": {
+        "name": "base64-encoded",
+        "type": "ENCR"
+      },
+      "predicate": "usedby",
+      "object": {
+        "name": "wmi",
+        "type": "TOOL"
+      },
+      "sourceSentence": "APT29 wrote the encrypted and base64-encoded PowerShell backdoor code into that prope % y. APT29 then created a WMI event subscription in order to execute the backdoor."
+    },
+    {
+      "subject": {
+        "name": "powershell",
+        "type": "TOOL"
+      },
+      "predicate": "usedby",
+      "object": {
+        "name": "backdoor",
+        "type": "MAL"
+      },
+      "sourceSentence": "The backdoor contains several notable capabilities, including: Downloading and executing PowerShell code as an EncodedCommand Writing executables to a randomly-selected directory under Program Files, and naming the EXE to match the chosen directory name, or, if that fails, writing the executable to a system-generated temporary # le name, using the EXE extension"
+    },
+    {
+      "subject": {
+        "name": "backdoor",
+        "type": "MAL"
+      },
+      "predicate": "uses",
+      "object": {
+        "name": "wmi",
+        "type": "TOOL"
+      },
+      "sourceSentence": "APT29 wrote the encrypted and base64-encoded PowerShell backdoor code into that prope % y. APT29 then created a WMI event subscription in order to execute the backdoor."
+    },
+    {
+      "subject": {
+        "name": "powershell command",
+        "type": "TOOL"
+      },
+      "predicate": "usedby",
+      "object": {
+        "name": "wmi",
+        "type": "TOOL"
+      },
+      "sourceSentence": "The subscription was con # gured to run a PowerShell command that read, decrypted, and executed the backdoor code directly from the new WMI prope % y."
+    },
+    {
+      "subject": {
+        "name": "wmi",
+        "type": "TOOL"
+      },
+      "predicate": "usedby",
+      "object": {
+        "name": "poshspy backdoor",
+        "type": "MAL"
+      },
+      "sourceSentence": "The WMI component of the POSHSPY backdoor leverages a Filter to execute the PowerShell component of the backdoor on a regular basis."
+    },
+    {
+      "subject": {
+        "name": "poshspy backdoor",
+        "type": "MAL"
+      },
+      "predicate": "uses",
+      "object": {
+        "name": "filter",
+        "type": "TOOL"
+      },
+      "sourceSentence": "The WMI component of the POSHSPY backdoor leverages a Filter to execute the PowerShell component of the backdoor on a regular basis."
+    },
+    {
+      "subject": {
+        "name": "poshspy backdoor",
+        "type": "MAL"
+      },
+      "predicate": "uses",
+      "object": {
+        "name": "powershell",
+        "type": "TOOL"
+      },
+      "sourceSentence": "The WMI component of the POSHSPY backdoor leverages a Filter to execute the PowerShell component of the backdoor on a regular basis."
+    },
+    {
+      "subject": {
+        "name": "apt29",
+        "type": "APT"
+      },
+      "predicate": "uses",
+      "object": {
+        "name": "filter",
+        "type": "TOOL"
+      },
+      "sourceSentence": "In one instance, APT29 created a Filter named BfeOnServiceSta % TypeChange (Figure 1), which they con # gured to execute every Monday, Tuesday, Thursday, Friday, and Saturday at 11:33 am local time."
+    },
+    {
+      "subject": {
+        "name": "windowsparentalcontrolsmigration",
+        "type": "TOOL"
+      },
+      "predicate": "uses",
+      "object": {
+        "name": "base64-encoded",
+        "type": "ENCR"
+      },
+      "sourceSentence": "The WindowsParentalControlsMigration consumer was con # gured to silently execute a base64-encoded PowerShell command."
+    },
+    {
+      "subject": {
+        "name": "poshspy backdoor",
+        "type": "MAL"
+      },
+      "predicate": "targets",
+      "object": {
+        "name": "windows",
+        "type": "OS"
+      },
+      "sourceSentence": "The POSHSPY backdoor is designed to download and execute additional PowerShell code and Windows binaries."
+    },
+    {
+      "subject": {
+        "name": "backdoor",
+        "type": "MAL"
+      },
+      "predicate": "uses",
+      "object": {
+        "name": "powershell",
+        "type": "TOOL"
+      },
+      "sourceSentence": "The backdoor contains several notable capabilities, including: Downloading and executing PowerShell code as an EncodedCommand Writing executables to a randomly-selected directory under Program Files, and naming the EXE to match the chosen directory name, or, if that fails, writing the executable to a system-generated temporary # le name, using the EXE extension"
+    },
+    {
+      "subject": {
+        "name": "backdoor",
+        "type": "MAL"
+      },
+      "predicate": "uses",
+      "object": {
+        "name": "executables",
+        "type": "FILE"
+      },
+      "sourceSentence": "The backdoor contains several notable capabilities, including: Downloading and executing PowerShell code as an EncodedCommand Writing executables to a randomly-selected directory under Program Files, and naming the EXE to match the chosen directory name, or, if that fails, writing the executable to a system-generated temporary # le name, using the EXE extension"
+    },
+    {
+      "subject": {
+        "name": "backdoor",
+        "type": "MAL"
+      },
+      "predicate": "uses",
+      "object": {
+        "name": "exe",
+        "type": "FILE"
+      },
+      "sourceSentence": "The backdoor contains several notable capabilities, including: Downloading and executing PowerShell code as an EncodedCommand Writing executables to a randomly-selected directory under Program Files, and naming the EXE to match the chosen directory name, or, if that fails, writing the executable to a system-generated temporary # le name, using the EXE extension"
+    },
+    {
+      "subject": {
+        "name": "powershell",
+        "type": "TOOL"
+      },
+      "predicate": "uses",
+      "object": {
+        "name": "executables",
+        "type": "FILE"
+      },
+      "sourceSentence": "The backdoor contains several notable capabilities, including: Downloading and executing PowerShell code as an EncodedCommand Writing executables to a randomly-selected directory under Program Files, and naming the EXE to match the chosen directory name, or, if that fails, writing the executable to a system-generated temporary # le name, using the EXE extension"
+    },
+    {
+      "subject": {
+        "name": "powershell",
+        "type": "TOOL"
+      },
+      "predicate": "uses",
+      "object": {
+        "name": "exe",
+        "type": "FILE"
+      },
+      "sourceSentence": "The backdoor contains several notable capabilities, including: Downloading and executing PowerShell code as an EncodedCommand Writing executables to a randomly-selected directory under Program Files, and naming the EXE to match the chosen directory name, or, if that fails, writing the executable to a system-generated temporary # le name, using the EXE extension"
+    },
+    {
+      "subject": {
+        "name": "beaconing",
+        "type": "ACT"
+      },
+      "predicate": "uses",
+      "object": {
+        "name": "dga",
+        "type": "TOOL"
+      },
+      "sourceSentence": "Infrequent beaconing, use of DGA and compromised infrastructure for C2, and appended # le headers used to bypass content inspection made this backdoor di $ cult to identify using typical network monitoring techniques."
+    },
+    {
+      "subject": {
+        "name": "beaconing",
+        "type": "ACT"
+      },
+      "predicate": "uses",
+      "object": {
+        "name": "c2",
+        "type": "TOOL"
+      },
+      "sourceSentence": "Infrequent beaconing, use of DGA and compromised infrastructure for C2, and appended # le headers used to bypass content inspection made this backdoor di $ cult to identify using typical network monitoring techniques."
+    },
+    {
+      "subject": {
+        "name": "wmi",
+        "type": "TOOL"
+      },
+      "predicate": "uses",
+      "object": {
+        "name": "mandiant",
+        "type": "SECTEAM"
+      },
+      "sourceSentence": "This presentation by Christopher Glyer and Devon Kerr contains additional information on a ! acker use of WMI in past Mandiant investigations."
+    },
+    {
+      "subject": {
+        "name": "c2",
+        "type": "TOOL"
+      },
+      "predicate": "uses",
+      "object": {
+        "name": "mandiant",
+        "type": "SECTEAM"
+      },
+      "sourceSentence": "Coding My Way Out of Here: C2 in Browser Isolation Environments By Mandiant • 8-minute read Help Threat Intelligence Seeing Through a GLASSBRIDGE: Understanding the Digital Marketing Ecosystem Spreading Pro-PRC In ! uence Operations By Google Threat Intelligence Group · 13-minute read English"
+    },
+    {
+      "subject": {
+        "name": "c2",
+        "type": "TOOL"
+      },
+      "predicate": "associatedwith",
+      "object": {
+        "name": "glassbridge",
+        "type": "ACT"
+      },
+      "sourceSentence": "Coding My Way Out of Here: C2 in Browser Isolation Environments By Mandiant • 8-minute read Help Threat Intelligence Seeing Through a GLASSBRIDGE: Understanding the Digital Marketing Ecosystem Spreading Pro-PRC In ! uence Operations By Google Threat Intelligence Group · 13-minute read English"
+    },
+    {
+      "subject": {
+        "name": "c2",
+        "type": "TOOL"
+      },
+      "predicate": "associatedwith",
+      "object": {
+        "name": "digital marketing ecosystem spreading pro-prc in ! uence operations",
+        "type": "ACT"
+      },
+      "sourceSentence": "Coding My Way Out of Here: C2 in Browser Isolation Environments By Mandiant • 8-minute read Help Threat Intelligence Seeing Through a GLASSBRIDGE: Understanding the Digital Marketing Ecosystem Spreading Pro-PRC In ! uence Operations By Google Threat Intelligence Group · 13-minute read English"
+    },
+    {
+      "subject": {
+        "name": "c2",
+        "type": "TOOL"
+      },
+      "predicate": "uses",
+      "object": {
+        "name": "google threat intelligence group",
+        "type": "SECTEAM"
+      },
+      "sourceSentence": "Coding My Way Out of Here: C2 in Browser Isolation Environments By Mandiant • 8-minute read Help Threat Intelligence Seeing Through a GLASSBRIDGE: Understanding the Digital Marketing Ecosystem Spreading Pro-PRC In ! uence Operations By Google Threat Intelligence Group · 13-minute read English"
+    },
+    {
+      "subject": {
+        "name": "mandiant",
+        "type": "SECTEAM"
+      },
+      "predicate": "identifies",
+      "object": {
+        "name": "glassbridge",
+        "type": "ACT"
+      },
+      "sourceSentence": "Coding My Way Out of Here: C2 in Browser Isolation Environments By Mandiant • 8-minute read Help Threat Intelligence Seeing Through a GLASSBRIDGE: Understanding the Digital Marketing Ecosystem Spreading Pro-PRC In ! uence Operations By Google Threat Intelligence Group · 13-minute read English"
+    },
+    {
+      "subject": {
+        "name": "mandiant",
+        "type": "SECTEAM"
+      },
+      "predicate": "identifies",
+      "object": {
+        "name": "digital marketing ecosystem spreading pro-prc in ! uence operations",
+        "type": "ACT"
+      },
+      "sourceSentence": "Coding My Way Out of Here: C2 in Browser Isolation Environments By Mandiant • 8-minute read Help Threat Intelligence Seeing Through a GLASSBRIDGE: Understanding the Digital Marketing Ecosystem Spreading Pro-PRC In ! uence Operations By Google Threat Intelligence Group · 13-minute read English"
+    },
+    {
+      "subject": {
+        "name": "glassbridge",
+        "type": "ACT"
+      },
+      "predicate": "associatedwith",
+      "object": {
+        "name": "google threat intelligence group",
+        "type": "SECTEAM"
+      },
+      "sourceSentence": "Coding My Way Out of Here: C2 in Browser Isolation Environments By Mandiant • 8-minute read Help Threat Intelligence Seeing Through a GLASSBRIDGE: Understanding the Digital Marketing Ecosystem Spreading Pro-PRC In ! uence Operations By Google Threat Intelligence Group · 13-minute read English"
+    },
+    {
+      "subject": {
+        "name": "digital marketing ecosystem spreading pro-prc in ! uence operations",
+        "type": "ACT"
+      },
+      "predicate": "associatedwith",
+      "object": {
+        "name": "google threat intelligence group",
+        "type": "SECTEAM"
+      },
+      "sourceSentence": "Coding My Way Out of Here: C2 in Browser Isolation Environments By Mandiant • 8-minute read Help Threat Intelligence Seeing Through a GLASSBRIDGE: Understanding the Digital Marketing Ecosystem Spreading Pro-PRC In ! uence Operations By Google Threat Intelligence Group · 13-minute read English"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "model": "JE_BERT_CRF",
+  "task": "RE",
+  "test_docs": 707,
+  "micro": {
+    "precision": 0.96,
+    "recall": 0.96,
+    "f1": 0.96
+  },
+  "macro": {
+    "precision": 0.88,
+    "recall": 0.92,
+    "f1": 0.90
+  },
+  "per_pred": {
+    "affiliatedWith":  {"precision": 1.00, "recall": 1.00, "f1": 1.00, "gold": 15},
+    "associatedWith":  {"precision": 0.94, "recall": 0.97, "f1": 0.95, "gold": 306},
+    "contains":        {"precision": 0.50, "recall": 1.00, "f1": 0.67, "gold": 2},
+    "hasAttackLocation": {"precision": 1.00, "recall": 1.00, "f1": 1.00, "gold": 152},
+    "hasAttackTime":   {"precision": 1.00, "recall": 1.00, "f1": 1.00, "gold": 102},
+    "hasLocation":     {"precision": 1.00, "recall": 1.00, "f1": 1.00, "gold": 58},
+    "hasVulnerability": {"precision": 1.00, "recall": 1.00, "f1": 1.00, "gold": 9},
+    "identifies":      {"precision": 1.00, "recall": 1.00, "f1": 1.00, "gold": 77},
+    "monitoredBy":     {"precision": 0.00, "recall": 0.00, "f1": 0.00, "gold": 0},
+    "monitors":        {"precision": 1.00, "recall": 1.00, "f1": 1.00, "gold": 3},
+    "noRelation":      {"precision": 0.97, "recall": 0.95, "f1": 0.96, "gold": 2149},
+    "targetedBy":      {"precision": 0.99, "recall": 1.00, "f1": 0.99, "gold": 235},
+    "targets":         {"precision": 0.98, "recall": 1.00, "f1": 0.99, "gold": 704},
+    "usedBy":          {"precision": 0.92, "recall": 0.98, "f1": 0.95, "gold": 173},
+    "uses":            {"precision": 0.93, "recall": 0.93, "f1": 0.93, "gold": 944}
+  }
+}

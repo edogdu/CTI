@@ -1,0 +1,95 @@
+{
+  "task": "NER",
+  "model": "gemma3-cti-4b",
+  "data": "results\\finetuning\\data\\test_dnrti.json",
+  "n_docs": 3,
+  "n_evaluated": 3,
+  "timestamp": "2026-03-13T15:59:54.244565",
+  "micro": {
+    "precision": 0.8571,
+    "recall": 0.5,
+    "f1": 0.6316,
+    "tp": 6,
+    "fp": 1,
+    "fn": 6
+  },
+  "macro": {
+    "precision": 0.8889,
+    "recall": 0.6508,
+    "f1": 0.7333
+  },
+  "per_type": {
+    "SECTEAM": {
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6667,
+      "tp": 1,
+      "fp": 0,
+      "fn": 1,
+      "gold": 2
+    },
+    "IDTY": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 1,
+      "fn": 0,
+      "gold": 0
+    },
+    "APT": {
+      "precision": 1.0,
+      "recall": 0.3333,
+      "f1": 0.5,
+      "tp": 1,
+      "fp": 0,
+      "fn": 2,
+      "gold": 3
+    },
+    "ACT": {
+      "precision": 1.0,
+      "recall": 0.3333,
+      "f1": 0.5,
+      "tp": 1,
+      "fp": 0,
+      "fn": 2,
+      "gold": 3
+    },
+    "LOC": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "gold": 1
+    },
+    "TOOL": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 1,
+      "gold": 1
+    },
+    "MAL": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "gold": 1
+    },
+    "VULID": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "gold": 1
+    }
+  }
+}

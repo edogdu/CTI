@@ -1,0 +1,194 @@
+{
+  "task": "NER",
+  "model": "gemma3-cti-4b",
+  "data": "results\\finetuning\\data\\test_dnrti.json",
+  "n_docs": 707,
+  "n_evaluated": 704,
+  "timestamp": "2026-03-13T16:38:51.654693",
+  "micro": {
+    "precision": 0.7383,
+    "recall": 0.776,
+    "f1": 0.7567,
+    "tp": 2037,
+    "fp": 722,
+    "fn": 588
+  },
+  "macro": {
+    "precision": 0.7548,
+    "recall": 0.7794,
+    "f1": 0.7501
+  },
+  "per_type": {
+    "ACT": {
+      "precision": 0.7025,
+      "recall": 0.695,
+      "f1": 0.6988,
+      "tp": 392,
+      "fp": 166,
+      "fn": 172,
+      "gold": 564
+    },
+    "SECTEAM": {
+      "precision": 0.8605,
+      "recall": 0.6727,
+      "f1": 0.7551,
+      "tp": 37,
+      "fp": 6,
+      "fn": 18,
+      "gold": 55
+    },
+    "IDTY": {
+      "precision": 0.7012,
+      "recall": 0.8092,
+      "f1": 0.7513,
+      "tp": 352,
+      "fp": 150,
+      "fn": 83,
+      "gold": 435
+    },
+    "APT": {
+      "precision": 0.8528,
+      "recall": 0.8421,
+      "f1": 0.8474,
+      "tp": 336,
+      "fp": 58,
+      "fn": 63,
+      "gold": 399
+    },
+    "FILE": {
+      "precision": 0.6579,
+      "recall": 0.7692,
+      "f1": 0.7092,
+      "tp": 100,
+      "fp": 52,
+      "fn": 30,
+      "gold": 130
+    },
+    "LOC": {
+      "precision": 0.8537,
+      "recall": 0.8434,
+      "f1": 0.8485,
+      "tp": 140,
+      "fp": 24,
+      "fn": 26,
+      "gold": 166
+    },
+    "MAL": {
+      "precision": 0.7175,
+      "recall": 0.8382,
+      "f1": 0.7731,
+      "tp": 259,
+      "fp": 102,
+      "fn": 50,
+      "gold": 309
+    },
+    "TOOL": {
+      "precision": 0.5401,
+      "recall": 0.5401,
+      "f1": 0.5401,
+      "tp": 128,
+      "fp": 109,
+      "fn": 109,
+      "gold": 237
+    },
+    "VULID": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "tp": 37,
+      "fp": 0,
+      "fn": 0,
+      "gold": 37
+    },
+    "TIME": {
+      "precision": 0.9315,
+      "recall": 0.9067,
+      "f1": 0.9189,
+      "tp": 136,
+      "fp": 10,
+      "fn": 14,
+      "gold": 150
+    },
+    "IP": {
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.8889,
+      "tp": 8,
+      "fp": 2,
+      "fn": 0,
+      "gold": 8
+    },
+    "HASH": {
+      "precision": 1.0,
+      "recall": 0.8889,
+      "f1": 0.9412,
+      "tp": 16,
+      "fp": 0,
+      "fn": 2,
+      "gold": 18
+    },
+    "OS": {
+      "precision": 0.8043,
+      "recall": 0.7708,
+      "f1": 0.7872,
+      "tp": 37,
+      "fp": 9,
+      "fn": 11,
+      "gold": 48
+    },
+    "VULNAME": {
+      "precision": 0.6047,
+      "recall": 0.8387,
+      "f1": 0.7027,
+      "tp": 26,
+      "fp": 17,
+      "fn": 5,
+      "gold": 31
+    },
+    "DOM": {
+      "precision": 0.8571,
+      "recall": 0.9231,
+      "f1": 0.8889,
+      "tp": 12,
+      "fp": 2,
+      "fn": 1,
+      "gold": 13
+    },
+    "EMAIL": {
+      "precision": 0.1667,
+      "recall": 0.5,
+      "f1": 0.25,
+      "tp": 1,
+      "fp": 5,
+      "fn": 1,
+      "gold": 2
+    },
+    "URL": {
+      "precision": 0.75,
+      "recall": 1.0,
+      "f1": 0.8571,
+      "tp": 6,
+      "fp": 2,
+      "fn": 0,
+      "gold": 6
+    },
+    "ENCR": {
+      "precision": 0.8333,
+      "recall": 0.9091,
+      "f1": 0.8696,
+      "tp": 10,
+      "fp": 2,
+      "fn": 1,
+      "gold": 11
+    },
+    "PROT": {
+      "precision": 0.4,
+      "recall": 0.6667,
+      "f1": 0.5,
+      "tp": 4,
+      "fp": 6,
+      "fn": 2,
+      "gold": 6
+    }
+  }
+}

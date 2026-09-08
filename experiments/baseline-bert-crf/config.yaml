@@ -1,0 +1,27 @@
+name: "baseline-bert-crf"
+description: "JE_BERT_CRF baseline following TIRE methodology (Mouiche et al., 2025)"
+
+base_model: "bert-base-cased"
+ner_lora: null                     # no LoRA, full model fine-tuning
+re_lora: null
+
+training:
+  strategy: "joint"                # shared encoder, dual task heads
+  ner_head: "CRF (BIO tagging)"
+  re_head: "attention-based classifier"
+  loss_weighting:
+    ner_alpha: 1.7
+    re_beta: 0.3
+  epochs: 3
+  seed: 42
+  notebook: "notebooks/JE_BERT_CRF_DNRTI_TP.ipynb"
+
+evaluation:
+  ner_granularity: "token-level"   # seqeval BIO tags
+  re_granularity: "classification" # entity-pair classification
+  note: "Not directly comparable to generative models (token vs entity level)"
+
+dataset_split: "results/finetuning/data/split_manifest.json"
+train_docs: 6429
+val_docs: 722
+test_docs: 707

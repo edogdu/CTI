@@ -1,0 +1,158 @@
+{
+  "task": "RE (oracle NER)",
+  "model": "gemma3-cti-4b",
+  "data": "results\\finetuning\\data\\test_dnrti.json",
+  "n_docs": 707,
+  "n_evaluated": 624,
+  "timestamp": "2026-03-13T17:21:37.354533",
+  "micro": {
+    "precision": 0.8978,
+    "recall": 0.8687,
+    "f1": 0.883,
+    "tp": 2415,
+    "fp": 275,
+    "fn": 365
+  },
+  "macro": {
+    "precision": 0.8978,
+    "recall": 0.9001,
+    "f1": 0.8881
+  },
+  "per_pred": {
+    "identifies": {
+      "precision": 0.9559,
+      "recall": 0.8442,
+      "f1": 0.8966,
+      "tp": 65,
+      "fp": 3,
+      "fn": 12,
+      "gold": 77
+    },
+    "affiliatedwith": {
+      "precision": 1.0,
+      "recall": 0.8,
+      "f1": 0.8889,
+      "tp": 12,
+      "fp": 0,
+      "fn": 3,
+      "gold": 15
+    },
+    "uses": {
+      "precision": 0.9006,
+      "recall": 0.9216,
+      "f1": 0.911,
+      "tp": 870,
+      "fp": 96,
+      "fn": 74,
+      "gold": 944
+    },
+    "hasattacklocation": {
+      "precision": 1.0,
+      "recall": 0.8289,
+      "f1": 0.9065,
+      "tp": 126,
+      "fp": 0,
+      "fn": 26,
+      "gold": 152
+    },
+    "associatedwith": {
+      "precision": 0.8085,
+      "recall": 0.7451,
+      "f1": 0.7755,
+      "tp": 228,
+      "fp": 54,
+      "fn": 78,
+      "gold": 306
+    },
+    "targetedby": {
+      "precision": 0.8571,
+      "recall": 0.8936,
+      "f1": 0.875,
+      "tp": 210,
+      "fp": 35,
+      "fn": 25,
+      "gold": 235
+    },
+    "usedby": {
+      "precision": 0.768,
+      "recall": 0.8613,
+      "f1": 0.812,
+      "tp": 149,
+      "fp": 45,
+      "fn": 24,
+      "gold": 173
+    },
+    "hasattacktime": {
+      "precision": 1.0,
+      "recall": 0.8824,
+      "f1": 0.9375,
+      "tp": 90,
+      "fp": 0,
+      "fn": 12,
+      "gold": 102
+    },
+    "targets": {
+      "precision": 0.9618,
+      "recall": 0.858,
+      "f1": 0.9069,
+      "tp": 604,
+      "fp": 24,
+      "fn": 100,
+      "gold": 704
+    },
+    "haslocation": {
+      "precision": 0.8197,
+      "recall": 0.8621,
+      "f1": 0.8403,
+      "tp": 50,
+      "fp": 11,
+      "fn": 8,
+      "gold": 58
+    },
+    "contains": {
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6667,
+      "tp": 2,
+      "fp": 2,
+      "fn": 0,
+      "gold": 2
+    },
+    "hasvulnerability": {
+      "precision": 1.0,
+      "recall": 0.6667,
+      "f1": 0.8,
+      "tp": 6,
+      "fp": 0,
+      "fn": 3,
+      "gold": 9
+    },
+    "monitors": {
+      "precision": 0.75,
+      "recall": 1.0,
+      "f1": 0.8571,
+      "tp": 3,
+      "fp": 1,
+      "fn": 0,
+      "gold": 3
+    },
+    "monitoredby": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 3,
+      "fn": 0,
+      "gold": 0
+    },
+    "identifiedby": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 1,
+      "fn": 0,
+      "gold": 0
+    }
+  }
+}

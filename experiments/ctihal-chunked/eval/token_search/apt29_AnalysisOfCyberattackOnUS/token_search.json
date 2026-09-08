@@ -1,0 +1,1589 @@
+{
+  "doc_id": "apt29_AnalysisOfCyberattackOnUS",
+  "method": "bm25+regex",
+  "n_entities": 104,
+  "n_sentences": 16,
+  "bm25_matched_ids": [
+    "S0021",
+    "S0114",
+    "S0133",
+    "S0154",
+    "S0198",
+    "S0346",
+    "S0403",
+    "S0440",
+    "S0568",
+    "S1029",
+    "S1071",
+    "S1081",
+    "S1171",
+    "T0817",
+    "T0837",
+    "T1027.009",
+    "T1027.012",
+    "T1036.007",
+    "T1036.008",
+    "T1059.003",
+    "T1070.001",
+    "T1090",
+    "T1090.002",
+    "T1114.002",
+    "T1134.005",
+    "T1137",
+    "T1137.001",
+    "T1137.002",
+    "T1204.002",
+    "T1222.001",
+    "T1505.001",
+    "T1547.012",
+    "T1550.002",
+    "T1555.004",
+    "T1562.008",
+    "T1562.011",
+    "T1564.008",
+    "T1568",
+    "T1574.013",
+    "T1588.002",
+    "T1608.002",
+    "T1630.002",
+    "T1635.001",
+    "T1637",
+    "TA0007",
+    "TA0102"
+  ],
+  "regex_matched_ids": [],
+  "combined_matched_ids": [
+    "S0021",
+    "S0114",
+    "S0133",
+    "S0154",
+    "S0198",
+    "S0346",
+    "S0403",
+    "S0440",
+    "S0568",
+    "S1029",
+    "S1071",
+    "S1081",
+    "S1171",
+    "T0817",
+    "T0837",
+    "T1027.009",
+    "T1027.012",
+    "T1036.007",
+    "T1036.008",
+    "T1059.003",
+    "T1070.001",
+    "T1090",
+    "T1090.002",
+    "T1114.002",
+    "T1134.005",
+    "T1137",
+    "T1137.001",
+    "T1137.002",
+    "T1204.002",
+    "T1222.001",
+    "T1505.001",
+    "T1547.012",
+    "T1550.002",
+    "T1555.004",
+    "T1562.008",
+    "T1562.011",
+    "T1564.008",
+    "T1568",
+    "T1574.013",
+    "T1588.002",
+    "T1608.002",
+    "T1630.002",
+    "T1635.001",
+    "T1637",
+    "TA0007",
+    "TA0102"
+  ],
+  "n_bm25": 46,
+  "n_regex": 0,
+  "n_combined": 46,
+  "per_entity": [
+    {
+      "query": "reconnaissance (ACT), associatedwith WMI (TOOL), associatedwith PowerShell (TOOL), associatedwith CobaltStrike (TOOL), associatedwith C&C (TOOL), usedby XOR (ENCR), usedby DeXOR (ENCR), associatedwith \\\\.\\pipe\\MSSE-<number>-server (FILE), associatedwith Cobalt Strike (TOOL)",
+      "entity_name": "reconnaissance",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "Cobalt Strike",
+          "clean_id": "S0154",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 24.15218734741211
+        },
+        {
+          "name": "Obtain Capabilities: Tool",
+          "clean_id": "T1588.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 23.070104598999023
+        },
+        {
+          "name": "Stage Capabilities: Upload Tool",
+          "clean_id": "T1608.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 19.92454719543457
+        }
+      ]
+    },
+    {
+      "query": "Windows Print Spooler service (TOOL), hasvulnerability CVE2022-38028 (VULID), associatedwith exploit (VULNAME), uses Forest Blizzard (APT), uses credentials (IDTY), associatedwith CVE2022-38028 (VULID), uses Forest Blizzard's (APT), uses cybersecurity (IDTY), uses Microsoft Security (SECTEAM), uses Microsoft Threat Protection (SECTEAM), uses Windows Defender ATP (SECTEAM), uses Facebook (IDTY), uses Twitter (IDTY), uses Windows Defender Security Intelligence (SECTEAM), uses Microsoft (IDTY)",
+      "entity_name": "Windows Print Spooler service",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "Command and Scripting Interpreter: Windows Command Shell",
+          "clean_id": "T1059.003",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 29.3626651763916
+        },
+        {
+          "name": "Riltok",
+          "clean_id": "S0403",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 27.759410858154297
+        },
+        {
+          "name": "Dynamic Resolution",
+          "clean_id": "T1637",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 27.35400390625
+        }
+      ]
+    },
+    {
+      "query": "exploit (VULNAME), associatedwith CVE2022-38028 (VULID), associatedwith Windows Print Spooler service (TOOL), targets Forest Blizzard (APT), hasvulnerability credentials (IDTY), targets Forest Blizzard's (APT), hasvulnerability cybersecurity (IDTY), identifies Microsoft Security (SECTEAM), identifies Microsoft Threat Protection (SECTEAM), identifies Windows Defender ATP (SECTEAM), hasvulnerability Facebook (IDTY), hasvulnerability Twitter (IDTY), identifies Windows Defender Security Intelligence (SECTEAM), hasvulnerability Microsoft (IDTY)",
+      "entity_name": "exploit",
+      "type": "VULNAME",
+      "hits": [
+        {
+          "name": "Access Token Manipulation: SID-History Injection",
+          "clean_id": "T1134.005",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 19.81057357788086
+        },
+        {
+          "name": "Boot or Logon Autostart Execution: Print Processors",
+          "clean_id": "T1547.012",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 19.50531578063965
+        },
+        {
+          "name": "Impair Defenses: Spoof Security Alerting",
+          "clean_id": "T1562.011",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 16.34197235107422
+        }
+      ]
+    },
+    {
+      "query": "Forest Blizzard (APT), targets CVE2022-38028 (VULID), uses Windows Print Spooler service (TOOL), targets exploit (VULNAME), targetedby credentials (IDTY), targetedby CVE2022-38028 (VULID), affiliatedwith Forest Blizzard's (APT), targetedby cybersecurity (IDTY), identifies Microsoft Security (SECTEAM), identifies Microsoft Threat Protection (SECTEAM), identifies Windows Defender ATP (SECTEAM), targetedby Facebook (IDTY), targetedby Twitter (IDTY), identifies Windows Defender Security Intelligence (SECTEAM), targetedby Microsoft (IDTY)",
+      "entity_name": "Forest Blizzard",
+      "type": "APT",
+      "hits": [
+        {
+          "name": "Access Token Manipulation: SID-History Injection",
+          "clean_id": "T1134.005",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 19.81057357788086
+        },
+        {
+          "name": "Boot or Logon Autostart Execution: Print Processors",
+          "clean_id": "T1547.012",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 19.50531578063965
+        },
+        {
+          "name": "Impair Defenses: Spoof Security Alerting",
+          "clean_id": "T1562.011",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 16.34197235107422
+        }
+      ]
+    },
+    {
+      "query": "CVE2022-38028 (VULID), associatedwith Windows Print Spooler service (TOOL), associatedwith exploit (VULNAME), targetedby Forest Blizzard (APT), hasvulnerability Windows Print Spooler service (TOOL), targets Forest Blizzard (APT), hasvulnerability credentials (IDTY), targets Forest Blizzard's (APT), hasvulnerability cybersecurity (IDTY), targetedby cybersecurity (IDTY), identifies Microsoft Security (SECTEAM), identifies Microsoft Threat Protection (SECTEAM), identifies Windows Defender ATP (SECTEAM), hasvulnerability Facebook (IDTY), targetedby Facebook (IDTY), hasvulnerability Twitter (IDTY), targetedby Twitter (IDTY), identifies Windows Defender Security Intelligence (SECTEAM), hasvulnerability Microsoft (IDTY), targetedby Microsoft (IDTY)",
+      "entity_name": "CVE2022-38028",
+      "type": "VULID",
+      "hits": [
+        {
+          "name": "Boot or Logon Autostart Execution: Print Processors",
+          "clean_id": "T1547.012",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 35.099639892578125
+        },
+        {
+          "name": "Access Token Manipulation: SID-History Injection",
+          "clean_id": "T1134.005",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 22.44450569152832
+        },
+        {
+          "name": "Credentials from Password Stores: Windows Credential Manager",
+          "clean_id": "T1555.004",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 19.57930564880371
+        }
+      ]
+    },
+    {
+      "query": "Forest Blizzard's (APT), uses Windows Print Spooler service (TOOL), targets exploit (VULNAME), affiliatedwith Forest Blizzard (APT), hasattacktime 2019 (TIME), targets credentials (IDTY), targets CVE2022-38028 (VULID), targetedby cybersecurity (IDTY), identifies Microsoft Security (SECTEAM), identifies Microsoft Threat Protection (SECTEAM), identifies Windows Defender ATP (SECTEAM), targetedby Facebook (IDTY), targetedby Twitter (IDTY), identifies Windows Defender Security Intelligence (SECTEAM), targetedby Microsoft (IDTY)",
+      "entity_name": "Forest Blizzard's",
+      "type": "APT",
+      "hits": [
+        {
+          "name": "Access Token Manipulation: SID-History Injection",
+          "clean_id": "T1134.005",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 19.81057357788086
+        },
+        {
+          "name": "Boot or Logon Autostart Execution: Print Processors",
+          "clean_id": "T1547.012",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 19.50531578063965
+        },
+        {
+          "name": "Impair Defenses: Spoof Security Alerting",
+          "clean_id": "T1562.011",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 16.34197235107422
+        }
+      ]
+    },
+    {
+      "query": "ZIP (TOOL), uses https://www.jmj.com/personal/nauerthn_state_gov\" (URL), usedby ProcessCreationEvents (FILE), uses pandorasong.com\" (DOM), usedby NetworkCommunicationEvents (FILE), usedby SHA1 (ENCR), usedby 9858d5cb2a6614be3c48e33911bf9f7978b441bf\"; (HASH)",
+      "entity_name": "ZIP",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "Use Alternate Authentication Material: Pass the Hash",
+          "clean_id": "T1550.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 9.35857105255127
+        },
+        {
+          "name": "Masquerading: Masquerade File Type",
+          "clean_id": "T1036.008",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 7.689958095550537
+        },
+        {
+          "name": "File Deletion",
+          "clean_id": "T1630.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 7.52243709564209
+        }
+      ]
+    },
+    {
+      "query": "DLL (TOOL), uses cd92f19d3ad4ec50f6d19652af010fe07dca55e1\"; (HASH), uses ProcessCreationEvents (FILE), uses NetworkCommunicationEvents (FILE), uses SHA1 (ENCR), uses 9858d5cb2a6614be3c48e33911bf9f7978b441bf\"; (HASH)",
+      "entity_name": "DLL",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "Use Alternate Authentication Material: Pass the Hash",
+          "clean_id": "T1550.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 20.385753631591797
+        },
+        {
+          "name": "Dynamic Resolution",
+          "clean_id": "T1637",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 12.433637619018555
+        },
+        {
+          "name": "Riltok",
+          "clean_id": "S0403",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 11.88599967956543
+        }
+      ]
+    },
+    {
+      "query": "advanced attacks (ACT), associatedwith Windows Defender ATP (SECTEAM), identifies Windows Defender ATP (SECTEAM), identifies Windows Defender Security Center (SECTEAM), associatedwith Network activity (ACT), associatedwith attack activity (ACT), associatedwith LNK file (FILE)",
+      "entity_name": "advanced attacks",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "Impair Defenses: Spoof Security Alerting",
+          "clean_id": "T1562.011",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 18.83803367614746
+        },
+        {
+          "name": "File and Directory Permissions Modification: Windows File and Directory Permissions Modification",
+          "clean_id": "T1222.001",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 15.11693000793457
+        },
+        {
+          "name": "Indicator Removal: Clear Windows Event Logs",
+          "clean_id": "T1070.001",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 13.285321235656738
+        }
+      ]
+    },
+    {
+      "query": "Network activity (ACT), associatedwith Windows Defender ATP (SECTEAM), associatedwith advanced attacks (ACT), associatedwith LNK file (FILE)",
+      "entity_name": "Network activity",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "Obfuscated Files or Information: LNK Icon Smuggling",
+          "clean_id": "T1027.012",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 10.269377708435059
+        },
+        {
+          "name": "User Execution: Malicious File",
+          "clean_id": "T1204.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 9.454635620117188
+        },
+        {
+          "name": "File Deletion",
+          "clean_id": "T1630.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 8.876471519470215
+        }
+      ]
+    },
+    {
+      "query": "attack activity (ACT), associatedwith Windows Defender ATP (SECTEAM), associatedwith advanced attacks (ACT), associatedwith LNK file (FILE)",
+      "entity_name": "attack activity",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "Obfuscated Files or Information: LNK Icon Smuggling",
+          "clean_id": "T1027.012",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 10.269377708435059
+        },
+        {
+          "name": "User Execution: Malicious File",
+          "clean_id": "T1204.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 9.454635620117188
+        },
+        {
+          "name": "File Deletion",
+          "clean_id": "T1630.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 8.876471519470215
+        }
+      ]
+    },
+    {
+      "query": "network artifacts (ACT), associatedwith filesystem (FILE), identifies Office 365 ATP (SECTEAM), associatedwith malicious emails (ACT), identifies Windows Defender ATP (SECTEAM), identifies Microsoft Threat Protection (SECTEAM), associatedwith attack (ACT)",
+      "entity_name": "network artifacts",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "File and Directory Permissions Modification: Windows File and Directory Permissions Modification",
+          "clean_id": "T1222.001",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 11.037057876586914
+        },
+        {
+          "name": "Office Application Startup",
+          "clean_id": "T1137",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 10.622172355651855
+        },
+        {
+          "name": "Proxy",
+          "clean_id": "T1090",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 9.66057300567627
+        }
+      ]
+    },
+    {
+      "query": "malicious emails (ACT), associatedwith attack (ACT), associatedwith network artifacts (ACT), identifies Windows Defender ATP (SECTEAM), identifies Microsoft Threat Protection (SECTEAM)",
+      "entity_name": "malicious emails",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "Proxy",
+          "clean_id": "T1090",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 9.66057300567627
+        },
+        {
+          "name": "Discovery",
+          "clean_id": "TA0102",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexTACTICS"
+          ],
+          "score": 9.334513664245605
+        },
+        {
+          "name": "Hide Artifacts: Email Hiding Rules",
+          "clean_id": "T1564.008",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 8.699278831481934
+        }
+      ]
+    },
+    {
+      "query": "weaponize embedded URLs (ACT), associatedwith Zero-hour Auto Purge (ZAP) (TOOL)",
+      "entity_name": "weaponize embedded URLs",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "AuTo Stealer",
+          "clean_id": "S1029",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 6.855413436889648
+        },
+        {
+          "name": "Obfuscated Files or Information: Embedded Payloads",
+          "clean_id": "T1027.009",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 4.662980079650879
+        },
+        {
+          "name": "Rubeus",
+          "clean_id": "S1071",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 3.8598077297210693
+        }
+      ]
+    },
+    {
+      "query": "Zero-hour Auto Purge (ZAP) (TOOL), associatedwith weaponize embedded URLs (ACT), associatedwith attacks (ACT), associatedwith emails (ACT)",
+      "entity_name": "Zero-hour Auto Purge (ZAP)",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "Discovery",
+          "clean_id": "TA0102",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexTACTICS"
+          ],
+          "score": 8.614566802978516
+        },
+        {
+          "name": "Discovery",
+          "clean_id": "TA0007",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexTACTICS"
+          ],
+          "score": 7.5240583419799805
+        },
+        {
+          "name": "AuTo Stealer",
+          "clean_id": "S1029",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 6.855413436889648
+        }
+      ]
+    },
+    {
+      "query": "attacks (ACT), uses URLs (URL), associatedwith Zero-hour Auto Purge (ZAP) (TOOL), uses malware (MAL), targetedby (Behavior:Win32/Atosev.gen!A) (VULNAME), identifies Windows Defender ATP (SECTEAM), identifies Office 365 ATP (SECTEAM), identifies Windows Defender Advanced Threat Protection (SECTEAM), identifies Office 365 Advanced Threat Protection (SECTEAM), identifies Microsoft Threat Protection (SECTEAM)",
+      "entity_name": "attacks",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "Office Application Startup",
+          "clean_id": "T1137",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 18.490741729736328
+        },
+        {
+          "name": "Loss of Protection",
+          "clean_id": "T0837",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 16.583099365234375
+        },
+        {
+          "name": "Access Token Manipulation: SID-History Injection",
+          "clean_id": "T1134.005",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 15.390567779541016
+        }
+      ]
+    },
+    {
+      "query": "email (ACT), uses URLs (URL), associatedwith Office 365 ATP (SECTEAM), associatedwith Safe Links protection (SECTEAM), associatedwith Office 365 E5 (SECTEAM), uses malware (MAL), targetedby (Behavior:Win32/Atosev.gen!A) (VULNAME), identifies Windows Defender ATP (SECTEAM), identifies Office 365 ATP (SECTEAM), identifies Windows Defender Advanced Threat Protection (SECTEAM), identifies Office 365 Advanced Threat Protection (SECTEAM), identifies Microsoft Threat Protection (SECTEAM)",
+      "entity_name": "email",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "Office Application Startup",
+          "clean_id": "T1137",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 33.89649963378906
+        },
+        {
+          "name": "Email Collection: Remote Email Collection",
+          "clean_id": "T1114.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 27.388927459716797
+        },
+        {
+          "name": "Office Application Startup: Office Test",
+          "clean_id": "T1137.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 26.136507034301758
+        }
+      ]
+    },
+    {
+      "query": "cyberthreat campaigns (ACT), uses URLs (URL), associatedwith Office 365 ATP (SECTEAM), associatedwith Safe Links protection (SECTEAM), associatedwith Office 365 E5 (SECTEAM), uses malware (MAL), targetedby (Behavior:Win32/Atosev.gen!A) (VULNAME), identifies Windows Defender ATP (SECTEAM), identifies Office 365 ATP (SECTEAM), identifies Windows Defender Advanced Threat Protection (SECTEAM), identifies Office 365 Advanced Threat Protection (SECTEAM), identifies Microsoft Threat Protection (SECTEAM)",
+      "entity_name": "cyberthreat campaigns",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "Office Application Startup",
+          "clean_id": "T1137",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 33.89649963378906
+        },
+        {
+          "name": "Office Application Startup: Office Test",
+          "clean_id": "T1137.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 26.136507034301758
+        },
+        {
+          "name": "Impair Defenses: Disable or Modify Cloud Logs",
+          "clean_id": "T1562.008",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 23.291120529174805
+        }
+      ]
+    },
+    {
+      "query": "malware (MAL), uses URLs (URL), uses attacks (ACT), uses Office 365 ATP (SECTEAM), uses Safe Links protection (SECTEAM), uses Office 365 E5 (SECTEAM), uses email (ACT), uses cyberthreat campaigns (ACT), targetedby (Behavior:Win32/Atosev.gen!A) (VULNAME), identifies Windows Defender ATP (SECTEAM), associatedwith campaign emails-including (ACT), associatedwith emails (ACT), associatedwith Phishing (ACT), identifies Office 365 ATP (SECTEAM), identifies Windows Defender Advanced Threat Protection (SECTEAM), identifies Office 365 Advanced Threat Protection (SECTEAM), associatedwith attack (ACT), identifies Microsoft Threat Protection (SECTEAM)",
+      "entity_name": "malware",
+      "type": "MAL",
+      "hits": [
+        {
+          "name": "Office Application Startup",
+          "clean_id": "T1137",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 33.89649963378906
+        },
+        {
+          "name": "Email Collection: Remote Email Collection",
+          "clean_id": "T1114.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 27.388927459716797
+        },
+        {
+          "name": "Office Application Startup: Office Test",
+          "clean_id": "T1137.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 26.136507034301758
+        }
+      ]
+    },
+    {
+      "query": "(Behavior:Win32/Atosev.gen!A) (VULNAME), associatedwith URLs (URL), targetedby attacks (ACT), targetedby email (ACT), targetedby cyberthreat campaigns (ACT), targetedby malware (MAL), identifies Windows Defender ATP (SECTEAM), associatedwith campaign emails-including (ACT), associatedwith emails (ACT), associatedwith Phishing (ACT), identifies Office 365 ATP (SECTEAM), identifies Windows Defender Advanced Threat Protection (SECTEAM), identifies Office 365 Advanced Threat Protection (SECTEAM), associatedwith attack (ACT), identifies Microsoft Threat Protection (SECTEAM)",
+      "entity_name": "(Behavior:Win32/Atosev.gen!A)",
+      "type": "VULNAME",
+      "hits": [
+        {
+          "name": "URI Hijacking",
+          "clean_id": "T1635.001",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 20.170074462890625
+        },
+        {
+          "name": "Discovery",
+          "clean_id": "TA0102",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexTACTICS"
+          ],
+          "score": 20.166173934936523
+        },
+        {
+          "name": "Office Application Startup",
+          "clean_id": "T1137",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 18.490741729736328
+        }
+      ]
+    },
+    {
+      "query": "campaign emails-including (ACT), uses URLs (URL), associatedwith Office 365 ATP (SECTEAM), associatedwith Safe Links protection (SECTEAM), associatedwith Office 365 E5 (SECTEAM), associatedwith malware (MAL), associatedwith (Behavior:Win32/Atosev.gen!A) (VULNAME), identifies Office 365 ATP (SECTEAM), identifies Windows Defender Advanced Threat Protection (SECTEAM), identifies Office 365 Advanced Threat Protection (SECTEAM), identifies Microsoft Threat Protection (SECTEAM)",
+      "entity_name": "campaign emails-including",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "Office Application Startup",
+          "clean_id": "T1137",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 33.0252799987793
+        },
+        {
+          "name": "Office Application Startup: Office Test",
+          "clean_id": "T1137.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 26.136507034301758
+        },
+        {
+          "name": "Impair Defenses: Disable or Modify Cloud Logs",
+          "clean_id": "T1562.008",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 23.291120529174805
+        }
+      ]
+    },
+    {
+      "query": "emails (ACT), uses URLs (URL), associatedwith Office 365 ATP (SECTEAM), associatedwith Safe Links protection (SECTEAM), associatedwith Office 365 E5 (SECTEAM), associatedwith malware (MAL), associatedwith (Behavior:Win32/Atosev.gen!A) (VULNAME), associatedwith Zero-hour Auto Purge (ZAP) (TOOL), identifies Office 365 ATP (SECTEAM), identifies Windows Defender Advanced Threat Protection (SECTEAM), identifies Office 365 Advanced Threat Protection (SECTEAM), identifies Microsoft Threat Protection (SECTEAM)",
+      "entity_name": "emails",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "Office Application Startup",
+          "clean_id": "T1137",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 33.0252799987793
+        },
+        {
+          "name": "Office Application Startup: Office Test",
+          "clean_id": "T1137.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 26.136507034301758
+        },
+        {
+          "name": "Impair Defenses: Disable or Modify Cloud Logs",
+          "clean_id": "T1562.008",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 23.291120529174805
+        }
+      ]
+    },
+    {
+      "query": "WMI (TOOL), associatedwith communicating with C&C servers (ACT), associatedwith reconnaissance (ACT), usedby XOR (ENCR), usedby DeXOR (ENCR), usedby \\\\.\\pipe\\MSSE-<number>-server (FILE)",
+      "entity_name": "WMI",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "Miner-C",
+          "clean_id": "S0133",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 12.813321113586426
+        },
+        {
+          "name": "Server Software Component: SQL Stored Procedures",
+          "clean_id": "T1505.001",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 6.832401275634766
+        },
+        {
+          "name": "Proxy",
+          "clean_id": "T1090",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 6.824448108673096
+        }
+      ]
+    },
+    {
+      "query": "CobaltStrike (TOOL), associatedwith communicating with C&C servers (ACT), associatedwith reconnaissance (ACT), usedby XOR (ENCR), usedby DeXOR (ENCR), usedby \\\\.\\pipe\\MSSE-<number>-server (FILE)",
+      "entity_name": "CobaltStrike",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "Miner-C",
+          "clean_id": "S0133",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 12.813321113586426
+        },
+        {
+          "name": "Server Software Component: SQL Stored Procedures",
+          "clean_id": "T1505.001",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 6.832401275634766
+        },
+        {
+          "name": "Proxy",
+          "clean_id": "T1090",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 6.824448108673096
+        }
+      ]
+    },
+    {
+      "query": "C&C (TOOL), uses 95.216.59.92) (IP), uses cd92f19d3ad4ec50f6d19652af010fe07dca55e1\"; (HASH), uses ProcessCreationEvents (FILE), uses NetworkCommunicationEvents (FILE), associatedwith communicating with C&C servers (ACT), associatedwith reconnaissance (ACT), uses pandorasong[.]com (DOM), uses hxxps://www.jmj[.]com/personal/nauerthn_state_gov/VFVKRTdRSm (URL), usedby SHA1 (ENCR), usedby 9858d5cb2a6614be3c48e33911bf9f7978b441bf\"; (HASH), usedby XOR (ENCR), usedby DeXOR (ENCR), usedby \\\\.\\pipe\\MSSE-<number>-server (FILE)",
+      "entity_name": "C&C",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "Miner-C",
+          "clean_id": "S0133",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 23.707855224609375
+        },
+        {
+          "name": "Use Alternate Authentication Material: Pass the Hash",
+          "clean_id": "T1550.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 22.681058883666992
+        },
+        {
+          "name": "Dynamic Resolution",
+          "clean_id": "T1637",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 19.315019607543945
+        }
+      ]
+    },
+    {
+      "query": "communicating with C&C servers (ACT), associatedwith WMI (TOOL), associatedwith PowerShell (TOOL), associatedwith CobaltStrike (TOOL), associatedwith C&C (TOOL), usedby XOR (ENCR), usedby DeXOR (ENCR), associatedwith \\\\.\\pipe\\MSSE-<number>-server (FILE), associatedwith Cobalt Strike (TOOL)",
+      "entity_name": "communicating with C&C servers",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "Cobalt Strike",
+          "clean_id": "S0154",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 24.15218734741211
+        },
+        {
+          "name": "Miner-C",
+          "clean_id": "S0133",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 23.707855224609375
+        },
+        {
+          "name": "Obtain Capabilities: Tool",
+          "clean_id": "T1588.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 23.070104598999023
+        }
+      ]
+    },
+    {
+      "query": "campaign (ACT), hasattacktime Wednesday, November 14 (TIME), usedby YTTRIUM (APT), usedby CozyBear (APT), usedby APT29 (APT), targets Microsoft (IDTY), targets hospitality industries (IDTY), targets chemical (IDTY), targets oil and gas (IDTY), targets private-sector corporations (IDTY), targets educational institutions (IDTY), targets non-governmental organizations (IDTY), targets public sector institutions (IDTY), uses YTTRIUM (APT), uses CozyBear (APT), uses APT29 (APT), identifies Microsoft Threat Protection (SECTEAM), targetedby Microsoft customers (IDTY), targetedby Microsoft (IDTY), targetedby Reuters (IDTY)",
+      "entity_name": "campaign",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "BOOTRASH",
+          "clean_id": "S0114",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 23.7829647064209
+        },
+        {
+          "name": "Drive-by Compromise",
+          "clean_id": "T0817",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 22.823118209838867
+        },
+        {
+          "name": "OilCheck",
+          "clean_id": "S1171",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 21.531600952148438
+        }
+      ]
+    },
+    {
+      "query": "attack (ACT), associatedwith network artifacts (ACT), associatedwith malicious emails (ACT), uses URLs (URL), associatedwith Office 365 ATP (SECTEAM), associatedwith Safe Links protection (SECTEAM), associatedwith Office 365 E5 (SECTEAM), associatedwith malware (MAL), associatedwith (Behavior:Win32/Atosev.gen!A) (VULNAME), hasattacktime Wednesday, November 14 (TIME), targets Microsoft (IDTY), usedby YTTRIUM (APT), usedby CozyBear (APT), usedby APT29 (APT), identifies Windows Defender Security Center (SECTEAM), associatedwith filesystem (FILE), identifies Office 365 ATP (SECTEAM), identifies Windows Defender ATP (SECTEAM), targetedby Canada (LOC), targetedby India (LOC), targetedby Hong Kong (LOC), targetedby Europe (LOC), targetedby Washington, D.C. (LOC), targetedby United States (LOC), identifies Microsoft Threat Protection (SECTEAM), targetedby Microsoft customers (IDTY)",
+      "entity_name": "attack",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "Office Application Startup",
+          "clean_id": "T1137",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 29.48485565185547
+        },
+        {
+          "name": "Office Application Startup: Office Test",
+          "clean_id": "T1137.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 24.745162963867188
+        },
+        {
+          "name": "Office Application Startup: Office Template Macros",
+          "clean_id": "T1137.001",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 23.126399993896484
+        }
+      ]
+    },
+    {
+      "query": "malicious activities (ACT), targets Microsoft (IDTY), usedby YTTRIUM (APT), usedby CozyBear (APT), usedby APT29 (APT), identifies Microsoft Threat Protection (SECTEAM), targetedby Microsoft customers (IDTY)",
+      "entity_name": "malicious activities",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "Derusbi",
+          "clean_id": "S0021",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 8.955537796020508
+        },
+        {
+          "name": "Proxy",
+          "clean_id": "T1090",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 8.786142349243164
+        },
+        {
+          "name": "Hijack Execution Flow: KernelCallbackTable",
+          "clean_id": "T1574.013",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 8.601091384887695
+        }
+      ]
+    },
+    {
+      "query": "APT29 (APT), identifiedby Microsoft AccountGuard (SECTEAM), identifiedby Defending Democracy Program (SECTEAM), targets Microsoft (IDTY), uses nation-state attacks (ACT), uses campaign (ACT), affiliatedwith YTTRIUM (APT), affiliatedwith CozyBear (APT), usedby nation-state attacks (ACT), usedby campaign (ACT), usedby attack (ACT), usedby malicious activities (ACT), identifies Microsoft Threat Protection (SECTEAM), targetedby Microsoft customers (IDTY)",
+      "entity_name": "APT29",
+      "type": "APT",
+      "hits": [
+        {
+          "name": "Proxy",
+          "clean_id": "T1090",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 20.757600784301758
+        },
+        {
+          "name": "Discovery",
+          "clean_id": "TA0102",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexTACTICS"
+          ],
+          "score": 18.621540069580078
+        },
+        {
+          "name": "Proxy: External Proxy",
+          "clean_id": "T1090.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 17.66032600402832
+        }
+      ]
+    },
+    {
+      "query": "CozyBear (APT), identifiedby Microsoft AccountGuard (SECTEAM), identifiedby Defending Democracy Program (SECTEAM), targets Microsoft (IDTY), uses nation-state attacks (ACT), uses campaign (ACT), affiliatedwith YTTRIUM (APT), usedby nation-state attacks (ACT), usedby campaign (ACT), affiliatedwith APT29 (APT), usedby attack (ACT), usedby malicious activities (ACT), identifies Microsoft Threat Protection (SECTEAM), targetedby Microsoft customers (IDTY)",
+      "entity_name": "CozyBear",
+      "type": "APT",
+      "hits": [
+        {
+          "name": "Proxy",
+          "clean_id": "T1090",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 20.757600784301758
+        },
+        {
+          "name": "Discovery",
+          "clean_id": "TA0102",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexTACTICS"
+          ],
+          "score": 18.621540069580078
+        },
+        {
+          "name": "Proxy: External Proxy",
+          "clean_id": "T1090.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 17.66032600402832
+        }
+      ]
+    },
+    {
+      "query": "YTTRIUM (APT), identifiedby Microsoft AccountGuard (SECTEAM), identifiedby Defending Democracy Program (SECTEAM), targets Microsoft (IDTY), uses nation-state attacks (ACT), uses campaign (ACT), usedby nation-state attacks (ACT), usedby campaign (ACT), affiliatedwith CozyBear (APT), affiliatedwith APT29 (APT), usedby attack (ACT), usedby malicious activities (ACT), identifies Microsoft Threat Protection (SECTEAM), targetedby Microsoft customers (IDTY)",
+      "entity_name": "YTTRIUM",
+      "type": "APT",
+      "hits": [
+        {
+          "name": "Proxy",
+          "clean_id": "T1090",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 20.757600784301758
+        },
+        {
+          "name": "Discovery",
+          "clean_id": "TA0102",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexTACTICS"
+          ],
+          "score": 18.621540069580078
+        },
+        {
+          "name": "Proxy: External Proxy",
+          "clean_id": "T1090.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 17.66032600402832
+        }
+      ]
+    },
+    {
+      "query": "nation-state attacks (ACT), usedby YTTRIUM (APT), usedby CozyBear (APT), usedby APT29 (APT), targets Microsoft (IDTY), uses YTTRIUM (APT), uses CozyBear (APT), uses APT29 (APT), identifies Microsoft Threat Protection (SECTEAM), targetedby Microsoft customers (IDTY)",
+      "entity_name": "nation-state attacks",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "Derusbi",
+          "clean_id": "S0021",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 17.911075592041016
+        },
+        {
+          "name": "NETWIRE",
+          "clean_id": "S0198",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 16.883460998535156
+        },
+        {
+          "name": "EVILNUM",
+          "clean_id": "S0568",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 16.566635131835938
+        }
+      ]
+    },
+    {
+      "query": "Phishing (ACT), uses URLs (URL), associatedwith Office 365 ATP (SECTEAM), associatedwith Safe Links protection (SECTEAM), associatedwith Office 365 E5 (SECTEAM), associatedwith malware (MAL), associatedwith (Behavior:Win32/Atosev.gen!A) (VULNAME), uses base64-encoded (ENCR), uses PowerShell (TOOL), targets recipients' machines. (IDTY), associatedwith DLL backdoor (MAL), identifies Office 365 ATP (SECTEAM), identifies Windows Defender Advanced Threat Protection (SECTEAM), identifies Office 365 Advanced Threat Protection (SECTEAM), identifies Microsoft Threat Protection (SECTEAM), targetedby Canada (LOC), targetedby India (LOC), targetedby Hong Kong (LOC), targetedby Europe (LOC), targetedby Washington, D.C. (LOC), targetedby United States (LOC)",
+      "entity_name": "Phishing",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "Office Application Startup",
+          "clean_id": "T1137",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 33.0252799987793
+        },
+        {
+          "name": "Office Application Startup: Office Test",
+          "clean_id": "T1137.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 28.326908111572266
+        },
+        {
+          "name": "Impair Defenses: Disable or Modify Cloud Logs",
+          "clean_id": "T1562.008",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 23.291120529174805
+        }
+      ]
+    },
+    {
+      "query": "spear-phishing emails (ACT), targetedby Canada (LOC), targetedby India (LOC), targetedby Hong Kong (LOC), targetedby Europe (LOC), targetedby Washington, D.C. (LOC), targetedby United States (LOC)",
+      "entity_name": "spear-phishing emails",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "Agent Smith",
+          "clean_id": "S0440",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 9.33782958984375
+        },
+        {
+          "name": "OceanSalt",
+          "clean_id": "S0346",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 9.268716812133789
+        },
+        {
+          "name": "BADHATCH",
+          "clean_id": "S1081",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 9.102578163146973
+        }
+      ]
+    },
+    {
+      "query": "exploitation (ACT), targetedby Canada (LOC), targetedby India (LOC), targetedby Hong Kong (LOC), targetedby Europe (LOC), targetedby Washington, D.C. (LOC), targetedby United States (LOC)",
+      "entity_name": "exploitation",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "Agent Smith",
+          "clean_id": "S0440",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 9.33782958984375
+        },
+        {
+          "name": "OceanSalt",
+          "clean_id": "S0346",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 9.268716812133789
+        },
+        {
+          "name": "BADHATCH",
+          "clean_id": "S1081",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 9.102578163146973
+        }
+      ]
+    },
+    {
+      "query": "DLL backdoor (MAL), associatedwith Phishing (ACT), targetedby Canada (LOC), targetedby India (LOC), targetedby Hong Kong (LOC), targetedby Europe (LOC), targetedby Washington, D.C. (LOC), targetedby United States (LOC)",
+      "entity_name": "DLL backdoor",
+      "type": "MAL",
+      "hits": [
+        {
+          "name": "BADHATCH",
+          "clean_id": "S1081",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 10.247840881347656
+        },
+        {
+          "name": "Agent Smith",
+          "clean_id": "S0440",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 9.33782958984375
+        },
+        {
+          "name": "OceanSalt",
+          "clean_id": "S0346",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 9.268716812133789
+        }
+      ]
+    },
+    {
+      "query": "remote access (ACT), targetedby Canada (LOC), targetedby India (LOC), targetedby Hong Kong (LOC), targetedby Europe (LOC), targetedby Washington, D.C. (LOC), targetedby United States (LOC)",
+      "entity_name": "remote access",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "Agent Smith",
+          "clean_id": "S0440",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 9.33782958984375
+        },
+        {
+          "name": "OceanSalt",
+          "clean_id": "S0346",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 9.268716812133789
+        },
+        {
+          "name": "BADHATCH",
+          "clean_id": "S1081",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 9.102578163146973
+        }
+      ]
+    },
+    {
+      "query": "PowerShell (TOOL), uses cd92f19d3ad4ec50f6d19652af010fe07dca55e1\"; (HASH), uses ProcessCreationEvents (FILE), associatedwith communicating with C&C servers (ACT), associatedwith reconnaissance (ACT), uses 95.216.59.92 (IP), uses rundll32.exe (FILE), uses cyzfc.dat (FILE), usedby ProcessCreationEvents (FILE), uses pandorasong.com\" (DOM), usedby NetworkCommunicationEvents (FILE), usedby SHA1 (ENCR), usedby 9858d5cb2a6614be3c48e33911bf9f7978b441bf\"; (HASH), usedby XOR (ENCR), usedby DeXOR (ENCR), usedby \\\\.\\pipe\\MSSE-<number>-server (FILE), uses Phishing (ACT)",
+      "entity_name": "PowerShell",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "Use Alternate Authentication Material: Pass the Hash",
+          "clean_id": "T1550.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 24.610103607177734
+        },
+        {
+          "name": "File Deletion",
+          "clean_id": "T1630.002",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 22.567312240600586
+        },
+        {
+          "name": "Masquerading: Double File Extension",
+          "clean_id": "T1036.007",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 22.052230834960938
+        }
+      ]
+    },
+    {
+      "query": "Cobalt Strike (TOOL), associatedwith communicating with C&C servers (ACT), associatedwith reconnaissance (ACT), uses XOR (ENCR), uses DeXOR (ENCR), uses \\\\.\\pipe\\MSSE-<number>-server (FILE)",
+      "entity_name": "Cobalt Strike",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "Cobalt Strike",
+          "clean_id": "S0154",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 15.130961418151855
+        },
+        {
+          "name": "Miner-C",
+          "clean_id": "S0133",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexSOFTWARE"
+          ],
+          "score": 12.813321113586426
+        },
+        {
+          "name": "Dynamic Resolution",
+          "clean_id": "T1568",
+          "labels": [
+            "Resource",
+            "Vectorized",
+            "UcoexMITREATTACK"
+          ],
+          "score": 9.958626747131348
+        }
+      ]
+    }
+  ],
+  "per_sentence": []
+}

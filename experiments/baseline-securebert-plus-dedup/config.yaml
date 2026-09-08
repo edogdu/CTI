@@ -1,0 +1,23 @@
+name: "baseline-securebert-plus-dedup"
+description: "JE_SecureBERT+ baseline on deduplicated DNRTI dataset"
+model: "ehsanaghaei/SecureBERT_Plus + CRF (NER) + Attention classifier (RE)"
+notebook: "JE_SecureBERT_Plus_DNRTI.ipynb"
+
+dataset:
+  source: "datasets/DNRTI/dnrti_dedup.json"
+  train: 4805
+  val: 507
+  test: 518
+  train_test_text_overlap: 0
+
+training:
+  epochs: 3
+  seed: 42
+  ner_labels: 40
+  re_labels: 17
+  loss_weights: "alpha=1.7, beta=0.3"
+
+notes: |
+  SecureBERT+ is a domain-adapted BERT pre-trained on cybersecurity corpora.
+  Same JE architecture (CRF for NER, attention classifier for RE) as BERT baseline.
+  DNRTI paper reported SecureBERT+ as highest performing baseline.

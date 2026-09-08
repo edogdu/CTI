@@ -1,0 +1,185 @@
+{
+  "model": "gemma2-9b-split-ner-lora",
+  "experiment": "split-gemma2-9b-r16-dedup",
+  "timestamp": "20260323-132229",
+  "task": "NER",
+  "test_docs": 518,
+  "dataset": "dnrti_dedup.json (zero train/test text overlap)",
+  "micro": {
+    "precision": 0.7364,
+    "recall": 0.7673,
+    "f1": 0.7515,
+    "tp": 1405,
+    "fp": 503,
+    "fn": 426
+  },
+  "macro": {
+    "precision": 0.7761,
+    "recall": 0.8295,
+    "f1": 0.799
+  },
+  "per_type": {
+    "ACT": {
+      "precision": 0.645,
+      "recall": 0.663,
+      "f1": 0.6538,
+      "tp": 238,
+      "fp": 131,
+      "fn": 121,
+      "gold": 359
+    },
+    "APT": {
+      "precision": 0.8787,
+      "recall": 0.8735,
+      "f1": 0.8761,
+      "tp": 297,
+      "fp": 41,
+      "fn": 43,
+      "gold": 340
+    },
+    "DOM": {
+      "precision": 0.6667,
+      "recall": 1.0,
+      "f1": 0.8,
+      "tp": 12,
+      "fp": 6,
+      "fn": 0,
+      "gold": 12
+    },
+    "ENCR": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "tp": 2,
+      "fp": 0,
+      "fn": 0,
+      "gold": 2
+    },
+    "FILE": {
+      "precision": 0.64,
+      "recall": 0.6531,
+      "f1": 0.6465,
+      "tp": 32,
+      "fp": 18,
+      "fn": 17,
+      "gold": 49
+    },
+    "HASH": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "tp": 18,
+      "fp": 0,
+      "fn": 0,
+      "gold": 18
+    },
+    "IDTY": {
+      "precision": 0.7204,
+      "recall": 0.8072,
+      "f1": 0.7614,
+      "tp": 201,
+      "fp": 78,
+      "fn": 48,
+      "gold": 249
+    },
+    "IP": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "tp": 2,
+      "fp": 0,
+      "fn": 0,
+      "gold": 2
+    },
+    "LOC": {
+      "precision": 0.7941,
+      "recall": 0.8491,
+      "f1": 0.8207,
+      "tp": 135,
+      "fp": 35,
+      "fn": 24,
+      "gold": 159
+    },
+    "MAL": {
+      "precision": 0.7102,
+      "recall": 0.7733,
+      "f1": 0.7404,
+      "tp": 174,
+      "fp": 71,
+      "fn": 51,
+      "gold": 225
+    },
+    "OS": {
+      "precision": 0.7333,
+      "recall": 0.7333,
+      "f1": 0.7333,
+      "tp": 11,
+      "fp": 4,
+      "fn": 4,
+      "gold": 15
+    },
+    "PROT": {
+      "precision": 0.6667,
+      "recall": 0.9091,
+      "f1": 0.7692,
+      "tp": 10,
+      "fp": 5,
+      "fn": 1,
+      "gold": 11
+    },
+    "SECTEAM": {
+      "precision": 0.9167,
+      "recall": 0.9016,
+      "f1": 0.9091,
+      "tp": 55,
+      "fp": 5,
+      "fn": 6,
+      "gold": 61
+    },
+    "TIME": {
+      "precision": 0.8583,
+      "recall": 0.8195,
+      "f1": 0.8385,
+      "tp": 109,
+      "fp": 18,
+      "fn": 24,
+      "gold": 133
+    },
+    "TOOL": {
+      "precision": 0.5397,
+      "recall": 0.5484,
+      "f1": 0.544,
+      "tp": 102,
+      "fp": 87,
+      "fn": 84,
+      "gold": 186
+    },
+    "URL": {
+      "precision": 0.4,
+      "recall": 0.4,
+      "f1": 0.4,
+      "tp": 2,
+      "fp": 3,
+      "fn": 3,
+      "gold": 5
+    },
+    "VULID": {
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.8889,
+      "tp": 4,
+      "fp": 1,
+      "fn": 0,
+      "gold": 4
+    },
+    "VULNAME": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "gold": 1
+    }
+  }
+}

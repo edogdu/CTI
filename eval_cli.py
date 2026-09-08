@@ -7,17 +7,17 @@ import html
 
 # ===== import your runner =====
 try:
-    from triple_extraction.extraction import CyberTripleExtractor, ExtractionOptions
+    from cti_analysis.triple_extraction.extraction import CyberTripleExtractor, ExtractionOptions
 except Exception:
-    from triple_extraction.extraction import CyberTripleExtractor, ExtractionOptions  # fallback
+    from cti_analysis.triple_extraction.extraction import CyberTripleExtractor, ExtractionOptions  # fallback
 
-from triple_extraction.evaluation.notebook_eval import (
+from cti_analysis.triple_extraction.evaluation.notebook_eval import (
     cti_hal_ground_truth,
     evaluate_sample_vector_similarity,
 )
 
 try:
-    from triple_extraction.evaluation.loaders import (
+    from cti_analysis.triple_extraction.evaluation.loaders import (
         load_cti_hal_samples,
         load_anno_ctr_samples,
         load_dnrti_samples,

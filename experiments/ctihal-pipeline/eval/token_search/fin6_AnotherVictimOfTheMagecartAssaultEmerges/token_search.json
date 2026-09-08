@@ -1,0 +1,610 @@
+{
+  "doc_id": "fin6_AnotherVictimOfTheMagecartAssaultEmerges",
+  "method": "bm25+regex",
+  "n_entities": 40,
+  "n_sentences": 31,
+  "bm25_matched_ids": [
+    "S0021",
+    "S0029",
+    "S0198",
+    "S0332",
+    "S0377",
+    "S0403",
+    "S0436",
+    "S0459",
+    "S0505",
+    "S0517",
+    "S0568",
+    "S0631",
+    "S1023",
+    "S1171",
+    "T0817",
+    "T1027.005",
+    "T1090",
+    "T1090.002",
+    "T1124",
+    "T1497.003",
+    "T1547.003",
+    "T1550.002",
+    "T1553.004",
+    "T1568.001",
+    "T1596.003",
+    "T1637",
+    "T1657",
+    "TA0028",
+    "TA0102"
+  ],
+  "regex_matched_ids": [],
+  "combined_matched_ids": [
+    "S0021",
+    "S0029",
+    "S0198",
+    "S0332",
+    "S0377",
+    "S0403",
+    "S0436",
+    "S0459",
+    "S0505",
+    "S0517",
+    "S0568",
+    "S0631",
+    "S1023",
+    "S1171",
+    "T0817",
+    "T1027.005",
+    "T1090",
+    "T1090.002",
+    "T1124",
+    "T1497.003",
+    "T1547.003",
+    "T1550.002",
+    "T1553.004",
+    "T1568.001",
+    "T1596.003",
+    "T1637",
+    "T1657",
+    "TA0028",
+    "TA0102"
+  ],
+  "n_bm25": 29,
+  "n_regex": 0,
+  "n_combined": 29,
+  "per_entity": [
+    {
+      "query": "newegg malbot (MAL), identifiedby volexity (SECTEAM), identifiedby riskiq (SECTEAM), hasattacktime sep 2018 (TIME), uses magecart (APT)",
+      "entity_name": "newegg malbot",
+      "type": "MAL",
+      "hits": [
+        {
+          "name": "Remcos",
+          "clean_id": "S0332",
+          "labels": [
+            "Resource",
+            "UcoexSOFTWARE",
+            "Vectorized"
+          ],
+          "score": 5.8140716552734375
+        },
+        {
+          "name": "System Time Discovery",
+          "clean_id": "T1124",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 5.402583599090576
+        },
+        {
+          "name": "Boot or Logon Autostart Execution: Time Providers",
+          "clean_id": "T1547.003",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 5.140076160430908
+        }
+      ]
+    },
+    {
+      "query": "skimmers (TOOL), uses british airways (IDTY), uses newegg (IDTY), uses attacks (ACT), uses magecart groups (APT)",
+      "entity_name": "skimmers",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "MechaFlounder",
+          "clean_id": "S0459",
+          "labels": [
+            "Resource",
+            "UcoexSOFTWARE",
+            "Vectorized"
+          ],
+          "score": 10.630955696105957
+        },
+        {
+          "name": "Dynamic Resolution",
+          "clean_id": "T1637",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 9.946910858154297
+        },
+        {
+          "name": "Riltok",
+          "clean_id": "S0403",
+          "labels": [
+            "Resource",
+            "UcoexSOFTWARE",
+            "Vectorized"
+          ],
+          "score": 9.508800506591797
+        }
+      ]
+    },
+    {
+      "query": "seeing attackers (ACT), identifies weõ're (SECTEAM)",
+      "entity_name": "seeing attackers",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "PsExec",
+          "clean_id": "S0029",
+          "labels": [
+            "Resource",
+            "UcoexSOFTWARE",
+            "Vectorized"
+          ],
+          "score": 3.2716028690338135
+        },
+        {
+          "name": "Persistence",
+          "clean_id": "TA0028",
+          "labels": [
+            "Resource",
+            "UcoexTACTICS",
+            "Vectorized"
+          ],
+          "score": 3.01782488822937
+        }
+      ]
+    },
+    {
+      "query": "magecart (APT), targets newegg (IDTY), uses skimmer (TOOL), targets newegg.com (DOM), targets neweggõs (IDTY), affiliatedwith operators (APT), targets ticketmaster (IDTY), identifiedby volexity (SECTEAM), identifiedby riskiq (SECTEAM), hasattacktime sep 2018 (TIME), uses newegg malbot (MAL), usedby 217.23.4.11 (IP), usedby british airways attack (ACT)",
+      "entity_name": "magecart",
+      "type": "APT",
+      "hits": [
+        {
+          "name": "OilCheck",
+          "clean_id": "S1171",
+          "labels": [
+            "Resource",
+            "UcoexSOFTWARE",
+            "Vectorized"
+          ],
+          "score": 11.786272048950195
+        },
+        {
+          "name": "Drive-by Compromise",
+          "clean_id": "T0817",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 10.908498764038086
+        },
+        {
+          "name": "TSCookie",
+          "clean_id": "S0436",
+          "labels": [
+            "Resource",
+            "UcoexSOFTWARE",
+            "Vectorized"
+          ],
+          "score": 9.7646484375
+        }
+      ]
+    },
+    {
+      "query": "magecart actor (APT), targets newegg. (IDTY), targetedby british airways (IDTY)",
+      "entity_name": "magecart actor",
+      "type": "APT",
+      "hits": [
+        {
+          "name": "Desert Scorpion",
+          "clean_id": "S0505",
+          "labels": [
+            "Resource",
+            "UcoexSOFTWARE",
+            "Vectorized"
+          ],
+          "score": 4.45151424407959
+        },
+        {
+          "name": "CreepyDrive",
+          "clean_id": "S1023",
+          "labels": [
+            "Resource",
+            "UcoexSOFTWARE",
+            "Vectorized"
+          ],
+          "score": 3.076892852783203
+        }
+      ]
+    },
+    {
+      "query": "magecart groups (APT), uses skimmers (TOOL), targets british airways (IDTY), targets newegg (IDTY), uses attacks (ACT), uses digital credit card skimming campaigns (ACT), usedby activities (ACT)",
+      "entity_name": "magecart groups",
+      "type": "APT",
+      "hits": [
+        {
+          "name": "Discovery",
+          "clean_id": "TA0102",
+          "labels": [
+            "Resource",
+            "UcoexTACTICS",
+            "Vectorized"
+          ],
+          "score": 11.399378776550293
+        },
+        {
+          "name": "OilCheck",
+          "clean_id": "S1171",
+          "labels": [
+            "Resource",
+            "UcoexSOFTWARE",
+            "Vectorized"
+          ],
+          "score": 10.80861759185791
+        },
+        {
+          "name": "Dynamic Resolution: Fast Flux DNS",
+          "clean_id": "T1568.001",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 9.552192687988281
+        }
+      ]
+    },
+    {
+      "query": "activities (ACT), usedby magecart groups (APT), targets system administrators (IDTY), targets bank employees (IDTY), usedby ris (APT), hasattacktime 2012 (TIME), targets dnc (IDTY), hasattacktime december 2015 (TIME), hasattacktime november 2015 (TIME), hasattacktime october 2015 (TIME), uses dukes group's (APT), targetedby dnc (IDTY), identifies fbi (SECTEAM)",
+      "entity_name": "activities",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "System Time Discovery",
+          "clean_id": "T1124",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 24.078716278076172
+        },
+        {
+          "name": "Boot or Logon Autostart Execution: Time Providers",
+          "clean_id": "T1547.003",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 17.9891357421875
+        },
+        {
+          "name": "Virtualization/Sandbox Evasion: Time Based Evasion",
+          "clean_id": "T1497.003",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 17.846355438232422
+        }
+      ]
+    },
+    {
+      "query": "digital credit card skimming campaigns (ACT), uses magecart groups (APT)",
+      "entity_name": "digital credit card skimming campaigns",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "Pillowmint",
+          "clean_id": "S0517",
+          "labels": [
+            "Resource",
+            "UcoexSOFTWARE",
+            "Vectorized"
+          ],
+          "score": 7.874759197235107
+        },
+        {
+          "name": "Chaes",
+          "clean_id": "S0631",
+          "labels": [
+            "Resource",
+            "UcoexSOFTWARE",
+            "Vectorized"
+          ],
+          "score": 6.103329658508301
+        },
+        {
+          "name": "Ebury",
+          "clean_id": "S0377",
+          "labels": [
+            "Resource",
+            "UcoexSOFTWARE",
+            "Vectorized"
+          ],
+          "score": 6.053877830505371
+        }
+      ]
+    },
+    {
+      "query": "british airways attack (ACT), hasattacktime september 18th (TIME), hasattacktime august 14th (TIME), targets comodo (IDTY), targets ticketmaster (IDTY), usedby magecart (APT), associatedwith skimmer (TOOL), targetedby https:/ /neweggstats.com/globaldata/ (URL)",
+      "entity_name": "british airways attack",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "System Time Discovery",
+          "clean_id": "T1124",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 10.93982219696045
+        },
+        {
+          "name": "Virtualization/Sandbox Evasion: Time Based Evasion",
+          "clean_id": "T1497.003",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 8.730134010314941
+        },
+        {
+          "name": "Boot or Logon Autostart Execution: Time Providers",
+          "clean_id": "T1547.003",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 8.581443786621094
+        }
+      ]
+    },
+    {
+      "query": "attacks (ACT), targets microsoft (IDTY), targets british airways (IDTY), targets newegg (IDTY), targets specific industriesñany organization (IDTY), targets hospitality sector (IDTY), targets financial (IDTY), targets (cve-20130640) (VULID), targets commercial entities (IDTY), targets government organizations (IDTY), targets council on foreign relations (cfr) (IDTY), targets eurasia group (IDTY), targets international institute for strategic studies (iiss) (IDTY), targets center for a new american security (cnas) (IDTY), targets transparency international (IDTY), targets election's outcome (IDTY), targets elections. (IDTY), targets clinton foundation (IDTY), targets critical infrastructure networks (IDTY), targets nato (IDTY), targets european government agencies (IDTY), targets election systems (IDTY), targets vendor (IDTY), targets electoral candidates (IDTY), targets parties (IDTY), targets government-level (IDTY), targets high-level government (IDTY), targets sensitive information (IDTY), uses urls (URL), uses skimmers (TOOL), uses c2s (TOOL), uses atm network (TOOL), uses reconnaissance tools (TOOL), uses efax (TOOL), associatedwith backdoor. (MAL), associatedwith malicious macros (MAL), usedby actor (APT), usedby cybercriminal organization (APT), usedby careto apt (APT), usedby dukes (APT), usedby o $ ce monkeys (APT), usedby euroapt (APT), usedby apt29 (APT), hasattacktime june 2016 (TIME), hasattacktime 2016 (TIME), hasattacktime 2015 (TIME), hasattacklocation russian (LOC), hasattacklocation uzbekistan. (LOC), hasattacklocation south korea (LOC), hasattacklocation germany (LOC), hasattacklocation us (LOC), uses miniduke (MAL), uses magecart groups (APT), uses powerduke malware (MAL), uses dukes (APT), uses ris actors (APT), uses miniduke malware (MAL), uses intelligence actors (APT), uses seaduke (MAL), uses seaduke (APT), uses cyberespionage operation (APT), uses cozyduke (MAL), targetedby russian (LOC), targetedby british airways (IDTY), targetedby newegg (IDTY), targetedby russian/eastern european (LOC), targetedby ngos (IDTY), targetedby think tanks (IDTY), targetedby operating systems (OS), identifies office 365 atp (SECTEAM), identifies trustwave (SECTEAM), identifies fireeye (SECTEAM), identifies kaspersky (SECTEAM), identifies kaspersky lab (SECTEAM), identifies volexity (SECTEAM), identifies windows defender atp (SECTEAM), associatedwith safe links protection (TOOL), associatedwith pastebin (TOOL), associatedwith malicious files (FILE), associatedwith vbs (TOOL), associatedwith ps1 (TOOL), associatedwith dq;var new 1) ; klscript> < / scriptlet (FILE), associatedwith ic xc + dq %tmp%\" s1 mgscoxpsnk. txt (FILE), associatedwith patch applications (TOOL), associatedwith zero-hour auto purge (zap) (TOOL), associatedwith dnc (TOOL)",
+      "entity_name": "attacks",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "OilCheck",
+          "clean_id": "S1171",
+          "labels": [
+            "Resource",
+            "UcoexSOFTWARE",
+            "Vectorized"
+          ],
+          "score": 88.55548095703125
+        },
+        {
+          "name": "Drive-by Compromise",
+          "clean_id": "T0817",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 81.40363311767578
+        },
+        {
+          "name": "Obfuscated Files or Information: Indicator Removal from Tools",
+          "clean_id": "T1027.005",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 76.32845306396484
+        }
+      ]
+    },
+    {
+      "query": "well-disguised attack (ACT), hasattacktime august 13th (TIME)",
+      "entity_name": "well-disguised attack",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "System Time Discovery",
+          "clean_id": "T1124",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 5.402583599090576
+        },
+        {
+          "name": "Virtualization/Sandbox Evasion: Time Based Evasion",
+          "clean_id": "T1497.003",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 4.970118522644043
+        },
+        {
+          "name": "Boot or Logon Autostart Execution: Time Providers",
+          "clean_id": "T1547.003",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 4.290721893310547
+        }
+      ]
+    },
+    {
+      "query": "operators (APT), targets newegg.com (DOM), targets neweggõs (IDTY), uses backdoor (MAL), affiliatedwith magecart (APT), affiliatedwith apt29 (APT)",
+      "entity_name": "operators",
+      "type": "APT",
+      "hits": [
+        {
+          "name": "EVILNUM",
+          "clean_id": "S0568",
+          "labels": [
+            "Resource",
+            "UcoexSOFTWARE",
+            "Vectorized"
+          ],
+          "score": 9.482308387756348
+        },
+        {
+          "name": "Derusbi",
+          "clean_id": "S0021",
+          "labels": [
+            "Resource",
+            "UcoexSOFTWARE",
+            "Vectorized"
+          ],
+          "score": 8.955537796020508
+        },
+        {
+          "name": "NETWIRE",
+          "clean_id": "S0198",
+          "labels": [
+            "Resource",
+            "UcoexSOFTWARE",
+            "Vectorized"
+          ],
+          "score": 8.441730499267578
+        }
+      ]
+    },
+    {
+      "query": "skimmer (TOOL), associatedwith british airways attack (ACT), uses magecart (APT), associatedwith 217.23.4.11 (IP)",
+      "entity_name": "skimmer",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "Dynamic Resolution: Fast Flux DNS",
+          "clean_id": "T1568.001",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 5.719242095947266
+        },
+        {
+          "name": "Proxy",
+          "clean_id": "T1090",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 5.564871788024902
+        },
+        {
+          "name": "Proxy: External Proxy",
+          "clean_id": "T1090.002",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 4.900721073150635
+        }
+      ]
+    },
+    {
+      "query": "cert (TOOL), associatedwith newegg.com (DOM), uses https://community.riskiq.com/search/certificate/sha1/df86a5cb482bb884d2bd06d8660 b279a446c2d02 (URL), associatedwith attack (ACT), usedby fig-1 (FILE), usedby df86a5cb482bb884d2bd06d8660b279a446c2d02 (HASH)",
+      "entity_name": "cert",
+      "type": "TOOL",
+      "hits": [
+        {
+          "name": "Subvert Trust Controls: Install Root Certificate",
+          "clean_id": "T1553.004",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 8.072988510131836
+        },
+        {
+          "name": "Search Open Technical Databases: Digital Certificates",
+          "clean_id": "T1596.003",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 7.91511344909668
+        },
+        {
+          "name": "Use Alternate Authentication Material: Pass the Hash",
+          "clean_id": "T1550.002",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 7.4295268058776855
+        }
+      ]
+    },
+    {
+      "query": "attack (ACT), targets microsoft (IDTY), targets ticketmaster (IDTY), targets newegg (IDTY), targets financial organization (IDTY), targets financial institutions (IDTY), targets atms (IDTY), targets banking systems (IDTY), targets employees. (IDTY), targets bank's (IDTY), targets financial losses (IDTY), targets financial (IDTY), targets access to critical information (IDTY), targets websites (IDTY), targets databases (IDTY), targets elections (IDTY), targets american elections (IDTY), targets clinton foundation (IDTY), uses loaders (TOOL), uses newegg.com (DOM), uses https://community.riskiq.com/search/certificate/sha1/df86a5cb482bb884d2bd06d8660 b279a446c2d02 (URL), uses atm network (TOOL), uses banking applications (TOOL), uses domain controller (TOOL), uses cosmu (TOOL), uses info-stealers (TOOL), uses efax (TOOL), uses e-mail (EMAIL), associatedwith windows (OS), associatedwith miniduke (MAL), associatedwith malicious embedded macro (MAL), usedby apt29 (APT), usedby cyber-espionage apts (APT), usedby cybercriminal organization (APT), usedby financial cyber-criminal group (APT), usedby cyber criminal group (APT), usedby cozybear (APT), usedby dukes (APT), hasattacktime november 14 (TIME), hasattacktime may 2018 (TIME), hasattacktime 2006 (TIME), hasattacklocation ukraine (LOC), hasattacklocation poland (LOC), hasattacklocation turkey (LOC), hasattacklocation russia,either (LOC), uses cosmicduke's (MAL), uses apt-like (APT), uses nightjars (MAL), uses adoptable (MAL), uses sanger (MAL), uses kinsman (MAL), uses bobcats (MAL), uses maidish (MAL), uses soulfulness (MAL), uses blattering (MAL), uses malware (MAL), targetedby microsoft customers (IDTY), targetedby users (IDTY), targetedby nancial entities (IDTY), targetedby cybercrime market (IDTY), targetedby financial (IDTY), identifies microsoft threat protection solution (SECTEAM), identifies security team (SECTEAM), identifies bitdefender's (SECTEAM), identifies bitdefender (SECTEAM), identifies microsoft threat protection (SECTEAM), identifies windows defender atp (SECTEAM), associatedwith e-mail message (FILE), associatedwith cert (TOOL), associatedwith fig-1 (FILE), associatedwith log-and-event aggregation system (TOOL), associatedwith siem (TOOL), associatedwith dll (FILE), usedby txt (PROT), usedby df86a5cb482bb884d2bd06d8660b279a446c2d02 (HASH), contains fig-1 (FILE)",
+      "entity_name": "attack",
+      "type": "ACT",
+      "hits": [
+        {
+          "name": "OilCheck",
+          "clean_id": "S1171",
+          "labels": [
+            "Resource",
+            "UcoexSOFTWARE",
+            "Vectorized"
+          ],
+          "score": 77.59489440917969
+        },
+        {
+          "name": "MechaFlounder",
+          "clean_id": "S0459",
+          "labels": [
+            "Resource",
+            "UcoexSOFTWARE",
+            "Vectorized"
+          ],
+          "score": 58.9814453125
+        },
+        {
+          "name": "Financial Theft",
+          "clean_id": "T1657",
+          "labels": [
+            "Resource",
+            "UcoexMITREATTACK",
+            "Vectorized"
+          ],
+          "score": 57.02436447143555
+        }
+      ]
+    }
+  ],
+  "per_sentence": []
+}

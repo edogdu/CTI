@@ -1,0 +1,26 @@
+name: "base-gemma2-9b-dedup"
+description: "Base Gemma 2 9B Instruct (no fine-tuning) on deduplicated DNRTI dataset"
+base_model: "unsloth/gemma-2-9b-it"
+base_gguf: "gemma2-9b-it-fp16.gguf"
+
+ner_lora: null
+re_lora: null
+
+dataset:
+  source: "datasets/DNRTI/dnrti_dedup.json"
+  original: "datasets/DNRTI/dnrti_aug_stix2_je.json"
+  dedup_report: "results/finetuning/data/dedup_report.json"
+  original_docs: 7947
+  dedup_docs: 5863
+  duplicates_removed: 2084
+  train: 4805
+  val: 507
+  test: 518
+  train_test_text_overlap: 0
+
+training: null
+
+notes: |
+  Zero-shot baseline using the base Gemma 2 9B Instruct model with no
+  fine-tuning or LoRA adapters. Same prompts as the fine-tuned variant.
+  Deduplicated dataset with zero train/test text overlap.
