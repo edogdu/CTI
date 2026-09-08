@@ -1,0 +1,56 @@
+{
+  "method": "TF-IDF + cosine similarity",
+  "n_test_queries": 146,
+  "p@1": 0.7054794520547946,
+  "hit@3": 0.910958904109589,
+  "hit@5": 0.9383561643835616,
+  "correct": 103,
+  "per_actor": {
+    "apt29": {
+      "p@1": 0.7560975609756098,
+      "correct": 31,
+      "total": 41
+    },
+    "carbanak": {
+      "p@1": 0.8518518518518519,
+      "correct": 23,
+      "total": 27
+    },
+    "fin6": {
+      "p@1": 0.7619047619047619,
+      "correct": 16,
+      "total": 21
+    },
+    "fin7": {
+      "p@1": 0.75,
+      "correct": 18,
+      "total": 24
+    },
+    "oilrig": {
+      "p@1": 0.5294117647058824,
+      "correct": 9,
+      "total": 17
+    },
+    "sandworm": {
+      "p@1": 0.3333333333333333,
+      "correct": 3,
+      "total": 9
+    },
+    "wizardspider": {
+      "p@1": 0.42857142857142855,
+      "correct": 3,
+      "total": 7
+    }
+  },
+  "tfidf_params": {
+    "ngram_range": [
+      1,
+      2
+    ],
+    "lowercase": true,
+    "min_df": 1,
+    "max_df": 1.0,
+    "sublinear_tf": true,
+    "norm": "l2"
+  }
+}

@@ -1,0 +1,43 @@
+{
+ "annoctr_dev": {
+  "overall_p1": 0.801,
+  "technique_p1": 0.7441
+ },
+ "asserts": [
+  "stage-1 sources verified: tumeteor 187823 + zenodo 163692 = 351515 rows (historical 351,515)",
+  "stage-1: 37832 queries -> train 30265 / val 3782 / test 3785 -> 99674 training pairs",
+  "CTI-HAL split 1111/135/146 and 10,727 pairs reproduced",
+  "joint stage-2 set: 19183 pairs (10727 CTI-HAL + 8456 AnnoCTR), interleaved via shuffled DataLoader",
+  "union stage-2 evaluator: 135 CTI-HAL-val + 136 AnnoCTR-trainval queries"
+ ],
+ "ctihal_test": {
+  "bar": 136,
+  "correct": 134,
+  "n": 146,
+  "p1": 0.9178,
+  "pass": false
+ },
+ "ctihal_val": {
+  "correct": 118,
+  "n": 135,
+  "p1": 0.8741
+ },
+ "meta": {
+  "batch": 16,
+  "ctihal_test_bar": 136,
+  "seed": 42,
+  "stage1": {
+   "epochs": 3,
+   "lr": 2e-05
+  },
+  "stage2": {
+   "epochs": 2,
+   "lr": 1e-05
+  },
+  "timestamp": "2026-08-12 21:54:54"
+ },
+ "test_looks": {
+  "annoctr_test": 0,
+  "ctihal_test": 1
+ }
+}

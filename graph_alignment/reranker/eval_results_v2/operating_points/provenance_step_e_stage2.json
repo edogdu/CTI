@@ -1,0 +1,19 @@
+{
+  "script": "mcc_fpr_analysis.py",
+  "step": "E",
+  "stage": "2 of 2 (analysis + figures)",
+  "bootstrap_seed": 42,
+  "bootstrap_n_resamples": 10000,
+  "ci_level": 0.95,
+  "tpr_at_fpr_targets": [
+    0.01,
+    0.05,
+    0.1
+  ],
+  "fpr_at_tpr_targets": [
+    0.8,
+    0.9,
+    0.95
+  ],
+  "p_at_1_layer": "cross-encoder only (94.52%); not including hierarchical post-processing"
+}

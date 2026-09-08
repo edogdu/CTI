@@ -61,6 +61,9 @@ The system runs on a laptop CPU at 55ms per query with no cloud dependency, maki
 | Tumeteor (generalization, two-stage) | 93.85% | 20,604 | Derived MITRE procedures |
 | Tumeteor (zero-shot, single-stage) | 80.95% | 20,604 | Pure generalization |
 | 5-fold Cross-Validation (enriched) | 90.7% ± 2.0% | 1,392 | Stratified by actor |
+| MITRE Procedures (zero-shot, all 625 techniques) | 53.80% | 500 | MITRE ATT&CK STIX data |
+
+Note: The MITRE Procedures benchmark is the hardest evaluation setting — every query is scored against all 625 techniques with no candidate pre-filtering and no training on procedure examples. The 53.80% P@1 (336× better than random chance at 0.16%) with 77.40% Hit@3 demonstrates genuine zero-shot generalization to MITRE-authored data completely independent from the training sources.
 
 ## Architecture
 
@@ -200,6 +203,7 @@ graph_alignment/reranker/
 ├── llm_baseline_results/              # GPT-5.4-mini comparison results
 ├── multilabel_results/                # Multi-label evaluation results
 ├── tumeteor_eval_results/             # Tumeteor benchmark results
+├── mitre_procedure_results/           # MITRE procedure benchmark results
 └── deployment_eval_results/           # Deployment evaluation results
 ```
 
@@ -217,7 +221,7 @@ The published paper (IEEE ICAIC 2026, Best Research Paper) reported 87.67% P@1 w
 
 **Hierarchical ATT&CK post-processing** (94.52% → 95.21%): Inference-time module encoding the ATT&CK taxonomy. Zero retraining, zero additional latency. Improves multi-label recall from 78.86% to 81.57%.
 
-**Comprehensive evaluation portfolio**: LLM baseline comparison (GPT-5.4-mini), 5-fold cross-validation (90.7% ± 2.0%), tumeteor generalization benchmark (20,604 queries), McNemar's statistical significance testing (p < 0.001), multi-label evaluation (80.43% F1), automated corpus-frequency word categorization, TRAM classification baseline (39.04% vs 94.52%), and SecureBERT base model comparison (90.41% vs 94.52%).
+**Comprehensive evaluation portfolio**: LLM baseline comparison (GPT-5.4-mini), 5-fold cross-validation (90.7% ± 2.0%), tumeteor generalization benchmark (20,604 queries), McNemar's statistical significance testing (p < 0.001), multi-label evaluation (80.43% F1), automated corpus-frequency word categorization, TRAM classification baseline (39.04% vs 94.52%), SecureBERT base model comparison (90.41% vs 94.52%), and zero-shot evaluation on 500 MITRE procedure examples (53.80% P@1 against all 625 techniques).
 
 ## Citation
 

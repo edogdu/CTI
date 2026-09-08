@@ -1,0 +1,883 @@
+{
+ "meta": {
+  "n_queries": 1190,
+  "queries_file": "annoctr_eval\\cert\\annoctr_queries_test_mf.jsonl",
+  "queries_sha256_16": "280bb0873197df79",
+  "scorer": "cross-encoder:checkpoints\\annoctr_stage3_v1",
+  "self_test": false,
+  "split": "test",
+  "timestamp": "2026-08-12 10:31:22"
+ },
+ "summary": {
+  "deploy": {
+   "by_category": {
+    "mixed": {
+     "bm25_top1_p1": 0.1518,
+     "bm25_top1_p1_plus": 0.3214,
+     "gold_in_pool_rate": 0.4018,
+     "hit3": 0.4018,
+     "hit5": 0.4018,
+     "mrr": 0.3824,
+     "n": 112,
+     "p1": 0.3661,
+     "p1_plus": 0.5357
+    },
+    "software": {
+     "bm25_top1_p1": 0.2791,
+     "bm25_top1_p1_plus": 0.2791,
+     "gold_in_pool_rate": 0.3837,
+     "hit3": 0.3779,
+     "hit5": 0.3837,
+     "mrr": 0.3677,
+     "n": 172,
+     "p1": 0.3547,
+     "p1_plus": 0.3547
+    },
+    "tactic": {
+     "bm25_top1_p1": 0.0573,
+     "bm25_top1_p1_plus": 0.2675,
+     "gold_in_pool_rate": 0.2484,
+     "hit3": 0.242,
+     "hit5": 0.2484,
+     "mrr": 0.2373,
+     "n": 157,
+     "p1": 0.2293,
+     "p1_plus": 0.4395
+    },
+    "technique": {
+     "bm25_top1_p1": 0.1375,
+     "bm25_top1_p1_plus": 0.2457,
+     "gold_in_pool_rate": 0.3498,
+     "hit3": 0.3191,
+     "hit5": 0.3351,
+     "mrr": 0.2801,
+     "n": 749,
+     "p1": 0.235,
+     "p1_plus": 0.3525
+    }
+   },
+   "by_document": {
+    "intel471_2021-07-14_how-cybercriminals-create-turbulence-for": {
+     "bm25_top1_p1": 0.0,
+     "bm25_top1_p1_plus": 0.0833,
+     "gold_in_pool_rate": 0.0833,
+     "hit3": 0.0833,
+     "hit5": 0.0833,
+     "mrr": 0.0417,
+     "n": 12,
+     "p1": 0.0,
+     "p1_plus": 0.1667
+    },
+    "intel471_2021-07-28_ransomware-as-a-service-fivehands": {
+     "bm25_top1_p1": 0.0,
+     "bm25_top1_p1_plus": 0.0,
+     "gold_in_pool_rate": 0.069,
+     "hit3": 0.069,
+     "hit5": 0.069,
+     "mrr": 0.069,
+     "n": 29,
+     "p1": 0.069,
+     "p1_plus": 0.069
+    },
+    "intel471_2021-08-18_information-stealer-ransomware-account-takeover": {
+     "bm25_top1_p1": 0.0667,
+     "bm25_top1_p1_plus": 0.1,
+     "gold_in_pool_rate": 0.3,
+     "hit3": 0.3,
+     "hit5": 0.3,
+     "mrr": 0.2667,
+     "n": 30,
+     "p1": 0.2333,
+     "p1_plus": 0.2667
+    },
+    "intel471_2021-08-23_shinyhunters-data-breach-mitre-attack": {
+     "bm25_top1_p1": 0.3421,
+     "bm25_top1_p1_plus": 0.4211,
+     "gold_in_pool_rate": 0.6316,
+     "hit3": 0.5789,
+     "hit5": 0.6053,
+     "mrr": 0.4715,
+     "n": 38,
+     "p1": 0.3684,
+     "p1_plus": 0.4474
+    },
+    "intel471_2021-09-09_groove-gang-ransomware-babuk-revil": {
+     "bm25_top1_p1": 0.1053,
+     "bm25_top1_p1_plus": 0.1895,
+     "gold_in_pool_rate": 0.2526,
+     "hit3": 0.2421,
+     "hit5": 0.2526,
+     "mrr": 0.2342,
+     "n": 95,
+     "p1": 0.2211,
+     "p1_plus": 0.2737
+    },
+    "intel471_2021-09-30_public-sector-cybersecurity-threats-2021": {
+     "bm25_top1_p1": 0.1429,
+     "bm25_top1_p1_plus": 0.1429,
+     "gold_in_pool_rate": 0.2143,
+     "hit3": 0.2143,
+     "hit5": 0.2143,
+     "mrr": 0.2143,
+     "n": 14,
+     "p1": 0.2143,
+     "p1_plus": 0.2143
+    },
+    "intel471_2021-11-02_shipping-companies-ransomware-credentials": {
+     "bm25_top1_p1": 0.2,
+     "bm25_top1_p1_plus": 0.4,
+     "gold_in_pool_rate": 0.5,
+     "hit3": 0.4,
+     "hit5": 0.5,
+     "mrr": 0.3583,
+     "n": 10,
+     "p1": 0.3,
+     "p1_plus": 0.5
+    },
+    "intel471_2021-12-09_emotet-returns-december-2021": {
+     "bm25_top1_p1": 0.2614,
+     "bm25_top1_p1_plus": 0.3977,
+     "gold_in_pool_rate": 0.5114,
+     "hit3": 0.4886,
+     "hit5": 0.5114,
+     "mrr": 0.4527,
+     "n": 88,
+     "p1": 0.4091,
+     "p1_plus": 0.6023
+    },
+    "lab52_2020-08-26_a-twisted-malware-infection-chain": {
+     "bm25_top1_p1": 0.0,
+     "bm25_top1_p1_plus": 0.1212,
+     "gold_in_pool_rate": 0.2121,
+     "hit3": 0.1515,
+     "hit5": 0.1818,
+     "mrr": 0.1641,
+     "n": 33,
+     "p1": 0.1515,
+     "p1_plus": 0.2727
+    },
+    "lab52_2021-04-29_chimera-apt-updates-on-its": {
+     "bm25_top1_p1": 0.0,
+     "bm25_top1_p1_plus": 0.0,
+     "gold_in_pool_rate": 0.0909,
+     "hit3": 0.0909,
+     "hit5": 0.0909,
+     "mrr": 0.0909,
+     "n": 11,
+     "p1": 0.0909,
+     "p1_plus": 0.4545
+    },
+    "lab52_2021-05-17_literature-lover-targeting-colombia-with": {
+     "bm25_top1_p1": 0.0588,
+     "bm25_top1_p1_plus": 0.3529,
+     "gold_in_pool_rate": 0.2941,
+     "hit3": 0.2941,
+     "hit5": 0.2941,
+     "mrr": 0.2941,
+     "n": 17,
+     "p1": 0.2941,
+     "p1_plus": 0.4118
+    },
+    "lab52_2021-07-05_quick-review-of-babuk-ransomware": {
+     "bm25_top1_p1": 0.0,
+     "bm25_top1_p1_plus": 0.0,
+     "gold_in_pool_rate": 0.0417,
+     "hit3": 0.0417,
+     "hit5": 0.0417,
+     "mrr": 0.0417,
+     "n": 24,
+     "p1": 0.0417,
+     "p1_plus": 0.0417
+    },
+    "lab52_2022-01-10_tokyox-dll-side-loading-an": {
+     "bm25_top1_p1": 0.0,
+     "bm25_top1_p1_plus": 0.2424,
+     "gold_in_pool_rate": 0.1515,
+     "hit3": 0.1515,
+     "hit5": 0.1515,
+     "mrr": 0.1212,
+     "n": 33,
+     "p1": 0.0909,
+     "p1_plus": 0.2727
+    },
+    "lab52_2022-01-12_tokyox-dll-side-loading-an": {
+     "bm25_top1_p1": 0.0,
+     "bm25_top1_p1_plus": 0.2692,
+     "gold_in_pool_rate": 0.1538,
+     "hit3": 0.1538,
+     "hit5": 0.1538,
+     "mrr": 0.1346,
+     "n": 26,
+     "p1": 0.1154,
+     "p1_plus": 0.3846
+    },
+    "lab52_2022-01-24_new-transparentribe-operation-targeting-india": {
+     "bm25_top1_p1": 0.1463,
+     "bm25_top1_p1_plus": 0.4634,
+     "gold_in_pool_rate": 0.2683,
+     "hit3": 0.2683,
+     "hit5": 0.2683,
+     "mrr": 0.2439,
+     "n": 41,
+     "p1": 0.2195,
+     "p1_plus": 0.4878
+    },
+    "proofpoint_2021-10-28_ta575-uses-squid-game-lures": {
+     "bm25_top1_p1": 0.0588,
+     "bm25_top1_p1_plus": 0.1765,
+     "gold_in_pool_rate": 0.2941,
+     "hit3": 0.2941,
+     "hit5": 0.2941,
+     "mrr": 0.2941,
+     "n": 17,
+     "p1": 0.2941,
+     "p1_plus": 0.4706
+    },
+    "proofpoint_2021-11-18_triple-threat-north-korea-aligned": {
+     "bm25_top1_p1": 0.0,
+     "bm25_top1_p1_plus": 0.0,
+     "gold_in_pool_rate": 0.5,
+     "hit3": 0.5,
+     "hit5": 0.5,
+     "mrr": 0.5,
+     "n": 2,
+     "p1": 0.5,
+     "p1_plus": 0.5
+    },
+    "proofpoint_2021-11-30_high-volume-german-phishing-campaign": {
+     "bm25_top1_p1": 0.0,
+     "bm25_top1_p1_plus": 0.1429,
+     "gold_in_pool_rate": 0.619,
+     "hit3": 0.619,
+     "hit5": 0.619,
+     "mrr": 0.5476,
+     "n": 21,
+     "p1": 0.4762,
+     "p1_plus": 0.5238
+    },
+    "proofpoint_2021-12-07_university-targeted-credential-phishing-campaigns": {
+     "bm25_top1_p1": 0.0741,
+     "bm25_top1_p1_plus": 0.1852,
+     "gold_in_pool_rate": 0.2963,
+     "hit3": 0.2963,
+     "hit5": 0.2963,
+     "mrr": 0.216,
+     "n": 27,
+     "p1": 0.1481,
+     "p1_plus": 0.2593
+    },
+    "proofpoint_2021-12-09_holiday-feelin-ta575-brings-warm": {
+     "bm25_top1_p1": 0.0,
+     "bm25_top1_p1_plus": 0.0,
+     "gold_in_pool_rate": 0.1905,
+     "hit3": 0.1905,
+     "hit5": 0.1905,
+     "mrr": 0.1667,
+     "n": 21,
+     "p1": 0.1429,
+     "p1_plus": 0.1905
+    },
+    "proofpoint_2021-12-13_tinynuke-banking-malware-targets-french": {
+     "bm25_top1_p1": 0.0357,
+     "bm25_top1_p1_plus": 0.1786,
+     "gold_in_pool_rate": 0.1786,
+     "hit3": 0.1786,
+     "hit5": 0.1786,
+     "mrr": 0.1786,
+     "n": 28,
+     "p1": 0.1786,
+     "p1_plus": 0.4286
+    },
+    "proofpoint_2022-01-27_oivavoii-active-malicious-hybrid-cloud": {
+     "bm25_top1_p1": 0.1333,
+     "bm25_top1_p1_plus": 0.2,
+     "gold_in_pool_rate": 0.6,
+     "hit3": 0.4667,
+     "hit5": 0.4667,
+     "mrr": 0.3861,
+     "n": 15,
+     "p1": 0.2667,
+     "p1_plus": 0.2667
+    },
+    "proofpoint_2022-02-03_mfa-psa-oh-my": {
+     "bm25_top1_p1": 0.0455,
+     "bm25_top1_p1_plus": 0.0909,
+     "gold_in_pool_rate": 0.4545,
+     "hit3": 0.3864,
+     "hit5": 0.3864,
+     "mrr": 0.3182,
+     "n": 44,
+     "p1": 0.25,
+     "p1_plus": 0.2727
+    },
+    "quoteintelligence_2021-02-16_dns-over-https-doh": {
+     "bm25_top1_p1": 0.0833,
+     "bm25_top1_p1_plus": 0.0833,
+     "gold_in_pool_rate": 0.25,
+     "hit3": 0.25,
+     "hit5": 0.25,
+     "mrr": 0.1944,
+     "n": 12,
+     "p1": 0.1667,
+     "p1_plus": 0.25
+    },
+    "quoteintelligence_2021-04-28_us-sanctions-against-russias-cyber": {
+     "bm25_top1_p1": 0.0,
+     "bm25_top1_p1_plus": 0.0,
+     "gold_in_pool_rate": 0.0,
+     "hit3": 0.0,
+     "hit5": 0.0,
+     "mrr": 0.0,
+     "n": 4,
+     "p1": 0.0,
+     "p1_plus": 0.0
+    },
+    "quoteintelligence_2021-05-20_how-the-demise-of-third": {
+     "bm25_top1_p1": 0.375,
+     "bm25_top1_p1_plus": 0.375,
+     "gold_in_pool_rate": 0.5,
+     "hit3": 0.375,
+     "hit5": 0.5,
+     "mrr": 0.2812,
+     "n": 8,
+     "p1": 0.125,
+     "p1_plus": 0.25
+    },
+    "quoteintelligence_2021-06-30_daily-operations-of-a-nigerian": {
+     "bm25_top1_p1": 0.2453,
+     "bm25_top1_p1_plus": 0.4245,
+     "gold_in_pool_rate": 0.5189,
+     "hit3": 0.5094,
+     "hit5": 0.5189,
+     "mrr": 0.4689,
+     "n": 106,
+     "p1": 0.4245,
+     "p1_plus": 0.5377
+    },
+    "zscaler_2021-09-09_cloudfall-targets-researchers-and-scientists": {
+     "bm25_top1_p1": 0.0606,
+     "bm25_top1_p1_plus": 0.1515,
+     "gold_in_pool_rate": 0.3182,
+     "hit3": 0.2273,
+     "hit5": 0.2727,
+     "mrr": 0.1746,
+     "n": 66,
+     "p1": 0.1061,
+     "p1_plus": 0.2879
+    },
+    "zscaler_2021-09-28_squirrelwaffle-new-loader-delivering-cobalt": {
+     "bm25_top1_p1": 0.3294,
+     "bm25_top1_p1_plus": 0.4,
+     "gold_in_pool_rate": 0.4,
+     "hit3": 0.3882,
+     "hit5": 0.4,
+     "mrr": 0.3906,
+     "n": 85,
+     "p1": 0.3882,
+     "p1_plus": 0.4588
+    },
+    "zscaler_2021-10-08_new-trickbot-and-bazarloader-campaigns": {
+     "bm25_top1_p1": 0.0843,
+     "bm25_top1_p1_plus": 0.2048,
+     "gold_in_pool_rate": 0.1928,
+     "hit3": 0.1928,
+     "hit5": 0.1928,
+     "mrr": 0.1928,
+     "n": 83,
+     "p1": 0.1928,
+     "p1_plus": 0.3133
+    },
+    "zscaler_2021-10-15_atomsilo-ransomware-enters-league-double": {
+     "bm25_top1_p1": 0.0952,
+     "bm25_top1_p1_plus": 0.1429,
+     "gold_in_pool_rate": 0.2857,
+     "hit3": 0.2381,
+     "hit5": 0.2857,
+     "mrr": 0.25,
+     "n": 21,
+     "p1": 0.2381,
+     "p1_plus": 0.3333
+    },
+    "zscaler_2021-10-22_new-multiloginbot-phishing-campaign": {
+     "bm25_top1_p1": 0.18,
+     "bm25_top1_p1_plus": 0.32,
+     "gold_in_pool_rate": 0.28,
+     "hit3": 0.26,
+     "hit5": 0.26,
+     "mrr": 0.25,
+     "n": 50,
+     "p1": 0.24,
+     "p1_plus": 0.36
+    },
+    "zscaler_2021-11-05_spike-danabot-malware-activity": {
+     "bm25_top1_p1": 0.2826,
+     "bm25_top1_p1_plus": 0.3043,
+     "gold_in_pool_rate": 0.4565,
+     "hit3": 0.4565,
+     "hit5": 0.4565,
+     "mrr": 0.3913,
+     "n": 46,
+     "p1": 0.3261,
+     "p1_plus": 0.4565
+    },
+    "zscaler_2021-11-16_return-emotet-malware": {
+     "bm25_top1_p1": 0.5152,
+     "bm25_top1_p1_plus": 0.6364,
+     "gold_in_pool_rate": 0.7879,
+     "hit3": 0.7576,
+     "hit5": 0.7879,
+     "mrr": 0.7197,
+     "n": 33,
+     "p1": 0.6667,
+     "p1_plus": 0.7879
+    }
+   },
+   "overall": {
+    "bm25_top1_p1": 0.1487,
+    "bm25_top1_p1_plus": 0.2605,
+    "gold_in_pool_rate": 0.3462,
+    "hit3": 0.3252,
+    "hit5": 0.337,
+    "mrr": 0.2968,
+    "n": 1190,
+    "p1": 0.2639,
+    "p1_plus": 0.3815
+   }
+  },
+  "reranking": {
+   "by_category": {
+    "mixed": {
+     "bm25_top1_p1": 0.1518,
+     "bm25_top1_p1_plus": 0.3214,
+     "gold_in_pool_rate": 1.0,
+     "hit3": 0.9911,
+     "hit5": 1.0,
+     "mrr": 0.9606,
+     "n": 112,
+     "p1": 0.9286,
+     "p1_plus": 0.9554
+    },
+    "software": {
+     "bm25_top1_p1": 0.2791,
+     "bm25_top1_p1_plus": 0.2791,
+     "gold_in_pool_rate": 1.0,
+     "hit3": 0.9477,
+     "hit5": 0.9651,
+     "mrr": 0.9252,
+     "n": 172,
+     "p1": 0.8895,
+     "p1_plus": 0.8895
+    },
+    "tactic": {
+     "bm25_top1_p1": 0.0573,
+     "bm25_top1_p1_plus": 0.2675,
+     "gold_in_pool_rate": 1.0,
+     "hit3": 0.9873,
+     "hit5": 0.9936,
+     "mrr": 0.9398,
+     "n": 157,
+     "p1": 0.8917,
+     "p1_plus": 0.9299
+    },
+    "technique": {
+     "bm25_top1_p1": 0.1375,
+     "bm25_top1_p1_plus": 0.2457,
+     "gold_in_pool_rate": 1.0,
+     "hit3": 0.8758,
+     "hit5": 0.9252,
+     "mrr": 0.7801,
+     "n": 749,
+     "p1": 0.6595,
+     "p1_plus": 0.7196
+    }
+   },
+   "by_document": {
+    "intel471_2021-07-14_how-cybercriminals-create-turbulence-for": {
+     "bm25_top1_p1": 0.0,
+     "bm25_top1_p1_plus": 0.0833,
+     "gold_in_pool_rate": 1.0,
+     "hit3": 0.75,
+     "hit5": 0.9167,
+     "mrr": 0.7597,
+     "n": 12,
+     "p1": 0.6667,
+     "p1_plus": 0.75
+    },
+    "intel471_2021-07-28_ransomware-as-a-service-fivehands": {
+     "bm25_top1_p1": 0.0,
+     "bm25_top1_p1_plus": 0.0,
+     "gold_in_pool_rate": 1.0,
+     "hit3": 0.9655,
+     "hit5": 1.0,
+     "mrr": 0.8707,
+     "n": 29,
+     "p1": 0.7586,
+     "p1_plus": 0.7586
+    },
+    "intel471_2021-08-18_information-stealer-ransomware-account-takeover": {
+     "bm25_top1_p1": 0.0667,
+     "bm25_top1_p1_plus": 0.1,
+     "gold_in_pool_rate": 1.0,
+     "hit3": 0.9667,
+     "hit5": 1.0,
+     "mrr": 0.8639,
+     "n": 30,
+     "p1": 0.7667,
+     "p1_plus": 0.7667
+    },
+    "intel471_2021-08-23_shinyhunters-data-breach-mitre-attack": {
+     "bm25_top1_p1": 0.3421,
+     "bm25_top1_p1_plus": 0.4211,
+     "gold_in_pool_rate": 1.0,
+     "hit3": 0.7895,
+     "hit5": 0.8421,
+     "mrr": 0.7038,
+     "n": 38,
+     "p1": 0.5789,
+     "p1_plus": 0.6579
+    },
+    "intel471_2021-09-09_groove-gang-ransomware-babuk-revil": {
+     "bm25_top1_p1": 0.1053,
+     "bm25_top1_p1_plus": 0.1895,
+     "gold_in_pool_rate": 1.0,
+     "hit3": 0.9053,
+     "hit5": 0.9474,
+     "mrr": 0.8695,
+     "n": 95,
+     "p1": 0.8,
+     "p1_plus": 0.8211
+    },
+    "intel471_2021-09-30_public-sector-cybersecurity-threats-2021": {
+     "bm25_top1_p1": 0.1429,
+     "bm25_top1_p1_plus": 0.1429,
+     "gold_in_pool_rate": 1.0,
+     "hit3": 0.9286,
+     "hit5": 0.9286,
+     "mrr": 0.7776,
+     "n": 14,
+     "p1": 0.6429,
+     "p1_plus": 0.6429
+    },
+    "intel471_2021-11-02_shipping-companies-ransomware-credentials": {
+     "bm25_top1_p1": 0.2,
+     "bm25_top1_p1_plus": 0.4,
+     "gold_in_pool_rate": 1.0,
+     "hit3": 0.8,
+     "hit5": 0.9,
+     "mrr": 0.7183,
+     "n": 10,
+     "p1": 0.6,
+     "p1_plus": 0.8
+    },
+    "intel471_2021-12-09_emotet-returns-december-2021": {
+     "bm25_top1_p1": 0.2614,
+     "bm25_top1_p1_plus": 0.3977,
+     "gold_in_pool_rate": 1.0,
+     "hit3": 0.9318,
+     "hit5": 0.9886,
+     "mrr": 0.8268,
+     "n": 88,
+     "p1": 0.7045,
+     "p1_plus": 0.7841
+    },
+    "lab52_2020-08-26_a-twisted-malware-infection-chain": {
+     "bm25_top1_p1": 0.0,
+     "bm25_top1_p1_plus": 0.1212,
+     "gold_in_pool_rate": 1.0,
+     "hit3": 0.7879,
+     "hit5": 0.8182,
+     "mrr": 0.7335,
+     "n": 33,
+     "p1": 0.6364,
+     "p1_plus": 0.6364
+    },
+    "lab52_2021-04-29_chimera-apt-updates-on-its": {
+     "bm25_top1_p1": 0.0,
+     "bm25_top1_p1_plus": 0.0,
+     "gold_in_pool_rate": 1.0,
+     "hit3": 0.8182,
+     "hit5": 0.9091,
+     "mrr": 0.8039,
+     "n": 11,
+     "p1": 0.7273,
+     "p1_plus": 0.7273
+    },
+    "lab52_2021-05-17_literature-lover-targeting-colombia-with": {
+     "bm25_top1_p1": 0.0588,
+     "bm25_top1_p1_plus": 0.3529,
+     "gold_in_pool_rate": 1.0,
+     "hit3": 0.9412,
+     "hit5": 1.0,
+     "mrr": 0.9265,
+     "n": 17,
+     "p1": 0.8824,
+     "p1_plus": 0.8824
+    },
+    "lab52_2021-07-05_quick-review-of-babuk-ransomware": {
+     "bm25_top1_p1": 0.0,
+     "bm25_top1_p1_plus": 0.0,
+     "gold_in_pool_rate": 1.0,
+     "hit3": 1.0,
+     "hit5": 1.0,
+     "mrr": 0.9514,
+     "n": 24,
+     "p1": 0.9167,
+     "p1_plus": 0.9167
+    },
+    "lab52_2022-01-10_tokyox-dll-side-loading-an": {
+     "bm25_top1_p1": 0.0,
+     "bm25_top1_p1_plus": 0.2424,
+     "gold_in_pool_rate": 1.0,
+     "hit3": 0.8182,
+     "hit5": 0.8485,
+     "mrr": 0.7655,
+     "n": 33,
+     "p1": 0.6667,
+     "p1_plus": 0.7576
+    },
+    "lab52_2022-01-12_tokyox-dll-side-loading-an": {
+     "bm25_top1_p1": 0.0,
+     "bm25_top1_p1_plus": 0.2692,
+     "gold_in_pool_rate": 1.0,
+     "hit3": 0.9231,
+     "hit5": 0.9231,
+     "mrr": 0.8103,
+     "n": 26,
+     "p1": 0.6923,
+     "p1_plus": 0.7308
+    },
+    "lab52_2022-01-24_new-transparentribe-operation-targeting-india": {
+     "bm25_top1_p1": 0.1463,
+     "bm25_top1_p1_plus": 0.4634,
+     "gold_in_pool_rate": 1.0,
+     "hit3": 0.9024,
+     "hit5": 1.0,
+     "mrr": 0.8687,
+     "n": 41,
+     "p1": 0.8049,
+     "p1_plus": 0.8537
+    },
+    "proofpoint_2021-10-28_ta575-uses-squid-game-lures": {
+     "bm25_top1_p1": 0.0588,
+     "bm25_top1_p1_plus": 0.1765,
+     "gold_in_pool_rate": 1.0,
+     "hit3": 1.0,
+     "hit5": 1.0,
+     "mrr": 0.9706,
+     "n": 17,
+     "p1": 0.9412,
+     "p1_plus": 0.9412
+    },
+    "proofpoint_2021-11-18_triple-threat-north-korea-aligned": {
+     "bm25_top1_p1": 0.0,
+     "bm25_top1_p1_plus": 0.0,
+     "gold_in_pool_rate": 1.0,
+     "hit3": 1.0,
+     "hit5": 1.0,
+     "mrr": 1.0,
+     "n": 2,
+     "p1": 1.0,
+     "p1_plus": 1.0
+    },
+    "proofpoint_2021-11-30_high-volume-german-phishing-campaign": {
+     "bm25_top1_p1": 0.0,
+     "bm25_top1_p1_plus": 0.1429,
+     "gold_in_pool_rate": 1.0,
+     "hit3": 0.9048,
+     "hit5": 0.9524,
+     "mrr": 0.8294,
+     "n": 21,
+     "p1": 0.7143,
+     "p1_plus": 0.7143
+    },
+    "proofpoint_2021-12-07_university-targeted-credential-phishing-campaigns": {
+     "bm25_top1_p1": 0.0741,
+     "bm25_top1_p1_plus": 0.1852,
+     "gold_in_pool_rate": 1.0,
+     "hit3": 0.8889,
+     "hit5": 0.963,
+     "mrr": 0.7327,
+     "n": 27,
+     "p1": 0.5556,
+     "p1_plus": 0.5556
+    },
+    "proofpoint_2021-12-09_holiday-feelin-ta575-brings-warm": {
+     "bm25_top1_p1": 0.0,
+     "bm25_top1_p1_plus": 0.0,
+     "gold_in_pool_rate": 1.0,
+     "hit3": 1.0,
+     "hit5": 1.0,
+     "mrr": 0.9206,
+     "n": 21,
+     "p1": 0.8571,
+     "p1_plus": 0.9048
+    },
+    "proofpoint_2021-12-13_tinynuke-banking-malware-targets-french": {
+     "bm25_top1_p1": 0.0357,
+     "bm25_top1_p1_plus": 0.1786,
+     "gold_in_pool_rate": 1.0,
+     "hit3": 0.9643,
+     "hit5": 0.9643,
+     "mrr": 0.8929,
+     "n": 28,
+     "p1": 0.8214,
+     "p1_plus": 0.9643
+    },
+    "proofpoint_2022-01-27_oivavoii-active-malicious-hybrid-cloud": {
+     "bm25_top1_p1": 0.1333,
+     "bm25_top1_p1_plus": 0.2,
+     "gold_in_pool_rate": 1.0,
+     "hit3": 0.8667,
+     "hit5": 0.8667,
+     "mrr": 0.6528,
+     "n": 15,
+     "p1": 0.4,
+     "p1_plus": 0.4
+    },
+    "proofpoint_2022-02-03_mfa-psa-oh-my": {
+     "bm25_top1_p1": 0.0455,
+     "bm25_top1_p1_plus": 0.0909,
+     "gold_in_pool_rate": 1.0,
+     "hit3": 0.8864,
+     "hit5": 0.9091,
+     "mrr": 0.7475,
+     "n": 44,
+     "p1": 0.6136,
+     "p1_plus": 0.6136
+    },
+    "quoteintelligence_2021-02-16_dns-over-https-doh": {
+     "bm25_top1_p1": 0.0833,
+     "bm25_top1_p1_plus": 0.0833,
+     "gold_in_pool_rate": 1.0,
+     "hit3": 1.0,
+     "hit5": 1.0,
+     "mrr": 0.9028,
+     "n": 12,
+     "p1": 0.8333,
+     "p1_plus": 0.8333
+    },
+    "quoteintelligence_2021-04-28_us-sanctions-against-russias-cyber": {
+     "bm25_top1_p1": 0.0,
+     "bm25_top1_p1_plus": 0.0,
+     "gold_in_pool_rate": 1.0,
+     "hit3": 1.0,
+     "hit5": 1.0,
+     "mrr": 1.0,
+     "n": 4,
+     "p1": 1.0,
+     "p1_plus": 1.0
+    },
+    "quoteintelligence_2021-05-20_how-the-demise-of-third": {
+     "bm25_top1_p1": 0.375,
+     "bm25_top1_p1_plus": 0.375,
+     "gold_in_pool_rate": 1.0,
+     "hit3": 0.625,
+     "hit5": 0.875,
+     "mrr": 0.5676,
+     "n": 8,
+     "p1": 0.375,
+     "p1_plus": 0.5
+    },
+    "quoteintelligence_2021-06-30_daily-operations-of-a-nigerian": {
+     "bm25_top1_p1": 0.2453,
+     "bm25_top1_p1_plus": 0.4245,
+     "gold_in_pool_rate": 1.0,
+     "hit3": 0.9151,
+     "hit5": 0.9245,
+     "mrr": 0.8398,
+     "n": 106,
+     "p1": 0.7547,
+     "p1_plus": 0.8396
+    },
+    "zscaler_2021-09-09_cloudfall-targets-researchers-and-scientists": {
+     "bm25_top1_p1": 0.0606,
+     "bm25_top1_p1_plus": 0.1515,
+     "gold_in_pool_rate": 1.0,
+     "hit3": 0.9091,
+     "hit5": 0.9242,
+     "mrr": 0.8478,
+     "n": 66,
+     "p1": 0.7727,
+     "p1_plus": 0.8182
+    },
+    "zscaler_2021-09-28_squirrelwaffle-new-loader-delivering-cobalt": {
+     "bm25_top1_p1": 0.3294,
+     "bm25_top1_p1_plus": 0.4,
+     "gold_in_pool_rate": 1.0,
+     "hit3": 0.9294,
+     "hit5": 0.9529,
+     "mrr": 0.9028,
+     "n": 85,
+     "p1": 0.8588,
+     "p1_plus": 0.8824
+    },
+    "zscaler_2021-10-08_new-trickbot-and-bazarloader-campaigns": {
+     "bm25_top1_p1": 0.0843,
+     "bm25_top1_p1_plus": 0.2048,
+     "gold_in_pool_rate": 1.0,
+     "hit3": 0.9639,
+     "hit5": 1.0,
+     "mrr": 0.9167,
+     "n": 83,
+     "p1": 0.8554,
+     "p1_plus": 0.8675
+    },
+    "zscaler_2021-10-15_atomsilo-ransomware-enters-league-double": {
+     "bm25_top1_p1": 0.0952,
+     "bm25_top1_p1_plus": 0.1429,
+     "gold_in_pool_rate": 1.0,
+     "hit3": 1.0,
+     "hit5": 1.0,
+     "mrr": 0.8254,
+     "n": 21,
+     "p1": 0.6667,
+     "p1_plus": 0.7619
+    },
+    "zscaler_2021-10-22_new-multiloginbot-phishing-campaign": {
+     "bm25_top1_p1": 0.18,
+     "bm25_top1_p1_plus": 0.32,
+     "gold_in_pool_rate": 1.0,
+     "hit3": 0.82,
+     "hit5": 0.9,
+     "mrr": 0.7601,
+     "n": 50,
+     "p1": 0.66,
+     "p1_plus": 0.66
+    },
+    "zscaler_2021-11-05_spike-danabot-malware-activity": {
+     "bm25_top1_p1": 0.2826,
+     "bm25_top1_p1_plus": 0.3043,
+     "gold_in_pool_rate": 1.0,
+     "hit3": 0.9783,
+     "hit5": 0.9783,
+     "mrr": 0.8715,
+     "n": 46,
+     "p1": 0.7826,
+     "p1_plus": 0.913
+    },
+    "zscaler_2021-11-16_return-emotet-malware": {
+     "bm25_top1_p1": 0.5152,
+     "bm25_top1_p1_plus": 0.6364,
+     "gold_in_pool_rate": 1.0,
+     "hit3": 0.9394,
+     "hit5": 0.9697,
+     "mrr": 0.8851,
+     "n": 33,
+     "p1": 0.8182,
+     "p1_plus": 0.9394
+    }
+   },
+   "overall": {
+    "bm25_top1_p1": 0.1487,
+    "bm25_top1_p1_plus": 0.2605,
+    "gold_in_pool_rate": 1.0,
+    "hit3": 0.9118,
+    "hit5": 0.9471,
+    "mrr": 0.8391,
+    "n": 1190,
+    "p1": 0.7487,
+    "p1_plus": 0.7941
+   }
+  }
+ }
+}
