@@ -1,0 +1,661 @@
+{
+  "timestamp_utc": "2026-05-10T07:08:44.650239+00:00",
+  "paths": {
+    "results_csv": "eval_results_v2\\counterfactual\\counterfactual_results.csv",
+    "output_dir": "eval_results_v2\\counterfactual"
+  },
+  "primary_dd_test": {
+    "swap_vs_proper_noun_placebo": {
+      "n_queries": 21,
+      "mean_dd": 0.00020469235522412363,
+      "median_dd": 0.058662152290344244,
+      "p_value_perm": 0.9972002799720028,
+      "perm_method": "monte_carlo",
+      "n_permutations": 10000,
+      "ci_lo_bca": -0.14557727804580833,
+      "ci_hi_bca": 0.131494028983659,
+      "hl_ci_lo": -0.14757111072540283,
+      "hl_ci_hi": 0.12585153579711914,
+      "hl_median_estimate": 0.058662152290344244,
+      "effect_size_dz": 0.0006219861149075839,
+      "cles": 0.5238095238095238,
+      "shared_qns": [
+        "apt29 has been observed crafting targeted spearphishing campaigns leveraging web links to a malicious dropper",
+        "apt34 has been observed targeting individuals through the use of booby-trapped job opportunity documents, delivered directly to the selected targets via linkedin messages",
+        "carbanak copies itself into \"%system32%\\com\" with the name \"svchost.exe\"",
+        "carbanak injects its code into svchost.exe.",
+        "carbanak is a backdoor used by the attackers to compromise the victim's machine once the exploit, either in the spear phishing email or exploit kit, successfully executes its payload",
+        "carbanak uses the http protocol",
+        "cozy bear's preferred intrusion method is a broadly targeted spearphish campaign that typically includes web links to a malicious dropper.",
+        "cozyduke is a highly versatile, modular, malware \"platform\" whose functionality lies not in a single core component but in an array of modules that it may be instructed to download from its c&c server. these modules are used to selectively provide cozyduke with just the functionality deemed necessary for the mission at hand.",
+        "fin6 generally used either registry run keys",
+        "fin6 used an alternative extraction method to upload payment card data to a public file sharing service.",
+        "fin7 incorporated and adapted the notorious carbanak",
+        "fin7 phishing lures implements hidden sho%cut \"les (lnk \"les) to initiate the infection",
+        "in the months that followed, the duke group began to target victims with \"o$ce monkeys\"- and \"efax\"-themed emails, booby-trapped with a cozyduke payload.",
+        "many of the spearphishing emails sent by sandworm contained malware-laced documents that required user execution to deploy.",
+        "sandworm repeatedly accessed and browsed vles, ran malicious scripts, and searched compromised machines for credential vles",
+        "the dukes are known for launching their attacks by sending links to zip files, that contain malicious executables, hosted on legitimate compromised web servers.",
+        "this movement enabled fin6 to then inject lockergoga and ryuk ransomware",
+        "this would allow fin6 to escalate privileges in the system.",
+        "thousands of recipients being sent spear-phishing emails that contained links to compromised websites hosting cozyduke",
+        "we have observed apt29 use wmi to persist a backdoor and also store the powershell backdoor code.",
+        "what seems to be the core tools of these activities is a variant of anunak, remote backdoor, along with a visual basic script specially crafted with data exfiltration features"
+      ],
+      "per_query_diffs": [
+        {
+          "qn": "apt29 has been observed crafting targeted spearphishing campaigns leveraging web links to a malicious dropper",
+          "d": 0.6441129684448242
+        },
+        {
+          "qn": "apt34 has been observed targeting individuals through the use of booby-trapped job opportunity documents, delivered directly to the selected targets via linkedin messages",
+          "d": 0.058662152290344244
+        },
+        {
+          "qn": "carbanak copies itself into \"%system32%\\com\" with the name \"svchost.exe\"",
+          "d": 0.4577053546905518
+        },
+        {
+          "qn": "carbanak injects its code into svchost.exe.",
+          "d": -0.14757111072540283
+        },
+        {
+          "qn": "carbanak is a backdoor used by the attackers to compromise the victim's machine once the exploit, either in the spear phishing email or exploit kit, successfully executes its payload",
+          "d": -0.07320479750633169
+        },
+        {
+          "qn": "carbanak uses the http protocol",
+          "d": -0.28064284175634313
+        },
+        {
+          "qn": "cozy bear's preferred intrusion method is a broadly targeted spearphish campaign that typically includes web links to a malicious dropper.",
+          "d": -0.6217716872692108
+        },
+        {
+          "qn": "cozyduke is a highly versatile, modular, malware \"platform\" whose functionality lies not in a single core component but in an array of modules that it may be instructed to download from its c&c server. these modules are used to selectively provide cozyduke with just the functionality deemed necessary for the mission at hand.",
+          "d": 0.07084817886352539
+        },
+        {
+          "qn": "fin6 generally used either registry run keys",
+          "d": 0.14587411880493162
+        },
+        {
+          "qn": "fin6 used an alternative extraction method to upload payment card data to a public file sharing service.",
+          "d": -0.047625684738159174
+        },
+        {
+          "qn": "fin7 incorporated and adapted the notorious carbanak",
+          "d": 0.3780547738075256
+        },
+        {
+          "qn": "fin7 phishing lures implements hidden sho%cut \"les (lnk \"les) to initiate the infection",
+          "d": -0.26887216567993166
+        },
+        {
+          "qn": "in the months that followed, the duke group began to target victims with \"o$ce monkeys\"- and \"efax\"-themed emails, booby-trapped with a cozyduke payload.",
+          "d": -0.03421697616577149
+        },
+        {
+          "qn": "many of the spearphishing emails sent by sandworm contained malware-laced documents that required user execution to deploy.",
+          "d": 0.12585153579711914
+        },
+        {
+          "qn": "sandworm repeatedly accessed and browsed vles, ran malicious scripts, and searched compromised machines for credential vles",
+          "d": 0.07552196979522707
+        },
+        {
+          "qn": "the dukes are known for launching their attacks by sending links to zip files, that contain malicious executables, hosted on legitimate compromised web servers.",
+          "d": 0.09130768775939942
+        },
+        {
+          "qn": "this movement enabled fin6 to then inject lockergoga and ryuk ransomware",
+          "d": -0.16640439033508303
+        },
+        {
+          "qn": "this would allow fin6 to escalate privileges in the system.",
+          "d": 0.2553993225097656
+        },
+        {
+          "qn": "thousands of recipients being sent spear-phishing emails that contained links to compromised websites hosting cozyduke",
+          "d": 0.3033984363079071
+        },
+        {
+          "qn": "we have observed apt29 use wmi to persist a backdoor and also store the powershell backdoor code.",
+          "d": -0.7291611671447754
+        },
+        {
+          "qn": "what seems to be the core tools of these activities is a variant of anunak, remote backdoor, along with a visual basic script specially crafted with data exfiltration features",
+          "d": -0.23296713829040527
+        }
+      ],
+      "p_value_perm_holm": 1.0
+    },
+    "swap_vs_generic_phrase_placebo": {
+      "n_queries": 21,
+      "mean_dd": -0.032300237105006215,
+      "median_dd": -0.12105428775151506,
+      "p_value_perm": 0.788021197880212,
+      "perm_method": "monte_carlo",
+      "n_permutations": 10000,
+      "ci_lo_bca": -0.1918817742583373,
+      "ci_hi_bca": 0.22997385989914695,
+      "hl_ci_lo": -0.20515445868174237,
+      "hl_ci_hi": 0.02306992212931315,
+      "hl_median_estimate": -0.12105428775151506,
+      "effect_size_dz": -0.06688995601912363,
+      "cles": 0.3333333333333333,
+      "shared_qns": [
+        "apt29 has been observed crafting targeted spearphishing campaigns leveraging web links to a malicious dropper",
+        "apt34 has been observed targeting individuals through the use of booby-trapped job opportunity documents, delivered directly to the selected targets via linkedin messages",
+        "carbanak copies itself into \"%system32%\\com\" with the name \"svchost.exe\"",
+        "carbanak injects its code into svchost.exe.",
+        "carbanak is a backdoor used by the attackers to compromise the victim's machine once the exploit, either in the spear phishing email or exploit kit, successfully executes its payload",
+        "carbanak uses the http protocol",
+        "cozy bear's preferred intrusion method is a broadly targeted spearphish campaign that typically includes web links to a malicious dropper.",
+        "cozyduke is a highly versatile, modular, malware \"platform\" whose functionality lies not in a single core component but in an array of modules that it may be instructed to download from its c&c server. these modules are used to selectively provide cozyduke with just the functionality deemed necessary for the mission at hand.",
+        "fin6 generally used either registry run keys",
+        "fin6 used an alternative extraction method to upload payment card data to a public file sharing service.",
+        "fin7 incorporated and adapted the notorious carbanak",
+        "fin7 phishing lures implements hidden sho%cut \"les (lnk \"les) to initiate the infection",
+        "in the months that followed, the duke group began to target victims with \"o$ce monkeys\"- and \"efax\"-themed emails, booby-trapped with a cozyduke payload.",
+        "many of the spearphishing emails sent by sandworm contained malware-laced documents that required user execution to deploy.",
+        "sandworm repeatedly accessed and browsed vles, ran malicious scripts, and searched compromised machines for credential vles",
+        "the dukes are known for launching their attacks by sending links to zip files, that contain malicious executables, hosted on legitimate compromised web servers.",
+        "this movement enabled fin6 to then inject lockergoga and ryuk ransomware",
+        "this would allow fin6 to escalate privileges in the system.",
+        "thousands of recipients being sent spear-phishing emails that contained links to compromised websites hosting cozyduke",
+        "we have observed apt29 use wmi to persist a backdoor and also store the powershell backdoor code.",
+        "what seems to be the core tools of these activities is a variant of anunak, remote backdoor, along with a visual basic script specially crafted with data exfiltration features"
+      ],
+      "per_query_diffs": [
+        {
+          "qn": "apt29 has been observed crafting targeted spearphishing campaigns leveraging web links to a malicious dropper",
+          "d": -0.13078399499257407
+        },
+        {
+          "qn": "apt34 has been observed targeting individuals through the use of booby-trapped job opportunity documents, delivered directly to the selected targets via linkedin messages",
+          "d": -0.9564624150594075
+        },
+        {
+          "qn": "carbanak copies itself into \"%system32%\\com\" with the name \"svchost.exe\"",
+          "d": 0.571038277943929
+        },
+        {
+          "qn": "carbanak injects its code into svchost.exe.",
+          "d": 0.2568134466807047
+        },
+        {
+          "qn": "carbanak is a backdoor used by the attackers to compromise the victim's machine once the exploit, either in the spear phishing email or exploit kit, successfully executes its payload",
+          "d": -0.12105428775151506
+        },
+        {
+          "qn": "carbanak uses the http protocol",
+          "d": -0.46356244981288874
+        },
+        {
+          "qn": "cozy bear's preferred intrusion method is a broadly targeted spearphish campaign that typically includes web links to a malicious dropper.",
+          "d": -0.20515445868174237
+        },
+        {
+          "qn": "cozyduke is a highly versatile, modular, malware \"platform\" whose functionality lies not in a single core component but in an array of modules that it may be instructed to download from its c&c server. these modules are used to selectively provide cozyduke with just the functionality deemed necessary for the mission at hand.",
+          "d": 0.18411300977071127
+        },
+        {
+          "qn": "fin6 generally used either registry run keys",
+          "d": 1.5705858151117962
+        },
+        {
+          "qn": "fin6 used an alternative extraction method to upload payment card data to a public file sharing service.",
+          "d": 0.2524318059285482
+        },
+        {
+          "qn": "fin7 incorporated and adapted the notorious carbanak",
+          "d": -0.026215926806131995
+        },
+        {
+          "qn": "fin7 phishing lures implements hidden sho%cut \"les (lnk \"les) to initiate the infection",
+          "d": -0.38900227546691896
+        },
+        {
+          "qn": "in the months that followed, the duke group began to target victims with \"o$ce monkeys\"- and \"efax\"-themed emails, booby-trapped with a cozyduke payload.",
+          "d": -0.03816345532735191
+        },
+        {
+          "qn": "many of the spearphishing emails sent by sandworm contained malware-laced documents that required user execution to deploy.",
+          "d": 0.02306992212931315
+        },
+        {
+          "qn": "sandworm repeatedly accessed and browsed vles, ran malicious scripts, and searched compromised machines for credential vles",
+          "d": 0.05916726986567178
+        },
+        {
+          "qn": "the dukes are known for launching their attacks by sending links to zip files, that contain malicious executables, hosted on legitimate compromised web servers.",
+          "d": -0.010374387105305985
+        },
+        {
+          "qn": "this movement enabled fin6 to then inject lockergoga and ryuk ransomware",
+          "d": -0.2616565306981405
+        },
+        {
+          "qn": "this would allow fin6 to escalate privileges in the system.",
+          "d": -0.1462058941523234
+        },
+        {
+          "qn": "thousands of recipients being sent spear-phishing emails that contained links to compromised websites hosting cozyduke",
+          "d": -0.38793468872706094
+        },
+        {
+          "qn": "we have observed apt29 use wmi to persist a backdoor and also store the powershell backdoor code.",
+          "d": -0.33501512209574386
+        },
+        {
+          "qn": "what seems to be the core tools of these activities is a variant of anunak, remote backdoor, along with a visual basic script specially crafted with data exfiltration features",
+          "d": -0.12393863995869954
+        }
+      ],
+      "p_value_perm_holm": 1.0
+    },
+    "swap_vs_malware_placebo": {
+      "n_queries": 21,
+      "mean_dd": 0.20235435902362783,
+      "median_dd": 0.09959915578365397,
+      "p_value_perm": 0.039996000399960006,
+      "perm_method": "monte_carlo",
+      "n_permutations": 10000,
+      "ci_lo_bca": 0.05427628468311286,
+      "ci_hi_bca": 0.4506466526688739,
+      "hl_ci_lo": 0.0011255264282226535,
+      "hl_ci_hi": 0.19385709762573242,
+      "hl_median_estimate": 0.09959915578365397,
+      "effect_size_dz": 0.44655828507450407,
+      "cles": 0.7142857142857143,
+      "shared_qns": [
+        "apt29 has been observed crafting targeted spearphishing campaigns leveraging web links to a malicious dropper",
+        "apt34 has been observed targeting individuals through the use of booby-trapped job opportunity documents, delivered directly to the selected targets via linkedin messages",
+        "carbanak copies itself into \"%system32%\\com\" with the name \"svchost.exe\"",
+        "carbanak injects its code into svchost.exe.",
+        "carbanak is a backdoor used by the attackers to compromise the victim's machine once the exploit, either in the spear phishing email or exploit kit, successfully executes its payload",
+        "carbanak uses the http protocol",
+        "cozy bear's preferred intrusion method is a broadly targeted spearphish campaign that typically includes web links to a malicious dropper.",
+        "cozyduke is a highly versatile, modular, malware \"platform\" whose functionality lies not in a single core component but in an array of modules that it may be instructed to download from its c&c server. these modules are used to selectively provide cozyduke with just the functionality deemed necessary for the mission at hand.",
+        "fin6 generally used either registry run keys",
+        "fin6 used an alternative extraction method to upload payment card data to a public file sharing service.",
+        "fin7 incorporated and adapted the notorious carbanak",
+        "fin7 phishing lures implements hidden sho%cut \"les (lnk \"les) to initiate the infection",
+        "in the months that followed, the duke group began to target victims with \"o$ce monkeys\"- and \"efax\"-themed emails, booby-trapped with a cozyduke payload.",
+        "many of the spearphishing emails sent by sandworm contained malware-laced documents that required user execution to deploy.",
+        "sandworm repeatedly accessed and browsed vles, ran malicious scripts, and searched compromised machines for credential vles",
+        "the dukes are known for launching their attacks by sending links to zip files, that contain malicious executables, hosted on legitimate compromised web servers.",
+        "this movement enabled fin6 to then inject lockergoga and ryuk ransomware",
+        "this would allow fin6 to escalate privileges in the system.",
+        "thousands of recipients being sent spear-phishing emails that contained links to compromised websites hosting cozyduke",
+        "we have observed apt29 use wmi to persist a backdoor and also store the powershell backdoor code.",
+        "what seems to be the core tools of these activities is a variant of anunak, remote backdoor, along with a visual basic script specially crafted with data exfiltration features"
+      ],
+      "per_query_diffs": [
+        {
+          "qn": "apt29 has been observed crafting targeted spearphishing campaigns leveraging web links to a malicious dropper",
+          "d": 0.35005223751068115
+        },
+        {
+          "qn": "apt34 has been observed targeting individuals through the use of booby-trapped job opportunity documents, delivered directly to the selected targets via linkedin messages",
+          "d": 0.0979273557662964
+        },
+        {
+          "qn": "carbanak copies itself into \"%system32%\\com\" with the name \"svchost.exe\"",
+          "d": 0.12522037029266359
+        },
+        {
+          "qn": "carbanak injects its code into svchost.exe.",
+          "d": -0.050407314300537104
+        },
+        {
+          "qn": "carbanak is a backdoor used by the attackers to compromise the victim's machine once the exploit, either in the spear phishing email or exploit kit, successfully executes its payload",
+          "d": 0.09959915578365397
+        },
+        {
+          "qn": "carbanak uses the http protocol",
+          "d": 1.6109106145799164
+        },
+        {
+          "qn": "cozy bear's preferred intrusion method is a broadly targeted spearphish campaign that typically includes web links to a malicious dropper.",
+          "d": 0.4943368971347808
+        },
+        {
+          "qn": "cozyduke is a highly versatile, modular, malware \"platform\" whose functionality lies not in a single core component but in an array of modules that it may be instructed to download from its c&c server. these modules are used to selectively provide cozyduke with just the functionality deemed necessary for the mission at hand.",
+          "d": 0.046303939819335935
+        },
+        {
+          "qn": "fin6 generally used either registry run keys",
+          "d": 0.4028152108192444
+        },
+        {
+          "qn": "fin6 used an alternative extraction method to upload payment card data to a public file sharing service.",
+          "d": -0.09891304969787597
+        },
+        {
+          "qn": "fin7 incorporated and adapted the notorious carbanak",
+          "d": 0.19385709762573242
+        },
+        {
+          "qn": "fin7 phishing lures implements hidden sho%cut \"les (lnk \"les) to initiate the infection",
+          "d": 0.47023692131042477
+        },
+        {
+          "qn": "in the months that followed, the duke group began to target victims with \"o$ce monkeys\"- and \"efax\"-themed emails, booby-trapped with a cozyduke payload.",
+          "d": -0.01976714134216309
+        },
+        {
+          "qn": "many of the spearphishing emails sent by sandworm contained malware-laced documents that required user execution to deploy.",
+          "d": 0.06939563751220704
+        },
+        {
+          "qn": "sandworm repeatedly accessed and browsed vles, ran malicious scripts, and searched compromised machines for credential vles",
+          "d": -0.1767620325088501
+        },
+        {
+          "qn": "the dukes are known for launching their attacks by sending links to zip files, that contain malicious executables, hosted on legitimate compromised web servers.",
+          "d": 0.0011255264282226535
+        },
+        {
+          "qn": "this movement enabled fin6 to then inject lockergoga and ryuk ransomware",
+          "d": -0.22940897941589355
+        },
+        {
+          "qn": "this would allow fin6 to escalate privileges in the system.",
+          "d": 0.1488438844680786
+        },
+        {
+          "qn": "thousands of recipients being sent spear-phishing emails that contained links to compromised websites hosting cozyduke",
+          "d": 1.057359004020691
+        },
+        {
+          "qn": "we have observed apt29 use wmi to persist a backdoor and also store the powershell backdoor code.",
+          "d": -0.5222999572753907
+        },
+        {
+          "qn": "what seems to be the core tools of these activities is a variant of anunak, remote backdoor, along with a visual basic script specially crafted with data exfiltration features",
+          "d": 0.1790161609649658
+        }
+      ],
+      "p_value_perm_holm": 0.15998400159984003
+    },
+    "swap_vs_soft_deletion": {
+      "n_queries": 21,
+      "mean_dd": -0.0012977723564420068,
+      "median_dd": 0.06420674324035644,
+      "p_value_perm": 0.9884011598840116,
+      "perm_method": "monte_carlo",
+      "n_permutations": 10000,
+      "ci_lo_bca": -0.16575362473885313,
+      "ci_hi_bca": 0.16148324786552132,
+      "hl_ci_lo": -0.30039167404174805,
+      "hl_ci_hi": 0.15673463344573973,
+      "hl_median_estimate": 0.06420674324035644,
+      "effect_size_dz": -0.003214616655357586,
+      "cles": 0.6190476190476191,
+      "shared_qns": [
+        "apt29 has been observed crafting targeted spearphishing campaigns leveraging web links to a malicious dropper",
+        "apt34 has been observed targeting individuals through the use of booby-trapped job opportunity documents, delivered directly to the selected targets via linkedin messages",
+        "carbanak copies itself into \"%system32%\\com\" with the name \"svchost.exe\"",
+        "carbanak injects its code into svchost.exe.",
+        "carbanak is a backdoor used by the attackers to compromise the victim's machine once the exploit, either in the spear phishing email or exploit kit, successfully executes its payload",
+        "carbanak uses the http protocol",
+        "cozy bear's preferred intrusion method is a broadly targeted spearphish campaign that typically includes web links to a malicious dropper.",
+        "cozyduke is a highly versatile, modular, malware \"platform\" whose functionality lies not in a single core component but in an array of modules that it may be instructed to download from its c&c server. these modules are used to selectively provide cozyduke with just the functionality deemed necessary for the mission at hand.",
+        "fin6 generally used either registry run keys",
+        "fin6 used an alternative extraction method to upload payment card data to a public file sharing service.",
+        "fin7 incorporated and adapted the notorious carbanak",
+        "fin7 phishing lures implements hidden sho%cut \"les (lnk \"les) to initiate the infection",
+        "in the months that followed, the duke group began to target victims with \"o$ce monkeys\"- and \"efax\"-themed emails, booby-trapped with a cozyduke payload.",
+        "many of the spearphishing emails sent by sandworm contained malware-laced documents that required user execution to deploy.",
+        "sandworm repeatedly accessed and browsed vles, ran malicious scripts, and searched compromised machines for credential vles",
+        "the dukes are known for launching their attacks by sending links to zip files, that contain malicious executables, hosted on legitimate compromised web servers.",
+        "this movement enabled fin6 to then inject lockergoga and ryuk ransomware",
+        "this would allow fin6 to escalate privileges in the system.",
+        "thousands of recipients being sent spear-phishing emails that contained links to compromised websites hosting cozyduke",
+        "we have observed apt29 use wmi to persist a backdoor and also store the powershell backdoor code.",
+        "what seems to be the core tools of these activities is a variant of anunak, remote backdoor, along with a visual basic script specially crafted with data exfiltration features"
+      ],
+      "per_query_diffs": [
+        {
+          "qn": "apt29 has been observed crafting targeted spearphishing campaigns leveraging web links to a malicious dropper",
+          "d": 0.008457303047180176
+        },
+        {
+          "qn": "apt34 has been observed targeting individuals through the use of booby-trapped job opportunity documents, delivered directly to the selected targets via linkedin messages",
+          "d": -0.4336111068725586
+        },
+        {
+          "qn": "carbanak copies itself into \"%system32%\\com\" with the name \"svchost.exe\"",
+          "d": 0.37575228214263917
+        },
+        {
+          "qn": "carbanak injects its code into svchost.exe.",
+          "d": 0.7800503969192505
+        },
+        {
+          "qn": "carbanak is a backdoor used by the attackers to compromise the victim's machine once the exploit, either in the spear phishing email or exploit kit, successfully executes its payload",
+          "d": 0.21479752063751256
+        },
+        {
+          "qn": "carbanak uses the http protocol",
+          "d": 0.14369700253009832
+        },
+        {
+          "qn": "cozy bear's preferred intrusion method is a broadly targeted spearphish campaign that typically includes web links to a malicious dropper.",
+          "d": -0.7025591731071472
+        },
+        {
+          "qn": "cozyduke is a highly versatile, modular, malware \"platform\" whose functionality lies not in a single core component but in an array of modules that it may be instructed to download from its c&c server. these modules are used to selectively provide cozyduke with just the functionality deemed necessary for the mission at hand.",
+          "d": 0.06420674324035644
+        },
+        {
+          "qn": "fin6 generally used either registry run keys",
+          "d": 0.44646625518798827
+        },
+        {
+          "qn": "fin6 used an alternative extraction method to upload payment card data to a public file sharing service.",
+          "d": 0.6368630886077881
+        },
+        {
+          "qn": "fin7 incorporated and adapted the notorious carbanak",
+          "d": 0.11485018730163574
+        },
+        {
+          "qn": "fin7 phishing lures implements hidden sho%cut \"les (lnk \"les) to initiate the infection",
+          "d": -0.6507002830505371
+        },
+        {
+          "qn": "in the months that followed, the duke group began to target victims with \"o$ce monkeys\"- and \"efax\"-themed emails, booby-trapped with a cozyduke payload.",
+          "d": -0.4255539894104004
+        },
+        {
+          "qn": "many of the spearphishing emails sent by sandworm contained malware-laced documents that required user execution to deploy.",
+          "d": 0.3064464569091797
+        },
+        {
+          "qn": "sandworm repeatedly accessed and browsed vles, ran malicious scripts, and searched compromised machines for credential vles",
+          "d": 0.02418031692504885
+        },
+        {
+          "qn": "the dukes are known for launching their attacks by sending links to zip files, that contain malicious executables, hosted on legitimate compromised web servers.",
+          "d": -0.1025855541229248
+        },
+        {
+          "qn": "this movement enabled fin6 to then inject lockergoga and ryuk ransomware",
+          "d": 0.09730477333068847
+        },
+        {
+          "qn": "this would allow fin6 to escalate privileges in the system.",
+          "d": 0.15673463344573973
+        },
+        {
+          "qn": "thousands of recipients being sent spear-phishing emails that contained links to compromised websites hosting cozyduke",
+          "d": -0.38933643102645876
+        },
+        {
+          "qn": "we have observed apt29 use wmi to persist a backdoor and also store the powershell backdoor code.",
+          "d": -0.3923219680786133
+        },
+        {
+          "qn": "what seems to be the core tools of these activities is a variant of anunak, remote backdoor, along with a visual basic script specially crafted with data exfiltration features",
+          "d": -0.30039167404174805
+        }
+      ],
+      "p_value_perm_holm": 1.0
+    }
+  },
+  "co_primary_mcnemar": {
+    "swap": {
+      "b": 0,
+      "c": 0,
+      "discordant": 0,
+      "underinformative": true,
+      "exact_p_two_sided": null,
+      "mid_p_two_sided": null,
+      "intervention": "swap"
+    },
+    "proper_noun_placebo": {
+      "b": 1,
+      "c": 0,
+      "discordant": 1,
+      "underinformative": true,
+      "exact_p_two_sided": 1.0,
+      "mid_p_two_sided": 0.4999999999999999,
+      "intervention": "proper_noun_placebo"
+    },
+    "generic_phrase_placebo": {
+      "b": 1,
+      "c": 0,
+      "discordant": 1,
+      "underinformative": true,
+      "exact_p_two_sided": 1.0,
+      "mid_p_two_sided": 0.4999999999999999,
+      "intervention": "generic_phrase_placebo"
+    },
+    "malware_placebo": {
+      "b": 1,
+      "c": 0,
+      "discordant": 1,
+      "underinformative": true,
+      "exact_p_two_sided": 1.0,
+      "mid_p_two_sided": 0.4999999999999999,
+      "intervention": "malware_placebo"
+    },
+    "soft_deletion": {
+      "b": 1,
+      "c": 0,
+      "discordant": 1,
+      "underinformative": true,
+      "exact_p_two_sided": 1.0,
+      "mid_p_two_sided": 0.4999999999999999,
+      "intervention": "soft_deletion"
+    }
+  },
+  "appendix_mixed_effects": {
+    "status": "fitted",
+    "method": "MixedLM_lbfgs",
+    "n_observations": 399,
+    "n_clusters_query": 21,
+    "formula": "gold_margin_delta ~ C(intervention) + C(actor) + subword_token_delta",
+    "reference_levels": {
+      "intervention": "proper_noun_placebo"
+    },
+    "coefficients": [
+      {
+        "name": "Intercept",
+        "estimate": 0.025948661478718493,
+        "std_error": 0.7180757008567392,
+        "t_statistic": 0.03613638707974526,
+        "p_value": 0.9711736085708561
+      },
+      {
+        "name": "C(intervention)[T.swap]",
+        "estimate": 0.018959434831791928,
+        "std_error": 0.09599219442640623,
+        "t_statistic": 0.19751017199973947,
+        "p_value": 0.8434283221208982
+      },
+      {
+        "name": "C(intervention)[T.generic_phrase_placebo]",
+        "estimate": 0.05186466362959069,
+        "std_error": 0.11059507576241218,
+        "t_statistic": 0.4689599719702699,
+        "p_value": 0.6390982477690283
+      },
+      {
+        "name": "C(intervention)[T.malware_placebo]",
+        "estimate": -0.17674001557111824,
+        "std_error": 0.09687769534906066,
+        "t_statistic": -1.8243623048040638,
+        "p_value": 0.06809731683435394
+      },
+      {
+        "name": "C(intervention)[T.soft_deletion]",
+        "estimate": -0.060811679645962576,
+        "std_error": 0.1711336098798989,
+        "t_statistic": -0.3553462098335917,
+        "p_value": 0.7223302409157852
+      },
+      {
+        "name": "C(actor)[T.carbanak]",
+        "estimate": -2.8154596923757587,
+        "std_error": 1.1097762402531322,
+        "t_statistic": -2.5369615876201963,
+        "p_value": 0.011181922267853958
+      },
+      {
+        "name": "C(actor)[T.fin6]",
+        "estimate": -0.20549289243385752,
+        "std_error": 1.1870344495026444,
+        "t_statistic": -0.173114514511316,
+        "p_value": 0.8625614162710036
+      },
+      {
+        "name": "C(actor)[T.fin7]",
+        "estimate": -0.06368784830358543,
+        "std_error": 1.5183562080995276,
+        "t_statistic": -0.04194526156895768,
+        "p_value": 0.9665423346132986
+      },
+      {
+        "name": "C(actor)[T.oilrig]",
+        "estimate": 0.10762516302897059,
+        "std_error": 2.024380190431359,
+        "t_statistic": 0.05316450118297077,
+        "p_value": 0.9576008395482775
+      },
+      {
+        "name": "C(actor)[T.sandworm]",
+        "estimate": -0.27096932210777414,
+        "std_error": 1.5181950889252076,
+        "t_statistic": -0.17848122687552914,
+        "p_value": 0.8583450632681495
+      },
+      {
+        "name": "subword_token_delta",
+        "estimate": -0.06352412774321368,
+        "std_error": 0.048423731361666916,
+        "t_statistic": -1.3118387608085178,
+        "p_value": 0.1895745436482933
+      },
+      {
+        "name": "Group Var",
+        "estimate": 7.527042104780739,
+        "std_error": 2.8225644228961633,
+        "t_statistic": 2.6667388151436517,
+        "p_value": 0.007659116887288553
+      }
+    ],
+    "log_likelihood": -464.8261317386555,
+    "aic": null,
+    "converged": true
+  },
+  "seeds": {
+    "PERMUTATION_SEED": 42,
+    "BOOTSTRAP_SEED": 42,
+    "N_PERMUTATION_RESAMPLES": 10000,
+    "N_BOOTSTRAP_RESAMPLES": 9999
+  }
+}
